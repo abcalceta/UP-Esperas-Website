@@ -1,0 +1,21 @@
+body{
+	background-image: url("images/stardust.png");
+	font-family: 'Raleway', sans-serif;
+}
+
+.white{
+	color: #ecf0f1;
+}
+
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+}
+
+.top-padding{
+	padding-top: 10%;
+}
