@@ -1,3 +1,11 @@
+html:lang(en) :lang(eo) {
+	display: none;
+}
+
+html:lang(eo) :lang(en) {
+	display: none;
+}
+
 body{
 	background-image: url("images/stardust.png");
 	font-family: 'Raleway', sans-serif;
