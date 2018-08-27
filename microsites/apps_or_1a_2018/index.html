@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UP Esperas</title>
+
+        <!-- Meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" description="Official website of the University of the Philippines Esperanto Societo">
+
+        <link rel="shortcut icon" type="image/png" href="/favicon.png">
+
+        <link href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+
+        <style>
+            @font-face {
+                font-family: 'Trendsetter';
+                src: url('fonts/trendsetter-Regular.ttf') format('truetype');
+            }
+
+            html {
+                height: 100%;
+            }
+
+            body {
+                min-height: 100%;
+            }
+
+            .text-green {
+                color: #227c4b;
+            }
+
+            .text-fine {
+                font-size: 0.75em;
+            }
+
+            .trendsetter-font {
+                font-family: Trendsetter, sans-serif;
+            }
+
+            .noto-sans-font {
+                font-family: 'Noto Sans', sans-serif;
+            }
+
+            .parallax-bg-wrapper {
+                position: absolute;
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+            }
+
+            .parallax-bg-scene {
+                position: relative;
+                overflow: hidden;
+                width: 110%;
+                height: 110%;
+                margin: 0;
+                padding: 0;
+                top: -5%;
+                left: -5%;
+            }
+
+            .parallax-bg-scene .layer {
+                display: block;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                background-color: rgba(255, 255, 255, 0.01);
+            }
+
+            #app-info {
+                position: relative;
+                left: 9%;
+                top: 7%;
+                width: 30%;
+                pointer-events: all;
+            }
+
+            #app-tagline {
+                padding: 0;
+                margin: 0;
+            }
+
+            #app-tagline h1 {
+                font-size: 10em;
+                font-weight: lighter;
+                line-height: 128px;
+                margin-top: 25px;
+                margin-bottom: 8px;
+            }
+
+            #app-tagline span {
+                position: absolute;
+                font-size: 2.5em;
+                font-weight: lighter;
+                top: 23%;
+                left: 24%;
+            }
+
+            #venue-info {
+                margin-top: 2em;
+            }
+
+            #venue-info h2 {
+                font-size: 2.25em;
+                letter-spacing: -2px;
+                margin-top: 0;
+                margin-bottom: 8px;
+            }
+
+            #venue-info p {
+                margin: 0;
+                line-height: 1.25em;
+            }
+
+            #signup-info {
+                margin-top: 3em;
+                text-align: center;
+                line-height: 1.25em;
+            }
+
+            #signup-info a:link {
+                text-decoration: none;
+                font-size: 1.25em;
+            }
+
+            #org-logo {
+                position: absolute;
+                bottom: -20%;
+            }
+
+            #org-logo span {
+                position: relative;
+                margin: 0;
+                padding: 0;
+                line-height: 10%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="parallax-bg-wrapper">
+            <figure id="bg-main" class="parallax-bg-scene">
+                <div class="layer" data-depth="0"></div>
+                <img class="layer" src="img/layers_landscape/hills_far.png" alt="Hills Far" data-depth="0.1">
+                <img class="layer" src="img/layers_landscape/hills_mid.png" alt="Hills Mid" data-depth="0.1">
+                <img class="layer" src="img/layers_landscape/trees.png" alt="Trees" data-depth="0.2">
+                <img class="layer" src="img/layers_landscape/airplanes.png" alt="Paper Airplanes" data-depth="0.25">
+                <img class="layer" src="img/layers_landscape/ate_girl.png" alt="Girl with Paper Airplane" data-depth="0.35">
+                <div class="layer" data-depth="0.5" data-pointer-events="true">
+                    <section id="app-info" class="noto-sans-font">
+                        <article id="app-tagline" class="trendsetter-font text-green">
+                            <h1>Komenco</h1>
+                            <span>(n. beginning)</span>
+                        </article>
+
+                        <article id="venue-info">
+                            <h2>Applicants' Orientation</h2>
+                            <p>
+                                Wednesday, September 5, 2018<br>
+                                5:30 PM - 8:30 PM<br>
+                                USC Office, 2/F Vinzons Hall
+                            </p>
+                        </article>
+
+                        <article id="signup-info">
+                            <p>
+                                Be part of the pioneer batch of applicants!<br>
+                                Sign up now at<br>
+                                <a class="text-green" target="_blank" href="https://tinyurl.com/UPEsperasSignUp">https://tinyurl.com/UPEsperasSignUp</a><br>
+                                <span class="text-fine">or contact Albert at <span class="text-green">0998 249 1891</span></span>
+                            </p>
+                        </article>
+
+                        <section id="org-logo">
+                            <img width="32" src="img/org_logo_trans.png">
+                            <span>UP Esperanto-Societo</span>
+                        </section>
+                    </section>
+                </div>
+            </figure>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+        <script>
+            let bgScene = document.getElementById("bg-main");
+            var parallaxObj = new Parallax(bgScene);
+        </script>
+    </body>
+</html>
