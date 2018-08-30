@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>UP Esperas</title>
 
         <!-- Meta tags -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" description="Official website of the University of the Philippines Esperanto Societo">
+        <meta name="description" content="Official website of the University of the Philippines Esperanto Societo">
 
         <link rel="shortcut icon" type="image/png" href="/favicon.png">
 
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+        <!-- External CSS -->
         <link href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+
+        <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 
         <style>
@@ -253,6 +256,7 @@
 
             @media all and (min-width: 992px) and (orientation: landscape) {
                 #app-info {
+                    margin: 0 6%;
                     font-size: 2em;
                 }
 
@@ -267,57 +271,62 @@
         <nav>
             <div id="org-header" class="noto-sans-font text-green">
                 <div class="org-logo">
-                    <img width="32" src="img/org_logo_trans.png">
+                    <img width="32" alt="UP Esperas Logo" src="img/org_logo_trans.png">
                     <span>UP Esperanto-Societo</span>
                 </div>
             </div>
         </nav>
         <div class="parallax-bg-wrapper">
-            <ul id="bg-main" class="parallax-bg-scene">
-                <li class="layer" data-depth="0"></li>
-                <li class="layer" data-depth="0.1"><div class="hills-far"></div></li>
+            <div id="bg-main" class="parallax-bg-scene">
+                <div class="layer" data-depth="0"></div>
+                <div class="layer" data-depth="0.1"><div class="hills-far"></div></div>
                 <div class="layer" data-depth="0.25"><div class="hills-mid"></div></div>
                 <div class="layer" data-depth="0.3"><div class="trees"></div></div>
                 <div class="layer" data-depth="0.4"><div class="airplanes"></div></div>
                 <div class="layer" data-depth="0.5" data-pointer-events="true">
-                    <section id="app-info" class="noto-sans-font">
-                        <article id="app-tagline" class="trendsetter-font text-green">
+                    <div id="app-info" class="noto-sans-font">
+                        <div id="app-tagline" class="trendsetter-font text-green">
                             <h1>Komenco</h1>
                             <span>(n. beginning)</span>
-                        </article>
+                        </div>
 
-                        <article id="venue-info">
+                        <div id="venue-info">
                             <h2>Applicants' Orientation</h2>
                             <p>
                                 Wednesday, September 5, 2018<br>
                                 5:30 PM - 8:30 PM<br>
                                 USC Office, 2/F Vinzons Hall
                             </p>
-                        </article>
+                        </div>
 
-                        <article id="signup-info">
+                        <div id="signup-info">
                             <p>
                                 Be part of the pioneer batch of applicants!<br>
                                 Sign up now at<br>
                                 <a class="text-green" target="_blank" href="https://tinyurl.com/UPEsperasSignUp">https://tinyurl.com/UPEsperasSignUp</a><br>
                                 <span class="text-fine">or contact Albert at <span class="text-green">0998 249 1891</span></span>
                             </p>
-                        </article>
+                        </div>
 
-                        <article class="social-buttons">
-                            <a class="text-green" href="https://twitter.com/UPEsperas/"><i class="fab fa-facebook-square"></i></a>
-                            <a class="text-green" href="https://www.facebook.com/UPEsperas/"><i class="fab fa-twitter-square"></i></a>
-                        </article>
-                    </section>
+                        <div class="social-buttons">
+                            <a class="text-green" href="https://www.facebook.com/UPEsperas/"><i class="fab fa-facebook-square"></i></a>
+                            <a class="text-green" href="https://www.twitter.com/UPEsperas/"><i class="fab fa-twitter-square"></i></a>
+                        </div>
+                    </div>
                 </div>
                 <div class="layer" data-depth="0.6"><div class="ate-girl"></div></div>
-            </ul>
+            </div>
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
         <script>
             let bgScene = document.getElementById("bg-main");
-            var parallaxObj = new Parallax(bgScene);
+            var parallaxObj = new Parallax(bgScene, {
+                limitX: 50,
+                limitY: 50,
+                frictionX: 0.075,
+                frictionY: 0.075
+            });
         </script>
     </body>
 </html>
