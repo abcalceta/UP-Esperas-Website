@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="eo">
+    <head>
+        <title>Unuiga Horaro de UP Esperas</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Official website of the University of the Philippines Esperanto Societo">
+
+        <link rel="stylesheet" href="https://unpkg.com/picnic">
+    </head>
+    <body>
+        <table id="sched-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Dimanĉo</th>
+                    <th>Lundo</th>
+                    <th>Mardo</th>
+                    <th>Merkredo</th>
+                    <th>Ĵaŭdo</th>
+                    <th>Vendredo</th>
+                    <th>Sabato</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <script src="https://cdn.jsdelivr.net/npm/umbrellajs"></script>
+        <script>
+            fetch("unified_scheds_tm.json")
+                .then(function(resp) {
+                    return resp.json()
+                })
+                .then(function(resp_json) {
+                    // JSON formatted to [Times [Days [Busy People]]]
+                    for(var i = 0; i < resp_json.length; ++i) {
+                        let each_timechunk = resp_json[i];
+                        let trow_h = u("<tr>");
+
+                        // Add time label
+                        let time_hour = parseInt(i / 4);
+                        let time_minute = parseInt((i % 4) * 15);
+
+                        if(time_hour < 7 || time_hour >= 21) {
+                            continue;
+                        }
+
+                        let tcollbl_h = u("<td>");
+                        tcollbl_h.append(time_hour.toString().padStart(2, "0") + time_minute.toString().padStart(2, "0") + "h");
+                        trow_h.append(tcollbl_h);
+
+                        for(var j = 0; j < each_timechunk.length; ++j) {
+                            let each_event_cell = each_timechunk[j];
+                            let tcol_h = u("<td>");
+
+                            for(var k = 0; k < each_event_cell.length; ++k) {
+                                let event_person = each_event_cell[k][0];
+                                let event_name = each_event_cell[k][1];
+
+                                namebtn_h = u("<button>");
+                                namebtn_h.addClass("tooltip-top");
+                                namebtn_h.attr("data-tooltip", event_name);
+                                namebtn_h.append(event_person);
+
+                                tcol_h.append(namebtn_h);
+                            }
+
+                            trow_h.append(tcol_h);
+                        }
+
+                        u("#sched-table tbody").append(trow_h);
+                    }
+                })
+                .catch(console.error);
+        </script>
+    </body>
+</html>

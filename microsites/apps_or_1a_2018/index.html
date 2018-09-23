@@ -256,7 +256,7 @@
 
             @media all and (min-width: 992px) and (orientation: landscape) {
                 #app-info {
-                    margin: 0 6%;
+                    margin: 0% 6%;
                     font-size: 2em;
                 }
 
@@ -308,11 +308,11 @@
                             </p>
                         </div>
 
-                        <div class="social-buttons">
+                        <article class="social-buttons">
                             <a class="text-green" href="https://www.facebook.com/UPEsperas/"><i class="fab fa-facebook-square"></i></a>
                             <a class="text-green" href="https://www.twitter.com/UPEsperas/"><i class="fab fa-twitter-square"></i></a>
-                        </div>
-                    </div>
+                        </article>
+                    </section>
                 </div>
                 <div class="layer" data-depth="0.6"><div class="ate-girl"></div></div>
             </div>
@@ -322,8 +322,8 @@
         <script>
             let bgScene = document.getElementById("bg-main");
             var parallaxObj = new Parallax(bgScene, {
-                limitX: 50,
-                limitY: 50,
+                limitX: 100,
+                limitY: 100,
                 frictionX: 0.075,
                 frictionY: 0.075
             });
