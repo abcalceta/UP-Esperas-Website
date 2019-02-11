@@ -1,74 +1,359 @@
 <!DOCTYPE html>
-<html lang="eo">
-	<head>
-		<!-- Required meta tags -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="Official website of the University of the Philippines Esperanto Societo">
+<html>
+    <head>
+        <title>UP Esperanto-Societo</title>
 
-		<!-- Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
-		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Official website of the University of the Philippines Esperanto-Societo">
 
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="shortcut icon" href="favicon.png">
 
-		<!-- my css -->
-		<link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://unpkg.com/picnic">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-		<title>UP Esperas</title>
-	</head>
+        <style>
+            body {
+                font-family: 'Noto Sans', sans-serif;
+            }
 
-	<body>
-		<div class="container-fluid top-padding">
-			<div class="row">
-				<div class="col-12">
-					<h1 class="text-center white" lang="eo"><strong>Bonvenon al la retejo de la UP Esperanto-Societo!</strong></h1>
-					<h1 class="text-center white" lang="en"><strong>Welcome to the website of the Esperanto Society of the University of the Philippines!</strong></h1>
-					<h3 class="text-center white" lang="eo">Ĉi tiu retejo ankoraŭ estas konstruata.</h3>
-					<h3 class="text-center white" lang="en">This website is still under construction.</h3>
-					<p class="text-center white" lang="eo">Bonvolu paciencigi; mojosaj aferoj venos vin!</p>
-					<p class="text-center white" lang="en">Please be patient; cool things are coming your way!</p>
-				</div>
-			</div>
-			
-			<div class="text-center">
-				<div class="btn-group btn-group-toggle" data-toggle="buttons">
-					<label id="btn_eo" class="btn btn-outline-success active">
-						<input type="radio" name="lang_eo" autocomplete="off" checked> EO
-					</label>
-					<label id="btn_en" class="btn btn-outline-success">
-						<input type="radio" name="lang_en" autocomplete="off"> EN
-					</label>
-				</div>
-			</div>
-			
-			<div class="mt-3 text-center">
-				<a href="https://www.facebook.com/UPEsperas/" target="_blank" class="btn btn-social-icon btn-facebook">
-					<span class="fa fa-facebook"></span>
-				</a>
-				<a href="https://twitter.com/UPEsperas/" target="_blank" class="btn btn-social-icon btn-twitter">
-					<span class="fa fa-twitter"></span>
-				</a>
-			</div>
-		</div>
-		<!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-		
-		<script>
-			$(document).ready(function() {
-				$("#btn_eo").click(function() {
-					$("html").attr("lang", "eo");
-				});
-				
-				$("#btn_en").click(function() {
-					$("html").attr("lang", "en");
-				});
-			});
-		</script>
-	</body>
+            .text-light {
+                color: white;
+            }
+
+            nav.hero {
+                position: absolute;
+                background-color: transparent;
+                box-shadow: 0 0;
+            }
+
+            nav.hero .brand {
+                color: white;
+            }
+
+            header.hero {
+                background: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.7)), url('images/main_cover.jpg') no-repeat center;
+                background-size: cover;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            header.hero .hero-title {
+                padding: 0;
+                color: white;
+                text-align: center;
+                font-size: 15vh;
+                line-height: 15vh;
+            }
+
+            header.hero .hero-subtitle {
+                margin: 2vh 0;
+                color: white;
+                text-align: center;
+                font-size: 5vh;
+                line-height: 6vh;
+            }
+
+            header.hero .hero-down-marker {
+                position: absolute;
+                bottom: 0;
+                color: white;
+                text-align: center;
+                font-size: 15vh;
+            }
+
+            main {
+                margin: 0 15%;
+            }
+
+            main p {
+                font-size: 0.9em;
+            }
+
+            main h2 {
+                font-size: 2em;
+                color: #00612c;
+            }
+
+            footer.main-footer .content {
+                background-color: #00CC5D;
+                padding: 1em 15%;
+            }
+
+            footer.main-footer .copy {
+                background-color: #00612c;
+                color: white;
+                padding: 0.5em 15%;
+            }
+
+            .material-icons-large {
+                font-size: 5em;
+                color: whitesmoke;
+                background: #00612c;
+                border-radius: 50%;
+                padding: 0.25em;
+            }
+
+            ul.no-bullets {
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+            }
+
+            ul.no-bullets li {
+                margin: 0;
+            }
+
+            img.responsive {
+                width: 100%;
+            }
+
+            .center-text {
+                text-align: center;
+            }
+
+            .button.pseudo-nav {
+                background: none;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="hero">
+            <a class="brand" href="/">
+                <img class="logo" alt="Logo" src="favicon.png">
+                UP Esperanto-Societo
+            </a>
+
+            <input id="bmenub" class="show" type="checkbox">
+            <label class="burger pseudo button" for="bmenub">&#8801;</label>
+
+            <div class="menu">
+                <a class="pseudo-nav button" href="//biblioteko.up-esperas.org">Library</a>
+                <a class="warning button" href="app_process.html">Join</a>
+            </div>
+        </nav>
+
+        <!--
+        <nav id="main">
+            <a class="brand" href="#">
+                <img class="logo" alt="Logo" src="favicon.png">
+                UP Esperanto-Societo
+            </a>
+
+            <input id="bmenub" class="show" type="checkbox">
+            <label class="burger pseudo button" for="bmenub">&#8801;</label>
+
+            <div class="menu">
+                <a class="pseudo button" href="#">Ensaluti</a>
+                <a class="warning button" href="#">Aliĝi</a>
+            </div>
+        </nav>
+        -->
+
+        <header class="hero">
+            <h1 class="hero-title">Grow with us!</h1>
+            <p class="hero-subtitle">
+                Frolic in the bed of flowers of diversity and learn Esperanto today!
+            </p>
+            <i class="material-icons hero-down-marker">expand_more</i>
+        </header>
+
+        <main>
+            <h2>Who are we?</h2>
+            <section class="flex one two-1000">
+                <div>
+                    <img class="responsive" alt="Zamenhof Day" src="images/news/main_01.jpg">
+                </div>
+                <div>
+                    <p>
+                        The <b>Esperanto Society of the University of the Philippines</b>
+                        (UP Esperanto-Societo/UP Esperas) is a society of speakers, learners,
+                        and advocates of the international auxiliary language Esperanto.
+                        The organization aims to spread the use of Esperanto as a bridging second
+                        language of people towards cultural interaction and friendship
+                        across language barriers.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>What do we do?</h2>
+
+                <div class="flex one three-600">
+                    <div>
+                        <div class="center-text">
+                            <i class="material-icons material-icons-large">star</i>
+                            <h3>Promote Esperanto</h3>
+                        </div>
+                        <p>
+                            We advocate the use of Esperanto as a tool for the human family and
+                            the citizens of the world. Hence, we provide avenues for
+                            learners and speakers to improve their Esperanto knowledge and their
+                            views about worldwide history, culture, and language, among other things.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="center-text">
+                            <i class="material-icons material-icons-large">transfer_within_a_station</i>
+                            <h3>Empowering Citizens</h3>
+                        </div>
+                        <p>
+                            We empower the Philippine youth by providing avenues for exchange
+                            of international cultural ideas and to set an example on how
+                            to do so according to their own interests.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="center-text">
+                            <i class="material-icons material-icons-large">public</i>
+                            <h3>Embrace Multiculturalism</h3>
+                        </div>
+                        <p>
+                            We tackle different topics and contribute to the discourse regarding
+                            language politics, language and cultural rights, and
+                            openness.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Past Events</h2>
+                <div class="flex one three-1000">
+                    <div>
+                        <article class="card">
+                            <img alt="1st Acquaintance Meetup" src="images/gallery/acque_1st_2018.jpg">
+                            <p>
+                                First Acquaintance Meetup
+                            </p>
+                        </article>
+                    </div>
+                    <div>
+                        <article class="card">
+                            <img alt="Founding General Assembly" src="images/gallery/founding_ga.jpg">
+                            <p>
+                                Founding General Assembly
+                            </p>
+                        </article>
+                    </div>
+                    <div>
+                        <article class="card">
+                            <img alt="ACLE 2s1819" src="images/gallery/acle_2018a.jpg">
+                            <p>
+                                Alternative Classroom Learning Experience, 1st Sem AY 2018-2019
+                            </p>
+                        </article>
+                    </div>
+                    <div>
+                        <article class="card">
+                            <img alt="1st Language Exam" src="images/gallery/langexam_1st_2018a.jpg">
+                            <p>
+                                Esperanto Language Exam for Apps, 1st Sem AY 2018-2019
+                            </p>
+                        </article>
+                    </div>
+                    <div>
+                        <article class="card">
+                            <img alt="Zamenhof Day 2018" src="images/gallery/zamenhof_day_2018.jpg">
+                            <p>
+                                Zamenhof Day 2018 Celebration
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>News</h2>
+                <div class="flex one three-1000">
+                    <div>
+                        <article class="card">
+                            <img alt="Kresku Special Orientations" src="images/news/poster_special_or.jpg">
+                            <header>
+                                <h3>Kresku: Application Process 1819B</h3>
+                            </header>
+                            <p>
+                                UP Esperas, the club of speakers, learners, and advocates of the
+                                international language Esperanto, wants you to grow and be part of
+                                this growing garden of flowers. Sign up
+                                <a target="_blank" href="//bit.ly/EsperasSignUp">here</a>!
+                            </p>
+                        </article>
+                    </div>
+                    <div>
+                        <article class="card">
+                            <img alt="Speciala Elsendo 2" src="images/news/elsendo_02.jpg">
+                            <header>
+                                <h3>[Speciala] Elsendo 2 - Kristnasko, la Novjaro, kaj la Rizal-Tago</h3>
+                            </header>
+                            <p>
+                                Jen la dua elsendo, kiu enhavas pli diversajn kaj buntajn enhavojn.
+                                Temas pri la lastatempe okazintaj specialaj feriotagoj en Filipinoj:
+                                Kristnasko, la Novjaro, kaj la Rizal-Tago! Tuj aŭskultu
+                                <a href="elsendoj/rss.xml">ĉi tien</a>!
+                            </p>
+                        </article>
+                    </div>
+                    <div>
+                        <article class="card">
+                            <img alt="New Year 2019" src="images/news/new_year_2019.jpg">
+                            <header>
+                                <h3>Bonegan Novjaron 2019!</h3>
+                            </header>
+                            <p>
+                                Karaj amikoj, UP Esperanto-Societo plej elkore deziras al ĉiuj
+                                bonegan novjaron! En la jaro 2019, estu kun vi ĉiuj forto, bona
+                                sano, kaj feliĉo. Ni ĉiuj tostu, dezirante pliajn baldaŭajn
+                                sukcesojn en la disvastigo de Esperanto en nia universitato kaj
+                                inter la filipina junularo!
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <div class="content flex one two-600">
+                <div>
+                    <h2>Contact</h2>
+                    <div class="flex two">
+                        <div class="sixth">
+                            <i class="material-icons">pin_drop</i>
+                        </div>
+                        <div class="four-fifth">
+                            PH 228-A<br>
+                            University of the Philippines<br>
+                            Diliman, Quezon City<br>
+                            Philippines<br>
+                            1101
+                        </div>
+                    </div>
+                    <div class="flex two">
+                        <div class="sixth">
+                            <i class="material-icons">email</i>
+                        </div class="four-fifth">
+                        <div>
+                            up [punkto] esperas [heliko] gmail [punkto] com
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>Links</h2>
+                    <ul class="no-bullets">
+                        <li><a href="https://www.facebook.com/UPEsperas/" target="_blank">Facebook</a></li>
+                        <li><a href="https://twitter.com/UPEsperas/" target="_blank">Twitter</a></li>
+                        <li><a href="/elsendoj/rss.xml">Podcast Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copy">
+                &copy; UP Esperas 2018
+            </div>
+        </footer>
+    </body>
 </html>
