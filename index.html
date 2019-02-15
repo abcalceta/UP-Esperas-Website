@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>UP Esperanto-Societo</title>
+        <title>Home | UP Esperanto-Societo</title>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,18 +18,21 @@
                 font-family: 'Noto Sans', sans-serif;
             }
 
-            .text-light {
-                color: white;
-            }
-
             nav.hero {
                 position: absolute;
                 background-color: transparent;
                 box-shadow: 0 0;
+                padding: 2em 0;
             }
 
             nav.hero .brand {
                 color: white;
+            }
+
+            @media all and (max-width: 60em) {
+                nav.hero .menu {
+                    background-color: #146E05;
+                }
             }
 
             header.hero {
@@ -80,8 +83,13 @@
             }
 
             footer.main-footer .content {
-                background-color: #00CC5D;
+                background-color: #146E05;
+                color: white;
                 padding: 1em 15%;
+            }
+
+            footer.main-footer a:link {
+                color: #00ED6C;
             }
 
             footer.main-footer .copy {
@@ -116,6 +124,10 @@
                 text-align: center;
             }
 
+            .right-text {
+                text-align: right;
+            }
+
             .button.pseudo-nav {
                 background: none;
             }
@@ -137,23 +149,6 @@
             </div>
         </nav>
 
-        <!--
-        <nav id="main">
-            <a class="brand" href="#">
-                <img class="logo" alt="Logo" src="favicon.png">
-                UP Esperanto-Societo
-            </a>
-
-            <input id="bmenub" class="show" type="checkbox">
-            <label class="burger pseudo button" for="bmenub">&#8801;</label>
-
-            <div class="menu">
-                <a class="pseudo button" href="#">Ensaluti</a>
-                <a class="warning button" href="#">Aliĝi</a>
-            </div>
-        </nav>
-        -->
-
         <header class="hero">
             <h1 class="hero-title">Grow with us!</h1>
             <p class="hero-subtitle">
@@ -174,14 +169,14 @@
                         (UP Esperanto-Societo/UP Esperas) is a society of speakers, learners,
                         and advocates of the international auxiliary language Esperanto.
                         The organization aims to spread the use of Esperanto as a bridging second
-                        language of people towards cultural interaction and friendship
+                        language of people working towards cultural interaction and friendship
                         across language barriers.
                     </p>
                 </div>
             </section>
 
             <section>
-                <h2>What do we do?</h2>
+                <h2>Our Goals</h2>
 
                 <div class="flex one three-600">
                     <div>
@@ -191,9 +186,7 @@
                         </div>
                         <p>
                             We advocate the use of Esperanto as a tool for the human family and
-                            the citizens of the world. Hence, we provide avenues for
-                            learners and speakers to improve their Esperanto knowledge and their
-                            views about worldwide history, culture, and language, among other things.
+                            the citizens of the world.
                         </p>
                     </div>
                     <div>
@@ -216,6 +209,45 @@
                             We tackle different topics and contribute to the discourse regarding
                             language politics, language and cultural rights, and
                             openness.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>What do we do?</h2>
+                <div class="flex one three-1000">
+                    <div>
+                        <img class="stack" alt="" src="images/gallery/projects_lang_lessons.jpg">
+                        <h3 class="center-text stack">Language and Cultural Lessons</h3>
+                        <p class="stack">
+                            We hold Esperanto language lessons and cultural discussions to
+                            widen and enhance the view of everyone about the world.
+                        </p>
+                    </div>
+                    <div>
+                        <img class="stack" alt="" src="images/gallery/projects_podcast.jpg">
+                        <h3 class="center-text stack">Podcast</h3>
+                        <p class="stack">
+                            We occasionally release podcasts in Esperanto that talks about
+                            Philippine culture. We also release podcasts in Philippine
+                            languages to promote Esperanto within the country.
+                        </p>
+                    </div>
+                    <div>
+                        <img class="stack" alt="" src="images/gallery/projects_library.jpg">
+                        <h3 class="center-text stack">Library</h3>
+                        <p class="stack">
+                            We are probably the only organization in the university that keeps
+                            a wide range of literature and media about, and in Esperanto.
+                        </p>
+                    </div>
+                    <div>
+                        <img class="stack" alt="" src="images/gallery/projects_linkages.jpg">
+                        <h3 class="center-text stack">International Linkages</h3>
+                        <p class="stack">
+                            We get to communicate with different people from all over the
+                            world through the language.
                         </p>
                     </div>
                 </div>
@@ -336,7 +368,7 @@
                     <div class="flex two">
                         <div class="sixth">
                             <i class="material-icons">email</i>
-                        </div class="four-fifth">
+                        </div>
                         <div>
                             up [punkto] esperas [heliko] gmail [punkto] com
                         </div>
@@ -351,8 +383,13 @@
                     </ul>
                 </div>
             </div>
-            <div class="copy">
-                &copy; UP Esperas 2018
+            <div class="copy flex two">
+                <span>
+                    &copy; UP Esperas 2018
+                </span>
+                <span class="right-text">
+                    EN | EO | PH-TGL
+                </span>
             </div>
         </footer>
     </body>

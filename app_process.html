@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>UP Esperanto-Societo</title>
+        <title>App Process | UP Esperanto-Societo</title>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,10 +26,17 @@
                 position: absolute;
                 background-color: transparent;
                 box-shadow: 0 0;
+                padding: 2em 0;
             }
 
             nav.hero .brand {
                 color: white;
+            }
+
+            @media all and (max-width: 60em) {
+                nav.hero .menu {
+                    background-color: #146E05;
+                }
             }
 
             header.hero {
@@ -78,8 +85,13 @@
             }
 
             footer.main-footer .content {
-                background-color: #00CC5D;
+                background-color: #146E05;
+                color: white;
                 padding: 1em 15%;
+            }
+
+            footer.main-footer a:link {
+                color: #00ED6C;
             }
 
             footer.main-footer .copy {
@@ -110,6 +122,10 @@
                 text-align: center;
             }
 
+            .right-text {
+                text-align: right;
+            }
+
             .button.pseudo-nav {
                 background: none;
             }
@@ -134,23 +150,6 @@
                 <a class="pseudo-nav button" href="//biblioteko.up-esperas.org">Library</a>
             </div>
         </nav>
-
-        <!--
-        <nav id="main">
-            <a class="brand" href="#">
-                <img class="logo" alt="Logo" src="favicon.png">
-                UP Esperanto-Societo
-            </a>
-
-            <input id="bmenub" class="show" type="checkbox">
-            <label class="burger pseudo button" for="bmenub">&#8801;</label>
-
-            <div class="menu">
-                <a class="pseudo button" href="#">Ensaluti</a>
-                <a class="warning button" href="#">Aliĝi</a>
-            </div>
-        </nav>
-        -->
 
         <header class="hero">
             <h1 class="hero-title">Kresku</h1>
@@ -202,7 +201,7 @@
                         </div>
                         <p>
                             We are one of the few organizations that ensures that each member
-                            and applicant learn the language and gain a glimpse on the Esperanto
+                            and applicant learn the language and gain a glimpse of the Esperanto
                             community. We do this by holding language and cultural lessons.
                         </p>
                     </div>
@@ -230,18 +229,18 @@
                     </p>
                     <p>
                         La formularo estas nur por registritaj studentoj de
-                        la Universitato de Filipinoj. Bv. ne respondi se vi ne
-                        estas filipinanoj kaj studas tie.
+                        la Universitato de Filipinoj. Bv. ne respondi se vi nek
+                        estas filipinanoj nek studas tie.
                     </p>
                 </blockquote>
                 <p>
                     We are still open for <b>special orientations</b> until
-                    16 February 2019! Sign-up
+                    16 February 2019. Drop by our booth at the AS walk, or sign-up
                     <a href="//bit.ly/EsperasSignUp" target="_blank">here</a>!
                 </p>
                 <p>
                     For more information about the application process, please contact
-                    Jenny or Stalin at +63 998 249 1891).
+                    Jenny or Stalin at +63 998 249 1891.
                 </p>
             </section>
         </main>
@@ -265,7 +264,7 @@
                     <div class="flex two">
                         <div class="sixth">
                             <i class="material-icons">email</i>
-                        </div class="four-fifth">
+                        </div>
                         <div>
                             up [punkto] esperas [heliko] gmail [punkto] com
                         </div>
@@ -280,8 +279,13 @@
                     </ul>
                 </div>
             </div>
-            <div class="copy">
-                &copy; UP Esperas 2018
+            <div class="copy flex two">
+                <span>
+                    &copy; UP Esperas 2018
+                </span>
+                <span class="right-text">
+                    EN | EO | PH-TGL
+                </span>
             </div>
         </footer>
     </body>
