@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% if meta.description %}
+        <meta name="description" content="{{ meta.description|striptags }}" />
+        {% endif %}
+        {% if meta.robots %}
+        <meta name="robots" content="{{ meta.robots }}" />
+        {% endif %}
+
+        <link rel="stylesheet" href="https://unpkg.com/picnic">
+        <link rel="stylesheet" href="{{ theme_url }}/css/style.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <nav id="main-nav">
+            <a class="brand" href="/">
+                <img class="logo" alt="Logo" src="favicon.png">
+                La Filipina Espero
+            </a>
+
+            <input id="bmenub" class="show" type="checkbox">
+            <label class="burger pseudo button" for="bmenub">&#8801;</label>
+
+            <div class="menu">
+                {% for page in pages if page.title and not page.hidden %}
+                    {% set pageDepth = page.id|split('/')|length %}
+                    {% if (pageDepth == 2) and (page.id ends with "/index") or (pageDepth == 1) %}
+                        <a class="button {% if page.id == current_page.id %}selected-nav{% else %} pseudo-nav{% endif %}" href="{{ page.url }}">{{ page.title }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </nav>
+
+        <main>
+            {% block before_content %}
+            {% endblock %}
+
+            {{ content }}
+
+            {% block after_content %}
+            {% endblock %}
+        </main>
+
+        <footer class="main-footer">
+            <div class="content flex one two-600">
+                <div>
+                    <h2>Contact</h2>
+                    <div class="flex two">
+                        <div class="sixth">
+                            <i class="material-icons">pin_drop</i>
+                        </div>
+                        <div class="four-fifth">
+                            PH 228-A<br>
+                            University of the Philippines<br>
+                            Diliman, Quezon City<br>
+                            Philippines<br>
+                            1101
+                        </div>
+                    </div>
+                    <div class="flex two">
+                        <div class="sixth">
+                            <i class="material-icons">email</i>
+                        </div>
+                        <div>
+                            up [punkto] esperas [heliko] gmail [punkto] com
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>Links</h2>
+                    <ul class="no-bullets">
+                        <li><a href="https://www.facebook.com/UPEsperas/" target="_blank">Facebook</a></li>
+                        <li><a href="https://twitter.com/UPEsperas/" target="_blank">Twitter</a></li>
+                        <li><a href="/elsendoj/rss.xml">Podcast Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copy flex two">
+                <span>
+                    &copy; UP Esperas 2018
+                </span>
+                <span class="right-text">
+                    EN | EO | PH-TGL
+                </span>
+            </div>
+        </footer>
+    </body>
+</html>

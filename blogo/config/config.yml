@@ -1,0 +1,6 @@
+site_title: La Filipina Espero
+
+theme: default-espero
+date_format: %d %a %G, %I:%M %p %z
+pages_order_by: date
+pages_order: desc
