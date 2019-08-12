@@ -1,0 +1,51 @@
+{% embed "index.twig" %}
+    {% block before_content %}
+        <h1>Mabuhay!</h1>
+        <p>
+            Welcome to <i>La Filipina Espero</i>! The official blog
+            post of UP Esperanto-Societo.
+        </p>
+
+        <h2>Recent News</h2>
+        <div class="flex one three-1000">
+        {% set preview_pages = pages | sort_by("time") | reverse %}
+        {% set n_pages_shown = 0 %}
+
+        {% for page in preview_pages %}
+            {% if n_pages_shown < 8 and page.meta.template == "blog-entry" and not page.hidden and page.id != current_page.id %}
+                <div>
+                    <article class="card">
+                    {% if page.meta.thumburl %}
+                        <a href={{ page.url }}>
+                            <img alt="{{ page.title }}" src="{{ base_url }}/assets{{ page.meta.thumburl }}">
+                        </a>
+                    {% endif %}
+
+                        <header>
+                            <a href={{ page.url }}><h3>{{ page.title }}</h3></a>
+                        </header>
+
+                        {% if page.date %}
+                        <p>
+                            <i class="material-icons">update</i>
+                            {{ page.date }}
+                        </p>
+                        <hr>
+                        {% endif %}
+                        <p>
+                            <a class="button tag-button">{{ page.id | split("/")[0] }}</a>
+                        </p>
+
+                        <p>
+                            {{ page.id | content | striptags | slice(0, 120) }}
+                            [<a href="{{ page.url }}">Read More</a>]
+                        </p>
+                    </article>
+                </div>
+
+                {% set n_pages_shown = n_pages_shown + 1 %}
+            {% endif %}
+        {% endfor %}
+        </div>
+    {% endblock %}
+{% endembed %}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Members' Nook | UP Esperanto-Societo</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Official website of the University of the Philippines Esperanto-Societo">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <link rel="stylesheet" href="https://unpkg.com/picnic">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <style>
+            body {
+                font-family: 'Noto Sans', sans-serif;
+            }
+
+            .center-text {
+                text-align: center;
+            }
+
+            /* Navbar */
+            nav {
+                background-color: #679267;
+            }
+
+            nav a.brand {
+                color: white;
+            }
+
+            nav .menu a.button {
+                color: white;
+            }
+
+            /* Main content */
+            main {
+                margin: 0 15%;
+                margin-top: 6em;
+                border: 1px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="#" class="brand">
+                <img alt="logo" class="logo" src="favicon.png">
+                Members' Nook
+            </a>
+
+            <input id="burger-nav-cbx" type="checkbox" class="show">
+            <label for="burger-nav-cbx" class="burger pseudo button">&#8801;</label>
+
+            <div class="menu">
+                <a href="profile.php" class="pseudo button">Saluton, Carl!</a>
+                <a href="settings.php" class="pseudo button">Settings</a>
+                <a href="logout.php" class="pseudo button">Logout</a>
+            </div>
+        </nav>
+        <main id="main-content container">
+            <div id="main-profile-div" class="flex five">
+                <div class="avatar off-fifth">
+                    <img alt="Profile Picture" src="favicon.png" width="128">
+                </div>
+                <div class="two-fifth">
+                    <h3 class="name">Carl C. Dizon</h3>
+                    <span class="position">President</span>
+                    <span class="mem-date">Member since June 2018</span>
+                </div>
+            </div>
+
+
+            <input name="bday" type="date" value="1995-05-25" max="2011-12-31">
+            <input name="p_email" type="text" value="xxxxx3@up.edu.ph">
+            <input name="phone_num" type="text" value="+63 908 XXX XX40">
+        </main>
+        <script>
+        </script>
+    </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Filipino Esperanto Youth Congress 2020">
+
+		<title>Home | Philippine Esperanto Youth Congress 2020</title>
+
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		<link rel="stylesheet" href="style.css">
+
+	</head>
+
+	<body>
+		<nav class="z-depth-0">
+			<ul id="nav-mobile" class="right hide-on-med-and-down scrollspy">
+				<li><b>Home</b></li>
+				<li><a href="call_for_organizers.html">Call for Organizers</a></li>
+				<li><a href="#!">Register</a></li>
+			</ul>
+		</nav>
+
+		<header class="parallax-container hero valign-wrapper">
+			<div class="parallax">
+				<img alt="Cover Photo" src="img/qc_banner.jpg" width="1024">
+			</div>
+			<div class="container">
+				<h1 class="white-text">The First Philippine Esperanto Youth Congress</h1>
+				<h5 class="white-text">2020</h5>
+				<h5 class="white-text">Manila, Philippines</h5>
+			</div>
+			<a id="a-main-content" href="#main-content" class="material-icons hero-down-marker">expand_more</a>
+		</header>
+
+		<main id="main-content" class="container">
+			<section id="section-about" class="section scrollspy">
+				<h3>About</h3>
+				<p>
+					The <b>Philippine Esperanto Youth</b> (FEJ), in cooperation with the
+					<b>Esperanto Society of the University of the Philippines</b>
+					(UP Esperanto-Societo/UP Esperas) will be organizing the first ever
+					Philippine Esperanto Youth Conference (FJK), which will
+					take place in 2020 in Manila, Philippines.
+				</p>
+				<p>
+					This historic congress shall mark the culmination of the seven years of
+					effort of Esperanto advocates in the country and the forward step towards
+					the further growth and integration of the national Esperanto community,
+					and shall provide speakers, learners, and advocates coming from different
+					parts of the country the opportunity to interact, learn, and work together
+					in a series of social and educational activities.
+				</p>
+			</section>
+
+			<section id="section-call-for-organizers" class="scrollspy">
+				<h3>Call for Organizers</h3>
+				<p>
+					The current local organizing committee of FJK 2020 is in need of
+					individuals who wanted to greatly contribute to this hallmark event. Be one
+					of us by clicking below!
+				</p>
+
+				<div class="center-align">
+					<a href="call_for_organizers.html" class="btn btn-large green darken-4 waves-effect waves-light">How to Apply</a>
+				</div>
+			</section>
+
+			<section id="section-lkk" class="section scrollspy">
+				<h3>Local Organizing Committee</h3>
+				<div class="row">
+					<div class="col s12 m4 center-align">
+						<div><img class="responsive-img circle" alt="Albert Garrido" src="https://via.placeholder.com/100/12a84b/FFFFFF?text=AG"></div>
+						<span class="promo-header">Albert Garrido</span>
+						<p>
+							President, UP Esperanto-Societo<br>
+							Secretary-General, Philippine Esperanto Youth
+						</p>
+					</div>
+					<div class="col s12 m4 center-align">
+						<div><img class="responsive-img circle" alt="Carl Dizon" src="https://via.placeholder.com/100/12a84b/FFFFFF?text=CD"></div>
+						<span class="promo-header">Carl Dizon</span>
+						<p>
+							Director for Education and Research, UP Esperanto-Societo
+						</p>
+					</div>
+					<div class="col s12 m4 center-align">
+						<div><img class="center responsive-img circle" alt="Jubert Cabrezos" src="https://via.placeholder.com/100/12a84b/FFFFFF?text=JC"></div>
+						<span class="promo-header">Jubert Cabrezos</span>
+					</div>
+				</div>
+			</section>
+
+			<section id="section-orgs" class="section scrollspy">
+				<h3>Participating Organizations</h3>
+
+				<h4>Organizers</h4>
+				<div class="row">
+					<div class="col s12 m6 center-align">
+						<div><img alt="FEJ logo" src="img/logo_fej.png" width="100"></div>
+						<span class="promo-header">Philippine Esperanto Youth</span>
+					</div>
+					<div class="col s12 m6 center-align">
+						<div><img alt="UP Esperas logo" src="img/logo_esperas.png" width="100"></div>
+						<span class="promo-header">Esperanto Society of the University of the Philippines</span>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="page-footer yellow accent-2">
+			<div class="footer-copyright green darken-4">
+				<div class="container">
+					FEJ | UP Esperas
+				</div>
+			</div>
+		</footer>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				M.Parallax.init(document.querySelectorAll(".parallax"));
+				M.ScrollSpy.init(document.querySelectorAll(".scrollspy"), {throttle: 100, scrollOffset: 0});
+				M.FloatingActionButton.init(document.querySelectorAll(".fixed-action-btn"));
+			});
+
+			document.getElementById('a-main-content').addEventListener('click', e => {
+                e.preventDefault();
+
+                document.getElementById('main-content').scrollIntoView({behavior: 'smooth'});
+            });
+		</script>
+	</body>
+</html>

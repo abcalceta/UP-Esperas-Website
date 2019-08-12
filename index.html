@@ -144,8 +144,8 @@
             <label class="burger pseudo button" for="bmenub">&#8801;</label>
 
             <div class="menu">
-                <a class="pseudo-nav button" href="//biblioteko.up-esperas.org">Library</a>
-                <a class="warning button" href="app_process.html">Join</a>
+                <a class="pseudo-nav button" href="microsites/fjk2019/">FJK 2019</a>
+                <a class="pseudo-nav button" href="blogo/">Blog</a>
             </div>
         </nav>
 
@@ -154,10 +154,10 @@
             <p class="hero-subtitle">
                 Frolic in the bed of flowers of diversity and learn Esperanto today!
             </p>
-            <i class="material-icons hero-down-marker">expand_more</i>
+            <a id="a-main-content" href="#main-content" class="material-icons hero-down-marker">expand_more</a>
         </header>
 
-        <main>
+        <main id="main-content">
             <h2>Who are we?</h2>
             <section class="flex one two-1000">
                 <div>
@@ -358,7 +358,6 @@
                             <i class="material-icons">pin_drop</i>
                         </div>
                         <div class="four-fifth">
-                            PH 228-A<br>
                             University of the Philippines<br>
                             Diliman, Quezon City<br>
                             Philippines<br>
@@ -392,5 +391,13 @@
                 </span>
             </div>
         </footer>
+
+        <script>
+            document.getElementById('a-main-content').addEventListener('click', e => {
+                e.preventDefault();
+
+                document.getElementById('main-content').scrollIntoView({behavior: 'smooth'});
+            });
+        </script>
     </body>
 </html>

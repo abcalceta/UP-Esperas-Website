@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule api/v0/(.*)$ /users/ucl/UP-Esperas-Website/apps/nook/api/v0.php?req=$1 [QSA,NC,L]
+
+# POST /api/v0/login
+# GET /api/v0/logout
+# GET /api/v0/info/years/
+# GET /api/v0/info/years/:year
+# GET /api/v0/search/sn/:sn
+# GET /api/v0/search/year/:year/?keywords=:keywords
+# GET /api/v0/search/year/:year/pages?keywords=:keywords&pagenum=:pagenum&limit=:limit
+# POST /api/v0/disp/card?results=:results&yearinfo=:yearinfo
+</IfModule>

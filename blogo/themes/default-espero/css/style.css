@@ -1,0 +1,163 @@
+/** Page-wide styles **/
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+p {
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', Georgia, 'Times New Roman', Times, serif;
+}
+
+.right-text {
+    text-align: right;
+}
+
+audio {
+    width: 100%;
+}
+
+.tag-button {
+    font-size: .75em;
+    border-radius: 5em;
+    background-color: #00ED6C;
+}
+
+.thumb-card {
+    width: 15em;
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+ul.pagination {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+ul.pagination li {
+    margin: 0 0.125em;
+    padding: 0.25em 0.75em;
+    border-radius: 0.5em;
+}
+
+ul.pagination li a {
+    color: black;
+}
+
+ul.pagination li:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+ul.pagination li.disabled {
+    background-color: #E0E0E0;
+}
+
+ul.pagination li.active {
+    background-color: #00612C;
+}
+
+ul.pagination li.active:hover {
+    background-color: #00612C99;
+}
+
+ul.pagination li.active a {
+    color: white;
+}
+
+/** Main nav bar **/
+#main-nav {
+    position: absolute;
+    background-color: #00612C;
+    box-shadow: 0 0;
+    padding: 2em 0;
+}
+
+#main-nav .brand {
+    color: white;
+}
+
+#main-nav .button.pseudo-nav {
+    background: none;
+    color: #00ED6C;
+}
+
+#main-nav .button.selected-nav {
+    background-color: white;
+    color: black;
+}
+
+@media all and (max-width: 60em) {
+    #main-nav .menu {
+        background-color: #146E05;
+    }
+}
+
+/** Main content **/
+main {
+    margin: 0 20%;
+    margin-top: 5em;
+}
+
+main img {
+    width: 100%;
+}
+
+main .text-content > :first-child {
+    margin-top: 0;
+}
+
+main .text-content ul {
+    list-style-type: circle;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    list-style-position: inside;
+}
+
+main p {
+    font-size: 0.9em;
+}
+
+main h1 {
+    font-size: 3em;
+    line-height: 1.25em;
+    color: #00612c;
+}
+
+main h2 {
+    font-size: 2em;
+    color: #00612c;
+}
+
+/** Footer **/
+footer#main-footer .content {
+    background-color: #146E05;
+    color: white;
+    padding: 1em 15%;
+}
+
+footer#main-footer a:link {
+    color: #00ED6C;
+}
+
+footer#main-footer .copy {
+    background-color: #00612C;
+    color: white;
+    padding: 0.5em 15%;
+}
+
+ul.no-bullets {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+ul.no-bullets li {
+    margin: 0;
+}
