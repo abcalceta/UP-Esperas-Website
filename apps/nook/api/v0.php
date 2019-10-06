@@ -20,7 +20,7 @@ function parsePostCommand($reqPath) {
         }
         else {
             // For data testing only
-            // Replace woth script with MySQL access
+            // Replace with script with MySQL access
             if($_POST["uname"] == "dizon_cc" && $_POST["pass"] == "porkchop123") {
                 $arrayResp["response"] = 200;
                 $arrayResp["message"] = "Access granted";

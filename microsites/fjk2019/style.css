@@ -21,6 +21,14 @@ header.hero .hero-down-marker:hover {
     background-color: rgba(255, 255, 255, 0.05);
 }
 
+.material-icons-large {
+    font-size: 4.5em;
+    color: whitesmoke;
+    background: #1b5e20;
+    border-radius: 50%;
+    padding: 0.25em;
+}
+
 .parallax-container {
     height: 100vh;
 }

@@ -7,7 +7,7 @@ import unicodecsv as csv
 import json
 from datetime import datetime, date, time, timedelta
 
-this_sem_year = "1s1819"
+this_sem_year = "1920a"
 days_list = [u"dimanĉo", u"lundo", u"mardo", u"merkredo", u"ĵaŭdo", u"vendredo", u"sabato"]
 
 def csv_to_sched_obj(sched_path):
@@ -64,7 +64,7 @@ def save_unified_sched(scheds_tm):
 if __name__ == "__main__":
     all_scheds = [[[] for i in range(95)] for i in range(7)]
     all_scheds_tm = [[[] for i in range(7)] for i in range(95)]
-    schedfiles_list = get_schedule_files("apps", this_sem_year)
+    schedfiles_list = get_schedule_files("members", this_sem_year)
 
     for each_sched_path in schedfiles_list:
         csv_path_name = os.path.splitext(os.path.basename(each_sched_path))[0]

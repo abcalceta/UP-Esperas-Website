@@ -1,19 +1,16 @@
 <?php
+session_start();
+
 require_once 'vendor/autoload.php';
 
 $loader = new \Twig\Loader\FileSystemLoader("templates/");
 $twig = new \Twig\Environment($loader);
 
-/*
-if(isset($_GET['fwdlnk'])) {
-    echo $twig->render("index.twig", [
-        'has_fwd_link' => true,
-        'fwd_url' => $_GET['fwdlnk']
-    ]);
+if(!isset($_SESSION['username'])) {
+    header("Location: login.php?fwdlnk=index.php");
 }
-else{
+else {
     echo $twig->render("index.twig");
-}*/
-echo $twig->render("index.twig");
+}
 
 ?>

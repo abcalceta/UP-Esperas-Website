@@ -66,7 +66,7 @@
                 margin: 0.25em 0;
             }
 
-            #login-form input[type='text'].committed {
+            #login-form input[type='text'].committed, #login-form input[type='password'].committed {
                 border: 0;
             }
 
@@ -191,11 +191,23 @@
                 let submit_btn = document.querySelector("#login-form button");
 
                 if(hidden_uname_field === null) {
+                    if(uname_field.value.trim().length <= 0) {
+                        // No username entered
+                        // Check if username entered consists of whitespace only
+                        console.log("No username entered!");
+                        uname_field.classList.add("tooltip-right");
+                        uname_field.setAttribute("data-tooltip", "Please enter a username");
+                        return;
+                    }
+
                     // Username field exists - proceed to show password field
                     let hidden_uname_field = document.createElement("input");
                     hidden_uname_field.setAttribute("type", "hidden");
                     hidden_uname_field.setAttribute("name", "uname_hidden");
                     hidden_uname_field.value = uname_field.value;
+
+                    uname_field.classList.remove("tooltip-right");
+                    uname_field.removeAttribute("data-tooltip");
 
                     document.getElementById("login-form").append(hidden_uname_field);
                     uname_field.classList.add('committed');
@@ -206,12 +218,26 @@
                     setTimeout(() => {
                         submit_btn.innerHTML = "Login";
                         document.getElementById("pass-input-container").style.maxHeight = 100 + 'px';
+                        pass_field.focus();
                     }, 500);
                 }
                 else {
+                    if(pass_field.value.length <= 0) {
+                        // No password entered
+                        // Zero-length check only
+                        console.log("No password entered!");
+                        pass_field.classList.add("tooltip-right");
+                        pass_field.setAttribute("data-tooltip", "Please enter a password");
+                        return;
+                    }
+
                     // Password field exists - proceed to submit form
                     let hidden_uname_field = document.querySelector("#login-form input[name='uname_hidden']");
+                    pass_field.classList.add('committed');
                     submit_btn.innerHTML = "<div class=\"lds-dual-ring\"></div>";
+
+                    pass_field.classList.remove("tooltip-right");
+                    pass_field.removeAttribute("data-tooltip");
 
                     setTimeout(() => {
                         let login_form_data = new FormData(document.getElementById("login-form"));
@@ -235,6 +261,7 @@
                         .catch(res => {
                             console.error("Error: " + res);
                             submit_btn.innerHTML = "Login";
+                            pass_field.classList.remove('committed');
                         });
 
                     }, 500);
