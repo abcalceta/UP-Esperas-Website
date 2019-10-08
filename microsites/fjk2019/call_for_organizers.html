@@ -11,20 +11,28 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="style.css">
-
     </head>
     <body>
+        <!-- Navbar -->
         <nav class="z-depth-0">
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down scrollspy">
-                <li><a href="./">Home</a></li>
-                <li><b>Call for Organizers</b></li>
-                <li><a href="call_for_volunteers.html">Call for Volunteers</a></li>
+                <li><a class="waves-effect waves-light" href="./">Home</a></li>
+                <li><a class="yellow-text"><b>Call for Organizers</b></a></li>
+                <li><a class="waves-effect waves-light" href="call_for_volunteers.html">Call for Volunteers</a></li>
             </ul>
         </nav>
 
+        <ul class="sidenav" id="mobile-demo">
+            <li><a class="waves-effect waves-green" href="./">Home</a></li>
+            <li><a class="green-text text-darken-4"><b>Call for Organizers</b></a></li>
+            <li><a class="waves-effect waves-green" href="call_for_volunteers.html">Call for Volunteers</a></li>
+        </ul>
+
+        <!-- Hero -->
         <header class="parallax-container hero valign-wrapper">
             <div class="parallax">
-                <img alt="Cover Photo" src="img/banderitas_banner.jpg" width="1024">
+                <img alt="Cover Photo" src="img/flag_in_backpack.jpg" width="1024">
             </div>
             <div class="container">
                 <h1 class="white-text">Call for Organizers</h1>
@@ -35,6 +43,9 @@
 
         <main id="main-content" class="container">
             <h3><i>Saluton!</i></h3>
+            <p class="center-align">
+                <img class="responsive-img" alt="Call for Volunteers Poster" width="512" src="img/volunteer_call.png">
+            </p>
             <p>
                 We are honored to announce that finally, there is an
                 initiative to organize the <b>1st Philippine Esperanto Youth Congress</b> to be
@@ -49,7 +60,7 @@
                 In line with this, the conveners of the Congress would like to start the
                 preparations by launching an open call for individuals which shall become
                 members of the <b>local organizing committee (LKK)</b>, which shall consist of <b>seven (7) members</b>.
-                To this end, we are currently in need of <b>four (4) individuals</b> who shall take
+                To this end, we are currently in need of <b>three (3) individuals</b> who shall take
                 charge of each one of the following posts.
             </p>
 
@@ -139,11 +150,8 @@
             </ul>
 
             <p>
-                For those who are interested to apply, kindly completely fill-up the application form.
-            </p>
-            <p>
-                For those who are interested to become part of the local organizing committee
-                but have reservations (i.e. unsure whether they satisfy the qualifications
+                For those who are interested, kindly completely fill-up the application form.
+                For those who still have reservations (i.e. unsure whether they satisfy the qualifications
                 above, etc.), we strongly encourage you to apply nevertheless and we shall
                 exhaust all means to find agreeable solutions.
             </p>
@@ -162,7 +170,7 @@
         <footer class="page-footer yellow accent-2">
             <div class="footer-copyright green darken-4">
                 <div class="container">
-                    FEJ | UP Esperas
+                    First Philippine Esperanto Youth Congress
                 </div>
             </div>
         </footer>
@@ -173,6 +181,7 @@
 				M.Parallax.init(document.querySelectorAll(".parallax"));
 				M.ScrollSpy.init(document.querySelectorAll(".scrollspy"), {throttle: 100, scrollOffset: 0});
                 M.Collapsible.init(document.querySelectorAll(".collapsible"), {});
+                M.Sidenav.init(document.querySelector(".sidenav"));
 			});
 
             document.getElementById('a-main-content').addEventListener('click', e => {

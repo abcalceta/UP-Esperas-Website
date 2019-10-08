@@ -13,14 +13,23 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <!-- Navbar -->
         <nav class="z-depth-0">
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down scrollspy">
-                <li><a href="./">Home</a></li>
-                <li><a href="call_for_organizers.html">Call for Organizers</a></li>
-                <li><b>Call for Volunteers</b></li>
+                <li><a class="waves-effect waves-light" href="./">Home</a></li>
+                <li><a class="waves-effect waves-light" href="call_for_organizers.html">Call for Organizers</a></li>
+                <li><a class="yellow-text"><b>Call for Volunteers</b></a></li>
             </ul>
         </nav>
 
+        <ul class="sidenav" id="mobile-demo">
+            <li><a class="waves-effect waves-green" href="./">Home</a></li>
+            <li><a class="waves-effect waves-green" href="call_for_organizers.html">Call for Organizers</a></li>
+            <li><a class="green-text text-darken-4"><b>Call for Volunteers</b></a></li>
+        </ul>
+
+        <!-- Hero -->
         <header class="parallax-container hero valign-wrapper">
             <div class="parallax">
                 <img alt="Cover Photo" src="img/banderitas_banner.jpg" width="1024">
@@ -53,6 +62,22 @@
             </p>
 
             <h3>Why Volunteer?</h3>
+            <ul class="browser-default">
+                <li>
+                    Provide major contributions to the success of this event and leave a lasting legacy
+                    not only for the local and international Esperanto community, but also to the general
+                    advocacy for language rights, multiculturalism, and international solidarity which have
+                    proven to be beneficial for the Filipino people
+                </li>
+                <li>
+                    Free monthly Esperanto lessons to improve your language proficiency, directly from the
+                    country's most fluent Esperanto speakers
+                </li>
+                <li>
+                    Regular trainings to deepen your understanding of the Esperanto community and develop
+                    your organizational skills
+                </li>
+            </ul>
 
             <h3>Qualifications</h3>
             <p>
@@ -131,14 +156,7 @@
             <h3>Vacant Positions</h3>
             <p>
                 For those who are interested to apply, kindly completely fill-up the application form
-                on or before <s>June 23, 2019 (Sunday)</s> <b>August 31, 2019 (Saturday),
-                    11:59 PM GMT+8</b>.
-            </p>
-            <p>
-                For those who are interested to become part of the local organizing committee
-                but have reservations (i.e. unsure whether they satisfy the qualifications
-                above, etc.), we strongly encourage you to apply nevertheless and we shall
-                exhaust all means to find agreeable solutions.
+                as linked below.
             </p>
 
             <p class="center-align">
@@ -147,16 +165,15 @@
 
             <h3>Contact Us</h3>
             <p>
-                For inquiries, please contact Albert Garrido
-                (http://facebook.com/ASTGarrido, 09982491891) or send an email to
-                esperanto.philippines@gmail.com
+                For inquiries, please contact Albert Garrido at +63 998 249 1891 or send an email to
+                esperanto.philippines@gmail.com or peyc2020@gmail.com.
             </p>
         </main>
 
         <footer class="page-footer yellow accent-2">
             <div class="footer-copyright green darken-4">
                 <div class="container">
-                    FEJ | UP Esperas
+                    First Philippine Esperanto Youth Congress
                 </div>
             </div>
         </footer>
@@ -167,6 +184,7 @@
 				M.Parallax.init(document.querySelectorAll(".parallax"));
 				M.ScrollSpy.init(document.querySelectorAll(".scrollspy"), {throttle: 100, scrollOffset: 0});
                 M.Collapsible.init(document.querySelectorAll(".collapsible"), {});
+                M.Sidenav.init(document.querySelector(".sidenav"));
 			});
 
             document.getElementById('a-main-content').addEventListener('click', e => {
