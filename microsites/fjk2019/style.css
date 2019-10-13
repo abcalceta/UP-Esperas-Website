@@ -39,5 +39,13 @@ header.hero .hero-down-marker:hover {
 }
 
 footer .footer-copyright {
-    background-color: #12a84b;
+    background-color: #1b5e20;
+}
+
+footer .footer-main a:link {
+    color: #1b5e20;
+}
+
+footer .footer-main a:hover {
+    text-decoration: underline;
 }

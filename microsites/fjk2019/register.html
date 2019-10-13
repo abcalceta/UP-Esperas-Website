@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Filipino Esperanto Youth Congress 2020">
+
+		<title>Register | Philippine Esperanto Youth Congress 2020</title>
+
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		<link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main id="main-content" class="container">
+            <form method="post">
+                <h3>Baza Informo</h3>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="txt-full-name" type="text">
+                        <label for="txt-full-name">Plena Nomo</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input class="datepicker" id="txt-bday" type="text">
+                        <label for="txt-bday">Naskiĝdato</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <select id="select-countries-list">
+                            <option value="Elektu landon" disabled selected>Elektu landon</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input class="validate" id="txt-email" type="email">
+                        <label for="txt-email">Retpoŝtadreso</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="input-field col s6">
+                        <input class="filled-in" type="checkbox">
+                        <span>Mi volas aperi en la listo de aliĝintoj</span>
+                    </div>
+                </div>
+
+                <h3>Loĝejo</h3>
+                <div class="row">
+                    <label class="input-field col s6">
+                        <input class="filled-in" type="checkbox">
+                        <span>Mi volas loĝi en loĝejo provizita de la kongreso</span>
+                    </div>
+                </div>
+
+                <h3>Pago</h3>
+                <p>
+                    Bv. antaŭpagi.
+                </p>
+                <p>
+                    <label>
+                        <input class="with-gap" name="payment-method" type="radio" />
+                        <span>Bankkonto de FEJ</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input class="with-gap" name="payment-method" type="radio" />
+                        <span>Western Union</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input class="with-gap" name="payment-method" type="radio" />
+                        <span>Kreditkarto per PayPal</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input class="with-gap" name="payment-method" type="radio" />
+                        <span>Alie</span>
+                        <span class="input-field inline"><input type="text"></span>
+                    </label>
+                </p>
+            </form>
+        </main>
+    </body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<script>
+            function getCountriesList() {
+                let restUrl = "https://restcountries.eu/rest/v2/all?fields=name;alpha2Code"
+                return fetch(restUrl)
+                    .then(res => res.json())
+                    .catch(console.error)
+            }
+
+            function addCountriesListToDropdown(countriesArr) {
+                let selectDom = document.querySelector("#select-countries-list")
+
+                countriesArr.forEach(v => {
+                    let optionDom = document.createElement("option")
+                    optionDom.setAttribute("value", v.alpha2Code)
+                    optionDom.innerHTML = v.name
+
+                    selectDom.appendChild(optionDom)
+                });
+            }
+
+            let dateToday = new Date(Date.now())
+
+			document.addEventListener('DOMContentLoaded', () => {
+                // Materialize inits
+				M.Parallax.init(document.querySelectorAll(".parallax"));
+                M.Datepicker.init(document.querySelectorAll(".datepicker"), {
+                    yearRange: [1950, dateToday.getFullYear()],
+                    maxDate: dateToday,
+                    format: "yyyy-mm-dd",
+                    autoClose: true,
+                    i18n: {
+                        cancel: "Nuligi",
+                        clear: "Forigi",
+                        done: "Preta",
+                        months: [
+                            "Januaro", "Februaro", "Marto", "Aprilo",
+                            "Majo", "Junio",  "Julio", "Aŭgusto",
+                            "Septembro", "Oktobro", "Novembro", "Decembro"
+                        ],
+                        monthsShort: [
+                            "Jan", "Feb", "Mar", "Apr", "Maj", "Jun",
+                            "Jul", "Aŭg", "Sep", "Okt", "Nov", "Dec"
+                        ],
+                        weekdaysShort: [
+                            "dim", "lun", "mar", "mer",
+                            "ĵaŭ", "ven", "sab"
+                        ],
+                        weekdaysAbbrev: ["di", "lu", "ma", "me", "ĵa", "ve", "sa"]
+                    }
+                })
+				//M.ScrollSpy.init(document.querySelectorAll(".scrollspy"), {throttle: 100, scrollOffset: 0})
+                //M.Collapsible.init(document.querySelectorAll(".collapsible"), {})
+                //M.Sidenav.init(document.querySelector(".sidenav"))
+
+                // Add stuff
+                getCountriesList()
+                    .then(res => addCountriesListToDropdown(res))
+                    .then(() => {
+                        M.FormSelect.init(document.querySelectorAll("select"))
+                    })
+			})
+
+            /*
+            document.getElementById('a-main-content').addEventListener('click', e => {
+                e.preventDefault()
+
+                document.getElementById('main-content').scrollIntoView({behavior: 'smooth'})
+            })
+            */
+		</script>
+</html>
