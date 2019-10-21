@@ -15,16 +15,9 @@
     <body>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="https://unpkg.com/mithril/mithril.js"></script>
+        <script src="templates/hero.js"></script>
         <script>
         let root = document.body
-
-        let heroTpl = (imgAlt, imgSrcPath, containerElm) => m("header", {class: "parallax-container hero valign-wrapper"}, [
-            m("div", {class: "parallax"}, [
-                m("img", {alt: imgAlt, src: imgSrcPath, width: "1024"})
-            ]),
-            m("div", {class: "container"}, containerElm),
-            m("a", {id: "a-main-content", href: "#main-content", class: "material-icons hero-down-marker"}, "expand_more")
-        ])
 
         function initDomScripts() {
             M.Parallax.init(document.querySelectorAll(".parallax"))
@@ -38,43 +31,128 @@
             })
         }
 
-        function initPages() {
-            let IndexPage = {
-                oninit: () => {
-                    fetch("templates/index.jsx").then(t => t.text())
-                },
-                view: function() {
-                    return m.render(root, [
-                        m.trust(resArray[0]),
-                        heroTpl("Cover Photo", "img/banderitas_home_banner.jpg", [
-                            m("h1", {class: "white-text"}, "The First Philippine Esperanto Youth Congress"),
-                            m("h5", {class: "white-text"}, "April 23-26, 2020"),
-                            m("h5", {class: "white-text"}, "Manila, Philippines")
-                        ]),
-                        m("main", {id: "main-content", class:"container"}, [
-                            m.trust(resArray[1])
-                        ]),
-                        m("footer", {class: "page-footer yellow accent-2"}, [
-                            m.trust(resArray[2])
-                        ])
-                    ])
-                },
-                oncreate: function() {
-                    initDomScripts()
-                }
+        function BasePage(heroData, mainData) {
+            this.componentHolder = {}
+            this.data.hero = {
+                altText: "",
+                bgImg: "",
+                headText: "",
+                subTexts: []
+            }
+            this.data.main = {
+                path: ""
             }
 
-            m.route(root, "/", {
-                "/": IndexPage
-            })
+            this.oninit = function() {
+                m.request({
+                    method: "GET",
+                    responseType: "text",
+                    url: "templates/footer.jsx"
+                })
+                .then(t => {
+                    this.componentHolder.footer = t
+                })
+            }
+
+            this.oncreate = function() {
+                initDomScripts()
+            }
+
+            this.getMithrilObj = function() {
+                return {
+                    componentHolder: this.componentHolder,
+                    oninit: this.oninit,
+                    oncreate: this.oncreate,
+                    view: this.view
+                }
+            }
         }
 
-        Promise.all([
-            fetch("templates/navbar.jsx").then(t => t.text()),
-            fetch("templates/footer.jsx").then(t => t.text())
-        ])
-        .then(resArray => {
-            initPages(resArray)
+        let IndexPage = {
+            componentHolder: {},
+            oninit: () => {
+                m.request({
+                    method: "GET",
+                    responseType: "text",
+                    url: "templates/index.jsx"
+                })
+                .then(t => {
+                    IndexPage.componentHolder.main = t
+                })
+
+                m.request({
+                    method: "GET",
+                    responseType: "text",
+                    url: "templates/footer.jsx"
+                })
+                .then(t => {
+                    IndexPage.componentHolder.footer = t
+                })
+
+                IndexPage.componentHolder.hero = heroTpl("Cover Photo", "img/banderitas_home_banner.jpg", [
+                    m("h1", {class: "white-text"}, "The First Philippine Esperanto Youth Congress"),
+                    m("h5", {class: "white-text"}, "April 23-26, 2020"),
+                    m("h5", {class: "white-text"}, "Manila, Philippines")
+                ])
+            },
+            oncreate: initDomScripts,
+            view: function() {
+                return [
+                    IndexPage.componentHolder.hero,
+                    m("main", {id: "main-content", class:"container"},
+                        m.trust(IndexPage.componentHolder.main)
+                    ),
+                    m("footer", {class: "page-footer yellow accent-2"},
+                        m.trust(IndexPage.componentHolder.footer)
+                    )
+                ]
+            }
+        }
+
+        let DonatePage = {
+            componentHolder: {},
+            oninit: () => {
+                m.request({
+                    method: "GET",
+                    responseType: "text",
+                    url: "templates/donate.jsx"
+                })
+                .then(t => {
+                    DonatePage.componentHolder.main = t
+                })
+
+                m.request({
+                    method: "GET",
+                    responseType: "text",
+                    url: "templates/footer.jsx"
+                })
+                .then(t => {
+                    console.log(this)
+                    DonatePage.componentHolder.footer = t
+                })
+
+                DonatePage.componentHolder.hero = heroTpl("Cover Photo", "img/eo_flags_banner.jpg", [
+                    m("h1", {class: "white-text"}, "Donations"),
+                    m("h5", {class: "white-text"}, "The First Philippine Esperanto Youth Congress")
+                ])
+            },
+            oncreate: initDomScripts,
+            view: function() {
+                return [
+                    DonatePage.componentHolder.hero,
+                    m("main", {id: "main-content", class:"container"}, [
+                        m.trust(DonatePage.componentHolder.main)
+                    ]),
+                    m("footer", {class: "page-footer yellow accent-2"},
+                        m.trust(DonatePage.componentHolder.footer)
+                    )
+                ]
+            }
+        }
+
+        m.route(root, "/", {
+            "/": IndexPage,
+            "/donate": DonatePage
         })
         </script>
     </body>
