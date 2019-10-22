@@ -1,29 +1,18 @@
 import m from 'mithril';
-import Materialize from 'materialize-css';
+
+import {DomScripts} from '../util/dom';
 
 import htmlFooter from '../templates/footer.html';
 import {NavBarView} from './NavBarView';
 import {HeroView} from './HeroView';
 
 export class BasePage {
-    constructor(heroData) {
+    constructor(title, heroData) {
         this.componentHolder = {}
         this.data = {
+            title: title,
             hero: heroData
         }
-    }
-
-    initDomScripts() {
-        Materialize.Parallax.init(document.querySelectorAll(".parallax"))
-        Materialize.Sidenav.init(document.querySelectorAll(".sidenav"))
-        Materialize.Dropdown.init(document.querySelectorAll(".dropdown-trigger"), {hover: true})
-        Materialize.Collapsible.init(document.querySelectorAll(".collapsible"), {});
-
-        document.getElementById('a-main-content').addEventListener('click', e => {
-            e.preventDefault()
-
-            document.getElementById('main-content').scrollIntoView({behavior: 'smooth'})
-        })
     }
 
     oninit() {
@@ -33,7 +22,9 @@ export class BasePage {
     }
 
     oncreate() {
-        this.initDomScripts();
+        document.title = this.data.title + " | Philippine Esperanto Youth Congress 2020";
+        DomScripts.animate("header img", "fadeIn");
+        DomScripts.initDomScripts();
     }
 
     view() {

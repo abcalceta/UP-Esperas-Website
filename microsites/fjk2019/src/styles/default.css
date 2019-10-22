@@ -29,6 +29,10 @@ header.hero .hero-down-marker:hover {
     padding: 0.25em;
 }
 
+.socicon {
+    font-size: 1.5em;
+}
+
 .parallax-container {
     height: 100vh;
 }

@@ -7,82 +7,80 @@ export class NavBarView {
         let sideNavList = [];
         let dropDownList = [];
 
-        console.log(navJson);
+        for(let navElms of navJson) {
+            let mainNavProps = {}
+            let sideNavProps = {}
 
-        navJson.forEach(elm => {
-            let mainMenuProps = {};
-            let sideNavProps = {};
+            let ulId = "ul-nav-" + navElms.title.toLowerCase().replace(/\s+/g, "-");
 
-            if(elm.link !== undefined && elm.link !== null) {
-                mainMenuProps.href = elm.link;
+            // For linked item
+            if(navElms.link !== undefined && navElms.link !== null) {
+                mainMenuList.push(
+                    m("li", [
+                        m("a", {href: navElms.link}, [
+                            navElms.title
+                        ])
+                    ])
+                )
 
-                sideNavProps.href = elm.link;
-                sideNavProps.class = "sidenav-close waves-effect waves-green";
+                sideNavList.push(
+                    m("li", [
+                        m("a", {class: "waves-effect waves-green", href: navElms.link}, [
+                            navElms.title
+                        ])
+                    ])
+                )
             }
+            else if(navElms.sublinks !== undefined && navElms.sublinks !== null) {
+                // For item with sublinks
+                let subNavList = [];
 
-            if(elm.sublinks !== undefined && elm.sublinks !== null) {
-                let submenuList = [];
-                let subNavMenuList = [];
-                let ulId = "ul-nav-" + elm.title.toLowerCase().replace(/\s+/g, "-");
-
-                mainMenuProps.href = "#";
-                mainMenuProps.class = "dropdown-trigger";
-                mainMenuProps["data-target"] = ulId;
-
-                // One-layer sublinks only
-                elm.sublinks.forEach(elm2 => {
-                    let subMainMenuProps = {};
-                    let subNavMenuProps = {};
-
-                    if(elm2.link !== undefined && elm2.link !== null) {
-                        subMainMenuProps.href = elm2.link;
-                        subMainMenuProps.class = "green-text waves-effect waves-light";
-
-                        subNavMenuProps.href = elm2.link;
-                        subNavMenuProps.class = "sidenav-close waves-effect waves-green";
-                    }
-
-                    submenuList.push(
+                for(let subElms of navElms.sublinks) {
+                    subNavList.push(
                         m("li", [
-                            m("a", subMainMenuProps, elm2.title)
+                            m("a", {class: "black-text waves-effect waves-green", href: subElms.link}, [
+                                subElms.title
+                            ])
                         ])
-                    );
+                    )
+                }
 
-                    subNavMenuList.push(
-                        m("li", [
-                            m("a", subNavMenuProps, elm2.title)
+                // Create collapsible navBar item
+                mainMenuList.push([
+                    m("li", [
+                        m("a", {class: "dropdown-trigger", href: "#", "data-target": ulId}, [
+                            navElms.title,
+                            m("i", {class: "material-icons right"}, [
+                                "arrow_drop_down"
+                            ])
                         ])
-                    );
-                });
+                    ])
+                ])
 
                 dropDownList.push([
-                    m("ul", {id: ulId, class: "dropdown-content"}, submenuList)
+                    m("ul", {id: ulId, class: "dropdown-content"}, subNavList)
                 ])
 
-                sideNavList.push([
-                    m("ul", subNavMenuList)
-                ])
-
-                /*
-                elm.title = [
-                    elm.title,
-                    m("i", {class: "material-icons right"}, "arrow_drop_down")
-                ];
-                */
+                // Create collapsible sideNav item
+                sideNavList.push(
+                    m("li", {class: "no-padding"}, [
+                        m("ul", {class: "collapsible collapsible-accordion"}, [
+                            m("li", [
+                                m("a", {class: "collapsible-header"}, [
+                                    navElms.title,
+                                    m("i", {class: "right material-icons"}, [
+                                        "arrow_drop_down"
+                                    ])
+                                ]),
+                                m("div", {class: "collapsible-body"}, [
+                                    m("ul", subNavList)
+                                ])
+                            ])
+                        ])
+                    ])
+                )
             }
-
-            mainMenuList.push(
-                m("li", [
-                    m("a", mainMenuProps, elm.title)
-                ])
-            );
-
-            sideNavList.push(
-                m("li", [
-                    m("a", sideNavProps, elm.title)
-                ])
-            );
-        });
+        }
 
         let mainNavBar = m("nav", {class: "z-depth-0"}, [
             m("a", {"href": "#", "data-target": "mobile-demo", "class": "sidenav-trigger"}, [
