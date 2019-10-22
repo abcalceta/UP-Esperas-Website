@@ -1,0 +1,72 @@
+<form method="post">
+    <h3>Baza Informo</h3>
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="txt-full-name" type="text">
+            <label for="txt-full-name">Plena Nomo</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <input class="datepicker" id="txt-bday" type="text">
+            <label for="txt-bday">Naskiĝdato</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <select id="select-countries-list">
+                <option value="Elektu landon" disabled selected>Elektu landon</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <input class="validate" id="txt-email" type="email">
+            <label for="txt-email">Retpoŝtadreso</label>
+        </div>
+    </div>
+    <div class="row">
+        <label class="input-field col s6">
+            <input class="filled-in" type="checkbox">
+            <span>Mi volas aperi en la listo de aliĝintoj</span>
+        </div>
+    </div>
+
+    <h3>Loĝejo</h3>
+    <div class="row">
+        <label class="input-field col s6">
+            <input class="filled-in" type="checkbox">
+            <span>Mi volas loĝi en loĝejo provizita de la kongreso</span>
+        </div>
+    </div>
+
+    <h3>Pago</h3>
+    <p>
+        Bv. antaŭpagi.
+    </p>
+    <p>
+        <label>
+            <input class="with-gap" name="payment-method" type="radio" />
+            <span>Bankkonto de FEJ</span>
+        </label>
+    </p>
+    <p>
+        <label>
+            <input class="with-gap" name="payment-method" type="radio" />
+            <span>Western Union</span>
+        </label>
+    </p>
+    <p>
+        <label>
+            <input class="with-gap" name="payment-method" type="radio" />
+            <span>Kreditkarto per PayPal</span>
+        </label>
+    </p>
+    <p>
+        <label>
+            <input class="with-gap" name="payment-method" type="radio" />
+            <span>Alie</span>
+            <span class="input-field inline"><input type="text"></span>
+        </label>
+    </p>
+</form>

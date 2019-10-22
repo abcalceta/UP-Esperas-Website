@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Home",
+        "link": "#!"
+    },
+    {
+        "title": "Participate",
+        "sublinks": [
+            {
+                "title": "Call for Organizers",
+                "link": "#!/lkk-join"
+            },
+            {
+                "title": "Call for Volunteers",
+                "link": "#!/volunteer"
+            }
+        ]
+    },
+    {
+        "title": "Donate",
+        "link": "#!/donate"
+    }
+]
