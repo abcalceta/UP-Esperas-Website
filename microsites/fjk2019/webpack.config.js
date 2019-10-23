@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -15,11 +16,11 @@ module.exports = {
     output: {
         filename: 'index.js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: './'
+        //publicPath: './'
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/templates/index.html'
+            template: 'src/templates/index.html'
         }),
         new CopyWebpackPlugin([
             {
@@ -31,8 +32,13 @@ module.exports = {
                 to: 'styles'
             }
         ]),
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+            chunkFilename: '[id].css'
+        }),
         new webpack.ProvidePlugin({
-            $: 'jquery'
+            $: 'jquery',
+            _: 'lodash'
         })
     ],
     module: {
@@ -40,7 +46,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    'style-loader',
+                    MiniCssExtractPlugin.loader,
                     'css-loader'
                 ]
             },
@@ -61,7 +67,7 @@ module.exports = {
                 test: /\.html$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: 'html-loader'
+                    loader: 'html-loader?interpolate'
                 }
             }
         ]

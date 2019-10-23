@@ -3,6 +3,8 @@ import {DomScripts} from '../util/dom';
 
 import {BasePage} from './BasePage';
 import htmlMain from '../templates/volunteer.html';
+import heroPath from '../img/hero/banderitas_volcorp_banner.jpg';
+import '../styles/default.css';
 
 export class VolunteersPage extends BasePage {
     constructor() {
@@ -10,7 +12,7 @@ export class VolunteersPage extends BasePage {
             "Call for Volunteers",
             {
                 imgAltText: "Cover Photo",
-                imgBgPath: "/img/hero/banderitas_volcorp_banner.jpg",
+                imgBgPath: heroPath,
                 headText: "Call for Volunteers",
                 subTexts: [
                     "The First Philippine Esperanto Youth Congress"

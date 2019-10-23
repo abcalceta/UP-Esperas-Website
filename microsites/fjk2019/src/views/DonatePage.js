@@ -2,6 +2,8 @@ import {DomScripts} from '../util/dom';
 
 import {BasePage} from './BasePage';
 import htmlMain from '../templates/donate.html';
+import heroPath from '../img/hero/eo_flags_banner.jpg';
+import '../styles/default.css';
 
 export class DonatePage extends BasePage {
     constructor() {
@@ -9,7 +11,7 @@ export class DonatePage extends BasePage {
             "Donate",
             {
                 imgAltText: "Cover Photo",
-                imgBgPath: "/img/hero/eo_flags_banner.jpg",
+                imgBgPath: heroPath,
                 headText: "Donations",
                 subTexts: [
                     "The First Philippine Esperanto Youth Congress"

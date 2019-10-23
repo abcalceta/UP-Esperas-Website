@@ -3,6 +3,8 @@ import {DomScripts} from '../util/dom';
 
 import {BasePage} from './BasePage';
 import htmlMain from '../templates/main.html';
+import heroPath from '../img/hero/banderitas_home_banner.jpg';
+import '../styles/default.css';
 
 export class IndexPage extends BasePage {
     constructor() {
@@ -10,7 +12,7 @@ export class IndexPage extends BasePage {
             "Home",
             {
                 imgAltText: "Cover Photo",
-                imgBgPath: "/img/hero/banderitas_home_banner.jpg",
+                imgBgPath: heroPath,
                 headText: "The First Philippine Esperanto Youth Congress",
                 subTexts: [
                     "April 23-26, 2020",
