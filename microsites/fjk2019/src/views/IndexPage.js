@@ -10,7 +10,7 @@ export class IndexPage extends BasePage {
             "Home",
             {
                 imgAltText: "Cover Photo",
-                imgBgPath: "/img/banderitas_home_banner.jpg",
+                imgBgPath: "/img/hero/banderitas_home_banner.jpg",
                 headText: "The First Philippine Esperanto Youth Congress",
                 subTexts: [
                     "April 23-26, 2020",
@@ -24,9 +24,9 @@ export class IndexPage extends BasePage {
 
     oncreate() {
         DomScripts.animate("#section-lkk .responsive-img", "fadeInLeft");
-        DomScripts.animate("#section-lkk h5", "fadeInRight slow", true);
+        DomScripts.animate("#section-lkk h5", "fadeInRight", true);
 
-        DomScripts.animate("#section-how-to-help .card", "zoomIn");
+        DomScripts.animate("#section-how-to-help .card", "zoomIn", true);
         super.oncreate();
     }
 }

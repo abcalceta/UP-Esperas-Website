@@ -8,14 +8,14 @@ module.exports = {
     entry: './src/index.js',
     devtool: 'eval-source-map',
     devServer: {
-        //contentBase: './dist',
+        contentBase: path.resolve(__dirname, 'src'),
         //compress: true,
         port: '6161'
     },
     output: {
         filename: 'index.js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '/'
+        publicPath: './'
     },
     plugins: [
         new HtmlWebpackPlugin({

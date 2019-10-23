@@ -10,7 +10,7 @@ export class LkkJoinPage extends BasePage {
             "Call for Organizers",
             {
                 imgAltText: "Cover Photo",
-                imgBgPath: "/img/flag_in_backpack.jpg",
+                imgBgPath: "/img/hero/flag_in_backpack.jpg",
                 headText: "Call for Organizers",
                 subTexts: [
                     "The First Philippine Esperanto Youth Congress"
@@ -25,6 +25,7 @@ export class LkkJoinPage extends BasePage {
     oncreate() {
         DomScripts.animate("#section-intro .responsive-img", "zoomIn");
         DomScripts.animate(".animate-row-img", "fadeInUp slow");
+        DomScripts.animate("#section-vacant .collapsible > li", "zoomIn fast")
 
         super.oncreate();
     }

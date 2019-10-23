@@ -9,7 +9,7 @@ export class DonatePage extends BasePage {
             "Donate",
             {
                 imgAltText: "Cover Photo",
-                imgBgPath: "/img/eo_flags_banner.jpg",
+                imgBgPath: "/img/hero/eo_flags_banner.jpg",
                 headText: "Donations",
                 subTexts: [
                     "The First Philippine Esperanto Youth Congress"
@@ -22,7 +22,7 @@ export class DonatePage extends BasePage {
 
     oncreate() {
         DomScripts.animate("#section-donation-options .card", "zoomIn");
-        
+
         super.oncreate();
     }
 }

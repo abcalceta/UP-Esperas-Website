@@ -10,7 +10,7 @@ export class VolunteersPage extends BasePage {
             "Call for Volunteers",
             {
                 imgAltText: "Cover Photo",
-                imgBgPath: "/img/banderitas_volcorp_banner.jpg",
+                imgBgPath: "/img/hero/banderitas_volcorp_banner.jpg",
                 headText: "Call for Volunteers",
                 subTexts: [
                     "The First Philippine Esperanto Youth Congress"
