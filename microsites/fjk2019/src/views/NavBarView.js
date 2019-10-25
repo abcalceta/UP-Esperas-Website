@@ -2,15 +2,12 @@ import m from 'mithril';
 import navJson from '../navlinks.json';
 
 export class NavBarView {
-    view(vnode) {
+    view() {
         let mainMenuList = [];
         let sideNavList = [];
         let dropDownList = [];
 
         for(let navElms of navJson) {
-            let mainNavProps = {}
-            let sideNavProps = {}
-
             let ulId = "ul-nav-" + navElms.title.toLowerCase().replace(/\s+/g, "-");
 
             // For linked item

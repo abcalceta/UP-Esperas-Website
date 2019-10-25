@@ -1,0 +1,13 @@
+.datepicker-date-display {
+    background-color: #232300;
+
+}
+
+.datepicker-table td.is-today {
+    color: green;
+    font-weight: bold;
+}
+
+.datepicker-cancel, .datepicker-done {
+    color: green;
+}

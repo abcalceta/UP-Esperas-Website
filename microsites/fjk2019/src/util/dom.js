@@ -50,6 +50,12 @@ function initDomScripts() {
     Materialize.ScrollSpy.init(document.querySelectorAll('.scrollspy'));
     Materialize.Dropdown.init(document.querySelectorAll(".dropdown-trigger"), {hover: true});
     Materialize.Collapsible.init(document.querySelectorAll(".collapsible"), {});
+    Materialize.FormSelect.init(document.querySelectorAll("select"));
+    Materialize.Datepicker.init(document.querySelectorAll(".datepicker"), {
+        autoClose: true,
+        format: 'yyyy-mm-dd',
+        yearRange: [1900, 2019]
+    });
 
     document.getElementById('a-main-content').addEventListener('click', e => {
         e.preventDefault();

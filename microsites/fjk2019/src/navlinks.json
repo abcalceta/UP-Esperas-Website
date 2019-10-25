@@ -4,6 +4,10 @@
         "link": "#!"
     },
     {
+        "title": "Register",
+        "link": "#!/register"
+    },
+    {
         "title": "Participate",
         "sublinks": [
             {

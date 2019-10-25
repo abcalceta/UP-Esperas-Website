@@ -2,18 +2,19 @@ import m from 'mithril';
 import {DomScripts} from '../util/dom';
 
 import {BasePage} from './BasePage';
-import htmlMain from '../templates/volunteer.html';
+import htmlMain from '../templates/register.html';
 import heroPath from '../img/hero/banderitas_volcorp_banner.jpg';
 import '../styles/default.css';
+import '../styles/datepicker.css';
 
-export class VolunteersPage extends BasePage {
+export class RegisterPage extends BasePage {
     constructor() {
         super(
-            "Call for Volunteers",
+            "Registration",
             {
                 imgAltText: "Cover Photo",
                 imgBgPath: heroPath,
-                headText: "Call for Volunteers",
+                headText: "Registration",
                 subTexts: [
                     "The First Philippine Esperanto Youth Congress"
                 ]
@@ -24,10 +25,21 @@ export class VolunteersPage extends BasePage {
         this.componentHolder.main = htmlMain;
     }
 
-    oncreate() {
-        DomScripts.animate("#section-intro .responsive-img", "zoomIn");
-        DomScripts.animate(".animate-row-img .col", "zoomIn");
+    oninit() {
+        m.request({
+            method: 'GET',
+            url: 'https://restcountries.eu/rest/v2/all?fields=name;alpha3Code'
+        })
+        .then((t) => {
+            return t.map((eachCountry) => {
+                eachCountry[0]
+            });
+        });
 
+        super.oninit();
+    }
+
+    oncreate() {
         super.oncreate();
     }
 }
