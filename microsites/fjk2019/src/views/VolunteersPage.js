@@ -15,7 +15,7 @@ export class VolunteersPage extends BasePage {
                 imgBgPath: heroPath,
                 headText: "Call for Volunteers",
                 subTexts: [
-                    "The First Philippine Esperanto Youth Congress"
+                    "First Philippine Esperanto Youth Congress"
                 ]
             }
         )

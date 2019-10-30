@@ -8,21 +8,21 @@ export class NavBarView {
         let dropDownList = [];
 
         for(let navElms of navJson) {
-            let ulId = "ul-nav-" + navElms.title.toLowerCase().replace(/\s+/g, "-");
+            let ulId = 'ul-nav-' + navElms.title.toLowerCase().replace(/\s+/g, '-');
 
             // For linked item
             if(navElms.link !== undefined && navElms.link !== null) {
                 mainMenuList.push(
-                    m("li", [
-                        m("a", {href: navElms.link}, [
+                    m('li', {class: 'no-padding'}, [
+                        m('a', {class: 'no-padding', href: navElms.link}, [
                             navElms.title
                         ])
                     ])
                 )
 
                 sideNavList.push(
-                    m("li", [
-                        m("a", {class: "waves-effect waves-green", href: navElms.link}, [
+                    m('li', [
+                        m('a', {class: 'sidenav-close waves-effect waves-green', href: navElms.link}, [
                             navElms.title
                         ])
                     ])
@@ -34,8 +34,8 @@ export class NavBarView {
 
                 for(let subElms of navElms.sublinks) {
                     subNavList.push(
-                        m("li", [
-                            m("a", {class: "black-text waves-effect waves-green", href: subElms.link}, [
+                        m('li', [
+                            m('a', {class: 'sidenav-close black-text waves-effect waves-green', href: subElms.link}, [
                                 subElms.title
                             ])
                         ])
@@ -44,49 +44,50 @@ export class NavBarView {
 
                 // Create collapsible navBar item
                 mainMenuList.push([
-                    m("li", [
-                        m("a", {class: "dropdown-trigger", href: "#", "data-target": ulId}, [
+                    m('li', [
+                        m('a', {class: 'dropdown-trigger', href: '#', 'data-target': ulId}, [
                             navElms.title,
-                            m("i", {class: "material-icons right"}, [
-                                "arrow_drop_down"
+                            m('i', {class: 'material-icons right'}, [
+                                'arrow_drop_down'
                             ])
                         ])
                     ])
                 ])
 
                 dropDownList.push([
-                    m("ul", {id: ulId, class: "dropdown-content"}, subNavList)
+                    m('ul', {id: ulId, class: 'dropdown-content'}, subNavList)
                 ])
 
                 // Create collapsible sideNav item
                 sideNavList.push(
-                    m("li", {class: "no-padding"}, [
-                        m("ul", {class: "collapsible collapsible-accordion"}, [
-                            m("li", [
-                                m("a", {class: "collapsible-header"}, [
+                    m('li', {class: 'no-padding'}, [
+                        m('ul', {class: 'collapsible collapsible-accordion'}, [
+                            m('li', [
+                                m('a', {class: 'collapsible-header'}, [
                                     navElms.title,
-                                    m("i", {class: "right material-icons"}, [
-                                        "arrow_drop_down"
+                                    m('i', {class: 'right material-icons'}, [
+                                        'arrow_drop_down'
                                     ])
                                 ]),
-                                m("div", {class: "collapsible-body"}, [
-                                    m("ul", subNavList)
+                                m('div', {class: 'collapsible-body'}, [
+                                    m('ul', subNavList)
                                 ])
-                            ])
+                            ]),
+                            m('li')
                         ])
                     ])
                 )
             }
         }
 
-        let mainNavBar = m("nav", {class: "z-depth-0"}, [
-            m("a", {"href": "#", "data-target": "mobile-demo", "class": "sidenav-trigger"}, [
-                m("i", {class: "material-icons"}, "menu")
+        let mainNavBar = m('nav', {class: 'z-depth-0'}, [
+            m('a', {href: '#', 'data-target': 'mobile-demo', class: 'sidenav-trigger'}, [
+                m('i', {class: 'material-icons'}, 'menu')
             ]),
-            m("ul", {id: "nav-mobile", class: "right hide-on-med-and-down scrollspy"}, mainMenuList)
+            m('ul', {id: 'nav-mobile', class: 'right hide-on-med-and-down scrollspy'}, mainMenuList)
         ]);
 
-        let sideNav = m("ul", {class: "sidenav", id: "mobile-demo"}, sideNavList);
+        let sideNav = m('ul', {class: 'sidenav', id: 'mobile-demo'}, sideNavList);
 
         return [
             mainNavBar,

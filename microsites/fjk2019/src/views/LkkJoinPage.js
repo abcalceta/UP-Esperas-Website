@@ -15,7 +15,7 @@ export class LkkJoinPage extends BasePage {
                 imgBgPath: heroPath,
                 headText: "Call for Organizers",
                 subTexts: [
-                    "The First Philippine Esperanto Youth Congress"
+                    "First Philippine Esperanto Youth Congress"
                 ]
             }
         );

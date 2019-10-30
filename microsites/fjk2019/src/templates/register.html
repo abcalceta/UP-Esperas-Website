@@ -18,13 +18,6 @@
     </div>
     <div class="row">
         <div class="input-field col s6">
-            <select id="select-countries-list">
-                <option value="Elektu landon" disabled selected>Choose a country</option>
-            </select>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s6">
             <input class="validate" id="txt-email" type="email">
             <label for="txt-email">E-mail Address</label>
         </div>
@@ -33,6 +26,47 @@
         <label class="input-field col s6">
             <input class="filled-in" type="checkbox">
             <span>I want my full name written in the list of participants</span>
+        </div>
+    </div>
+
+    <h3>Registration Details</h3>
+    <div class="row">
+        <div class="input-field col s6">
+            <p>I want to register as</p>
+            <p>
+                <label>
+                    <input class="with-gap" name="reg-broad-category" type="radio">
+                    <span>Normal Participant</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input class="with-gap" name="reg-broad-category" type="radio">
+                    <span>Moral Participant</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input class="with-gap" name="reg-broad-category" type="radio">
+                    <span>Congress Patron</span>
+                </label>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <select id="select-countries-list">
+                <option value="Elektu landon" disabled selected>Nationality</option>
+            </select>
+        </div>
+        <div class="input-field col s6">
+            <select id="select-category-list">
+                <option value="Elektu landon" disabled selected>Category</option>
+                <option value="JHS">High School</option>
+                <option value="SHS">Senior High School</option>
+                <option value="UCS">Undergraduate Student</option>
+                <option value="PRO">Professional/Employed</option>
+            </select>
         </div>
     </div>
 
@@ -46,12 +80,31 @@
 
     <h3>Payment</h3>
     <p>
-        Bv. antaŭpagi.
+        <table>
+            <tr>
+                <th></th>
+                <th>Early Bird</th>
+                <th>Regular</th>
+                <th>Late</th>
+            </tr>
+            <tr>
+                <td>Start Day</td>
+                <td>04 November, 2020</td>
+                <td>01 Jan, 2020</td>
+                <td>01 March, 2020</td>
+            </tr>
+            <tr>
+                <td>End Day</td>
+                <td>31 December, 2019</td>
+                <td>29 Feb, 2020</td>
+                <td>14 March, 2020</td>
+            </tr>
+        </table>
     </p>
     <p>
         <label>
             <input class="with-gap" name="payment-method" type="radio" />
-            <span>Bankkonto de FEJ</span>
+            <span>Deposit via Bank Account</span>
         </label>
     </p>
     <p>
@@ -63,14 +116,33 @@
     <p>
         <label>
             <input class="with-gap" name="payment-method" type="radio" />
-            <span>Kreditkarto per PayPal</span>
+            <span>Credit Card via PayPal</span>
         </label>
     </p>
     <p>
         <label>
             <input class="with-gap" name="payment-method" type="radio" />
-            <span>Alie</span>
-            <span class="input-field inline"><input type="text"></span>
+            <span>UEA Account</span>
+        </label>
+    </p>
+
+    <h3>Certification</h3>
+    <p>
+        <label>
+            <input class="filled-in" type="checkbox">
+            <span>I certify that all information provided is accurate and can be easily verified using physical documents</span>
+        </label>
+    </p>
+    <p>
+        <label>
+            <input class="filled-in" type="checkbox">
+            <span>I have read the privacy policy regarding my registration with the congress</span>
+        </label>
+    </p>
+    <p>
+        <label>
+            <input class="filled-in" type="checkbox">
+            <span>I would like to receive frequent information on the congress (such as status updates and newsletters)</span>
         </label>
     </p>
 </form>

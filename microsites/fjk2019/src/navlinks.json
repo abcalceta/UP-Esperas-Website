@@ -4,11 +4,41 @@
         "link": "#!"
     },
     {
-        "title": "Register",
-        "link": "#!/register"
+        "title": "About",
+        "sublinks": [
+            {
+                "title": "What is Esperanto",
+                "link": "#!/about/esperanto"
+            },
+            {
+                "title": "The Philippine Esperanto Youth",
+                "link": "#!/about/fej"
+            },
+            {
+                "title": "About the Congress",
+                "link": "#!/about/fjk"
+            },
+            {
+                "title": "Logo",
+                "link": "#!/about/logo"
+            },
+            {
+                "title": "Organizing Committee",
+                "link": "#!/about/lkk"
+            }
+        ]
     },
     {
         "title": "Participate",
+        "sublinks": [
+            {
+                "title": "Register",
+                "link": "#!/register"
+            }
+        ]
+    },
+    {
+        "title": "Volunteer",
         "sublinks": [
             {
                 "title": "Call for Organizers",

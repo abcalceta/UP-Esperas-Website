@@ -13,10 +13,12 @@ export class IndexPage extends BasePage {
             {
                 imgAltText: "Cover Photo",
                 imgBgPath: heroPath,
-                headText: "The First Philippine Esperanto Youth Congress",
+                headText: "First Philippine Esperanto Youth Congress",
                 subTexts: [
                     "April 23-26, 2020",
-                    "Manila, Philippines"
+                    "University of the Philippines",
+                    "Diliman, Quezon City",
+                    "Philippines"
                 ]
             }
         );
@@ -25,9 +27,6 @@ export class IndexPage extends BasePage {
     }
 
     oncreate() {
-        DomScripts.animate("#section-lkk .responsive-img", "fadeInLeft");
-        DomScripts.animate("#section-lkk h5", "fadeInRight", true);
-
         DomScripts.animate("#section-how-to-help .card", "zoomIn", true);
         super.oncreate();
     }

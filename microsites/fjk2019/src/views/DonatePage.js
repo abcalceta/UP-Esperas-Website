@@ -14,7 +14,7 @@ export class DonatePage extends BasePage {
                 imgBgPath: heroPath,
                 headText: "Donations",
                 subTexts: [
-                    "The First Philippine Esperanto Youth Congress"
+                    "First Philippine Esperanto Youth Congress"
                 ]
             }
         );
