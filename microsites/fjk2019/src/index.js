@@ -11,6 +11,7 @@ import {AboutFjkPage} from './views/about/AboutFjk';
 import {AboutLkkPage} from './views/about/AboutLkk';
 import {AboutLogoPage} from './views/about/AboutLogo';
 import {AboutFejPage} from './views/about/AboutFej';
+import {PrivacyPage} from './views/about/PrivacyPage';
 
 let root = document.body;
 
@@ -27,4 +28,5 @@ m.route(root, '/', {
     '/about/lkk': AboutLkkPage,
     '/about/logo': AboutLogoPage,
     '/about/fej': AboutFejPage,
+    '/about/privacy': PrivacyPage,
 });
