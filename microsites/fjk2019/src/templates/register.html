@@ -1,58 +1,96 @@
+<div id="div-steps" class="steps-container hide"></div>
+
 <form method="post">
-    <section class="section">
+    <section id="section-guidelines" class="section">
+        <h3>Registration Guidelines</h3>
+        <p>
+            Welcome to the First Philippine Esperanto Youth Congress! We would like to thank you for your interest in this event. Before proceeding with the registration, please read the following guidelines.
+        </p>
+
+        <h4>Who can join?</h4>
+        <p>
+            Participation is open to any person of any age, Philippine or foreign national, who has at least a basic command of Esperanto and is interested to learn more of the language and its community and culture, participate in the activities of the congress, and actively interact with other participants.
+        </p>
+
+        <h4>Registration Fee</h4>
+        <p>
+            The registration fee for the congress depends on three main factors: the individual's age at the time of registration, the individual's country of origin, and the period in which registration and payment are made. Individuals who register early can avail of discounted fees. There is also a separate category for individuals who wish to financially support the Congress, and separate fees for foreign participants.
+        </p>
+        <p>
+            The fee includes the participant's kit and access to all programs (unless otherwise indicated in the congress booklet). It <em>does not</em> include lodging, other meals, the excursion, and insurances.
+        </p>
+        <p>
+            The registration fee is strictly <em>non-transferable</em> and <em>non-refundable</em>, regardless of whether the participant fails to attend the Congress through their own volition or due to any other cause, or if the Congress is cancelled or postponed for any reason.
+        </p>
+
+        <h4>Are you ready?</h4>
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">Cookie Notice</span>
+                <p>
+                    By clicking 'Start Registration', you agree to the storing of cookies on your device to save your partially-accomplished registration details. These cookies will be stored specifically for this purpose and data within it will not be sent to our servers until you submit the form.
+                </p>
+            </div>
+            <div class="card-action">
+                <a id="a-start-reg" class="green-text text-darken-3 waves-effect" href="">Start Registration</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-basic" class="section hide">
         <h3>Basic Information</h3>
         <div class="row">
             <div class="input-field col s6 l4">
-                <input id="txt-last-name" class="validate" type="text" required>
+                <input id="txt-last-name" name="txt-last-name" class="validate" type="text" required>
                 <label for="txt-last-name">Last Name</label>
                 <span class="helper-text" data-error="Please enter your last name" type="text"></span>
             </div>
             <div class="input-field col s6 l4">
-                <input id="txt-first-name" class="validate" type="text" required>
+                <input id="txt-first-name" name="txt-first-name" class="validate" type="text" required>
                 <label for="txt-first-name">First Name</label>
                 <span class="helper-text" data-error="Please enter your first name" type="text"></span>
             </div>
             <div class="input-field col s12 l4">
-                <input id="txt-middle-name" type="text">
+                <input id="txt-middle-name" name="txt-middle-name" type="text">
                 <label for="txt-middle-name">Middle Name</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12 l4">
-                <input id="txt-nickname" type="text">
+                <input id="txt-nickname" name="txt-nickname" type="text">
                 <label for="txt-nickname">Nickname</label>
             </div>
             <div class="input-field col s6 l2">
-                <input class="datepicker" id="txt-bday" type="text">
+                <input id="txt-bday" name="txt-bday" class="datepicker" type="text">
                 <label for="txt-bday">Birthday</label>
             </div>
             <div class="input-field col s6 l2">
-                <select id="select-sex-list">
+                <select id="select-sex-list" name="select-sex-list">
                     <option value="Dummy" disabled selected>Sex</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                 </select>
             </div>
             <div class="input-field col s12 l4">
-                <select id="select-countries-list">
+                <select id="select-countries-list" name="select-countries-list">
                     <option value="Dummy" disabled selected>Country of Origin</option>
                 </select>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12 m6">
-                <input id="txt-email" class="validate" type="email" required>
+                <input id="txt-email" class="validate" name="txt-email" type="email" required>
                 <label for="txt-email">E-mail Address</label>
                 <span class="helper-text" data-error="Please enter a valid email address" type="text"></span>
             </div>
             <div class="input-field col s12 m6">
-                <input id="txt-sns" type="text">
+                <input id="txt-sns" name="txt-sns" type="text">
                 <label for="txt-sns">Social Media Username (Facebook, etc.)</label>
             </div>
         </div>
     </section>
 
-    <section class="section">
+    <section id="section-reg" class="section hide">
         <h3>Registration Details</h3>
         <a class="waves-effect waves-light btn green darken-3 modal-trigger" href="#div-modal-ph-rates">View Rates</a>
         <a class="waves-effect waves-light btn green darken-3 modal-trigger" href="#div-modal-foreign-rates">View Rates</a>
@@ -204,7 +242,7 @@
         </div>
     </section>
 
-    <section class="section">
+    <section id="section-lodging" class="section hide">
         <h3>Lodging</h3>
         <p class="card-panel red lighten-2">
             More information on lodging options will be released very soon. The information entered here will be used for surveying purposes.
@@ -212,53 +250,53 @@
 
         <div class="row">
             <label class="input-field col s12 m6">
-                <input class="filled-in" type="checkbox">
+                <input class="filled-in" name="cbx-lodging-interest" type="checkbox">
                 <span>I am interested in reserving a room in the partner hotels of the congress</span>
             </label>
             <label class="input-field col s12 m6">
-                <input class="filled-in" type="checkbox">
+                <input class="filled-in" name="cbx-lodging-overstay" type="checkbox">
                 <span>I need to reserve beyond the congress dates</span>
             </label>
         </div>
     </section>
 
-    <section class="section">
+    <section id="section-excursion" class="section hide">
         <h3>Excursion</h3>
         <p class="card-panel red lighten-2">
             More information on the excursion will be released very soon. The information entered here will be used for surveying purposes.
         </p>
         <div class="row">
             <label class="input-field col s6">
-                <input class="filled-in" type="checkbox">
+                <input class="filled-in" name="cbx-excursion-interest" type="checkbox">
                 <span>I am interested in joining the excursion</span>
             </label>
         </div>
     </section>
 
-    <section class="section">
+    <section id="section-food" class="section hide">
         <h3>Food</h3>
         <p>
             I have the following dietary restrictions
         </p>
         <div class="row">
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" type="checkbox">
+                <input class="filled-in" name="cbx-food-pref-veget" type="checkbox">
                 <span>Vegetarian</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" type="checkbox">
+                <input class="filled-in" name="cbx-food-pref-vegan" type="checkbox">
                 <span>Vegan</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" type="checkbox">
+                <input class="filled-in" name="cbx-food-pref-halal" type="checkbox">
                 <span>Halal</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" type="checkbox">
+                <input class="filled-in" name="cbx-food-pref-kosher" type="checkbox">
                 <span>Kosher</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" type="checkbox">
+                <input class="filled-in" name="cbx-food-pref-other" type="checkbox">
                 <span>Other</span>
             </label>
         </div>
@@ -268,27 +306,27 @@
         </p>
         <div class="row">
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" type="checkbox">
+                <input class="filled-in" name="cbx-food-allerg-nuts" type="checkbox">
                 <span>Nuts</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" type="checkbox">
+                <input class="filled-in" name="cbx-food-allerg-seafood" type="checkbox">
                 <span>Seafood</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" type="checkbox">
+                <input class="filled-in" name="cbx-food-allerg-wheat" type="checkbox">
                 <span>Gluten (Wheat)</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" type="checkbox">
+                <input class="filled-in" name="cbx-food-allerg-milk" type="checkbox">
                 <span>Milk</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" type="checkbox">
+                <input class="filled-in" name="cbx-food-allerg-spicy" type="checkbox">
                 <span>Spicy</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" type="checkbox">
+                <input class="filled-in" name="cbx-food-allerg-other" type="checkbox">
                 <span>Other</span>
             </label>
         </div>
@@ -308,68 +346,64 @@
         </div>
     </section>
 
-    <section class="section">
-        <h3>Congress Photo</h3>
+    <section id="section-others" class="section hide">
+        <h4>Congress Photo</h4>
         <p class="card-panel red">
             More information about this will be out soon!
         </p>
 
         <p>
             <label>
-                <input class="filled-in" type="checkbox">
+                <input class="filled-in" name="cbx-others-photo" type="checkbox">
                 <span>I would like to avail of the official printed congress photo</span>
             </label>
         </p>
-    </section>
 
-    <section class="section">
-        <h3>Invitation Letter</h3>
+        <h4>Invitation Letter</h4>
         <p>
             All participants will receive a digital copy of their invitation letters in their respective emails. However, in the case that you need documentation for various purposes, you may request a printed invitation letter from us.
         </p>
         <p>
             <label>
-                <input class="filled-in" type="checkbox">
+                <input class="filled-in" name="cbx-others-invitletter" type="checkbox">
                 <span>I would like to have a printed invitation letter sent through mail</span>
             </label>
         </p>
-    </section>
 
-    <section class="section">
-        <h3>Others</h3>
+        <h4>Others</h4>
         <p>
             <label>
-                <input class="filled-in" type="checkbox">
+                <input class="filled-in" name="cbx-others-name-include" type="checkbox">
                 <span>I want my full name written in the list of participants</span>
             </div>
         </p>
         <p>
             <label>
-                <input class="filled-in" type="checkbox">
+                <input class="filled-in" name="cbx-others-contrib" type="checkbox">
                 <span>I want to contribute to the congress program by any means</span>
             </label>
         </p>
         <p>
             <label>
-                <input class="filled-in" type="checkbox">
+                <input class="filled-in" name="cbx-others-volcorp" type="checkbox">
                 <span>I am willing to be a part of the Congress Volunteer Corps</span>
             </label>
         </p>
         <p>
             <label>
-                <input class="filled-in" type="checkbox">
+                <input class="filled-in" name="cbx-others-cert" type="checkbox">
                 <span>I need a printed certificate of attendance</span>
             </label>
         </p>
         <p>
             <label>
-                <input class="filled-in" type="checkbox">
+                <input class="filled-in" name="cbx-others-nobooklet" type="checkbox">
                 <span>I do not wish to receive a printed congress booklet</span>
             </label>
         </p>
     </section>
 
-    <section class="section">
+    <section id="section-payment" class="section hide">
         <h3>Donations</h3>
 
         <div class="row">
@@ -392,9 +426,7 @@
                 PHP for <b>Association Fund</b> <a class="tooltipped" data-position="top" data-tooltip="to finance the activities and initiatives of the Philippine Esperanto Youth">[?]</a>
             </div>
         </div>
-    </section>
 
-    <section id="section-payment"  class="section">
         <h3>Payment</h3>
         <div id="div-panel-reg-date-notice" class="card-panel green darken-3"></div>
 
@@ -444,6 +476,32 @@
             </div>
         </div>
 
+        <h3>Certification</h3>
+        <p>
+            <label>
+                <input class="filled-in" type="checkbox" required>
+                <span>I certify that all information provided is accurate and can be easily verified using physical documents</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input class="filled-in" type="checkbox" required>
+                <span>I have read the privacy policy regarding my registration with the congress</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input class="filled-in" type="checkbox" required>
+                <span>I consent to give rights to the organizing committee to include me in its documentation of the congress</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input class="filled-in" type="checkbox" required>
+                <span>I would like to receive frequent information on the congress (such as status updates and newsletters)</span>
+            </label>
+        </p>
+
         <!-- Modal for registration dates -->
         <div id="div-modal-reg-dates" class="modal modal-fixed-footer">
             <div class="modal-content">
@@ -485,31 +543,8 @@
         </div>
     </section>
 
-    <section class="section">
-        <h3>Certification</h3>
-        <p>
-            <label>
-                <input class="filled-in" type="checkbox" required>
-                <span>I certify that all information provided is accurate and can be easily verified using physical documents</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="filled-in" type="checkbox" required>
-                <span>I have read the privacy policy regarding my registration with the congress</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="filled-in" type="checkbox" required>
-                <span>I consent to give rights to the organizing committee to include me in its documentation of the congress</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="filled-in" type="checkbox" required>
-                <span>I would like to receive frequent information on the congress (such as status updates and newsletters)</span>
-            </label>
-        </p>
+    <section id="section-nav-buttons" class="section hide center-align">
+        <button id="btn-prev" class="btn btn-large disabled waves-effect waves-light green darken-3"><i class="material-icons left">navigate_before</i>Back</a>
+        <button id="btn-next" class="btn btn-large waves-effect waves-light green darken-3">Next<i class="material-icons right">navigate_next</i></a>
     </section>
 </form>

@@ -18,7 +18,7 @@ export class NavBarView {
                             navElms.title
                         ])
                     ])
-                )
+                );
 
                 sideNavList.push(
                     m('li', [
@@ -26,7 +26,7 @@ export class NavBarView {
                             navElms.title
                         ])
                     ])
-                )
+                );
             }
             else if(navElms.sublinks !== undefined && navElms.sublinks !== null) {
                 // For item with sublinks
@@ -39,7 +39,7 @@ export class NavBarView {
                                 subElms.title
                             ])
                         ])
-                    )
+                    );
                 }
 
                 // Create collapsible navBar item

@@ -1,0 +1,79 @@
+.steps-container {
+    margin: 0 auto;
+    padding: 2em 0;
+}
+
+.steps-bar {
+    list-style: none;
+}
+
+.steps-bar li {
+    position: relative;
+    width: 14%;
+    float: left;
+    text-align: center;
+    color: #90a4ae;
+}
+
+.steps-bar li .steps-icon {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto 5px auto;
+    line-height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.25em;
+    border: 2px solid #90a4ae;
+    background-color: white;
+
+    transition: all 800ms ease;
+}
+
+.steps-bar li::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: -50%;
+    width: 100%;
+    height: 2px;
+    background-color: #90a4ae;
+    z-index: -1;
+
+    transition: all 600ms ease;
+}
+
+.steps-bar li:first-child::after {
+    content: none;
+}
+
+.steps-bar li.active {
+    color: #2e7d32;
+}
+
+.steps-bar li.active .steps-icon {
+    color: white;
+    border-color: transparent;
+    background-color: #2e7d32;
+}
+
+.steps-bar li.active + li::after {
+    background-color: #2e7d32;
+}
+
+/**
+ * Materializecss breakpoints
+ * 601px // small and up
+ * 993px // med and up
+ * 1201px // large and up
+ */
+@media only screen and (max-width: 600px) {
+    .steps-container {
+        overflow-x: auto;
+    }
+
+    .steps-bar {
+        min-width: 250%;
+    }
+}
