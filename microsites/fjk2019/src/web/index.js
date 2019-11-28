@@ -1,9 +1,11 @@
 import m from 'mithril';
+
 import {IndexPage} from './views/IndexPage';
 import {LkkJoinPage} from './views/LkkJoinPage';
 import {VolunteersPage} from './views/VolunteersPage';
 import {DonatePage} from './views/DonatePage';
 import {RegisterPage} from './views/RegisterPage';
+import {NotFoundPage} from './views/NotFoundPage';
 
 // About page
 import {AboutEsperantoPage} from './views/about/AboutEsperanto';
@@ -29,4 +31,7 @@ m.route(root, '/', {
     '/about/logo': AboutLogoPage,
     '/about/fej': AboutFejPage,
     '/about/privacy': PrivacyPage,
+
+    // Catch-all
+    '/:any...': NotFoundPage
 });

@@ -40,9 +40,9 @@ const web = {
     target: 'web',
     devtool: 'eval-source-map',
     devServer: {
-        contentBase: path.resolve(__dirname, 'src'),
-        //compress: true,
-        port: '6161'
+        contentBase: path.resolve(__dirname, 'src/web'),
+        compress: true,
+        port: 6161
     },
     entry: './src/web/index.js',
     output: {
@@ -52,7 +52,7 @@ const web = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'src/web/templates/index.html'
+            template: './src/web/templates/index.html'
         }),
         new MiniCssExtractPlugin({
             filename: '[name].css',
@@ -73,6 +73,7 @@ const web = {
                 use: {
                     loader: 'file-loader',
                     options: {
+                        name: '[name]_[contenthash].[ext]',
                         outputPath: 'img'
                     }
                 }

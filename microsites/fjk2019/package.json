@@ -2,10 +2,9 @@
   "name": "fjk2019",
   "version": "0.0.1",
   "description": "",
-  "main": "src/index.js",
   "scripts": {
-    "start-web": "webpack-dev-server",
-    "start-api": "nodemon ./src/api/index.js",
+    "start:web": "webpack-dev-server",
+    "start:api": "nodemon ./src/api/index.js",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,11 +28,13 @@
     "webpack-dev-server": "^3.8.2"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "googleapis": "^39.2.0",
+    "googleapis": "39",
     "jquery": "^3.4.1",
     "js-cookie": "^2.2.1",
     "materialize-css": "^1.0.0-rc.2",
-    "mithril": "^2.0.4"
+    "mithril": "^2.0.4",
+    "uuid": "^3.3.3"
   }
 }

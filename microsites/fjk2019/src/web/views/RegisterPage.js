@@ -176,7 +176,7 @@ export class RegisterPage extends BasePage {
             let fromSectionId = `#${this.pageStatesList[this.currentPageState][2]}`;
 
             if(this.currentPageState >= this.pageStatesList.length - 1) {
-                console.log('Form submitted!');
+                this.submitForm();
                 return;
             }
 
@@ -195,8 +195,6 @@ export class RegisterPage extends BasePage {
             this.swapFormSections(this.currentPageState, this.currentPageState + 1);
             this.scrollStepTimeline(this.currentPageState + 1);
             m.render(document.querySelector('#div-steps'), this.getStepsDom(this.currentPageState + 1));
-
-            this.setCookiesFromSubForm(fromSectionId);
 
             this.currentPageState += 1;
         });
@@ -219,17 +217,19 @@ export class RegisterPage extends BasePage {
         }
     }
 
-    setCookiesFromSubForm(sectionId) {
-        let inputList = document.querySelector(sectionId).querySelectorAll('input');
+    async submitForm() {
+        console.log('Form submitted!');
 
-        for(let eachInputElm of inputList) {
-            if(eachInputElm.name == null) {
-                continue;
-            }
+        try {
+            const res = await fetch('//localhost:6002/api/register', {
+                method: 'POST',
+                body: new URLSearchParams(new FormData(document.forms[0])),
+            });
 
-            console.log(`set cookie reg-${eachInputElm.name} to ${eachInputElm.value}`);
-
-            //Cookies.set(`reg-${eachInputElm.name}`, eachInputElm.value);
+            console.log(res);
+        }
+        catch(err) {
+            console.error(`Error on form submit: ${err}`);
         }
     }
 

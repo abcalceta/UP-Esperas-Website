@@ -1,10 +1,12 @@
 dependencies:
+  dotenv: 8.2.0
   express: 4.17.1
   googleapis: 39.2.0
   jquery: 3.4.1
   js-cookie: 2.2.1
   materialize-css: 1.0.0
   mithril: 2.0.4
+  uuid: 3.3.3
 devDependencies:
   '@babel/core': 7.7.4
   '@babel/node': 7.7.4_@babel+core@7.7.4
@@ -42,7 +44,7 @@ packages:
       debug: 4.1.1
       json5: 2.1.1
       lodash: 4.17.15
-      resolve: 1.13.0
+      resolve: 1.13.1
       semver: 5.7.1
       source-map: 0.5.7
     dev: true
@@ -226,7 +228,7 @@ packages:
       '@babel/core': 7.7.4
       '@babel/register': 7.7.4_@babel+core@7.7.4
       commander: 2.20.3
-      core-js: 3.4.2
+      core-js: 3.4.5
       lodash: 4.17.15
       node-environment-flags: 1.0.6
       regenerator-runtime: 0.13.3
@@ -717,7 +719,7 @@ packages:
       '@babel/plugin-transform-unicode-regex': 7.7.4_@babel+core@7.7.4
       '@babel/types': 7.7.4
       browserslist: 4.7.3
-      core-js-compat: 3.4.2
+      core-js-compat: 3.4.5
       invariant: 2.2.4
       js-levenshtein: 1.1.6
       semver: 5.7.1
@@ -945,13 +947,13 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-Il80Qs2WjYlJIBNzNkK6KYqlVMTbZLXgHx2oT0pU/fjRHyEp+PEfEPY0R3WCwAGVOtauxh1hOxNgIf5bv7dQpA==
-  /acorn/6.3.0:
+  /acorn/6.4.0:
     dev: true
     engines:
       node: '>=0.4.0'
     hasBin: true
     resolution:
-      integrity: sha512-/czfa8BwS88b9gWQVhc8eknunSA2DoJpJyTQkhheIf5E48u1N0R4q/YxxsAeqRrmK9TQ/uYfgLDfZo91UlANIA==
+      integrity: sha512-gac8OEcQ2Li1dxIEWGZzsp2BitJxwkwcOm0zHAJLcPJaVvm58FRnk6RkuLRpU1EujipU2ZFODv2P9DLMfnV8mw==
   /agent-base/4.3.0:
     dependencies:
       es6-promisify: 5.0.0
@@ -1751,18 +1753,18 @@ packages:
       webpack: ^4.0.0
     resolution:
       integrity: sha512-7N68eIoQTyudAuxkfPT7HzGoQ+TsmArN/I3HFwG+lVE3FNzqvZKIiaxtYh4o3BIznioxUvx9j26+Rtsc9htQUQ==
-  /core-js-compat/3.4.2:
+  /core-js-compat/3.4.5:
     dependencies:
       browserslist: 4.7.3
       semver: 6.3.0
     dev: true
     resolution:
-      integrity: sha512-W0Aj+LM3EAxxjD0Kp2o4be8UlnxIZHNupBv2znqrheR4aY2nOn91794k/xoSp+SxqqriiZpTsSwBtZr60cbkwQ==
-  /core-js/3.4.2:
+      integrity: sha512-rYVvzvKJDKoefdAC+q6VP63vp5hMmeVONCi9pVUbU1qRrtVrmAk/nPhnRg+i+XFd775m1hpG2Yd5RY3X45ccuw==
+  /core-js/3.4.5:
     dev: true
     requiresBuild: true
     resolution:
-      integrity: sha512-bUTfqFWtNKWp73oNIfRkqwYZJeNT3lstzZcAkhhiuvDraRSgOH1/+F9ZklbpR4zpdKuo4cpXN8tKP7s61yjX+g==
+      integrity: sha512-OuvejWH6vIaUo59Ndlh89purNm4DCIy/v3QoYlcGnn+PkYI8BhNHfCuAESrWX+ZPfq9JccVJ+XXgOMy77PJexg==
   /core-util-is/1.0.2:
     dev: true
     resolution:
@@ -1858,7 +1860,7 @@ packages:
       postcss-modules-scope: 2.1.0
       postcss-modules-values: 3.0.0
       postcss-value-parser: 4.0.2
-      schema-utils: 2.5.0
+      schema-utils: 2.6.0
       webpack: 4.41.2_webpack@4.41.2
     dev: true
     engines:
@@ -2106,6 +2108,12 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-tUMXrxlExSW6U2EXiiKGSBVdYgtV8qlHL+C10TsW4PURY/ic+eaysnSkwB4kA/mBlCyy/IKDJ+Lc3wbWeaXtuQ==
+  /dotenv/8.2.0:
+    dev: false
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
   /duplexer3/0.1.4:
     dev: true
     resolution:
@@ -2486,7 +2494,7 @@ packages:
   /file-loader/4.3.0_webpack@4.41.2:
     dependencies:
       loader-utils: 1.2.3
-      schema-utils: 2.5.0
+      schema-utils: 2.6.0
       webpack: 4.41.2_webpack@4.41.2
     dev: true
     engines:
@@ -4975,12 +4983,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo=
-  /resolve/1.13.0:
+  /resolve/1.13.1:
     dependencies:
       path-parse: 1.0.6
     dev: true
     resolution:
-      integrity: sha512-HHZ3hmOrk5SvybTb18xq4Ek2uLqLO5/goFCYUyvn26nWox4hdlKlfC/+dChIZ6qc4ZeYcN9ekTz0yyHsFgumMw==
+      integrity: sha512-CxqObCX8K8YtAhOBRg+lrcdn+LK+WYOS8tSjqSFbjtrI5PnS63QPhZl4+yKfrU9tdsbMu9Anr/amegT87M9Z6w==
   /ret/0.1.15:
     dev: true
     engines:
@@ -5038,7 +5046,7 @@ packages:
       node: '>= 4'
     resolution:
       integrity: sha512-i27Mic4KovM/lnGsy8whRCHhc7VicJajAjTrYg11K9zfZXnYIt4k5F+kZkwjnrhKzLic/HLU4j11mjsz2G/75g==
-  /schema-utils/2.5.0:
+  /schema-utils/2.6.0:
     dependencies:
       ajv: 6.10.2
       ajv-keywords: 3.4.1_ajv@6.10.2
@@ -5046,7 +5054,7 @@ packages:
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-32ISrwW2scPXHUSusP8qMg5dLUawKkyV+/qIEV9JdXKx+rsM6mi8vZY8khg2M69Qom16rtroWXD3Ybtiws38gQ==
+      integrity: sha512-UlPB1ME4i/71cih/Rv92gK8043CrJTc2mjkyxDp4pdJ7ZfzY0g0hdGjjDB23jX3X+NXSneCdQbScGhn6K2tbpQ==
   /select-hose/2.0.0:
     dev: true
     resolution:
@@ -5462,7 +5470,7 @@ packages:
   /style-loader/1.0.0_webpack@4.41.2:
     dependencies:
       loader-utils: 1.2.3
-      schema-utils: 2.5.0
+      schema-utils: 2.6.0
       webpack: 4.41.2_webpack@4.41.2
     dev: true
     engines:
@@ -5983,7 +5991,7 @@ packages:
       '@webassemblyjs/helper-module-context': 1.8.5
       '@webassemblyjs/wasm-edit': 1.8.5
       '@webassemblyjs/wasm-parser': 1.8.5
-      acorn: 6.3.0
+      acorn: 6.4.0
       ajv: 6.10.2
       ajv-keywords: 3.4.1_ajv@6.10.2
       chrome-trace-event: 1.0.2
@@ -6165,9 +6173,10 @@ specifiers:
   babel-loader: ^8.0.6
   copy-webpack-plugin: ^5.0.4
   css-loader: ^3.2.0
+  dotenv: ^8.2.0
   express: ^4.17.1
   file-loader: ^4.2.0
-  googleapis: ^39.2.0
+  googleapis: '39'
   html-loader: ^0.5.5
   html-webpack-plugin: ^3.2.0
   jquery: ^3.4.1
@@ -6177,6 +6186,7 @@ specifiers:
   mithril: ^2.0.4
   nodemon: ^2.0.1
   style-loader: ^1.0.0
+  uuid: ^3.3.3
   webpack: ^4.41.2
   webpack-cli: ^3.3.9
   webpack-dev-server: ^3.8.2

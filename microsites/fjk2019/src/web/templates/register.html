@@ -92,39 +92,62 @@
 
     <section id="section-reg" class="section hide">
         <h3>Registration Details</h3>
-        <a class="waves-effect waves-light btn green darken-3 modal-trigger" href="#div-modal-ph-rates">View Rates</a>
-        <a class="waves-effect waves-light btn green darken-3 modal-trigger" href="#div-modal-foreign-rates">View Rates</a>
+
+        <div class="card green darken-3">
+            <div class="card-content white-text">
+                <p>
+                    You originate from {country}, which are subject to {insideMode} rates.
+                </p>
+            </div>
+            <div class="card-action">
+                <a class="waves-effect waves-light modal-trigger" href="#div-modal-ph-rates">View Rates</a>
+                <a class="waves-effect waves-light modal-trigger" href="#div-modal-foreign-rates">View Rates</a>
+            </div>
+        </div>
 
         <div class="row">
             <div class="input-field col s12">
                 <p>I want to register as</p>
                 <p>
                     <label>
-                        <input class="with-gap" name="reg-broad-category" type="radio" value="reg-broad-regular">
+                        <input class="with-gap" name="rbx-reg-broad" type="radio" value="reg-broad-regular">
                         <span>Regular Participant</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input class="with-gap" name="reg-broad-category" type="radio" value="reg-broad-moral">
+                        <input class="with-gap" name="rbx-reg-broad" type="radio" value="reg-broad-moral">
                         <span>Moral Participant</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input class="with-gap" name="reg-broad-category" type="radio" value="reg-broad-patron">
+                        <input class="with-gap" name="rbx-reg-broad" type="radio" value="reg-broad-patron">
                         <span>Congress Patron</span>
                     </label>
                 </p>
             </div>
-            <div class="col s12">
-                <select>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 m4">
+                <select id="select-reg-category" name="select-reg-category">
                     <option value="Dummy" disabled selected>Category</option>
                     <option value="ph_A1"><b>A1</b>: Senior high school students and younger</option>
                     <option value="ph_A2"><b>A2</b>: Undergraduate students or equivalent</option>
                     <option value="ph_B1"><b>B1</b>: Workers, graduate students, etc. &leq; 35 years old</option>
                     <option value="ph_B2"><b>B2</b>: Workers, graduate students, etc. &gt; 35 years old</option>
                 </select>
+            </div>
+
+            <!-- TODO -->
+            <!-- For A categories: educational institution, strand/degree -->
+            <!-- For working: occupation, name of office/company -->
+            <!-- For grad: educational institution, degree -->
+            <div class="input-field col s12 m4">
+                <input type="text" placeholder="Educational Institution">
+            </div>
+            <div class="input-field col s12 m4">
+                <input type="text" placeholder="Strand/Vocation">
             </div>
         </div>
 
@@ -266,7 +289,7 @@
             More information on the excursion will be released very soon. The information entered here will be used for surveying purposes.
         </p>
         <div class="row">
-            <label class="input-field col s6">
+            <label class="input-field col s12">
                 <input class="filled-in" name="cbx-excursion-interest" type="checkbox">
                 <span>I am interested in joining the excursion</span>
             </label>
@@ -280,23 +303,23 @@
         </p>
         <div class="row">
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" name="cbx-food-pref-veget" type="checkbox">
+                <input class="filled-in" name="cbx-food-pref[]" type="checkbox" value="vegetarian">
                 <span>Vegetarian</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" name="cbx-food-pref-vegan" type="checkbox">
+                <input class="filled-in" name="cbx-food-pref[]" type="checkbox" value="vegan">
                 <span>Vegan</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" name="cbx-food-pref-halal" type="checkbox">
+                <input class="filled-in" name="cbx-food-pref[]" type="checkbox" value="halal">
                 <span>Halal</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" name="cbx-food-pref-kosher" type="checkbox">
+                <input class="filled-in" name="cbx-food-pref[]" type="checkbox" value="kosher">
                 <span>Kosher</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" name="cbx-food-pref-other" type="checkbox">
+                <input class="filled-in" name="cbx-food-pref[]" type="checkbox" value="other">
                 <span>Other</span>
             </label>
         </div>
@@ -306,27 +329,27 @@
         </p>
         <div class="row">
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" name="cbx-food-allerg-nuts" type="checkbox">
+                <input class="filled-in" name="cbx-food-allerg[]" type="checkbox" value="nuts">
                 <span>Nuts</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" name="cbx-food-allerg-seafood" type="checkbox">
+                <input class="filled-in" name="cbx-food-allerg[]" type="checkbox" value="seafood">
                 <span>Seafood</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" name="cbx-food-allerg-wheat" type="checkbox">
+                <input class="filled-in" name="cbx-food-allerg[]" type="checkbox" value="wheat">
                 <span>Gluten (Wheat)</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" name="cbx-food-allerg-milk" type="checkbox">
+                <input class="filled-in" name="cbx-food-allerg[]" type="checkbox" value="milk">
                 <span>Milk</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" name="cbx-food-allerg-spicy" type="checkbox">
+                <input class="filled-in" name="cbx-food-allerg[]" type="checkbox" value="spicy">
                 <span>Spicy</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" name="cbx-food-allerg-other" type="checkbox">
+                <input class="filled-in" name="cbx-food-allerg[]" type="checkbox" value="other">
                 <span>Other</span>
             </label>
         </div>
@@ -336,11 +359,11 @@
         </p>
         <div class="row">
             <label class="input-field col s12 m2">
-                <input class="with-gap" name="rbx-alcohol-pref" type="radio">
+                <input class="with-gap" name="rbx-alcohol-pref" type="radio" value="yes">
                 <span>Yes</span>
             </label>
             <label class="input-field col s12 m2">
-                <input class="with-gap" name="rbx-alcohol-pref" type="radio" checked>
+                <input class="with-gap" name="rbx-alcohol-pref" type="radio" value="no" checked>
                 <span>No</span>
             </label>
         </div>
@@ -445,31 +468,31 @@
                 <h5>Pay via</h5>
                 <p>
                     <label>
-                        <input class="with-gap" name="payment-method" type="radio" />
+                        <input class="with-gap" name="rbx-payment-method" type="radio" value="paypal" />
                         <span>PayPal</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input class="with-gap" name="payment-method" type="radio" />
+                        <input class="with-gap" name="rbx-payment-method" type="radio" value="bank" />
                         <span>Deposit via Bank Account</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input class="with-gap" name="payment-method" type="radio" />
+                        <input class="with-gap" name="rbx-payment-method" type="radio" value="wire" />
                         <span>Wire Transfer</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input class="with-gap" name="payment-method" type="radio" />
+                        <input class="with-gap" name="rbx-payment-method" type="radio" value="card" />
                         <span>Credit/Debit Card via PayPal</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input class="with-gap" name="payment-method" type="radio" />
+                        <input class="with-gap" name="rbx-payment-method[]" type="radio" value="uea" />
                         <span>UEA Account</span>
                     </label>
                 </p>
@@ -479,25 +502,25 @@
         <h3>Certification</h3>
         <p>
             <label>
-                <input class="filled-in" type="checkbox" required>
+                <input class="filled-in" type="checkbox" name="cbx-attest-true" required>
                 <span>I certify that all information provided is accurate and can be easily verified using physical documents</span>
             </label>
         </p>
         <p>
             <label>
-                <input class="filled-in" type="checkbox" required>
+                <input class="filled-in" type="checkbox" name="cbx-attest-privacy" required>
                 <span>I have read the privacy policy regarding my registration with the congress</span>
             </label>
         </p>
         <p>
             <label>
-                <input class="filled-in" type="checkbox" required>
+                <input class="filled-in" type="checkbox" name="cbx-attest-publicity" required>
                 <span>I consent to give rights to the organizing committee to include me in its documentation of the congress</span>
             </label>
         </p>
         <p>
             <label>
-                <input class="filled-in" type="checkbox" required>
+                <input class="filled-in" type="checkbox" name="cbx-attest-newsletter">
                 <span>I would like to receive frequent information on the congress (such as status updates and newsletters)</span>
             </label>
         </p>
