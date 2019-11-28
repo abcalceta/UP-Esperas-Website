@@ -16,7 +16,6 @@ fs.readdirSync('node_modules')
 
 const common = {
     mode: 'development',
-    devtool: 'eval-source-map',
     plugins: [
         new webpack.ProvidePlugin({
             $: 'jquery',
@@ -38,6 +37,8 @@ const common = {
 };
 
 const web = {
+    target: 'web',
+    devtool: 'eval-source-map',
     devServer: {
         contentBase: path.resolve(__dirname, 'src'),
         //compress: true,
@@ -45,8 +46,8 @@ const web = {
     },
     entry: './src/web/index.js',
     output: {
-        filename: 'index.js',
-        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle-web.js',
+        path: path.resolve(__dirname, 'dist/web'),
         //publicPath: './'
     },
     plugins: [
@@ -88,17 +89,17 @@ const web = {
 };
 
 const api = {
+    target: 'node',
     entry: './src/api/index.js',
     output: {
         filename: 'api.js',
-        path: path.resolve(__dirname, 'dist_api'),
+        path: path.resolve(__dirname, 'dist/api'),
         //publicPath: './'
     },
     plugins: [
         new webpack.IgnorePlugin(/\.(css|less)$/)
     ],
-    externals: nodeModules,
-    target: 'node'
+    externals: nodeModules
 }
 
 module.exports = [
