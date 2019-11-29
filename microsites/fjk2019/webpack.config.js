@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // https://jlongster.com/Backend-Apps-with-Webpack--Part-I
-let nodeModules = {}
+let nodeModules = {};
 fs.readdirSync('node_modules')
     .filter(function(x) {
         return ['.bin'].indexOf(x) === -1;
@@ -101,7 +101,7 @@ const api = {
         new webpack.IgnorePlugin(/\.(css|less)$/)
     ],
     externals: nodeModules
-}
+};
 
 module.exports = [
     Object.assign({}, common, web),

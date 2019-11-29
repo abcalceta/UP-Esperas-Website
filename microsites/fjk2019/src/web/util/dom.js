@@ -44,18 +44,35 @@ function animate(targetsQuery, animateClasses, getParents = false, threshold = 0
     })
 }
 
-function animateOnce(element, animationName, callback) {
-    const node = document.querySelector(element)
-    node.classList.add('animated', animationName)
+function animateOnce(element, animationClasses, callback) {
+    let node = element;
+    let animationList = ['animated'];
 
-    function handleAnimationEnd() {
-        node.classList.remove('animated', animationName)
-        node.removeEventListener('animationend', handleAnimationEnd)
-
-        if (typeof callback === 'function') callback()
+    // Check if element is a selector or not
+    if(typeof element === 'string' || element instanceof String) {
+        node = document.querySelector(element);
     }
 
-    node.addEventListener('animationend', handleAnimationEnd)
+    // Check if there are multiple animation classes
+    if(Array.isArray(animationClasses)) {
+        animationList.push(...animationClasses);
+    }
+    else if(typeof animationClasses === 'string' || animationClasses instanceof String) {
+        animationList.push(animationClasses);
+    }
+
+    node.classList.add(...animationList);
+
+    const handleAnimationEnd = function() {
+        node.classList.remove(...animationList);
+        node.removeEventListener('animationend', handleAnimationEnd);
+
+        if (typeof callback === 'function') {
+            callback();
+        }
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd);
 }
 
 function initDomScripts() {

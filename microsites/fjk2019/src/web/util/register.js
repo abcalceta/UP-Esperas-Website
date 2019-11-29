@@ -17,44 +17,77 @@ function addCountriesListToDropdown(countriesArr) {
     });
 }
 
-let dateToday = new Date(Date.now())
+function initDatePicker() {
+    let dateToday = new Date(Date.now())
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Materialize inits
-    M.Parallax.init(document.querySelectorAll(".parallax"));
-    M.Datepicker.init(document.querySelectorAll(".datepicker"), {
-        yearRange: [1950, dateToday.getFullYear()],
-        maxDate: dateToday,
-        format: "yyyy-mm-dd",
-        autoClose: true,
-        i18n: {
-            cancel: "Nuligi",
-            clear: "Forigi",
-            done: "Preta",
-            months: [
-                "Januaro", "Februaro", "Marto", "Aprilo",
-                "Majo", "Junio",  "Julio", "Aŭgusto",
-                "Septembro", "Oktobro", "Novembro", "Decembro"
-            ],
-            monthsShort: [
-                "Jan", "Feb", "Mar", "Apr", "Maj", "Jun",
-                "Jul", "Aŭg", "Sep", "Okt", "Nov", "Dec"
-            ],
-            weekdaysShort: [
-                "dim", "lun", "mar", "mer",
-                "ĵaŭ", "ven", "sab"
-            ],
-            weekdaysAbbrev: ["di", "lu", "ma", "me", "ĵa", "ve", "sa"]
+    document.addEventListener('DOMContentLoaded', () => {
+        // Materialize inits
+        M.Parallax.init(document.querySelectorAll(".parallax"));
+        M.Datepicker.init(document.querySelectorAll(".datepicker"), {
+            yearRange: [1950, dateToday.getFullYear()],
+            maxDate: dateToday,
+            format: "yyyy-mm-dd",
+            autoClose: true,
+            i18n: {
+                cancel: "Nuligi",
+                clear: "Forigi",
+                done: "Preta",
+                months: [
+                    "Januaro", "Februaro", "Marto", "Aprilo",
+                    "Majo", "Junio",  "Julio", "Aŭgusto",
+                    "Septembro", "Oktobro", "Novembro", "Decembro"
+                ],
+                monthsShort: [
+                    "Jan", "Feb", "Mar", "Apr", "Maj", "Jun",
+                    "Jul", "Aŭg", "Sep", "Okt", "Nov", "Dec"
+                ],
+                weekdaysShort: [
+                    "dim", "lun", "mar", "mer",
+                    "ĵaŭ", "ven", "sab"
+                ],
+                weekdaysAbbrev: ["di", "lu", "ma", "me", "ĵa", "ve", "sa"]
+            }
+        });
+    });
+}
+
+function getRegTier(locality, broadCategory, occupation, birthdate) {
+    let regCatKey;
+
+    switch(broadCategory) {
+        case 'moral':
+            regCatKey = 'C';
+            break;
+        case 'patron':
+            regCatKey = 'D';
+            break;
+        default: {
+            // Compute from categories
+            switch(occupation) {
+                case 'shs': {
+                    regCatKey = (locality === 'local') ? 'A1' : 'A';
+                    break;
+                }
+                case 'undergrad': {
+                    regCatKey = (locality === 'local') ? 'A2' : 'A';
+                    break;
+                }
+                case 'grad':
+                case 'working':
+                case 'unemployed': {
+                    // Check birthday
+                    let age = Math.floor(Math.abs(new Date() - new Date(birthdate)) / (1000 * 60 * 60 * 24 * 365));
+
+                    regCatKey = (age <= 35) ? 'B1' : 'B2';
+                }
+            }
         }
-    })
-    //M.ScrollSpy.init(document.querySelectorAll(".scrollspy"), {throttle: 100, scrollOffset: 0})
-    //M.Collapsible.init(document.querySelectorAll(".collapsible"), {})
-    //M.Sidenav.init(document.querySelector(".sidenav"))
+    }
 
-    // Add stuff
-    getCountriesList()
-        .then(res => addCountriesListToDropdown(res))
-        .then(() => {
-            M.FormSelect.init(document.querySelectorAll("select"))
-        })
-})
+    return regCatKey;
+}
+
+export let RegForm = {
+    initDatePicker: initDatePicker,
+    getRegTier: getRegTier
+};

@@ -24,7 +24,14 @@
         </p>
 
         <h4>Are you ready?</h4>
-        <div class="card">
+        <noscript>
+            <div class="card-panel red darken-2">
+                <span class="white-text">
+                    Oh no! It seems that you have disabled JavaScript or your browser does not support it. Please <a class="yellow-text text-darken-2" href="//enable-javascript.com/" target="_blank">enable</a> it to register.
+                </span>
+            </div>
+        </noscript>
+        <div class="card hide-on-no-js">
             <div class="card-content">
                 <span class="card-title">Cookie Notice</span>
                 <p>
@@ -32,23 +39,26 @@
                 </p>
             </div>
             <div class="card-action">
-                <a id="a-start-reg" class="green-text text-darken-3 waves-effect" href="">Start Registration</a>
+                <a id="a-start-reg" class="btn green darken-3 waves-effect" href="">Start Registration</a>
             </div>
         </div>
     </section>
 
     <section id="section-basic" class="section hide">
         <h3>Basic Information</h3>
+        <p>
+            Fields marked with an asterisk (*) mean that they are required to be filled-up.
+        </p>
         <div class="row">
             <div class="input-field col s6 l4">
                 <input id="txt-last-name" name="txt-last-name" class="validate" type="text" required>
-                <label for="txt-last-name">Last Name</label>
-                <span class="helper-text" data-error="Please enter your last name" type="text"></span>
+                <label for="txt-last-name">Last Name*</label>
+                <span class="helper-text" data-error="Please enter your last name"></span>
             </div>
             <div class="input-field col s6 l4">
                 <input id="txt-first-name" name="txt-first-name" class="validate" type="text" required>
-                <label for="txt-first-name">First Name</label>
-                <span class="helper-text" data-error="Please enter your first name" type="text"></span>
+                <label for="txt-first-name">First Name*</label>
+                <span class="helper-text" data-error="Please enter your first name"></span>
             </div>
             <div class="input-field col s12 l4">
                 <input id="txt-middle-name" name="txt-middle-name" type="text">
@@ -57,30 +67,35 @@
         </div>
         <div class="row">
             <div class="input-field col s12 l4">
-                <input id="txt-nickname" name="txt-nickname" type="text">
-                <label for="txt-nickname">Nickname</label>
+                <input id="txt-nickname" name="txt-nickname" class="validate" type="text" required>
+                <label for="txt-nickname">Nickname*</label>
+                <span class="helper-text" data-error="Please enter your nickname"></span>
             </div>
             <div class="input-field col s6 l2">
-                <input id="txt-bday" name="txt-bday" class="datepicker" type="text">
-                <label for="txt-bday">Birthday</label>
+                <input id="txt-bday" name="txt-bday" class="datepicker validate" type="text" required>
+                <label for="txt-bday">Birthday*</label>
+                <span class="helper-text" data-error="Please enter your birthdate"></span>
             </div>
             <div class="input-field col s6 l2">
-                <select id="select-sex-list" name="select-sex-list">
-                    <option value="Dummy" disabled selected>Sex</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
+                <select id="select-sex-list" name="select-sex-list" required>
+                    <option value="" disabled selected>Sex*</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="unknown">Prefer not to say</option>
                 </select>
+                <span class="helper-text" data-error="Please select your sex"></span>
             </div>
             <div class="input-field col s12 l4">
-                <select id="select-countries-list" name="select-countries-list">
-                    <option value="Dummy" disabled selected>Country of Origin</option>
+                <select id="select-countries-list" name="select-countries-list" required>
+                    <option value="" disabled selected>Country of Origin*</option>
                 </select>
+                <span class="helper-text" data-error="Please select your country of origin"></span>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12 m6">
                 <input id="txt-email" class="validate" name="txt-email" type="email" required>
-                <label for="txt-email">E-mail Address</label>
+                <label for="txt-email">E-mail Address*</label>
                 <span class="helper-text" data-error="Please enter a valid email address" type="text"></span>
             </div>
             <div class="input-field col s12 m6">
@@ -93,61 +108,85 @@
     <section id="section-reg" class="section hide">
         <h3>Registration Details</h3>
 
-        <div class="card green darken-3">
-            <div class="card-content white-text">
+        <div id="div-reg-ratecard" class="card">
+            <div class="card-content yellow darken-2">
                 <p>
                     You originate from {country}, which are subject to {insideMode} rates.
                 </p>
             </div>
-            <div class="card-action">
-                <a class="waves-effect waves-light modal-trigger" href="#div-modal-ph-rates">View Rates</a>
-                <a class="waves-effect waves-light modal-trigger" href="#div-modal-foreign-rates">View Rates</a>
-            </div>
+            <div class="card-action"></div>
         </div>
 
         <div class="row">
             <div class="input-field col s12">
-                <p>I want to register as</p>
-                <p>
-                    <label>
-                        <input class="with-gap" name="rbx-reg-broad" type="radio" value="reg-broad-regular">
-                        <span>Regular Participant</span>
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        <input class="with-gap" name="rbx-reg-broad" type="radio" value="reg-broad-moral">
-                        <span>Moral Participant</span>
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        <input class="with-gap" name="rbx-reg-broad" type="radio" value="reg-broad-patron">
-                        <span>Congress Patron</span>
-                    </label>
-                </p>
+                <h6>I want to register as&#8230;</h6>
+            </div>
+            <div class="input-field col s12 m4">
+                <label>
+                    <input class="with-gap" name="rbx-reg-broad" type="radio" value="regular" checked>
+                    <span>Regular Participant</span>
+                </label>
+            </div>
+            <div class="input-field col s12 m4">
+                <label>
+                    <input class="with-gap" name="rbx-reg-broad" type="radio" value="moral">
+                    <span>Moral Participant</span>
+                </label>
+            </div>
+            <div class="input-field col s12 m4">
+                <label>
+                    <input class="with-gap" name="rbx-reg-broad" type="radio" value="patron">
+                    <span>Congress Patron</span>
+                </label>
             </div>
         </div>
-        <div class="row">
-            <div class="input-field col s12 m4">
-                <select id="select-reg-category" name="select-reg-category">
-                    <option value="Dummy" disabled selected>Category</option>
-                    <option value="ph_A1"><b>A1</b>: Senior high school students and younger</option>
-                    <option value="ph_A2"><b>A2</b>: Undergraduate students or equivalent</option>
-                    <option value="ph_B1"><b>B1</b>: Workers, graduate students, etc. &leq; 35 years old</option>
-                    <option value="ph_B2"><b>B2</b>: Workers, graduate students, etc. &gt; 35 years old</option>
-                </select>
-            </div>
 
-            <!-- TODO -->
-            <!-- For A categories: educational institution, strand/degree -->
-            <!-- For working: occupation, name of office/company -->
-            <!-- For grad: educational institution, degree -->
-            <div class="input-field col s12 m4">
-                <input type="text" placeholder="Educational Institution">
+        <div id="div-reg-category" class="row">
+            <div class="input-field col s12">
+                <h6>&#8230;with current occupation</h6>
             </div>
-            <div class="input-field col s12 m4">
-                <input type="text" placeholder="Strand/Vocation">
+            <div class="input-field col s12">
+                <select id="select-reg-occupation" name="select-reg-occupation" required>
+                    <option value="" disabled selected>Occupation*</option>
+                    <option value="shs">Senior High School and younger</option>
+                    <option value="undergrad">Undergraduate Student</option>
+                    <option value="grad">Graduate Student and equivalent/higher</option>
+                    <option value="working">Professional/Working</option>
+                    <option value="unemployed">Unemployed</option>
+                </select>
+                <span class="helper-text" data-error="Please select your occupation"></span>
+            </div>
+        </div>
+
+        <div id="div-reg-educ-info" class="row hide">
+            <div class="input-field col s12">
+                <h6>&#8230;and currently studying at</h6>
+            </div>
+            <div class="input-field col s12 m6">
+                <input type="text" id="txt-reg-educ" class="validate" name="txt-reg-educ">
+                <label for="txt-reg-educ">Educational Institution*</label>
+                <span class="helper-text" data-error="Please enter your educational institution"></span>
+            </div>
+            <div class="input-field col s12 m6">
+                <input type="text" id="txt-reg-degree" class="validate" name="txt-reg-degree">
+                <label for="txt-reg-degree">Degree*</label>
+                <span class="helper-text" data-error="Please enter your degree"></span>
+            </div>
+        </div>
+
+        <div id="div-reg-work-info" class="row hide">
+            <div class="input-field col s12">
+                <h6>&#8230;and currently working at</h6>
+            </div>
+            <div class="input-field col s12 m6">
+                <input type="text" id="txt-reg-company" class="validate" name="txt-reg-company"">
+                <label for="txt-reg-company">Company/Office*</label>
+                <span class="helper-text" data-error="Please enter your company/office"></span>
+            </div>
+            <div class="input-field col s12 m6">
+                <input type="text" id="txt-reg-position" class="validate" name="txt-reg-position">
+                <label for="txt-reg-position">Position*</label>
+                <span class="helper-text" data-error="Please enter your position"></span>
             </div>
         </div>
 
@@ -155,7 +194,7 @@
         <div id="div-modal-ph-rates" class="modal modal-fixed-footer">
             <div class="modal-content">
                 <h4>Registration Rates for Local Participants</h4>
-                <p class="card-panel red lighten-2">
+                <p class="card-panel red darken-2 white-text">
                     Note that all prices are in Philippine Peso.
                 </p>
 
@@ -207,7 +246,7 @@
                 </table>
             </div>
             <div class="modal-footer">
-                <a class="modal-close waves-effect btn-flat">Close</a>
+                <a class="modal-close btn-flat green-text text-darken-2 waves-effect btn-flat">Close</a>
             </div>
         </div>
 
@@ -215,7 +254,7 @@
         <div id="div-modal-foreign-rates" class="modal modal-fixed-footer">
             <div class="modal-content">
                 <h4>Registration Rates for Foreign Participants</h4>
-                <p class="card-panel red lighten-2">
+                <p class="card-panel red darken-2 white-text">
                     Note that all prices are in Euro. For reference, 1 EUR = 56.00 PHP
                 </p>
 
@@ -260,14 +299,14 @@
                 </table>
             </div>
             <div class="modal-footer">
-                <a class="modal-close waves-effect btn-flat">Close</a>
+                <a class="modal-close waves-effect btn-flat green-text text-darken-2">Close</a>
             </div>
         </div>
     </section>
 
     <section id="section-lodging" class="section hide">
         <h3>Lodging</h3>
-        <p class="card-panel red lighten-2">
+        <p class="card-panel red darken-2 white-text">
             More information on lodging options will be released very soon. The information entered here will be used for surveying purposes.
         </p>
 
@@ -285,7 +324,7 @@
 
     <section id="section-excursion" class="section hide">
         <h3>Excursion</h3>
-        <p class="card-panel red lighten-2">
+        <p class="card-panel red darken-2 white-text">
             More information on the excursion will be released very soon. The information entered here will be used for surveying purposes.
         </p>
         <div class="row">
@@ -371,7 +410,7 @@
 
     <section id="section-others" class="section hide">
         <h4>Congress Photo</h4>
-        <p class="card-panel red">
+        <p class="card-panel red darken-2 white-text">
             More information about this will be out soon!
         </p>
 
@@ -451,48 +490,57 @@
         </div>
 
         <h3>Payment</h3>
-        <div id="div-panel-reg-date-notice" class="card-panel green darken-3"></div>
-
-        <a href="#div-modal-reg-dates" class="btn waves-effect waves-light green darken-3 modal-trigger">View Dates</a>
+        <input type="hidden" name="hdn-reg-period" value="regular">
+        <div id="div-panel-reg-date-notice" class="card">
+            <div class="card-content green darken-3 white-text">
+                <span class="card-title">Regular Registration</span>
+                <p>
+                    Today is within the period of regular registration.
+                </p>
+            </div>
+            <div class="card-action">
+                <a href="#div-modal-reg-dates" class="btn-flat green-text text-darken-2 modal-trigger">View Dates</a>
+            </div>
+        </div>
 
         <div class="row">
-            <div class="col s12 m6 card">
+            <div id="div-card-payment-details" class="col s12 m5 card">
                 <div class="card-content">
                     <span class="card-title">Payment Details</span>
-                    <p>
+                    <div class="row">
                         Early bird
-                    </p>
+                    </div>
                 </div>
             </div>
-            <div class="col s12 m6">
+            <div class="col s12 offset-m1 m6">
                 <h5>Pay via</h5>
                 <p>
                     <label>
-                        <input class="with-gap" name="rbx-payment-method" type="radio" value="paypal" />
+                        <input class="with-gap" name="rbx-payment-method" type="radio" value="paypal" checked>
                         <span>PayPal</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input class="with-gap" name="rbx-payment-method" type="radio" value="bank" />
+                        <input class="with-gap" name="rbx-payment-method" type="radio" value="bank">
                         <span>Deposit via Bank Account</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input class="with-gap" name="rbx-payment-method" type="radio" value="wire" />
+                        <input class="with-gap" name="rbx-payment-method" type="radio" value="wire">
                         <span>Wire Transfer</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input class="with-gap" name="rbx-payment-method" type="radio" value="card" />
+                        <input class="with-gap" name="rbx-payment-method" type="radio" value="card">
                         <span>Credit/Debit Card via PayPal</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input class="with-gap" name="rbx-payment-method[]" type="radio" value="uea" />
+                        <input class="with-gap" name="rbx-payment-method" type="radio" value="uea">
                         <span>UEA Account</span>
                     </label>
                 </p>
@@ -504,18 +552,21 @@
             <label>
                 <input class="filled-in" type="checkbox" name="cbx-attest-true" required>
                 <span>I certify that all information provided is accurate and can be easily verified using physical documents</span>
+                <span class="helper-text" data-error="Please attest the veracity of your input"></span>
             </label>
         </p>
         <p>
             <label>
                 <input class="filled-in" type="checkbox" name="cbx-attest-privacy" required>
                 <span>I have read the privacy policy regarding my registration with the congress</span>
+                <span class="helper-text" data-error="Please consent to our privacy policy"></span>
             </label>
         </p>
         <p>
             <label>
                 <input class="filled-in" type="checkbox" name="cbx-attest-publicity" required>
                 <span>I consent to give rights to the organizing committee to include me in its documentation of the congress</span>
+                <span class="helper-text" data-error="Please consent to publicity rights"></span>
             </label>
         </p>
         <p>
@@ -529,7 +580,7 @@
         <div id="div-modal-reg-dates" class="modal modal-fixed-footer">
             <div class="modal-content">
                 <h4>Registration Dates</h4>
-                <p class="card-panel red lighten-2">
+                <p class="card-panel red darken-2 white-text">
                     All dates are in Philippine Standard Time (GMT+8). Time of end dates are at 11:59 PM.
                 </p>
                 <table>
