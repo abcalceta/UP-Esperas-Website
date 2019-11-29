@@ -320,6 +320,15 @@
                 <span>I need to reserve beyond the congress dates</span>
             </label>
         </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <h6>I will arrive and leave between the following dates</h6>
+            </div>
+            <div class="input-field col s12">
+                <div id="div-lodging-dates"></div>
+            </div>
+        </div>
     </section>
 
     <section id="section-excursion" class="section hide">
@@ -432,6 +441,28 @@
             </label>
         </p>
 
+        <h4>Donations</h4>
+        <div class="row">
+            <div class="col s12">
+                <div class="input-field inline">
+                    <input id="txt-congress-fund" type="number" class="validate" placeholder="0.00">
+                </div>
+                PHP for the <b>Congress Fund</b> <a class="tooltipped" data-position="top" data-tooltip="for the general organization of the congress and covering its costs, and eventually to make the program richer and more substantial">[?]</a>
+            </div>
+            <div class="col s12">
+                <div class="input-field inline">
+                    <input id="txt-participant-fund" type="number" len class="validate" placeholder="0.00">
+                </div>
+                PHP for <b>participant support</b> <a class="tooltipped" data-position="top" data-tooltip="to support young Filipinos which live in areas far from the Congress venue or those who undergo financial struggles">[?]</a>
+            </div>
+            <div class="col s12">
+                <div class="input-field inline">
+                    <input id="txt-fej-fund" type="number" len class="validate" placeholder="0.00">
+                </div>
+                PHP for <b>Association Fund</b> <a class="tooltipped" data-position="top" data-tooltip="to finance the activities and initiatives of the Philippine Esperanto Youth">[?]</a>
+            </div>
+        </div>
+
         <h4>Others</h4>
         <p>
             <label>
@@ -466,29 +497,6 @@
     </section>
 
     <section id="section-payment" class="section hide">
-        <h3>Donations</h3>
-
-        <div class="row">
-            <div class="col s12">
-                <div class="input-field inline">
-                    <input id="txt-congress-fund" type="number" class="validate" placeholder="0.00">
-                </div>
-                PHP for the <b>Congress Fund</b> <a class="tooltipped" data-position="top" data-tooltip="for the general organization of the congress and covering its costs, and eventually to make the program richer and more substantial">[?]</a>
-            </div>
-            <div class="col s12">
-                <div class="input-field inline">
-                    <input id="txt-participant-fund" type="number" len class="validate" placeholder="0.00">
-                </div>
-                PHP for <b>participant support</b> <a class="tooltipped" data-position="top" data-tooltip="to support young Filipinos which live in areas far from the Congress venue or those who undergo financial struggles">[?]</a>
-            </div>
-            <div class="col s12">
-                <div class="input-field inline">
-                    <input id="txt-fej-fund" type="number" len class="validate" placeholder="0.00">
-                </div>
-                PHP for <b>Association Fund</b> <a class="tooltipped" data-position="top" data-tooltip="to finance the activities and initiatives of the Philippine Esperanto Youth">[?]</a>
-            </div>
-        </div>
-
         <h3>Payment</h3>
         <input type="hidden" name="hdn-reg-period" value="regular">
         <div id="div-panel-reg-date-notice" class="card">

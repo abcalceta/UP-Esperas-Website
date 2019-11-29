@@ -24,7 +24,7 @@ header.hero .hero-down-marker:hover {
 .material-icons-large {
     font-size: 4.5em;
     color: whitesmoke;
-    background: #1b5e20;
+    background: #418B45;
     border-radius: 50%;
     padding: 0.25em;
 }
@@ -43,13 +43,37 @@ header.hero .hero-down-marker:hover {
 }
 
 footer .footer-copyright {
-    background-color: #1b5e20;
+    background-color: #418B45;
 }
 
 footer .footer-main a:link {
-    color: #1b5e20;
+    color: #418B45;
 }
 
 footer .footer-main a:hover {
     text-decoration: underline;
+}
+
+.theme-green {
+    background-color: #418B45;
+}
+
+.theme-green-text {
+    color: #418B45;
+}
+
+.theme-red {
+    background-color: #992226;
+}
+
+.theme-red-text {
+    color: #992226;
+}
+
+.theme-yellow {
+    background-color: #CC9D37;
+}
+
+.theme-yellow-text {
+    color: #CC9D37;
 }

@@ -2,40 +2,58 @@
 .input-field input[type=text]:focus + label.active,
 .input-field input[type=email]:focus + label.active
  {
-    color: #00612c;
+    color: #418B45;
 }
 
 .input-field input[type=text]:not(.browser-default):focus:not([readonly]),
 .input-field input[type=email]:not(.browser-default):focus:not([readonly]) {
-    border-bottom: 1px solid #00612c;
-    box-shadow: 0 1px 0 0 #00612c;
+    border-bottom: 1px solid #418B45;
+    box-shadow: 0 1px 0 0 #418B45;
 }
 
 /* Checkbox */
 input[type=checkbox].filled-in:checked + span:not(.lever)::after {
-    border-color: #00612c;
-    background-color: #00612c;
+    border-color: #418B45;
+    background-color: #418B45;
 }
 
 input[type=checkbox].filled-in:checked + span {
-    color: #00612c;
+    color: #418B45;
 }
 
 /* Radio buttons */
 input[type=radio].with-gap:checked + span {
-    color: #00612c;
+    color: #418B45;
 }
 
 input[type=radio].with-gap:checked + span::before {
-    border-color: #00612c;
+    border-color: #418B45;
 }
 
 input[type=radio].with-gap:checked + span::after {
-    background-color: #00612c;
-    border-color: #00612c;
+    background-color: #418B45;
+    border-color: #418B45;
 }
 
 /* Select */
 .dropdown-content li > span {
-    color: #00612c;
+    color: #418B45;
 }
+
+/* Slider */
+.noUi-connect {
+    background-color: #418B45;
+}
+
+.noUi-origin .noUi-handle {
+    background-color: #418B45;
+}
+
+.noUi-origin .noUi-handle .noUi-tooltip {
+    background-color: #418B45;
+}
+
+/*
+ * #992226 red
+ * #CC9D37 yellow
+ */

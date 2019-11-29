@@ -49,17 +49,17 @@
 }
 
 .steps-bar li.active {
-    color: #2e7d32;
+    color: #418B45;
 }
 
 .steps-bar li.active .steps-icon {
     color: white;
     border-color: transparent;
-    background-color: #2e7d32;
+    background-color: #418B45;
 }
 
 .steps-bar li.active + li::after {
-    background-color: #2e7d32;
+    background-color: #418B45;
 }
 
 /**

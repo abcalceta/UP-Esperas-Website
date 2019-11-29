@@ -1,16 +1,16 @@
 .datepicker-date-display {
-    background-color: #00612c;
+    background-color: #418B45;
 }
 
 .datepicker-table td.is-today {
-    color: #00612c;
+    color: #418B45;
     font-weight: bold;
 }
 
 .datepicker-table td.is-selected {
-    background-color: #00612c;
+    background-color: #418B45;
 }
 
 .datepicker-cancel, .datepicker-done {
-    color: #00612c;
+    color: #418B45;
 }

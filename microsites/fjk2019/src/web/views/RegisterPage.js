@@ -1,5 +1,6 @@
 import m from 'mithril';
 import Materialize from 'materialize-css';
+import noUiSlider from 'materialize-css/extras/noUiSlider/nouislider';
 import Cookies from 'js-cookie';
 
 import {DomScripts} from '../util/dom';
@@ -9,6 +10,7 @@ import {BasePage} from './BasePage';
 import htmlMain from '../templates/register.html';
 import heroPath from '../img/hero/banderitas_volcorp_banner.jpg';
 
+import 'materialize-css/extras/noUiSlider/nouislider.css';
 import '../styles/default.css';
 import '../styles/datepicker.css';
 import '../styles/steps.css';
@@ -96,16 +98,32 @@ export class RegisterPage extends BasePage {
             countrySelectElm.appendChild(optElm);
         });
 
-        Materialize.FormSelect.init(document.querySelector('#select-countries-list'));
+        Materialize.FormSelect.init(document.getElementById('select-countries-list'));
 
         // Check registration date
         const regDateIdx = this.checkRegistrationDates();
-        const cardPanelElm = document.querySelector('#div-panel-reg-date-notice');
+        const cardPanelElm = document.getElementById('div-panel-reg-date-notice');
         const regPeriodName = this.regIdxToName[regDateIdx];
 
         document.querySelector('input[name=hdn-reg-period]').value = regDateIdx;
         cardPanelElm.querySelector('.card-title').innerHTML = `${regPeriodName[0].toUpperCase()}${regPeriodName.substr(1)} Registration`;
         cardPanelElm.querySelector('div.card-content p').innerHTML = `Today is within the period of <b>${regPeriodName}</b> registration!`;
+
+        // Update slider
+        const lodgingDatesSlider = document.getElementById('div-lodging-dates');
+        noUiSlider.create(lodgingDatesSlider, {
+            connect: true,
+            step: 1,
+            orientation: 'horizontal',
+            start: [20200423, 20200426],
+            range: {
+                'min': 20200410,
+                'max': 20200430
+            },
+            format: wNumb({
+                decimals: 0
+            })
+        });
     }
 
     attachRegOverview() {
@@ -307,7 +325,7 @@ export class RegisterPage extends BasePage {
             if(!this.checkValidSubForm(fromSectionId)) {
                 console.log('Section has invalid fields!');
 
-                return;
+                //return;
             }
 
             // Submit form if on last page
