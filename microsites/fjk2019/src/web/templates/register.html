@@ -1,6 +1,6 @@
 <div id="div-steps" class="steps-container hide"></div>
 
-<form method="post">
+<form id="form-register" method="post">
     <section id="section-guidelines" class="section">
         <h3>Registration Guidelines</h3>
         <p>
@@ -12,9 +12,9 @@
             Participation is open to any person of any age, Philippine or foreign national, who has at least a basic command of Esperanto and is interested to learn more of the language and its community and culture, participate in the activities of the congress, and actively interact with other participants.
         </p>
 
-        <h4>Registration Fee</h4>
+        <h4>Are there any fees?</h4>
         <p>
-            The registration fee for the congress depends on three main factors: the individual's age at the time of registration, the individual's country of origin, and the period in which registration and payment are made. Individuals who register early can avail of discounted fees. There is also a separate category for individuals who wish to financially support the Congress, and separate fees for foreign participants.
+            Yes. The registration fee for the congress depends on three main factors: the individual's age at the time of registration, the individual's country of origin, and the period in which registration and payment are made. Individuals who register early can avail of discounted fees. There is also a separate category for individuals who wish to financially support the Congress, and separate fees for foreign participants.
         </p>
         <p>
             The fee includes the participant's kit and access to all programs (unless otherwise indicated in the congress booklet). It <em>does not</em> include lodging, other meals, the excursion, and insurances.
@@ -39,7 +39,7 @@
                 </p>
             </div>
             <div class="card-action">
-                <a id="a-start-reg" class="btn green darken-3 waves-effect" href="">Start Registration</a>
+                <a id="a-start-reg" class="btn theme-green waves-effect" href="">Start Registration</a>
             </div>
         </div>
     </section>
@@ -83,12 +83,14 @@
                     <option value="female">Female</option>
                     <option value="unknown">Prefer not to say</option>
                 </select>
+                <label>Sex</label>
                 <span class="helper-text" data-error="Please select your sex"></span>
             </div>
             <div class="input-field col s12 l4">
                 <select id="select-countries-list" name="select-countries-list" required>
                     <option value="" disabled selected>Country of Origin*</option>
                 </select>
+                <label>Country of Origin</label>
                 <span class="helper-text" data-error="Please select your country of origin"></span>
             </div>
         </div>
@@ -107,10 +109,33 @@
 
     <section id="section-reg" class="section hide">
         <h3>Registration Details</h3>
+        <p>
+            There are different categories for participants
+        </p>
+        <p>
+            <b>Undergraduate Students and Below</b> are individuals in undergraduate (college) level, high school (junior and senior), vocational schools, and below at the time of registration. It is subdivided into two subcategories, A1 (for senior high school students and below) and A2 (for undergraduate students and equivalent). Registrants in this category are required to send a photo/scanned copy of their school ID and latest certificate of registration (if applicable) to avail of the discount.
+        </p>
+        <p>
+            <b>Workers, Graduate Students, or Equivalent</b> are individuals working or practicing a profession at the time of registration. Also includes students in graduate level (master’s degree/Ph.D.) and unemployed individuals. It is further subdivided to B1 (for individuals aged 35 and below), and B2 (for individuals aged above 35).
+         </p>
+        <p>
+            <b>Moral Participants</b> are individuals who will not participate in the congress itself, but want to support the congress financially. The fee is half (50%) of the regular period registration fee of category B.1 (for both Filipino and foreign participants). They shall be given due acknowledgment in the congress booklet.
+        </p>
+        <p>
+            <b>Congress Patrons</b> are individuals who want to support the congress financially, besides joining the congress, by paying a larger rate than the normal rates. The fee is 2.5 times the regular registration fee of category B.1 (for Filipino and foreign participants). They may opt to participate in the congress itself or not, and they shall be given due acknowledgment in the congress booklet, and will receive a special gift.
+        </p>
+        <p>
+            Note that participants aged 12 years old and below and accompanied by their parents/guardians can join the congress free of charge, however they will not be provided their own Congress Kit (except for name tags) and must pay additional fees if they will avail of lodging, the excursion, and meals.
+        </p>
+
+        <input type="hidden" name="hdn-reg-period" value="regular">
+        <input type="hidden" name="hdn-reg-fee" value="0">
+        <input type="hidden" name="hdn-reg-currency" value="€">
+        <input type="hidden" name="hdn-reg-category" value="D">
 
         <div id="div-reg-ratecard" class="card">
-            <div class="card-content yellow darken-2">
-                <p>
+            <div class="card-content theme-green">
+                <p class="white-text">
                     You originate from {country}, which are subject to {insideMode} rates.
                 </p>
             </div>
@@ -142,7 +167,7 @@
         </div>
 
         <div id="div-reg-category" class="row">
-            <div class="input-field col s12">
+            <div class="col s12">
                 <h6>&#8230;with current occupation</h6>
             </div>
             <div class="input-field col s12">
@@ -159,7 +184,7 @@
         </div>
 
         <div id="div-reg-educ-info" class="row hide">
-            <div class="input-field col s12">
+            <div class="col s12">
                 <h6>&#8230;and currently studying at</h6>
             </div>
             <div class="input-field col s12 m6">
@@ -194,7 +219,7 @@
         <div id="div-modal-ph-rates" class="modal modal-fixed-footer">
             <div class="modal-content">
                 <h4>Registration Rates for Local Participants</h4>
-                <p class="card-panel red darken-2 white-text">
+                <p class="card-panel theme-red white-text">
                     Note that all prices are in Philippine Peso.
                 </p>
 
@@ -254,7 +279,7 @@
         <div id="div-modal-foreign-rates" class="modal modal-fixed-footer">
             <div class="modal-content">
                 <h4>Registration Rates for Foreign Participants</h4>
-                <p class="card-panel red darken-2 white-text">
+                <p class="card-panel theme-red white-text">
                     Note that all prices are in Euro. For reference, 1 EUR = 56.00 PHP
                 </p>
 
@@ -306,7 +331,7 @@
 
     <section id="section-lodging" class="section hide">
         <h3>Lodging</h3>
-        <p class="card-panel red darken-2 white-text">
+        <p class="card-panel theme-yellow white-text">
             More information on lodging options will be released very soon. The information entered here will be used for surveying purposes.
         </p>
 
@@ -325,15 +350,22 @@
             <div class="input-field col s12">
                 <h6>I will arrive and leave between the following dates</h6>
             </div>
-            <div class="input-field col s12">
-                <div id="div-lodging-dates"></div>
+            <div class="input-field col s12 m6">
+                <select id="select-lodging-arrive" name="select-lodging-arrival">
+                </select>
+                <label>Arrival</label>
+            </div>
+            <div class="input-field col s12 m6">
+                <select id="select-lodging-depart" name="select-lodging-depart">
+                </select>
+                <label>Departure</label>
             </div>
         </div>
     </section>
 
     <section id="section-excursion" class="section hide">
         <h3>Excursion</h3>
-        <p class="card-panel red darken-2 white-text">
+        <p class="card-panel theme-yellow white-text">
             More information on the excursion will be released very soon. The information entered here will be used for surveying purposes.
         </p>
         <div class="row">
@@ -419,12 +451,12 @@
 
     <section id="section-others" class="section hide">
         <h4>Congress Photo</h4>
-        <p class="card-panel red darken-2 white-text">
+        <p class="card-panel theme-yellow white-text">
             More information about this will be out soon!
         </p>
 
         <p>
-            <label>
+            <label class="input-field">
                 <input class="filled-in" name="cbx-others-photo" type="checkbox">
                 <span>I would like to avail of the official printed congress photo</span>
             </label>
@@ -434,32 +466,67 @@
         <p>
             All participants will receive a digital copy of their invitation letters in their respective emails. However, in the case that you need documentation for various purposes, you may request a printed invitation letter from us.
         </p>
-        <p>
+        <div>
             <label>
                 <input class="filled-in" name="cbx-others-invitletter" type="checkbox">
                 <span>I would like to have a printed invitation letter sent through mail</span>
             </label>
-        </p>
+
+            <div id="div-others-invitletter-shipinfo" class="row hide">
+                <div class="col s12">
+                    <h6>Ship to&#8230;</h6>
+                    <input type="hidden" name="hdn-invitletter-fee" value="0">
+                </div>
+                <label class="input-field col s12 m6">
+                    <input class="with-gap" name="rbx-others-invitletter-shipto" value="local" type="radio">
+                    <span>Philippines</span>
+                </label>
+                <label class="input-field col s12 m6">
+                    <input class="with-gap" name="rbx-others-invitletter-shipto" type="radio" value="foreign" checked>
+                    <span>Other</span>
+                </label>
+                <div id="div-card-invitletter-price" class="card-panel col s12 theme-yellow white-text">
+                    <p>
+                        Note that getting an invitation letter will cost <b>PHP 180.00</b> to cover the shipping fee.
+                    </p>
+                </div>
+            </div>
+        </div>
 
         <h4>Donations</h4>
+        <p>
+            The Congress is accepting donations related to the congress proceedings and the overall welfare of the Philippine Esperanto Youth. Here are some items where your donations can be placed.
+        </p>
+        <p>
+            <b>Congress Fund</b> for the general organization of the congress and covering its costs, and eventually to make the program richer and more substantial
+        </p>
+        <p>
+            <b>Participant Support</b> to support young Filipinos which live in areas far from the Congress venue or those who undergo financial struggles
+        </p>
+        <p>
+            <b>Association Fund</b> to finance the activities and initiatives of the Philippine Esperanto Youth
+        </p>
+        <p>
+            Donations are optional. You can leave some or all of these blank if you do not wish to make any donation.
+        </p>
+
+
+        <div id="div-donate-currency" class="card-panel theme-green white-text">
+            Note that you will be donating in Philippine Peso.
+        </div>
+
         <div class="row">
-            <div class="col s12">
-                <div class="input-field inline">
-                    <input id="txt-congress-fund" type="number" class="validate" placeholder="0.00">
-                </div>
-                PHP for the <b>Congress Fund</b> <a class="tooltipped" data-position="top" data-tooltip="for the general organization of the congress and covering its costs, and eventually to make the program richer and more substantial">[?]</a>
+            <div class="input-field col s12 m4">
+                <input id="txt-congress-fund" name="txt-congress-fund" type="number" class="validate" placeholder="0.00">
+                <label for="txt-congress-fund">Congress Fund</label>
             </div>
-            <div class="col s12">
-                <div class="input-field inline">
-                    <input id="txt-participant-fund" type="number" len class="validate" placeholder="0.00">
-                </div>
-                PHP for <b>participant support</b> <a class="tooltipped" data-position="top" data-tooltip="to support young Filipinos which live in areas far from the Congress venue or those who undergo financial struggles">[?]</a>
+            <div class="input-field col s12 m4">
+                <input id="txt-participant-fund" name="txt-participant-fund" type="number" class="validate" placeholder="0.00">
+                <label for="txt-participant fund">Participant Fund</label>
             </div>
-            <div class="col s12">
-                <div class="input-field inline">
-                    <input id="txt-fej-fund" type="number" len class="validate" placeholder="0.00">
-                </div>
-                PHP for <b>Association Fund</b> <a class="tooltipped" data-position="top" data-tooltip="to finance the activities and initiatives of the Philippine Esperanto Youth">[?]</a>
+            <div class="input-field col s12 m4">
+                <input id="txt-fej-fund" name="txt-fej-fund" type="number" class="validate" placeholder="0.00">
+                <label for="txt-fej-fund">Association Fund</label>
             </div>
         </div>
 
@@ -467,13 +534,13 @@
         <p>
             <label>
                 <input class="filled-in" name="cbx-others-name-include" type="checkbox">
-                <span>I want my full name written in the list of participants</span>
+                <span>I want my full name written in the list of participants in this website</span>
             </div>
         </p>
         <p>
             <label>
                 <input class="filled-in" name="cbx-others-contrib" type="checkbox">
-                <span>I want to contribute to the congress program by any means</span>
+                <span>I want to lead a lecture or activity during the Congress</span>
             </label>
         </p>
         <p>
@@ -498,9 +565,8 @@
 
     <section id="section-payment" class="section hide">
         <h3>Payment</h3>
-        <input type="hidden" name="hdn-reg-period" value="regular">
         <div id="div-panel-reg-date-notice" class="card">
-            <div class="card-content green darken-3 white-text">
+            <div class="card-content theme-green white-text">
                 <span class="card-title">Regular Registration</span>
                 <p>
                     Today is within the period of regular registration.
@@ -625,8 +691,90 @@
         </div>
     </section>
 
+    <section id="section-thanks" class="section hide">
+        <h3 class="center-align">Thank You!</h3>
+        <div class="row">
+            <div class="col s12 m5 card-panel theme-yellow white-text">
+                <h5>Reference Numbers</h5>
+                <p>
+                    Please retain these IDs for future reference.
+                </p>
+                <hr class="white-text">
+                <p>
+                    <b>Registration ID</b><br>
+                    <span id="span-register-id"></span>
+                </p>
+                <p>
+                    <b>Payment ID</b><br>
+                    <span id="span-payment-id"></span>
+                </p>
+            </div>
+            <div class="col s12 offset-m1 m6">
+                <p>
+                    Thank you for registering to the First Philippine Esperanto Youth Congress. We hope to see you during the event!
+                </p>
+                <p>
+                    For registration, payment, and other concerns, please contact us at peyc<span class="hide">you</span>2020<span class="hide">have</span>@<span class="hide">been</span>gmail<span class="hide">pwned</span>.<span class="hide">here</span>com. Please tell us your registration or payment id to better assist you.
+                </p>
+            </div>
+        </div>
+        <div class="center-align">
+            <button id="btn-register-again" class="btn btn-large waves-effect waves-light theme-green"><i class="material-icons left">autorenew</i>Register Again</button>
+        </div>
+    </section>
+
     <section id="section-nav-buttons" class="section hide center-align">
-        <button id="btn-prev" class="btn btn-large disabled waves-effect waves-light green darken-3"><i class="material-icons left">navigate_before</i>Back</a>
-        <button id="btn-next" class="btn btn-large waves-effect waves-light green darken-3">Next<i class="material-icons right">navigate_next</i></a>
+        <button id="btn-prev" class="btn btn-large waves-effect waves-light theme-green" disabled><i class="material-icons left">navigate_before</i>Back</button>
+        <button id="btn-next" class="btn btn-large waves-effect waves-light theme-green">Next<i class="material-icons right">navigate_next</i></button>
     </section>
 </form>
+
+<!--
+<div style="position:absolute;top:0px;left:0px;width:100vw;height:100vh;z-index:-999">
+    <svg xmlns="http://www.w3.org/2000/svg" id="svg-reg-bg" width="100%" height="100%">
+        <symbol id="yellow-bar">
+            <polygon points="0,0 26,0 13,35" style="fill:#CC9D37;stroke:transparent;" />
+            <line x1="0" y1="35" x2="26" y2="35" style="stroke:#CC9D37;stroke-width:2" />
+        </symbol>
+
+        <symbol id="green-bar-squares">
+            <rect x="15" y="5" width="20" height="15" style="fill:#418B45;stroke:transparent;" />
+
+            <line x1="0" y1="0" x2="0" y2="25" style="stroke:#418B45;stroke-width:4" />
+        </symbol>
+
+        <symbol id="red-bar">
+            <polygon points="0,0 0,10 40,-30 80,10 80,0 40,-40" style="fill:#992226;stroke:transparent;" />
+            <polygon points="0,20 0,30 40,-10 80,30 80,20 40,-20" style="fill:#992226;stroke:transparent;" />
+            <polygon points="0,40 10,40 40,10 70,40 80,40 40,0" style="fill:#992226;stroke:transparent;" />
+            <polygon points="20,40 60,40 40,20" style="fill:#992226;stroke:transparent;" />
+        </symbol>
+
+        <symbol id="green-bar-pattern">
+            <polyline points="0,-5 12,7 25,-5"
+            style="fill:none;stroke:#418B45;stroke-width:4.5" />
+            <circle cx="5" cy="15" r="3" style="fill:#418B45;stroke:transparent;" />
+            <circle cx="20" cy="15" r="3" style="fill:#418B45;stroke:transparent;" />
+            <polyline points="0,35 12,23 25,35" style="fill:none;stroke:#418B45;stroke-width:4.5" />
+
+            <rect x="30" y="2" width="7" height="7" style="fill:#418B45;stroke:transparent;" />
+            <rect x="30" y="12" width="7" height="7" style="fill:#418B45;stroke:transparent;" />
+            <rect x="30" y="22" width="7" height="7" style="fill:#418B45;stroke:transparent;" />
+
+            <line x1="40" y1="0" x2="40" y2="30" style="stroke:#418B45;stroke-width:2" />
+        </symbol>
+
+        <symbol id="tri-ul">
+            <polygon points="0,0 100,0 0,100" style="fill:#CC9D37;stroke:transparent;" />
+        </symbol>
+
+        <symbol id="tri-ur">
+            <polygon points="100,0 0,0 100,100" style="fill:#418B45;stroke:transparent;" />
+        </symbol>
+
+        <symbol id="tri-lr">
+            <polygon id="tri-lr" points="100,0 100,100 0,100" style="fill:#992226;stroke:transparent;" />
+        </symbol>
+    </svg>
+</div>
+-->

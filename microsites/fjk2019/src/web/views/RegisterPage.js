@@ -1,6 +1,5 @@
 import m from 'mithril';
 import Materialize from 'materialize-css';
-import noUiSlider from 'materialize-css/extras/noUiSlider/nouislider';
 import Cookies from 'js-cookie';
 
 import {DomScripts} from '../util/dom';
@@ -8,9 +7,8 @@ import {RegForm} from '../util/register';
 
 import {BasePage} from './BasePage';
 import htmlMain from '../templates/register.html';
-import heroPath from '../img/hero/banderitas_volcorp_banner.jpg';
+import heroPath from '../img/hero/ks_cards.jpg';
 
-import 'materialize-css/extras/noUiSlider/nouislider.css';
 import '../styles/default.css';
 import '../styles/datepicker.css';
 import '../styles/steps.css';
@@ -30,7 +28,7 @@ export class RegisterPage extends BasePage {
                     "First Philippine Esperanto Youth Congress"
                 ]
             }
-        )
+        );
 
         this.countryList = [];
         this.currentPageState = 0;
@@ -77,6 +75,8 @@ export class RegisterPage extends BasePage {
     oncreate() {
         this.attachRegOverview();
         this.attachRegisterEvent();
+        this.attachOthersEvent();
+        this.attachThanksEvent();
         this.attachNavBtnEvent();
 
         super.oncreate();
@@ -88,17 +88,44 @@ export class RegisterPage extends BasePage {
         m.render(stepContainerElm, this.getStepsDom(this.currentPageState));
 
         // Populate country list
-        let countrySelectElm = document.querySelector("#select-countries-list");
+        let countrySelectElm = document.getElementById('select-countries-list');
+        while (countrySelectElm.firstChild) {
+            countrySelectElm.removeChild(countrySelectElm.firstChild);
+        }
+
+        let defaultOptElm = document.createElement('option');
+        defaultOptElm.setAttribute('value', '');
+        defaultOptElm.setAttribute('disabled', 'disabled');
+        defaultOptElm.setAttribute('selected', 'selected');
+        defaultOptElm.innerHTML = 'Country of Origin';
+        countrySelectElm.appendChild(defaultOptElm);
 
         this.countryList.forEach((v) => {
-            let optElm = document.createElement("option");
-            optElm.setAttribute("value", v[1]);
+            let optElm = document.createElement('option');
+            optElm.setAttribute('value', v[1]);
             optElm.innerHTML = v[0];
 
             countrySelectElm.appendChild(optElm);
         });
 
-        Materialize.FormSelect.init(document.getElementById('select-countries-list'));
+        Materialize.FormSelect.init(countrySelectElm);
+
+        // Populate lodging dates list
+        let arriveSelectElm = document.getElementById('select-lodging-arrive');
+        let departSelectElm = document.getElementById('select-lodging-depart');
+
+        for(let i = 20200420; i <= 20200430; ++i) {
+            let idxToDate = new Date(i / 10000, ((i / 100) % 100) - 1, i % 100);
+            let optElm = document.createElement("option");
+            optElm.setAttribute("value", i);
+            optElm.innerHTML = idxToDate.toLocaleDateString('en-PH', {year: 'numeric', month: 'short', day: '2-digit', weekday: 'short'});
+
+            arriveSelectElm.appendChild(optElm.cloneNode(true));
+            departSelectElm.appendChild(optElm.cloneNode(true));
+        }
+
+        Materialize.FormSelect.init(arriveSelectElm);
+        Materialize.FormSelect.init(departSelectElm);
 
         // Check registration date
         const regDateIdx = this.checkRegistrationDates();
@@ -108,22 +135,6 @@ export class RegisterPage extends BasePage {
         document.querySelector('input[name=hdn-reg-period]').value = regDateIdx;
         cardPanelElm.querySelector('.card-title').innerHTML = `${regPeriodName[0].toUpperCase()}${regPeriodName.substr(1)} Registration`;
         cardPanelElm.querySelector('div.card-content p').innerHTML = `Today is within the period of <b>${regPeriodName}</b> registration!`;
-
-        // Update slider
-        const lodgingDatesSlider = document.getElementById('div-lodging-dates');
-        noUiSlider.create(lodgingDatesSlider, {
-            connect: true,
-            step: 1,
-            orientation: 'horizontal',
-            start: [20200423, 20200426],
-            range: {
-                'min': 20200410,
-                'max': 20200430
-            },
-            format: wNumb({
-                decimals: 0
-            })
-        });
     }
 
     attachRegOverview() {
@@ -302,6 +313,71 @@ export class RegisterPage extends BasePage {
         });
     }
 
+    attachOthersEvent() {
+        const invitLetterCbx = document.querySelector('input[name=cbx-others-invitletter][type=checkbox]');
+        const invitLetterShipDiv = document.getElementById('div-others-invitletter-shipinfo');
+        const shipToRbx = document.querySelectorAll('input[type=radio][name=rbx-others-invitletter-shipto]');
+        const shipToCard = document.getElementById('div-card-invitletter-price');
+
+        invitLetterCbx.addEventListener('change', (e) => {
+            if(invitLetterCbx.checked) {
+                invitLetterShipDiv.classList.remove('hide');
+            }
+
+            DomScripts.animateOnce(invitLetterShipDiv, [(invitLetterCbx.checked) ? 'fadeIn' : 'fadeOut', 'fast'], () => {
+                if(!invitLetterCbx.checked) {
+                    invitLetterShipDiv.classList.add('hide');
+                }
+            });
+        });
+
+        shipToRbx.forEach((v) => {
+            v.addEventListener('change', (e) => {
+                const shippingLocality = v.value;
+                const {currency, value} = this.computeInvitationLetterFee(shippingLocality, this.isLocalRates());
+
+                m.render(shipToCard, [
+                    m('p', [
+                        'Note that getting an invitation letter will cost ',
+                        m('b', `${currency}${value}`),
+                        ' to cover the shipping fee.',
+                    ])
+                ]);
+            });
+        });
+    }
+
+    attachThanksEvent() {
+        const registerAgainBtn = document.getElementById('btn-register-again');
+        let prevBtn = document.getElementById('btn-prev');
+        let nextBtn = document.getElementById('btn-next');
+
+        registerAgainBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            DomScripts.animateOnce('#section-thanks', ['fadeOutLeft', 'fast'], () => {
+                document.getElementById('section-thanks').classList.add('hide');
+                document.getElementById('section-guidelines').classList.remove('hide');
+
+                // Reset button state
+                this.currentPageState = 0;
+                document.getElementById('form-register').reset();
+                prevBtn.disabled = true;
+                nextBtn.disabled = false;
+                m.render(nextBtn, [
+                    m('i', {class: 'material-icons right'}, 'navigate_next'),
+                    'Next'
+                ]);
+
+                // Reset registration info
+                document.querySelector('#div-reg-category').classList.remove('hide');
+                document.querySelector('#select-reg-occupation').required = true;
+
+                DomScripts.animateOnce('#section-guidelines', ['fadeInRight', 'fast']);
+            });
+        });
+    }
+
     attachNavBtnEvent() {
         let prevBtn = document.querySelector('#btn-prev');
         let nextBtn = document.querySelector('#btn-next');
@@ -324,8 +400,7 @@ export class RegisterPage extends BasePage {
 
             if(!this.checkValidSubForm(fromSectionId)) {
                 console.log('Section has invalid fields!');
-
-                //return;
+                return;
             }
 
             // Submit form if on last page
@@ -344,60 +419,117 @@ export class RegisterPage extends BasePage {
     }
 
     triggerSectionChanges(sectionIdx) {
-        let sectionId = this.pageStatesList[sectionIdx][2];
+        const countryList = document.querySelector('#select-countries-list');
+        const sectionId = this.pageStatesList[sectionIdx][2];
         let sectionDiv = document.querySelector(`#${sectionId}`);
+
+        const isLocalRates = this.isLocalRates();
 
         switch(sectionId) {
             case 'section-reg':
                 let rateCard = document.querySelector('#div-reg-ratecard');
-                let countryList = document.querySelector('#select-countries-list');
-                let isLocalRates = countryList.value == 'PHL';
 
                 // Init modal
-                rateCard.querySelector('div.card-content p').innerHTML = `You originate from <b>${countryList.value}</b> and <b>${isLocalRates ? 'local' : 'foreign'}</b> rates for registration apply.`;
+                rateCard.querySelector('div.card-content p').innerHTML = `You originate from <b>${countryList[countryList.selectedIndex].innerHTML}</b> and <b>${isLocalRates ? 'local' : 'foreign'}</b> rates for registration apply.`;
                 m.render(rateCard.querySelector('div.card-action'),
-                    m('a', {class: 'btn-flat green-text text-darken-2 modal-trigger', href: isLocalRates ? '#div-modal-ph-rates' : '#div-modal-foreign-rates'}, 'View Rates')
+                    m('a', {class: 'btn-flat theme-green-text waves-effect modal-trigger', href: isLocalRates ? '#div-modal-ph-rates' : '#div-modal-foreign-rates'}, 'View Rates')
                 );
 
                 break;
+            case 'section-others': {
+                // Invitation letter card
+                const rbxInvitLetterShipTo = document.querySelector('input[type=radio][name=rbx-others-invitletter-shipto]:checked');
+                const shipToCard = document.getElementById('div-card-invitletter-price');
+                const shippingLocality = rbxInvitLetterShipTo.value;
+                const {currency, value} = this.computeInvitationLetterFee(shippingLocality, this.isLocalRates());
+
+                m.render(shipToCard, [
+                    m('p', [
+                        'Note that getting an invitation letter will cost ',
+                        m('b', `${currency}${value}`),
+                        ' to cover the shipping fee.',
+                    ])
+                ]);
+
+                // Donation card
+                const donateCurrencyCard = document.getElementById('div-donate-currency');
+                const currencyKey = isLocalRates ? 'Philippine Pesos' : 'Euros';
+
+                m.render(donateCurrencyCard, [
+                    'Note that you will be donating in ',
+                    m('b', currencyKey)
+                ]);
+            }
             case 'section-payment': {
-                // Compute registration cost
-                const bdayField = document.querySelector('#txt-bday');
-                const countryList = document.querySelector('#select-countries-list');
-                const rbxCategory = document.querySelector('input[type=radio][name=rbx-reg-broad]:checked');
-                const selectList = document.querySelector('#select-reg-occupation');
-                const regPeriodField = document.querySelector('input[name=hdn-reg-period]');
+                // Compute total fees
                 const cardPaymentDetails = document.querySelector('#div-card-payment-details');
+                const feesObj = this.computeTotalRegFees(isLocalRates);
 
-                const locKey = countryList.value === 'PHL' ? 'local' : 'foreign';
-                const currencyKey = countryList.value === 'PHL' ? '₱' : '€';
-                const regCatKey = RegForm.getRegTier(locKey, rbxCategory.value, selectList.value, bdayField.value);
-                const regFeeCost = regFeesJson[locKey][regCatKey][regPeriodField.value];
-
-                m.render(cardPaymentDetails.querySelector('.card-content'), [
-                    m('span', {class: 'card-title'}, `Payment Details (${currencyKey})`),
+                // Build receipt rows
+                let receiptRows = [
+                    m('span', {class: 'card-title'}, `Payment Details (${feesObj.currency})`),
                     m('div', {class: 'row'}, [
                         m('div', {class: 'col s8'}, 'Registration Fee'),
-                        m('div', {class: 'col s4 right-align'}, regFeeCost)
+                        m('div', {class: 'col s4 right-align'}, feesObj.regFee)
                     ]),
-                    m('div', {class: 'row'}, [
-                        m('span', {class: 'col s8'}, 'Congress Donation'),
-                        m('span', {class: 'col s4 right-align'}, 10)
-                    ]),
-                    m('div', {class: 'row'}, [
-                        m('span', {class: 'col s8'}, 'FEJ Donation'),
-                        m('span', {class: 'col s4 right-align'}, 1000)
-                    ]),
+                ];
+
+                if(feesObj.invitLetter > 0) {
+                    receiptRows.push(
+                        m('div', {class: 'row'}, [
+                            m('span', {class: 'col s8'}, 'Invitation Letter Fee'),
+                            m('span', {class: 'col s4 right-align'}, feesObj.invitLetter)
+                        ])
+                    );
+                }
+
+                if(feesObj.congressFund > 0) {
+                    receiptRows.push(
+                        m('div', {class: 'row'}, [
+                            m('span', {class: 'col s8'}, 'Congress Fund'),
+                            m('span', {class: 'col s4 right-align'}, feesObj.congressFund)
+                        ])
+                    );
+                }
+
+                if(feesObj.participantFund > 0) {
+                    receiptRows.push(
+                        m('div', {class: 'row'}, [
+                            m('span', {class: 'col s8'}, 'Participant Fund'),
+                            m('span', {class: 'col s4 right-align'}, feesObj.participantFund)
+                        ])
+                    );
+                }
+
+                if(feesObj.fejFund > 0) {
+                    receiptRows.push(
+                        m('div', {class: 'row'}, [
+                            m('span', {class: 'col s8'}, 'Association Fund'),
+                            m('span', {class: 'col s4 right-align'}, feesObj.fejFund)
+                        ])
+                    );
+                }
+
+                receiptRows.push([
                     m('hr'),
                     m('div', {class: 'row'}, [
                         m('span', {class: 'col s8'}, [
                             m('b', 'Grand Total')
                         ]),
                         m('span', {class: 'col s4 right-align'}, [
-                            m('b', `${currencyKey}${regFeeCost + 1000 + 10}`)
+                            m('b', `${feesObj.currency}${feesObj.total}`)
                         ])
-                    ]),
+                    ])
                 ]);
+
+                // Render
+                m.render(cardPaymentDetails.querySelector('.card-content'), receiptRows);
+
+                // Set hidden fields
+                document.querySelector('input[name=hdn-reg-fee]').value = feesObj.regFee;
+                document.querySelector('input[name=hdn-invitletter-fee]').value = feesObj.invitLetter;
+                document.querySelector('input[name=hdn-reg-category]').value = feesObj.regCategory;
+                document.querySelector('input[name=hdn-reg-currency]').value = feesObj.currency;
 
                 break;
             }
@@ -423,18 +555,70 @@ export class RegisterPage extends BasePage {
     }
 
     async submitForm() {
-        console.log('Form submitted!');
+        const prevBtn = document.getElementById('btn-prev');
+        const submitBtn = document.getElementById('btn-next');
+
+        const inProgressToast = Materialize.toast({
+            html: 'Registering you. Please wait&#8230;',
+            classes: 'theme-green white-text'
+        });
 
         try {
+            console.log('Form submitted!');
+            prevBtn.disabled = true;
+            submitBtn.disabled = true;
+
             const res = await fetch('//localhost:6002/api/register', {
                 method: 'POST',
                 body: new URLSearchParams(new FormData(document.forms[0])),
             });
 
-            console.log(res);
+            inProgressToast.dismiss();
+
+            if(!res.ok) {
+                console.error(`Not OK HTTP status on form submit: ${res.json()}`);
+                prevBtn.disabled = false;
+                submitBtn.disabled = false;
+
+                Materialize.toast({
+                    html: 'Form cannot be submitted. Please contact the organizers.',
+                    classes: 'theme-yellow white-text'
+                });
+            }
+            else {
+                const jsonRes = await res.json();
+                console.info('Form received by server!');
+
+                DomScripts.animateOnce('#div-steps', ['fadeOutUp', 'fast'], () => {
+                    document.getElementById('div-steps').classList.add('hide');
+                });
+
+                DomScripts.animateOnce('#section-nav-buttons', ['fadeOutDown', 'fast'], () => {
+                    document.getElementById('section-nav-buttons').classList.add('hide');
+                });
+
+                DomScripts.animateOnce('#section-payment', ['fadeOutLeft', 'fast'], () => {
+                    const thanksSection = document.getElementById('section-thanks');
+
+                    document.getElementById('section-payment').classList.add('hide');
+                    thanksSection.classList.remove('hide');
+
+                    DomScripts.animateOnce(thanksSection, ['fadeInRight', 'fast']);
+
+                    document.getElementById('span-register-id').innerHTML = jsonRes.registerId;
+                    document.getElementById('span-payment-id').innerHTML = jsonRes.paymentId;
+                });
+            }
         }
         catch(err) {
             console.error(`Error on form submit: ${err}`);
+            prevBtn.disabled = false;
+            submitBtn.disabled = false;
+
+            Materialize.toast({
+                html: 'Form cannot be submitted. Please contact the organizers.',
+                classes: 'theme-yellow'
+            });
         }
     }
 
@@ -471,7 +655,7 @@ export class RegisterPage extends BasePage {
                 Materialize.toast({
                     html: toastMsg,
                     displayLength: 1750,
-                    classes: 'red darken-3'
+                    classes: 'theme-red'
                 });
 
                 return false;
@@ -485,14 +669,14 @@ export class RegisterPage extends BasePage {
         let fromSectionId = `#${this.pageStatesList[idxFrom][2]}`;
         let toSectionId = `#${this.pageStatesList[idxTo][2]}`;
 
-        let prevBtn = document.querySelector('#btn-prev');
-        let nextBtn = document.querySelector('#btn-next');
+        let prevBtn = document.getElementById('btn-prev');
+        let nextBtn = document.getElementById('btn-next');
 
         if(idxTo <= 0) {
-            prevBtn.classList.add('disabled')
+            prevBtn.disabled = true;
         }
         else {
-            prevBtn.classList.remove('disabled');
+            prevBtn.disabled = false;
         }
 
         if(idxTo >= this.pageStatesList.length - 1) {
@@ -545,4 +729,142 @@ export class RegisterPage extends BasePage {
 
         return m('ul', {class: 'steps-bar browser-default'}, stepItemsList);
     }
+
+    isLocalRates() {
+        const countryList = document.querySelector('#select-countries-list');
+        return countryList.value == 'PHL';
+    }
+
+    computeInvitationLetterFee(shipToLocality, isLocalRates) {
+        return {
+            currency: isLocalRates ? '₱' : '€',
+            value: regFeesJson['invitletter'][shipToLocality][isLocalRates ? 0 : 1]
+        };
+    }
+
+    computeTotalRegFees(isLocalRates) {
+        // Compute registration cost
+        const bdayField = document.querySelector('#txt-bday');
+        const rbxCategory = document.querySelector('input[type=radio][name=rbx-reg-broad]:checked');
+        const cbxInvitLetter = document.querySelector('input[type=checkbox][name=cbx-others-invitletter]');
+        const rbxInvitLetterShipTo = document.querySelector('input[type=radio][name=rbx-others-invitletter-shipto]:checked');
+        const selectList = document.querySelector('#select-reg-occupation');
+        const regPeriodField = document.querySelector('input[name=hdn-reg-period]');
+
+        const locKey = isLocalRates ? 'local' : 'foreign';
+        const currencyKey = isLocalRates ? '₱' : '€';
+        const regCatKey = RegForm.getRegTier(locKey, rbxCategory.value, selectList.value, bdayField.value);
+        const regFeeCost = regFeesJson[locKey][regCatKey][regPeriodField.value];
+
+        // Get inivitation letter cost
+        const invitLetterCost = (cbxInvitLetter.checked) ? this.computeInvitationLetterFee(rbxInvitLetterShipTo.value, isLocalRates).value : 0;
+
+        // Get donations cost
+        const congressFundCost = Number(document.getElementById('txt-congress-fund').value);
+        const participantFundCost = Number(document.getElementById('txt-participant-fund').value);
+        const fejFundCost = Number(document.getElementById('txt-fej-fund').value);
+
+        // Get total payable cost
+        const totalPayableCost = regFeeCost + invitLetterCost + congressFundCost + participantFundCost + fejFundCost;
+
+        return {
+            regFee: regFeeCost,
+            invitLetter: invitLetterCost,
+            congressFund: congressFundCost,
+            participantFund: participantFundCost,
+            fejFund: fejFundCost,
+            total: totalPayableCost,
+            currency: currencyKey,
+            regCategory: regCatKey,
+        };
+    }
+
+    /*
+    generateBg() {
+        // Generate SVG background
+        const svgRegBg = document.getElementById('svg-reg-bg');
+
+        // Populate top and bottom patterns
+        for(let i = 0; ; ++i) {
+            let wasSet = false;
+
+            if((50 + i * 26) < document.body.scrollWidth - 26) {
+                let useTagYellowBar = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+                useTagYellowBar.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#yellow-bar');
+                useTagYellowBar.setAttribute('x', 50 + i * 26);
+                useTagYellowBar.setAttribute('y', 0);
+
+                svgRegBg.append(useTagYellowBar);
+
+                wasSet = true;
+            }
+
+            if((-20 + i * 80) < document.body.scrollWidth - 80) {
+                let useTagRedBar = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+                useTagRedBar.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#red-bar');
+                useTagRedBar.setAttribute('x', -20 + i * 80);
+                useTagRedBar.setAttribute('y', document.body.scrollHeight - 400);
+
+                svgRegBg.append(useTagRedBar);
+
+                wasSet = true;
+            }
+
+            if(!wasSet) {
+                break;
+            }
+        }
+
+        // Populate left and right patterns
+        for(let i = 0; ; ++i) {
+            let wasSet = false;
+
+            if((60 + i * 30) < document.body.scrollHeight - 30) {
+                let useTag = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+                useTag.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#green-bar-pattern');
+                useTag.setAttribute('x', 0);
+                useTag.setAttribute('y', 60 + i * 30);
+                useTag.setAttribute('height', 30);
+
+                svgRegBg.append(useTag);
+
+                wasSet = true;
+            }
+
+            if((50 + i * 25) < document.body.scrollHeight - 25) {
+                let useTag = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+                useTag.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#green-bar-squares');
+                useTag.setAttribute('x', document.body.scrollWidth - 35);
+                useTag.setAttribute('y', 50 + i * 25);
+
+                svgRegBg.append(useTag);
+
+                wasSet = true;
+            }
+
+            if(!wasSet) {
+                break;
+            }
+        }
+
+        // Populate triangles
+        const triUlTag = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+        triUlTag.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#tri-ul');
+        triUlTag.setAttribute('x', 0);
+        triUlTag.setAttribute('y', 0);
+        svgRegBg.append(triUlTag);
+
+        const triUrTag = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+        triUrTag.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#tri-ur');
+        triUrTag.setAttribute('x', document.body.scrollWidth - 100);
+        triUrTag.setAttribute('y', 0);
+        svgRegBg.append(triUrTag);
+
+        const triLrTag = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+        triLrTag.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#tri-lr');
+        triLrTag.setAttribute('x', document.body.scrollWidth - 100);
+        triLrTag.setAttribute('y', document.body.scrollHeight - 100);
+        svgRegBg.append(triLrTag);
+    }
+    */
 }

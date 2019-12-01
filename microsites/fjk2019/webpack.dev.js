@@ -23,6 +23,9 @@ const common = {
             _: 'lodash'
         })
     ],
+    watchOptions: {
+        ignored: ['node_modules']
+    },
     module: {
         rules: [
             {
@@ -37,6 +40,7 @@ const common = {
 };
 
 const web = {
+    name: 'web',
     target: 'web',
     devtool: 'eval-source-map',
     devServer: {
@@ -49,6 +53,11 @@ const web = {
         filename: 'bundle-web.js',
         path: path.resolve(__dirname, 'dist/web'),
         //publicPath: './'
+    },
+    watchOptions: {
+        ignored: [
+            'node_modules'
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -90,12 +99,18 @@ const web = {
 };
 
 const api = {
+    name: 'api',
     target: 'node',
     entry: './src/api/index.js',
     output: {
         filename: 'api.js',
         path: path.resolve(__dirname, 'dist/api'),
         //publicPath: './'
+    },
+    watchOptions: {
+        ignored: [
+            'node_modules'
+        ]
     },
     plugins: [
         new webpack.IgnorePlugin(/\.(css|less)$/)

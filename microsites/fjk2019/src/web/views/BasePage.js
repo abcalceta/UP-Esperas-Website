@@ -34,7 +34,7 @@ export class BasePage {
             m("main", {id: "main-content", class:"container"},
                 m.trust(this.componentHolder.main)
             ),
-            m("footer", {class: "page-footer yellow accent-2"},
+            m("footer", {class: "page-footer theme-yellow"},
                 m.trust(this.componentHolder.footer)
             )
         ]

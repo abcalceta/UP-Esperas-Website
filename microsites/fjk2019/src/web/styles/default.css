@@ -47,33 +47,34 @@ footer .footer-copyright {
 }
 
 footer .footer-main a:link {
-    color: #418B45;
+    color: whitesmoke;
 }
 
 footer .footer-main a:hover {
     text-decoration: underline;
 }
 
+/* Theme colors */
 .theme-green {
-    background-color: #418B45;
+    background-color: #418B45 !important;
 }
 
 .theme-green-text {
-    color: #418B45;
+    color: #418B45 !important;
 }
 
 .theme-red {
-    background-color: #992226;
+    background-color: #992226 !important;
 }
 
 .theme-red-text {
-    color: #992226;
+    color: #992226 !important;
 }
 
 .theme-yellow {
-    background-color: #CC9D37;
+    background-color: #CC9D37 !important;
 }
 
 .theme-yellow-text {
-    color: #CC9D37;
+    color: #CC9D37 !important;
 }

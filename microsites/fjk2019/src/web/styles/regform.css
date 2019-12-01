@@ -1,12 +1,14 @@
 /* Input box */
 .input-field input[type=text]:focus + label.active,
-.input-field input[type=email]:focus + label.active
+.input-field input[type=email]:focus + label.active,
+.input-field input[type=number]:focus + label.active
  {
     color: #418B45;
 }
 
 .input-field input[type=text]:not(.browser-default):focus:not([readonly]),
-.input-field input[type=email]:not(.browser-default):focus:not([readonly]) {
+.input-field input[type=email]:not(.browser-default):focus:not([readonly]),
+.input-field input[type=number]:not(.browser-default):focus:not([readonly]) {
     border-bottom: 1px solid #418B45;
     box-shadow: 0 1px 0 0 #418B45;
 }
@@ -39,21 +41,3 @@ input[type=radio].with-gap:checked + span::after {
 .dropdown-content li > span {
     color: #418B45;
 }
-
-/* Slider */
-.noUi-connect {
-    background-color: #418B45;
-}
-
-.noUi-origin .noUi-handle {
-    background-color: #418B45;
-}
-
-.noUi-origin .noUi-handle .noUi-tooltip {
-    background-color: #418B45;
-}
-
-/*
- * #992226 red
- * #CC9D37 yellow
- */
