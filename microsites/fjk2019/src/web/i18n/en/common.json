@@ -1,0 +1,15 @@
+{
+    "defaultTitle": "Philippine Esperanto Youth Congress 2020",
+    "titleSpecific": "%{pageName} | Philippine Esperanto Youth Congress2020",
+    "buttons": {
+        "close": "Close",
+        "prevButton": "Back",
+        "nextButton": "Next",
+        "submitButton": "Submit",
+        "viewRates": "View Rates"
+    },
+    "currency": {
+        "wordsPh": "Philippine Pesos",
+        "wordsEu": "Euros"
+    }
+}

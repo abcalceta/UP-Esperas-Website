@@ -58,7 +58,8 @@ export class RegisterPage extends BasePage {
         this.componentHolder.main = htmlMain;
     }
 
-    oninit() {
+    oninit(vnode) {
+        // Load country list
         m.request({
             method: 'GET',
             url: 'https://restcountries.eu/rest/v2/all?fields=name;alpha3Code'
@@ -67,6 +68,8 @@ export class RegisterPage extends BasePage {
             this.countryList = t.map((eachCountry) => {
                 return [eachCountry.name, eachCountry.alpha3Code];
             });
+
+            vnode.attrs.updatedCountryList = true;
         });
 
         super.oninit();
@@ -78,37 +81,6 @@ export class RegisterPage extends BasePage {
         this.attachOthersEvent();
         this.attachThanksEvent();
         this.attachNavBtnEvent();
-
-        super.oncreate();
-    }
-
-    onupdate() {
-        // Update step progress
-        let stepContainerElm = document.querySelector('#div-steps');
-        m.render(stepContainerElm, this.getStepsDom(this.currentPageState));
-
-        // Populate country list
-        let countrySelectElm = document.getElementById('select-countries-list');
-        while (countrySelectElm.firstChild) {
-            countrySelectElm.removeChild(countrySelectElm.firstChild);
-        }
-
-        let defaultOptElm = document.createElement('option');
-        defaultOptElm.setAttribute('value', '');
-        defaultOptElm.setAttribute('disabled', 'disabled');
-        defaultOptElm.setAttribute('selected', 'selected');
-        defaultOptElm.innerHTML = 'Country of Origin';
-        countrySelectElm.appendChild(defaultOptElm);
-
-        this.countryList.forEach((v) => {
-            let optElm = document.createElement('option');
-            optElm.setAttribute('value', v[1]);
-            optElm.innerHTML = v[0];
-
-            countrySelectElm.appendChild(optElm);
-        });
-
-        Materialize.FormSelect.init(countrySelectElm);
 
         // Populate lodging dates list
         let arriveSelectElm = document.getElementById('select-lodging-arrive');
@@ -135,6 +107,55 @@ export class RegisterPage extends BasePage {
         document.querySelector('input[name=hdn-reg-period]').value = regDateIdx;
         cardPanelElm.querySelector('.card-title').innerHTML = `${regPeriodName[0].toUpperCase()}${regPeriodName.substr(1)} Registration`;
         cardPanelElm.querySelector('div.card-content p').innerHTML = `Today is within the period of <b>${regPeriodName}</b> registration!`;
+
+        super.oncreate();
+    }
+
+    onupdate(vnode) {
+        super.onupdate(vnode);
+
+        const pageIdxFromHistory = vnode.attrs.lastPageIdx;
+
+        // Update step progress
+        let stepContainerElm = document.querySelector('#div-steps');
+        m.render(stepContainerElm, this.getStepsDom(this.currentPageState));
+
+        // Populate country list
+        if(vnode.attrs.updatedCountryList) {
+            const countrySelectElm = document.getElementById('select-countries-list');
+            let countryElmList = [];
+
+            this.countryList.forEach((v) => {
+                if(v[1] == 'PHL') {
+                    return;
+                }
+
+                countryElmList.push(m('option', {value: v[1]}, v[0]));
+            });
+
+            m.render(countrySelectElm, [
+                m('option', {selected: true, disabled: true}, 'Country of Origin'),
+                m('optgroup', {label: 'Local'}, [
+                    m('option', {value: 'PHL'}, 'Philippines')
+                ]),
+                m('optgroup', {label: 'Foreign'}, countryElmList),
+            ]);
+
+            Materialize.FormSelect.init(countrySelectElm);
+
+            vnode.attrs.updatedCountryList = false;
+        }
+
+        if(typeof pageIdxFromHistory == 'number' || pageIdxFromHistory instanceof Number) {
+            console.info(`Moving to page from history: ${this.pageStatesList[pageIdxFromHistory][0]}`);
+
+            this.swapFormSections(this.currentPageState, pageIdxFromHistory);
+            this.scrollStepTimeline(pageIdxFromHistory);
+            this.triggerSectionChanges(pageIdxFromHistory);
+            m.render(document.querySelector('#div-steps'), this.getStepsDom(pageIdxFromHistory));
+
+            this.currentPageState = pageIdxFromHistory;
+        }
     }
 
     attachRegOverview() {
@@ -164,6 +185,15 @@ export class RegisterPage extends BasePage {
                 DomScripts.animateOnce('#section-basic', ['fadeInRight', 'faster']);
                 DomScripts.animateOnce('#div-steps', 'fadeInDown');
                 DomScripts.animateOnce('#section-nav-buttons', 'fadeInUp');
+
+                m.route.set(
+                    `/register/${this.pageStatesList[this.currentPageState][2]}`,
+                    null,
+                    {
+                        replace: true,
+                        state: {lastPageIdx: this.currentPageState}
+                    }
+                );
             });
         });
     }
@@ -180,12 +210,13 @@ export class RegisterPage extends BasePage {
                 case 'shs': {
                     const degreeTxt = educInfoDiv.querySelector('#txt-reg-degree');
 
-                    degreeTxt.parentElement.querySelector('label').innerHTML = 'Strand/Vocation/Grade*';
+                    degreeTxt.parentElement.querySelector('label[for=txt-reg-degree]').innerHTML = 'Strand/Vocation/Grade*';
                     degreeTxt.parentElement.querySelector('span').dataset.error = 'Please enter your strand/vocation/grade';
 
                     Materialize.updateTextFields();
 
-                    document.querySelector('#txt-reg-educ').required = true
+                    document.querySelector('#txt-reg-educ').required = true;
+                    degreeTxt.required = true;
                     document.querySelector('#txt-reg-company').required = false;
                     document.querySelector('#txt-reg-position').required = false;
 
@@ -196,8 +227,9 @@ export class RegisterPage extends BasePage {
                         DomScripts.animateOnce(workInfoDiv, ['fadeOut', 'faster'], () => {
                             workInfoDiv.classList.add('hide');
                         });
-                        break;
                     }
+
+                    break;
                 }
                 case 'undergrad':
                 case 'grad': {
@@ -209,6 +241,7 @@ export class RegisterPage extends BasePage {
                     Materialize.updateTextFields();
 
                     document.querySelector('#txt-reg-educ').required = true;
+                    degreeTxt.required = true;
                     document.querySelector('#txt-reg-company').required = false;
                     document.querySelector('#txt-reg-position').required = false;
 
@@ -219,7 +252,6 @@ export class RegisterPage extends BasePage {
                         DomScripts.animateOnce(workInfoDiv, ['fadeOut', 'faster'], () => {
                             workInfoDiv.classList.add('hide');
                         });
-                        break;
                     }
 
                     break;
@@ -237,11 +269,11 @@ export class RegisterPage extends BasePage {
                         DomScripts.animateOnce(educInfoDiv, ['fadeOut', 'faster'], () => {
                             educInfoDiv.classList.add('hide');
                         });
-                        break;
                     }
+
                     break;
                 }
-                default:
+                default: {
                     document.querySelector('#txt-reg-degree').required = false;
                     document.querySelector('#txt-reg-educ').required = false;
                     document.querySelector('#txt-reg-company').required = false;
@@ -251,15 +283,16 @@ export class RegisterPage extends BasePage {
                         DomScripts.animateOnce(educInfoDiv, ['fadeOut', 'faster'], () => {
                             educInfoDiv.classList.add('hide');
                         });
-                        break;
                     }
 
                     if(!workInfoDiv.classList.contains('hide')) {
                         DomScripts.animateOnce(workInfoDiv, ['fadeOut', 'faster'], () => {
                             workInfoDiv.classList.add('hide');
                         });
-                        break;
                     }
+
+                    break;
+                }
             }
         });
 
@@ -292,17 +325,19 @@ export class RegisterPage extends BasePage {
                             DomScripts.animateOnce(educInfoDiv, ['fadeOut', 'faster'], () => {
                                 educInfoDiv.classList.add('hide');
                             });
-                            break;
                         }
 
                         if(!workInfoDiv.classList.contains('hide')) {
                             DomScripts.animateOnce(workInfoDiv, ['fadeOut', 'faster'], () => {
                                 workInfoDiv.classList.add('hide');
                             });
-                            break;
                         }
 
                         occupationList.required = false;
+                        document.querySelector('#txt-reg-degree').required = false;
+                        document.querySelector('#txt-reg-educ').required = false;
+                        document.querySelector('#txt-reg-company').required = false;
+                        document.querySelector('#txt-reg-position').required = false;
 
                         break;
                     }
@@ -385,12 +420,8 @@ export class RegisterPage extends BasePage {
         prevBtn.addEventListener('click', (e) => {
             e.preventDefault();
 
-            this.swapFormSections(this.currentPageState, this.currentPageState - 1);
-            this.scrollStepTimeline(this.currentPageState - 1);
-            this.triggerSectionChanges(this.currentPageState - 1);
-            m.render(document.querySelector('#div-steps'), this.getStepsDom(this.currentPageState - 1));
-
-            this.currentPageState -= 1;
+            // Go back one page
+            history.back();
         });
 
         nextBtn.addEventListener('click', (e) => {
@@ -409,12 +440,17 @@ export class RegisterPage extends BasePage {
                 return;
             }
 
-            this.swapFormSections(this.currentPageState, this.currentPageState + 1);
-            this.scrollStepTimeline(this.currentPageState + 1);
-            this.triggerSectionChanges(this.currentPageState + 1);
-            m.render(document.querySelector('#div-steps'), this.getStepsDom(this.currentPageState + 1));
+            // Add new history route
+            m.route.set(
+                `/register/${this.pageStatesList[this.currentPageState + 1][2]}`,
+                null,
+                {
+                    replace: false,
+                    state: {lastPageIdx: this.currentPageState + 1}
+                }
+            );
 
-            this.currentPageState += 1;
+            //this.currentPageState += 1;
         });
     }
 

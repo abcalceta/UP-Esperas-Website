@@ -1,0 +1,142 @@
+{
+    "register": {
+        "forms": {
+            "requiredNotice": "Eroj markita per steleto (*) indikas ke ĝi devas plenumi.",
+            "startRegistration": "Komenci Aliĝo",
+            "basic": {
+                "header": "Baza Informo",
+                "fields": {
+                    "lastName": "Lasta Nomo",
+                    "firstName": "Persona Nomo",
+                    "middleName": "Meza Nomo",
+                    "nickName": "Alnomon",
+                    "birthday": "Naskiĝtago",
+                    "sex": "Sekso",
+                    "countryOfOrigin": "Devena Lando",
+                    "emailAddress": "Retpoŝtadreso",
+                    "sns": "Socia Rimedo"
+                },
+                "errors": {
+                    "lastName": "Bv. enigi vian lastan nomon",
+                    "firstName": "Bv. enigi vian personan nomon",
+                    "middleName": "Bv. enigi vian mezan nomon",
+                    "nickName": "Bv. enigi vian alnomon",
+                    "birthday": "Bv. enigi vian naskiĝtagon",
+                    "sex": "Bv. elekti vian sekson",
+                    "countryOfOrigin": "Bv. elekti vian devena Lando",
+                    "emailAddress": "Bv. enigi vian retpoŝtadreson",
+                    "sns": "Bv. enigi vian socian rimedon"
+                }
+            },
+            "register": {
+                "header": "Detaloj pri Aliĝo",
+                "regRatesHeader": "Aliĝkotizo por %{localityPlural} Partoprenantoj",
+                "currencyNotice": "Bv. rimarki ke la kotizoj estas en %{currencyWords}.",
+                "fields": {
+                    "countryNotice": "Vi devenas el %{countryWord} kaj %{locality} kotizoj regas",
+                    "regularParticipant": "Regula Partoprenanto",
+                    "moralParticipant": "Morala Partoprenanto",
+                    "kongresaPatrono": "Kongresa Favoranto",
+                    "seniorHigh": "",
+                    "undergrad": "Bakalaŭro",
+                    "graduate": "",
+                    "working": "Laborulo",
+                    "unemployed": "Senlaborulo",
+                    "educInsti": "Eduka Institucio",
+                    "degree": "Kurso",
+                    "company": "Oficejo",
+                    "position": "Postenon",
+                    "I want to register as": "Mi volas aliĝi kiel&#8230;",
+                    "with current occupation": "&#8230; kun nuna okupiĝo kiel&#8230;",
+                    "and currently studying at": "&#8230; kaj studas nun ĉe&#8230;",
+                    "and currently working at": "&#8230; kaj laboras nun ĉe&#8230;"
+                },
+                "errors": {
+                    "educInsti": "Bv. enigi vian edukan institucio",
+                    "degree": "Bv. enigi vian kurson",
+                    "company": "Bv. enigi vian oficejon",
+                    "position": "Bv. enigi vian postenon"
+                }
+            },
+            "lodging": {
+                "header": "Loĝejo",
+                "fields": {
+                    "interested": "Mi interesiĝas pri antaŭmendi ĉambron provizita de la ",
+                    "beyondDates": "Mi bezonas antaŭmendi preter la datoj de la kongreso",
+                    "arrival": "Alveno",
+                    "departure": "Deiro"
+                }
+            },
+            "excursion": {
+                "header": "Ekskurso",
+                "fields": {
+                    "interested": "Mi interesiĝas partopreni en la ekskurso"
+                }
+            },
+            "food": {
+                "header": "Manĝaĵo",
+                "fields": {
+                    "dietNotice": "Mi havas la jenajn specialajn dietojn",
+                    "allergyNotice": "Mi havas la jenajn manĝaĵajn alergiojn",
+                    "alcoholQuestion": "Ĉu vi drinkas?",
+                    "other": "Alia",
+                    "vegetarian": "Vegetarano",
+                    "vegan": "Vegetaĵano",
+                    "kosher": "Koŝera",
+                    "halal": "Halala",
+                    "nuts": "Nukso",
+                    "seafood": "Marmanĝaĵo",
+                    "wheat": "Gluteno (Tritiko)",
+                    "milk": "Lakto",
+                    "spicy": "Spicoj"
+                }
+            },
+            "others": {
+                "header": "Aliaj",
+                "congressPhotoHeader": "Kongresa Foto",
+                "fields": {
+                    "congressPhoto": "Mi volas ricevi oficialan kongresan foton (elpresita)",
+                    "invitLetter": "Mi volas ricevi elpresitan invitleteron sendita per poŝto",
+                    "shipTo": "Liveri al&#8230;",
+                    "invitLetterCost": "Bv. rimarki ke ĝi kostas %{currencySymbol}%{price} por liveri la leteron al via elektita loko.",
+                    "donateNotice": "Bv. rimarki ke vi donacos per %{currencyWord}",
+                    "congressFund": "Kongresa Fonduso",
+                    "participantFund": "Fonduso por Partoprenontoj",
+                    "associationFund": "Junulara Fonduso",
+                    "program": "Mi volas estri agadon aŭ prelegi dum la kongreso",
+                    "volCorp": "Mi volas kontribui kiel parto de la Kongresa Volontula Servo",
+                    "cert": "Mi bezonas atestilo pri ĉeesto de la kongreso",
+                    "bookletExclude": "Mi ne volas ricevi elpresitan kongresan libron"
+                }
+            },
+            "payment": {
+                "header": "Pago",
+                "registerDates": "Aliĝdatoj",
+                "registerNotice": "Nun estas inter la tempo por <b>%{registerType}</b> aliĝo!",
+                "earlyBird": "Frua",
+                "regular": "Regula",
+                "lateBird": "Malfrua",
+                "onSite": "Memloka",
+                "details": "Detaloj pri Pago",
+                "grandTotal": "Plena Sumo",
+                "payVia": "Pagi per",
+                "timeNotice": "Ĉiuj datoj kaj tempoj prezentitaj estas en Filipina Norma Tempo (GMT+8). La tempo de la limdatoj estas ĉe 11:59 ptm.",
+                "startDate": "Komenca Dato",
+                "endDate": "Limdato",
+                "fields": {
+                    "paypal": "PayPal",
+                    "bankAccount": "per Bankkonto",
+                    "wireTransfer": "Transiro",
+                    "creditCard": "Kreditkarto aŭ debetkarton per PayPal",
+                    "ueaAccount": "UEA-konto"
+                }
+            },
+            "certification": {
+                "accuracy": "Mi atestas ke ĉiuj informoj provizita estas veraj kaj ĝustaj, kiuj povas kontroli per dokumentoj",
+                "privacy": "Mi legis la privatecan avizon rilate al mia aliĝo en la kongreso",
+                "publicity": "Mi konsentas rajtigi la kongresan komitaton ",
+                "newsletter": "Mi volas ricevi pli oftajn informojn pri la kongreso (k.e. aktualigojn kaj bultenojn)"
+            }
+        }
+    }
+}

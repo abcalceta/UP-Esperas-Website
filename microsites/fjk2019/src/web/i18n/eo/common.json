@@ -1,0 +1,15 @@
+{
+    "defaultTitle": "Filipina Junulara Kongreso de Esperanto 2020",
+    "titleSpecific": "%{pageName} | Filipina Junulara Kongreso de Esperanto 2020",
+    "buttons": {
+        "close": "Fermi",
+        "prevButton": "Reen",
+        "nextButton": "Sekven",
+        "submitButton": "Submeti",
+        "viewRates": "Vidi Kotizojn"
+    },
+    "currency": {
+        "wordsPh": "Filipinaj Pesoj",
+        "wordsEu": "Eŭroj"
+    }
+}
