@@ -9,13 +9,11 @@ import '../styles/default.css';
 export class NotFoundPage extends BasePage {
     constructor() {
         super(
-            "404",
-            {
-                imgAltText: "Cover Photo",
-                imgBgPath: heroPath,
-                headText: "404",
-                subTexts: []
-            }
+            'en',
+            'notFound',
+            htmlMain,
+            'IndexPage',
+            heroPath
         );
 
         this.componentHolder.main = htmlMain;

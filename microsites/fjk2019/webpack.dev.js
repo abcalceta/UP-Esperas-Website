@@ -91,7 +91,7 @@ const web = {
                 test: /\.html$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: 'html-loader?interpolate'
+                    loader: 'html-loader?interpolate=require'
                 }
             }
         ]

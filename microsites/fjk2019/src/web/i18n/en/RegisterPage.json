@@ -1,23 +1,23 @@
 {
     "register": {
-        "topSubTitle": "Aliĝilo",
-        "title": "Unua Filipina Junulara Kongreso de Esperanto",
-        "subTitle": "23a-26a Aprilo, 2020; Universitato de Filipinoj; Diliman, Kezono-Urbo; Filipinoj",
+        "topSubTitle": "Register",
+        "title": "Registation",
+        "subTitle": "First Philippine Esperanto Youth Congress",
         "forms": {
-            "requiredNotice": "Eroj markita per steleto (*) indikas ke ĝi devas plenumi.",
-            "startRegistration": "Komenci Aliĝo",
+            "requiredNotice": "Fields marked with an asterisk (*) mean that they are required to be filled-up.",
+            "startRegistration": "Start Registration",
             "basic": {
-                "header": "Baza Informo",
+                "header": "Basic Information",
                 "fields": {
-                    "lastName": "Lasta Nomo",
-                    "firstName": "Persona Nomo",
-                    "middleName": "Meza Nomo",
-                    "nickName": "Alnomon",
-                    "birthday": "Naskiĝtago",
-                    "sex": "Sekso",
-                    "countryOfOrigin": "Devena Lando",
-                    "emailAddress": "Retpoŝtadreso",
-                    "sns": "Socia Rimedo"
+                    "lastName": "Last Name*",
+                    "firstName": "First Name*",
+                    "middleName": "Middle Name",
+                    "nickName": "Nickname*",
+                    "birthday": "Birthday*",
+                    "sex": "Sex*",
+                    "countryOfOrigin": "Country of Origin*",
+                    "emailAddress": "E-mail Address*",
+                    "sns": "Social Media Username (Facebook, etc.)"
                 },
                 "errors": {
                     "lastName": "Bv. enigi vian lastan nomon",

@@ -8,24 +8,20 @@ import '../../styles/default.css';
 export class AboutLkkPage extends BasePage {
     constructor() {
         super(
-            "Congress Organizing Committee",
-            {
-                imgAltText: "Cover Photo",
-                imgBgPath: heroPath,
-                headText: "Congress Organizing Committee",
-                subTexts: [
-                    "First Philippine Esperanto Youth Congress"
-                ]
-            }
+            'en',
+            'aboutLkk',
+            htmlMain,
+            'about/aboutLkk',
+            heroPath
         );
 
         this.componentHolder.main = htmlMain;
     }
 
-    oncreate() {
+    onupdate() {
+        super.onupdate();
+
         DomScripts.animate("#section-lkk .responsive-img", "fadeInLeft");
         DomScripts.animate("#section-lkk h5", "fadeInRight", true);
-
-        super.oncreate();
     }
 }

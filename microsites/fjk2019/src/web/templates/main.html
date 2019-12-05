@@ -11,9 +11,9 @@
     </p>
 </section>
 <section id="section-orgs" class="section scrollspy">
-    <h3>Participating Organizations</h3>
+    <h3>${this.localeObj.t('index.sponsors.header')}</h3>
 
-    <h4>Organizers</h4>
+    <h4>${this.localeObj.t('index.sponsors.organizers')}</h4>
     <div class="row">
         <div class="col s12 m6 center-align">
             <div><img alt="FEJ logo" src="${require('../img/sponsors/logo_fej.png')}" width="100"></div>
@@ -27,26 +27,24 @@
 </section>
 
 <section id="section-how-to-help" class="section scrollspy">
-    <h3>How Can You Help?</h3>
+    <h3>${this.localeObj.t('index.help.header')}</h3>
     <p>
-        As the first-ever large-scale Esperanto congress in the country, you can
-        contribute to the realization of this event through different means.
+        ${this.localeObj.t('index.help.desc')}
     </p>
     <div class="row">
         <div class="col s12 m4">
             <div class="card">
                 <div class="card-image">
                     <img src="${require('../img/splash/register_unsplash.jpg')}">
-                    <span class="card-title">Join the LKK</span>
+                    <span class="card-title">${this.localeObj.t('index.help.lkk.title')}</span>
                 </div>
                 <div class="card-content">
                     <p>
-                        You can still be part of the local organizing committee of
-                        PEYC 2020.
+                        ${this.localeObj.t('index.help.lkk.desc')}
                     </p>
                 </div>
                 <div class="card-action">
-                    <a href="#!/lkk-join" class="green-text text-darken-4">How to Apply</a>
+                    <a href="#!/lkk-join" class="green-text text-darken-4">${this.localeObj.t('index.help.howToApply')}</a>
                 </div>
             </div>
         </div>
@@ -54,16 +52,15 @@
             <div class="card">
                 <div class="card-image">
                     <img src="${require('../img/splash/eo_books_flower.jpg')}">
-                    <span class="card-title">Volunteer</span>
+                    <span class="card-title">${this.localeObj.t('index.help.volunteer.title')}</span>
                 </div>
                 <div class="card-content">
                     <p>
-                        The current local organizing committee of PEYC 2020 is in need of
-                        people who want to be part of the Volunteer Staff!
+                        ${this.localeObj.t('index.help.volunteer.desc')}
                     </p>
                 </div>
                 <div class="card-action">
-                    <a href="#!/volunteer" class="green-text text-darken-4">How to Apply</a>
+                    <a href="#!/volunteer" class="green-text text-darken-4">${this.localeObj.t('index.help.howToApply')}</a>
                 </div>
             </div>
         </div>
@@ -71,16 +68,15 @@
             <div class="card">
                 <div class="card-image">
                     <img src="${require('../img/splash/donate_unsplash.jpg')}">
-                    <span class="card-title">Donate</span>
+                    <span class="card-title">${this.localeObj.t('index.help.donate.title')}</span>
                 </div>
                 <div class="card-content">
                     <p>
-                        You can also opt to support this congress financially or logistically through
-                        different means.
+                        ${this.localeObj.t('index.help.donate.desc')}
                     </p>
                 </div>
                 <div class="card-action">
-                    <a href="#!/donate" class="green-text text-darken-4">Help Us</a>
+                    <a href="#!/donate" class="green-text text-darken-4">${this.localeObj.t('index.help.helpUs')}</a>
                 </div>
             </div>
         </div>

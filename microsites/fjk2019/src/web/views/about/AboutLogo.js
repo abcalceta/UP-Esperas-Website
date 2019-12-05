@@ -8,21 +8,11 @@ import '../../styles/default.css';
 export class AboutLogoPage extends BasePage {
     constructor() {
         super(
-            "Congress Emblem",
-            {
-                imgAltText: "Cover Photo",
-                imgBgPath: heroPath,
-                headText: "Congress Emblem",
-                subTexts: [
-                    "First Philippine Esperanto Youth Congress"
-                ]
-            }
+            'en',
+            'aboutLogo',
+            htmlMain,
+            'about/AboutLogo',
+            heroPath
         );
-
-        this.componentHolder.main = htmlMain;
-    }
-
-    oncreate() {
-        super.oncreate();
     }
 }

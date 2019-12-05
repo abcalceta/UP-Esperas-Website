@@ -8,23 +8,17 @@ import '../styles/default.css';
 export class DonatePage extends BasePage {
     constructor() {
         super(
-            "Donate",
-            {
-                imgAltText: "Cover Photo",
-                imgBgPath: heroPath,
-                headText: "Donations",
-                subTexts: [
-                    "First Philippine Esperanto Youth Congress"
-                ]
-            }
+            'en',
+            'donate',
+            htmlMain,
+            'DonatePage',
+            heroPath
         );
-
-        this.componentHolder.main = htmlMain;
     }
 
-    oncreate() {
-        DomScripts.animate("#section-donation-options .card", "zoomIn");
+    onupdate() {
+        super.onupdate();
 
-        super.oncreate();
+        DomScripts.animate("#section-donation-options .card", "zoomIn");
     }
 }

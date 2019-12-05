@@ -1,18 +1,10 @@
 <section class="section">
-    <h3>We need your help!</h3>
+    <h3>${this.localeObj.t('donate.mainHeader.title')}</h3>
     <p>
-        The Philippine Esperanto Youth (FEJ) is pleased to announce, that for the first time
-        in the history of the movement of speakers, learners, and advocates of the international
-        language Esperanto in the country, the 1st Philippine Esperanto Youth Congress will
-        be held in Manila on April 23-26, 2020.
+        ${this.localeObj.t('donate.mainHeader.par00')}
     </p>
     <p>
-        To guarantee the success of this congress, the Congress Organizing Committee are
-        requesting everyone to support this initiative financially or through material support.
-        Through your donation, you will help give Filipino Esperanto speakers and learners
-        the opportunity to experience a truly multicultural atmosphere, consolidate the
-        Esperanto movement in the Philippines, and ensure the continuous growth of the local
-        community.
+        ${this.localeObj.t('donate.mainHeader.par01')}
     </p>
 </section>
 <section class="section">
@@ -38,24 +30,23 @@
     </p>
 </section>
 <section id="section-donation-options" class="section">
-    <h3>Donation Options</h3>
+    <h3>${this.localeObj.t('donate.donationOptions.title')}</h3>
     <div class="row">
         <div class="col s12 m4">
             <div class="card">
                 <div class="card-image">
-                    <img src="${require('../img/splash/paypal_splash.jpg')}">
+                    <img alt="${this.localeObj.t('donate.donationOptions.payPal.title')}" src="${require('../img/splash/paypal_splash.jpg')}">
                 </div>
                 <div class="card-content">
                     <p>
-                        You can donate directly to the congress funds via PayPal
-                        using your credit card.
+                        ${this.localeObj.t('donate.donationOptions.payPal.desc')}
                     </p>
                 </div>
                 <div class="card-action">
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                         <input type="hidden" name="cmd" value="_s-xclick" />
                         <input type="hidden" name="hosted_button_id" value="ZEGNAE7L6ESB6" />
-                        <button class="waves-effect waves-green green-text text-darken-4 btn-flat">Donate</button>
+                        <button class="waves-effect waves-green green-text text-darken-4 btn-flat">${this.localeObj.t('donate.buttons.donate')}</button>
                     </form>
                 </div>
             </div>
@@ -63,33 +54,30 @@
         <div class="col s12 m4">
             <div class="card">
                 <div class="card-image">
-                    <img src="${require('../img/splash/ggf_splash.jpg')}">
+                    <img alt="${this.localeObj.t('donate.donationOptions.goGetFunding.title')}" src="${require('../img/splash/ggf_splash.jpg')}">
                 </div>
                 <div class="card-content">
                     <p>
-                        You can also donate through GoGetFunding to see
-                        some progress regarding the congress funds.
+                        ${this.localeObj.t('donate.donationOptions.goGetFunding.desc')}
                     </p>
                 </div>
                 <div class="card-action">
-                    <a class="waves-effect waves-green green-text text-darken-4 btn-flat" target="_blank" href="https://gogetfunding.com/help-make-the-1st-philippine-esperanto-youth-congress-happen/">Donate</a>
+                    <a class="waves-effect waves-green green-text text-darken-4 btn-flat" target="_blank" href="https://gogetfunding.com/help-make-the-1st-philippine-esperanto-youth-congress-happen/">${this.localeObj.t('donate.buttons.donate')}</a>
                 </div>
             </div>
         </div>
         <div class="col s12 m4">
             <div class="card">
                 <div class="card-image">
-                    <img src="${require('../img/splash/co_splash.jpg')}">
+                    <img alt="${this.localeObj.t('donate.donationOptions.uea.title')}" src="${require('../img/splash/co_splash.jpg')}">
                 </div>
                 <div class="card-content">
                     <p>
-                        If you are a member of UEA, or prefer to donate through
-                        the Central Office, you can donate using the code
-                        <b>phej-d</b>.
+                        ${this.localeObj.t('donate.donationOptions.uea.desc')}
                     </p>
                 </div>
                 <div class="card-action">
-                    <a class="waves-effect waves-green green-text text-darken-4 btn-flat" target="_blank" href="https://uea.org/alighoj/spagilo">Donate</a>
+                    <a class="waves-effect waves-green green-text text-darken-4 btn-flat" target="_blank" href="https://uea.org/alighoj/spagilo">${this.localeObj.t('donate.buttons.donate')}</a>
                 </div>
             </div>
         </div>
@@ -98,16 +86,15 @@
         <div class="col s12 m4">
             <div class="card">
                 <div class="card-image">
-                    <img src="${require('../img/splash/eo_books_flower.jpg')}">
+                    <img alt="${this.localeObj.t('donate.donationOptions.others.title')}" src="${require('../img/splash/eo_books_flower.jpg')}">
                 </div>
                 <div class="card-content">
                     <p>
-                        You can also send brochures and pamphlets that can be handed out
-                        to congress participants.
+                        ${this.localeObj.t('donate.donationOptions.others.desc')}
                     </p>
                 </div>
                 <div class="card-action">
-                    <a href="mailto:peyc2020@gmail.com" class="waves-effect waves-green green-text text-darken-4 btn-flat">Contact Us</a>
+                    <a href="mailto:peyc2020@gmail.com" class="waves-effect waves-green green-text text-darken-4 btn-flat">${this.localeObj.t('donate.buttons.contactUs')}</a>
                 </div>
             </div>
         </div>

@@ -1,0 +1,31 @@
+{
+    "aboutLkk": {
+        "topSubTitle": "Loka Kongresa Komitato",
+        "title": "Loka Kongresa Komitato",
+        "subTitle": "Unua Filipina Junulara Kongreso de Esperanto",
+        "directors": {
+            "lkk": "Prezidanto de Loka Kongresa Komitato",
+            "volCorp": "Direktoro pri Volontula Servo",
+            "reg": "Direktoro pri Giĉeto",
+            "info": "Direktoro pri Informado kaj Kampanjo",
+            "externals": "Direktoro pri Eksterrilatoj",
+            "website": "Retejestro"
+        },
+        "lkk00": {
+            "name": "Albert Garrido",
+            "desc": "Albert started learning Esperanto in March 2013 and soon afterwards started to get involved in the Esperanto movement in the local and international level. He is currently the Coordinator of Asia of the World Esperanto Youth Organization (TEJO), and has attended a few international Esperanto conventions in some countries in Asia. He also has a bachelor’s degree in Geography and wrote his undergraduate thesis examining the state of the Asian Esperanto movement."
+        },
+        "lkk01": {
+            "name": "Carl Dizon",
+            "desc": "Carl estas la nuna prezidanto de UP Esperanto-Societo, kiu estas la unua kaj nura Esperanto-organizo en la lando bazita en universitato. Li ankaŭ estas ĉefa esploristo de esplorado pri e-tricikloj kaj magistriĝas en elektra inĝenierio en la Universitato de Filipinoj."
+        },
+        "lkk02": {
+            "name": "Jubert Cabrezos",
+            "desc": "Jubert estas poeto, artisto, kaj Esperantisto el Medina, Misamis Oriental. Li akiris sian bakalaŭron pri komunikaj artoj en la Filipina Vira Universitato. Li laboris en la landa sekretario de la Kolegia Redaktoraro de Filipinoj pli ol 3 jarojn. Li nun loĝas en Norda Kalookan-o kun sia familio."
+        },
+        "lkk03": {
+            "name": "Elizabeth Lavadia",
+            "desc": "Elizabeth estas instruisto pri la itala en la Universitato de Filipinoj. Ŝi trapasis C2a-n kurseton pri la itala lingvo kaj kulturo en la Università per Stranieri di Siena de aprilo ĝis junio 2019. Ŝi diplomiĝis en 2018 kaj akiris sian bakalaŭron pri eŭropaj lingvoj kun granda laŭdo en la Universitato de Filipinoj."
+        }
+    }
+}

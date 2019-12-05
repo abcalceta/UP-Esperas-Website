@@ -8,21 +8,11 @@ import '../../styles/default.css';
 export class AboutFjkPage extends BasePage {
     constructor() {
         super(
-            "About the Congress",
-            {
-                imgAltText: "Cover Photo",
-                imgBgPath: heroPath,
-                headText: "About the Congress",
-                subTexts: [
-                    "First Philippine Esperanto Youth Congress"
-                ]
-            }
+            'en',
+            'aboutFjk',
+            htmlMain,
+            'about/AboutFjk',
+            heroPath
         );
-
-        this.componentHolder.main = htmlMain;
-    }
-
-    oncreate() {
-        super.oncreate();
     }
 }

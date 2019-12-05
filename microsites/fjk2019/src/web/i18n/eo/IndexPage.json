@@ -1,0 +1,34 @@
+{
+    "index": {
+        "topSubTitle": "Hejmpaĝo",
+        "title": "Unua Filipina Junulara Kongreso de Esperanto",
+        "subTitle": "23a-26a Aprilo, 2020; Universitato de Filipinoj; Diliman, Kezono-Urbo; Filipinoj",
+        "about": {
+            "par01": "Filipina Esperanto-Junularo (FEJ), kunlabore kun UP Esperanto-Societo, okazigos la 1-an Filipinan Junularan Kongreson de Esperanto (FJK) en la urbo Quezon, Metro Manila, de la 23-a ĝis la 26-a de aprilo 2020.",
+            "par02": "Tiu ĉi historia evento markos la kulminon de pluraj jaroj de senlaca klopodado de lokaj aktivuloj kaj ankaŭ la paŝon antaŭen cele al la plua integriĝo de la landa esperantista movado. Ĉar filipinaj esperantistoj neniam kunvenis landskale ekde kiam la nuntempa movado aperis en 2013, FJK estos la unua ŝanco kunvenigi ilin el diversaj partoj de la insularo kaj finfine solidigi la tutan komunumon.",
+            "par03": "La kongreso havos la temon: \"La Esperanto-Movado: Freŝaj Komencoj en Multkultura Filipinio,\" kaj pritraktos diversajn temojn pri la ligoj inter Esperanto kaj multkulturismo, kaj kiel oni povas utiligi ilin por profiti unu de la alia. Per buntaj programeroj, kaj filipinanoj kaj eksterlandanoj same lernos multe pli pri lingva kaj kultura diverseco en la lando, interalie."
+        },
+        "sponsors": {
+            "header": "Kunlaborantaj Organizoj",
+            "organizers": "Organizantoj"
+        },
+        "help": {
+            "header": "Kiel vi povas helpi?",
+            "desc": "Kiel la unua granda Esperanto-kunveno en Filipinoj, vi povas helpi per la ĉi-subajn manierojn.",
+            "howToApply": "Kandidatiĝi",
+            "helpUs": "Helpu Nin",
+            "lkk": {
+                "title": "Estru",
+                "desc": "You can still be part of the local organizing committee of PEYC 2020."
+            },
+            "volunteer": {
+                "title": "Iĝi Volontulo",
+                "desc": "La Loka Kongresa Komitato bezonas individuojn, kiuj ŝatus esti membroj de la Kongresa Volontula Servo!"
+            },
+            "donate": {
+                "title": "Donaci",
+                "desc": "Vi ankaŭ povas helpi pli bone organizi Kongreson donacante monon aŭ materialojn."
+            }
+        }
+    }
+}

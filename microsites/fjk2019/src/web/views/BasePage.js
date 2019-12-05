@@ -8,64 +8,57 @@ import {NavBarView} from './NavBarView';
 import {HeroView} from './HeroView';
 
 export class BasePage {
-    constructor(title, localeNamespace, contentFilePath, localePath, heroImg) {
-        this.componentHolder = {};
+    constructor(locale, localeNamespace, htmlFile, localeFilename, heroImg) {
+        this.componentHolder = {
+            main: htmlFile,
+        };
+
         this.data = {
-            title: title,
+            title: '',
+            locale: ['en', 'eo'].includes(locale) ? locale : 'en',
             localeNamespace: localeNamespace,
-            contentFilePath: contentFilePath,
-            localePath: localePath,
+            localePath: `../i18n/${locale}/${localeFilename}.json`,
             hero: {
-                imgAltText: 'Cover Photo',
+                imgAltText: '',
                 imgBgPath: heroImg,
-                headText: 'First Philippine Esperanto Youth Congress',
-                subTexts: [
-                    ''
-                ]
-            }
+                headText: '',
+                subText: ''
+            },
         };
     }
 
-    oninit() {
+    oninit(vnode) {
         this.localeObj = new Polyglot();
 
         m.request({
             method: 'GET',
-            url: '../i18n/en/common.json',
+            url: `../i18n/${this.data.locale}/common.json`,
             background: true,
         })
-            .then((jsonObj) => {
-                this.localeObj.extend(jsonObj);
+        .then((jsonObj) => {
+            this.localeObj.extend(jsonObj);
 
-                return m.request({
-                    method: 'GET',
-                    url: this.data.localePath,
-                    background: true,
-                });
-            })
-            .then((jsonObj) => {
-                this.localeObj.extend(jsonObj);
+            return m.request({
+                method: 'GET',
+                url: this.data.localePath,
+                background: false,
+            });
+        })
+        .then((jsonObj) => {
+            this.localeObj.extend(jsonObj);
 
-                this.data.hero = Object.assign({}, this.data.hero, {
-                    imgAltText: 'Cover Photo',
-                    headText: this.localeObj.t('defaultTitle'),
-                    subTexts: [
-                        this.localeObj.t(`${this.data.localeNamespace}.subTitle`)
-                    ]
-                });
+            this.data.hero = Object.assign({}, this.data.hero, {
+                imgAltText: 'Cover Photo',
+                headText: this.localeObj.t(`${this.data.localeNamespace}.title`),
+                subText: this.localeObj.t(`${this.data.localeNamespace}.subTitle`)
+            });
 
-                return m.request({
-                    method: 'GET',
-                    url: this.data.contentFilePath,
-                    extract: (xhr, opts) => {
-                        return xhr.responseText;
-                    }
-                });
-            })
-            .then((htmlInterpolated) => {
-                this.componentHolder.main = htmlInterpolated;
-            })
-            .catch(console.error);
+            this.data.title = this.localeObj.t(`${this.data.localeNamespace}.topSubTitle`)
+            this.componentHolder.main = this.evalTemplate(this.componentHolder.main, this.localeObj);
+
+            vnode.attrs.isTranslated = true;
+        })
+        .catch(console.error);
 
         this.componentHolder.nav = NavBarView;
         this.componentHolder.hero = HeroView;
@@ -89,10 +82,16 @@ export class BasePage {
         return [
             m(this.componentHolder.nav),
             m(this.componentHolder.hero, this.data.hero),
-            m("main", {id: "main-content", class:"container"}, ''),
+            m("main", {id: "main-content", class:"container"}, [
+                m.trust(this.componentHolder.main)
+            ]),
             m("footer", {class: "page-footer theme-yellow"},
                 m.trust(this.componentHolder.footer)
             )
         ]
+    }
+
+    evalTemplate(tpl, localeObj) {
+        return new Function(`return \`${tpl}\`;`).call({localeObj: localeObj});
     }
 }

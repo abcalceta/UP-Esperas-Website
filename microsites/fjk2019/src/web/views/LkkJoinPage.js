@@ -20,7 +20,6 @@ export class LkkJoinPage extends BasePage {
             }
         );
 
-
         this.componentHolder.main = htmlMain;
     }
 

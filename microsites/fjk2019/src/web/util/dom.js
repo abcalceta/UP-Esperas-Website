@@ -89,14 +89,6 @@ function initDomScripts() {
         format: 'yyyy-mm-dd',
         yearRange: [1900, 2019]
     });
-
-    if(document.getElementById('a-main-content')) {
-        document.getElementById('a-main-content').addEventListener('click', e => {
-            e.preventDefault();
-
-            document.getElementById('main-content').scrollIntoView({behavior: 'smooth'});
-        });
-    }
 }
 
 export let DomScripts = {

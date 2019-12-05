@@ -1,0 +1,31 @@
+{
+    "aboutLkk": {
+        "topSubTitle": "Local Organizing Committee",
+        "title": "Local Organizing Committee",
+        "subTitle": "First Philippine Esperanto Youth Congress",
+        "directors": {
+            "lkk": "Organizing Committee President",
+            "volCorp": "Director for Volunteer Staff",
+            "reg": "Director for Registration",
+            "info": "Director for Information and Publicity",
+            "externals": "Director for External Relations",
+            "website": "Webmaster"
+        },
+        "lkk00": {
+            "name": "Albert Garrido",
+            "desc": "Albert started learning Esperanto in March 2013 and soon afterwards started to get involved in the Esperanto movement in the local and international level. He is currently the Coordinator of Asia of the World Esperanto Youth Organization (TEJO), and has attended a few international Esperanto conventions in some countries in Asia. He also has a bachelor’s degree in Geography and wrote his undergraduate thesis examining the state of the Asian Esperanto movement."
+        },
+        "lkk01": {
+            "name": "Carl Dizon",
+            "desc": "Carl is the incumbent president of UP Esperanto-Societo, the first and only university-based Esperanto organization in the country. He is currently the head researcher of an e-trike study and is taking his Masters in Electrical Engineering at the University of the Philippines."
+        },
+        "lkk02": {
+            "name": "Jubert Cabrezos",
+            "desc": "Jubert is a poet, artist, and Esperantist from Medina, Misamis Oriental. He earned his Bachelor of Arts degree in Communication Arts at the Philippine Women’s University. He worked in the National Secretariat of the College Editors Guild of the Philippines for over 3 years. He currently lives in North Caloocan with his family."
+        },
+        "lkk03": {
+            "name": "Elizabeth Lavadia",
+            "desc": "Elizabeth is an instructor for the Italian language at the University of the Philippines, Diliman. She took a C2 level short course on the Italian Language and Culture at Università per Stranieri di Siena from April to June 2019. She graduated Magna cum Laude in 2018 and has a Bachelor of Arts degree in European Languages from the University of the Philippines, Diliman."
+        }
+    }
+}

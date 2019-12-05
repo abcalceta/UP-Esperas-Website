@@ -19,15 +19,11 @@ import regFeesJson from '../regrates.json';
 export class RegisterPage extends BasePage {
     constructor() {
         super(
-            "Registration",
-            {
-                imgAltText: "Cover Photo",
-                imgBgPath: heroPath,
-                headText: "Registration",
-                subTexts: [
-                    "First Philippine Esperanto Youth Congress"
-                ]
-            }
+            'en',
+            'register',
+            htmlMain,
+            'RegisterPage',
+            heroPath
         );
 
         this.countryList = [];
@@ -54,15 +50,14 @@ export class RegisterPage extends BasePage {
             ['B1', 'Workers, graduate students, etc. ≤ 35 years old'],
             ['B2', 'Workers, graduate students, etc. > 35 years old'],
         ];
-
-        this.componentHolder.main = htmlMain;
     }
 
     oninit(vnode) {
         // Load country list
         m.request({
             method: 'GET',
-            url: 'https://restcountries.eu/rest/v2/all?fields=name;alpha3Code'
+            url: 'https://restcountries.eu/rest/v2/all?fields=name;alpha3Code',
+            background: true,
         })
         .then((t) => {
             this.countryList = t.map((eachCountry) => {
@@ -72,16 +67,10 @@ export class RegisterPage extends BasePage {
             vnode.attrs.updatedCountryList = true;
         });
 
-        super.oninit();
+        super.oninit(vnode);
     }
 
     oncreate() {
-        this.attachRegOverview();
-        this.attachRegisterEvent();
-        this.attachOthersEvent();
-        this.attachThanksEvent();
-        this.attachNavBtnEvent();
-
         // Populate lodging dates list
         let arriveSelectElm = document.getElementById('select-lodging-arrive');
         let departSelectElm = document.getElementById('select-lodging-depart');
@@ -112,7 +101,17 @@ export class RegisterPage extends BasePage {
     }
 
     onupdate(vnode) {
-        super.onupdate(vnode);
+        super.onupdate();
+
+        if(vnode.attrs.isTranslated) {
+            this.attachRegOverview();
+            this.attachRegisterEvent();
+            this.attachOthersEvent();
+            this.attachThanksEvent();
+            this.attachNavBtnEvent();
+
+            vnode.attrs.isTranslated = false;
+        }
 
         const pageIdxFromHistory = vnode.attrs.lastPageIdx;
 
@@ -671,8 +670,8 @@ export class RegisterPage extends BasePage {
             if(!eachInputElm.checkValidity()) {
                 let toastMsg = `This section (${this.pageStatesList[this.currentPageState][0]}) has invalid fields!`;
 
-                if(eachInputElm.tagName == 'SELECT' && eachInputElm.parentElement.parentElement.querySelector('.helper-text')) {
-                    toastMsg = eachInputElm.parentElement.parentElement.querySelector('.helper-text').dataset.error;
+                if(eachInputElm.tagName == 'SELECT' && eachInputElm.parentElement.querySelector('.helper-text')) {
+                    toastMsg = eachInputElm.parentElement.querySelector('.helper-text').dataset.error;
                 }
                 else if(eachInputElm.parentElement.querySelector('.helper-text')) {
                     toastMsg = eachInputElm.parentElement.querySelector('.helper-text').dataset.error;

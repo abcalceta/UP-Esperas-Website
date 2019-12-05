@@ -1,0 +1,35 @@
+{
+    "donate": {
+        "topSubTitle": "Donate",
+        "title": "Donate",
+        "subTitle": "First Philippine Esperanto Youth Congress",
+        "buttons": {
+            "donate": "Donate",
+            "contactUs": "Contact Us"
+        },
+        "mainHeader": {
+            "title": "We need your help!",
+            "par00": "The Philippine Esperanto Youth (FEJ) is pleased to announce, that for the first time in the history of the movement of speakers, learners, and advocates of the international language Esperanto in the country, the 1st Philippine Esperanto Youth Congress will be held in Manila on April 23-26, 2020.",
+            "par01": "To guarantee the success of this congress, the Congress Organizing Committee are requesting everyone to support this initiative financially or through material support. Through your donation, you will help give Filipino Esperanto speakers and learners the opportunity to experience a truly multicultural atmosphere, consolidate the Esperanto movement in the Philippines, and ensure the continuous growth of the local community."
+        },
+        "donationOptions": {
+            "title": "Donation Options",
+            "payPal": {
+                "title": "PayPal",
+                "desc": "You can donate directly to the congress funds via PayPal using your credit card."
+            },
+            "goGetFunding": {
+                "title": "GoGetFunding",
+                "desc": "You can also donate through GoGetFunding to see some progress regarding the congress funds."
+            },
+            "uea": {
+                "title": "UEA Account",
+                "desc": "If you are a member of UEA, or prefer to donate through the Central Office, you can donate using the code <b>phej-d</b>."
+            },
+            "others": {
+                "title": "Others",
+                "desc": "You can also send brochures and pamphlets that can be handed out to congress participants."
+            }
+        }
+    }
+}
