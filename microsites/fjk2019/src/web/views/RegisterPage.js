@@ -19,7 +19,7 @@ import regFeesJson from '../regrates.json';
 export class RegisterPage extends BasePage {
     constructor() {
         super(
-            'en',
+            'eo',
             'register',
             htmlMain,
             'RegisterPage',
@@ -64,63 +64,38 @@ export class RegisterPage extends BasePage {
                 return [eachCountry.name, eachCountry.alpha3Code];
             });
 
-            vnode.attrs.updatedCountryList = true;
+            this.isCountryListUpdated = true;
         });
 
         super.oninit(vnode);
     }
 
-    oncreate() {
-        // Populate lodging dates list
-        let arriveSelectElm = document.getElementById('select-lodging-arrive');
-        let departSelectElm = document.getElementById('select-lodging-depart');
-
-        for(let i = 20200420; i <= 20200430; ++i) {
-            let idxToDate = new Date(i / 10000, ((i / 100) % 100) - 1, i % 100);
-            let optElm = document.createElement("option");
-            optElm.setAttribute("value", i);
-            optElm.innerHTML = idxToDate.toLocaleDateString('en-PH', {year: 'numeric', month: 'short', day: '2-digit', weekday: 'short'});
-
-            arriveSelectElm.appendChild(optElm.cloneNode(true));
-            departSelectElm.appendChild(optElm.cloneNode(true));
-        }
-
-        Materialize.FormSelect.init(arriveSelectElm);
-        Materialize.FormSelect.init(departSelectElm);
-
-        // Check registration date
-        const regDateIdx = this.checkRegistrationDates();
-        const cardPanelElm = document.getElementById('div-panel-reg-date-notice');
-        const regPeriodName = this.regIdxToName[regDateIdx];
-
-        document.querySelector('input[name=hdn-reg-period]').value = regDateIdx;
-        cardPanelElm.querySelector('.card-title').innerHTML = `${regPeriodName[0].toUpperCase()}${regPeriodName.substr(1)} Registration`;
-        cardPanelElm.querySelector('div.card-content p').innerHTML = `Today is within the period of <b>${regPeriodName}</b> registration!`;
-
-        super.oncreate();
-    }
-
     onupdate(vnode) {
         super.onupdate();
 
-        if(vnode.attrs.isTranslated) {
+        if(this.isTranslated) {
             this.attachRegOverview();
             this.attachRegisterEvent();
             this.attachOthersEvent();
             this.attachThanksEvent();
             this.attachNavBtnEvent();
 
-            vnode.attrs.isTranslated = false;
+            this.updateRegDatesUi();
+            this.populateLodgingDatesList();
+
+            this.pageStatesList[0][0] = this.localeObj.t('register.steps.basic');
+            this.pageStatesList[1][0] = this.localeObj.t('register.steps.register');
+            this.pageStatesList[2][0] = this.localeObj.t('register.steps.lodging');
+            this.pageStatesList[3][0] = this.localeObj.t('register.steps.excursion');
+            this.pageStatesList[4][0] = this.localeObj.t('register.steps.food');
+            this.pageStatesList[5][0] = this.localeObj.t('register.steps.others');
+            this.pageStatesList[6][0] = this.localeObj.t('register.steps.payment');
+
+            this.isTranslated = false;
         }
 
-        const pageIdxFromHistory = vnode.attrs.lastPageIdx;
-
-        // Update step progress
-        let stepContainerElm = document.querySelector('#div-steps');
-        m.render(stepContainerElm, this.getStepsDom(this.currentPageState));
-
-        // Populate country list
-        if(vnode.attrs.updatedCountryList) {
+        if(this.isCountryListUpdated) {
+            // Populate country list
             const countrySelectElm = document.getElementById('select-countries-list');
             let countryElmList = [];
 
@@ -142,8 +117,19 @@ export class RegisterPage extends BasePage {
 
             Materialize.FormSelect.init(countrySelectElm);
 
-            vnode.attrs.updatedCountryList = false;
+            this.isCountryListUpdated = false;
         }
+
+        const pageIdxFromHistory = vnode.attrs.lastPageIdx;
+
+        if(pageIdxFromHistory < 0) {
+            // Overview screen
+            return;
+        }
+
+        // Update step progress
+        let stepContainerElm = document.querySelector('#div-steps');
+        m.render(stepContainerElm, this.getStepsDom(this.currentPageState));
 
         if(typeof pageIdxFromHistory == 'number' || pageIdxFromHistory instanceof Number) {
             console.info(`Moving to page from history: ${this.pageStatesList[pageIdxFromHistory][0]}`);
@@ -189,8 +175,8 @@ export class RegisterPage extends BasePage {
                     `/register/${this.pageStatesList[this.currentPageState][2]}`,
                     null,
                     {
-                        replace: true,
-                        state: {lastPageIdx: this.currentPageState}
+                        replace: false,
+                        state: {lastPageIdx: -1}
                     }
                 );
             });
@@ -463,11 +449,12 @@ export class RegisterPage extends BasePage {
         switch(sectionId) {
             case 'section-reg':
                 let rateCard = document.querySelector('#div-reg-ratecard');
+                const localityStr = this.localeObj.t(`locality.${isLocalRates ? 'local' : 'foreign'}Plural`);
 
                 // Init modal
-                rateCard.querySelector('div.card-content p').innerHTML = `You originate from <b>${countryList[countryList.selectedIndex].innerHTML}</b> and <b>${isLocalRates ? 'local' : 'foreign'}</b> rates for registration apply.`;
+                rateCard.querySelector('div.card-content p').innerHTML = this.localeObj.t(`${this.data.localeNamespace}.forms.register.countryNotice`, {countryWord: countryList[countryList.selectedIndex].innerHTML, locality: localityStr.toLowerCase()});
                 m.render(rateCard.querySelector('div.card-action'),
-                    m('a', {class: 'btn-flat theme-green-text waves-effect modal-trigger', href: isLocalRates ? '#div-modal-ph-rates' : '#div-modal-foreign-rates'}, 'View Rates')
+                    m('a', {class: 'btn-flat theme-green-text waves-effect modal-trigger', href: isLocalRates ? '#div-modal-ph-rates' : '#div-modal-foreign-rates'}, this.localeObj.t(`buttons.viewRates`))
                 );
 
                 break;
@@ -502,9 +489,9 @@ export class RegisterPage extends BasePage {
 
                 // Build receipt rows
                 let receiptRows = [
-                    m('span', {class: 'card-title'}, `Payment Details (${feesObj.currency})`),
+                    m('span', {class: 'card-title'}, `${this.localeObj.t('register.forms.payment.details')} (${feesObj.currency})`),
                     m('div', {class: 'row'}, [
-                        m('div', {class: 'col s8'}, 'Registration Fee'),
+                        m('div', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.registration')),
                         m('div', {class: 'col s4 right-align'}, feesObj.regFee)
                     ]),
                 ];
@@ -512,7 +499,7 @@ export class RegisterPage extends BasePage {
                 if(feesObj.invitLetter > 0) {
                     receiptRows.push(
                         m('div', {class: 'row'}, [
-                            m('span', {class: 'col s8'}, 'Invitation Letter Fee'),
+                            m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.invitLetter')),
                             m('span', {class: 'col s4 right-align'}, feesObj.invitLetter)
                         ])
                     );
@@ -521,7 +508,7 @@ export class RegisterPage extends BasePage {
                 if(feesObj.congressFund > 0) {
                     receiptRows.push(
                         m('div', {class: 'row'}, [
-                            m('span', {class: 'col s8'}, 'Congress Fund'),
+                            m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.congressFund')),
                             m('span', {class: 'col s4 right-align'}, feesObj.congressFund)
                         ])
                     );
@@ -530,7 +517,7 @@ export class RegisterPage extends BasePage {
                 if(feesObj.participantFund > 0) {
                     receiptRows.push(
                         m('div', {class: 'row'}, [
-                            m('span', {class: 'col s8'}, 'Participant Fund'),
+                            m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.participationFund')),
                             m('span', {class: 'col s4 right-align'}, feesObj.participantFund)
                         ])
                     );
@@ -539,7 +526,7 @@ export class RegisterPage extends BasePage {
                 if(feesObj.fejFund > 0) {
                     receiptRows.push(
                         m('div', {class: 'row'}, [
-                            m('span', {class: 'col s8'}, 'Association Fund'),
+                            m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.associationFund')),
                             m('span', {class: 'col s4 right-align'}, feesObj.fejFund)
                         ])
                     );
@@ -549,7 +536,7 @@ export class RegisterPage extends BasePage {
                     m('hr'),
                     m('div', {class: 'row'}, [
                         m('span', {class: 'col s8'}, [
-                            m('b', 'Grand Total')
+                            m('b', this.localeObj.t('register.forms.payment.grandTotal'))
                         ]),
                         m('span', {class: 'col s4 right-align'}, [
                             m('b', `${feesObj.currency}${feesObj.total}`)
@@ -573,20 +560,33 @@ export class RegisterPage extends BasePage {
         }
     }
 
-    checkRegistrationDates() {
-        let earlyBirdDate = new Date('2019-12-31T11:59:59+08:00');
-        let regDate = new Date('2020-03-23T11:59:59+08:00');
-        let dateToday = new Date();
+    populateLodgingDatesList() {
+        let arriveSelectElm = document.getElementById('select-lodging-arrive');
+        let departSelectElm = document.getElementById('select-lodging-depart');
 
-        if(dateToday <= earlyBirdDate) {
-            return 0;
+        for(let i = 20200420; i <= 20200430; ++i) {
+            let idxToDate = new Date(i / 10000, ((i / 100) % 100) - 1, i % 100);
+            let optElm = document.createElement("option");
+            optElm.setAttribute("value", i);
+            optElm.innerHTML = idxToDate.toLocaleDateString('en-PH', {year: 'numeric', month: 'short', day: '2-digit', weekday: 'short'});
+
+            arriveSelectElm.appendChild(optElm.cloneNode(true));
+            departSelectElm.appendChild(optElm.cloneNode(true));
         }
-        else if(dateToday <= regDate) {
-            return 1;
-        }
-        else {
-            return 2;
-        }
+
+        Materialize.FormSelect.init(arriveSelectElm);
+        Materialize.FormSelect.init(departSelectElm);
+    }
+
+    updateRegDatesUi() {
+        // Check registration date
+        const regDateIdx = this.checkRegistrationDates();
+        const cardPanelElm = document.getElementById('div-panel-reg-date-notice');
+        const regPeriodName = this.regIdxToName[regDateIdx];
+
+        document.querySelector('input[name=hdn-reg-period]').value = regDateIdx;
+        cardPanelElm.querySelector('.card-title').innerHTML = `${regPeriodName[0].toUpperCase()}${regPeriodName.substr(1)} Registration`;
+        cardPanelElm.querySelector('div.card-content p').innerHTML = this.localeObj.t('register.forms.payment.registerNotice', {registerType: regPeriodName});
     }
 
     async submitForm() {
@@ -717,13 +717,13 @@ export class RegisterPage extends BasePage {
         if(idxTo >= this.pageStatesList.length - 1) {
             m.render(nextBtn, [
                 m('i', {class: 'material-icons right'}, 'send'),
-                'Submit'
+                this.localeObj.t('buttons.submit')
             ]);
         }
         else {
             m.render(nextBtn, [
                 m('i', {class: 'material-icons right'}, 'navigate_next'),
-                'Next'
+                this.localeObj.t('buttons.next')
             ]);
         }
 
@@ -812,6 +812,22 @@ export class RegisterPage extends BasePage {
             currency: currencyKey,
             regCategory: regCatKey,
         };
+    }
+
+    checkRegistrationDates() {
+        let earlyBirdDate = new Date('2019-12-31T11:59:59+08:00');
+        let regDate = new Date('2020-03-23T11:59:59+08:00');
+        let dateToday = new Date();
+
+        if(dateToday <= earlyBirdDate) {
+            return 0;
+        }
+        else if(dateToday <= regDate) {
+            return 1;
+        }
+        else {
+            return 2;
+        }
     }
 
     /*

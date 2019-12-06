@@ -8,21 +8,11 @@ import '../../styles/default.css';
 export class PrivacyPage extends BasePage {
     constructor() {
         super(
-            "Privacy",
-            {
-                imgAltText: "Cover Photo",
-                imgBgPath: heroPath,
-                headText: "Privacy",
-                subTexts: [
-                    "First Philippine Esperanto Youth Congress"
-                ]
-            }
+            'en',
+            'privacy',
+            htmlMain,
+            'about/Privacy',
+            heroPath
         );
-
-        this.componentHolder.main = htmlMain;
-    }
-
-    oncreate() {
-        super.oncreate();
     }
 }

@@ -4,6 +4,7 @@ import Polyglot from 'node-polyglot';
 import {DomScripts} from '../util/dom';
 
 import htmlFooter from '../templates/footer.html';
+import {FabView} from './FabView';
 import {NavBarView} from './NavBarView';
 import {HeroView} from './HeroView';
 
@@ -56,18 +57,14 @@ export class BasePage {
             this.data.title = this.localeObj.t(`${this.data.localeNamespace}.topSubTitle`)
             this.componentHolder.main = this.evalTemplate(this.componentHolder.main, this.localeObj);
 
-            vnode.attrs.isTranslated = true;
+            this.isTranslated = true;
         })
         .catch(console.error);
 
         this.componentHolder.nav = NavBarView;
         this.componentHolder.hero = HeroView;
+        this.componentHolder.fab = FabView;
         this.componentHolder.footer = htmlFooter;
-    }
-
-    oncreate() {
-        DomScripts.animate("header img", "fadeIn");
-        DomScripts.initDomScripts();
     }
 
     onupdate() {
@@ -76,6 +73,9 @@ export class BasePage {
         m.render(document.getElementById('main-content'), [
             m.trust(this.componentHolder.main)
         ]);
+
+        DomScripts.animate("header img", "fadeIn");
+        DomScripts.initDomScripts();
     }
 
     view() {
@@ -87,7 +87,8 @@ export class BasePage {
             ]),
             m("footer", {class: "page-footer theme-yellow"},
                 m.trust(this.componentHolder.footer)
-            )
+            ),
+            m(this.componentHolder.fab)
         ]
     }
 

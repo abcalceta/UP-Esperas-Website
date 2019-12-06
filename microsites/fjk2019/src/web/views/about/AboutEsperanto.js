@@ -8,21 +8,11 @@ import '../../styles/default.css';
 export class AboutEsperantoPage extends BasePage {
     constructor() {
         super(
-            "What is Esperanto?",
-            {
-                imgAltText: "Cover Photo",
-                imgBgPath: heroPath,
-                headText: "What is Esperanto?",
-                subTexts: [
-                    "First Philippine Esperanto Youth Congress"
-                ]
-            }
+            'en',
+            'aboutEo',
+            htmlMain,
+            'about/AboutEo',
+            heroPath
         );
-
-        this.componentHolder.main = htmlMain;
-    }
-
-    oncreate() {
-        super.oncreate();
     }
 }

@@ -17,37 +17,38 @@ function addCountriesListToDropdown(countriesArr) {
     });
 }
 
-function initDatePicker() {
-    let dateToday = new Date(Date.now())
+function initDatePicker(element, localeObj) {
+    let dateToday = new Date(Date.now());
+    let elm = element;
 
-    document.addEventListener('DOMContentLoaded', () => {
-        // Materialize inits
-        M.Parallax.init(document.querySelectorAll(".parallax"));
-        M.Datepicker.init(document.querySelectorAll(".datepicker"), {
-            yearRange: [1950, dateToday.getFullYear()],
-            maxDate: dateToday,
-            format: "yyyy-mm-dd",
-            autoClose: true,
-            i18n: {
-                cancel: "Nuligi",
-                clear: "Forigi",
-                done: "Preta",
-                months: [
-                    "Januaro", "Februaro", "Marto", "Aprilo",
-                    "Majo", "Junio",  "Julio", "Aŭgusto",
-                    "Septembro", "Oktobro", "Novembro", "Decembro"
-                ],
-                monthsShort: [
-                    "Jan", "Feb", "Mar", "Apr", "Maj", "Jun",
-                    "Jul", "Aŭg", "Sep", "Okt", "Nov", "Dec"
-                ],
-                weekdaysShort: [
-                    "dim", "lun", "mar", "mer",
-                    "ĵaŭ", "ven", "sab"
-                ],
-                weekdaysAbbrev: ["di", "lu", "ma", "me", "ĵa", "ve", "sa"]
-            }
-        });
+    if(typeof element == 'string' || element instanceof String) {
+        elm = document.querySelector(element);
+    }
+
+    M.Datepicker.init(elm, {
+        yearRange: [1950, dateToday.getFullYear()],
+        maxDate: dateToday,
+        format: "yyyy-mm-dd",
+        autoClose: true,
+        i18n: {
+            cancel: "Nuligi",
+            clear: "Forigi",
+            done: "Preta",
+            months: [
+                "Januaro", "Februaro", "Marto", "Aprilo",
+                "Majo", "Junio",  "Julio", "Aŭgusto",
+                "Septembro", "Oktobro", "Novembro", "Decembro"
+            ],
+            monthsShort: [
+                "Jan", "Feb", "Mar", "Apr", "Maj", "Jun",
+                "Jul", "Aŭg", "Sep", "Okt", "Nov", "Dec"
+            ],
+            weekdaysShort: [
+                "dim", "lun", "mar", "mer",
+                "ĵaŭ", "ven", "sab"
+            ],
+            weekdaysAbbrev: ["di", "lu", "ma", "me", "ĵa", "ve", "sa"]
+        }
     });
 }
 

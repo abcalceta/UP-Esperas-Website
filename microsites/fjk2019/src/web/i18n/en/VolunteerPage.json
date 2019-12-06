@@ -1,0 +1,77 @@
+{
+    "volunteer": {
+        "topSubTitle": "Volunteer",
+        "title": "Volunteer",
+        "subTitle": "First Philippine Esperanto Youth Congress",
+        "volCorpPoster": "Call for Volunteers Poster",
+        "mainHeader": {
+            "title": "<i>Saluton!</i>",
+            "par00": "We are glad to inform everyone that through the initiative of some dedicated members of the Esperanto language community in the Philippines, preparations for the very first Philippine Esperanto Youth Congress to be held in 2020 have started.",
+            "par01": "This historic congress shall mark the culmination of the seven years of effort of Esperanto advocates in the country and the forward step towards the further growth and integration of the national Esperanto community, and shall provide speakers, learners, and advocates coming from different parts of the country the opportunity to interact, learn, and work together in a series of social and educational activities.",
+            "par02": "However, since there are only a few people within the Organizing Committee, they can't do all the preparations on their own. So, we need you, volunteers, to be our partners to carry out different parts and aspects of preparation for this historical event."
+        },
+        "whyVolunteer": {
+            "title": "Why Volunteer?",
+            "list00": "Provide major contributions to the success of this event and leave a lasting legacy not only for the local and international Esperanto community, but also to the general advocacy for language rights, multiculturalism, and international solidarity which have proven to be beneficial for the Filipino people",
+            "list01": "Free monthly Esperanto lessons to improve your language proficiency, directly from the country's most fluent Esperanto speakers",
+            "list02": "Regular trainings to deepen your understanding of the Esperanto community and develop your organizational skills"
+        },
+        "qualifications": {
+            "title": "Qualifications",
+            "par00": "Anyone interested must have at least the following qualifications:",
+            "list00": "No minimum age required",
+            "list01": "Proficiency in Esperanto is not required",
+            "list02": "Individuals living outside Metro Manila and its surrounding regions are absolutely welcome"
+        },
+        "possibleWork": {
+            "title": "Possible Work",
+            "cards": {
+                "docu": {
+                    "title": "Documentation",
+                    "desc": "photography and videography (before and during the Congress)"
+                },
+                "sec": {
+                    "title": "Secretariat",
+                    "desc": "technical writing and transcription"
+                },
+                "logistics": {
+                    "title": "Logistics",
+                    "desc": "venue and food arrangements, floor plan management, preparation of equipment and merchandise"
+                },
+                "reg": {
+                    "title": "Registration",
+                    "desc": "preparation of participants’ kits and manning registration booths"
+                },
+                "fin": {
+                    "title": "Finance",
+                    "desc": "organization of fund-raising initiatives"
+                },
+                "info": {
+                    "title": "Information",
+                    "desc": "creation of materials, social media management, and other forms of online publicity"
+                }
+            },
+            "obligations": {
+                "par00": "Volunteers are also expected to do the following:",
+                "list00": "Report and communicate with the Organizing Committee Member who has jurisdiction or supervision over the work he or she will be doing",
+                "list01": "Assist members of the Congress Organizing Committee or other members of the VS on work that may otherwise be difficult or impossible to carry out alone",
+                "list02": "Provide necessary manpower/technical assistance to accomplish even trivial tasks which are otherwise crucial to the preparations",
+                "list03": "Be firmly committed to ensure the success of the Congress through proper delivery of deliverables within prescribed deadlines",
+                "list04": "Be willing to learn (or continue learning) the language in the time available until the Congress",
+                "list05": "Be easily reached through email, social media, and/or SMS, whichever is most convenient",
+                "list06": "Be ready to allot time to participate in meetings and/or orientations, whether physical or online"
+            }
+        },
+        "applyNow": {
+            "title": "Vacant Positions",
+            "par00": "For those who are interested to apply, kindly completely fill-up the application form as linked below.",
+            "applyNow": "Apply Now"
+        },
+        "contact": {
+            "title": "Contact Us",
+            "chunk00": "For inquiries, please contact Albert Garrido at",
+            "chunk01": "or send an email to",
+            "chunk02": "or"
+        }
+    }
+}

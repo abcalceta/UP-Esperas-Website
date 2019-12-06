@@ -1,135 +1,123 @@
 <section id="section-intro" class="section row">
-    <h3><i>Saluton!</i></h3>
+    <h3>${this.localeObj.t('lkkJoin.mainHeader.title')}</h3>
     <div class="row">
         <div class="col s12 m4 center-align">
-            <img class="responsive-img" alt="Call for Organizers Poster" width="256" src="${require('../img/organizer_call.png')}">
+            <img class="responsive-img" alt="${this.localeObj.t('lkkJoin.joinLkkPoster')}" width="256" src="${require('../img/organizer_call.png')}">
         </div>
         <div class="col s12 m8">
             <p>
-                We are honored to announce that finally, there is an
-                initiative to organize the <b>1st Philippine Esperanto Youth Congress</b> to be
-                held in the year 2020. This historic congress shall mark the culmination of the
-                seven years of effort of Esperanto advocates in the country and the forward step
-                towards the further growth and integration of the national Esperanto community,
-                and shall provide speakers, learners, and advocates coming from different parts
-                of the country the opportunity to interact, learn, and work together in a series
-                of social and educational activities.
+                ${this.localeObj.t('lkkJoin.mainHeader.par00')}
             </p>
             <p>
-                In line with this, the conveners of the Congress would like to start the
-                preparations by launching an open call for individuals which shall become
-                members of the <b>local organizing committee (LKK)</b>, which shall consist of <b>seven (7) members</b>.
-                To this end, we are currently in need of <b>three (3) individuals</b> who shall take
-                charge of each one of the following posts.
+                ${this.localeObj.t('lkkJoin.mainHeader.par01')}
             </p>
         </div>
     </div>
 </section>
 
 <section class="section">
-    <h3>Qualifications</h3>
+    <h3>${this.localeObj.t('lkkJoin.qualifications.title')}</h3>
     <p>
-        Anyone interested must have at least the following qualifications:
+        ${this.localeObj.t('lkkJoin.qualifications.par00')}
     </p>
 
     <ul class="browser-default">
-        <li>Must be over 18 years old</li>
-        <li>Is firmly committed to ensure the success of the congress through proper delivery of responsibilities expected of the post within prescribed deadlines</li>
-        <li>Is willing to communicate and coordinately actively with other members of the LKK and all other personnel involved with the preparation for the congress</li>
-        <li>Has any prior experience or training relevant to the post assigned, especially for Finance (preferably professional or has related educational background), otherwise, is willing to actively familiarize himself/herself and learn new things related to the post</li>
+        <li>${this.localeObj.t('lkkJoin.qualifications.list00')}</li>
+        <li>${this.localeObj.t('lkkJoin.qualifications.list01')}</li>
+        <li>${this.localeObj.t('lkkJoin.qualifications.list02')}</li>
+        <li>${this.localeObj.t('lkkJoin.qualifications.list03')}</li>
     </ul>
 
     <p>
-        Furthermore, the following qualifications are preferred but not required:
+        ${this.localeObj.t('lkkJoin.qualifications.par01')}
     </p>
 
     <ul class="browser-default">
-        <li>Resides within the National Capital Region (NCR) or in the immediately surrounding areas (except for Logistics and Finance, in which proximity is required), and is ready to allot time to participate in physical meetings at least once a month</li>
-        <li>Can be easily reached through email, social media, and/or SMS, whichever is most convenient</li>
-        <li>Possesses at least basic (A2) or higher proficiency in Esperanto, especially for particular posts whose tasks may require periodic communication with the international Esperanto community, such as External Relations & Marketing and Finance; and is willing to continue learning the language during the time before the congress</li>
-        <li>Has prior experience in event organizing</li>
+        <li>${this.localeObj.t('lkkJoin.qualifications.list04')}</li>
+        <li>${this.localeObj.t('lkkJoin.qualifications.list05')}</li>
+        <li>${this.localeObj.t('lkkJoin.qualifications.list06')}</li>
+        <li>${this.localeObj.t('lkkJoin.qualifications.list07')}</li>
     </ul>
 
     <p>
-        It should be clarified, however, that the posts will not handle the work alone,
-        but will be aided with assistance from the conveners and volunteer staff throughout the
-        whole preparation period for the congress and during the congress itself.
+        ${this.localeObj.t('lkkJoin.qualifications.par02')}
     </p>
 </section>
 
 <section id="section-vacant" class="section">
-    <h3>Vacant Positions</h3>
+    <h3>${this.localeObj.t('lkkJoin.vacancies.title')}</h3>
     <p>
-        Please click on the positions to view the qualifications.
+        ${this.localeObj.t('lkkJoin.vacancies.par00')}
     </p>
 
     <ul class="collapsible popout">
         <li>
-            <div class="collapsible-header"><i class="material-icons">edit</i>Secretary</div>
+            <div class="collapsible-header"><i class="material-icons">edit</i>${this.localeObj.t('lkkJoin.vacancies.lists.sec.title')}</div>
             <div class="collapsible-body">
                 <ul class="browser-default">
-                    <li>records and archives the minutes of the meeting of the LKK</li>
-                    <li>receives and archives contracts signed with other entities</li>
-                    <li>prepares agenda of LKK meetings</li>
-                    <li>maintains record of participant registration and orders</li>
+                    <li>${this.localeObj.t('lkkJoin.vacancies.lists.sec.list00')}</li>
+                    <li>${this.localeObj.t('lkkJoin.vacancies.lists.sec.list01')}</li>
+                    <li>${this.localeObj.t('lkkJoin.vacancies.lists.sec.list02')}</li>
+                    <li>${this.localeObj.t('lkkJoin.vacancies.lists.sec.list03')}</li>
                 </ul>
 
                 <p class="center-align">
-                    <a class="btn green darken-4 waves-effect waves-light" target="_blank" href="//docs.google.com/forms/d/e/1FAIpQLSegVq4sMzGpO2_pusbxQB3L_m10S_xvLqQGZScgK4iKQm0EQg/viewform?usp=pp_url&entry.999570943=Secretary">Apply for This Position</a>
+                    <a class="btn green darken-4 waves-effect waves-light" target="_blank" href="//docs.google.com/forms/d/e/1FAIpQLSegVq4sMzGpO2_pusbxQB3L_m10S_xvLqQGZScgK4iKQm0EQg/viewform?usp=pp_url&entry.999570943=Secretary">${this.localeObj.t('lkkJoin.vacancies.applyPosition')}</a>
                 </p>
             </div>
         </li>
         <li>
-            <div class="collapsible-header"><i class="material-icons">local_atm</i>Director for Finance</div>
+            <div class="collapsible-header"><i class="material-icons">local_atm</i>${this.localeObj.t('lkkJoin.vacancies.lists.fin.title')}</div>
             <div class="collapsible-body">
                 <ul class="browser-default">
-                    <li>maintains and safeguards the congress funds</li>
-                    <li>processes and records payments for registration and miscellaneous fees</li>
-                    <li>compiles receipts</li>
-                    <li>facilitate disbursement of funds for transactions such as downpayments, orders, etc.</li>
-                    <li>prepares budget reports and financial statements</li>
-                    <li>spearheads fundraising activities</li>
+                    <li>${this.localeObj.t('lkkJoin.vacancies.lists.fin.list00')}</li>
+                    <li>${this.localeObj.t('lkkJoin.vacancies.lists.fin.list01')}</li>
+                    <li>${this.localeObj.t('lkkJoin.vacancies.lists.fin.list02')}</li>
+                    <li>${this.localeObj.t('lkkJoin.vacancies.lists.fin.list03')}</li>
+                    <li>${this.localeObj.t('lkkJoin.vacancies.lists.fin.list04')}</li>
+                    <li>${this.localeObj.t('lkkJoin.vacancies.lists.fin.list05')}</li>
                 </ul>
 
                 <p class="center-align">
-                    <a class="btn green darken-4 waves-effect waves-light" target="_blank" href="//docs.google.com/forms/d/e/1FAIpQLSegVq4sMzGpO2_pusbxQB3L_m10S_xvLqQGZScgK4iKQm0EQg/viewform?usp=pp_url&entry.999570943=Director+for+Finance">Apply for This Position</a>
+                    <a class="btn green darken-4 waves-effect waves-light" target="_blank" href="//docs.google.com/forms/d/e/1FAIpQLSegVq4sMzGpO2_pusbxQB3L_m10S_xvLqQGZScgK4iKQm0EQg/viewform?usp=pp_url&entry.999570943=Director+for+Finance">${this.localeObj.t('lkkJoin.vacancies.applyPosition')}</a>
                 </p>
             </div>
         </li>
         <li>
-            <div class="collapsible-header"><i class="material-icons">location_city</i>Director for Logistics</div>
+            <div class="collapsible-header"><i class="material-icons">location_city</i>${this.localeObj.t('lkkJoin.vacancies.lists.logistics.title')}</div>
             <div class="collapsible-body">
                 <ul class="browser-default">
-                    <li>scouts and arranges suitable meeting and activity venues</li>
-                    <li>spearheads arrangements for accommodation (lodging and food)</li>
-                    <li>prepares materials and equipment needed</li>
-                    <li>oversees the printing of the congress booklet, certificates, etc.</li>
-                    <li>designs floor plan and coordinates venue decorations</li>
+                    <li>${this.localeObj.t('lkkJoin.vacancies.lists.logistics.list00')}</li>
+                    <li>${this.localeObj.t('lkkJoin.vacancies.lists.logistics.list01')}</li>
+                    <li>${this.localeObj.t('lkkJoin.vacancies.lists.logistics.list02')}</li>
+                    <li>${this.localeObj.t('lkkJoin.vacancies.lists.logistics.list03')}</li>
+                    <li>${this.localeObj.t('lkkJoin.vacancies.lists.logistics.list04')}</li>
                 </ul>
 
                 <p class="center-align">
-                    <a class="btn green darken-4 waves-effect waves-light" target="_blank" href="//docs.google.com/forms/d/e/1FAIpQLSegVq4sMzGpO2_pusbxQB3L_m10S_xvLqQGZScgK4iKQm0EQg/viewform?usp=pp_url&entry.999570943=Director+for+Logistics">Apply for This Position</a>
+                    <a class="btn green darken-4 waves-effect waves-light" target="_blank" href="//docs.google.com/forms/d/e/1FAIpQLSegVq4sMzGpO2_pusbxQB3L_m10S_xvLqQGZScgK4iKQm0EQg/viewform?usp=pp_url&entry.999570943=Director+for+Logistics">${this.localeObj.t('lkkJoin.vacancies.applyPosition')}</a>
                 </p>
             </div>
         </li>
     </ul>
 
     <p>
-        For those who are interested, kindly completely fill-up the application form.
-        For those who still have reservations (i.e. unsure whether they satisfy the qualifications
-        above, etc.), we strongly encourage you to apply nevertheless and we shall
-        exhaust all means to find agreeable solutions.
+        ${this.localeObj.t('lkkJoin.vacancies.par01')}
     </p>
 
     <p class="center-align">
-        <a class="btn green darken-4 btn-large waves-effect waves-light" target="_blank" href="//bit.ly/OrganizeFJKApply">Apply Now</a>
+        <a class="btn green darken-4 btn-large waves-effect waves-light" target="_blank" href="//bit.ly/OrganizeFJKApply">${this.localeObj.t('lkkJoin.vacancies.applyNow')}</a>
     </p>
 </section>
 
 <section class="section">
-    <h3>Contact Us</h3>
+    <h3>${this.localeObj.t('lkkJoin.contact.title')}</h3>
     <p>
-        For inquiries, please contact Albert Garrido at +63 998 249 1891 or send an email to
-        esperanto.philippines@gmail.com or peyc2020@gmail.com.
+            ${this.localeObj.t('lkkJoin.contact.chunk00')}
+            +63 998 249 1891
+            ${this.localeObj.t('lkkJoin.contact.chunk01')}
+            esperanto.philippines@gmail.com
+            ${this.localeObj.t('lkkJoin.contact.chunk02')}
+            peyc2020@gmail.com.
     </p>
 </section>

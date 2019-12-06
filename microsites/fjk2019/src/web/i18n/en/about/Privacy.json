@@ -1,0 +1,32 @@
+{
+    "privacy": {
+        "topSubTitle": "Privacy Notice",
+        "title": "Privacy Notice",
+        "subTitle": "First Philippine Esperanto Youth Congress",
+        "mainHeader": {
+            "title": "Privacy Notice",
+            "par00": "In conformance to existing data privacy laws, such as the General Data Protection Regulation (GDPR) of the European Union and the Data Privacy Act of 2012 (RA 10173) of the Philippines, the Organizing Committee of the 1st FJK (henceforth referred to as \"we\" or \"us\") is required to obtain your consent to receive and process some personal and other pertinent information in conjunction with any agreement that you may intiate with us, including but not limited to 1) registration for the congress, 2) application to the Volunteer Staff, and 3) application as part of the Congress Organizing Committee."
+        },
+        "collection": {
+            "title": "Which data are we collecting?",
+            "par00": "We will specifically collect the following personal information:",
+            "list00": "Full name and nickname",
+            "list01": "Birthday",
+            "list02": "Region and country of residence",
+            "list03": "Current educational background or profession",
+            "list04": "Contact details, such as your email address, and optionally any and all of the following: social media account handles, phone number, and instant messaging handles",
+            "par01": "We will also be collecting some information about your Esperanto language level, experiences with the Esperanto community, free times, and experiences you may have had that best fits the committee you want to be a part of."
+        },
+        "usage": {
+            "title": "How will we use your data?",
+            "par00": "The data will be used for the following reasons:",
+            "list00": "Contact you regarding the status of your application, news about upcoming Volunteer Staff meetings and orientations, and about the Congress itself",
+            "list01": "Screen the applications and sort memberships accordingly",
+            "list02": "Collect statistics on the number of potential candidates that are acquainted with Esperanto, level of participation to Esperanto events, and zealousness of the people to learn it"
+        },
+        "retention": {
+            "title": "Until when will we save your data?",
+            "par00": "We will save your data until the Organizing Committee completes its report on the Congress, which shall start only after the Congress has concluded. If you want to revoke your consent earlier than that date, please send us a message and we will immediately process it."
+        }
+    }
+}

@@ -1,0 +1,66 @@
+{
+    "lkkJoin": {
+        "topSubTitle": "Call for Organizers",
+        "title": "Call for Organizers",
+        "subTitle": "First Philippine Esperanto Youth Congress",
+        "joinLkkPoster": "Call for Organizers Poster",
+        "mainHeader": {
+            "title": "<i>Saluton!</i>",
+            "par00": "We are honored to announce that finally, there is an initiative to organize the <b>1st Philippine Esperanto Youth Congress</b> to be held in the year 2020. This historic congress shall mark the culmination of the seven years of effort of Esperanto advocates in the country and the forward step towards the further growth and integration of the national Esperanto community, and shall provide speakers, learners, and advocates coming from different parts of the country the opportunity to interact, learn, and work together in a series of social and educational activities.",
+            "par01": "In line with this, the conveners of the Congress would like to start the preparations by launching an open call for individuals which shall become members of the <b>local organizing committee (LKK)</b>, which shall consist of <b>seven (7) members</b>. To this end, we are currently in need of <b>three (3) individuals</b> who shall take charge of each one of the following posts."
+        },
+        "qualifications": {
+            "title": "Qualifications",
+            "par00": "Anyone interested must have at least the following qualifications:",
+            "list00": "Must be over 18 years old",
+            "list01": "Is firmly committed to ensure the success of the congress through proper delivery of responsibilities expected of the post within prescribed deadlines",
+            "list02": "Is willing to communicate and coordinately actively with other members of the LKK and all other personnel involved with the preparation for the congress",
+            "list03": "Has any prior experience or training relevant to the post assigned, especially for Finance (preferably professional or has related educational background), otherwise, is willing to actively familiarize himself/herself and learn new things related to the post",
+            "par01": "Furthermore, the following qualifications are preferred but not required:",
+            "list04": "Resides within the National Capital Region (NCR) or in the immediately surrounding areas (except for Logistics and Finance, in which proximity is required), and is ready to allot time to participate in physical meetings at least once a month",
+            "list05": "Can be easily reached through email, social media, and/or SMS, whichever is most convenient",
+            "list06": "Possesses at least basic (A2) or higher proficiency in Esperanto, especially for particular posts whose tasks may require periodic communication with the international Esperanto community, such as External Relations & Marketing and Finance; and is willing to continue learning the language during the time before the congress",
+            "list07": "Has prior experience in event organizing",
+            "par02": "It should be clarified, however, that the posts will not handle the work alone, but will be aided with assistance from the conveners and volunteer staff throughout the whole preparation period for the congress and during the congress itself."
+        },
+        "vacancies": {
+            "title": "Vacant Positions",
+            "par00": "Please click on the positions to view the qualifications.",
+            "par01": "For those who are interested, kindly completely fill-up the application form. For those who still have reservations (i.e. unsure whether they satisfy the qualifications above, etc.), we strongly encourage you to apply nevertheless and we shall exhaust all means to find agreeable solutions.",
+            "applyNow": "Apply Now",
+            "applyPosition": "Apply for This Position",
+            "lists": {
+                "sec": {
+                    "title": "Secretary",
+                    "list00": "records and archives the minutes of the meeting of the LKK",
+                    "list01": "receives and archives contracts signed with other entities",
+                    "list02": "prepares agenda of LKK meetings",
+                    "list03": "maintains record of participant registration and orders"
+                },
+                "fin": {
+                    "title": "Director for Finance",
+                    "list00": "maintains and safeguards the congress funds",
+                    "list01": "processes and records payments for registration and miscellaneous fees",
+                    "list02": "compiles receipts",
+                    "list03": "facilitate disbursement of funds for transactions such as downpayments, orders, etc.",
+                    "list04": "prepares budget reports and financial statements",
+                    "list05": "spearheads fundraising activities"
+                },
+                "logistics": {
+                    "title": "Director for Logistics",
+                    "list00": "scouts and arranges suitable meeting and activity venues",
+                    "list01": "spearheads arrangements for accommodation (lodging and food)",
+                    "list02": "prepares materials and equipment needed",
+                    "list03": "oversees the printing of the congress booklet, certificates, etc.",
+                    "list04": "designs floor plan and coordinates venue decorations"
+                }
+            }
+        },
+        "contact": {
+            "title": "Contact Us",
+            "chunk00": "For inquiries, please contact Albert Garrido at",
+            "chunk01": "or send an email to",
+            "chunk02": "or"
+        }
+    }
+}

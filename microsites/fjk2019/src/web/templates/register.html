@@ -40,75 +40,75 @@
             </div>
         </noscript>
         <div class="center-align">
-            <a id="a-start-reg" class="btn-large theme-green waves-effect" href="">${this.localeObj.t('register.forms.startRegistration')}</a>
+            <a id="a-start-reg" class="btn-large theme-green waves-effect" href="">${this.localeObj.t('register.buttons.startRegistration')}</a>
         </div>
     </section>
 
     <section id="section-basic" class="section hide">
-        <h3>Basic Information</h3>
+        <h3>${this.localeObj.t('register.forms.basic.header')}</h3>
         <p>
-            Fields marked with an asterisk (*) mean that they are required to be filled-up.
+            ${this.localeObj.t('register.forms.requiredNotice')}
         </p>
         <div class="row">
             <div class="input-field col s6 l4">
                 <input id="txt-last-name" name="txt-last-name" class="validate" type="text" required>
-                <label for="txt-last-name">Last Name*</label>
-                <span class="helper-text" data-error="Please enter your last name"></span>
+                <label for="txt-last-name">${this.localeObj.t('register.forms.basic.fields.lastName')}</label>
+                <span class="helper-text" data-error="${this.localeObj.t('register.forms.basic.errors.lastName')}"></span>
             </div>
             <div class="input-field col s6 l4">
                 <input id="txt-first-name" name="txt-first-name" class="validate" type="text" required>
-                <label for="txt-first-name">First Name*</label>
-                <span class="helper-text" data-error="Please enter your first name"></span>
+                <label for="txt-first-name">${this.localeObj.t('register.forms.basic.fields.firstName')}</label>
+                <span class="helper-text" data-error="${this.localeObj.t('register.forms.basic.errors.firstName')}"></span>
             </div>
             <div class="input-field col s12 l4">
                 <input id="txt-middle-name" name="txt-middle-name" type="text">
-                <label for="txt-middle-name">Middle Name</label>
+                <label for="txt-middle-name">${this.localeObj.t('register.forms.basic.fields.middleName')}</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12 l4">
                 <input id="txt-nickname" name="txt-nickname" class="validate" type="text" required>
-                <label for="txt-nickname">Nickname*</label>
-                <span class="helper-text" data-error="Please enter your nickname"></span>
+                <label for="txt-nickname">${this.localeObj.t('register.forms.basic.fields.nickName')}</label>
+                <span class="helper-text" data-error="${this.localeObj.t('register.forms.basic.errors.nickName')}"></span>
             </div>
             <div class="input-field col s6 l2">
                 <input id="txt-bday" name="txt-bday" class="datepicker validate" type="text" required>
-                <label for="txt-bday">Birthday*</label>
-                <span class="helper-text" data-error="Please enter your birthdate"></span>
+                <label for="txt-bday">${this.localeObj.t('register.forms.basic.fields.birthday')}</label>
+                <span class="helper-text" data-error="${this.localeObj.t('register.forms.basic.errors.birthday')}"></span>
             </div>
             <div class="input-field col s6 l2">
                 <select id="select-sex-list" name="select-sex-list" required>
-                    <option value="" disabled selected>Sex*</option>
+                    <option value="" disabled selected>${this.localeObj.t('register.forms.basic.fields.sex')}</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="unknown">Prefer not to say</option>
                 </select>
                 <label>Sex</label>
-                <span class="helper-text" data-error="Please select your sex"></span>
+                <span class="helper-text" data-error="${this.localeObj.t('register.forms.basic.errors.sex')}"></span>
             </div>
             <div class="input-field col s12 l4">
                 <select id="select-countries-list" name="select-countries-list" required>
-                    <option value="" disabled selected>Country of Origin*</option>
+                    <option value="" disabled selected>${this.localeObj.t('register.forms.basic.fields.countryOfOrigin')}</option>
                 </select>
                 <label>Country of Origin</label>
-                <span class="helper-text" data-error="Please select your country of origin"></span>
+                <span class="helper-text" data-error="${this.localeObj.t('register.forms.basic.errors.countryOfOrigin')}"></span>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12 m6">
                 <input id="txt-email" class="validate" name="txt-email" type="email" required>
-                <label for="txt-email">E-mail Address*</label>
-                <span class="helper-text" data-error="Please enter a valid email address"></span>
+                <label for="txt-email">${this.localeObj.t('register.forms.basic.fields.emailAddress')}</label>
+                <span class="helper-text" data-error="${this.localeObj.t('register.forms.basic.errors.emailAddress')}"></span>
             </div>
             <div class="input-field col s12 m6">
                 <input id="txt-sns" name="txt-sns" type="text">
-                <label for="txt-sns">Social Media Username (Facebook, etc.)</label>
+                <label for="txt-sns">${this.localeObj.t('register.forms.basic.fields.sns')}</label>
             </div>
         </div>
     </section>
 
     <section id="section-reg" class="section hide">
-        <h3>Registration Details</h3>
+        <h3>${this.localeObj.t('register.forms.register.header')}</h3>
         <p>
             There are different categories for participants
         </p>
@@ -136,99 +136,99 @@
         <div id="div-reg-ratecard" class="card">
             <div class="card-content theme-green">
                 <p class="white-text">
-                    You originate from {country}, which are subject to {insideMode} rates.
+                    ${this.localeObj.t('register.forms.register.countryNotice')}
                 </p>
             </div>
-            <div class="card-action"></div>
+            <div class="card-action">${this.localeObj.t('buttons.viewRates')}</div>
         </div>
 
         <div class="row">
             <div class="input-field col s12">
-                <h6>I want to register as&#8230;</h6>
+                <h6>${this.localeObj.t('register.forms.register.registerAsText')}</h6>
             </div>
             <div class="input-field col s12 m4">
                 <label>
                     <input class="with-gap" name="rbx-reg-broad" type="radio" value="regular" checked>
-                    <span>Regular Participant</span>
+                    <span>${this.localeObj.t('register.forms.register.fields.regularParticipant')}</span>
                 </label>
             </div>
             <div class="input-field col s12 m4">
                 <label>
                     <input class="with-gap" name="rbx-reg-broad" type="radio" value="moral">
-                    <span>Moral Participant</span>
+                    <span>${this.localeObj.t('register.forms.register.fields.moralParticipant')}</span>
                 </label>
             </div>
             <div class="input-field col s12 m4">
                 <label>
                     <input class="with-gap" name="rbx-reg-broad" type="radio" value="patron">
-                    <span>Congress Patron</span>
+                    <span>${this.localeObj.t('register.forms.register.fields.congressPatron')}</span>
                 </label>
             </div>
         </div>
 
         <div id="div-reg-category" class="row">
             <div class="col s12">
-                <h6>&#8230;with current occupation</h6>
+                <h6>${this.localeObj.t('register.forms.register.currentOccupationText')}</h6>
             </div>
             <div class="input-field col s12">
                 <select id="select-reg-occupation" name="select-reg-occupation" required>
                     <option value="" disabled selected>Occupation*</option>
-                    <option value="shs">Senior High School and younger</option>
-                    <option value="undergrad">Undergraduate Student</option>
-                    <option value="grad">Graduate Student and equivalent/higher</option>
-                    <option value="working">Professional/Working</option>
-                    <option value="unemployed">Unemployed</option>
+                    <option value="shs">${this.localeObj.t('register.forms.register.fields.seniorHigh')}</option>
+                    <option value="undergrad">${this.localeObj.t('register.forms.register.fields.undergrad')}</option>
+                    <option value="grad">${this.localeObj.t('register.forms.register.fields.graduate')}</option>
+                    <option value="working">${this.localeObj.t('register.forms.register.fields.working')}</option>
+                    <option value="unemployed">${this.localeObj.t('register.forms.register.fields.unemployed')}</option>
                 </select>
-                <span class="helper-text" data-error="Please select your occupation"></span>
+                <span class="helper-text" data-error="${this.localeObj.t('register.forms.register.errors.occupation')}"></span>
             </div>
         </div>
 
         <div id="div-reg-educ-info" class="row hide">
             <div class="col s12">
-                <h6>&#8230;and currently studying at</h6>
+                <h6>${this.localeObj.t('register.forms.register.currentStudyText')}</h6>
             </div>
             <div class="input-field col s12 m6">
                 <input type="text" id="txt-reg-educ" class="validate" name="txt-reg-educ">
-                <label for="txt-reg-educ">Educational Institution*</label>
-                <span class="helper-text" data-error="Please enter your educational institution"></span>
+                <label for="txt-reg-educ">${this.localeObj.t('register.forms.register.fields.educInsti')}</label>
+                <span class="helper-text" data-error="${this.localeObj.t('register.forms.register.errors.educInsti')}"></span>
             </div>
             <div class="input-field col s12 m6">
                 <input type="text" id="txt-reg-degree" class="validate" name="txt-reg-degree">
-                <label for="txt-reg-degree">Degree*</label>
-                <span class="helper-text" data-error="Please enter your degree"></span>
+                <label for="txt-reg-degree">${this.localeObj.t('register.forms.register.fields.degree')}</label>
+                <span class="helper-text" data-error="${this.localeObj.t('register.forms.register.errors.degree')}"></span>
             </div>
         </div>
 
         <div id="div-reg-work-info" class="row hide">
             <div class="input-field col s12">
-                <h6>&#8230;and currently working at</h6>
+                <h6>${this.localeObj.t('register.forms.register.currentWorkText')}</h6>
             </div>
             <div class="input-field col s12 m6">
                 <input type="text" id="txt-reg-company" class="validate" name="txt-reg-company">
-                <label for="txt-reg-company">Company/Office*</label>
-                <span class="helper-text" data-error="Please enter your company/office"></span>
+                <label for="txt-reg-company">${this.localeObj.t('register.forms.register.fields.company')}</label>
+                <span class="helper-text" data-error="${this.localeObj.t('register.forms.register.errors.company')}"></span>
             </div>
             <div class="input-field col s12 m6">
                 <input type="text" id="txt-reg-position" class="validate" name="txt-reg-position">
-                <label for="txt-reg-position">Position*</label>
-                <span class="helper-text" data-error="Please enter your position"></span>
+                <label for="txt-reg-position">${this.localeObj.t('register.forms.register.fields.position')}</label>
+                <span class="helper-text" data-error="${this.localeObj.t('register.forms.register.errors.position')}"></span>
             </div>
         </div>
 
         <!-- Modal for local rates -->
         <div id="div-modal-ph-rates" class="modal modal-fixed-footer">
             <div class="modal-content">
-                <h4>Registration Rates for Local Participants</h4>
+                <h4>${this.localeObj.t('register.forms.register.regRatesHeader', {localityPlural: this.localeObj.t('register.generalText.localPlural')})}</h4>
                 <p class="card-panel theme-red white-text">
-                    Note that all prices are in Philippine Peso.
+                    ${this.localeObj.t('register.forms.register.currencyNotice', {currencyWords: this.localeObj.t('locality.currencyWordsPh')})}
                 </p>
 
                 <table>
                     <tr>
                         <th colspan="2">Category</th>
-                        <th>Early Bird</th>
-                        <th>Regular</th>
-                        <th>Late</th>
+                        <th>${this.localeObj.t('register.generalText.earlyBird')}</th>
+                        <th>${this.localeObj.t('register.generalText.regular')}</th>
+                        <th>${this.localeObj.t('register.generalText.lateBird')}</th>
                     </tr>
                     <tr>
                         <td>A1</td>
@@ -260,35 +260,35 @@
                     </tr>
                     <tr>
                         <td>C</td>
-                        <td>Moral Participant</td>
+                        <td>${this.localeObj.t('register.forms.register.fields.moralParticipant')}</td>
                         <td class="center-align" colspan="3">900</td>
                     </tr>
                     <tr>
                         <td>D</td>
-                        <td>Congress Patron</td>
+                        <td>${this.localeObj.t('register.forms.register.fields.congressPatron')}</td>
                         <td class="center-align" colspan="3">4500</td>
                     </tr>
                 </table>
             </div>
             <div class="modal-footer">
-                <a class="modal-close btn-flat green-text text-darken-2 waves-effect btn-flat">Close</a>
+                <a class="modal-close btn-flat green-text text-darken-2 waves-effect btn-flat">${this.localeObj.t('buttons.close')}</a>
             </div>
         </div>
 
         <!-- Modal for other rates -->
         <div id="div-modal-foreign-rates" class="modal modal-fixed-footer">
             <div class="modal-content">
-                <h4>Registration Rates for Foreign Participants</h4>
+                <h4>${this.localeObj.t('register.forms.register.regRatesHeader', {localityPlural: this.localeObj.t('register.generalText.foreignPlural')})}</h4>
                 <p class="card-panel theme-red white-text">
-                    Note that all prices are in Euro. For reference, 1 EUR = 56.00 PHP
+                    ${this.localeObj.t('register.forms.register.currencyNotice', {currencyWords: this.localeObj.t('locality.currencyWordsEu')})} ${this.localeObj.t('register.forms.register.forexRateNotice')}
                 </p>
 
                 <table>
                     <tr>
                         <th colspan="2">Category</th>
-                        <th>Early Bird</th>
-                        <th>Regular</th>
-                        <th>Late</th>
+                        <th>${this.localeObj.t('register.generalText.earlyBird')}</th>
+                        <th>${this.localeObj.t('register.generalText.regular')}</th>
+                        <th>${this.localeObj.t('register.generalText.lateBird')}</th>
                     </tr>
                     <tr>
                         <td>A</td>
@@ -313,29 +313,26 @@
                     </tr>
                     <tr>
                         <td>C</td>
-                        <td>Moral Participant</td>
+                        <td>${this.localeObj.t('register.forms.register.fields.moralParticipant')}</td>
                         <td class="center-align" colspan="3">18</td>
                     </tr>
                     <tr>
                         <td>D</td>
-                        <td>Congress Patron</td>
+                        <td>${this.localeObj.t('register.forms.register.fields.congressPatron')}</td>
                         <td class="center-align" colspan="3">88</td>
                     </tr>
                 </table>
             </div>
             <div class="modal-footer">
-                <a class="modal-close waves-effect btn-flat green-text text-darken-2">Close</a>
+                <a class="modal-close waves-effect btn-flat green-text text-darken-2">${this.localeObj.t('buttons.close')}</a>
             </div>
         </div>
     </section>
 
     <section id="section-lodging" class="section hide">
-        <h3>Lodging</h3>
+        <h3>${this.localeObj.t('register.forms.lodging.header')}</h3>
         <p>
             For easier access to the Congress’ proceedings and services and closer interaction with other participants, the Organizing Committee recommends that participants from other regions or countries reserve their lodging with partner hotels.
-        </p>
-        <p>
-            Due to ongoing administrative concerns in the UEA Central Office, payment through UEA account is not supported at this time.
         </p>
         <p class="card-panel theme-yellow white-text">
             More information on lodging options will be released very soon. The information entered here will be used for surveying purposes.
@@ -344,11 +341,11 @@
         <div class="row">
             <label class="input-field col s12 m6">
                 <input class="filled-in" name="cbx-lodging-interest" type="checkbox">
-                <span>I am interested in reserving a room in the partner hotels of the congress</span>
+                <span>${this.localeObj.t('register.forms.lodging.fields.interested')}</span>
             </label>
             <label class="input-field col s12 m6">
                 <input class="filled-in" name="cbx-lodging-overstay" type="checkbox">
-                <span>I need to reserve beyond the congress dates</span>
+                <span>${this.localeObj.t('register.forms.lodging.fields.beyondDates')}</span>
             </label>
         </div>
 
@@ -359,18 +356,18 @@
             <div class="input-field col s12 m6">
                 <select id="select-lodging-arrive" name="select-lodging-arrival">
                 </select>
-                <label>Arrival</label>
+                <label>${this.localeObj.t('register.forms.lodging.fields.arrival')}</label>
             </div>
             <div class="input-field col s12 m6">
                 <select id="select-lodging-depart" name="select-lodging-depart">
                 </select>
-                <label>Departure</label>
+                <label>${this.localeObj.t('register.forms.lodging.fields.departure')}</label>
             </div>
         </div>
     </section>
 
     <section id="section-excursion" class="section hide">
-        <h3>Excursion</h3>
+        <h3>${this.localeObj.t('register.forms.excursion.header')}</h3>
         <p>
             An excursion, which is a day trip to select historical sites relevant to the congress theme and the Philippine society and culture, is scheduled to be held on Sunday, 26 April, 2020. While availing of this activity is not required, the Organizing Committee invites all participants to join.
         </p>
@@ -380,86 +377,86 @@
         <div class="row">
             <label class="input-field col s12">
                 <input class="filled-in" name="cbx-excursion-interest" type="checkbox">
-                <span>I am interested in joining the excursion</span>
+                <span>${this.localeObj.t('register.forms.excursion.fields.interested')}</span>
             </label>
         </div>
     </section>
 
     <section id="section-food" class="section hide">
-        <h3>Food</h3>
+        <h3>${this.localeObj.t('register.forms.food.header')}</h3>
         <p>
-            I have the following dietary restrictions
+            ${this.localeObj.t('register.forms.food.dietNotice')}
         </p>
         <div class="row">
             <label class="input-field col s12 m4 l2">
                 <input class="filled-in" name="cbx-food-pref[]" type="checkbox" value="vegetarian">
-                <span>Vegetarian</span>
+                <span>${this.localeObj.t('register.forms.food.fields.vegetarian')}</span>
             </label>
             <label class="input-field col s12 m4 l2">
                 <input class="filled-in" name="cbx-food-pref[]" type="checkbox" value="vegan">
-                <span>Vegan</span>
+                <span>${this.localeObj.t('register.forms.food.fields.vegan')}</span>
             </label>
             <label class="input-field col s12 m4 l2">
                 <input class="filled-in" name="cbx-food-pref[]" type="checkbox" value="halal">
-                <span>Halal</span>
+                <span>${this.localeObj.t('register.forms.food.fields.kosher')}</span>
             </label>
             <label class="input-field col s12 m4 l2">
                 <input class="filled-in" name="cbx-food-pref[]" type="checkbox" value="kosher">
-                <span>Kosher</span>
+                <span>${this.localeObj.t('register.forms.food.fields.halal')}</span>
             </label>
             <label class="input-field col s12 m4 l2">
                 <input class="filled-in" name="cbx-food-pref[]" type="checkbox" value="other">
-                <span>Other</span>
+                <span>${this.localeObj.t('register.forms.food.fields.other')}</span>
             </label>
         </div>
 
         <p>
-            I have the following food allergies
+            ${this.localeObj.t('register.forms.food.allergyNotice')}
         </p>
         <div class="row">
             <label class="input-field col s12 m4 l2">
                 <input class="filled-in" name="cbx-food-allerg[]" type="checkbox" value="nuts">
-                <span>Nuts</span>
+                <span>${this.localeObj.t('register.forms.food.fields.nuts')}</span>
             </label>
             <label class="input-field col s12 m4 l2">
                 <input class="filled-in" name="cbx-food-allerg[]" type="checkbox" value="seafood">
-                <span>Seafood</span>
+                <span>${this.localeObj.t('register.forms.food.fields.seafood')}</span>
             </label>
             <label class="input-field col s12 m4 l2">
                 <input class="filled-in" name="cbx-food-allerg[]" type="checkbox" value="wheat">
-                <span>Gluten (Wheat)</span>
+                <span>${this.localeObj.t('register.forms.food.fields.wheat')}</span>
             </label>
             <label class="input-field col s12 m4 l2">
                 <input class="filled-in" name="cbx-food-allerg[]" type="checkbox" value="milk">
-                <span>Milk</span>
+                <span>${this.localeObj.t('register.forms.food.fields.milk')}</span>
             </label>
             <label class="input-field col s12 m4 l2">
                 <input class="filled-in" name="cbx-food-allerg[]" type="checkbox" value="spicy">
-                <span>Spicy</span>
+                <span>${this.localeObj.t('register.forms.food.fields.spicy')}</span>
             </label>
             <label class="input-field col s12 m4 l2">
                 <input class="filled-in" name="cbx-food-allerg[]" type="checkbox" value="other">
-                <span>Other</span>
+                <span>${this.localeObj.t('register.forms.food.fields.other')}</span>
             </label>
         </div>
 
         <p>
-            Do you drink alcohol?
+            ${this.localeObj.t('register.forms.food.alcoholQuestion')}
         </p>
         <div class="row">
             <label class="input-field col s12 m2">
                 <input class="with-gap" name="rbx-alcohol-pref" type="radio" value="yes">
-                <span>Yes</span>
+                <span>${this.localeObj.t('yes')}</span>
             </label>
             <label class="input-field col s12 m2">
                 <input class="with-gap" name="rbx-alcohol-pref" type="radio" value="no" checked>
-                <span>No</span>
+                <span>${this.localeObj.t('no')}</span>
             </label>
         </div>
     </section>
 
     <section id="section-others" class="section hide">
-        <h4>Congress Photo</h4>
+        <h4>${this.localeObj.t('register.forms.others.congressPhotoHeader')}</h4>
         <p>
             Through an accredited photographer, the Organizing Committee will print copies of the official memorabilia group photo of the participants of the Congress. This will only be implemented if there will be enough demand from the participants.
         </p>
@@ -469,7 +466,7 @@
         <p>
             <label class="input-field">
                 <input class="filled-in" name="cbx-others-photo" type="checkbox">
-                <span>I would like to avail of the official printed congress photo</span>
+                <span>${this.localeObj.t('register.forms.others.fields.congressPhoto')}</span>
             </label>
         </p>
 
@@ -483,12 +480,12 @@
         <div>
             <label>
                 <input class="filled-in" name="cbx-others-invitletter" type="checkbox">
-                <span>I would like to have a printed invitation letter sent through mail</span>
+                <span>${this.localeObj.t('register.forms.others.fields.invitLetter')}</span>
             </label>
 
             <div id="div-others-invitletter-shipinfo" class="row hide">
                 <div class="col s12">
-                    <h6>Ship to&#8230;</h6>
+                    <h6>${this.localeObj.t('register.forms.others.shipTo')}</h6>
                     <input type="hidden" name="hdn-invitletter-fee" value="0">
                 </div>
                 <label class="input-field col s12 m6">
@@ -501,7 +498,7 @@
                 </label>
                 <div id="div-card-invitletter-price" class="card-panel col s12 theme-yellow white-text">
                     <p>
-                        Note that getting an invitation letter will cost <b>PHP 180.00</b> to cover the shipping fee.
+                        ${this.localeObj.t('register.forms.others.invitLetterCost')}
                     </p>
                 </div>
             </div>
@@ -512,13 +509,13 @@
             The Congress is accepting donations related to the congress proceedings and the overall welfare of the Philippine Esperanto Youth. Here are some items where your donations can be placed.
         </p>
         <p>
-            <b>Congress Fund</b>: to augment financial resources of the congress and further cover its costs, and eventually to make the entire program richer and more substantial for all participants.
+            <b>${this.localeObj.t('register.forms.others.congressFund')}</b>: to augment financial resources of the congress and further cover its costs, and eventually to make the entire program richer and more substantial for all participants.
         </p>
         <p>
-            <b>Participant Support</b>: to finance the participation of young Filipinos who live in areas far from the Congress venue or those who undergo financial struggles that hinder them from attending the event.
+            <b>${this.localeObj.t('register.forms.others.participantFund')}</b>: to finance the participation of young Filipinos who live in areas far from the Congress venue or those who undergo financial struggles that hinder them from attending the event.
         </p>
         <p>
-            <b>Association Fund</b>: to finance other ongoing and future activities and initiatives of the Philippine Esperanto Youth.
+            <b>${this.localeObj.t('register.forms.others.associationFund')}</b>: to finance other ongoing and future activities and initiatives of the Philippine Esperanto Youth.
         </p>
         <p>
             Donations are optional. You can leave some or all of these blank if you do not wish to make any donation.
@@ -526,21 +523,21 @@
 
 
         <div id="div-donate-currency" class="card-panel theme-green white-text">
-            Note that you will be donating in Philippine Peso.
+            ${this.localeObj.t('register.forms.others.donateNotice')}
         </div>
 
         <div class="row">
             <div class="input-field col s12 m4">
                 <input id="txt-congress-fund" name="txt-congress-fund" type="number" class="validate" placeholder="0.00">
-                <label for="txt-congress-fund">Congress Fund</label>
+                <label for="txt-congress-fund">${this.localeObj.t('register.forms.others.congressFund')}</label>
             </div>
             <div class="input-field col s12 m4">
                 <input id="txt-participant-fund" name="txt-participant-fund" type="number" class="validate" placeholder="0.00">
-                <label for="txt-participant-fund">Participant Support</label>
+                <label for="txt-participant-fund">${this.localeObj.t('register.forms.others.participantFund')}</label>
             </div>
             <div class="input-field col s12 m4">
                 <input id="txt-fej-fund" name="txt-fej-fund" type="number" class="validate" placeholder="0.00">
-                <label for="txt-fej-fund">Association Fund</label>
+                <label for="txt-fej-fund">${this.localeObj.t('register.forms.others.associationFund')}</label>
             </div>
         </div>
 
@@ -554,31 +551,31 @@
         <p>
             <label>
                 <input class="filled-in" name="cbx-others-contrib" type="checkbox">
-                <span>I want to lead a lecture or activity during the Congress</span>
+                <span>${this.localeObj.t('register.forms.others.fields.program')}</span>
             </label>
         </p>
         <p>
             <label>
                 <input class="filled-in" name="cbx-others-volcorp" type="checkbox">
-                <span>I am willing to be a part of the Congress Volunteer Corps</span>
+                <span>${this.localeObj.t('register.forms.others.fields.volCorp')}</span>
             </label>
         </p>
         <p>
             <label>
                 <input class="filled-in" name="cbx-others-cert" type="checkbox">
-                <span>I need a printed certificate of attendance</span>
+                <span>${this.localeObj.t('register.forms.others.fields.cert')}</span>
             </label>
         </p>
         <p>
             <label>
                 <input class="filled-in" name="cbx-others-nobooklet" type="checkbox">
-                <span>I do not wish to receive a printed congress booklet</span>
+                <span>${this.localeObj.t('register.forms.others.fields.bookletExclude')}</span>
             </label>
         </p>
     </section>
 
     <section id="section-payment" class="section hide">
-        <h3>Payment</h3>
+        <h3>${this.localeObj.t('register.forms.payment.header')}</h3>
         <p>
             Note that the Organizing Committee has to receive at least 50% of your total registration fee as initial downpayment in order to consider your registration valid. Furthermore, all downpayments must be settled on or before 09 April, 2020.
         </p>
@@ -586,118 +583,117 @@
             <div class="card-content theme-green white-text">
                 <span class="card-title">Regular Registration</span>
                 <p>
-                    Today is within the period of regular registration.
+                    ${this.localeObj.t('register.forms.payment.registerNotice')}
                 </p>
             </div>
             <div class="card-action">
-                <a href="#div-modal-reg-dates" class="btn-flat green-text text-darken-2 modal-trigger">View Dates</a>
+                <a href="#div-modal-reg-dates" class="btn-flat green-text text-darken-2 modal-trigger">${this.localeObj.t('buttons.viewDates')}</a>
             </div>
         </div>
 
         <div class="row">
             <div id="div-card-payment-details" class="col s12 m5 card">
                 <div class="card-content">
-                    <span class="card-title">Payment Details</span>
+                    <span class="card-title">${this.localeObj.t('register.forms.payment.details')}</span>
                     <div class="row">
-                        Early bird
                     </div>
                 </div>
             </div>
             <div class="col s12 offset-m1 m6">
-                <h5>Pay via</h5>
+                <h5>${this.localeObj.t('register.forms.payment.payVia')}</h5>
                 <p>
                     <label>
                         <input class="with-gap" name="rbx-payment-method" type="radio" value="paypal" checked>
-                        <span>PayPal</span>
+                        <span>${this.localeObj.t('register.forms.payment.fields.paypal')}</span>
                     </label>
                 </p>
                 <p>
                     <label>
                         <input class="with-gap" name="rbx-payment-method" type="radio" value="bank">
-                        <span>Deposit via Bank Account</span>
+                        <span>${this.localeObj.t('register.forms.payment.fields.bankAccount')}</span>
                     </label>
                 </p>
                 <p>
                     <label>
                         <input class="with-gap" name="rbx-payment-method" type="radio" value="wire">
-                        <span>Wire Transfer</span>
+                        <span>${this.localeObj.t('register.forms.payment.fields.wireTransfer')}</span>
                     </label>
                 </p>
                 <p>
                     <label>
                         <input class="with-gap" name="rbx-payment-method" type="radio" value="card">
-                        <span>Credit/Debit Card via PayPal</span>
+                        <span>${this.localeObj.t('register.forms.payment.fields.creditCard')}</span>
                     </label>
                 </p>
             </div>
         </div>
 
-        <h3>Certification</h3>
+        <h3>${this.localeObj.t('register.forms.certification.header')}</h3>
         <p>
             <label>
                 <input class="filled-in" type="checkbox" name="cbx-attest-true" required>
-                <span>I certify that all information provided is accurate and can be easily verified using physical documents</span>
+                <span>${this.localeObj.t('register.forms.certification.accuracy')}</span>
                 <span class="helper-text" data-error="Please attest the veracity of your input"></span>
             </label>
         </p>
         <p>
             <label>
                 <input class="filled-in" type="checkbox" name="cbx-attest-privacy" required>
-                <span>I have read the privacy policy regarding my registration with the congress</span>
+                <span>${this.localeObj.t('register.forms.certification.privacy')}</span>
                 <span class="helper-text" data-error="Please consent to our privacy policy"></span>
             </label>
         </p>
         <p>
             <label>
                 <input class="filled-in" type="checkbox" name="cbx-attest-publicity" required>
-                <span>I consent to give rights to the organizing committee to include me in its documentation of the congress</span>
+                <span>${this.localeObj.t('register.forms.certification.publicity')}</span>
                 <span class="helper-text" data-error="Please consent to publicity rights"></span>
             </label>
         </p>
         <p>
             <label>
                 <input class="filled-in" type="checkbox" name="cbx-attest-newsletter">
-                <span>I would like to receive frequent information on the congress (such as status updates and newsletters)</span>
+                <span>${this.localeObj.t('register.forms.certification.newsletter')}</span>
             </label>
         </p>
 
         <!-- Modal for registration dates -->
         <div id="div-modal-reg-dates" class="modal modal-fixed-footer">
             <div class="modal-content">
-                <h4>Registration Dates</h4>
+                <h4>${this.localeObj.t('register.forms.payment.registerDates')}</h4>
                 <p class="card-panel red darken-2 white-text">
-                    All dates are in Philippine Standard Time (GMT+8). Time of end dates are at 11:59 PM.
+                    ${this.localeObj.t('register.generalText.timeNotice')}
                 </p>
                 <table>
                     <tr>
                         <th></th>
-                        <th>Start Date</th>
-                        <th>End Date</th>
+                        <th>${this.localeObj.t('register.forms.payment.startDate')}</th>
+                        <th>${this.localeObj.t('register.forms.payment.endDate')}</th>
                     </tr>
                     <tr>
-                        <td>Early Bird</td>
+                        <td>${this.localeObj.t('register.generalText.earlyBird')}</td>
                         <td>25 November, 2020</td>
                         <td>31 December, 2019</td>
                     </tr>
                     <tr>
-                        <td>Regular</td>
+                        <td>${this.localeObj.t('register.generalText.regular')}</td>
                         <td>01 Jan, 2020</td>
                         <td>23 March, 2020</td>
                     </tr>
                     <tr>
-                        <td>Late</td>
+                        <td>${this.localeObj.t('register.generalText.lateBird')}</td>
                         <td>24 March, 2020</td>
                         <td>22 April, 2020</td>
                     </tr>
                     <tr>
-                        <td>On-Site</td>
+                        <td>${this.localeObj.t('register.generalText.onSite')}</td>
                         <td>23 April, 2020</td>
                         <td>25 April, 2020</td>
                     </tr>
                 </table>
             </div>
             <div class="modal-footer">
-                <a class="modal-close waves-effect btn-flat">Close</a>
+                <a class="modal-close waves-effect btn-flat">${this.localeObj.t('buttons.close')}</a>
             </div>
         </div>
     </section>
@@ -735,57 +731,7 @@
     </section>
 
     <section id="section-nav-buttons" class="section hide center-align">
-        <button id="btn-prev" class="btn btn-large waves-effect waves-light theme-green" disabled><i class="material-icons left">navigate_before</i>Back</button>
-        <button id="btn-next" class="btn btn-large waves-effect waves-light theme-green">Next<i class="material-icons right">navigate_next</i></button>
+        <button id="btn-prev" class="btn btn-large waves-effect waves-light theme-green" disabled><i class="material-icons left">navigate_before</i>${this.localeObj.t('buttons.back')}</button>
+        <button id="btn-next" class="btn btn-large waves-effect waves-light theme-green">${this.localeObj.t('buttons.next')}<i class="material-icons right">navigate_next</i></button>
     </section>
 </form>
-
-<!--
-<div style="position:absolute;top:0px;left:0px;width:100vw;height:100vh;z-index:-999">
-    <svg xmlns="http://www.w3.org/2000/svg" id="svg-reg-bg" width="100%" height="100%">
-        <symbol id="yellow-bar">
-            <polygon points="0,0 26,0 13,35" style="fill:#CC9D37;stroke:transparent;" />
-            <line x1="0" y1="35" x2="26" y2="35" style="stroke:#CC9D37;stroke-width:2" />
-        </symbol>
-
-        <symbol id="green-bar-squares">
-            <rect x="15" y="5" width="20" height="15" style="fill:#418B45;stroke:transparent;" />
-
-            <line x1="0" y1="0" x2="0" y2="25" style="stroke:#418B45;stroke-width:4" />
-        </symbol>
-
-        <symbol id="red-bar">
-            <polygon points="0,0 0,10 40,-30 80,10 80,0 40,-40" style="fill:#992226;stroke:transparent;" />
-            <polygon points="0,20 0,30 40,-10 80,30 80,20 40,-20" style="fill:#992226;stroke:transparent;" />
-            <polygon points="0,40 10,40 40,10 70,40 80,40 40,0" style="fill:#992226;stroke:transparent;" />
-            <polygon points="20,40 60,40 40,20" style="fill:#992226;stroke:transparent;" />
-        </symbol>
-
-        <symbol id="green-bar-pattern">
-            <polyline points="0,-5 12,7 25,-5"
-            style="fill:none;stroke:#418B45;stroke-width:4.5" />
-            <circle cx="5" cy="15" r="3" style="fill:#418B45;stroke:transparent;" />
-            <circle cx="20" cy="15" r="3" style="fill:#418B45;stroke:transparent;" />
-            <polyline points="0,35 12,23 25,35" style="fill:none;stroke:#418B45;stroke-width:4.5" />
-
-            <rect x="30" y="2" width="7" height="7" style="fill:#418B45;stroke:transparent;" />
-            <rect x="30" y="12" width="7" height="7" style="fill:#418B45;stroke:transparent;" />
-            <rect x="30" y="22" width="7" height="7" style="fill:#418B45;stroke:transparent;" />
-
-            <line x1="40" y1="0" x2="40" y2="30" style="stroke:#418B45;stroke-width:2" />
-        </symbol>
-
-        <symbol id="tri-ul">
-            <polygon points="0,0 100,0 0,100" style="fill:#CC9D37;stroke:transparent;" />
-        </symbol>
-
-        <symbol id="tri-ur">
-            <polygon points="100,0 0,0 100,100" style="fill:#418B45;stroke:transparent;" />
-        </symbol>
-
-        <symbol id="tri-lr">
-            <polygon id="tri-lr" points="100,0 100,100 0,100" style="fill:#992226;stroke:transparent;" />
-        </symbol>
-    </svg>
-</div>
--->

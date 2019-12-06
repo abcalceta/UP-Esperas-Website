@@ -1,11 +1,33 @@
 {
     "register": {
         "topSubTitle": "Register",
-        "title": "Registation",
+        "title": "Registration",
         "subTitle": "First Philippine Esperanto Youth Congress",
+        "buttons": {
+            "startRegistration": "Start Registration"
+        },
+        "generalText": {
+            "localPlural": "Local",
+            "foreignPlural": "Foreign",
+            "earlyBird": "Early",
+            "regular": "Regular",
+            "lateBird": "Late",
+            "onSite": "On-Site",
+            "timeNotice": "All dates are in Philippine Standard Time (GMT+8). Time of end dates are at 11:59 PM.",
+            "regPeriodText": "%{regPeriod} Registration"
+        },
+        "steps": {
+            "guidelines": "Guidelines",
+            "basic": "Basic",
+            "register": "Registration",
+            "lodging": "Lodging",
+            "excursion": "Excursion",
+            "food": "Food",
+            "others": "Others",
+            "payment": "Payment"
+        },
         "forms": {
             "requiredNotice": "Fields marked with an asterisk (*) mean that they are required to be filled-up.",
-            "startRegistration": "Start Registration",
             "basic": {
                 "header": "Basic Information",
                 "fields": {
@@ -20,124 +42,120 @@
                     "sns": "Social Media Username (Facebook, etc.)"
                 },
                 "errors": {
-                    "lastName": "Bv. enigi vian lastan nomon",
-                    "firstName": "Bv. enigi vian personan nomon",
-                    "middleName": "Bv. enigi vian mezan nomon",
-                    "nickName": "Bv. enigi vian alnomon",
-                    "birthday": "Bv. enigi vian naskiĝtagon",
-                    "sex": "Bv. elekti vian sekson",
-                    "countryOfOrigin": "Bv. elekti vian devena Lando",
-                    "emailAddress": "Bv. enigi vian retpoŝtadreson",
-                    "sns": "Bv. enigi vian socian rimedon"
+                    "lastName": "Please enter your last name",
+                    "firstName": "Please enter your first name",
+                    "nickName": "Please enter your nickname",
+                    "birthday": "Please enter your birthday",
+                    "sex": "Please choose your sex",
+                    "countryOfOrigin": "Please choose your country of origin",
+                    "emailAddress": "Please enter a valid email address"
                 }
             },
             "register": {
-                "header": "Detaloj pri Aliĝo",
-                "regRatesHeader": "Aliĝkotizo por %{localityPlural} Partoprenantoj",
-                "currencyNotice": "Bv. rimarki ke la kotizoj estas en %{currencyWords}.",
+                "header": "Registration Details",
+                "regRatesHeader": "Registration Rates for %{localityPlural} Participants",
+                "currencyNotice": "Please note that the rates are in <b>%{currencyWords}</b>.",
+                "forexRateNotice": "For reference, 1 EUR = 56.00 PHP",
+                "countryNotice": "You originate from <b>%{countryWord}</b> and <b>%{locality}</b> rates apply",
+                "registerAsText": "I want to register as&#8230;*",
+                "currentOccupationText": "&#8230; with current occupation as&#8230;",
+                "currentStudyText": "&#8230; and studying now at&#8230;",
+                "currentWorkText": "&#8230; and working now at&#8230;",
                 "fields": {
-                    "countryNotice": "Vi devenas el %{countryWord} kaj %{locality} kotizoj regas",
-                    "regularParticipant": "Regula Partoprenanto",
-                    "moralParticipant": "Morala Partoprenanto",
-                    "kongresaPatrono": "Kongresa Favoranto",
-                    "seniorHigh": "",
-                    "undergrad": "Bakalaŭro",
-                    "graduate": "",
-                    "working": "Laborulo",
-                    "unemployed": "Senlaborulo",
-                    "educInsti": "Eduka Institucio",
-                    "degree": "Kurso",
-                    "company": "Oficejo",
-                    "position": "Postenon",
-                    "I want to register as": "Mi volas aliĝi kiel&#8230;",
-                    "with current occupation": "&#8230; kun nuna okupiĝo kiel&#8230;",
-                    "and currently studying at": "&#8230; kaj studas nun ĉe&#8230;",
-                    "and currently working at": "&#8230; kaj laboras nun ĉe&#8230;"
+                    "regularParticipant": "Attending Participant",
+                    "moralParticipant": "Moral Participant",
+                    "congressPatron": "Congress Patron",
+                    "seniorHigh": "Senior High School or younger",
+                    "undergrad": "Undergraduate Student",
+                    "graduate": "Graduate Student",
+                    "working": "Working/Professional",
+                    "unemployed": "Unemployed",
+                    "educInsti": "Educational Institution*",
+                    "degree": "Degree/Course*",
+                    "company": "Company/Office*",
+                    "position": "Position/Designation*"
                 },
                 "errors": {
-                    "educInsti": "Bv. enigi vian edukan institucio",
-                    "degree": "Bv. enigi vian kurson",
-                    "company": "Bv. enigi vian oficejon",
-                    "position": "Bv. enigi vian postenon"
+                    "occupation": "Please select your occupation",
+                    "educInsti": "Please enter your educational institution",
+                    "degree": "Please enter your degree/course/study",
+                    "company": "Please enter your company name",
+                    "position": "Please enter your position"
                 }
             },
             "lodging": {
-                "header": "Loĝejo",
+                "header": "Lodging",
                 "fields": {
-                    "interested": "Mi interesiĝas pri antaŭmendi ĉambron provizita de la ",
-                    "beyondDates": "Mi bezonas antaŭmendi preter la datoj de la kongreso",
-                    "arrival": "Alveno",
-                    "departure": "Deiro"
+                    "interested": "I am interested in reserving a room from partner hotels of the congress",
+                    "beyondDates": "I need to reserve a lodging beyond the congress dates",
+                    "arrival": "Arrival",
+                    "departure": "Departure"
                 }
             },
             "excursion": {
-                "header": "Ekskurso",
+                "header": "Excursion",
                 "fields": {
-                    "interested": "Mi interesiĝas partopreni en la ekskurso"
+                    "interested": "I am interested in participating in the excursion"
                 }
             },
             "food": {
-                "header": "Manĝaĵo",
+                "header": "Food",
+                "dietNotice": "I have the following dietary restrictions:",
+                "allergyNotice": "I have the following food allergies:",
+                "alcoholQuestion": "Do you drink alcohol?",
                 "fields": {
-                    "dietNotice": "Mi havas la jenajn specialajn dietojn",
-                    "allergyNotice": "Mi havas la jenajn manĝaĵajn alergiojn",
-                    "alcoholQuestion": "Ĉu vi drinkas?",
-                    "other": "Alia",
-                    "vegetarian": "Vegetarano",
-                    "vegan": "Vegetaĵano",
-                    "kosher": "Koŝera",
-                    "halal": "Halala",
-                    "nuts": "Nukso",
-                    "seafood": "Marmanĝaĵo",
-                    "wheat": "Gluteno (Tritiko)",
-                    "milk": "Lakto",
-                    "spicy": "Spicoj"
+                    "other": "Other",
+                    "vegetarian": "Vegetarian",
+                    "vegan": "Vegan",
+                    "kosher": "Kosher",
+                    "halal": "Halal",
+                    "nuts": "Nuts",
+                    "seafood": "Seafood",
+                    "wheat": "Gluten (Wheat)",
+                    "milk": "Milk",
+                    "spicy": "Spicy"
                 }
             },
             "others": {
-                "header": "Aliaj",
-                "congressPhotoHeader": "Kongresa Foto",
+                "header": "Others",
+                "congressPhotoHeader": "Congress Photo",
+                "congressFund": "Congress Fund",
+                "participantFund": "Participant Support",
+                "associationFund": "Association Fund",
+                "shipTo": "Ship to&#8230;",
+                "invitLetterCost": "Please note that it will cost around <b>%{currencySymbol}%{price}</b> to deliver the letter to your chosen location.",
+                "donateNotice": "Please note that you will donate in <b>%{currencyWord}</b>",
                 "fields": {
-                    "congressPhoto": "Mi volas ricevi oficialan kongresan foton (elpresita)",
-                    "invitLetter": "Mi volas ricevi elpresitan invitleteron sendita per poŝto",
-                    "shipTo": "Liveri al&#8230;",
-                    "invitLetterCost": "Bv. rimarki ke ĝi kostas %{currencySymbol}%{price} por liveri la leteron al via elektita loko.",
-                    "donateNotice": "Bv. rimarki ke vi donacos per %{currencyWord}",
-                    "congressFund": "Kongresa Fonduso",
-                    "participantFund": "Fonduso por Partoprenontoj",
-                    "associationFund": "Junulara Fonduso",
-                    "program": "Mi volas estri agadon aŭ prelegi dum la kongreso",
-                    "volCorp": "Mi volas kontribui kiel parto de la Kongresa Volontula Servo",
-                    "cert": "Mi bezonas atestilo pri ĉeesto de la kongreso",
-                    "bookletExclude": "Mi ne volas ricevi elpresitan kongresan libron"
+                    "congressPhoto": "I want to receive the official printed congress photo",
+                    "invitLetter": "I want to receive a printed invitation letter sent by mail",
+                    "program": "I want to lead a program or a lecture during the congress",
+                    "volCorp": "I want to be a part of the Congress Volunteer Corps",
+                    "cert": "I need a certificate of attendance of the congress",
+                    "bookletExclude": "I do not wish to receive a printed copy of the congress booklet"
                 }
             },
             "payment": {
-                "header": "Pago",
-                "registerDates": "Aliĝdatoj",
-                "registerNotice": "Nun estas inter la tempo por <b>%{registerType}</b> aliĝo!",
-                "earlyBird": "Frua",
-                "regular": "Regula",
-                "lateBird": "Malfrua",
-                "onSite": "Memloka",
-                "details": "Detaloj pri Pago",
-                "grandTotal": "Plena Sumo",
-                "payVia": "Pagi per",
-                "timeNotice": "Ĉiuj datoj kaj tempoj prezentitaj estas en Filipina Norma Tempo (GMT+8). La tempo de la limdatoj estas ĉe 11:59 ptm.",
-                "startDate": "Komenca Dato",
-                "endDate": "Limdato",
+                "header": "Payment",
+                "registerDates": "Registration Dates",
+                "registerNotice": "Today is within the time for <b>%{registerType}</b> registration!",
+                "details": "Payment Details",
+                "grandTotal": "Grand Total",
+                "payVia": "Pay with",
+                "startDate": "Start Date",
+                "endDate": "End Date",
                 "fields": {
                     "paypal": "PayPal",
-                    "bankAccount": "per Bankkonto",
-                    "wireTransfer": "Transiro",
-                    "creditCard": "Kreditkarto aŭ debetkarton per PayPal",
+                    "bankAccount": "Bank Account",
+                    "wireTransfer": "Wire Transfer",
+                    "creditCard": "Credit or Debit Card via PayPal",
                     "ueaAccount": "UEA-konto"
                 }
             },
             "certification": {
-                "accuracy": "Mi atestas ke ĉiuj informoj provizita estas veraj kaj ĝustaj, kiuj povas kontroli per dokumentoj",
-                "privacy": "Mi legis la privatecan avizon rilate al mia aliĝo en la kongreso",
-                "publicity": "Mi konsentas rajtigi la kongresan komitaton ",
+                "header": "Certification",
+                "accuracy": "I certify that all the information provided in this form is true and correct, and can be verified using physical documents",
+                "privacy": "I have read the privacy polict regarding my registration to the congress",
+                "publicity": "I consent to have my ",
                 "newsletter": "Mi volas ricevi pli oftajn informojn pri la kongreso (k.e. aktualigojn kaj bultenojn)"
             }
         }

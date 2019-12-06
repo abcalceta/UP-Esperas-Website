@@ -2,7 +2,7 @@ import m from 'mithril';
 
 import {IndexPage} from './views/IndexPage';
 import {LkkJoinPage} from './views/LkkJoinPage';
-import {VolunteersPage} from './views/VolunteersPage';
+import {VolunteerPage} from './views/VolunteerPage';
 import {DonatePage} from './views/DonatePage';
 import {RegisterPage} from './views/RegisterPage';
 import {NotFoundPage} from './views/NotFoundPage';
@@ -21,7 +21,7 @@ m.route(root, '/', {
     '/': IndexPage,
     '/lkk-join': LkkJoinPage,
     '/donate': DonatePage,
-    '/volunteer': VolunteersPage,
+    '/volunteer': VolunteerPage,
 
     // About subpage
     '/about/esperanto': AboutEsperantoPage,

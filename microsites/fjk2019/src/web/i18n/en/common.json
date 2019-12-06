@@ -1,16 +1,40 @@
 {
     "defaultTitle": "Philippine Esperanto Youth Congress 2020",
     "titleSpecific": "%{pageName} | Philippine Esperanto Youth Congress 2020",
+    "yes": "Yes",
+    "no": "No",
     "buttons": {
         "close": "Close",
-        "prevButton": "Back",
-        "nextButton": "Next",
-        "submitButton": "Submit",
-        "viewRates": "View Rates"
+        "back": "Back",
+        "next": "Next",
+        "cancel": "Cancel",
+        "clear": "Clear",
+        "done": "Done",
+        "submit": "Submit",
+        "viewRates": "View Rates",
+        "viewDates": "View Dates"
     },
-    "currency": {
-        "wordsPh": "Philippine Pesos",
-        "wordsEu": "Euros"
+    "locality": {
+        "currencyWordsPh": "Philippine Pesos",
+        "currencyWordsEu": "Euros",
+        "localPlural": "Local",
+        "foreignPlural": "Foreign"
+    },
+    "calendar": {
+        "months": [
+            "January", "February", "March", "April",
+            "May", "June",  "July", "August",
+            "September", "October", "November", "December"
+        ],
+        "monthsShort": [
+            "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+        ],
+        "weekdaysShort": [
+            "Sun", "Mon", "Tue", "Wed",
+            "Thu", "Fri", "Sat"
+        ],
+        "weekdaysAbbrev": ["Su", "M", "T", "W", "Th", "F", "Sa"]
     },
     "navbar": {
         "home": "Home",

@@ -1,60 +1,82 @@
 {
     "register": {
         "topSubTitle": "Aliĝilo",
-        "title": "Unua Filipina Junulara Kongreso de Esperanto",
-        "subTitle": "23a-26a Aprilo, 2020; Universitato de Filipinoj; Diliman, Kezono-Urbo; Filipinoj",
+        "title": "Aliĝilo",
+        "subTitle": "Unua Filipina Junulara Kongreso de Esperanto",
+        "buttons": {
+            "startRegistration": "Komenci Aliĝo"
+        },
+        "generalText": {
+            "localPlural": "Lokaj",
+            "foreignPlural": "Eksterlandaj",
+            "earlyBird": "Frua",
+            "regular": "Regula",
+            "lateBird": "Malfrua",
+            "onSite": "Memloka",
+            "timeNotice": "Ĉiuj datoj kaj tempoj prezentitaj estas en Filipina Norma Tempo (GMT+8). La tempo de la limdatoj estas ĉe 11:59 ptm.",
+            "regPeriodText": "%{regPeriod} Aliĝtempo"
+        },
+        "steps": {
+            "guidelines": "Guidelines",
+            "basic": "Baza",
+            "register": "Aliĝo",
+            "lodging": "Loĝejo",
+            "excursion": "Ekskurso",
+            "food": "Manĝaĵo",
+            "others": "Aliaj",
+            "payment": "Pago"
+        },
         "forms": {
             "requiredNotice": "Eroj markita per steleto (*) indikas ke ĝi devas plenumi.",
-            "startRegistration": "Komenci Aliĝo",
             "basic": {
                 "header": "Baza Informo",
                 "fields": {
-                    "lastName": "Lasta Nomo",
-                    "firstName": "Persona Nomo",
-                    "middleName": "Meza Nomo",
-                    "nickName": "Alnomon",
-                    "birthday": "Naskiĝtago",
-                    "sex": "Sekso",
-                    "countryOfOrigin": "Devena Lando",
-                    "emailAddress": "Retpoŝtadreso",
+                    "lastName": "Lasta Nomo*",
+                    "firstName": "Persona Nomo*",
+                    "middleName": "Meznomo",
+                    "nickName": "Alnomon*",
+                    "birthday": "Naskiĝtago*",
+                    "sex": "Sekso*",
+                    "countryOfOrigin": "Devena Lando*",
+                    "emailAddress": "Retpoŝtadreso*",
                     "sns": "Socia Rimedo"
                 },
                 "errors": {
                     "lastName": "Bv. enigi vian lastan nomon",
                     "firstName": "Bv. enigi vian personan nomon",
-                    "middleName": "Bv. enigi vian mezan nomon",
                     "nickName": "Bv. enigi vian alnomon",
                     "birthday": "Bv. enigi vian naskiĝtagon",
                     "sex": "Bv. elekti vian sekson",
                     "countryOfOrigin": "Bv. elekti vian devena Lando",
-                    "emailAddress": "Bv. enigi vian retpoŝtadreson",
-                    "sns": "Bv. enigi vian socian rimedon"
+                    "emailAddress": "Bv. enigi vian retpoŝtadreson"
                 }
             },
             "register": {
                 "header": "Detaloj pri Aliĝo",
                 "regRatesHeader": "Aliĝkotizo por %{localityPlural} Partoprenantoj",
-                "currencyNotice": "Bv. rimarki ke la kotizoj estas en %{currencyWords}.",
+                "currencyNotice": "Bv. rimarki ke la kotizoj estas en <b>%{currencyWords}</b>.",
+                "forexRateNotice": "Kiel gvido, 1 EUR = 56.00 PHP",
+                "countryNotice": "Vi devenas el <b>%{countryWord}</b> kaj <b>%{locality}</b> kotizoj regas",
+                "registerAsText": "Mi volas aliĝi kiel&#8230;*",
+                "currentOccupationText": "&#8230; kun nuna okupiĝo kiel&#8230;",
+                "currentStudyText": "&#8230; kaj studas nun ĉe&#8230;",
+                "currentWorkText": "&#8230; kaj laboras nun ĉe&#8230;",
                 "fields": {
-                    "countryNotice": "Vi devenas el %{countryWord} kaj %{locality} kotizoj regas",
                     "regularParticipant": "Regula Partoprenanto",
                     "moralParticipant": "Morala Partoprenanto",
-                    "kongresaPatrono": "Kongresa Favoranto",
+                    "congressPatron": "Kongresa Favoranto",
                     "seniorHigh": "",
                     "undergrad": "Bakalaŭro",
                     "graduate": "",
                     "working": "Laborulo",
                     "unemployed": "Senlaborulo",
-                    "educInsti": "Eduka Institucio",
-                    "degree": "Kurso",
-                    "company": "Oficejo",
-                    "position": "Postenon",
-                    "I want to register as": "Mi volas aliĝi kiel&#8230;",
-                    "with current occupation": "&#8230; kun nuna okupiĝo kiel&#8230;",
-                    "and currently studying at": "&#8230; kaj studas nun ĉe&#8230;",
-                    "and currently working at": "&#8230; kaj laboras nun ĉe&#8230;"
+                    "educInsti": "Eduka Institucio*",
+                    "degree": "Kurso*",
+                    "company": "Oficejo*",
+                    "position": "Postenon*"
                 },
                 "errors": {
+                    "occupation": "Bv. elekti vian okupiĝon",
                     "educInsti": "Bv. enigi vian edukan institucio",
                     "degree": "Bv. enigi vian kurson",
                     "company": "Bv. enigi vian oficejon",
@@ -78,10 +100,10 @@
             },
             "food": {
                 "header": "Manĝaĵo",
+                "dietNotice": "Mi havas la jenajn specialajn dietojn",
+                "allergyNotice": "Mi havas la jenajn manĝaĵajn alergiojn",
+                "alcoholQuestion": "Ĉu vi drinkas?",
                 "fields": {
-                    "dietNotice": "Mi havas la jenajn specialajn dietojn",
-                    "allergyNotice": "Mi havas la jenajn manĝaĵajn alergiojn",
-                    "alcoholQuestion": "Ĉu vi drinkas?",
                     "other": "Alia",
                     "vegetarian": "Vegetarano",
                     "vegan": "Vegetaĵano",
@@ -97,15 +119,15 @@
             "others": {
                 "header": "Aliaj",
                 "congressPhotoHeader": "Kongresa Foto",
+                "congressFund": "Kongresa Fonduso",
+                "participantFund": "Fonduso por Partoprenontoj",
+                "associationFund": "Junulara Fonduso",
+                "shipTo": "Liveri al&#8230;",
+                "invitLetterCost": "Bv. rimarki ke ĝi kostas <b>%{currencySymbol}%{price}</b> por liveri la leteron al via elektita loko.",
+                "donateNotice": "Bv. rimarki ke vi donacos per <b>%{currencyWord}</b>",
                 "fields": {
                     "congressPhoto": "Mi volas ricevi oficialan kongresan foton (elpresita)",
                     "invitLetter": "Mi volas ricevi elpresitan invitleteron sendita per poŝto",
-                    "shipTo": "Liveri al&#8230;",
-                    "invitLetterCost": "Bv. rimarki ke ĝi kostas %{currencySymbol}%{price} por liveri la leteron al via elektita loko.",
-                    "donateNotice": "Bv. rimarki ke vi donacos per %{currencyWord}",
-                    "congressFund": "Kongresa Fonduso",
-                    "participantFund": "Fonduso por Partoprenontoj",
-                    "associationFund": "Junulara Fonduso",
                     "program": "Mi volas estri agadon aŭ prelegi dum la kongreso",
                     "volCorp": "Mi volas kontribui kiel parto de la Kongresa Volontula Servo",
                     "cert": "Mi bezonas atestilo pri ĉeesto de la kongreso",
@@ -116,28 +138,31 @@
                 "header": "Pago",
                 "registerDates": "Aliĝdatoj",
                 "registerNotice": "Nun estas inter la tempo por <b>%{registerType}</b> aliĝo!",
-                "earlyBird": "Frua",
-                "regular": "Regula",
-                "lateBird": "Malfrua",
-                "onSite": "Memloka",
                 "details": "Detaloj pri Pago",
                 "grandTotal": "Plena Sumo",
                 "payVia": "Pagi per",
-                "timeNotice": "Ĉiuj datoj kaj tempoj prezentitaj estas en Filipina Norma Tempo (GMT+8). La tempo de la limdatoj estas ĉe 11:59 ptm.",
                 "startDate": "Komenca Dato",
                 "endDate": "Limdato",
                 "fields": {
                     "paypal": "PayPal",
-                    "bankAccount": "per Bankkonto",
+                    "bankAccount": "Bankkonto",
                     "wireTransfer": "Transiro",
                     "creditCard": "Kreditkarto aŭ debetkarton per PayPal",
                     "ueaAccount": "UEA-konto"
+                },
+                "fees": {
+                    "registration": "Aliĝkotizo",
+                    "invitLetter": "Invitletero",
+                    "congressFund": "Kongresa Fonduso",
+                    "participantFund": "Fonduso por Partoprenontoj",
+                    "associationFund": "Junulara Fonduso"
                 }
             },
             "certification": {
+                "header": "Atesto",
                 "accuracy": "Mi atestas ke ĉiuj informoj provizita estas veraj kaj ĝustaj, kiuj povas kontroli per dokumentoj",
                 "privacy": "Mi legis la privatecan avizon rilate al mia aliĝo en la kongreso",
-                "publicity": "Mi konsentas rajtigi la kongresan komitaton ",
+                "publicity": "Mi konsentas rajtigi la kongresan komitaton uzi miajn fotojn, filmetojn, ktp. dum la kongreso kiel arkivoj kaj memorajxoj",
                 "newsletter": "Mi volas ricevi pli oftajn informojn pri la kongreso (k.e. aktualigojn kaj bultenojn)"
             }
         }
