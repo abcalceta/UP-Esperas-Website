@@ -517,7 +517,7 @@ export class RegisterPage extends BasePage {
                 if(feesObj.participantFund > 0) {
                     receiptRows.push(
                         m('div', {class: 'row'}, [
-                            m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.participationFund')),
+                            m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.participantFund')),
                             m('span', {class: 'col s4 right-align'}, feesObj.participantFund)
                         ])
                     );

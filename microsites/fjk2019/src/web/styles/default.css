@@ -54,6 +54,14 @@ footer .footer-main a:hover {
     text-decoration: underline;
 }
 
+.material-tooltip {
+    background-color: #418B45;
+}
+
+.material-tooltip .tooltip-content {
+    color: whitesmoke;
+}
+
 /* Theme colors */
 .theme-green {
     background-color: #418B45 !important;

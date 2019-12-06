@@ -1,4 +1,5 @@
 import m from 'mithril';
+import Cookies from 'js-cookie';
 import Polyglot from 'node-polyglot';
 
 import {DomScripts} from '../util/dom';
@@ -18,7 +19,7 @@ export class BasePage {
             title: '',
             locale: ['en', 'eo'].includes(locale) ? locale : 'en',
             localeNamespace: localeNamespace,
-            localePath: `../i18n/${locale}/${localeFilename}.json`,
+            localeFilename: localeFilename,
             hero: {
                 imgAltText: '',
                 imgBgPath: heroImg,
@@ -28,12 +29,17 @@ export class BasePage {
         };
     }
 
-    oninit(vnode) {
+    oninit() {
+        const locale = Cookies.get('locale') || 'en';
+        const localePath = `../i18n/${locale}/${this.data.localeFilename}.json`;
+
         this.localeObj = new Polyglot();
+
+        console.log(`Found locale ${locale}`);
 
         m.request({
             method: 'GET',
-            url: `../i18n/${this.data.locale}/common.json`,
+            url: `../i18n/${locale}/common.json`,
             background: true,
         })
         .then((jsonObj) => {
@@ -41,7 +47,7 @@ export class BasePage {
 
             return m.request({
                 method: 'GET',
-                url: this.data.localePath,
+                url: localePath,
                 background: false,
             });
         })
@@ -59,7 +65,10 @@ export class BasePage {
 
             this.isTranslated = true;
         })
-        .catch(console.error);
+        .catch((err) => {
+            console.error('Error in fetching translations');
+            console.error(err);
+        });
 
         this.componentHolder.nav = NavBarView;
         this.componentHolder.hero = HeroView;
