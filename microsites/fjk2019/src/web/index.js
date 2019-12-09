@@ -33,6 +33,7 @@ m.route(root, '/', {
 
     // Register page
     '/register': RegisterPage,
+    '/register/section-overview': RegisterPage,
     '/register/section-basic': RegisterPage,
     '/register/section-reg': RegisterPage,
     '/register/section-lodging': RegisterPage,
@@ -40,6 +41,7 @@ m.route(root, '/', {
     '/register/section-food': RegisterPage,
     '/register/section-others': RegisterPage,
     '/register/section-payment': RegisterPage,
+    '/register/section-thanks': RegisterPage,
 
     // Catch-all
     '/:404...': NotFoundPage

@@ -4,7 +4,8 @@
         "title": "Aliĝilo",
         "subTitle": "Unua Filipina Junulara Kongreso de Esperanto",
         "buttons": {
-            "startRegistration": "Komenci Aliĝo"
+            "startRegistration": "Komenci Aliĝo",
+            "registerAgain": "Aliĝi Denove"
         },
         "generalText": {
             "localPlural": "Lokaj",
@@ -47,7 +48,7 @@
                     "nickName": "Bv. enigi vian alnomon",
                     "birthday": "Bv. enigi vian naskiĝtagon",
                     "sex": "Bv. elekti vian sekson",
-                    "countryOfOrigin": "Bv. elekti vian devena Lando",
+                    "countryOfOrigin": "Bv. elekti vian devenan landon",
                     "emailAddress": "Bv. enigi vian retpoŝtadreson"
                 }
             },
@@ -162,8 +163,19 @@
                 "header": "Atesto",
                 "accuracy": "Mi atestas ke ĉiuj informoj provizita estas veraj kaj ĝustaj, kiuj povas kontroli per dokumentoj",
                 "privacy": "Mi legis la privatecan avizon rilate al mia aliĝo en la kongreso",
-                "publicity": "Mi konsentas rajtigi la kongresan komitaton uzi miajn fotojn, filmetojn, ktp. dum la kongreso kiel arkivoj kaj memorajxoj",
+                "publicity": "Mi konsentas rajtigi la kongresan komitaton uzi miajn fotojn, filmetojn, ktp. dum la kongreso kiel arkivoj kaj memoraĵoj",
                 "newsletter": "Mi volas ricevi pli oftajn informojn pri la kongreso (k.e. aktualigojn kaj bultenojn)"
+            }
+        },
+        "thanks": {
+            "header": "Dankon!",
+            "par00": "Dankon pro via aliĝo al la Unua Filipina Junulara Kongreso de Esperanto! Ni esperas ke ni renkontu vin dum la kongreso!",
+            "par01": "En kazoj pri aliĝo, pago, aŭ alie, bv. kontakti nin. Bv. diri al ni vian aliĝan aŭ pagan n-ron por helpi vin pli bone.",
+            "refNums": {
+                "header": "Referencaj Numeroj",
+                "par00": "Bv. konservi tiujn ĉi n-rojn por la estonteco.",
+                "regId": "Aliĝn-ro",
+                "paymentId": "Pagn-ro"
             }
         }
     }

@@ -1,9 +1,12 @@
 import uuidv4 from 'uuid/v4';
 
-import RegisterDao from './RegisterDao';
-import RegisterRepository from './RegisterRepository';
-import FormAnswerRepository from './FormAnswerRepository';
-import PaymentRepository from './PaymentRepository';
+import {RegisterDao} from './RegisterDao';
+import {RegisterRepository} from './RegisterRepository';
+import {BasicInfoRepository} from './BasicInfoRepository';
+import {LodgingRepository} from './LodgingRepository';
+import {FoodRepository} from './FoodRepository';
+import {AddonsRepository} from './AddonsRepository';
+import {PaymentRepository} from './PaymentRepository';
 
 export class DbInterface{
     constructor() {
@@ -13,12 +16,18 @@ export class DbInterface{
     async initDb() {
         const registerDao = new RegisterDao(process.env.SQLITE_DB_PATH);
         const registerRepo = new RegisterRepository(registerDao);
-        const formAnswerRepo = new FormAnswerRepository(registerDao);
+        const basicInfoRepo = new BasicInfoRepository(registerDao);
+        const lodgingRepo = new LodgingRepository(registerDao);
+        const foodRepo = new FoodRepository(registerDao);
+        const addonsRepo = new AddonsRepository(registerDao);
         const paymentRepo = new PaymentRepository(registerDao);
 
         try {
             await registerRepo.createTable();
-            await formAnswerRepo.createTable();
+            await basicInfoRepo.createTable();
+            await lodgingRepo.createTable();
+            await foodRepo.createTable();
+            await addonsRepo.createTable();
             await paymentRepo.createTable();
         }
         catch(err) {
@@ -28,7 +37,10 @@ export class DbInterface{
 
         this.repos = {
             register: registerRepo,
-            formAnswer: formAnswerRepo,
+            basic: basicInfoRepo,
+            lodging: lodgingRepo,
+            food: foodRepo,
+            addons: addonsRepo,
             payment: paymentRepo
         };
     }
@@ -50,7 +62,7 @@ export class DbInterface{
     }
 
     async addNewFormAnswers(registrantId, regCategory, formObj) {
-        await this.repos.formAnswer.create(
+        await this.repos.basic.create(
             registrantId,
             {
                 lastName: formObj['txt-last-name'],
@@ -67,14 +79,36 @@ export class DbInterface{
                 gradeStrandYear: formObj['txt-reg-degree'],
                 companyName: formObj['txt-reg-company'],
                 officePosition: formObj['txt-reg-position'],
+                isExcursionInterest: (formObj['cbx-excursion-interest'] == 'on') ? 1 : 0,
+                isVerified: (formObj['cbx-attest-true'] == 'on') ? 1 : 0,
+                isPrivacy: (formObj['cbx-attest-privacy'] == 'on') ? 1 : 0,
+                isPublicity: (formObj['cbx-attest-publicity'] == 'on') ? 1 : 0,
+                isNewsletter: (formObj['cbx-attest-newsletter'] == 'on') ? 1 : 0
+            }
+        );
+
+        await this.repos.lodging.create(
+            registrantId,
+            {
                 isLodgingInterest: (formObj['cbx-lodging-interest'] == 'on') ? 1 : 0,
                 isLodgingBeyond: (formObj['cbx-lodging-overstay'] == 'on') ? 1 : 0,
                 lodgingArriveDate: (formObj['cbx-lodging-interest'] == 'on') ? formObj['select-lodging-arrival']: '',
                 lodgingDepartDate: (formObj['cbx-lodging-interest'] == 'on') ? formObj['select-lodging-depart']: '',
-                isExcursionInterest: (formObj['cbx-excursion-interest'] == 'on') ? 1 : 0,
+            }
+        );
+
+        await this.repos.food.create(
+            registrantId,
+            {
                 foodRestrictions: (formObj['cbx-food-pref']) ? formObj['cbx-food-pref'].join(',') : '',
                 foodAllergies: (formObj['cbx-food-allerg']) ? formObj['cbx-food-allerg'].join(','): '',
                 isAlcohol: (formObj['cbx-alcohol-pref'] == 'on') ? 1 : 0,
+            }
+        );
+
+        await this.repos.addons.create(
+            registrantId,
+            {
                 isCongressPhoto: (formObj['cbx-lodging-interest'] == 'on') ? 1 : 0,
                 isInvitLetter: (formObj['cbx-others-invitletter'] == 'on') ? 1 : 0,
                 isNameInList: (formObj['cbx-others-name-include'] == 'on') ? 1 : 0,
@@ -82,10 +116,6 @@ export class DbInterface{
                 isVolCorp: (formObj['cbx-others-volcorp'] == 'on') ? 1 : 0,
                 isCertAttend: (formObj['cbx-others-cert'] == 'on') ? 1 : 0,
                 isBooklet: (formObj['cbx-others-nobooklet'] == 'on') ? 0 : 1,
-                isVerified: (formObj['cbx-attest-true'] == 'on') ? 1 : 0,
-                isPrivacy: (formObj['cbx-attest-privacy'] == 'on') ? 1 : 0,
-                isPublicity: (formObj['cbx-attest-publicity'] == 'on') ? 1 : 0,
-                isNewsletter: (formObj['cbx-attest-newsletter'] == 'on') ? 1 : 0
             }
         );
 

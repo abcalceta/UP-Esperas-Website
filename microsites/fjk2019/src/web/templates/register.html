@@ -83,14 +83,14 @@
                     <option value="female">Female</option>
                     <option value="unknown">Prefer not to say</option>
                 </select>
-                <label>Sex</label>
+                <label>${this.localeObj.t('register.forms.basic.fields.sex')}</label>
                 <span class="helper-text" data-error="${this.localeObj.t('register.forms.basic.errors.sex')}"></span>
             </div>
             <div class="input-field col s12 l4">
                 <select id="select-countries-list" name="select-countries-list" required>
                     <option value="" disabled selected>${this.localeObj.t('register.forms.basic.fields.countryOfOrigin')}</option>
                 </select>
-                <label>Country of Origin</label>
+                <label>${this.localeObj.t('register.forms.basic.fields.countryOfOrigin')}</label>
                 <span class="helper-text" data-error="${this.localeObj.t('register.forms.basic.errors.countryOfOrigin')}"></span>
             </div>
         </div>
@@ -603,20 +603,14 @@
                 <h5>${this.localeObj.t('register.forms.payment.payVia')}</h5>
                 <p>
                     <label>
-                        <input class="with-gap" name="rbx-payment-method" type="radio" value="paypal" checked>
-                        <span>${this.localeObj.t('register.forms.payment.fields.paypal')}</span>
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        <input class="with-gap" name="rbx-payment-method" type="radio" value="bank">
+                        <input class="with-gap" name="rbx-payment-method" type="radio" value="bank" checked>
                         <span>${this.localeObj.t('register.forms.payment.fields.bankAccount')}</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input class="with-gap" name="rbx-payment-method" type="radio" value="wire">
-                        <span>${this.localeObj.t('register.forms.payment.fields.wireTransfer')}</span>
+                        <input class="with-gap" name="rbx-payment-method" type="radio" value="paypal">
+                        <span>${this.localeObj.t('register.forms.payment.fields.paypal')}</span>
                     </label>
                 </p>
                 <p>
@@ -625,6 +619,13 @@
                         <span>${this.localeObj.t('register.forms.payment.fields.creditCard')}</span>
                     </label>
                 </p>
+                <p>
+                    <label>
+                        <input class="with-gap" name="rbx-payment-method" type="radio" value="wire">
+                        <span>${this.localeObj.t('register.forms.payment.fields.wireTransfer')}</span>
+                    </label>
+                </p>
+                <div id="div-payment-paypal" class="hide"></div>
             </div>
         </div>
 
@@ -699,34 +700,34 @@
     </section>
 
     <section id="section-thanks" class="section hide">
-        <h3 class="center-align">Thank You!</h3>
+        <h3 class="center-align">${this.localeObj.t('register.thanks.header')}</h3>
         <div class="row">
             <div class="col s12 m5 card-panel theme-yellow white-text">
-                <h5>Reference Numbers</h5>
+                <h5>${this.localeObj.t('register.thanks.refNums.header')}</h5>
                 <p>
-                    Please retain these IDs for future reference.
+                    ${this.localeObj.t('register.thanks.refNums.par00')}
                 </p>
                 <hr class="white-text">
                 <p>
-                    <b>Registration ID</b><br>
+                    <b>${this.localeObj.t('register.thanks.refNums.regId')}</b><br>
                     <span id="span-register-id"></span>
                 </p>
                 <p>
-                    <b>Payment ID</b><br>
+                    <b>${this.localeObj.t('register.thanks.refNums.paymentId')}</b><br>
                     <span id="span-payment-id"></span>
                 </p>
             </div>
             <div class="col s12 offset-m1 m6">
                 <p>
-                    Thank you for registering to the First Philippine Esperanto Youth Congress. We hope to see you during the event!
+                    ${this.localeObj.t('register.thanks.par00')}
                 </p>
                 <p>
-                    For registration, payment, and other concerns, please contact us at peyc<span class="hide">you</span>2020<span class="hide">have</span>@<span class="hide">been</span>gmail<span class="hide">pwned</span>.<span class="hide">here</span>com. Please tell us your registration or payment id to better assist you.
+                    ${this.localeObj.t('register.thanks.par01')}
                 </p>
             </div>
         </div>
         <div class="center-align">
-            <button id="btn-register-again" class="btn btn-large waves-effect waves-light theme-green"><i class="material-icons left">autorenew</i>Register Again</button>
+            <button id="btn-register-again" class="btn btn-large waves-effect waves-light theme-green"><i class="material-icons left">autorenew</i>${this.localeObj.t('register.buttons.registerAgain')}</button>
         </div>
     </section>
 

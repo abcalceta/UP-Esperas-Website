@@ -1,0 +1,77 @@
+{
+    "volunteer": {
+        "topSubTitle": "Alvoko por Volontuloj",
+        "title": "Alvoko por Volontuloj",
+        "subTitle": "Unua Filipina Junulara Kongreso de Esperanto",
+        "volCorpPoster": "Afiŝo pri Alvoko por Volontuloj",
+        "mainHeader": {
+            "title": "<i>Saluton!</i>",
+            "par00": "Ni ĉiuj ĝojas informi ĉiujn ke per la iniciato de kelkaj aktivaj anoj de la filipina esperantista komunumo, jam komenciĝis la preparlaboro por la okazigo de la unua Filipina Junulara Kongreso de Esperanto.",
+            "par01": "",
+            "par02": "Tamen, ĉar estas nur malmultaj homoj en la Loka Kongresa Komitato (LKK), ili mem solaj ne povas fari ĉiajn laborojn por efike organizi la kongreson. Tial, ili bezonas vin kiel iliajn partnerojn por efektivigi multajn aliajn flankojn de la preparlaboro en la venontaj monatoj kaj dum la kongreso mem."
+        },
+        "whyVolunteer": {
+            "title": "Kial volontuli?",
+            "list00": "Per via volontulado, vi povas doni grandajn kontribuojn al la sukceso de la Kongreso kaj forlasi longdaŭran heradaĵon al la nuntempa kaj la estonta Esperanto-movado, sed ankaŭ por la vasta movado por lingvaj rajtoj, multkulturismo, kaj internacia frateco, per kiuj jam profitas multe la filipina popolo",
+            "list01": "Senpagaj lingvaj lecionoj por plibonigi vian lingvokapablon, rekte de la plej bonaj parolantoj en la lando",
+            "list02": "Regula trejnado por profundigi viajn komprenon kaj aprezon de la kulturo, komunumo, kaj historio de Esperanto"
+        },
+        "qualifications": {
+            "title": "Kvalifikoj",
+            "par00": "Anyone interested must have at least the following qualifications:",
+            "list00": "Kvalifikoj",
+            "list01": "Lingvokono en Esperanto ne estas deviga",
+            "list02": "Junuloj loĝantaj ekster la regiono de Manila estas tute bonvenaj aliĝi"
+        },
+        "possibleWork": {
+            "title": "Eventuala Laboro",
+            "cards": {
+                "docu": {
+                    "title": "Dokumentado",
+                    "desc": "fotado kaj filmado (antaŭ kaj dum la kongreso)"
+                },
+                "sec": {
+                    "title": "Sekretariado",
+                    "desc": "verkado kaj transskribado de dokumentoj"
+                },
+                "logistics": {
+                    "title": "Loĝistiko",
+                    "desc": "aranĝado de kongresejo kaj manĝoj, preparado de materialoj"
+                },
+                "reg": {
+                    "title": "Registration",
+                    "desc": "preparation of participants’ kits and manning registration booths"
+                },
+                "fin": {
+                    "title": "Financoj",
+                    "desc": "organizado de enspezigaj iniciatoj"
+                },
+                "info": {
+                    "title": "Informado",
+                    "desc": "kreado de informaj materialoj, mastrumado de sociaj retejoj kaj aliaj manieroj de informado"
+                }
+            },
+            "obligations": {
+                "par00": "Ni ankaŭ atendas, ke ĉiu volontulo plenumu la jenajn postulojn:",
+                "list00": "Raporti kaj komuniki al la LKK-ano, kiu respondecas pri la taskaro, pri kiu koncentriĝas la koncerna volontulo",
+                "list01": "Asisti unuopajn LKK-anojn kaj aliajn volontulojn pri taskoj, kiujn malfacilas aŭ ne eblas plenumi sola",
+                "list02": "Asisti unuopajn LKK-anojn kaj aliajn volontulojn pri taskoj, kiujn malfacilas aŭ ne eblas plenumi sola",
+                "list03": "Firme dediĉi sin al la sukcesa okazigo de la Kongreso per elstara plenumado de taskoj ene de preskribitaj limdatoj",
+                "list04": "Proprainiciate eklerni (aŭ daŭre lerni) Esperanton en la tempo havebla ĝis la Kongreso",
+                "list05": "Esti facile atingebla per retpoŝto, sociaj retejoj, aŭ per SMS-mesaĝo, kiu ajn estas plej konvena",
+                "list06": "Esti preta doni tempon por partopreni en regulaj kunsidoj de la Volontula Servo (almenaŭ unufoje monate)"
+            }
+        },
+        "applyNow": {
+            "title": "Vakaj Postenoj",
+            "par00": "Tiuj, kiuj interesiĝas aliĝi al la Volontula Servo, bonvole plenigu la kandidatiĝformularon per la butono ĉi-sube",
+            "applyNow": "Kandidatiĝu Nun"
+        },
+        "contact": {
+            "title": "Kontaktu Nin",
+            "chunk00": "Se vi havas demandojn, kontaktu Albert per",
+            "chunk01": "aŭ sendi retpoŝton al",
+            "chunk02": "aŭ"
+        }
+    }
+}

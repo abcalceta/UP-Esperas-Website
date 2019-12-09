@@ -14,8 +14,6 @@ export class AboutLkkPage extends BasePage {
             'about/aboutLkk',
             heroPath
         );
-
-        this.componentHolder.main = htmlMain;
     }
 
     onupdate() {

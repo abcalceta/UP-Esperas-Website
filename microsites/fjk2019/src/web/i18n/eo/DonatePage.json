@@ -1,0 +1,35 @@
+{
+    "donate": {
+        "topSubTitle": "Donaci",
+        "title": "Donaci",
+        "subTitle": "Unua Filipina Junulara Kongreso de Esperanto",
+        "buttons": {
+            "donate": "Donacu",
+            "contactUs": "Kontaktu Nin"
+        },
+        "mainHeader": {
+            "title": "Ni bezonas vian helpon!",
+            "par00": "The Philippine Esperanto Youth (FEJ) is pleased to announce, that for the first time in the history of the movement of speakers, learners, and advocates of the international language Esperanto in the country, the 1st Philippine Esperanto Youth Congress will be held in Manila on April 23-26, 2020.",
+            "par01": "Por garantii la sukceson de la Kongreso, la Loka Kongresa Komitato petas al ĉiuj esperantistoj apogi tiun ĉi iniciaton finance aŭ materiale. Per via donaco, vi helpos al multaj filipinaj esperantistoj havi la oportunon reale sperti multkulturan etoson, solidigi la esperantistan komunumon en la lando kaj certigi ĝian daŭran kreskon."
+        },
+        "donationOptions": {
+            "title": "Kiel donaci?",
+            "payPal": {
+                "title": "PayPal",
+                "desc": "Vi povas rekte donaci al la Kongreso de via kreditkarto per PayPal."
+            },
+            "goGetFunding": {
+                "title": "GoGetFunding",
+                "desc": "Vi povas ankaŭ donaci per la retejo GoGetFunding, kie troviĝas nia amasfinanca kampanjo."
+            },
+            "uea": {
+                "title": "UEA-Konto",
+                "desc": "Se vi estas membro de UEA kaj preferas uzi vian konton, vi povas ĝiri al la konto <b>phej-d</b> debetante de via bonhavo."
+            },
+            "others": {
+                "title": "Alimaniere",
+                "desc": "Vi ankaŭ povas sendi broŝurojn, revuojn, kaj aliajn materialojn kiuj povos utiligi la organizantoj kaj partoprenantoj."
+            }
+        }
+    }
+}

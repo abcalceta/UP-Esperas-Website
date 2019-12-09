@@ -84,15 +84,15 @@ function initDomScripts() {
     Materialize.Collapsible.init(document.querySelectorAll('.collapsible'), {});
     Materialize.FormSelect.init(document.querySelectorAll('select'));
     Materialize.Tooltip.init(document.querySelectorAll('.tooltipped'));
-    Materialize.Datepicker.init(document.querySelectorAll('.datepicker'), {
-        autoClose: true,
-        format: 'yyyy-mm-dd',
-        yearRange: [1900, 2019]
-    });
+}
+
+function evalTemplate(tpl, localeObj) {
+    return new Function(`return \`${tpl}\`;`).call({localeObj: localeObj});
 }
 
 export let DomScripts = {
     initDomScripts: initDomScripts,
     animateOnce: animateOnce,
-    animate: animate
+    animate: animate,
+    evalTemplate: evalTemplate,
 };

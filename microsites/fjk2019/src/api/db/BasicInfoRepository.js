@@ -1,9 +1,9 @@
-const BaseRepository = require('./BaseRepository');
+import {BaseRepository} from './BaseRepository';
 
-class FormAnswerRepository extends BaseRepository {
+export class BasicInfoRepository extends BaseRepository {
     createTable() {
         const sqlQuery = `
-        CREATE TABLE IF NOT EXISTS formAnswers(
+        CREATE TABLE IF NOT EXISTS basicInfo(
             registrantId TEXT PRIMARY KEY NOT NULL,
             lastName TEXT NOT NULL,
             firstName TEXT NOT NULL,
@@ -19,21 +19,7 @@ class FormAnswerRepository extends BaseRepository {
             gradeStrandYear TEXT,
             companyName TEXT,
             officePosition TEXT,
-            isLodgingInterest INTEGER,
-            isLodgingBeyond INTEGER,
-            lodgingArriveDate DATE,
-            lodgingDepartDate DATE,
             isExcursionInterest INTEGER,
-            foodRestrictions TEXT,
-            foodAllergies TEXT,
-            isAlcohol INTEGER,
-            isCongressPhoto INTEGER,
-            isInvitLetter INTEGER,
-            isNameInList INTEGER,
-            isCongressProgram INTEGER,
-            isVolCorp INTEGER,
-            isCertAttend INTEGER,
-            isBooklet INTEGER,
             isVerified INTEGER NOT NULL,
             isPrivacy INTEGER NOT NULL,
             isPublicity INTEGER NOT NULL,
@@ -46,7 +32,7 @@ class FormAnswerRepository extends BaseRepository {
 
     create(registrantId, params) {
         const sqlQuery = `
-        INSERT INTO formAnswers(
+        INSERT INTO basicInfo(
             registrantId,
             lastName,
             firstName,
@@ -62,31 +48,17 @@ class FormAnswerRepository extends BaseRepository {
             gradeStrandYear,
             companyName,
             officePosition,
-            isLodgingInterest,
-            isLodgingBeyond,
-            lodgingArriveDate,
-            lodgingDepartDate,
             isExcursionInterest,
-            foodRestrictions,
-            foodAllergies,
-            isAlcohol,
-            isCongressPhoto,
-            isInvitLetter,
-            isNameInList,
-            isCongressProgram,
-            isVolCorp,
-            isCertAttend,
-            isBooklet,
             isVerified,
             isPrivacy,
             isPublicity,
             isNewsletter
         )
         VALUES
-        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
-        ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
-        ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
-        ?, ?, ?, ?)
+        (?, ?, ?, ?, ?,
+        ?, ?, ?, ?, ?,
+        ?, ?, ?, ?, ?,
+        ?, ?, ?, ?, ?)
         `;
 
         return this.dao.run(
@@ -106,21 +78,7 @@ class FormAnswerRepository extends BaseRepository {
             params.gradeStrandYear,
             params.companyName,
             params.officePosition,
-            params.isLodgingInterest,
-            params.isLodgingBeyond,
-            params.lodgingArriveDate,
-            params.lodgingDepartDate,
             params.isExcursionInterest,
-            params.foodRestrictions,
-            params.foodAllergies,
-            params.isAlcohol,
-            params.isCongressPhoto,
-            params.isInvitLetter,
-            params.isNameInList,
-            params.isCongressProgram,
-            params.isVolCorp,
-            params.isCertAttend,
-            params.isBooklet,
             params.isVerified,
             params.isPrivacy,
             params.isPublicity,
@@ -130,21 +88,19 @@ class FormAnswerRepository extends BaseRepository {
 
     getById(registrantId) {
         return this.dao.get(
-            'SELECT * FROM formAnswers WHERE registrantId=?',
+            'SELECT * FROM basicInfo WHERE registrantId=?',
             [registrantId]
         );
     }
 
     getAll() {
-        return this.dao.all('SELECT * FROM formAnswers');
+        return this.dao.all('SELECT * FROM basicInfo');
     }
 
     deleteById(registrantId) {
         return this.dao.run(
-            'DELETE FROM formAnswers WHERE registrantId = ?',
+            'DELETE FROM basicInfo WHERE registrantId = ?',
             [registrantId]
         );
     }
 }
-
-module.exports = FormAnswerRepository;

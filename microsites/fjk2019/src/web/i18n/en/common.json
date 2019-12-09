@@ -34,7 +34,7 @@
             "Sun", "Mon", "Tue", "Wed",
             "Thu", "Fri", "Sat"
         ],
-        "weekdaysAbbrev": ["Su", "M", "T", "W", "Th", "F", "Sa"]
+        "weekdaysAbbrev": ["S", "M", "T", "W", "T", "F", "S"]
     },
     "navbar": {
         "home": "Home",

@@ -3,17 +3,23 @@ import M from 'materialize-css';
 import Cookies from 'js-cookie';
 
 export class FabView {
-    oncreate() {
+    oncreate(vnode) {
         const langList = document.querySelectorAll('#btn-i18n ul li a');
 
         langList.forEach((eachItem) => {
             eachItem.addEventListener('click', (e) => {
                 e.preventDefault();
 
-                const nextLocale = eachItem.dataset.locale;
-                Cookies.set('locale', nextLocale);
+                const newLocale = eachItem.dataset.locale;
+                Cookies.set('locale', newLocale);
 
-                window.location.reload();
+                M.FloatingActionButton.getInstance(document.getElementById('btn-i18n')).close();
+
+                if(vnode.attrs.onLocaleSelect && (typeof vnode.attrs.onLocaleSelect === 'function'|| vnode.attrs.onLocaleSelect instanceof Function)) {
+                    vnode.attrs.onLocaleSelect();
+                }
+
+                m.redraw();
             });
         });
     }
@@ -28,6 +34,7 @@ export class FabView {
         const currentLocale = Cookies.get('locale');
 
         if(currentLocale === undefined) {
+            document.getElementById('div-i18n-hint').classList.remove('hide');
             tapTarget.open();
         }
         else {
@@ -42,6 +49,9 @@ export class FabView {
                     eachItem.classList.remove('disabled');
                 }
             });
+
+            // Hide discovery
+            document.getElementById('div-i18n-hint').classList.add('hide');
         }
 
         M.FloatingActionButton.init(document.getElementById('btn-i18n'));

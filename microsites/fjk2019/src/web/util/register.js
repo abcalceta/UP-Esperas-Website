@@ -26,28 +26,18 @@ function initDatePicker(element, localeObj) {
     }
 
     M.Datepicker.init(elm, {
-        yearRange: [1950, dateToday.getFullYear()],
+        yearRange: [1940, dateToday.getFullYear()],
         maxDate: dateToday,
         format: "yyyy-mm-dd",
         autoClose: true,
         i18n: {
-            cancel: "Nuligi",
-            clear: "Forigi",
-            done: "Preta",
-            months: [
-                "Januaro", "Februaro", "Marto", "Aprilo",
-                "Majo", "Junio",  "Julio", "Aŭgusto",
-                "Septembro", "Oktobro", "Novembro", "Decembro"
-            ],
-            monthsShort: [
-                "Jan", "Feb", "Mar", "Apr", "Maj", "Jun",
-                "Jul", "Aŭg", "Sep", "Okt", "Nov", "Dec"
-            ],
-            weekdaysShort: [
-                "dim", "lun", "mar", "mer",
-                "ĵaŭ", "ven", "sab"
-            ],
-            weekdaysAbbrev: ["di", "lu", "ma", "me", "ĵa", "ve", "sa"]
+            cancel: localeObj.cancel,
+            clear: localeObj.clear,
+            done: localeObj.done,
+            months: localeObj.months.full,
+            monthsShort: localeObj.months.short,
+            weekdaysShort: localeObj.days.short,
+            weekdaysAbbrev: localeObj.days.abbrev,
         }
     });
 }

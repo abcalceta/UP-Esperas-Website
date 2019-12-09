@@ -1,6 +1,6 @@
-const BaseRepository = require('./BaseRepository');
+import {BaseRepository} from './BaseRepository';
 
-class PaymentRepository extends BaseRepository {
+export class PaymentRepository extends BaseRepository {
     createTable() {
         const sqlQuery = `
         CREATE TABLE IF NOT EXISTS payment(
@@ -67,5 +67,3 @@ class PaymentRepository extends BaseRepository {
         );
     }
 }
-
-module.exports = PaymentRepository;

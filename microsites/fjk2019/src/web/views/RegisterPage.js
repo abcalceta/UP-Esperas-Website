@@ -9,7 +9,6 @@ import {BasePage} from './BasePage';
 import htmlMain from '../templates/register.html';
 import heroPath from '../img/hero/ks_cards.jpg';
 
-import '../styles/default.css';
 import '../styles/datepicker.css';
 import '../styles/steps.css';
 import '../styles/regform.css';
@@ -25,6 +24,8 @@ export class RegisterPage extends BasePage {
             'RegisterPage',
             heroPath
         );
+
+        this.Pa
 
         this.countryList = [];
         this.currentPageState = 0;
@@ -50,6 +51,15 @@ export class RegisterPage extends BasePage {
             ['B1', 'Workers, graduate students, etc. ≤ 35 years old'],
             ['B2', 'Workers, graduate students, etc. > 35 years old'],
         ];
+
+        this.monthsWords = {
+            full: [],
+            short: []
+        };
+        this.daysWords = {
+            short: [],
+            abbrev: []
+        };
     }
 
     oninit(vnode) {
@@ -73,28 +83,7 @@ export class RegisterPage extends BasePage {
     onupdate(vnode) {
         super.onupdate();
 
-        if(this.isTranslated) {
-            this.attachRegOverview();
-            this.attachRegisterEvent();
-            this.attachOthersEvent();
-            this.attachThanksEvent();
-            this.attachNavBtnEvent();
-
-            this.updateRegDatesUi();
-            this.populateLodgingDatesList();
-
-            this.pageStatesList[0][0] = this.localeObj.t('register.steps.basic');
-            this.pageStatesList[1][0] = this.localeObj.t('register.steps.register');
-            this.pageStatesList[2][0] = this.localeObj.t('register.steps.lodging');
-            this.pageStatesList[3][0] = this.localeObj.t('register.steps.excursion');
-            this.pageStatesList[4][0] = this.localeObj.t('register.steps.food');
-            this.pageStatesList[5][0] = this.localeObj.t('register.steps.others');
-            this.pageStatesList[6][0] = this.localeObj.t('register.steps.payment');
-
-            this.isTranslated = false;
-        }
-
-        if(this.isCountryListUpdated) {
+        if(this.isCountryListUpdated || this.isTranslated) {
             // Populate country list
             const countrySelectElm = document.getElementById('select-countries-list');
             let countryElmList = [];
@@ -108,11 +97,11 @@ export class RegisterPage extends BasePage {
             });
 
             m.render(countrySelectElm, [
-                m('option', {selected: true, disabled: true}, 'Country of Origin'),
-                m('optgroup', {label: 'Local'}, [
+                m('option', {selected: true, disabled: true}, this.localeObj.t('register.forms.basic.fields.countryOfOrigin')),
+                m('optgroup', {label: this.localeObj.t('locality.localPlural')}, [
                     m('option', {value: 'PHL'}, 'Philippines')
                 ]),
-                m('optgroup', {label: 'Foreign'}, countryElmList),
+                m('optgroup', {label: this.localeObj.t('locality.foreignPlural')}, countryElmList),
             ]);
 
             Materialize.FormSelect.init(countrySelectElm);
@@ -120,9 +109,54 @@ export class RegisterPage extends BasePage {
             this.isCountryListUpdated = false;
         }
 
-        const pageIdxFromHistory = vnode.attrs.lastPageIdx;
+        if(this.isTranslated) {
+            this.attachRegOverview();
+            this.attachRegisterEvent();
+            this.attachOthersEvent();
+            this.attachThanksEvent();
+            this.attachNavBtnEvent();
 
-        if(pageIdxFromHistory < 0) {
+            this.updateRegDatesUi();
+            this.populateLodgingDatesList();
+
+            // Translate regform sections
+            this.pageStatesList[0][0] = this.localeObj.t('register.steps.basic');
+            this.pageStatesList[1][0] = this.localeObj.t('register.steps.register');
+            this.pageStatesList[2][0] = this.localeObj.t('register.steps.lodging');
+            this.pageStatesList[3][0] = this.localeObj.t('register.steps.excursion');
+            this.pageStatesList[4][0] = this.localeObj.t('register.steps.food');
+            this.pageStatesList[5][0] = this.localeObj.t('register.steps.others');
+            this.pageStatesList[6][0] = this.localeObj.t('register.steps.payment');
+
+            this.monthsWords.length = 12;
+            this.daysWords.length = 7;
+
+            // Translate calendar months, days
+            for(let i = 0; i < 12; ++i) {
+                this.monthsWords.full[i] = this.localeObj.t(`calendar.months.${i}`);
+                this.monthsWords.short[i] = this.localeObj.t(`calendar.monthsShort.${i}`);
+            }
+
+            for(let i = 0; i < 7; ++i) {
+                this.daysWords.short[i] = this.localeObj.t(`calendar.weekdaysShort.${i}`);
+                this.daysWords.abbrev[i] = this.localeObj.t(`calendar.weekdaysAbbrev.${i}`);
+            }
+
+            RegForm.initDatePicker('#txt-bday', {
+                cancel: this.localeObj.t('buttons.cancel'),
+                clear: this.localeObj.t('buttons.clear'),
+                done: this.localeObj.t('buttons.done'),
+                months: this.monthsWords,
+                days: this.daysWords,
+            });
+
+            this.isTranslated = false;
+        }
+
+        const pageIdxFromHistory = vnode.attrs.lastPageIdx;
+        console.log(`this: ${this.currentPageState}, new: ${pageIdxFromHistory}`);
+
+        if(typeof pageIdxFromHistory !== 'number' && !(pageIdxFromHistory instanceof Number)) {
             // Overview screen
             return;
         }
@@ -156,10 +190,11 @@ export class RegisterPage extends BasePage {
             }
 
             // Reveal basic info form
-            let guidelinesSubPage = document.querySelector('#section-guidelines');
-            let basicInfoSubPage = document.querySelector('#section-basic');
-            let stepsElm = document.querySelector('#div-steps');
-            let navElm = document.querySelector('#section-nav-buttons')
+            this.pageIdxFromHistory = 0;
+            const guidelinesSubPage = document.querySelector('#section-guidelines');
+            const basicInfoSubPage = document.querySelector('#section-basic');
+            const stepsElm = document.querySelector('#div-steps');
+            const navElm = document.querySelector('#section-nav-buttons')
 
             DomScripts.animateOnce('#section-guidelines', ['fadeOutLeft', 'faster'], () => {
                 guidelinesSubPage.classList.add('hide');
@@ -176,7 +211,7 @@ export class RegisterPage extends BasePage {
                     null,
                     {
                         replace: false,
-                        state: {lastPageIdx: -1}
+                        state: {lastPageIdx: 0}
                     }
                 );
             });
@@ -357,12 +392,18 @@ export class RegisterPage extends BasePage {
                 const {currency, value} = this.computeInvitationLetterFee(shippingLocality, this.isLocalRates());
 
                 m.render(shipToCard, [
-                    m('p', [
-                        'Note that getting an invitation letter will cost ',
-                        m('b', `${currency}${value}`),
-                        ' to cover the shipping fee.',
-                    ])
+                    m('p', m.trust(this.localeObj.t('register.forms.others.invitLetterCost', {currencySymbol: currency, price: value})))
                 ]);
+            });
+        });
+    }
+
+    attachPaymentEvent() {
+        const rbxPaymentMethod = document.querySelectorAll('input[type=radio][name=rbx-payment-method]');
+
+        rbxPaymentMethod.forEach((v) => {
+            v.addEventListener('change', (e) => {
+                const paymentMethod = v.value;
             });
         });
     }
@@ -375,6 +416,14 @@ export class RegisterPage extends BasePage {
         registerAgainBtn.addEventListener('click', (e) => {
             e.preventDefault();
 
+            m.route.set(
+                '/register/section-overview',
+                null,
+                {
+                    replace: false
+                }
+            );
+
             DomScripts.animateOnce('#section-thanks', ['fadeOutLeft', 'fast'], () => {
                 document.getElementById('section-thanks').classList.add('hide');
                 document.getElementById('section-guidelines').classList.remove('hide');
@@ -386,7 +435,7 @@ export class RegisterPage extends BasePage {
                 nextBtn.disabled = false;
                 m.render(nextBtn, [
                     m('i', {class: 'material-icons right'}, 'navigate_next'),
-                    'Next'
+                    this.localeObj.t('buttons.next')
                 ]);
 
                 // Reset registration info
@@ -439,6 +488,33 @@ export class RegisterPage extends BasePage {
         });
     }
 
+    attachPaypalObj() {
+        const clientId = 'ASW9MmdTBTe-2suiMHQqZskqzFZcBINLuZR1Yz5DNYf03VYKc_6LNsfZXOj5xWEk6opP9NwzVP_7ZmeD';
+        //const clientSecret = 'EC0Lf4aYXNRbjjGNnp-kK79WmKOR2DbDftHGKZ-UA4I_Ser45KTEuo-r4bZ_ZJjlcWrItFCErD809OTp';
+
+        if (window.paypal === undefined) {
+            let script = document.createElement('script');
+            // this.script.type = 'text/javascript'
+            script.id = 'script-paypal-sdk';
+            script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}&currency=EUR&debug=true`;
+            script.async = true;
+            script.defer = true;
+            document.head.appendChild(script);
+
+            script.onerror;
+            script.onsuccess;
+
+            return new Promise((resolve, reject) => {
+                script.onsuccess = resolve;
+                script.onload = resolve;
+                script.onreadystatechange = resolve;
+                script.onerror = reject;
+            });
+        }
+
+        return Promise.reject('Paypal button already exists!');
+    }
+
     triggerSectionChanges(sectionIdx) {
         const countryList = document.querySelector('#select-countries-list');
         const sectionId = this.pageStatesList[sectionIdx][2];
@@ -452,7 +528,7 @@ export class RegisterPage extends BasePage {
                 const localityStr = this.localeObj.t(`locality.${isLocalRates ? 'local' : 'foreign'}Plural`);
 
                 // Init modal
-                rateCard.querySelector('div.card-content p').innerHTML = this.localeObj.t(`${this.data.localeNamespace}.forms.register.countryNotice`, {countryWord: countryList[countryList.selectedIndex].innerHTML, locality: localityStr.toLowerCase()});
+                rateCard.querySelector('div.card-content p').innerHTML = this.localeObj.t(`${this.data.locale.namespace}.forms.register.countryNotice`, {countryWord: countryList[countryList.selectedIndex].innerHTML, locality: localityStr.toLowerCase()});
                 m.render(rateCard.querySelector('div.card-action'),
                     m('a', {class: 'btn-flat theme-green-text waves-effect modal-trigger', href: isLocalRates ? '#div-modal-ph-rates' : '#div-modal-foreign-rates'}, this.localeObj.t(`buttons.viewRates`))
                 );
@@ -466,21 +542,14 @@ export class RegisterPage extends BasePage {
                 const {currency, value} = this.computeInvitationLetterFee(shippingLocality, this.isLocalRates());
 
                 m.render(shipToCard, [
-                    m('p', [
-                        'Note that getting an invitation letter will cost ',
-                        m('b', `${currency}${value}`),
-                        ' to cover the shipping fee.',
-                    ])
+                    m('p', m.trust(this.localeObj.t('register.forms.others.invitLetterCost', {currencySymbol: currency, price: value})))
                 ]);
 
                 // Donation card
                 const donateCurrencyCard = document.getElementById('div-donate-currency');
-                const currencyKey = isLocalRates ? 'Philippine Pesos' : 'Euros';
+                const currencyKey = this.localeObj.t(`locality.${isLocalRates ? 'currencyWordsPh' : 'currencyWordsEu'}`);
 
-                m.render(donateCurrencyCard, [
-                    'Note that you will be donating in ',
-                    m('b', currencyKey)
-                ]);
+                m.render(donateCurrencyCard, m.trust(this.localeObj.t('register.forms.others.donateNotice', {currencyWord: currencyKey})));
             }
             case 'section-payment': {
                 // Compute total fees
@@ -544,6 +613,52 @@ export class RegisterPage extends BasePage {
                     ])
                 ]);
 
+                // Attach PayPal script
+                const paypalDiv = document.getElementById('div-payment-paypal');
+                this.attachPaypalObj()
+                    .then(() => {
+                        paypalDiv.classList.remove('hide');
+
+                        paypal.Buttons({
+                            style: {
+                                tagline: false
+                            },
+                            createOrder: (data, actions) => {
+                                return actions.order.create({
+                                    intent: 'CAPTURE',
+                                    purchase_units: [{
+                                        amount: {
+                                            breakdown: {
+                                                item_total: {
+                                                    currency_code: 'PHP',
+                                                    value: feesObj.total
+                                                }
+                                            }
+                                        },
+                                        soft_descriptor: 'FEJ FJK2020',
+                                        items: [
+                                            {
+                                                name: this.localeObj.t('register.forms.payment.fees.registration'),
+                                                unit_amount: {
+                                                    currency_code: 'PHP',
+                                                    value: feesObj.regFee
+                                                },
+                                                quantity: 1
+                                            }
+                                        ]
+                                    }]
+                                });
+                            },
+                            onError: (err) => {
+                                Materialize.toast({
+                                    html: `Failed to process payment: ${err}`,
+                                    classes: 'white-text theme-red'
+                                });
+                            }
+                        }).render('#div-payment-paypal');
+                    })
+                    .catch(console.error);
+
                 // Render
                 m.render(cardPaymentDetails.querySelector('.card-content'), receiptRows);
 
@@ -594,7 +709,7 @@ export class RegisterPage extends BasePage {
         const submitBtn = document.getElementById('btn-next');
 
         const inProgressToast = Materialize.toast({
-            html: 'Registering you. Please wait&#8230;',
+            html: 'Registering. Please wait&#8230;',
             classes: 'theme-green white-text'
         });
 
@@ -643,6 +758,14 @@ export class RegisterPage extends BasePage {
                     document.getElementById('span-register-id').innerHTML = jsonRes.registerId;
                     document.getElementById('span-payment-id').innerHTML = jsonRes.paymentId;
                 });
+
+                m.route.set(
+                    '/register/section-thanks',
+                    null,
+                    {
+                        replace: false
+                    }
+                );
             }
         }
         catch(err) {
@@ -670,8 +793,8 @@ export class RegisterPage extends BasePage {
             if(!eachInputElm.checkValidity()) {
                 let toastMsg = `This section (${this.pageStatesList[this.currentPageState][0]}) has invalid fields!`;
 
-                if(eachInputElm.tagName == 'SELECT' && eachInputElm.parentElement.querySelector('.helper-text')) {
-                    toastMsg = eachInputElm.parentElement.querySelector('.helper-text').dataset.error;
+                if(eachInputElm.tagName == 'SELECT' && eachInputElm.parentElement.parentElement.querySelector('.helper-text')) {
+                    toastMsg = eachInputElm.parentElement.parentElement.querySelector('.helper-text').dataset.error;
                 }
                 else if(eachInputElm.parentElement.querySelector('.helper-text')) {
                     toastMsg = eachInputElm.parentElement.querySelector('.helper-text').dataset.error;
@@ -754,7 +877,7 @@ export class RegisterPage extends BasePage {
 
     getStepsDom(activeIdx = -1) {
         let stepItemsList = this.pageStatesList.map((v, k) => {
-            let activeClass = k <= activeIdx ? 'active' : '';
+            let activeClass = (k <= activeIdx) ? 'active' : '';
 
             return m('li', {class: activeClass}, [
                 m('i', {class: 'steps-icon material-icons'}, v[1]),

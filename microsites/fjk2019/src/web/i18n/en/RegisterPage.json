@@ -4,7 +4,8 @@
         "title": "Registration",
         "subTitle": "First Philippine Esperanto Youth Congress",
         "buttons": {
-            "startRegistration": "Start Registration"
+            "startRegistration": "Start Registration",
+            "registerAgain": "Register Again"
         },
         "generalText": {
             "localPlural": "Local",
@@ -157,6 +158,17 @@
                 "privacy": "I have read the privacy polict regarding my registration to the congress",
                 "publicity": "I consent to have my ",
                 "newsletter": "Mi volas ricevi pli oftajn informojn pri la kongreso (k.e. aktualigojn kaj bultenojn)"
+            }
+        },
+        "thanks": {
+            "header": "Thank You!",
+            "par00": "Thank you for registering to the First Philippine Esperanto Youth Congress. We hope to see you during the event!",
+            "par01": "For registration, payment, and other concerns, please contact us. Please tell us your registration or payment ID to better assist you.",
+            "refNums": {
+                "header": "Reference Numbers",
+                "par00": "Please retain these IDs for future reference.",
+                "regId": "Registration ID",
+                "paymentId": "Payment ID"
             }
         }
     }
