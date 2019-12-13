@@ -1,14 +1,16 @@
 /* Input box */
 .input-field input[type=text]:focus + label.active,
 .input-field input[type=email]:focus + label.active,
-.input-field input[type=number]:focus + label.active
+.input-field input[type=number]:focus + label.active,
+.input-field input[type=tel]:focus + label.active
  {
     color: #418B45;
 }
 
 .input-field input[type=text]:not(.browser-default):focus:not([readonly]),
 .input-field input[type=email]:not(.browser-default):focus:not([readonly]),
-.input-field input[type=number]:not(.browser-default):focus:not([readonly]) {
+.input-field input[type=number]:not(.browser-default):focus:not([readonly]),
+.input-field input[type=tel]:not(.browser-default):focus:not([readonly]) {
     border-bottom: 1px solid #418B45;
     box-shadow: 0 1px 0 0 #418B45;
 }

@@ -33,8 +33,20 @@
         ]
     },
     {
-        "title": "Participate",
+        "title": "Congress Info",
         "sublinks": [
+            {
+                "title": "Venue",
+                "link": "#!/congress/venue"
+            },
+            {
+                "title": "Lodging",
+                "link": "#!/congress/lodging"
+            },
+            {
+                "title": "Excursion",
+                "link": "#!/congress/excursion"
+            },
             {
                 "title": "Register",
                 "link": "#!/register"

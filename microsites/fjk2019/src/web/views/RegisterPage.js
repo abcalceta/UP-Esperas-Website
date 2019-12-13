@@ -565,6 +565,15 @@ export class RegisterPage extends BasePage {
                     ]),
                 ];
 
+                if(feesObj.excursion > 0) {
+                    receiptRows.push(
+                        m('div', {class: 'row'}, [
+                            m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.excursion')),
+                            m('span', {class: 'col s4 right-align'}, feesObj.excursion)
+                        ])
+                    );
+                }
+
                 if(feesObj.invitLetter > 0) {
                     receiptRows.push(
                         m('div', {class: 'row'}, [
@@ -905,6 +914,7 @@ export class RegisterPage extends BasePage {
         const bdayField = document.querySelector('#txt-bday');
         const rbxCategory = document.querySelector('input[type=radio][name=rbx-reg-broad]:checked');
         const cbxInvitLetter = document.querySelector('input[type=checkbox][name=cbx-others-invitletter]');
+        const cbxExcursion = document.querySelector('input[type=checkbox][name=cbx-excursion-interest]');
         const rbxInvitLetterShipTo = document.querySelector('input[type=radio][name=rbx-others-invitletter-shipto]:checked');
         const selectList = document.querySelector('#select-reg-occupation');
         const regPeriodField = document.querySelector('input[name=hdn-reg-period]');
@@ -913,6 +923,9 @@ export class RegisterPage extends BasePage {
         const currencyKey = isLocalRates ? '₱' : '€';
         const regCatKey = RegForm.getRegTier(locKey, rbxCategory.value, selectList.value, bdayField.value);
         const regFeeCost = regFeesJson[locKey][regCatKey][regPeriodField.value];
+
+        // Get excursion cost
+        const excursionCost = (cbxExcursion.checked) ? regFeesJson['excursion'][locKey] : 0;
 
         // Get inivitation letter cost
         const invitLetterCost = (cbxInvitLetter.checked) ? this.computeInvitationLetterFee(rbxInvitLetterShipTo.value, isLocalRates).value : 0;
@@ -923,10 +936,11 @@ export class RegisterPage extends BasePage {
         const fejFundCost = Number(document.getElementById('txt-fej-fund').value);
 
         // Get total payable cost
-        const totalPayableCost = regFeeCost + invitLetterCost + congressFundCost + participantFundCost + fejFundCost;
+        const totalPayableCost = regFeeCost + excursionCost + invitLetterCost + congressFundCost + participantFundCost + fejFundCost;
 
         return {
             regFee: regFeeCost,
+            excursion: excursionCost,
             invitLetter: invitLetterCost,
             congressFund: congressFundCost,
             participantFund: participantFundCost,

@@ -62,10 +62,17 @@
                 "currentOccupationText": "&#8230; kun nuna okupiĝo kiel&#8230;",
                 "currentStudyText": "&#8230; kaj studas nun ĉe&#8230;",
                 "currentWorkText": "&#8230; kaj laboras nun ĉe&#8230;",
+                "guidelines": {
+                    "A": "<b>Bakalaŭraj studentoj kaj pli junaj</b> estas junuloj kiuj estas en bakalaŭraj studoj, gimnazioj, kaj similaj institucioj je la tempo de aliĝo. Inkluzivas ankaŭ junulojn, kiuj pro ekonomiaj kialoj aŭ alie ne estas registrita kiel studento. Por filipinanoj tiu ĉi kategorio estas dividita en du subkategoriojn (aplikeblas nur por filipinanoj):",
+                    "B": "<b>Laboristoj, postdiplomaj studentoj, kaj similaj</b> estas tiuj, kiuj laboras aŭ praktikas ian ajn profesion je la tempo de aliĝo. Inkluzivas ankaŭ studentojn de postdiplomaj programoj (magistriĝo, doktoriĝo), kaj senlaboruloj. La kategorio estas plu dividita en du subkategoriojn",
+                    "C": "<b>Morala Partoprenanto</b> estas tiuj, kiuj mem ne partoprenos en la Kongreso, sed volas parte finance apogi ĝian organizadon. La kotizo estas duono (50%) de la indikita aliĝkotizo de la kategorio B1 en la dua aliĝperiodo. Moralajn partoprenantojn oni aparte mencios en la Kongresa Libro kaj dum la inaŭguro kaj la ferma ceremonio",
+                    "D": "<b>Kongresa Patrono</b> estas tiuj, kiuj ŝatus krome finance subteni la Kongreson krom aliĝi kiel partoprenanto, pagante kotizon pli altan ol la normalajn kotizojn. La kotizo estas 2.5-oble (250%) de la aliĝkotizo de la kategorio B1 en la dua aliĝperiodo. Kongresaj patronoj povas elekti, ĉu partopreni en la Kongreso aŭ ne, kaj ricevos apartan mencion en la Kongresa Libro kaj dum la inaŭguro kaj la ferma ceremonio. Ili ankaŭ ricevos specialan donacon de la LKK.",
+                    "forMinors": "Aliĝantoj malpli ol 12-jaraĝaj kaj akompanotaj de siaj gepatroj aŭ kuratoroj povas aliĝi al la Kongreso senpage, kvankam ili ne ricevos propran kongresan sakon (krom nomŝildon) kaj devos pagi eventualajn aldonajn kostojn por loĝado, la ekskurso, kaj manĝoj."
+                },
                 "fields": {
                     "regularParticipant": "Regula Partoprenanto",
                     "moralParticipant": "Morala Partoprenanto",
-                    "congressPatron": "Kongresa Favoranto",
+                    "congressPatron": "Kongresa Patrono",
                     "seniorHigh": "",
                     "undergrad": "Bakalaŭro",
                     "graduate": "",
@@ -153,6 +160,7 @@
                 },
                 "fees": {
                     "registration": "Aliĝkotizo",
+                    "excursion": "Ekskurso",
                     "invitLetter": "Invitletero",
                     "congressFund": "Kongresa Fonduso",
                     "participantFund": "Fonduso por Partoprenontoj",

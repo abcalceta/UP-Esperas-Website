@@ -17,6 +17,13 @@
             "timeNotice": "All dates are in Philippine Standard Time (GMT+8). Time of end dates are at 11:59 PM.",
             "regPeriodText": "%{regPeriod} Registration"
         },
+        "regTypes": {
+            "A1": "Senior high school students and younger",
+            "A2": "Undergraduate students",
+            "A": "Undergraduate students",
+            "B1": "Workers, graduate students, etc. &leq; 35 years old",
+            "B2": "Workers, graduate students, etc. &gt; 35 years old"
+        },
         "steps": {
             "guidelines": "Guidelines",
             "basic": "Basic",
@@ -38,7 +45,10 @@
                     "nickName": "Nickname*",
                     "birthday": "Birthday*",
                     "sex": "Sex*",
-                    "countryOfOrigin": "Country of Origin*",
+                    "countryOfOrigin": "Country of Representation*",
+                    "city": "City",
+                    "province": "Province/State",
+                    "mobile": "Mobile Number",
                     "emailAddress": "E-mail Address*",
                     "sns": "Social Media Username (Facebook, etc.)"
                 },
@@ -48,7 +58,7 @@
                     "nickName": "Please enter your nickname",
                     "birthday": "Please enter your birthday",
                     "sex": "Please choose your sex",
-                    "countryOfOrigin": "Please choose your country of origin",
+                    "countryOfOrigin": "Please choose your country of representation",
                     "emailAddress": "Please enter a valid email address"
                 }
             },
@@ -62,6 +72,15 @@
                 "currentOccupationText": "&#8230; with current occupation as&#8230;",
                 "currentStudyText": "&#8230; and studying now at&#8230;",
                 "currentWorkText": "&#8230; and working now at&#8230;",
+                "discountNotice": "To qualify with this discount, please send a photo/scanned copy of your school ID or certificate of registration to peyc2020@gmail.com",
+                "guidelines": {
+                    "A": "<b>Undergraduate Students and Below</b> are individuals in undergraduate (college) level, high school (junior and senior), vocational schools, and below at the time of registration. It is subdivided into two subcategories, A1 (for senior high school students or equivalent (such as those in vocational schools below the college level and out-of-school youth), and below) and A2 (for undergraduate (college) students and equivalent). Registrants in this category are required to send a photo/scanned copy of their school ID and latest certificate of registration (if applicable) to avail of the discount.",
+                    "B": "<b>Workers, Graduate Students, or Equivalent</b> are individuals who have completed their undergraduate studies or its equivalent at the time of registration. It includes those who work or practice a profession, graduate-level students (master’s degree/Ph.D./Medicine/Law), and self-employed and unemployed individuals. It is further subdivided into B1 (for individuals aged 35 and below at the time of registration, i.e. within age prescribed as “youth” by World Esperanto Youth Organization (TEJO) and eligible for full membership in Philippine Esperanto Youth (FEJ)), and B2 (for individuals aged 36 and above at the time of registration).",
+                    "C": "<b>Moral Participants</b> are individuals who will not participate in the congress itself, but want to support the congress financially. The fee is half (50%) of the regular period registration fee of category B.1 (for both Filipino and foreign participants). They shall be given due acknowledgment in the congress booklet.",
+                    "D": "<b>Congress Patrons</b> are individuals who want to support the congress financially, besides joining the congress, by paying a larger rate than the normal rates. The fee is 250% of the Regular Period registration fee of Category B1. Congress Patrons may choose to participate physically or not, and will receive separate acknowledgment in the Congress Booklet and other related materials, as well as a special gift from the Organizing Committee.",
+                    "forMinors": "Note that participants aged 12 years old and below and accompanied by their parents/guardians can join the congress free of charge, however they will not be provided their own Congress Kit (except for name tags) and must pay additional fees if they will avail of lodging, the excursion, and meals.",
+                    "addtlGuidelines": "More details on the registration guidelines can be found <a target=\"_blank\" href=\"#!congress/registration\">here</a>."
+                },
                 "fields": {
                     "regularParticipant": "Attending Participant",
                     "moralParticipant": "Moral Participant",
@@ -86,6 +105,7 @@
             },
             "lodging": {
                 "header": "Lodging",
+                "guidelines": "<p>For easier access to the Congress' proceedings and services and closer interaction with other participants, the Organizing Committee recommends that participants from other regions or countries reserve their lodging with partner hotels.</p>\n\n",
                 "fields": {
                     "interested": "I am interested in reserving a room from partner hotels of the congress",
                     "beyondDates": "I need to reserve a lodging beyond the congress dates",
@@ -101,7 +121,7 @@
             },
             "food": {
                 "header": "Food",
-                "dietNotice": "I have the following dietary restrictions:",
+                "dietNotice": "I have the following dietary restrictions*:",
                 "allergyNotice": "I have the following food allergies:",
                 "alcoholQuestion": "Do you drink alcohol?",
                 "fields": {
@@ -110,6 +130,7 @@
                     "vegan": "Vegan",
                     "kosher": "Kosher",
                     "halal": "Halal",
+                    "none": "None",
                     "nuts": "Nuts",
                     "seafood": "Seafood",
                     "wheat": "Gluten (Wheat)",
@@ -119,18 +140,37 @@
             },
             "others": {
                 "header": "Others",
-                "congressPhotoHeader": "Congress Photo",
-                "congressFund": "Congress Fund",
-                "participantFund": "Participant Support",
-                "associationFund": "Association Fund",
                 "shipTo": "Ship to&#8230;",
+                "misc": "Miscellaneous",
+                "congressPhoto": {
+                    "header": "Congress Group Photo",
+                    "guidelines": "Through an accredited photographer, the Organizing Committee will print copies of the official memorabilia group photo of the participants of the Congress. This will only be implemented if there will be enough demand from the participants."
+                },
+                "invitLetter": {
+                    "header": "Invitation Letter",
+                    "guidelines": "<p>All participants will receive a digital copy of their invitation letters in their respective emails. However, in the case that you need documentation for various purposes, you may request a printed invitation letter from us to be sent by mail.</p>\n\n<p>Invitation letters will be sent as regular mail through PhilPost. On the other hand, you want it sent using Express Mail Service (EMS) or through a private courier service, please select the corresponding option to inform the Organizing Committee. Note that you will have to shoulder any additional shipping fees (if applicable).</p>\n\n"
+                },
                 "invitLetterCost": "Please note that it will cost around <b>%{currencySymbol}%{price}</b> to deliver the letter to your chosen location.",
                 "donateNotice": "Please note that you will donate in <b>%{currencyWord}</b>",
+                "donate": {
+                    "header": "Donate",
+                    "guidelines00": "<p>You may also choose to support the preparation of the congress even further by making monetary donations for specific purposes. Donors will be mentioned on the Congress Booklet and other related materials. Thank you very much for your donation.</p>\n\n<p>Here are some items where your donations can be placed:</p>",
+                    "guidelines01": "<p>Donations are optional. You can leave some or all of these blank if you do not wish to make any donation.</p>",
+                    "anonymous": "I do not wish to be mentioned as a donor in congress materials (anonymous donation)",
+                    "congressFund": "Congress Fund",
+                    "participantFund": "Participant Support",
+                    "associationFund": "Association Fund",
+                    "congressFundDesc": "to augment financial resources of the congress and further cover its costs, and eventually to make the entire program richer and more substantial for all participants.",
+                    "participantFundDesc": "to finance the participation of young Filipinos who live in areas far from the Congress venue or those who undergo financial struggles that hinder them from attending the event.",
+                    "associationFundDesc": "to finance other ongoing and future activities and initiatives of the Philippine Esperanto Youth."
+                },
                 "fields": {
                     "congressPhoto": "I want to receive the official printed congress photo",
                     "invitLetter": "I want to receive a printed invitation letter sent by mail",
+                    "webList": "I do not want my name written on the list of participants shown on this website",
                     "program": "I want to lead a program or a lecture during the congress",
-                    "volCorp": "I want to be a part of the Congress Volunteer Corps",
+                    "volCorp": "I want to be a part of the Congress Volunteer Corps. <a target=\"_blank\" href=\"#!/volunteer\">[more info]</a>",
+                    "fej": "I would like to join Philippine Esperanto Youth for the year 2020 (free of charge)",
                     "cert": "I need a certificate of attendance of the congress",
                     "bookletExclude": "I do not wish to receive a printed copy of the congress booklet"
                 }
@@ -144,18 +184,27 @@
                 "payVia": "Pay with",
                 "startDate": "Start Date",
                 "endDate": "End Date",
+                "downpayNotice": "Note that the Organizing Committee has to receive at least <b>50%</b> of your total registration fee as initial downpayment in order to consider your registration valid. Furthermore, all downpayments must be settled on or before <b>09 April, 2020</b> or there will be a late payment fee of <b>PHP 100.00 (for Filipinos) or EUR 2.00 (for foreign participants)</b>.",
                 "fields": {
-                    "paypal": "PayPal",
                     "bankAccount": "Bank Account",
-                    "wireTransfer": "Wire Transfer",
+                    "onlineBank": "Online Bank Transfer",
+                    "paypal": "PayPal",
                     "creditCard": "Credit or Debit Card via PayPal",
-                    "ueaAccount": "UEA-konto"
+                    "remittance": "Money Remittance"
+                },
+                "fees": {
+                    "registration": "Registration Fee",
+                    "excursion": "Excursion",
+                    "invitLetter": "Invitation Letter",
+                    "congressFund": "Congress Fund",
+                    "participantFund": "Participant Support",
+                    "associationFund": "Association Fund"
                 }
             },
             "certification": {
                 "header": "Certification",
                 "accuracy": "I certify that all the information provided in this form is true and correct, and can be verified using physical documents",
-                "privacy": "I have read the privacy polict regarding my registration to the congress",
+                "privacy": "I agree with the <a target=\"_blank\" href=\"#!/about/privacy\">Privacy Policy</a> of the 1st Philippine Esperanto Youth Congress",
                 "publicity": "I consent to have my ",
                 "newsletter": "Mi volas ricevi pli oftajn informojn pri la kongreso (k.e. aktualigojn kaj bultenojn)"
             }

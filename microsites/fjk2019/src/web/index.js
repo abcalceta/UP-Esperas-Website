@@ -7,13 +7,16 @@ import {DonatePage} from './views/DonatePage';
 import {RegisterPage} from './views/RegisterPage';
 import {NotFoundPage} from './views/NotFoundPage';
 
-// About page
+// About subpage
 import {AboutEsperantoPage} from './views/about/AboutEsperanto';
 import {AboutFjkPage} from './views/about/AboutFjk';
 import {AboutLkkPage} from './views/about/AboutLkk';
 import {AboutLogoPage} from './views/about/AboutLogo';
 import {AboutFejPage} from './views/about/AboutFej';
 import {PrivacyPage} from './views/about/PrivacyPage';
+
+// Congress info subpage
+import {ExcursionPage} from './views/congress_info/Excursion';
 
 let root = document.body;
 
@@ -30,6 +33,9 @@ m.route(root, '/', {
     '/about/logo': AboutLogoPage,
     '/about/fej': AboutFejPage,
     '/about/privacy': PrivacyPage,
+
+    // Congress info subpage
+    '/congress/excursion': ExcursionPage,
 
     // Register page
     '/register': RegisterPage,

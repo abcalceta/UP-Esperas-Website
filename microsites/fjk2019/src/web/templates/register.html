@@ -86,6 +86,8 @@
                 <label>${this.localeObj.t('register.forms.basic.fields.sex')}</label>
                 <span class="helper-text" data-error="${this.localeObj.t('register.forms.basic.errors.sex')}"></span>
             </div>
+        </div>
+        <div class="row">
             <div class="input-field col s12 l4">
                 <select id="select-countries-list" name="select-countries-list" required>
                     <option value="" disabled selected>${this.localeObj.t('register.forms.basic.fields.countryOfOrigin')}</option>
@@ -93,14 +95,26 @@
                 <label>${this.localeObj.t('register.forms.basic.fields.countryOfOrigin')}</label>
                 <span class="helper-text" data-error="${this.localeObj.t('register.forms.basic.errors.countryOfOrigin')}"></span>
             </div>
+            <div class="input-field col s12 m6 l4">
+                <input id="txt-province" name="txt-province" type="text">
+                <label for="txt-province">${this.localeObj.t('register.forms.basic.fields.province')}</label>
+            </div>
+            <div class="input-field col s12 m6 l4">
+                <input id="txt-city" name="txt-city" type="text">
+                <label for="txt-city">${this.localeObj.t('register.forms.basic.fields.city')}</label>
+            </div>
         </div>
         <div class="row">
-            <div class="input-field col s12 m6">
+            <div class="input-field col s12 m4">
                 <input id="txt-email" class="validate" name="txt-email" type="email" required>
                 <label for="txt-email">${this.localeObj.t('register.forms.basic.fields.emailAddress')}</label>
                 <span class="helper-text" data-error="${this.localeObj.t('register.forms.basic.errors.emailAddress')}"></span>
             </div>
-            <div class="input-field col s12 m6">
+            <div class="input-field col s6 m4">
+                <input id="txt-mobile" name="txt-mobile" type="tel">
+                <label for="txt-mobile">${this.localeObj.t('register.forms.basic.fields.mobile')}</label>
+            </div>
+            <div class="input-field col s6 m4">
                 <input id="txt-sns" name="txt-sns" type="text">
                 <label for="txt-sns">${this.localeObj.t('register.forms.basic.fields.sns')}</label>
             </div>
@@ -113,19 +127,22 @@
             There are different categories for participants
         </p>
         <p>
-            <b>Undergraduate Students and Below</b> are individuals in undergraduate (college) level, high school (junior and senior), vocational schools, and below at the time of registration. It is subdivided into two subcategories, A1 (for senior high school students and below) and A2 (for undergraduate students and equivalent). Registrants in this category are required to send a photo/scanned copy of their school ID and latest certificate of registration (if applicable) to avail of the discount.
+            ${this.localeObj.t('register.forms.register.guidelines.A')}
         </p>
         <p>
-            <b>Workers, Graduate Students, or Equivalent</b> are individuals working or practicing a profession at the time of registration. Also includes students in graduate level (master’s degree/Ph.D.) and unemployed individuals. It is further subdivided to B1 (for individuals aged 35 and below), and B2 (for individuals aged above 35).
+            ${this.localeObj.t('register.forms.register.guidelines.B')}
          </p>
         <p>
-            <b>Moral Participants</b> are individuals who will not participate in the congress itself, but want to support the congress financially. The fee is half (50%) of the regular period registration fee of category B.1 (for both Filipino and foreign participants). They shall be given due acknowledgment in the congress booklet.
+            ${this.localeObj.t('register.forms.register.guidelines.C')}
         </p>
         <p>
-            <b>Congress Patrons</b> are individuals who want to support the congress financially, besides joining the congress, by paying a larger rate than the normal rates. The fee is 2.5 times the regular registration fee of category B.1 (for Filipino and foreign participants). They may opt to participate in the congress itself or not, and they shall be given due acknowledgment in the congress booklet, and will receive a special gift.
+            ${this.localeObj.t('register.forms.register.guidelines.D')}
         </p>
         <p>
-            Note that participants aged 12 years old and below and accompanied by their parents/guardians can join the congress free of charge, however they will not be provided their own Congress Kit (except for name tags) and must pay additional fees if they will avail of lodging, the excursion, and meals.
+            ${this.localeObj.t('register.forms.register.guidelines.forMinors')}
+        </p>
+        <p>
+            ${this.localeObj.t('register.forms.register.guidelines.addtlGuidelines')}
         </p>
 
         <input type="hidden" name="hdn-reg-period" value="regular">
@@ -183,7 +200,7 @@
             </div>
         </div>
 
-        <div id="div-reg-educ-info" class="row hide">
+        <div id="div-reg-educ-info" class="row">
             <div class="col s12">
                 <h6>${this.localeObj.t('register.forms.register.currentStudyText')}</h6>
             </div>
@@ -232,28 +249,28 @@
                     </tr>
                     <tr>
                         <td>A1</td>
-                        <td>Senior high school students and younger</td>
+                        <td>${this.localeObj.t('register.regTypes.A1')}</td>
                         <td>1100</td>
                         <td>1300</td>
                         <td>1500</td>
                     </tr>
                     <tr>
                         <td>A2</td>
-                        <td>Undergraduate students</td>
+                        <td>${this.localeObj.t('register.regTypes.A2')}</td>
                         <td>1400</td>
                         <td>1600</td>
                         <td>1800</td>
                     </tr>
                     <tr>
                         <td>B1</td>
-                        <td>Workers, graduate students, etc. &leq; 35 years old</td>
+                        <td>${this.localeObj.t('register.regTypes.B1')}</td>
                         <td>1600</td>
                         <td>1800</td>
                         <td>2000</td>
                     </tr>
                     <tr>
                         <td>B2</td>
-                        <td>Workers, graduate students, etc. &gt; 35 years old</td>
+                        <td>${this.localeObj.t('register.regTypes.B2')}</td>
                         <td>1800</td>
                         <td>2000</td>
                         <td>2200</td>
@@ -292,21 +309,21 @@
                     </tr>
                     <tr>
                         <td>A</td>
-                        <td>Undergraduate students and below</td>
+                        <td>${this.localeObj.t('register.regTypes.A')}</td>
                         <td>25</td>
                         <td>30</td>
                         <td>35</td>
                     </tr>
                     <tr>
                         <td>B1</td>
-                        <td>Workers, graduate students, etc. &leq; 35 years old</td>
+                        <td>${this.localeObj.t('register.regTypes.B1')}</td>
                         <td>30</td>
                         <td>35</td>
                         <td>40</td>
                     </tr>
                     <tr>
                         <td>B2</td>
-                        <td>Workers, graduate students, etc. &gt; 35 years old</td>
+                        <td>${this.localeObj.t('register.regTypes.B2')}</td>
                         <td>35</td>
                         <td>40</td>
                         <td>45</td>
@@ -331,9 +348,8 @@
 
     <section id="section-lodging" class="section hide">
         <h3>${this.localeObj.t('register.forms.lodging.header')}</h3>
-        <p>
-            For easier access to the Congress’ proceedings and services and closer interaction with other participants, the Organizing Committee recommends that participants from other regions or countries reserve their lodging with partner hotels.
-        </p>
+        ${this.localeObj.t('register.forms.lodging.guidelines')}
+        
         <p class="card-panel theme-yellow white-text">
             More information on lodging options will be released very soon. The information entered here will be used for surveying purposes.
         </p>
@@ -369,10 +385,22 @@
     <section id="section-excursion" class="section hide">
         <h3>${this.localeObj.t('register.forms.excursion.header')}</h3>
         <p>
-            An excursion, which is a day trip to select historical sites relevant to the congress theme and the Philippine society and culture, is scheduled to be held on Sunday, 26 April, 2020. While availing of this activity is not required, the Organizing Committee invites all participants to join.
+            An excursion to the City of Manila, is scheduled to be held on <b>Sunday, 26 April, 2020</b>, <b>9:00-18:30</b>. While availing of this activity is not required, the Organizing Committee invites all participants to join.
+        </p>
+        <p>
+            The whole-day excursion to Manila offers a visit to the following places: 
+        </p>
+        <ul class="browser-default">
+            <li>The National Museum of Anthropology</li>
+            <li>National Museum of Fine Arts</li>
+            <li>Intramuros & Fort Santiago</li>
+            <li>Rizal Park</li>
+        </ul>
+        <p>
+            More information about the excursion can be accessed <a target="_blank" href="#!/congress/excursion">here</a>.
         </p>
         <p class="card-panel theme-yellow white-text">
-            More information on the excursion will be released very soon. The information entered here will be used for surveying purposes.
+            The excursion will cost P300, which includes transportation, entrance tickets, and snacks throughout the whole trip.
         </p>
         <div class="row">
             <label class="input-field col s12">
@@ -389,23 +417,27 @@
         </p>
         <div class="row">
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" name="cbx-food-pref[]" type="checkbox" value="vegetarian">
+                <input class="with-gap" name="rbx-food-pref" type="radio" value="none" checked>
+                <span>${this.localeObj.t('register.forms.food.fields.none')}</span>
+            </label>
+            <label class="input-field col s12 m4 l2">
+                <input class="with-gap" name="rbx-food-pref" type="radio" value="vegetarian">
                 <span>${this.localeObj.t('register.forms.food.fields.vegetarian')}</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" name="cbx-food-pref[]" type="checkbox" value="vegan">
+                <input class="with-gap" name="rbx-food-pref" type="radio" value="vegan">
                 <span>${this.localeObj.t('register.forms.food.fields.vegan')}</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" name="cbx-food-pref[]" type="checkbox" value="halal">
+                <input class="with-gap" name="rbx-food-pref" type="radio" value="halal">
                 <span>${this.localeObj.t('register.forms.food.fields.kosher')}</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" name="cbx-food-pref[]" type="checkbox" value="kosher">
+                <input class="with-gap" name="rbx-food-pref" type="radio" value="kosher">
                 <span>${this.localeObj.t('register.forms.food.fields.halal')}</span>
             </label>
             <label class="input-field col s12 m4 l2">
-                <input class="filled-in" name="cbx-food-pref[]" type="checkbox" value="other">
+                <input class="with-gap" name="rbx-food-pref" type="radio" value="other">
                 <span>${this.localeObj.t('register.forms.food.fields.other')}</span>
             </label>
         </div>
@@ -456,9 +488,9 @@
     </section>
 
     <section id="section-others" class="section hide">
-        <h4>${this.localeObj.t('register.forms.others.congressPhotoHeader')}</h4>
+        <h4>${this.localeObj.t('register.forms.others.congressPhoto.header')}</h4>
         <p>
-            Through an accredited photographer, the Organizing Committee will print copies of the official memorabilia group photo of the participants of the Congress. This will only be implemented if there will be enough demand from the participants.
+            ${this.localeObj.t('register.forms.others.congressPhoto.guidelines')}
         </p>
         <p class="card-panel theme-yellow white-text">
             More information about this will be out soon!
@@ -470,13 +502,8 @@
             </label>
         </p>
 
-        <h4>Invitation Letter</h4>
-        <p>
-            All participants will receive a digital copy of their invitation letters in their respective emails. However, in the case that you need documentation for various purposes, you may request a printed invitation letter from us to be sent by mail.
-        </p>
-        <p>
-            Note that invitation letters will be sent as regular mail via PhilPost. Please contact us if you prefer to have it sent using Express Mail Service (EMS) or through a private courier. Any additional shipping fees are at your own cost.
-        </p>
+        <h4>${this.localeObj.t('register.forms.others.invitLetter.header')}</h4>
+        ${this.localeObj.t('register.forms.others.invitLetter.guidelines')}
         <div>
             <label>
                 <input class="filled-in" name="cbx-others-invitletter" type="checkbox">
@@ -504,23 +531,18 @@
             </div>
         </div>
 
-        <h4>Donations</h4>
+        <h4>${this.localeObj.t('register.forms.others.donate.header')}</h4>
+        ${this.localeObj.t('register.forms.others.donate.guidelines00')}
         <p>
-            The Congress is accepting donations related to the congress proceedings and the overall welfare of the Philippine Esperanto Youth. Here are some items where your donations can be placed.
+            <b>${this.localeObj.t('register.forms.others.donate.congressFund')}</b> ${this.localeObj.t('register.forms.others.donate.congressFundDesc')}
         </p>
         <p>
-            <b>${this.localeObj.t('register.forms.others.congressFund')}</b>: to augment financial resources of the congress and further cover its costs, and eventually to make the entire program richer and more substantial for all participants.
+            <b>${this.localeObj.t('register.forms.others.donate.participantFund')}</b> ${this.localeObj.t('register.forms.others.donate.participantFundDesc')}
         </p>
         <p>
-            <b>${this.localeObj.t('register.forms.others.participantFund')}</b>: to finance the participation of young Filipinos who live in areas far from the Congress venue or those who undergo financial struggles that hinder them from attending the event.
+            <b>${this.localeObj.t('register.forms.others.donate.associationFund')}</b> ${this.localeObj.t('register.forms.others.donate.associationFundDesc')}
         </p>
-        <p>
-            <b>${this.localeObj.t('register.forms.others.associationFund')}</b>: to finance other ongoing and future activities and initiatives of the Philippine Esperanto Youth.
-        </p>
-        <p>
-            Donations are optional. You can leave some or all of these blank if you do not wish to make any donation.
-        </p>
-
+        ${this.localeObj.t('register.forms.others.donate.guidelines01')}
 
         <div id="div-donate-currency" class="card-panel theme-green white-text">
             ${this.localeObj.t('register.forms.others.donateNotice')}
@@ -528,24 +550,28 @@
 
         <div class="row">
             <div class="input-field col s12 m4">
-                <input id="txt-congress-fund" name="txt-congress-fund" type="number" class="validate" placeholder="0.00">
-                <label for="txt-congress-fund">${this.localeObj.t('register.forms.others.congressFund')}</label>
+                <input id="txt-congress-fund" name="txt-congress-fund" type="number" class="validate">
+                <label for="txt-congress-fund">${this.localeObj.t('register.forms.others.donate.congressFund')}</label>
             </div>
             <div class="input-field col s12 m4">
-                <input id="txt-participant-fund" name="txt-participant-fund" type="number" class="validate" placeholder="0.00">
-                <label for="txt-participant-fund">${this.localeObj.t('register.forms.others.participantFund')}</label>
+                <input id="txt-participant-fund" name="txt-participant-fund" type="number" class="validate">
+                <label for="txt-participant-fund">${this.localeObj.t('register.forms.others.donate.participantFund')}</label>
             </div>
             <div class="input-field col s12 m4">
-                <input id="txt-fej-fund" name="txt-fej-fund" type="number" class="validate" placeholder="0.00">
-                <label for="txt-fej-fund">${this.localeObj.t('register.forms.others.associationFund')}</label>
+                <input id="txt-fej-fund" name="txt-fej-fund" type="number" class="validate">
+                <label for="txt-fej-fund">${this.localeObj.t('register.forms.others.donate.associationFund')}</label>
             </div>
         </div>
+        <label>
+            <input class="filled-in" name="cbx-others-donor-name-include" type="checkbox">
+            <span>${this.localeObj.t('register.forms.others.donate.anonymous')}</span>
+        </label>
 
-        <h4>Others</h4>
+        <h4>${this.localeObj.t('register.forms.others.misc')}</h4>
         <p>
             <label>
-                <input class="filled-in" name="cbx-others-name-include" type="checkbox">
-                <span>I want my full name written in the list of participants in this website</span>
+                <input class="filled-in" name="cbx-others-participant-name-include" type="checkbox">
+                <span>${this.localeObj.t('register.forms.others.fields.webList')}</span>
             </label>
         </p>
         <p>
@@ -558,6 +584,12 @@
             <label>
                 <input class="filled-in" name="cbx-others-volcorp" type="checkbox">
                 <span>${this.localeObj.t('register.forms.others.fields.volCorp')}</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input class="filled-in" name="cbx-others-cert" type="checkbox">
+                <span>${this.localeObj.t('register.forms.others.fields.fej')}</span>
             </label>
         </p>
         <p>
@@ -576,12 +608,12 @@
 
     <section id="section-payment" class="section hide">
         <h3>${this.localeObj.t('register.forms.payment.header')}</h3>
-        <p>
-            Note that the Organizing Committee has to receive at least 50% of your total registration fee as initial downpayment in order to consider your registration valid. Furthermore, all downpayments must be settled on or before 09 April, 2020.
+        <p class="card-panel theme-red white-text">
+            ${this.localeObj.t('register.forms.payment.downpayNotice')}
         </p>
         <div id="div-panel-reg-date-notice" class="card">
             <div class="card-content theme-green white-text">
-                <span class="card-title">Regular Registration</span>
+                <span class="card-title">${this.localeObj.t('register.generalText.regular')}</span>
                 <p>
                     ${this.localeObj.t('register.forms.payment.registerNotice')}
                 </p>
@@ -609,6 +641,12 @@
                 </p>
                 <p>
                     <label>
+                        <input class="with-gap" name="rbx-payment-method" type="radio" value="wire">
+                        <span>${this.localeObj.t('register.forms.payment.fields.onlineBank')}</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
                         <input class="with-gap" name="rbx-payment-method" type="radio" value="paypal">
                         <span>${this.localeObj.t('register.forms.payment.fields.paypal')}</span>
                     </label>
@@ -622,7 +660,7 @@
                 <p>
                     <label>
                         <input class="with-gap" name="rbx-payment-method" type="radio" value="wire">
-                        <span>${this.localeObj.t('register.forms.payment.fields.wireTransfer')}</span>
+                        <span>${this.localeObj.t('register.forms.payment.fields.remittance')}</span>
                     </label>
                 </p>
                 <div id="div-payment-paypal" class="hide"></div>
@@ -649,12 +687,6 @@
                 <input class="filled-in" type="checkbox" name="cbx-attest-publicity" required>
                 <span>${this.localeObj.t('register.forms.certification.publicity')}</span>
                 <span class="helper-text" data-error="Please consent to publicity rights"></span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="filled-in" type="checkbox" name="cbx-attest-newsletter">
-                <span>${this.localeObj.t('register.forms.certification.newsletter')}</span>
             </label>
         </p>
 
