@@ -470,7 +470,8 @@ export class RegisterPage extends BasePage {
 
             // Submit form if on last page
             if(this.currentPageState >= this.pageStatesList.length - 1) {
-                this.submitForm();
+                //this.submitForm();
+                this.showPaymentMethod(document.querySelector('input[type=radio][name=rbx-payment-method]').value);
                 return;
             }
 
@@ -622,53 +623,7 @@ export class RegisterPage extends BasePage {
                     ])
                 ]);
 
-                // Attach PayPal script
-                const paypalDiv = document.getElementById('div-payment-paypal');
-                this.attachPaypalObj()
-                    .then(() => {
-                        paypalDiv.classList.remove('hide');
-
-                        paypal.Buttons({
-                            style: {
-                                tagline: false
-                            },
-                            createOrder: (data, actions) => {
-                                return actions.order.create({
-                                    intent: 'CAPTURE',
-                                    purchase_units: [{
-                                        amount: {
-                                            breakdown: {
-                                                item_total: {
-                                                    currency_code: 'PHP',
-                                                    value: feesObj.total
-                                                }
-                                            }
-                                        },
-                                        soft_descriptor: 'FEJ FJK2020',
-                                        items: [
-                                            {
-                                                name: this.localeObj.t('register.forms.payment.fees.registration'),
-                                                unit_amount: {
-                                                    currency_code: 'PHP',
-                                                    value: feesObj.regFee
-                                                },
-                                                quantity: 1
-                                            }
-                                        ]
-                                    }]
-                                });
-                            },
-                            onError: (err) => {
-                                Materialize.toast({
-                                    html: `Failed to process payment: ${err}`,
-                                    classes: 'white-text theme-red'
-                                });
-                            }
-                        }).render('#div-payment-paypal');
-                    })
-                    .catch(console.error);
-
-                // Render
+                // Render receipt rows
                 m.render(cardPaymentDetails.querySelector('.card-content'), receiptRows);
 
                 // Set hidden fields
@@ -711,6 +666,94 @@ export class RegisterPage extends BasePage {
         document.querySelector('input[name=hdn-reg-period]').value = regDateIdx;
         cardPanelElm.querySelector('.card-title').innerHTML = `${regPeriodName[0].toUpperCase()}${regPeriodName.substr(1)} Registration`;
         cardPanelElm.querySelector('div.card-content p').innerHTML = this.localeObj.t('register.forms.payment.registerNotice', {registerType: regPeriodName});
+    }
+
+    showPaymentMethod(method) {
+        console.log(`Showing payment method ${method}`);
+
+        switch(method) {
+            case 'bank': {
+                break;
+            }
+            case 'paypal': {
+                let paypalModal = this.initPaypalModal();
+                paypalModal.open();
+
+                break;
+            }
+        }
+    }
+
+    initPaypalModal(paymentObj) {
+        const paypalDiv = document.getElementById('div-modal-paypal');
+
+        let orderFcn = (data, actions) => {
+            return actions.order.create({
+                intent: 'CAPTURE',
+                purchase_units: [{
+                    amount: {
+                        breakdown: {
+                            item_total: {
+                                currency_code: 'PHP',
+                                value: feesObj.total
+                            }
+                        }
+                    },
+                    soft_descriptor: 'FEJ FJK2020',
+                    items: [
+                        {
+                            name: this.localeObj.t('register.forms.payment.fees.registration'),
+                            unit_amount: {
+                                currency_code: 'PHP',
+                                value: feesObj.regFee
+                            },
+                            quantity: 1
+                        }
+                    ]
+                }]
+            });
+        };
+
+        let paypalModal = Materialize.Modal.getInstance(paypalDiv);
+        if(typeof paypalModal !== 'undefined') {
+            return paypalModal;
+        }
+
+        // Initialize PayPal modal
+        paypalModal = Materialize.Modal.init(paypalDiv, {
+            dismissible: false,
+            onOpenStart: () => {
+                // Attach PayPal script
+                const paypalDiv = document.getElementById('div-payment-paypal');
+                this.attachPaypalObj()
+                    .then(() => {
+                        paypalDiv.classList.remove('hide');
+
+                        paypal.Buttons({
+                            style: {
+                                tagline: false
+                            },
+                            createOrder: orderFcn,
+                            onError: (err) => {
+                                Materialize.toast({
+                                    html: `Failed to process payment: ${err}`,
+                                    classes: 'white-text theme-red'
+                                });
+
+                                paypalModal.close();
+
+                                console.error(err);
+                            }
+                        }).render('#div-payment-paypal');
+                    })
+                    .catch((err) => {
+                        paypalModal.close();
+                        console.error(err);
+                    });
+                }
+        });
+
+        return paypalModal;
     }
 
     async submitForm() {

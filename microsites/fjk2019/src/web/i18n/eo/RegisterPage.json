@@ -152,11 +152,10 @@
                 "startDate": "Komenca Dato",
                 "endDate": "Limdato",
                 "fields": {
-                    "paypal": "PayPal",
                     "bankAccount": "Bankkonto",
-                    "wireTransfer": "Transiro",
-                    "creditCard": "Kreditkarto aŭ debetkarton per PayPal",
-                    "ueaAccount": "UEA-konto"
+                    "onlineBank": "Reta Transpago per Banko",
+                    "paypal": "PayPal (kreditkarto/debetkarto)",
+                    "wireTransfer": "Ĝiro"
                 },
                 "fees": {
                     "registration": "Aliĝkotizo",

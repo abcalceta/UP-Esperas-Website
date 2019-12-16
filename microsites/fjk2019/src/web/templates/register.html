@@ -200,7 +200,7 @@
             </div>
         </div>
 
-        <div id="div-reg-educ-info" class="row">
+        <div id="div-reg-educ-info" class="row hide">
             <div class="col s12">
                 <h6>${this.localeObj.t('register.forms.register.currentStudyText')}</h6>
             </div>
@@ -641,7 +641,7 @@
                 </p>
                 <p>
                     <label>
-                        <input class="with-gap" name="rbx-payment-method" type="radio" value="wire">
+                        <input class="with-gap" name="rbx-payment-method" type="radio" value="online-bank">
                         <span>${this.localeObj.t('register.forms.payment.fields.onlineBank')}</span>
                     </label>
                 </p>
@@ -653,17 +653,10 @@
                 </p>
                 <p>
                     <label>
-                        <input class="with-gap" name="rbx-payment-method" type="radio" value="card">
-                        <span>${this.localeObj.t('register.forms.payment.fields.creditCard')}</span>
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        <input class="with-gap" name="rbx-payment-method" type="radio" value="wire">
+                        <input class="with-gap" name="rbx-payment-method" type="radio" value="remittance">
                         <span>${this.localeObj.t('register.forms.payment.fields.remittance')}</span>
                     </label>
                 </p>
-                <div id="div-payment-paypal" class="hide"></div>
             </div>
         </div>
 
@@ -727,6 +720,16 @@
             </div>
             <div class="modal-footer">
                 <a class="modal-close waves-effect btn-flat">${this.localeObj.t('buttons.close')}</a>
+            </div>
+        </div>
+
+        <!-- Modal for PayPal payment -->
+        <div id="div-modal-paypal" class="modal">
+            <div class="modal-content">
+                <p>
+                    If you are ready to pay via PayPal, please click on your preferred mode of payment below.
+                </p>
+                <div id="div-payment-paypal" class="hide"></div>
             </div>
         </div>
     </section>

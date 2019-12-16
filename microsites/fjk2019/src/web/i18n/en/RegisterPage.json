@@ -188,8 +188,7 @@
                 "fields": {
                     "bankAccount": "Bank Account",
                     "onlineBank": "Online Bank Transfer",
-                    "paypal": "PayPal",
-                    "creditCard": "Credit or Debit Card via PayPal",
+                    "paypal": "PayPal (credit/debit card)",
                     "remittance": "Money Remittance"
                 },
                 "fees": {
