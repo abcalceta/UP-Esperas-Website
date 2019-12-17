@@ -40,18 +40,6 @@ export class RegisterPage extends BasePage {
         ];
         this.regIdxToName = ['early', 'regular', 'late'];
 
-        this.regCatLocalList = [
-            ['A1', 'Senior high school students and younger'],
-            ['A2', 'Undergraduate students or equivalent'],
-            ['B1', 'Workers, graduate students, etc. ≤ 35 years old'],
-            ['B2', 'Workers, graduate students, etc. > 35 years old'],
-        ];
-        this.regCatForeignList = [
-            ['A', 'Undergraduate students and below'],
-            ['B1', 'Workers, graduate students, etc. ≤ 35 years old'],
-            ['B2', 'Workers, graduate students, etc. > 35 years old'],
-        ];
-
         this.monthsWords = {
             full: [],
             short: []
@@ -471,7 +459,7 @@ export class RegisterPage extends BasePage {
             // Submit form if on last page
             if(this.currentPageState >= this.pageStatesList.length - 1) {
                 //this.submitForm();
-                this.showPaymentMethod(document.querySelector('input[type=radio][name=rbx-payment-method]').value);
+                this.showPaymentMethod(document.querySelector('input[type=radio][name=rbx-payment-method]:checked').value);
                 return;
             }
 
@@ -497,13 +485,10 @@ export class RegisterPage extends BasePage {
             let script = document.createElement('script');
             // this.script.type = 'text/javascript'
             script.id = 'script-paypal-sdk';
-            script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}&currency=EUR&debug=true`;
+            script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}&currency=PHP&debug=true`;
             script.async = true;
             script.defer = true;
             document.head.appendChild(script);
-
-            script.onerror;
-            script.onsuccess;
 
             return new Promise((resolve, reject) => {
                 script.onsuccess = resolve;
@@ -513,7 +498,7 @@ export class RegisterPage extends BasePage {
             });
         }
 
-        return Promise.reject('Paypal button already exists!');
+        return Promise.resolve('Paypal button already exists!');
     }
 
     triggerSectionChanges(sectionIdx) {
@@ -627,6 +612,7 @@ export class RegisterPage extends BasePage {
                 m.render(cardPaymentDetails.querySelector('.card-content'), receiptRows);
 
                 // Set hidden fields
+                document.querySelector('input[name=hdn-excursion-fee]').value = feesObj.excursion;
                 document.querySelector('input[name=hdn-reg-fee]').value = feesObj.regFee;
                 document.querySelector('input[name=hdn-invitletter-fee]').value = feesObj.invitLetter;
                 document.querySelector('input[name=hdn-reg-category]').value = feesObj.regCategory;
@@ -673,10 +659,21 @@ export class RegisterPage extends BasePage {
 
         switch(method) {
             case 'bank': {
+                const bankModal = Materialize.Modal.getInstance(document.getElementById('div-modal-payment-bank'));
+                bankModal.open();
+
+                break;
+            }
+            case 'remittance': {
+                const remitModal = Materialize.Modal.getInstance(document.getElementById('div-modal-payment-remittance'));
+                remitModal.open();
+
                 break;
             }
             case 'paypal': {
-                let paypalModal = this.initPaypalModal();
+                const feesObj = this.computeTotalRegFees(this.isLocalRates());
+
+                const paypalModal = this.initPaypalModal(feesObj);
                 paypalModal.open();
 
                 break;
@@ -685,29 +682,26 @@ export class RegisterPage extends BasePage {
     }
 
     initPaypalModal(paymentObj) {
-        const paypalDiv = document.getElementById('div-modal-paypal');
+        const paypalDiv = document.getElementById('div-modal-payment-paypal');
 
         let orderFcn = (data, actions) => {
             return actions.order.create({
                 intent: 'CAPTURE',
                 purchase_units: [{
+                    soft_descriptor: 'FJK 2020',
                     amount: {
+                        currency_code: 'PHP',
+                        value: paymentObj.regFeeCost,
                         breakdown: {
-                            item_total: {
-                                currency_code: 'PHP',
-                                value: feesObj.total
-                            }
+                            item_total: paymentObj.regFeeCost
                         }
                     },
-                    soft_descriptor: 'FEJ FJK2020',
                     items: [
                         {
-                            name: this.localeObj.t('register.forms.payment.fees.registration'),
-                            unit_amount: {
-                                currency_code: 'PHP',
-                                value: feesObj.regFee
-                            },
-                            quantity: 1
+                            name: 'Registration Fee',
+                            unit_amount: paymentObj.regFeeCost,
+                            quantity: 1,
+                            category: 'DIGITAL_GOODS'
                         }
                     ]
                 }]
@@ -715,7 +709,7 @@ export class RegisterPage extends BasePage {
         };
 
         let paypalModal = Materialize.Modal.getInstance(paypalDiv);
-        if(typeof paypalModal !== 'undefined') {
+        if(typeof paypalModal !== 'undefined' && paypalModal.options.onOpenStart !== null) {
             return paypalModal;
         }
 
@@ -727,6 +721,11 @@ export class RegisterPage extends BasePage {
                 const paypalDiv = document.getElementById('div-payment-paypal');
                 this.attachPaypalObj()
                     .then(() => {
+                        // Remove existing PayPal Buttons
+                        while (paypalDiv.firstChild) {
+                            paypalDiv.removeChild(paypalDiv.firstChild);
+                        }
+                        
                         paypalDiv.classList.remove('hide');
 
                         paypal.Buttons({
@@ -891,8 +890,8 @@ export class RegisterPage extends BasePage {
 
         if(idxTo >= this.pageStatesList.length - 1) {
             m.render(nextBtn, [
-                m('i', {class: 'material-icons right'}, 'send'),
-                this.localeObj.t('buttons.submit')
+                m('i', {class: 'material-icons right'}, 'payment'),
+                this.localeObj.t('buttons.payNow')
             ]);
         }
         else {

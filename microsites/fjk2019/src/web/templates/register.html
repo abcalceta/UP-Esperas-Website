@@ -150,6 +150,9 @@
         <input type="hidden" name="hdn-reg-currency" value="€">
         <input type="hidden" name="hdn-reg-category" value="D">
 
+        <input type="hidden" name="hdn-invitletter-fee" value="0">
+        <input type="hidden" name="hdn-excursion-fee" value="0">
+
         <div id="div-reg-ratecard" class="card">
             <div class="card-content theme-green">
                 <p class="white-text">
@@ -513,7 +516,6 @@
             <div id="div-others-invitletter-shipinfo" class="row hide">
                 <div class="col s12">
                     <h6>${this.localeObj.t('register.forms.others.shipTo')}</h6>
-                    <input type="hidden" name="hdn-invitletter-fee" value="0">
                 </div>
                 <label class="input-field col s12 m6">
                     <input class="with-gap" name="rbx-others-invitletter-shipto" value="local" type="radio">
@@ -722,14 +724,66 @@
                 <a class="modal-close waves-effect btn-flat">${this.localeObj.t('buttons.close')}</a>
             </div>
         </div>
+        <!-- Modal for bank transfer -->
+        <div id="div-modal-payment-bank" class="modal">
+            <div class="modal-content">
+                <h4>Payment via Bank Deposit</h4>
+                <p>
+                    Please payment to the bank account below through international money deposit. Fill in the relevant forms with the information below:
+                </p>
+                <p>
+                    <b>Bank Name:</b> Landbank of the Philippines
+                    <b>Account Name:</b> Albert Stalin T. Garrido
+                    <b>Account Number:</b> 3077106196
+                    <b>SWIFT Code:</b> TLBPPHMM
+                    <b>Bank Address:</b> Head Office, Landbank Plaza, M.H. Del Pilar cor. D. J. Quintos Sts., Malate, Manila, Philippines
+                    <b>Bank Tel. No.</b> +63 2 405 7000
+                </p>
+                <p>
+                    After the transaction, please send a copy of the processed deposit form to peyc2020@gmail.com so that we can confirm your payment. 
+                </p>
+                <p>
+                    If using this method, please add EUR 3.00 to the total amount to be sent. Also, take note of the additional service fees that your bank may charge, and be sure to add that as well.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a class="modal-close waves-effect btn-flat">${this.localeObj.t('buttons.cancel')}</a>
+            </div>
+        </div>
+
+        <!-- Modal for remittance payment -->
+        <div id="div-modal-payment-remittance" class="modal">
+            <div class="modal-content">
+                <h4>Payment via Remittance</h4>
+                <p>
+                    We accept payment via remittance through <b>Western Union</b>. Fill in the relevant forms with the following information:
+                </p>
+                <p>
+                    <b>Name of Recipient:</b> Albert Stalin Tancinco Garrido<br>
+                    <b>City and Country:</b> Quezon City, Metro Manila, Philippines<br>
+                    <b>Contact Number:</b> +63 998 249 1891<br>
+                    <b>E-mail Address:</b> albertstgarrido@gmail.com<br>
+                </p>
+                <p>
+                    To cover the Documentary Stamp Tax mandated by Philippine law on international remittances, please add <b>0.3%</b> of the total amount to be paid. 
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a class="modal-close waves-effect btn-flat">${this.localeObj.t('buttons.cancel')}</a>
+            </div>
+        </div>
 
         <!-- Modal for PayPal payment -->
-        <div id="div-modal-paypal" class="modal">
+        <div id="div-modal-payment-paypal" class="modal">
             <div class="modal-content">
+                <h4>Payment via PayPal</h4>
                 <p>
                     If you are ready to pay via PayPal, please click on your preferred mode of payment below.
                 </p>
                 <div id="div-payment-paypal" class="hide"></div>
+            </div>
+            <div class="modal-footer">
+                <a class="modal-close waves-effect btn-flat">${this.localeObj.t('buttons.cancel')}</a>
             </div>
         </div>
     </section>
