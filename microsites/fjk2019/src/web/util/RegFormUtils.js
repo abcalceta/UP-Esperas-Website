@@ -1,22 +1,3 @@
-function getCountriesList() {
-    let restUrl = "https://restcountries.eu/rest/v2/all?fields=name;alpha2Code"
-    return fetch(restUrl)
-        .then(res => res.json())
-        .catch(console.error)
-}
-
-function addCountriesListToDropdown(countriesArr) {
-    let selectDom = document.querySelector("#select-countries-list")
-
-    countriesArr.forEach(v => {
-        let optionDom = document.createElement("option")
-        optionDom.setAttribute("value", v.alpha2Code)
-        optionDom.innerHTML = v.name
-
-        selectDom.appendChild(optionDom)
-    });
-}
-
 function initDatePicker(element, localeObj) {
     let dateToday = new Date(Date.now());
     let elm = element;
@@ -40,6 +21,56 @@ function initDatePicker(element, localeObj) {
             weekdaysAbbrev: localeObj.days.abbrev,
         }
     });
+}
+
+function saveFormElements(rootElmId) {
+    const inputList = document.querySelector(rootElmId).querySelectorAll('input, select');
+
+    for(let eachInputElm of inputList) {
+        if(!eachInputElm.name) {
+            continue;
+        }
+
+        const savedValue = sessionStorage.getItem(eachInputElm.name);
+
+        if(savedValue == null) {
+            continue;
+        }
+
+        eachInputElm.value = savedValue;
+    }
+}
+
+function loadFormElements(rootElmId) {
+    const inputList = document.querySelector(rootElmId).querySelectorAll('input, select');
+
+    for(let eachInputElm of inputList) {
+        if(!eachInputElm.name) {
+            continue;
+        }
+
+        if((eachInputElm.type === 'radio' || eachInputElm.type === 'checkbox') && !eachInputElm.checked) {
+            continue;
+        }
+
+        sessionStorage.setItem(eachInputElm.name, eachInputElm.value);
+    }
+}
+
+function checkRegistrationPeriod() {
+    let earlyBirdDate = new Date('2019-12-31T11:59:59+08:00');
+    let regDate = new Date('2020-03-23T11:59:59+08:00');
+    let dateToday = new Date();
+
+    if(dateToday <= earlyBirdDate) {
+        return 0;
+    }
+    else if(dateToday <= regDate) {
+        return 1;
+    }
+    else {
+        return 2;
+    }
 }
 
 function getRegTier(locality, broadCategory, occupation, birthdate) {
@@ -78,7 +109,9 @@ function getRegTier(locality, broadCategory, occupation, birthdate) {
     return regCatKey;
 }
 
-export let RegForm = {
+export let RegFormUtils = {
     initDatePicker: initDatePicker,
-    getRegTier: getRegTier
+    saveFormElements: saveFormElements,
+    getRegTier: getRegTier,
+    checkRegistrationPeriod: checkRegistrationPeriod
 };

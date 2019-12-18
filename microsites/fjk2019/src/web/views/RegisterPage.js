@@ -3,7 +3,7 @@ import Materialize from 'materialize-css';
 import Cookies from 'js-cookie';
 
 import {DomScripts} from '../util/dom';
-import {RegForm} from '../util/register';
+import {RegFormUtils} from '../util/RegFormUtils';
 
 import {BasePage} from './BasePage';
 import htmlMain from '../templates/register.html';
@@ -130,7 +130,7 @@ export class RegisterPage extends BasePage {
                 this.daysWords.abbrev[i] = this.localeObj.t(`calendar.weekdaysAbbrev.${i}`);
             }
 
-            RegForm.initDatePicker('#txt-bday', {
+            RegFormUtils.initDatePicker('#txt-bday', {
                 cancel: this.localeObj.t('buttons.cancel'),
                 clear: this.localeObj.t('buttons.clear'),
                 done: this.localeObj.t('buttons.done'),
@@ -386,16 +386,6 @@ export class RegisterPage extends BasePage {
         });
     }
 
-    attachPaymentEvent() {
-        const rbxPaymentMethod = document.querySelectorAll('input[type=radio][name=rbx-payment-method]');
-
-        rbxPaymentMethod.forEach((v) => {
-            v.addEventListener('change', (e) => {
-                const paymentMethod = v.value;
-            });
-        });
-    }
-
     attachThanksEvent() {
         const registerAgainBtn = document.getElementById('btn-register-again');
         let prevBtn = document.getElementById('btn-prev');
@@ -463,6 +453,9 @@ export class RegisterPage extends BasePage {
                 return;
             }
 
+            // Save form details onto session storage
+            RegFormUtils.saveFormElements(fromSectionId);
+
             // Add new history route
             m.route.set(
                 `/register/${this.pageStatesList[this.currentPageState + 1][2]}`,
@@ -485,7 +478,7 @@ export class RegisterPage extends BasePage {
             let script = document.createElement('script');
             // this.script.type = 'text/javascript'
             script.id = 'script-paypal-sdk';
-            script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}&currency=PHP&debug=true`;
+            script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}&currency=PHP&debug=false`;
             script.async = true;
             script.defer = true;
             document.head.appendChild(script);
@@ -541,6 +534,10 @@ export class RegisterPage extends BasePage {
                 // Compute total fees
                 const cardPaymentDetails = document.querySelector('#div-card-payment-details');
                 const feesObj = this.computeTotalRegFees(isLocalRates);
+                const paypalItems = {
+                    total: 0,
+                    items: []
+                };
 
                 // Build receipt rows
                 let receiptRows = [
@@ -645,7 +642,7 @@ export class RegisterPage extends BasePage {
 
     updateRegDatesUi() {
         // Check registration date
-        const regDateIdx = this.checkRegistrationDates();
+        const regDateIdx = RegFormUtils.checkRegistrationPeriod();
         const cardPanelElm = document.getElementById('div-panel-reg-date-notice');
         const regPeriodName = this.regIdxToName[regDateIdx];
 
@@ -690,20 +687,16 @@ export class RegisterPage extends BasePage {
                 purchase_units: [{
                     soft_descriptor: 'FJK 2020',
                     amount: {
-                        currency_code: 'PHP',
-                        value: paymentObj.regFeeCost,
+                        currency_code: paymentObj.currencyAbbrev,
+                        value: paymentObj.total,
                         breakdown: {
-                            item_total: paymentObj.regFeeCost
+                            item_total: {
+                                currency_code: paymentObj.currencyAbbrev,
+                                value: paymentObj.total
+                            }
                         }
                     },
-                    items: [
-                        {
-                            name: 'Registration Fee',
-                            unit_amount: paymentObj.regFeeCost,
-                            quantity: 1,
-                            category: 'DIGITAL_GOODS'
-                        }
-                    ]
+                    items: paymentObj.paypalItems
                 }]
             });
         };
@@ -725,7 +718,7 @@ export class RegisterPage extends BasePage {
                         while (paypalDiv.firstChild) {
                             paypalDiv.removeChild(paypalDiv.firstChild);
                         }
-                        
+
                         paypalDiv.classList.remove('hide');
 
                         paypal.Buttons({
@@ -742,6 +735,9 @@ export class RegisterPage extends BasePage {
                                 paypalModal.close();
 
                                 console.error(err);
+                            },
+                            onApprove: (data, actions) => {
+                                console.log('Successful payment!');
                             }
                         }).render('#div-payment-paypal');
                     })
@@ -963,7 +959,8 @@ export class RegisterPage extends BasePage {
 
         const locKey = isLocalRates ? 'local' : 'foreign';
         const currencyKey = isLocalRates ? '₱' : '€';
-        const regCatKey = RegForm.getRegTier(locKey, rbxCategory.value, selectList.value, bdayField.value);
+        const currencyAbbrevKey = isLocalRates ? 'PHP' : 'EUR';
+        const regCatKey = RegFormUtils.getRegTier(locKey, rbxCategory.value, selectList.value, bdayField.value);
         const regFeeCost = regFeesJson[locKey][regCatKey][regPeriodField.value];
 
         // Get excursion cost
@@ -979,6 +976,72 @@ export class RegisterPage extends BasePage {
 
         // Get total payable cost
         const totalPayableCost = regFeeCost + excursionCost + invitLetterCost + congressFundCost + participantFundCost + fejFundCost;
+        let paypalItems = []
+
+        // Set PayPal Items
+        paypalItems.push({
+            name: this.localeObj.t('register.forms.payment.fees.registration'),
+            unit_amount: {
+                currency_code: currencyAbbrevKey,
+                value: regFeeCost
+            },
+            quantity: 1
+        });
+
+        if(excursionCost > 0) {
+            paypalItems.push({
+                name: this.localeObj.t('register.forms.payment.fees.excursion'),
+                unit_amount: {
+                    currency_code: currencyAbbrevKey,
+                    value: excursionCost
+                },
+                quantity: 1
+            });
+        }
+
+        if(invitLetterCost > 0) {
+            paypalItems.push({
+                name: this.localeObj.t('register.forms.payment.fees.invitLetter'),
+                unit_amount: {
+                    currency_code: currencyAbbrevKey,
+                    value: invitLetterCost
+                },
+                quantity: 1
+            });
+        }
+
+        if(congressFundCost > 0) {
+            paypalItems.push({
+                name: this.localeObj.t('register.forms.payment.fees.congressFund'),
+                unit_amount: {
+                    currency_code: currencyAbbrevKey,
+                    value: congressFundCost
+                },
+                quantity: 1
+            });
+        }
+
+        if(participantFundCost > 0) {
+            paypalItems.push({
+                name: this.localeObj.t('register.forms.payment.fees.participantFund'),
+                unit_amount: {
+                    currency_code: currencyAbbrevKey,
+                    value: participantFundCost
+                },
+                quantity: 1
+            });
+        }
+
+        if(fejFundCost > 0) {
+            paypalItems.push({
+                name: this.localeObj.t('register.forms.payment.fees.associationFund'),
+                unit_amount: {
+                    currency_code: currencyAbbrevKey,
+                    value: fejFundCost
+                },
+                quantity: 1
+            });
+        }
 
         return {
             regFee: regFeeCost,
@@ -989,24 +1052,10 @@ export class RegisterPage extends BasePage {
             fejFund: fejFundCost,
             total: totalPayableCost,
             currency: currencyKey,
+            currencyAbbrev: currencyAbbrevKey,
             regCategory: regCatKey,
+            paypalItems: paypalItems,
         };
-    }
-
-    checkRegistrationDates() {
-        let earlyBirdDate = new Date('2019-12-31T11:59:59+08:00');
-        let regDate = new Date('2020-03-23T11:59:59+08:00');
-        let dateToday = new Date();
-
-        if(dateToday <= earlyBirdDate) {
-            return 0;
-        }
-        else if(dateToday <= regDate) {
-            return 1;
-        }
-        else {
-            return 2;
-        }
     }
 
     /*
