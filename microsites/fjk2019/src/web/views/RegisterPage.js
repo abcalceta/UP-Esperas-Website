@@ -470,28 +470,23 @@ export class RegisterPage extends BasePage {
         });
     }
 
-    attachPaypalObj() {
+    attachPaypalObj(currency = 'PHP') {
         const clientId = 'ASW9MmdTBTe-2suiMHQqZskqzFZcBINLuZR1Yz5DNYf03VYKc_6LNsfZXOj5xWEk6opP9NwzVP_7ZmeD';
-        //const clientSecret = 'EC0Lf4aYXNRbjjGNnp-kK79WmKOR2DbDftHGKZ-UA4I_Ser45KTEuo-r4bZ_ZJjlcWrItFCErD809OTp';
 
-        if (window.paypal === undefined) {
-            let script = document.createElement('script');
-            // this.script.type = 'text/javascript'
-            script.id = 'script-paypal-sdk';
-            script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}&currency=PHP&debug=false`;
-            script.async = true;
-            script.defer = true;
-            document.head.appendChild(script);
+        let script = document.createElement('script');
+        // this.script.type = 'text/javascript'
+        script.id = 'script-paypal-sdk';
+        script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}&currency=${currency}&debug=true`;
+        script.async = true;
+        script.defer = true;
+        document.head.appendChild(script);
 
-            return new Promise((resolve, reject) => {
-                script.onsuccess = resolve;
-                script.onload = resolve;
-                script.onreadystatechange = resolve;
-                script.onerror = reject;
-            });
-        }
-
-        return Promise.resolve('Paypal button already exists!');
+        return new Promise((resolve, reject) => {
+            script.onsuccess = resolve;
+            script.onload = resolve;
+            script.onreadystatechange = resolve;
+            script.onerror = reject;
+        });
     }
 
     triggerSectionChanges(sectionIdx) {
@@ -712,7 +707,7 @@ export class RegisterPage extends BasePage {
             onOpenStart: () => {
                 // Attach PayPal script
                 const paypalDiv = document.getElementById('div-payment-paypal');
-                this.attachPaypalObj()
+                this.attachPaypalObj(paymentObj.currencyAbbrev)
                     .then(() => {
                         // Remove existing PayPal Buttons
                         while (paypalDiv.firstChild) {

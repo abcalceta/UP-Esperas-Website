@@ -3,6 +3,7 @@ import uuidv4 from 'uuid/v4';
 import { body, validationResult, oneOf } from 'express-validator';
 
 import {DbInterface} from './db/DbInterface';
+import {PaypalPage} from './paypal';
 import gsheets from './gsheets';
 import gauth from './gauth';
 import {Logger} from './logger';
@@ -43,6 +44,7 @@ function main() {
     });
 
     // Routes
+    // Auth
     expressApp.get('/api/auth/get', function(req, res) {
         gauth.authorize()
             .then(() => {
@@ -82,6 +84,7 @@ function main() {
             });
     });
 
+    // Sheets
     expressApp.get('/api/regdata/append', async function(req, res) {
         let result = await gsheets.addSheetEntries([
             [new Date().toLocaleDateString('en-PH'), uuidv4(), 'Dizon', 'Carl', 'C', 'Carl', '1997-08-27', 'Male', 'PHL', 'abc@def.ghz', 'squeekeek'],
@@ -91,6 +94,7 @@ function main() {
         res.status(result.status).send(result);
     });
 
+    // Register
     expressApp.post('/api/register', [
             body('txt-last-name').not().isEmpty(),
             body('txt-first-name').not().isEmpty(),
@@ -188,6 +192,36 @@ function main() {
             });
         }
     );
+
+    expressApp.get('/api/payment', async function(req, res) {
+        try {
+            const paymentPage = await PaypalPage.createPaymentPage(process.env.PAYPAL_CLIENT_ID, {}, {
+                currency: 'E',
+                currencyAbbrev: 'EUR',
+                regCategory: 'D',
+                fees: {
+                    regFee: 4500,
+                    excursion: 0,
+                    invitLetter: 0,
+                    congressFund: 0,
+                    participantFund: 0,
+                    fejFund: 0,
+                    total: 4500,
+                },
+            });
+        
+            res.status(200).type('html').send(paymentPage);
+        }
+        catch(err) {
+            console.error(`Failed to fetch payment page: ${err}`);
+
+            res.status(400).send({
+                status: 400,
+                title: 'Failed to fetch payment page',
+                error: err,
+            });
+        }
+    });
 
     expressApp.use(function(req, res) {
         res.status(404).send({

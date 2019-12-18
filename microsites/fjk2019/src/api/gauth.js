@@ -4,10 +4,6 @@ const {promisify} = require('util');
 
 const {google} = require('googleapis');
 
-const readFileAsync = promisify(fs.readFile);
-const writeFileAsync = promisify(fs.writeFile);
-const mkdirAsync = promisify(fs.mkdir);
-
 /** Promisified funcs **/
 const CONFIG_PATH = path.resolve(__dirname, 'config/');
 const TOKENS_PATH = path.resolve(CONFIG_PATH, 'gapi_tokens.json');
@@ -19,7 +15,7 @@ function authorize() {
         process.env.GSHEETS_REDIRECT_URL,
     );
 
-    return readFileAsync(TOKENS_PATH)
+    return fs.promises.readFile(TOKENS_PATH)
         .then(JSON.parse)
         .then((tokens) => {
             oAuthClient.setCredentials(tokens);
@@ -67,8 +63,8 @@ async function setTokenFromCode(authCode) {
     }
 
     try {
-        await mkdirAsync(CONFIG_PATH, {recursive: true})
-        await writeFileAsync(TOKENS_PATH, JSON.stringify(authTokens.tokens));
+        await fs.promises.mkdir(CONFIG_PATH, {recursive: true})
+        await fs.promises.writeFile(TOKENS_PATH, JSON.stringify(authTokens.tokens));
     }
     catch(err) {
         return {

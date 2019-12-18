@@ -29,7 +29,7 @@
     "webpack-dev-server": "^3.8.2"
   },
   "dependencies": {
-    "@paypal/checkout-components": "^5.0.68",
+    "cheerio": "^1.0.0-rc.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-validator": "^6.3.0",
