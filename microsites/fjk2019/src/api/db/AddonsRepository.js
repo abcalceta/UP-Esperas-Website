@@ -9,10 +9,12 @@ export class AddonsRepository extends BaseRepository {
             isCongressPhoto INTEGER,
             isInvitLetter INTEGER,
             isNameInList INTEGER,
+            isInDonorList INTEGER,
             isCongressProgram INTEGER,
             isVolCorp INTEGER,
             isCertAttend INTEGER,
-            isBooklet INTEGER
+            isBooklet INTEGER,
+            suggest TEXT
         )`;
 
         return this.dao.run(sqlQuery);
@@ -25,14 +27,16 @@ export class AddonsRepository extends BaseRepository {
             isCongressPhoto,
             isInvitLetter,
             isNameInList,
+            isInDonorList,
             isCongressProgram,
             isVolCorp,
             isCertAttend,
-            isBooklet
+            isBooklet,
+            suggest
         )
         VALUES
         (?, ?, ?, ?, ?,
-        ?, ?, ?)
+        ?, ?, ?, ?, ?)
         `;
 
         return this.dao.run(
@@ -41,10 +45,12 @@ export class AddonsRepository extends BaseRepository {
             params.isCongressPhoto,
             params.isInvitLetter,
             params.isNameInList,
+            params.isInDonorList,
             params.isCongressProgram,
             params.isVolCorp,
             params.isCertAttend,
             params.isBooklet,
+            params.suggest,
         );
     }
 

@@ -4,6 +4,7 @@
     "yes": "Yes",
     "no": "No",
     "buttons": {
+        "home": "Home",
         "close": "Close",
         "back": "Back",
         "next": "Next",
@@ -20,6 +21,11 @@
         "currencyWordsEu": "Euros",
         "localPlural": "Local",
         "foreignPlural": "Foreign"
+    },
+    "sex": {
+        "male": "Male",
+        "female": "Female",
+        "secret": "Hidden"
     },
     "calendar": {
         "months": [
@@ -39,18 +45,28 @@
     },
     "navbar": {
         "home": "Home",
-        "about": "About",
-        "whatIsEsperanto": "What is Esperanto",
-        "fej": "The Philippine Esperanto Youth",
-        "congress": "The Congress",
-        "logo": "Logo",
-        "lkk": "Organizing Committee",
-        "privacy": "Privacy",
-        "participate": "Participate",
-        "register": "Register",
-        "volunteer": "Volunteer",
-        "callLkk": "Call for Organizers",
-        "callVolCorp": "Call for Volunteers",
+        "about": {
+            "about": "About",
+            "whatIsEsperanto": "What is Esperanto",
+            "fej": "The Philippine Esperanto Youth",
+            "congress": "The Congress",
+            "logo": "Logo",
+            "lkk": "Organizing Committee",
+            "privacy": "Privacy"
+        },
+        "congressInfo": {
+            "congressInfo": "Congress Information",
+            "venue": "Venue",
+            "lodging": "Lodging",
+            "excursion": "Excursion",
+            "regGuidelines": "Registration Guidelines"
+        },
+        "participate": {
+            "participate": "Participate",
+            "register": "Register",
+            "volunteer": "Volunteer",
+            "callLkk": "Call for Organizers"
+        },
         "donate": "Donate"
     },
     "footer": {

@@ -4,6 +4,7 @@
     "yes": "Jes",
     "no": "Ne",
     "buttons": {
+        "home": "Ĉefpaĝo",
         "close": "Fermi",
         "back": "Reen",
         "next": "Sekven",
@@ -20,6 +21,11 @@
         "currencyWordsEu": "Eŭroj",
         "localPlural": "Lokaj",
         "foreignPlural": "Eksterlandaj"
+    },
+    "sex": {
+        "male": "Vira",
+        "female": "Ina",
+        "secret": "Sekreta"
     },
     "calendar": {
         "months": [
@@ -39,18 +45,28 @@
     },
     "navbar": {
         "home": "Hejmpaĝo",
-        "about": "Pri",
-        "whatIsEsperanto": "Kio estas Esperanto?",
-        "fej": "La Filipina Esperanto Junularo",
-        "congress": "La Kongreso",
-        "logo": "Emblemo",
-        "lkk": "Kongresa Komitato",
-        "privacy": "Privateco",
-        "participate": "Partopreni",
-        "register": "Aliĝi",
-        "volunteer": "Voluntuli",
-        "callLkk": "Alvoko por Organizontoj",
-        "callVolCorp": "Alvoko por Volontuloj",
+        "about": {
+            "about": "Pri",
+            "whatIsEsperanto": "Kio estas Esperanto?",
+            "fej": "La Filipina Esperanto Junularo",
+            "congress": "La Kongreso",
+            "logo": "Emblemo",
+            "lkk": "Kongresa Komitato",
+            "privacy": "Privateco"
+        },
+        "congressInfo": {
+            "congressInfo": "Kongresa Informo",
+            "venue": "Loko",
+            "lodging": "Loĝejo",
+            "excursion": "Ekskurso",
+            "regGuidelines": "Gvidilo pri Aliĝo"
+        },
+        "participate": {
+            "participate": "Partopreni",
+            "register": "Aliĝi",
+            "volunteer": "Voluntuli",
+            "callLkk": "Alvoko por Organizontoj"
+        },
         "donate": "Donaci"
     },
     "footer": {

@@ -98,9 +98,14 @@ export class RegisterPage extends BasePage {
         }
 
         if(this.isTranslated) {
+            // Reinit dropdowns
+            Materialize.FormSelect.init(document.querySelectorAll('select'));
+
             this.attachRegOverview();
             this.attachRegisterEvent();
+            this.attachExcursionEvent();
             this.attachOthersEvent();
+            this.attachPaymentEvent();
             this.attachThanksEvent();
             this.attachNavBtnEvent();
 
@@ -138,6 +143,54 @@ export class RegisterPage extends BasePage {
                 days: this.daysWords,
             });
 
+            // Set messaging event (for PayPal iframe)
+            window.addEventListener('message', (e) => {
+                const allowedDomains = [
+                    'http://localhost:6161',
+                    'https://fjk.up-esperas.org',
+                ];
+
+                if(allowedDomains.indexOf(e.origin) === -1) {
+                    return;
+                }
+
+                if(e.data.type == 'height_update') {
+                    // Update iframe height
+                    const paypalFrame = document.getElementById('div-payment-iframe-wrapper').querySelector('iframe');
+                    paypalFrame.height = paypalFrame.contentWindow.document.body.scrollHeight;
+
+                    return;
+                }
+
+                if(e.data.type != 'payment') {
+                    return;
+                }
+
+                console.info(`Received payent message from ${e.origin}!`);
+                const paypalModal = Materialize.Modal.getInstance(document.getElementById('div-modal-payment-paypal'));
+                paypalModal.close();
+
+                switch(e.data.error_code) {
+                    case 'PMT200':
+                        document.querySelector('input[type=hidden][name=hdn-paypal-order-id]').value = e.data.order_id;
+                        this.submitForm();
+
+                        break;
+                    case 'PMTCXD':
+                        Materialize.toast({
+                            html: 'Payment succesfully cancelled!',
+                            classes: 'white-text theme-yellow',
+                        });
+
+                        break;
+                    default:
+                        Materialize.toast({
+                            html: `Failed to process payment: ${e.data.detail}`,
+                            classes: 'white-text theme-red',
+                        });
+                }
+            });
+
             this.isTranslated = false;
         }
 
@@ -146,6 +199,11 @@ export class RegisterPage extends BasePage {
 
         if(typeof pageIdxFromHistory !== 'number' && !(pageIdxFromHistory instanceof Number)) {
             // Overview screen
+            console.log('In overview screen');
+            return;
+        }
+        else if(pageIdxFromHistory - this.currentPageState > 1) {
+            console.log('Screen skipped!');
             return;
         }
 
@@ -155,6 +213,10 @@ export class RegisterPage extends BasePage {
 
         if(typeof pageIdxFromHistory == 'number' || pageIdxFromHistory instanceof Number) {
             console.info(`Moving to page from history: ${this.pageStatesList[pageIdxFromHistory][0]}`);
+
+            stepContainerElm.scrollIntoView({
+                behavior: 'smooth',
+            });
 
             this.swapFormSections(this.currentPageState, pageIdxFromHistory);
             this.scrollStepTimeline(pageIdxFromHistory);
@@ -356,6 +418,29 @@ export class RegisterPage extends BasePage {
         });
     }
 
+    attachExcursionEvent() {
+        const fareNoticeCard = document.getElementById('div-excursion-fare-notice');
+        const excursionCbx = document.querySelector('input[type=checkbox][name=cbx-excursion-interest]');
+
+        excursionCbx.addEventListener('change', (e) => {
+            console.log('here!');
+            if(!excursionCbx.checked) {
+                DomScripts.animateOnce(fareNoticeCard, ['fadeOut', 'fast'], () => {
+                    fareNoticeCard.classList.add('hide');
+                });
+
+                return;
+            }
+
+            const excursionCost = this.computeExcursionFee(this.isLocalRates());
+
+            fareNoticeCard.innerHTML = this.localeObj.t('register.forms.excursion.fareNotice', {currencySymbol: excursionCost.currency, price: excursionCost.value});
+            fareNoticeCard.classList.remove('hide');
+
+            DomScripts.animateOnce(fareNoticeCard, ['fadeIn', 'fast']);
+        });
+    }
+
     attachOthersEvent() {
         const invitLetterCbx = document.querySelector('input[name=cbx-others-invitletter][type=checkbox]');
         const invitLetterShipDiv = document.getElementById('div-others-invitletter-shipinfo');
@@ -386,6 +471,26 @@ export class RegisterPage extends BasePage {
         });
     }
 
+    attachPaymentEvent() {
+        document.querySelector('#div-modal-payment-remittance .payment-submit').addEventListener('click', (e) => {
+            e.preventDefault();
+            Materialize.Modal
+                .getInstance(document.getElementById('div-modal-payment-remittance'))
+                .close();
+
+            this.submitForm();
+        });
+
+        document.querySelector('#div-modal-payment-bank .payment-submit').addEventListener('click', (e) => {
+            e.preventDefault();
+            Materialize.Modal
+                .getInstance(document.getElementById('div-modal-payment-bank'))
+                .close();
+
+            this.submitForm();
+        });
+    }
+
     attachThanksEvent() {
         const registerAgainBtn = document.getElementById('btn-register-again');
         let prevBtn = document.getElementById('btn-prev');
@@ -408,7 +513,6 @@ export class RegisterPage extends BasePage {
 
                 // Reset button state
                 this.currentPageState = 0;
-                document.getElementById('form-register').reset();
                 prevBtn.disabled = true;
                 nextBtn.disabled = false;
                 m.render(nextBtn, [
@@ -417,8 +521,10 @@ export class RegisterPage extends BasePage {
                 ]);
 
                 // Reset registration info
+                document.getElementById('form-register').reset();
                 document.querySelector('#div-reg-category').classList.remove('hide');
                 document.querySelector('#select-reg-occupation').required = true;
+                Cookies.remove('cookie_consent');
 
                 DomScripts.animateOnce('#section-guidelines', ['fadeInRight', 'fast']);
             });
@@ -448,7 +554,6 @@ export class RegisterPage extends BasePage {
 
             // Submit form if on last page
             if(this.currentPageState >= this.pageStatesList.length - 1) {
-                //this.submitForm();
                 this.showPaymentMethod(document.querySelector('input[type=radio][name=rbx-payment-method]:checked').value);
                 return;
             }
@@ -470,27 +575,8 @@ export class RegisterPage extends BasePage {
         });
     }
 
-    attachPaypalObj(currency = 'PHP') {
-        const clientId = 'ASW9MmdTBTe-2suiMHQqZskqzFZcBINLuZR1Yz5DNYf03VYKc_6LNsfZXOj5xWEk6opP9NwzVP_7ZmeD';
-
-        let script = document.createElement('script');
-        // this.script.type = 'text/javascript'
-        script.id = 'script-paypal-sdk';
-        script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}&currency=${currency}&debug=true`;
-        script.async = true;
-        script.defer = true;
-        document.head.appendChild(script);
-
-        return new Promise((resolve, reject) => {
-            script.onsuccess = resolve;
-            script.onload = resolve;
-            script.onreadystatechange = resolve;
-            script.onerror = reject;
-        });
-    }
-
     triggerSectionChanges(sectionIdx) {
-        const countryList = document.querySelector('#select-countries-list');
+        const countryList = document.getElementById('select-countries-list');
         const sectionId = this.pageStatesList[sectionIdx][2];
         let sectionDiv = document.querySelector(`#${sectionId}`);
 
@@ -501,8 +587,8 @@ export class RegisterPage extends BasePage {
                 let rateCard = document.querySelector('#div-reg-ratecard');
                 const localityStr = this.localeObj.t(`locality.${isLocalRates ? 'local' : 'foreign'}Plural`);
 
-                // Init modal
-                rateCard.querySelector('div.card-content p').innerHTML = this.localeObj.t(`${this.data.locale.namespace}.forms.register.countryNotice`, {countryWord: countryList[countryList.selectedIndex].innerHTML, locality: localityStr.toLowerCase()});
+                // Init rate card
+                rateCard.querySelector('div.card-content p').innerHTML = this.localeObj.t(`${this.data.locale.namespace}.forms.register.countryNotice`, {countryWord: countryList.options[countryList.selectedIndex].innerHTML, locality: localityStr.toLowerCase()});
                 m.render(rateCard.querySelector('div.card-action'),
                     m('a', {class: 'btn-flat theme-green-text waves-effect modal-trigger', href: isLocalRates ? '#div-modal-ph-rates' : '#div-modal-foreign-rates'}, this.localeObj.t(`buttons.viewRates`))
                 );
@@ -526,64 +612,64 @@ export class RegisterPage extends BasePage {
                 m.render(donateCurrencyCard, m.trust(this.localeObj.t('register.forms.others.donateNotice', {currencyWord: currencyKey})));
             }
             case 'section-payment': {
+                // Set late payment notice
+                const lateFee = this.computeLatePenaltyFee(isLocalRates);
+                document.getElementById('div-payment-downpay-notice').innerHTML = this.localeObj.t('register.forms.payment.downpayNotice', {currencySymbol: lateFee.currency, value: lateFee.value});
+
                 // Compute total fees
                 const cardPaymentDetails = document.querySelector('#div-card-payment-details');
                 const feesObj = this.computeTotalRegFees(isLocalRates);
-                const paypalItems = {
-                    total: 0,
-                    items: []
-                };
 
                 // Build receipt rows
                 let receiptRows = [
                     m('span', {class: 'card-title'}, `${this.localeObj.t('register.forms.payment.details')} (${feesObj.currency})`),
                     m('div', {class: 'row'}, [
                         m('div', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.registration')),
-                        m('div', {class: 'col s4 right-align'}, feesObj.regFee)
+                        m('div', {class: 'col s4 right-align'}, feesObj.fees.reg)
                     ]),
                 ];
 
-                if(feesObj.excursion > 0) {
+                if(feesObj.fees.excursion > 0) {
                     receiptRows.push(
                         m('div', {class: 'row'}, [
                             m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.excursion')),
-                            m('span', {class: 'col s4 right-align'}, feesObj.excursion)
+                            m('span', {class: 'col s4 right-align'}, feesObj.fees.excursion)
                         ])
                     );
                 }
 
-                if(feesObj.invitLetter > 0) {
+                if(feesObj.fees.invitLetter > 0) {
                     receiptRows.push(
                         m('div', {class: 'row'}, [
                             m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.invitLetter')),
-                            m('span', {class: 'col s4 right-align'}, feesObj.invitLetter)
+                            m('span', {class: 'col s4 right-align'}, feesObj.fees.invitLetter)
                         ])
                     );
                 }
 
-                if(feesObj.congressFund > 0) {
+                if(feesObj.fees.congressFund > 0) {
                     receiptRows.push(
                         m('div', {class: 'row'}, [
                             m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.congressFund')),
-                            m('span', {class: 'col s4 right-align'}, feesObj.congressFund)
+                            m('span', {class: 'col s4 right-align'}, feesObj.fees.congressFund)
                         ])
                     );
                 }
 
-                if(feesObj.participantFund > 0) {
+                if(feesObj.fees.participantFund > 0) {
                     receiptRows.push(
                         m('div', {class: 'row'}, [
                             m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.participantFund')),
-                            m('span', {class: 'col s4 right-align'}, feesObj.participantFund)
+                            m('span', {class: 'col s4 right-align'}, feesObj.fees.participantFund)
                         ])
                     );
                 }
 
-                if(feesObj.fejFund > 0) {
+                if(feesObj.fees.fejFund > 0) {
                     receiptRows.push(
                         m('div', {class: 'row'}, [
                             m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.associationFund')),
-                            m('span', {class: 'col s4 right-align'}, feesObj.fejFund)
+                            m('span', {class: 'col s4 right-align'}, feesObj.fees.fejFund)
                         ])
                     );
                 }
@@ -595,7 +681,7 @@ export class RegisterPage extends BasePage {
                             m('b', this.localeObj.t('register.forms.payment.grandTotal'))
                         ]),
                         m('span', {class: 'col s4 right-align'}, [
-                            m('b', `${feesObj.currency}${feesObj.total}`)
+                            m('b', `${feesObj.currency}${feesObj.fees.total}`)
                         ])
                     ])
                 ]);
@@ -604,9 +690,9 @@ export class RegisterPage extends BasePage {
                 m.render(cardPaymentDetails.querySelector('.card-content'), receiptRows);
 
                 // Set hidden fields
-                document.querySelector('input[name=hdn-excursion-fee]').value = feesObj.excursion;
-                document.querySelector('input[name=hdn-reg-fee]').value = feesObj.regFee;
-                document.querySelector('input[name=hdn-invitletter-fee]').value = feesObj.invitLetter;
+                document.querySelector('input[name=hdn-excursion-fee]').value = feesObj.fees.excursion;
+                document.querySelector('input[name=hdn-reg-fee]').value = feesObj.fees.reg;
+                document.querySelector('input[name=hdn-invitletter-fee]').value = feesObj.fees.invitLetter;
                 document.querySelector('input[name=hdn-reg-category]').value = feesObj.regCategory;
                 document.querySelector('input[name=hdn-reg-currency]').value = feesObj.currency;
 
@@ -675,72 +761,52 @@ export class RegisterPage extends BasePage {
 
     initPaypalModal(paymentObj) {
         const paypalDiv = document.getElementById('div-modal-payment-paypal');
-
-        let orderFcn = (data, actions) => {
-            return actions.order.create({
-                intent: 'CAPTURE',
-                purchase_units: [{
-                    soft_descriptor: 'FJK 2020',
-                    amount: {
-                        currency_code: paymentObj.currencyAbbrev,
-                        value: paymentObj.total,
-                        breakdown: {
-                            item_total: {
-                                currency_code: paymentObj.currencyAbbrev,
-                                value: paymentObj.total
-                            }
-                        }
-                    },
-                    items: paymentObj.paypalItems
-                }]
-            });
-        };
-
         let paypalModal = Materialize.Modal.getInstance(paypalDiv);
-        if(typeof paypalModal !== 'undefined' && paypalModal.options.onOpenStart !== null) {
-            return paypalModal;
-        }
 
         // Initialize PayPal modal
         paypalModal = Materialize.Modal.init(paypalDiv, {
             dismissible: false,
-            onOpenStart: () => {
-                // Attach PayPal script
-                const paypalDiv = document.getElementById('div-payment-paypal');
-                this.attachPaypalObj(paymentObj.currencyAbbrev)
-                    .then(() => {
-                        // Remove existing PayPal Buttons
-                        while (paypalDiv.firstChild) {
-                            paypalDiv.removeChild(paypalDiv.firstChild);
-                        }
+            onOpenStart: async () => {
+                // Attach PayPal iframe
+                const iframeDiv = document.getElementById('div-payment-iframe-wrapper');
 
-                        paypalDiv.classList.remove('hide');
-
-                        paypal.Buttons({
-                            style: {
-                                tagline: false
-                            },
-                            createOrder: orderFcn,
-                            onError: (err) => {
-                                Materialize.toast({
-                                    html: `Failed to process payment: ${err}`,
-                                    classes: 'white-text theme-red'
-                                });
-
-                                paypalModal.close();
-
-                                console.error(err);
-                            },
-                            onApprove: (data, actions) => {
-                                console.log('Successful payment!');
-                            }
-                        }).render('#div-payment-paypal');
-                    })
-                    .catch((err) => {
-                        paypalModal.close();
-                        console.error(err);
-                    });
+                // Remove existing PayPal iframe
+                while (iframeDiv.firstChild) {
+                    iframeDiv.removeChild(iframeDiv.firstChild);
                 }
+
+                try {
+                    const paymentPageRes = await fetch('//localhost:6002/api/payment', {
+                        method: 'POST',
+                        mode: 'cors',
+                        headers: {
+                            'Accept': 'application/json, text/plain, */*',
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(paymentObj),
+                    });
+
+                    const htmlRes = await paymentPageRes.text();
+
+                    const iframeObj = document.createElement('iframe');
+                    //iframeObj.setAttribute('scrolling', 'no');
+                    iframeDiv.append(iframeObj);
+
+                    iframeObj.contentWindow.document.open();
+                    iframeObj.contentWindow.document.write(htmlRes);
+                    iframeObj.contentWindow.document.close();
+                }
+                catch(err) {
+                    Materialize.toast({
+                        html: `Cannot set-up PayPal payment: ${err}`,
+                        classes: 'white-text theme-red'
+                    });
+
+                    paypalModal.close();
+
+                    console.error(`Cannot open PayPal modal: ${err}`);
+                }
+            },
         });
 
         return paypalModal;
@@ -769,46 +835,42 @@ export class RegisterPage extends BasePage {
 
             if(!res.ok) {
                 console.error(`Not OK HTTP status on form submit: ${res.json()}`);
-                prevBtn.disabled = false;
-                submitBtn.disabled = false;
-
-                Materialize.toast({
-                    html: 'Form cannot be submitted. Please contact the organizers.',
-                    classes: 'theme-yellow white-text'
-                });
+                throw err;
             }
-            else {
-                const jsonRes = await res.json();
-                console.info('Form received by server!');
 
-                DomScripts.animateOnce('#div-steps', ['fadeOutUp', 'fast'], () => {
-                    document.getElementById('div-steps').classList.add('hide');
-                });
+            const jsonRes = await res.json();
+            console.info('Form received by server!');
 
-                DomScripts.animateOnce('#section-nav-buttons', ['fadeOutDown', 'fast'], () => {
-                    document.getElementById('section-nav-buttons').classList.add('hide');
-                });
+            DomScripts.animateOnce('#div-steps', ['fadeOutUp', 'fast'], () => {
+                document.getElementById('div-steps').classList.add('hide');
+            });
 
-                DomScripts.animateOnce('#section-payment', ['fadeOutLeft', 'fast'], () => {
-                    const thanksSection = document.getElementById('section-thanks');
+            DomScripts.animateOnce('#section-nav-buttons', ['fadeOutDown', 'fast'], () => {
+                document.getElementById('section-nav-buttons').classList.add('hide');
+            });
 
-                    document.getElementById('section-payment').classList.add('hide');
-                    thanksSection.classList.remove('hide');
+            DomScripts.animateOnce('#section-payment', ['fadeOutLeft', 'fast'], () => {
+                const thanksSection = document.getElementById('section-thanks');
 
-                    DomScripts.animateOnce(thanksSection, ['fadeInRight', 'fast']);
+                document.getElementById('section-payment').classList.add('hide');
+                thanksSection.classList.remove('hide');
 
-                    document.getElementById('span-register-id').innerHTML = jsonRes.registerId;
-                    document.getElementById('span-payment-id').innerHTML = jsonRes.paymentId;
-                });
+                DomScripts.animateOnce(thanksSection, ['fadeInRight', 'fast']);
 
-                m.route.set(
-                    '/register/section-thanks',
-                    null,
-                    {
-                        replace: false
-                    }
-                );
-            }
+                document.getElementById('span-register-id').innerHTML = jsonRes.registerId;
+                document.getElementById('span-payment-id').innerHTML = jsonRes.paymentId;
+            });
+
+            // Clear stored form details
+            RegFormUtils.clearStoredFormElements();
+
+            m.route.set(
+                '/register/section-thanks',
+                null,
+                {
+                    replace: false
+                }
+            );
         }
         catch(err) {
             console.error(`Error on form submit: ${err}`);
@@ -817,7 +879,7 @@ export class RegisterPage extends BasePage {
 
             Materialize.toast({
                 html: 'Form cannot be submitted. Please contact the organizers.',
-                classes: 'theme-yellow'
+                classes: 'theme-red white-text'
             });
         }
     }
@@ -899,8 +961,10 @@ export class RegisterPage extends BasePage {
         }
 
         DomScripts.animateOnce(fromSectionId, [transitionClass[0], 'faster'], () => {
+            const toSection = document.querySelector(toSectionId);
+
             document.querySelector(fromSectionId).classList.add('hide');
-            document.querySelector(toSectionId).classList.remove('hide');
+            toSection.classList.remove('hide');
 
             DomScripts.animateOnce(toSectionId, [transitionClass[1], 'faster']);
         });
@@ -931,8 +995,15 @@ export class RegisterPage extends BasePage {
     }
 
     isLocalRates() {
-        const countryList = document.querySelector('#select-countries-list');
-        return countryList.value == 'PHL';
+        const countryList = document.getElementById('select-countries-list');
+        return countryList.options[countryList.selectedIndex].value == 'PHL';
+    }
+
+    computeExcursionFee(isLocalRates) {
+        return {
+            currency: isLocalRates ? '₱' : '€',
+            value: regFeesJson['excursion'][isLocalRates ? 'local' : 'foreign']
+        }
     }
 
     computeInvitationLetterFee(shipToLocality, isLocalRates) {
@@ -940,6 +1011,13 @@ export class RegisterPage extends BasePage {
             currency: isLocalRates ? '₱' : '€',
             value: regFeesJson['invitletter'][shipToLocality][isLocalRates ? 0 : 1]
         };
+    }
+
+    computeLatePenaltyFee(isLocalRates) {
+        return {
+            currency: isLocalRates ? '₱' : '€',
+            value: regFeesJson['latePayment'][isLocalRates ? 'local' : 'foreign']
+        }
     }
 
     computeTotalRegFees(isLocalRates) {
@@ -973,83 +1051,19 @@ export class RegisterPage extends BasePage {
         const totalPayableCost = regFeeCost + excursionCost + invitLetterCost + congressFundCost + participantFundCost + fejFundCost;
         let paypalItems = []
 
-        // Set PayPal Items
-        paypalItems.push({
-            name: this.localeObj.t('register.forms.payment.fees.registration'),
-            unit_amount: {
-                currency_code: currencyAbbrevKey,
-                value: regFeeCost
-            },
-            quantity: 1
-        });
-
-        if(excursionCost > 0) {
-            paypalItems.push({
-                name: this.localeObj.t('register.forms.payment.fees.excursion'),
-                unit_amount: {
-                    currency_code: currencyAbbrevKey,
-                    value: excursionCost
-                },
-                quantity: 1
-            });
-        }
-
-        if(invitLetterCost > 0) {
-            paypalItems.push({
-                name: this.localeObj.t('register.forms.payment.fees.invitLetter'),
-                unit_amount: {
-                    currency_code: currencyAbbrevKey,
-                    value: invitLetterCost
-                },
-                quantity: 1
-            });
-        }
-
-        if(congressFundCost > 0) {
-            paypalItems.push({
-                name: this.localeObj.t('register.forms.payment.fees.congressFund'),
-                unit_amount: {
-                    currency_code: currencyAbbrevKey,
-                    value: congressFundCost
-                },
-                quantity: 1
-            });
-        }
-
-        if(participantFundCost > 0) {
-            paypalItems.push({
-                name: this.localeObj.t('register.forms.payment.fees.participantFund'),
-                unit_amount: {
-                    currency_code: currencyAbbrevKey,
-                    value: participantFundCost
-                },
-                quantity: 1
-            });
-        }
-
-        if(fejFundCost > 0) {
-            paypalItems.push({
-                name: this.localeObj.t('register.forms.payment.fees.associationFund'),
-                unit_amount: {
-                    currency_code: currencyAbbrevKey,
-                    value: fejFundCost
-                },
-                quantity: 1
-            });
-        }
-
         return {
-            regFee: regFeeCost,
-            excursion: excursionCost,
-            invitLetter: invitLetterCost,
-            congressFund: congressFundCost,
-            participantFund: participantFundCost,
-            fejFund: fejFundCost,
-            total: totalPayableCost,
+            fees: {
+                reg: regFeeCost,
+                excursion: excursionCost,
+                invitLetter: invitLetterCost,
+                congressFund: congressFundCost,
+                participantFund: participantFundCost,
+                fejFund: fejFundCost,
+                total: totalPayableCost,
+            },
             currency: currencyKey,
             currencyAbbrev: currencyAbbrevKey,
             regCategory: regCatKey,
-            paypalItems: paypalItems,
         };
     }
 

@@ -2,73 +2,26 @@ import fs from 'fs';
 import path from 'path';
 
 import cheerio from 'cheerio';
+import Polyglot from 'node-polyglot';
 
-async function createPaymentPage(clientId, localeObj, paymentObj) {
+async function createPaymentPage(clientId, paymentObj, lang = 'en') {
     const paymentPage = await fs.promises.readFile(path.join(__dirname, './paypal-payment.html'), 'utf-8');
     const $ = cheerio.load(paymentPage);
+
+    const localeObj = new Polyglot();
+    const localeFile = await fs.promises.readFile(path.join(__dirname, `./i18n/${lang}/common.json`), 'utf-8');
+    localeObj.extend(JSON.parse(localeFile));
+
     const order = createOrder(localeObj, paymentObj);
 
-    const scriptObj = `
-        <script id="script-paypal-sdk" src="https://www.paypal.com/sdk/js?client-id=${clientId}&currency=${paymentObj.currencyAbbrev}&debug=true" defer async></script>
-    `;
-
-    $('body').append(scriptObj);
-    $('body').append(`
-    <script>
-        function awaitPaypalJs() {
-            return new Promise((resolve, reject) => {
-                const scriptObj = document.getElementById('script-paypal-sdk');
-
-                scriptObj.onsuccess = resolve;
-                scriptObj.onload = resolve;
-                scriptObj.onreadystatechange = resolve;
-                scriptObj.onerror = reject;
-            });
-        }
-
-        awaitPaypalJs().then(() => {
-            paypal.Buttons({
-                style: {
-                    tagline: false
-                },
-                createOrder: let orderFcn = (data, actions) => {
-                    return actions.order.create(${order});
-                },
-                onError: (err) => {
-                    Materialize.toast({
-                        html: \`Failed to process payment: $\{err\}\`,
-                        classes: 'white-text theme-red'
-                    });
-
-                    paypalModal.close();
-
-                    console.error(err);
-                },
-                onApprove: (data, actions) => {
-                    console.log('Successful payment!');
-                }
-            }).render('#div-payment-paypal');
-        });
-    </script>
+    $('#div-payment-paypal').after(`
+        <script id="script-paypal-sdk" src="https://www.paypal.com/sdk/js?client-id=${clientId}&currency=${paymentObj.currencyAbbrev}&debug=false" defer async></script>
+        <script>
+            const order = ${JSON.stringify(order)};
+        </script>
     `);
 
     return $.html();
-
-    /*
-    return {
-        regFee: regFeeCost,
-        excursion: excursionCost,
-        invitLetter: invitLetterCost,
-        congressFund: congressFundCost,
-        participantFund: participantFundCost,
-        fejFund: fejFundCost,
-        total: totalPayableCost,
-        currency: currencyKey,
-        currencyAbbrev: currencyAbbrevKey,
-        regCategory: regCatKey,
-        paypalItems: paypalItems,
-    };
-    */
 }
 
 function createOrder(localeObj, paymentObj) {
@@ -98,17 +51,17 @@ function createItems(localeObj, paymentObj) {
 
     // Set PayPal Items
     paypalItems.push({
-        name: 'Registration Fee' /*localeObj.t('register.forms.payment.fees.registration')*/,
+        name: localeObj.t('fees.registration'),
         unit_amount: {
             currency_code: paymentObj.currencyAbbrev,
-            value: paymentObj.fees.regFee
+            value: paymentObj.fees.reg
         },
         quantity: 1
     });
 
     if(paymentObj.fees.excursion > 0) {
         paypalItems.push({
-            name: 'Excursion' /*localeObj.t('register.forms.payment.fees.excursion')*/,
+            name: localeObj.t('fees.excursion'),
             unit_amount: {
                 currency_code: paymentObj.currencyAbbrev,
                 value: paymentObj.fees.excursion
@@ -119,7 +72,7 @@ function createItems(localeObj, paymentObj) {
 
     if(paymentObj.fees.invitLetter > 0) {
         paypalItems.push({
-            name: 'Invitation Letter' /*this.localeObj.t('register.forms.payment.fees.invitLetter')*/,
+            name: localeObj.t('fees.invitLetter'),
             unit_amount: {
                 currency_code: paymentObj.currencyAbbrev,
                 value: paymentObj.fees.invitLetter
@@ -130,7 +83,7 @@ function createItems(localeObj, paymentObj) {
 
     if(paymentObj.fees.congressFund > 0) {
         paypalItems.push({
-            name: 'Congress Fund' /* localeObj.t('register.forms.payment.fees.congressFund') */,
+            name: localeObj.t('fees.congressFund'),
             unit_amount: {
                 currency_code: paymentObj.currencyAbbrev,
                 value: paymentObj.fees.congressFund
@@ -141,7 +94,7 @@ function createItems(localeObj, paymentObj) {
 
     if(paymentObj.fees.participantFund > 0) {
         paypalItems.push({
-            name: 'Participant Support' /* localeObj.t('register.forms.payment.fees.participantFund') */,
+            name: localeObj.t('fees.participantFund'),
             unit_amount: {
                 currency_code: paymentObj.currencyAbbrev,
                 value: paymentObj.fees.participantFund
@@ -152,7 +105,7 @@ function createItems(localeObj, paymentObj) {
 
     if(paymentObj.fees.fejFund > 0) {
         paypalItems.push({
-            name: 'Association Fund' /* localeObj.t('register.forms.payment.fees.associationFund') */,
+            name: localeObj.t('fees.fejFund'),
             unit_amount: {
                 currency_code: paymentObj.currencyAbbrev,
                 value: paymentObj.fees.fejFund

@@ -13,6 +13,9 @@ export class BasicInfoRepository extends BaseRepository {
             sex TEXT NOT NULL,
             originCountry TEXT NOT NULL,
             email TEXT NOT NULL,
+            province TEXT,
+            city TEXT,
+            mobileNum TEXT,
             sns TEXT,
             regCategory TEXT NOT NULL,
             educInst TEXT,
@@ -22,8 +25,7 @@ export class BasicInfoRepository extends BaseRepository {
             isExcursionInterest INTEGER,
             isVerified INTEGER NOT NULL,
             isPrivacy INTEGER NOT NULL,
-            isPublicity INTEGER NOT NULL,
-            isNewsletter INTEGER NOT NULL
+            isPublicity INTEGER NOT NULL
         )
         `;
 
@@ -42,6 +44,9 @@ export class BasicInfoRepository extends BaseRepository {
             sex,
             originCountry,
             email,
+            province,
+            city,
+            mobileNum,
             sns,
             regCategory,
             educInst,
@@ -51,14 +56,14 @@ export class BasicInfoRepository extends BaseRepository {
             isExcursionInterest,
             isVerified,
             isPrivacy,
-            isPublicity,
-            isNewsletter
+            isPublicity
         )
         VALUES
         (?, ?, ?, ?, ?,
         ?, ?, ?, ?, ?,
         ?, ?, ?, ?, ?,
-        ?, ?, ?, ?, ?)
+        ?, ?, ?, ?, ?,
+        ?, ?)
         `;
 
         return this.dao.run(
@@ -72,6 +77,9 @@ export class BasicInfoRepository extends BaseRepository {
             params.sex,
             params.originCountry,
             params.email,
+            params.province,
+            params.city,
+            params.mobileNumber,
             params.sns,
             params.regCategory,
             params.educInst,
@@ -82,7 +90,6 @@ export class BasicInfoRepository extends BaseRepository {
             params.isVerified,
             params.isPrivacy,
             params.isPublicity,
-            params.isNewsletter
         );
     }
 

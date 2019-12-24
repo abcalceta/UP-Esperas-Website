@@ -1,0 +1,11 @@
+{
+    "total": "Total",
+    "fees": {
+        "registration": "Registration Fee",
+        "excursion": "Excursion Fee",
+        "invitLetter": "Invitation Letter",
+        "congressFund": "Congress Fund",
+        "participantFund": "Participant Support",
+        "fejFund": "Association Fund"
+    }
+}

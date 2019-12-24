@@ -2,40 +2,28 @@
 
 <form id="form-register" method="post">
     <section id="section-guidelines" class="section">
-        <h3>Registration Guidelines</h3>
+        <h3>${this.localeObj.t('register.overview.intro.header')}</h3>
         <p>
-            Welcome to the First Philippine Esperanto Youth Congress! We would like to thank you for your interest in this event. Before proceeding with the registration, please read the following guidelines.
+            ${this.localeObj.t('register.overview.intro.desc')}
         </p>
 
-        <h4>Who can join?</h4>
+        <h4>${this.localeObj.t('register.overview.cookieNotice.header')}</h4>
         <p>
-            Participation is open to any person of any age, Philippine or foreign national, who has at least a basic command of Esperanto and is interested to learn more of the language and its community and culture, participate in the activities of the congress, and actively interact with other participants.
+            ${this.localeObj.t('register.overview.cookieNotice.desc')}
         </p>
 
-        <h4>Are there any fees?</h4>
+        <h4>${this.localeObj.t('register.overview.start.header')}</h4>
         <p>
-            Yes. The registration fee for the congress depends on three main factors: the individual's age at the time of registration, the individual's country of origin, and the period in which registration and payment are made. Individuals who register early can avail of discounted fees. There is also a separate category for individuals who wish to financially support the Congress, and separate fees for foreign participants.
-        </p>
-        <p>
-            The fee includes the participant's kit and access to all programs (unless otherwise indicated in the congress booklet). It <em>does not</em> include lodging, other meals, the excursion, and insurances.
-        </p>
-        <p>
-            The registration fee is strictly <em>non-transferable</em> and <em>non-refundable</em>, regardless of whether the participant fails to attend the Congress through their own volition or due to any other cause, or if the Congress is cancelled or postponed for any reason.
-        </p>
-
-        <h4>Cookie Notice</h4>
-        <p>
-            By clicking "Start Registration", you agree to the storing of cookies on your device to save your partially-accomplished registration details. These cookies will be stored specifically for this purpose and data within it will not be sent to our servers until you submit the form.
-        </p>
-
-        <h4>Are you ready?</h4>
-        <p>
-            If you are ready to register for the congress, please click "Start Registration".
+            ${this.localeObj.t('register.overview.start.desc')}
         </p>
         <noscript>
             <div class="card-panel red darken-2">
                 <span class="white-text">
                     Oh no! It seems that you have disabled JavaScript or your browser does not support it. Please <a class="yellow-text text-darken-2" href="//enable-javascript.com/" target="_blank">enable</a> it to register.
+                </span>
+                <br>
+                <span class="white-text">
+                    Ho ve! Ŝajnas ke vi malŝaltis JavaScript-on aŭ via retumilo ne subtenas ĝin. Bv. <a class="yellow-text text-darken-2" href="//enable-javascript.com/" target="_blank">ŝalti</a> ĝin por aliĝi.
                 </span>
             </div>
         </noscript>
@@ -79,9 +67,9 @@
             <div class="input-field col s6 l2">
                 <select id="select-sex-list" name="select-sex-list" required>
                     <option value="" disabled selected>${this.localeObj.t('register.forms.basic.fields.sex')}</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="unknown">Prefer not to say</option>
+                    <option value="male">${this.localeObj.t('sex.male')}</option>
+                    <option value="female">${this.localeObj.t('sex.female')}</option>
+                    <option value="unknown">${this.localeObj.t('sex.secret')}</option>
                 </select>
                 <label>${this.localeObj.t('register.forms.basic.fields.sex')}</label>
                 <span class="helper-text" data-error="${this.localeObj.t('register.forms.basic.errors.sex')}"></span>
@@ -145,6 +133,7 @@
             ${this.localeObj.t('register.forms.register.guidelines.addtlGuidelines')}
         </p>
 
+        <!-- Hidden fields -->
         <input type="hidden" name="hdn-reg-period" value="regular">
         <input type="hidden" name="hdn-reg-fee" value="0">
         <input type="hidden" name="hdn-reg-currency" value="€">
@@ -152,6 +141,7 @@
 
         <input type="hidden" name="hdn-invitletter-fee" value="0">
         <input type="hidden" name="hdn-excursion-fee" value="0">
+        <input type="hidden" name="hdn-paypal-order-id" value="">
 
         <div id="div-reg-ratecard" class="card">
             <div class="card-content theme-green">
@@ -402,15 +392,15 @@
         <p>
             More information about the excursion can be accessed <a target="_blank" href="#!/congress/excursion">here</a>.
         </p>
-        <p class="card-panel theme-yellow white-text">
-            The excursion will cost P300, which includes transportation, entrance tickets, and snacks throughout the whole trip.
-        </p>
         <div class="row">
             <label class="input-field col s12">
                 <input class="filled-in" name="cbx-excursion-interest" type="checkbox">
                 <span>${this.localeObj.t('register.forms.excursion.fields.interested')}</span>
             </label>
         </div>
+        <p id="div-excursion-fare-notice" class="card-panel theme-yellow white-text hide">
+            ${this.localeObj.t('register.forms.excursion.fareNotice')}
+        </p>
     </section>
 
     <section id="section-food" class="section hide">
@@ -480,11 +470,11 @@
         </p>
         <div class="row">
             <label class="input-field col s12 m2">
-                <input class="with-gap" name="rbx-alcohol-pref" type="radio" value="yes">
+                <input class="with-gap" name="rbx-food-alcohol-pref" type="radio" value="yes">
                 <span>${this.localeObj.t('yes')}</span>
             </label>
             <label class="input-field col s12 m2">
-                <input class="with-gap" name="rbx-alcohol-pref" type="radio" value="no" checked>
+                <input class="with-gap" name="rbx-food-alcohol-pref" type="radio" value="no" checked>
                 <span>${this.localeObj.t('no')}</span>
             </label>
         </div>
@@ -552,27 +542,27 @@
 
         <div class="row">
             <div class="input-field col s12 m4">
-                <input id="txt-congress-fund" name="txt-congress-fund" type="number" class="validate">
+                <input id="txt-congress-fund" name="txt-congress-fund" type="number" class="validate" step="0.01">
                 <label for="txt-congress-fund">${this.localeObj.t('register.forms.others.donate.congressFund')}</label>
             </div>
             <div class="input-field col s12 m4">
-                <input id="txt-participant-fund" name="txt-participant-fund" type="number" class="validate">
+                <input id="txt-participant-fund" name="txt-participant-fund" type="number" class="validate" step="0.01">
                 <label for="txt-participant-fund">${this.localeObj.t('register.forms.others.donate.participantFund')}</label>
             </div>
             <div class="input-field col s12 m4">
-                <input id="txt-fej-fund" name="txt-fej-fund" type="number" class="validate">
+                <input id="txt-fej-fund" name="txt-fej-fund" type="number" class="validate" step="0.01">
                 <label for="txt-fej-fund">${this.localeObj.t('register.forms.others.donate.associationFund')}</label>
             </div>
         </div>
         <label>
-            <input class="filled-in" name="cbx-others-donor-name-include" type="checkbox">
+            <input class="filled-in" name="cbx-others-donorlist-noinclude" type="checkbox">
             <span>${this.localeObj.t('register.forms.others.donate.anonymous')}</span>
         </label>
 
         <h4>${this.localeObj.t('register.forms.others.misc')}</h4>
         <p>
             <label>
-                <input class="filled-in" name="cbx-others-participant-name-include" type="checkbox">
+                <input class="filled-in" name="cbx-others-weblist-noinclude" type="checkbox">
                 <span>${this.localeObj.t('register.forms.others.fields.webList')}</span>
             </label>
         </p>
@@ -606,11 +596,22 @@
                 <span>${this.localeObj.t('register.forms.others.fields.bookletExclude')}</span>
             </label>
         </p>
+
+        <h4>${this.localeObj.t('register.forms.others.suggest.header')}</h4>
+        <p>
+            ${this.localeObj.t('register.forms.others.suggest.desc')}
+        </p>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="txt-others-suggest" name="txt-others-suggest" class="materialize-textarea"></textarea>
+                <label for="txt-others-suggest">${this.localeObj.t('register.forms.others.suggest.label')}</label>
+            </div>
+        </div>
     </section>
 
     <section id="section-payment" class="section hide">
         <h3>${this.localeObj.t('register.forms.payment.header')}</h3>
-        <p class="card-panel theme-red white-text">
+        <p id="div-payment-downpay-notice" class="card-panel theme-red white-text">
             ${this.localeObj.t('register.forms.payment.downpayNotice')}
         </p>
         <div id="div-panel-reg-date-notice" class="card">
@@ -689,7 +690,7 @@
         <div id="div-modal-reg-dates" class="modal modal-fixed-footer">
             <div class="modal-content">
                 <h4>${this.localeObj.t('register.forms.payment.registerDates')}</h4>
-                <p class="card-panel red darken-2 white-text">
+                <p class="card-panel theme-red white-text">
                     ${this.localeObj.t('register.generalText.timeNotice')}
                 </p>
                 <table>
@@ -724,67 +725,43 @@
                 <a class="modal-close waves-effect btn-flat">${this.localeObj.t('buttons.close')}</a>
             </div>
         </div>
+
         <!-- Modal for bank transfer -->
         <div id="div-modal-payment-bank" class="modal">
             <div class="modal-content">
-                <h4>Payment via Bank Deposit</h4>
-                <p>
-                    Please payment to the bank account below through international money deposit. Fill in the relevant forms with the information below:
-                </p>
-                <p>
-                    <b>Bank Name:</b> Landbank of the Philippines<br>
-                    <b>Account Name:</b> Albert Stalin T. Garrido<br>
-                    <b>Account Number:</b> 3077106196<br>
-                    <b>SWIFT Code:</b> TLBPPHMM<br>
-                    <b>Bank Address:</b> Head Office, Landbank Plaza, M.H. Del Pilar cor. D. J. Quintos Sts., Malate, Manila, Philippines<br>
-                    <b>Bank Tel. No.</b> +63 2 405 7000<br>
-                </p>
-                <p>
-                    After the transaction, please send a copy of the processed deposit form to peyc2020@gmail.com so that we can confirm your payment.
-                </p>
-                <p>
-                    If using this method, please add EUR 3.00 to the total amount to be sent. Also, take note of the additional service fees that your bank may charge, and be sure to add that as well.
-                </p>
-                <p>
-                    If you are sure of the payment method, please click "Submit" to register.
-                </p>
+                <h4>${this.localeObj.t('register.forms.payment.modals.bankAccount.header')}</h4>
+
+                ${this.localeObj.t('register.forms.payment.modals.bankAccount.details')}
+
                 <p class="center-align">
-                    <a class="btn-large waves-effect waves-light theme-green">${this.localeObj.t('buttons.submit')}<i class="material-icons right">send</i></a>
+                    <a class="modal-close btn-large waves-effect waves-light theme-red"><i class="material-icons right">cancel</i>${this.localeObj.t('buttons.cancel')}</a>
+                    <a class="btn-large waves-effect waves-light theme-green payment-submit">${this.localeObj.t('buttons.submit')}<i class="material-icons right">send</i></a>
                 </p>
-            </div>
-            <div class="modal-footer">
-                <a class="modal-close waves-effect btn-flat">${this.localeObj.t('buttons.cancel')}</a>
             </div>
         </div>
 
         <!-- Modal for remittance payment -->
         <div id="div-modal-payment-remittance" class="modal">
             <div class="modal-content">
-                <h4>Payment via Remittance</h4>
-                <p>
-                    We accept payment via remittance through <b>Western Union</b>. Fill in the relevant forms with the following information:
-                </p>
-                <p>
-                    <b>Name of Recipient:</b> Albert Stalin Tancinco Garrido<br>
-                    <b>City and Country:</b> Quezon City, Metro Manila, Philippines<br>
-                    <b>Contact Number:</b> +63 998 249 1891<br>
-                    <b>E-mail Address:</b> albertstgarrido@gmail.com<br>
-                </p>
-                <p>
-                    To cover the Documentary Stamp Tax mandated by Philippine law on international remittances, please add <b>0.3%</b> of the total amount to be paid. 
-                </p>
+                <h4>${this.localeObj.t('register.forms.payment.modals.remittance.header')}</h4>
+
+                ${this.localeObj.t('register.forms.payment.modals.remittance.details')}
+
                 <p class="center-align">
-                    <a class="btn-large waves-effect waves-light theme-green">${this.localeObj.t('buttons.submit')}<i class="material-icons right">send</i></a>
+                    <a class="modal-close btn-large waves-effect waves-light theme-red"><i class="material-icons right">cancel</i>${this.localeObj.t('buttons.cancel')}</a>
+                    <a class="btn-large waves-effect waves-light theme-green payment-submit">${this.localeObj.t('buttons.submit')}<i class="material-icons right">send</i></a>
                 </p>
-            </div>
-            <div class="modal-footer">
-                <a class="modal-close waves-effect btn-flat">${this.localeObj.t('buttons.cancel')}</a>
             </div>
         </div>
 
         <!-- Modal for PayPal payment -->
-        <div id="div-modal-payment-paypal" class="modal">
+        <div id="div-modal-payment-paypal" class="modal modal-fixed-footer">
             <div class="modal-content">
+                <h4>${this.localeObj.t('register.forms.payment.modals.paypal.header')}</h4>
+
+                ${this.localeObj.t('register.forms.payment.modals.paypal.details')}
+
+                <div id="div-payment-iframe-wrapper"></div>
             </div>
             <div class="modal-footer">
                 <a class="modal-close waves-effect btn-flat">${this.localeObj.t('buttons.cancel')}</a>

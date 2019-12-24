@@ -23,7 +23,7 @@ function initDatePicker(element, localeObj) {
     });
 }
 
-function saveFormElements(rootElmId) {
+function loadFormElements(rootElmId) {
     const inputList = document.querySelector(rootElmId).querySelectorAll('input, select');
 
     for(let eachInputElm of inputList) {
@@ -41,7 +41,15 @@ function saveFormElements(rootElmId) {
     }
 }
 
-function loadFormElements(rootElmId) {
+function getStoredValueWithName(name) {
+    return sessionStorage.getItem(name);
+}
+
+function clearStoredFormElements() {
+    sessionStorage.clear();
+}
+
+function saveFormElements(rootElmId) {
     const inputList = document.querySelector(rootElmId).querySelectorAll('input, select');
 
     for(let eachInputElm of inputList) {
@@ -112,6 +120,9 @@ function getRegTier(locality, broadCategory, occupation, birthdate) {
 export let RegFormUtils = {
     initDatePicker: initDatePicker,
     saveFormElements: saveFormElements,
+    loadFormElements: loadFormElements,
+    getStoredValueWithName: getStoredValueWithName,
+    clearStoredFormElements: clearStoredFormElements,
     getRegTier: getRegTier,
-    checkRegistrationPeriod: checkRegistrationPeriod
+    checkRegistrationPeriod: checkRegistrationPeriod,
 };

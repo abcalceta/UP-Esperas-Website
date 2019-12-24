@@ -1,73 +1,77 @@
 [
     {
-        "title": "Home",
+        "title": "${this.localeObj.t('navbar.home')}",
         "link": "#!"
     },
     {
-        "title": "About",
+        "title": "${this.localeObj.t('navbar.about.about')}",
         "sublinks": [
             {
-                "title": "What is Esperanto",
+                "title": "${this.localeObj.t('navbar.about.whatIsEsperanto')}",
                 "link": "#!/about/esperanto"
             },
             {
-                "title": "The Philippine Esperanto Youth",
+                "title": "${this.localeObj.t('navbar.about.fej')}",
                 "link": "#!/about/fej"
             },
             {
-                "title": "About the Congress",
+                "title": "${this.localeObj.t('navbar.about.congress')}",
                 "link": "#!/about/fjk"
             },
             {
-                "title": "Logo",
+                "title": "${this.localeObj.t('navbar.about.logo')}",
                 "link": "#!/about/logo"
             },
             {
-                "title": "Organizing Committee",
+                "title": "${this.localeObj.t('navbar.about.lkk')}",
                 "link": "#!/about/lkk"
             },
             {
-                "title": "Privacy",
+                "title": "${this.localeObj.t('navbar.about.privacy')}",
                 "link": "#!/about/privacy"
             }
         ]
     },
     {
-        "title": "Congress Info",
+        "title": "${this.localeObj.t('navbar.congressInfo.congressInfo')}",
         "sublinks": [
             {
-                "title": "Venue",
+                "title": "${this.localeObj.t('navbar.congressInfo.venue')}",
                 "link": "#!/congress/venue"
             },
             {
-                "title": "Lodging",
+                "title": "${this.localeObj.t('navbar.congressInfo.lodging')}",
                 "link": "#!/congress/lodging"
             },
             {
-                "title": "Excursion",
+                "title": "${this.localeObj.t('navbar.congressInfo.excursion')}",
                 "link": "#!/congress/excursion"
             },
             {
-                "title": "Register",
-                "link": "#!/register"
+                "title": "${this.localeObj.t('navbar.congressInfo.regGuidelines')}",
+                "link": "#!/congress/register-guidelines"
             }
         ]
     },
     {
-        "title": "Volunteer",
+        "title": "${this.localeObj.t('navbar.participate.participate')}",
         "sublinks": [
             {
-                "title": "Call for Organizers",
+                "title": "${this.localeObj.t('navbar.participate.register')}",
+                "link": "#!/register"
+            },
+            {
+                "title": "${this.localeObj.t('navbar.participate.callLkk')}",
                 "link": "#!/lkk-join"
             },
             {
-                "title": "Call for Volunteers",
+                "title": "${this.localeObj.t('navbar.participate.volunteer')}",
                 "link": "#!/volunteer"
             }
         ]
     },
     {
-        "title": "Donate",
+        "title": "${this.localeObj.t('navbar.donate')}",
         "link": "#!/donate"
     }
 ]

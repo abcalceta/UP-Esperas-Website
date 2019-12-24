@@ -24,7 +24,11 @@ function main() {
 
     process.env.SHARED_LOGGER = logger;
 
+    // Options
+    expressApp.disable('x-powered-by');
+
     // Middlewares
+    expressApp.use(express.json());
     expressApp.use(express.urlencoded({ extended: true }));
     expressApp.use(function(req, res, next) {
         let originUrl = '';
@@ -41,6 +45,16 @@ function main() {
         }
 
         next();
+    });
+
+    expressApp.options('*', function(req, res) {
+        const requestHeader = req.header('Access-Control-Request-Header');
+
+        return res
+            .header('Access-Control-Allow-Methods', 'GET, POST')
+            .header('Access-Control-Allow-Headers', requestHeader !== undefined ? requestHeader : '*')
+            .status(200)
+            .send();
     });
 
     // Routes
@@ -121,7 +135,6 @@ function main() {
 
             if(!errors.isEmpty()) {
                 logger.error('Cannot process sent registration form');
-                logger.error(errors);
 
                 res.status(422).json({
                     status: 422,
@@ -193,23 +206,10 @@ function main() {
         }
     );
 
-    expressApp.get('/api/payment', async function(req, res) {
+    expressApp.post('/api/payment', async function(req, res) {
         try {
-            const paymentPage = await PaypalPage.createPaymentPage(process.env.PAYPAL_CLIENT_ID, {}, {
-                currency: 'E',
-                currencyAbbrev: 'EUR',
-                regCategory: 'D',
-                fees: {
-                    regFee: 4500,
-                    excursion: 0,
-                    invitLetter: 0,
-                    congressFund: 0,
-                    participantFund: 0,
-                    fejFund: 0,
-                    total: 4500,
-                },
-            });
-        
+            const paymentPage = await PaypalPage.createPaymentPage(process.env.PAYPAL_CLIENT_ID, req.body);
+
             res.status(200).type('html').send(paymentPage);
         }
         catch(err) {

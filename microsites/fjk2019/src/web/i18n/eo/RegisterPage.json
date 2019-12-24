@@ -117,6 +117,7 @@
                     "vegan": "Vegetaĵano",
                     "kosher": "Koŝera",
                     "halal": "Halala",
+                    "none": "Nenio",
                     "nuts": "Nukso",
                     "seafood": "Marmanĝaĵo",
                     "wheat": "Gluteno (Tritiko)",
@@ -133,11 +134,18 @@
                 "shipTo": "Liveri al&#8230;",
                 "invitLetterCost": "Bv. rimarki ke ĝi kostas <b>%{currencySymbol}%{price}</b> por liveri la leteron al via elektita loko.",
                 "donateNotice": "Bv. rimarki ke vi donacos per <b>%{currencyWord}</b>",
+                "suggest": {
+                    "header": "Komentoj",
+                    "desc": "Se vi havas iajn ajn komentojn pri la aliĝilo aŭ la kongreso mem, bv. skribi ĝin tie ĉi. Ni respondos baldaŭ post kiam vi aliĝas.",
+                    "label": "Komentoj"
+                },
                 "fields": {
                     "congressPhoto": "Mi volas ricevi oficialan kongresan foton (elpresita)",
                     "invitLetter": "Mi volas ricevi elpresitan invitleteron sendita per poŝto",
+                    "webList": "Mi ne volas montri mian nomon sur la listo de aliĝantoj sur tiu ĉi retejo",
                     "program": "Mi volas estri agadon aŭ prelegi dum la kongreso",
-                    "volCorp": "Mi volas kontribui kiel parto de la Kongresa Volontula Servo",
+                    "volCorp": "Mi volas kontribui kiel parto de la Kongresa Volontula Servo <a target=\"_blank\" href=\"#!/volunteer\">[pli]</a>",
+                    "fej": "Mi volas aniĝi al la Filipina Esperanto Junularo por la jaro 2020 (senpaga)",
                     "cert": "Mi bezonas atestilo pri ĉeesto de la kongreso",
                     "bookletExclude": "Mi ne volas ricevi elpresitan kongresan libron"
                 }
@@ -151,11 +159,12 @@
                 "payVia": "Pagi per",
                 "startDate": "Komenca Dato",
                 "endDate": "Limdato",
+                "downpayNotice": "Bv. rimarki ke la Komitato devas ricevi almenaŭ <b>50%</b> el la tuta aliĝkotizo por ke la aliĝo validas. Krome, ĉiuj antaŭpagoj devas esti plenumitaj je aŭ antaŭ la <b>09a de Aprilo, 2020</b>. Post tiam, estos malfrua krompago, kiu kostas <b>%{currencySymbol}%{value}</b>.",
                 "fields": {
                     "bankAccount": "Bankkonto",
                     "onlineBank": "Reta Transpago per Banko",
                     "paypal": "PayPal (kreditkarto/debetkarto)",
-                    "wireTransfer": "Ĝiro"
+                    "remittance": "Ĝiro"
                 },
                 "fees": {
                     "registration": "Aliĝkotizo",
@@ -170,8 +179,7 @@
                 "header": "Atesto",
                 "accuracy": "Mi atestas ke ĉiuj informoj provizita estas veraj kaj ĝustaj, kiuj povas kontroli per dokumentoj",
                 "privacy": "Mi legis la privatecan avizon rilate al mia aliĝo en la kongreso",
-                "publicity": "Mi konsentas rajtigi la kongresan komitaton uzi miajn fotojn, filmetojn, ktp. dum la kongreso kiel arkivoj kaj memoraĵoj",
-                "newsletter": "Mi volas ricevi pli oftajn informojn pri la kongreso (k.e. aktualigojn kaj bultenojn)"
+                "publicity": "Mi konsentas rajtigi la kongresan komitaton uzi miajn fotojn, filmetojn, ktp. dum la kongreso kiel arkivoj kaj memoraĵoj"
             }
         },
         "thanks": {

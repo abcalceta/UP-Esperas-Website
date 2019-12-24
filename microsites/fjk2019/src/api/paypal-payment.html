@@ -1,10 +1,209 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+        <style>
+            body {
+                font-family: Roboto, Helvetica, sans-serif;;
+            }
+
+            .hide {
+                display: none;
+            }
+
+            /* Loader style */
+            #div-loader p {
+                font-size: 0.75em;
+                text-align: center;
+            }
+
+            .sk-cube-grid {
+                width: 64px;
+                height: 64px;
+                margin: 0 auto;
+            }
+
+            .sk-cube-grid .sk-cube {
+                width: 33%;
+                height: 33%;
+                float: left;
+                -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+                animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+            }
+
+            .sk-cube-grid .sk-cube1 {
+                background-color: #992226;
+                -webkit-animation-delay: 0.2s;
+                animation-delay: 0.2s;
+            }
+
+            .sk-cube-grid .sk-cube2 {
+                background-color: #CC9D37;
+                -webkit-animation-delay: 0.3s;
+                animation-delay: 0.3s;
+            }
+
+            .sk-cube-grid .sk-cube3 {
+                background-color: #418B45;
+                -webkit-animation-delay: 0.4s;
+                animation-delay: 0.4s;
+            }
+
+            .sk-cube-grid .sk-cube4 {
+                background-color: #418B45;
+                -webkit-animation-delay: 0.1s;
+                animation-delay: 0.1s;
+            }
+
+            .sk-cube-grid .sk-cube5 {
+                background-color: #992226;
+                -webkit-animation-delay: 0.2s;
+                animation-delay: 0.2s;
+            }
+
+            .sk-cube-grid .sk-cube6 {
+                background-color: #CC9D37;
+                -webkit-animation-delay: 0.3s;
+                animation-delay: 0.3s;
+            }
+
+            .sk-cube-grid .sk-cube7 {
+                background-color: #CC9D37;
+                -webkit-animation-delay: 0s;
+                animation-delay: 0s;
+            }
+
+            .sk-cube-grid .sk-cube8 {
+                background-color: #418B45;
+                -webkit-animation-delay: 0.1s;
+                animation-delay: 0.1s;
+            }
+            .sk-cube-grid .sk-cube9 {
+                background-color: #992226;
+                -webkit-animation-delay: 0.2s;
+                animation-delay: 0.2s;
+            }
+
+            @-webkit-keyframes sk-cubeGridScaleDelay {
+                0%, 70%, 100% {
+                    -webkit-transform: scale3D(1, 1, 1);
+                    transform: scale3D(1, 1, 1);
+                }
+
+                35% {
+                    -webkit-transform: scale3D(0, 0, 1);
+                    transform: scale3D(0, 0, 1);
+                }
+            }
+
+            @keyframes sk-cubeGridScaleDelay {
+                0%, 70%, 100% {
+                    -webkit-transform: scale3D(1, 1, 1);
+                    transform: scale3D(1, 1, 1);
+                }
+
+                35% {
+                    -webkit-transform: scale3D(0, 0, 1);
+                    transform: scale3D(0, 0, 1);
+                }
+            }
+        </style>
+    </head>
     <body>
-        <h4>Payment via PayPal</h4>
-        <p>
-            If you are ready to pay via PayPal, please click on your preferred mode of payment below.
-        </p>
+        <div id='div-loader' class="sk-cube-grid" role="alert" aria-live="assertive">
+            <div class="sk-cube sk-cube1"></div>
+            <div class="sk-cube sk-cube2"></div>
+            <div class="sk-cube sk-cube3"></div>
+            <div class="sk-cube sk-cube4"></div>
+            <div class="sk-cube sk-cube5"></div>
+            <div class="sk-cube sk-cube6"></div>
+            <div class="sk-cube sk-cube7"></div>
+            <div class="sk-cube sk-cube8"></div>
+            <div class="sk-cube sk-cube9"></div>
+            <p>Loading &#8230;</p>
+        </div>
+
         <div id="div-payment-paypal" class="hide"></div>
+
+        <script>
+            function awaitPaypalJs() {
+                return new Promise((resolve, reject) => {
+                    const scriptObj = document.getElementById('script-paypal-sdk');
+
+                    scriptObj.onsuccess = resolve;
+                    scriptObj.onload = resolve;
+                    scriptObj.onreadystatechange = resolve;
+                    scriptObj.onerror = reject;
+                });
+            }
+
+            window.addEventListener('DOMContentLoaded', (e) => {
+                window.parent.postMessage({
+                    type: 'height_update'
+                }, '*');
+            });
+
+            awaitPaypalJs().then(() => {
+                return paypal.Buttons({
+                    style: {
+                        tagline: false
+                    },
+                    createOrder: orderFcn = (data, actions) => {
+                        return actions.order.create(order);
+                    },
+                    onCancel: (data) => {
+                        window.parent.postMessage({
+                            type: 'payment',
+                            error_code: 'PMTCXD',
+                            title: 'Payment cancelled',
+                        }, '*');
+                    },
+                    onError: (err) => {
+                        window.parent.postMessage({
+                            type: 'payment',
+                            error_code: 'PMTERR',
+                            detail: err,
+                            title: 'Failed to process payment',
+                        }, '*');
+                    },
+                    onApprove: (data, actions) => {
+                        return actions.order.capture()
+                                .then((details) => {
+                                    window.parent.postMessage({
+                                        type: 'payment',
+                                        error_code: 'PMT200',
+                                        title: 'Payment approved',
+                                        order_id: data.orderID,
+                                    }, '*');
+                                })
+                                .catch((err) => {
+                                    window.parent.postMessage({
+                                        type: 'payment',
+                                        error_code: 'PMTERR',
+                                        detail: err,
+                                        title: 'Failed to process payment',
+                                    }, '*');
+                                });
+                    }
+                }).render('#div-payment-paypal');
+            })
+            .then(() => {
+                const loader = document.getElementById('div-loader');
+                const paypalDiv = document.getElementById('div-payment-paypal');
+
+                loader.classList.add('hide');
+                paypalDiv.classList.remove('hide');
+
+                loader.querySelector('p').innerHTML = 'Paypal buttons loaded!';
+
+                window.parent.postMessage({
+                    type: 'height_update'
+                }, '*');
+            });
+        </script>
     </body>
 </html>

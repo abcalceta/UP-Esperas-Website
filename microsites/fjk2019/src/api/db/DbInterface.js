@@ -73,6 +73,9 @@ export class DbInterface{
                 sex: formObj['select-sex-list'],
                 originCountry: formObj['select-countries-list'],
                 email: formObj['txt-email'],
+                province: formObj['txt-province'],
+                city: formObj['txt-city'],
+                mobileNumber: formObj['txt-mobile'],
                 sns: formObj['txt-sns'],
                 regCategory: regCategory,
                 educInst: formObj['txt-reg-educ'],
@@ -83,7 +86,6 @@ export class DbInterface{
                 isVerified: (formObj['cbx-attest-true'] == 'on') ? 1 : 0,
                 isPrivacy: (formObj['cbx-attest-privacy'] == 'on') ? 1 : 0,
                 isPublicity: (formObj['cbx-attest-publicity'] == 'on') ? 1 : 0,
-                isNewsletter: (formObj['cbx-attest-newsletter'] == 'on') ? 1 : 0
             }
         );
 
@@ -100,22 +102,24 @@ export class DbInterface{
         await this.repos.food.create(
             registrantId,
             {
-                foodRestrictions: (formObj['cbx-food-pref']) ? formObj['cbx-food-pref'].join(',') : '',
+                foodRestrictions: formObj['rbx-food-pref'],
                 foodAllergies: (formObj['cbx-food-allerg']) ? formObj['cbx-food-allerg'].join(','): '',
-                isAlcohol: (formObj['cbx-alcohol-pref'] == 'on') ? 1 : 0,
+                isAlcohol: (formObj['rbx-food-alcohol-pref'] == 'yes') ? 1 : 0,
             }
         );
 
         await this.repos.addons.create(
             registrantId,
             {
-                isCongressPhoto: (formObj['cbx-lodging-interest'] == 'on') ? 1 : 0,
+                isCongressPhoto: (formObj['cbx-others-photo'] == 'on') ? 1 : 0,
                 isInvitLetter: (formObj['cbx-others-invitletter'] == 'on') ? 1 : 0,
-                isNameInList: (formObj['cbx-others-name-include'] == 'on') ? 1 : 0,
+                isNameInList: (formObj['cbx-others-weblist-noinclude'] == 'on') ? 0 : 1,
+                isInDonorList: (formObj['cbx-others-donorlist-noinclude'] == 'on') ? 0 : 1,
                 isCongressProgram: (formObj['cbx-others-contrib'] == 'on') ? 1 : 0,
                 isVolCorp: (formObj['cbx-others-volcorp'] == 'on') ? 1 : 0,
                 isCertAttend: (formObj['cbx-others-cert'] == 'on') ? 1 : 0,
                 isBooklet: (formObj['cbx-others-nobooklet'] == 'on') ? 0 : 1,
+                suggest: formObj['txt-others-suggest']
             }
         );
 
@@ -128,6 +132,7 @@ export class DbInterface{
             {
                 paymentType: formObj['rbx-payment-method'],
                 currency: formObj['hdn-reg-currency'],
+                paypalOrderId: formObj['hdn-paypal-order-id'],
                 regFee: Number(formObj['hdn-reg-fee']),
                 invitLetter: Number(formObj['hdn-invitletter-fee']),
                 congressFund: Number(formObj['txt-congress-fund']),

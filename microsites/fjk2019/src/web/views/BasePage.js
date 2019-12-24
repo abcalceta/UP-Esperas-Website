@@ -32,7 +32,10 @@ export class BasePage {
             },
         };
 
-        this.localeObj = new Polyglot();
+        this.initOnce = true;
+        this.localeObj = new Polyglot({
+            allowMissing: true
+        });
     }
 
     oninit() {
@@ -46,15 +49,20 @@ export class BasePage {
     }
 
     onupdate() {
-        document.title = this.localeObj.t('titleSpecific', {pageName: this.data.title});
+        // Init once
+        if(this.initOnce) {
+            document.title = this.localeObj.t('titleSpecific', {pageName: this.data.title});
 
-        DomScripts.animate("header img", "fadeIn");
-        DomScripts.initDomScripts();
+            DomScripts.animate("header img", "fadeIn");
+            DomScripts.initDomScripts();
+
+            this.initOnce = false;
+        }
     }
 
     view() {
         return [
-            m(this.componentHolder.nav),
+            m(this.componentHolder.nav, {localeObj: this.localeObj}),
             m(this.componentHolder.hero, this.data.hero),
             m('main', {id: 'main-content', class: 'container'}, [
                 m.trust(this.componentHolder.main)

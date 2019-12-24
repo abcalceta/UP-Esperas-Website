@@ -7,6 +7,7 @@ export class PaymentRepository extends BaseRepository {
             paymentId TEXT PRIMARY KEY NOT NULL,
             paymentType TEXT NOT NULL,
             currency TEXT NOT NULL,
+            paypalOrderId TEXT,
             regFee REAL NOT NULL,
             invitLetter REAL,
             congressFund REAL,
@@ -24,6 +25,7 @@ export class PaymentRepository extends BaseRepository {
             paymentId,
             paymentType,
             currency,
+            paypalOrderId,
             invitLetter,
             regFee,
             congressFund,
@@ -32,7 +34,7 @@ export class PaymentRepository extends BaseRepository {
         )
         VALUES (
             ?, ?, ?, ?, ?,
-            ?, ?, ?
+            ?, ?, ?, ?
         )
         `;
 
@@ -41,6 +43,7 @@ export class PaymentRepository extends BaseRepository {
             paymentId,
             params.paymentType,
             params.currency,
+            params.paypalOrderId,
             params.regFee,
             params.invitLetter,
             params.congressFund,

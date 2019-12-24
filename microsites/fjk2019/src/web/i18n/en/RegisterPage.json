@@ -34,6 +34,20 @@
             "others": "Others",
             "payment": "Payment"
         },
+        "overview": {
+            "intro": {
+                "header": "Registration Form",
+                "desc": "Welcome to the First Philippine Esperanto Youth Congress! We would like to thank you for your interest in this event. Before proceeding with the registration, please read the following guidelines <a target=\"_blank\" href=\"#!/congress/register-guidelines\">here</a>."
+            },
+            "cookieNotice": {
+                "header": "Cookie Notice",
+                "desc": "By clicking \"Start Registration\", you agree to the storing of cookies on your device to save your partially-accomplished registration details. These cookies will be stored specifically for this purpose and data within it will not be sent to our servers until you submit the form."
+            },
+            "start": {
+                "header": "Are you ready?",
+                "desc": "If you are ready to register for the congress, please click \"Start Registration\"."
+            }
+        },
         "forms": {
             "requiredNotice": "Fields marked with an asterisk (*) mean that they are required to be filled-up.",
             "basic": {
@@ -115,6 +129,7 @@
             },
             "excursion": {
                 "header": "Excursion",
+                "fareNotice": "The excursion will cost <b>%{currencySymbol}%{price}</b>, which includes transportation, entrance tickets, and snacks throughout the whole trip.",
                 "fields": {
                     "interested": "I am interested in participating in the excursion"
                 }
@@ -164,6 +179,11 @@
                     "participantFundDesc": "to finance the participation of young Filipinos who live in areas far from the Congress venue or those who undergo financial struggles that hinder them from attending the event.",
                     "associationFundDesc": "to finance other ongoing and future activities and initiatives of the Philippine Esperanto Youth."
                 },
+                "suggest": {
+                    "header": "Remarks",
+                    "desc": "If you have any comments, suggestions, or remarks regarding your registration to the congress, please write it here. We will get back to you soon after you register.",
+                    "label": "Remarks"
+                },
                 "fields": {
                     "congressPhoto": "I want to receive the official printed congress photo",
                     "invitLetter": "I want to receive a printed invitation letter sent by mail",
@@ -184,7 +204,21 @@
                 "payVia": "Pay with",
                 "startDate": "Start Date",
                 "endDate": "End Date",
-                "downpayNotice": "Note that the Organizing Committee has to receive at least <b>50%</b> of your total registration fee as initial downpayment in order to consider your registration valid. Furthermore, all downpayments must be settled on or before <b>09 April, 2020</b> or there will be a late payment fee of <b>PHP 100.00 (for Filipinos) or EUR 2.00 (for foreign participants)</b>.",
+                "downpayNotice": "Note that the Organizing Committee has to receive at least <b>50%</b> of your total registration fee as initial downpayment in order to consider your registration valid. Furthermore, all downpayments must be settled on or before <b>09 April, 2020</b> or there will be a late payment fee of <b>%{currencySymbol}%{value}</b>.",
+                "modals": {
+                    "bankAccount": {
+                        "header": "Payment via Bank Deposit",
+                        "details": "<p>\nPlease pay to the bank account below through international money deposit. Fill in the relevant forms with the information below:\n</p>\n<p>\n<b>Bank Name:</b> Landbank of the Philippines<br>\n<b>Account Name:</b> Albert Stalin T. Garrido<br>\n<b>Account Number:</b> 3077106196<br>\n<b>SWIFT Code:</b> TLBPPHMM<br>\n<b>Bank Address:</b> Head Office, Landbank Plaza, M.H. Del Pilar cor. D. J. Quintos Sts., Malate, Manila, Philippines<br>\n<b>Bank Tel. No.</b> +63 2 405 7000<br>\n</p>\n<p>\nAfter the transaction, please send a copy of the processed deposit form to peyc2020@gmail.com so that we can confirm your payment.\n</p>\n<p>\nIf using this method, please add EUR 3.00 to the total amount to be sent. Also, take note of the additional service fees that your bank may charge, and be sure to add that as well.\n</p>\n"
+                    },
+                    "paypal": {
+                        "header": "Payment via PayPal",
+                        "details": "<p>\nIf you are ready to pay via PayPal, please click on your preferred mode of payment below.\n</p>"
+                    },
+                    "remittance": {
+                        "header": "Payment via Remittance",
+                        "details": "<p>\nWe accept payment via remittance through <b>Western Union</b>. Fill in the relevant forms with the following information:\n</p>\n<p>\n<b>Name of Recipient:</b> Albert Stalin Tancinco Garrido<br>\n<b>City and Country:</b> Quezon City, Metro Manila, Philippines<br>\n<b>Contact Number:</b> +63 998 249 1891<br>\n<b>E-mail Address:</b> albertstgarrido@gmail.com<br>\n</p>\n<p>\nTo cover the Documentary Stamp Tax mandated by Philippine law on international remittances, please add <b>0.3%</b> of the total amount to be paid.\n</p>\n"
+                    }
+                },
                 "fields": {
                     "bankAccount": "Bank Account",
                     "onlineBank": "Online Bank Transfer",
@@ -204,8 +238,7 @@
                 "header": "Certification",
                 "accuracy": "I certify that all the information provided in this form is true and correct, and can be verified using physical documents",
                 "privacy": "I agree with the <a target=\"_blank\" href=\"#!/about/privacy\">Privacy Policy</a> of the 1st Philippine Esperanto Youth Congress",
-                "publicity": "I consent to have my identity exhibited in the social media channels of the congress for publicity and informational purposes",
-                "newsletter": "Mi volas ricevi pli oftajn informojn pri la kongreso (k.e. aktualigojn kaj bultenojn)"
+                "publicity": "I consent to have my identity exhibited in the social media channels of the congress for publicity and informational purposes"
             }
         },
         "thanks": {

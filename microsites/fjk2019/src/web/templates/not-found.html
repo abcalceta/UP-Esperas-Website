@@ -1,6 +1,11 @@
 <section class="section">
-    <h1>Ho ve!</h1>
+    <h1>${this.localeObj.t('notFound.header')}</h1>
     <p>
-        It seems that you have opened a non-existing page.
+        ${this.localeObj.t('notFound.desc')}
     </p>
+</section>
+
+<section class="section center-align">
+    <a id="btn-404-back" class="btn-large theme-yellow"><i class="material-icons left">navigate_before</i>${this.localeObj.t('buttons.back')}</a>
+    <a class="btn-large theme-green" href="#!">${this.localeObj.t('buttons.home')}<i class="material-icons right">home</i></a>
 </section>
