@@ -144,7 +144,7 @@
             window.addEventListener('DOMContentLoaded', (e) => {
                 window.parent.postMessage({
                     type: 'height_update'
-                }, '*');
+                }, originUrl);
             });
 
             awaitPaypalJs().then(() => {
@@ -160,7 +160,7 @@
                             type: 'payment',
                             error_code: 'PMTCXD',
                             title: 'Payment cancelled',
-                        }, '*');
+                        }, originUrl);
                     },
                     onError: (err) => {
                         window.parent.postMessage({
@@ -168,7 +168,7 @@
                             error_code: 'PMTERR',
                             detail: err,
                             title: 'Failed to process payment',
-                        }, '*');
+                        }, originUrl);
                     },
                     onApprove: (data, actions) => {
                         return actions.order.capture()
@@ -178,7 +178,7 @@
                                         error_code: 'PMT200',
                                         title: 'Payment approved',
                                         order_id: data.orderID,
-                                    }, '*');
+                                    }, originUrl);
                                 })
                                 .catch((err) => {
                                     window.parent.postMessage({
@@ -186,7 +186,7 @@
                                         error_code: 'PMTERR',
                                         detail: err,
                                         title: 'Failed to process payment',
-                                    }, '*');
+                                    }, originUrl);
                                 });
                     }
                 }).render('#div-payment-paypal');
@@ -200,9 +200,18 @@
 
                 loader.querySelector('p').innerHTML = 'Paypal buttons loaded!';
 
+                // Set timer to wait for paypal div to show
+                return new Promise((resolve, reject) => {
+                    let waitTimeout = setTimeout(() => {
+                        clearTimeout(waitTimeout);
+                        resolve();
+                    }, 750);
+                });
+            })
+            .then(() => {
                 window.parent.postMessage({
                     type: 'height_update'
-                }, '*');
+                }, originUrl);
             });
         </script>
     </body>

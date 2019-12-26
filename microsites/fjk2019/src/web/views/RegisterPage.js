@@ -161,6 +161,7 @@ export class RegisterPage extends BasePage {
 
                 if(e.data.type == 'height_update') {
                     // Update iframe height
+                    console.log(e.data);
                     const paypalFrame = document.getElementById('div-payment-iframe-wrapper').querySelector('iframe');
                     paypalFrame.height = paypalFrame.contentWindow.document.body.scrollHeight;
 
@@ -842,7 +843,7 @@ export class RegisterPage extends BasePage {
                 }
 
                 try {
-                    const paymentPageRes = await fetch(`${this.apiDomain}/payment`, {
+                    const paymentPageRes = await fetch(`${this.apiDomain}/payment?lang=${this.data.locale.lang}`, {
                         method: 'POST',
                         mode: 'cors',
                         headers: {

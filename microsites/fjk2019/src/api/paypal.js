@@ -4,12 +4,13 @@ import path from 'path';
 import cheerio from 'cheerio';
 import Polyglot from 'node-polyglot';
 
-async function createPaymentPage(clientId, paymentObj, lang = 'en') {
+async function createPaymentPage(originUrl, clientId, paymentObj, lang = 'en') {
     const paymentPage = await fs.promises.readFile(path.join(__dirname, './paypal-payment.html'), 'utf-8');
     const $ = cheerio.load(paymentPage);
 
     const localeObj = new Polyglot();
-    const localeFile = await fs.promises.readFile(path.join(__dirname, `./i18n/${lang}/common.json`), 'utf-8');
+    const newLocale = ['en', 'eo'].includes(lang) ? lang : 'en';
+    const localeFile = await fs.promises.readFile(path.join(__dirname, `./i18n/${newLocale}/common.json`), 'utf-8');
     localeObj.extend(JSON.parse(localeFile));
 
     const order = createOrder(localeObj, paymentObj);
@@ -18,6 +19,7 @@ async function createPaymentPage(clientId, paymentObj, lang = 'en') {
         <script id="script-paypal-sdk" src="https://www.paypal.com/sdk/js?client-id=${clientId}&currency=${paymentObj.currencyAbbrev}&debug=false" defer async></script>
         <script>
             const order = ${JSON.stringify(order)};
+            const originUrl = '${!originUrl ? '*' : originUrl}';
         </script>
     `);
 

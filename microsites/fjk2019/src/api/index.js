@@ -209,7 +209,7 @@ function main() {
 
     expressApp.post('/api/payment', async function(req, res) {
         try {
-            const paymentPage = await PaypalPage.createPaymentPage(process.env.PAYPAL_CLIENT_ID, req.body);
+            const paymentPage = await PaypalPage.createPaymentPage(req.origin, process.env.PAYPAL_CLIENT_ID, req.body, req.query.lang);
 
             res.status(200).type('html').send(paymentPage);
         }
