@@ -17,6 +17,7 @@
         "viewDates": "View Dates"
     },
     "locality": {
+        "ph": "Philippines",
         "currencyWordsPh": "Philippine Pesos",
         "currencyWordsEu": "Euros",
         "localPlural": "Local",

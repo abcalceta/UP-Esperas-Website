@@ -5,7 +5,7 @@
   "scripts": {
     "start:web": "webpack-dev-server --config webpack.dev.js --config-name web",
     "start:api": "nodemon --watch ./src/api/ --exec babel-node ./src/api/index.js",
-    "build": "webpack --config webpack.prod.js",
+    "build": "BABEL_ENV=production webpack --config webpack.prod.js --env.NODE_ENV=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -29,11 +29,14 @@
     "webpack-dev-server": "^3.8.2"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "cheerio": "^1.0.0-rc.3",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-validator": "^6.3.0",
     "googleapis": "39",
+    "helmet": "^3.21.2",
     "jquery": "^3.4.1",
     "js-cookie": "^2.2.1",
     "materialize-css": "^1.0.0-rc.2",

@@ -118,7 +118,7 @@ const web = {
 
 const api = {
     target: 'node',
-    entry: './src/api/index.js',
+    entry: ['babel-polyfill', './src/api/index.js'],
     output: {
         filename: 'api.bundle.js',
         path: path.resolve(__dirname, 'dist/api'),

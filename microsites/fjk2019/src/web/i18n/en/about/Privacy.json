@@ -20,13 +20,26 @@
         "usage": {
             "title": "How will we use your data?",
             "par00": "The data will be used for the following reasons:",
-            "list00": "Contact you regarding the status of your application, news about upcoming Volunteer Staff meetings and orientations, and about the Congress itself",
+            "list00": "Contact you regarding the status of your application or registration, news about upcoming meetings and orientations, and about the Congress itself",
             "list01": "Screen the applications and sort memberships accordingly",
             "list02": "Collect statistics on the number of potential candidates that are acquainted with Esperanto, level of participation to Esperanto events, and zealousness of the people to learn it"
+        },
+        "location": {
+            "title": "Where do we process your data?",
+            "par00": "This website is hosted at Hetzner, which is an internet hosting provider based in Germany. Their servers are located in Germany and Finland, and their privacy notice can be found <a target=\"_blank\" href=\"https://www.hetzner.com/rechtliches/datenschutz\">here</a>."
+        },
+        "thirdParty": {
+            "title": "Who do we forward your data to?",
+            "par00": "We utilize Google Forms on some of our registration forms. By accomplishing these forms, you consent to send to us your data through them in accordance with their privacy policy found <a target=\"_blank\" href=\"https://policies.google.com/privacy\">here</a>."
         },
         "retention": {
             "title": "Until when will we save your data?",
             "par00": "We will save your data until the Organizing Committee completes its report on the Congress, which shall start only after the Congress has concluded. If you want to revoke your consent earlier than that date, please send us a message and we will immediately process it."
+        },
+        "dpo": {
+            "title": "Who do I contact for privacy concerns?",
+            "par00": "For data privacy concerns, you may contact the following data privacy officer:",
+            "dpoDetails": "<b>Carl C. Dizon</b><br>\nWebmaster<br>\npeyc2020+privacy@gmail.com<br>\n+63 908 215 4940<br>\n"
         }
     }
 }

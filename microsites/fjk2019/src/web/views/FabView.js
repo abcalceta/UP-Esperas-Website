@@ -54,7 +54,10 @@ export class FabView {
             document.getElementById('div-i18n-hint').classList.add('hide');
         }
 
-        M.FloatingActionButton.init(document.getElementById('btn-i18n'));
+        M.FloatingActionButton.init(document.getElementById('btn-i18n'), {
+            direction: 'top',
+            hoverEnabled: false,
+        });
     }
 
     view() {

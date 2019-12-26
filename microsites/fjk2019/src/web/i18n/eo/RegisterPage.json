@@ -4,7 +4,7 @@
         "title": "Aliĝilo",
         "subTitle": "Unua Filipina Junulara Kongreso de Esperanto",
         "buttons": {
-            "startRegistration": "Komenci Aliĝo",
+            "startRegistration": "Komenci Aliĝon",
             "registerAgain": "Aliĝi Denove"
         },
         "generalText": {
@@ -15,10 +15,25 @@
             "lateBird": "Malfrua",
             "onSite": "Memloka",
             "timeNotice": "Ĉiuj datoj kaj tempoj prezentitaj estas en Filipina Norma Tempo (GMT+8). La tempo de la limdatoj estas ĉe 11:59 ptm.",
-            "regPeriodText": "%{regPeriod} Aliĝtempo"
+            "regPeriodText": "%{regPeriod} Aliĝtempo",
+            "registerInProgress": "Aliĝadante. Bv. atendi&#8230;"
+        },
+        "generalErrors": {
+            "invalidField": "Ĉi tiu sekcio (%{sectionTitle}) havas nevalidajn kampojn!",
+            "genericSubmit": "La aliĝilon ne povas submeti nun. Bv. kontakti la organizantojn.",
+            "paymentCancelled": "La pagado estas nuligita sukcese!",
+            "genericPayment": "La pagado estis prilaborita malsukcese: %{errorMsg}",
+            "paypalError": "Ne povas uzi PayPal pagmaniero-n: %{errorMsg}"
+        },
+        "regTypes": {
+            "A1": "Gimnazianoj kaj pli junaj",
+            "A2": "Bakalaŭraj studentoj",
+            "A": "Bakalaŭraj studentoj",
+            "B1": "Laboristoj, postdiplomaj studentoj, kaj similaj &leq; 35-jaraĝa",
+            "B2": "Laboristoj, postdiplomaj studentoj, kaj similaj &gt; 35-jaraĝa"
         },
         "steps": {
-            "guidelines": "Guidelines",
+            "guidelines": "Gvidlinioj",
             "basic": "Baza",
             "register": "Aliĝo",
             "lodging": "Loĝejo",
@@ -26,6 +41,20 @@
             "food": "Manĝaĵo",
             "others": "Aliaj",
             "payment": "Pago"
+        },
+        "overview": {
+            "intro": {
+                "header": "Aliĝilo",
+                "desc": "Bonvenon al la Unua Filipina Junulara Kongreso de Esperanto! Ni dankas vin pro via intereso je ĉi tiu evento. Antaŭ daŭronte la aliĝado, bv. legi la jenajn gvidliniojn <a target=\"_blank\" href=\"#!/congress/register-guidelines\">tie</a>."
+            },
+            "cookieNotice": {
+                "header": "Informo pri Kuketoj",
+                "desc": "Per klaki al \"Komenci Aliĝon\", vi konsentas ke kuketoj estas konservitaj en via aparato por konservi vian netan aliĝilon. Tiaj kuketoj estas uzita nur tiucele, kaj datumoj enhavitaj ne estas senditaj al niaj serviloj krom se vi submetas la aliĝilon."
+            },
+            "start": {
+                "header": "Ĉu vi pretas?",
+                "desc": "Se vi pretas aliĝi al la kongreso, bv. klaki al \"Komenci Aliĝon\"."
+            }
         },
         "forms": {
             "requiredNotice": "Eroj markita per steleto (*) indikas ke ĝi devas plenumi.",
@@ -39,8 +68,11 @@
                     "birthday": "Naskiĝtago*",
                     "sex": "Sekso*",
                     "countryOfOrigin": "Devena Lando*",
+                    "city": "Urbo/Urbeto",
+                    "province": "Provinco/Ŝtato",
+                    "mobile": "Telefonnumero",
                     "emailAddress": "Retpoŝtadreso*",
-                    "sns": "Socia Rimedo"
+                    "sns": "Socia Retejo"
                 },
                 "errors": {
                     "lastName": "Bv. enigi vian lastan nomon",
@@ -55,44 +87,50 @@
             "register": {
                 "header": "Detaloj pri Aliĝo",
                 "regRatesHeader": "Aliĝkotizo por %{localityPlural} Partoprenantoj",
-                "currencyNotice": "Bv. rimarki ke la kotizoj estas en <b>%{currencyWords}</b>.",
+                "currencyNotice": "Bv. atenti ke la kotizoj estas en <b>%{currencyWords}</b>.",
                 "forexRateNotice": "Kiel gvido, 1 EUR = 56.00 PHP",
                 "countryNotice": "Vi devenas el <b>%{countryWord}</b> kaj <b>%{locality}</b> kotizoj regas",
                 "registerAsText": "Mi volas aliĝi kiel&#8230;*",
                 "currentOccupationText": "&#8230; kun nuna okupiĝo kiel&#8230;",
                 "currentStudyText": "&#8230; kaj studas nun ĉe&#8230;",
                 "currentWorkText": "&#8230; kaj laboras nun ĉe&#8230;",
+                "discountNotice": "Por rajtigi ricevi tiun rabaton, bv. sendi foton aŭ kopion de via lerneja identigilo aŭ atesto de matrikulo al peyc2020@gmail.com",
                 "guidelines": {
                     "A": "<b>Bakalaŭraj studentoj kaj pli junaj</b> estas junuloj kiuj estas en bakalaŭraj studoj, gimnazioj, kaj similaj institucioj je la tempo de aliĝo. Inkluzivas ankaŭ junulojn, kiuj pro ekonomiaj kialoj aŭ alie ne estas registrita kiel studento. Por filipinanoj tiu ĉi kategorio estas dividita en du subkategoriojn (aplikeblas nur por filipinanoj):",
                     "B": "<b>Laboristoj, postdiplomaj studentoj, kaj similaj</b> estas tiuj, kiuj laboras aŭ praktikas ian ajn profesion je la tempo de aliĝo. Inkluzivas ankaŭ studentojn de postdiplomaj programoj (magistriĝo, doktoriĝo), kaj senlaboruloj. La kategorio estas plu dividita en du subkategoriojn",
                     "C": "<b>Morala Partoprenanto</b> estas tiuj, kiuj mem ne partoprenos en la Kongreso, sed volas parte finance apogi ĝian organizadon. La kotizo estas duono (50%) de la indikita aliĝkotizo de la kategorio B1 en la dua aliĝperiodo. Moralajn partoprenantojn oni aparte mencios en la Kongresa Libro kaj dum la inaŭguro kaj la ferma ceremonio",
                     "D": "<b>Kongresa Patrono</b> estas tiuj, kiuj ŝatus krome finance subteni la Kongreson krom aliĝi kiel partoprenanto, pagante kotizon pli altan ol la normalajn kotizojn. La kotizo estas 2.5-oble (250%) de la aliĝkotizo de la kategorio B1 en la dua aliĝperiodo. Kongresaj patronoj povas elekti, ĉu partopreni en la Kongreso aŭ ne, kaj ricevos apartan mencion en la Kongresa Libro kaj dum la inaŭguro kaj la ferma ceremonio. Ili ankaŭ ricevos specialan donacon de la LKK.",
-                    "forMinors": "Aliĝantoj malpli ol 12-jaraĝaj kaj akompanotaj de siaj gepatroj aŭ kuratoroj povas aliĝi al la Kongreso senpage, kvankam ili ne ricevos propran kongresan sakon (krom nomŝildon) kaj devos pagi eventualajn aldonajn kostojn por loĝado, la ekskurso, kaj manĝoj."
+                    "forMinors": "Aliĝantoj malpli ol 12-jaraĝaj kaj akompanotaj de siaj gepatroj aŭ kuratoroj povas aliĝi al la Kongreso senpage, kvankam ili ne ricevos propran kongresan sakon (krom nomŝildon) kaj devos pagi eventualajn aldonajn kostojn por loĝado, la ekskurso, kaj manĝoj.",
+                    "addtlGuidelines": "Pli da informo pri la gvidiloj estas <a target=\"_blank\" href=\"#!congress/registration\">tie</a>."
                 },
                 "fields": {
                     "regularParticipant": "Regula Partoprenanto",
                     "moralParticipant": "Morala Partoprenanto",
                     "congressPatron": "Kongresa Patrono",
-                    "seniorHigh": "",
+                    "seniorHigh": "Gimnaziano aŭ pli juna",
                     "undergrad": "Bakalaŭro",
-                    "graduate": "",
+                    "graduate": "Postdiploma Studento",
                     "working": "Laborulo",
                     "unemployed": "Senlaborulo",
                     "educInsti": "Eduka Institucio*",
                     "degree": "Kurso*",
+                    "strand": "Jaro/Fako*",
                     "company": "Oficejo*",
-                    "position": "Postenon*"
+                    "position": "Posteno*"
                 },
                 "errors": {
                     "occupation": "Bv. elekti vian okupiĝon",
                     "educInsti": "Bv. enigi vian edukan institucio",
                     "degree": "Bv. enigi vian kurson",
+                    "strand": "Bv. enigi vian jaron",
                     "company": "Bv. enigi vian oficejon",
                     "position": "Bv. enigi vian postenon"
                 }
             },
             "lodging": {
                 "header": "Loĝejo",
+                "guidelines": "<p>Por pil facile sekvi la Kongreso mem kaj intime interagi kun la aliaj partoprenantoj, la Komitato konsilas ke partoprenantoj el aliaj regionoj aŭ eksterlandoj antaŭmendas siajn loĝejojn per la kunlaborantaj loĝejoj.</p>\n\n",
+                "datesDesc": "Mi alvenos kaj deiros inter la jenaj datoj",
                 "fields": {
                     "interested": "Mi interesiĝas pri antaŭmendi ĉambron provizita de la ",
                     "beyondDates": "Mi bezonas antaŭmendi preter la datoj de la kongreso",
@@ -102,6 +140,8 @@
             },
             "excursion": {
                 "header": "Ekskurso",
+                "desc": "<p>\nLa ekskurso al la Urbo Manilo okazos je <b>dimanĉo, la 26a de aprilo 2020</b>, <b>9:00-18:30</b>. Kvankam la agado mem estas nedeviga, la Komitato invitas ĉiujn partoprenantojn aliĝi.\n</p>\n<p>\nLa tuta tago estas provizita ekskursi al la jenaj lokoj:\n</p>\n<ul class=\"browser-default\">\n<li>La Nacia Muzeo de Antropologio</li>\n<li>Nacia Muzeo de Belartoj</li>\n<li>Intramuros & Fuorto Santiago</li>\n<li>Rizal-Parko</li>\n</ul>\n<p>\nPliaj informoj pri la ekskurso estas skribitaj <a target=\"_blank\" href=\"#!/congress/excursion\">tie</a>.\n</p>",
+                "fareNotice": "La ekskurso kostas <b>%{currencySymbol}%{price}</b>, kiu enhavas transporton, biletojn, kaj manĝetojn dum la tuta vojaĝo.",
                 "fields": {
                     "interested": "Mi interesiĝas partopreni en la ekskurso"
                 }
@@ -127,13 +167,34 @@
             },
             "others": {
                 "header": "Aliaj",
-                "congressPhotoHeader": "Kongresa Foto",
-                "congressFund": "Kongresa Fonduso",
-                "participantFund": "Fonduso por Partoprenontoj",
-                "associationFund": "Junulara Fonduso",
                 "shipTo": "Liveri al&#8230;",
-                "invitLetterCost": "Bv. rimarki ke ĝi kostas <b>%{currencySymbol}%{price}</b> por liveri la leteron al via elektita loko.",
-                "donateNotice": "Bv. rimarki ke vi donacos per <b>%{currencyWord}</b>",
+                "misc": "K.T.P.",
+                "congressPhoto": {
+                    "header": "Kongresa Foto",
+                    "guidelines": "Pere de komisiita fotisto, la LKK eldonos ekzemplerojn de la oficiala foto de la partoprenantoj de la kongreso. Tiu estos realigota se estos sufiĉan nombron de partoprenantoj kiuj volas ĝin."
+                },
+                "invitLetter": {
+                    "header": "Invitilo",
+                    "guidelines": "<p>La LKK sendos elektronikajn invitilojn en la angla kaj Esperanto al ĉiuj aliĝintoj pere de retmesaĝo. Tamen, se vi bezonas tian dokumenton por ia ajn celo, vi povas peti eldonitan invitleteron de ni sendota pere de poŝto.</p>\n\n<p>\nInvitleteroj estos senditaj pere de regula poŝto per PhilPost. Aliflanke, se vi preferas ricevi ĝin pere de ekspresa poŝto aŭ de privata kuriero, pri tio vi devas aparte informi la LKK-n kaj unue fari la eventualajn krompagojn por sendokostoj antaŭ ol oni sendos la invitilojn.\n</p>\n<p>\nPro sekurecaj kialoj, la LKK <em>ne donos</em> invitleteron al iu ajn, kiu nek oficiale aliĝis al la Kongreso, nek estis invitita de la LKK kiel speciala gasto. Krome, la LKK indikos en la invitiloj nur la oficialajn kongresajn tagojn (nome, de la 23a ĝis la 26a de aprilo 2020).\n</p>\n",
+                    "sendVia": "Liveri pere de&#8230;",
+                    "regularShip": "Regula Poŝto (PhilPost)",
+                    "expressShip": "Ekspresa Poŝto (EMS)/Alie",
+                    "regularMailCostNotice": "Bv. atenti ke ĝi kostas <b>%{currencySymbol}%{price}</b> por liveri la leteron pere de <b>regula poŝto</b>.",
+                    "expressMailCostNotice": "Bv. atenti ke vi ŝuldas la aldonitajn kostojn por liveri la leteron pere de <b>ekspresa/privata poŝto</b>."
+                },
+                "donate": {
+                    "header": "Donacu",
+                    "guidelines00": "<p>\nVi ankaŭ povas subteni la kongreson aŭ FEJ-n plue per donaci por diversaj celoj. Subvenciantoj estos menciitaj sur la Kongresa Libro kaj rilataj materialoj. Koran dankon pro via donaco.\n</p>\n\n<p>\nJen estas kelkaj celoj kie vi povas enmeti viajn donacojn:\n</p>",
+                    "guidelines01": "<p>Donaci estas nedevige. Vi povas lasi kelkajn aŭ ĉiujn kampojn malplenaj se vi preferas.</p>",
+                    "anonymous": "Mi ne volas montri mian nomon en la listo de donintoj ĉie (anonima donaco)",
+                    "congressFund": "Kongresa Fonduso",
+                    "participantFund": "Fonduso por Partoprenontoj",
+                    "associationFund": "Junulara Fonduso",
+                    "congressFundDesc": "por pligrandigi la financojn de la kongreso kaj plue elspezi siajn kostojn, kaj eventuale riĉigi kaj fortigi la tutan programon por ĉiuj partoprenontoj.",
+                    "participantFundDesc": "por financi la partoprenojn de junaj filipinanoj loĝante for de la kongresa loko aŭ tiuj, kiuj havas financajn barojn malhelpante la partoprenonton ĉeesti la kongreson.",
+                    "associationFundDesc": "por financi la nunajn kaj estontajn agadojn kaj iniciatojn de la Filipina Esperanto Junularo.",
+                    "currencyNotice": "Bv. atenti ke vi donacos per <b>%{currencyWord}</b>"
+                },
                 "suggest": {
                     "header": "Komentoj",
                     "desc": "Se vi havas iajn ajn komentojn pri la aliĝilo aŭ la kongreso mem, bv. skribi ĝin tie ĉi. Ni respondos baldaŭ post kiam vi aliĝas.",
@@ -142,9 +203,9 @@
                 "fields": {
                     "congressPhoto": "Mi volas ricevi oficialan kongresan foton (elpresita)",
                     "invitLetter": "Mi volas ricevi elpresitan invitleteron sendita per poŝto",
-                    "webList": "Mi ne volas montri mian nomon sur la listo de aliĝantoj sur tiu ĉi retejo",
+                    "webList": "Mi ne volas montri mian nomon en la listo de aliĝantoj skribota sur tiu ĉi retejo",
                     "program": "Mi volas estri agadon aŭ prelegi dum la kongreso",
-                    "volCorp": "Mi volas kontribui kiel parto de la Kongresa Volontula Servo <a target=\"_blank\" href=\"#!/volunteer\">[pli]</a>",
+                    "volCorp": "Mi volas kontribui kiel parto de la <a target=\"_blank\" href=\"#!/volunteer\">Kongresa Volontula Servo</a>.",
                     "fej": "Mi volas aniĝi al la Filipina Esperanto Junularo por la jaro 2020 (senpaga)",
                     "cert": "Mi bezonas atestilo pri ĉeesto de la kongreso",
                     "bookletExclude": "Mi ne volas ricevi elpresitan kongresan libron"
@@ -159,7 +220,25 @@
                 "payVia": "Pagi per",
                 "startDate": "Komenca Dato",
                 "endDate": "Limdato",
-                "downpayNotice": "Bv. rimarki ke la Komitato devas ricevi almenaŭ <b>50%</b> el la tuta aliĝkotizo por ke la aliĝo validas. Krome, ĉiuj antaŭpagoj devas esti plenumitaj je aŭ antaŭ la <b>09a de Aprilo, 2020</b>. Post tiam, estos malfrua krompago, kiu kostas <b>%{currencySymbol}%{value}</b>.",
+                "downpayNotice": "Bv. atenti ke la Komitato devas ricevi almenaŭ <b>50%</b> el la tuta aliĝkotizo por ke la aliĝo validas. Krome, ĉiuj antaŭpagoj devas esti plenumitaj je aŭ antaŭ la <b>09a de Aprilo, 2020</b>. Post tiam, estos malfrua krompago, kiu kostas <b>%{currencySymbol}%{value}</b>.",
+                "modals": {
+                    "bankAccount": {
+                        "header": "Pago pere de Bankkonto",
+                        "details": "<p>\nBv. pagi la plenan sumon pere de internacia depono. Bv. plenumi la rilatajn formularojn per la jenaj informoj:\n</p>\n<p>\n<b>Nomo de Banko:</b> Landbank of the Philippines<br>\n<b>Nomo de Konto:</b> Albert Stalin T. Garrido<br>\n<b>Numero de Konto:</b> 3077106196<br>\n<b>SWIFT-Kodo:</b> TLBPPHMM<br>\n<b>Adreso de Banko:</b> Head Office, Landbank Plaza, M.H. Del Pilar cor. D. J. Quintos Sts., Malate, Manila, Philippines<br>\n<b>Telefonnumero de Banko</b> +63 2 405 7000<br>\n</p>\n<p>\nPost la transakcio, bv. sendi kopion de la pagateston al peyc2020@gmail.com por ke ni povu konfirmi vian pagon.\n</p>\n<p>\n<b>NB:</b> Bv. aldoni EUR 3.00 al la sumo pagita. Bv. ankaŭ atenti la aliajn pagojn via banko povas pagigi al vi, kaj aldoni la tutan koston kontraŭ la sumo pagita.\n</p>\n"
+                    },
+                    "onlineBank": {
+                        "header": "Pago pere de Reta Transpago",
+                        "details": "<p>\nBv. pagi pere de reta transpago per <b>BDO</b> al la jena konto:\n</p>\n<p>\n<b>Banko:</b> BDO<br>\n<b>Nomo de Konto:</b> Albert Stalin T. Garrido<br>\n<b>Numero de Konto:</b> 005350261895<br>\n<b>Tipo de Konto:</b> Savings<br>\n</p>\n<p>\nBv. sendi foton de la pagatesto al peyc2020@gmail.com por ke ni povu konfirmi vian pagon. Bv. atenti la aliajn pagojn via banko povas pagigi al vi, kaj aldoni la tutan koston kontraŭ la sumo pagita.</p>"
+                    },
+                    "paypal": {
+                        "header": "Pago pere de PayPal",
+                        "details": "<p>\nSe vi pretas pagi pere de PayPal, bv. klaki al via preferita maniero suben.\n</p>"
+                    },
+                    "remittance": {
+                        "header": "Pago pere de Ĝiro",
+                        "details": "<p>\nNi akceptas pagon pere de ĝiro per <b>Western Union</b>. Bv. plenumi la rilatajn formularojn per la jenaj informoj:\n</p>\n<p>\n<b>Nomo de Ricevanto:</b> Albert Stalin Tancinco Garrido<br>\n<b>Urbo kaj Lando:</b> Quezon City, Metro Manila, Philippines<br>\n<b>Kontaktnumero:</b> +63 998 249 1891<br>\n<b>Retpoŝtadreso:</b> albertstgarrido@gmail.com<br>\n</p>\n<p>\nPor ke ni povu konfirmi vian pagon, bv. sendi foton aŭ kopion de la pagatesto al peyc2020@gmail.com kun la jenaj informoj: <b>MTCN/Referenca Numero</b>, <b>ĝusta sumo sendita</b>, kaj <b>nomo de sendanto</b>\n</p>\n<p>\n<b>NB:</b> Por ŝuldi la imposton aldonita de la Filipina registaro kontraŭ internaciaj ĝiroj, bv. aldoni <b>0.3%</b> el la sumo pagita. Ekz., se la sumon pagita estas <em>100</em>, bv. anstataŭe pagi la tutan sumon kiel 100 * 1.003 = <em>100.30</em>.\n</p>\n"
+                    }
+                },
                 "fields": {
                     "bankAccount": "Bankkonto",
                     "onlineBank": "Reta Transpago per Banko",
@@ -177,20 +256,27 @@
             },
             "certification": {
                 "header": "Atesto",
-                "accuracy": "Mi atestas ke ĉiuj informoj provizita estas veraj kaj ĝustaj, kiuj povas kontroli per dokumentoj",
-                "privacy": "Mi legis la privatecan avizon rilate al mia aliĝo en la kongreso",
-                "publicity": "Mi konsentas rajtigi la kongresan komitaton uzi miajn fotojn, filmetojn, ktp. dum la kongreso kiel arkivoj kaj memoraĵoj"
+                "fields": {
+                    "accuracy": "Mi atestas ke ĉiuj informoj provizitaj estas veraj kaj ĝustaj, kaj la informoj povas kontroli per dokumentoj",
+                    "privacy": "Mi legis la <a target=\"_blank\" href=\"#!/about/privacy\">privatecan avizon</a> rilate al mia aliĝo en la kongreso",
+                    "publicity": "Mi konsentas rajtigi la kongresan komitaton uzi miajn fotojn, filmetojn, ktp. akirote dum la kongreso kiel arkivoj kaj memoraĵoj"
+                },
+                "errors": {
+                    "accuracy": "Bv. atesti la vero de via enigo",
+                    "privacy": "Bv. konsenti al nia privateca avizo",
+                    "publicity": "Bv. konsenti al publikigitaj rajtoj"
+                }
             }
         },
         "thanks": {
             "header": "Dankon!",
             "par00": "Dankon pro via aliĝo al la Unua Filipina Junulara Kongreso de Esperanto! Ni esperas ke ni renkontu vin dum la kongreso!",
-            "par01": "En kazoj pri aliĝo, pago, aŭ alie, bv. kontakti nin. Bv. diri al ni vian aliĝan aŭ pagan n-ron por helpi vin pli bone.",
+            "par01": "En kazoj pri aliĝo, pago, aŭ alie, bv. kontakti nin. Bv. diri al ni vian aliĝan aŭ pagan numeron por helpi vin pli bone.",
             "refNums": {
                 "header": "Referencaj Numeroj",
-                "par00": "Bv. konservi tiujn ĉi n-rojn por la estonteco.",
-                "regId": "Aliĝn-ro",
-                "paymentId": "Pagn-ro"
+                "par00": "Bv. konservi tiujn ĉi numerojn por la estonteco.",
+                "regId": "Aliĝnumero",
+                "paymentId": "Pagnumero"
             }
         }
     }

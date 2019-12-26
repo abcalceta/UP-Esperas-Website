@@ -113,10 +113,12 @@ export class DbInterface{
             {
                 isCongressPhoto: (formObj['cbx-others-photo'] == 'on') ? 1 : 0,
                 isInvitLetter: (formObj['cbx-others-invitletter'] == 'on') ? 1 : 0,
+                invitLetterShipVia: (formObj['cbx-others-invitletter'] == 'on') ? formObj['rbx-others-invitletter-shipvia'] : '',
                 isNameInList: (formObj['cbx-others-weblist-noinclude'] == 'on') ? 0 : 1,
                 isInDonorList: (formObj['cbx-others-donorlist-noinclude'] == 'on') ? 0 : 1,
                 isCongressProgram: (formObj['cbx-others-contrib'] == 'on') ? 1 : 0,
                 isVolCorp: (formObj['cbx-others-volcorp'] == 'on') ? 1 : 0,
+                isJoinFej: (formObj['cbx-others-fej'] == 'on') ? 1: 0,
                 isCertAttend: (formObj['cbx-others-cert'] == 'on') ? 1 : 0,
                 isBooklet: (formObj['cbx-others-nobooklet'] == 'on') ? 0 : 1,
                 suggest: formObj['txt-others-suggest']

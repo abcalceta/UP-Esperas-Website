@@ -16,17 +16,6 @@
         <p>
             ${this.localeObj.t('register.overview.start.desc')}
         </p>
-        <noscript>
-            <div class="card-panel red darken-2">
-                <span class="white-text">
-                    Oh no! It seems that you have disabled JavaScript or your browser does not support it. Please <a class="yellow-text text-darken-2" href="//enable-javascript.com/" target="_blank">enable</a> it to register.
-                </span>
-                <br>
-                <span class="white-text">
-                    Ho ve! Ŝajnas ke vi malŝaltis JavaScript-on aŭ via retumilo ne subtenas ĝin. Bv. <a class="yellow-text text-darken-2" href="//enable-javascript.com/" target="_blank">ŝalti</a> ĝin por aliĝi.
-                </span>
-            </div>
-        </noscript>
         <div class="center-align">
             <a id="a-start-reg" class="btn-large theme-green waves-effect" href="">${this.localeObj.t('register.buttons.startRegistration')}</a>
         </div>
@@ -193,6 +182,10 @@
             </div>
         </div>
 
+        <p id="div-card-reg-discount" class="card-panel theme-yellow white-text hide">
+            ${this.localeObj.t('register.forms.register.discountNotice')}
+        </p>
+
         <div id="div-reg-educ-info" class="row hide">
             <div class="col s12">
                 <h6>${this.localeObj.t('register.forms.register.currentStudyText')}</h6>
@@ -342,9 +335,9 @@
     <section id="section-lodging" class="section hide">
         <h3>${this.localeObj.t('register.forms.lodging.header')}</h3>
         ${this.localeObj.t('register.forms.lodging.guidelines')}
-        
+
         <p class="card-panel theme-yellow white-text">
-            More information on lodging options will be released very soon. The information entered here will be used for surveying purposes.
+            More information on lodging options will be released very soon.
         </p>
 
         <div class="row">
@@ -360,7 +353,7 @@
 
         <div class="row">
             <div class="input-field col s12">
-                <h6>I will arrive and leave between the following dates</h6>
+                <h6>${this.localeObj.t('register.forms.lodging.datesDesc')}</h6>
             </div>
             <div class="input-field col s12 m6">
                 <select id="select-lodging-arrive" name="select-lodging-arrival">
@@ -377,21 +370,7 @@
 
     <section id="section-excursion" class="section hide">
         <h3>${this.localeObj.t('register.forms.excursion.header')}</h3>
-        <p>
-            An excursion to the City of Manila, is scheduled to be held on <b>Sunday, 26 April, 2020</b>, <b>9:00-18:30</b>. While availing of this activity is not required, the Organizing Committee invites all participants to join.
-        </p>
-        <p>
-            The whole-day excursion to Manila offers a visit to the following places: 
-        </p>
-        <ul class="browser-default">
-            <li>The National Museum of Anthropology</li>
-            <li>National Museum of Fine Arts</li>
-            <li>Intramuros & Fort Santiago</li>
-            <li>Rizal Park</li>
-        </ul>
-        <p>
-            More information about the excursion can be accessed <a target="_blank" href="#!/congress/excursion">here</a>.
-        </p>
+        ${this.localeObj.t('register.forms.excursion.desc')}
         <div class="row">
             <label class="input-field col s12">
                 <input class="filled-in" name="cbx-excursion-interest" type="checkbox">
@@ -505,19 +484,19 @@
 
             <div id="div-others-invitletter-shipinfo" class="row hide">
                 <div class="col s12">
-                    <h6>${this.localeObj.t('register.forms.others.shipTo')}</h6>
+                    <h6>${this.localeObj.t('register.forms.others.invitLetter.sendVia')}</h6>
                 </div>
                 <label class="input-field col s12 m6">
-                    <input class="with-gap" name="rbx-others-invitletter-shipto" value="local" type="radio">
-                    <span>Philippines</span>
+                    <input class="with-gap" name="rbx-others-invitletter-shipvia" value="regular" type="radio" checked>
+                    <span>${this.localeObj.t('register.forms.others.invitLetter.regularShip')}</span>
                 </label>
                 <label class="input-field col s12 m6">
-                    <input class="with-gap" name="rbx-others-invitletter-shipto" type="radio" value="foreign" checked>
-                    <span>Other</span>
+                    <input class="with-gap" name="rbx-others-invitletter-shipvia" type="radio" value="express">
+                    <span>${this.localeObj.t('register.forms.others.invitLetter.expressShip')}</span>
                 </label>
                 <div id="div-card-invitletter-price" class="card-panel col s12 theme-yellow white-text">
                     <p>
-                        ${this.localeObj.t('register.forms.others.invitLetterCost')}
+                        ${this.localeObj.t('register.forms.others.invitLetter.regularMailCostNotice')}
                     </p>
                 </div>
             </div>
@@ -537,7 +516,7 @@
         ${this.localeObj.t('register.forms.others.donate.guidelines01')}
 
         <div id="div-donate-currency" class="card-panel theme-green white-text">
-            ${this.localeObj.t('register.forms.others.donateNotice')}
+            ${this.localeObj.t('register.forms.others.donate.currencyNotice')}
         </div>
 
         <div class="row">
@@ -580,7 +559,7 @@
         </p>
         <p>
             <label>
-                <input class="filled-in" name="cbx-others-cert" type="checkbox">
+                <input class="filled-in" name="cbx-others-fej" type="checkbox">
                 <span>${this.localeObj.t('register.forms.others.fields.fej')}</span>
             </label>
         </p>
@@ -667,22 +646,22 @@
         <p>
             <label>
                 <input class="filled-in" type="checkbox" name="cbx-attest-true" required>
-                <span>${this.localeObj.t('register.forms.certification.accuracy')}</span>
-                <span class="helper-text" data-error="Please attest the veracity of your input"></span>
+                <span>${this.localeObj.t('register.forms.certification.fields.accuracy')}</span>
+                <span class="helper-text" data-error="${this.localeObj.t('register.forms.certification.errors.accuracy')}"></span>
             </label>
         </p>
         <p>
             <label>
                 <input class="filled-in" type="checkbox" name="cbx-attest-privacy" required>
-                <span>${this.localeObj.t('register.forms.certification.privacy')}</span>
-                <span class="helper-text" data-error="Please consent to our privacy policy"></span>
+                <span>${this.localeObj.t('register.forms.certification.fields.privacy')}</span>
+                <span class="helper-text" data-error="${this.localeObj.t('register.forms.certification.errors.privacy')}"></span>
             </label>
         </p>
         <p>
             <label>
                 <input class="filled-in" type="checkbox" name="cbx-attest-publicity" required>
-                <span>${this.localeObj.t('register.forms.certification.publicity')}</span>
-                <span class="helper-text" data-error="Please consent to publicity rights"></span>
+                <span>${this.localeObj.t('register.forms.certification.fields.publicity')}</span>
+                <span class="helper-text" data-error="${this.localeObj.t('register.forms.certification.errors.publicity')}"></span>
             </label>
         </p>
 
@@ -726,12 +705,26 @@
             </div>
         </div>
 
-        <!-- Modal for bank transfer -->
+        <!-- Modal for bank deposit -->
         <div id="div-modal-payment-bank" class="modal">
             <div class="modal-content">
                 <h4>${this.localeObj.t('register.forms.payment.modals.bankAccount.header')}</h4>
 
                 ${this.localeObj.t('register.forms.payment.modals.bankAccount.details')}
+
+                <p class="center-align">
+                    <a class="modal-close btn-large waves-effect waves-light theme-red"><i class="material-icons right">cancel</i>${this.localeObj.t('buttons.cancel')}</a>
+                    <a class="btn-large waves-effect waves-light theme-green payment-submit">${this.localeObj.t('buttons.submit')}<i class="material-icons right">send</i></a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Modal for online bank transfer -->
+        <div id="div-modal-payment-online-bank" class="modal">
+            <div class="modal-content">
+                <h4>${this.localeObj.t('register.forms.payment.modals.onlineBank.header')}</h4>
+
+                ${this.localeObj.t('register.forms.payment.modals.onlineBank.details')}
 
                 <p class="center-align">
                     <a class="modal-close btn-large waves-effect waves-light theme-red"><i class="material-icons right">cancel</i>${this.localeObj.t('buttons.cancel')}</a>

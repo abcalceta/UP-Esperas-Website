@@ -1,4 +1,6 @@
 import express from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
 import uuidv4 from 'uuid/v4';
 import { body, validationResult, oneOf } from 'express-validator';
 
@@ -24,28 +26,27 @@ function main() {
 
     process.env.SHARED_LOGGER = logger;
 
-    // Options
-    expressApp.disable('x-powered-by');
-
     // Middlewares
     expressApp.use(express.json());
     expressApp.use(express.urlencoded({ extended: true }));
-    expressApp.use(function(req, res, next) {
-        let originUrl = '';
+    expressApp.use(helmet());
+    expressApp.use(cors({
+        origin: (origin, callback) => {
+            if(!origin) {
+                callback(null, true);
+                return;
+            }
 
-        if(req.hostname == 'localhost') {
-            originUrl = '*';
-        }
-        else {
-            originUrl = `${req.protocol}://${req.hostname}`;
-        }
+            const matches = origin.match(/^https?:\/\/([^:]*):?([0-9]{4})?$/);
 
-        if(ALLOWED_ORIGINS.includes(req.hostname)) {
-            res.setHeader('Access-Control-Allow-Origin', originUrl);
-        }
+            if(ALLOWED_ORIGINS.includes(matches[1])) {
+                callback(null, true);
+                return;
+            }
 
-        next();
-    });
+            callback(new Error('Origin domain not recognized'));
+        }
+    }));
 
     expressApp.options('*', function(req, res) {
         const requestHeader = req.header('Access-Control-Request-Header');
