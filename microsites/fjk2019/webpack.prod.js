@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const fs = require('fs');
 
+const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
@@ -68,6 +69,9 @@ const web = {
         }
     },
     plugins: [
+        new CopyPlugin([
+            { from: './src/web/i18n', to: 'i18n' },
+        ]),
         new HtmlWebpackPlugin({
             template: './src/web/templates/index.html'
         }),
@@ -125,6 +129,9 @@ const api = {
         //publicPath: './'
     },
     plugins: [
+        new CopyPlugin([
+            { from: './src/api/i18n', to: 'i18n' },
+        ]),
         new webpack.IgnorePlugin(/\.(css|less)$/)
     ],
     externals: nodeModules

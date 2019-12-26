@@ -4,6 +4,13 @@ import path from 'path';
 import cheerio from 'cheerio';
 import Polyglot from 'node-polyglot';
 
+function roundToPlaces(value, precision) {
+    // https://stackoverflow.com/a/7343013
+    var multiplier = Math.pow(10, precision || 0);
+
+    return Math.round(value * multiplier) / multiplier;
+}
+
 async function createPaymentPage(originUrl, clientId, paymentObj, lang = 'en') {
     const paymentPage = await fs.promises.readFile(path.join(__dirname, './paypal-payment.html'), 'utf-8');
     const $ = cheerio.load(paymentPage);
@@ -35,11 +42,11 @@ function createOrder(localeObj, paymentObj) {
             soft_descriptor: 'FJK 2020',
             amount: {
                 currency_code: paymentObj.currencyAbbrev,
-                value: paymentObj.fees.total,
+                value: roundToPlaces(paymentObj.fees.total, 2),
                 breakdown: {
                     item_total: {
                         currency_code: paymentObj.currencyAbbrev,
-                        value: paymentObj.fees.total
+                        value: roundToPlaces(paymentObj.fees.total, 2)
                     }
                 }
             },
@@ -56,7 +63,7 @@ function createItems(localeObj, paymentObj) {
         name: localeObj.t('fees.registration'),
         unit_amount: {
             currency_code: paymentObj.currencyAbbrev,
-            value: paymentObj.fees.reg
+            value: roundToPlaces(paymentObj.fees.reg, 2)
         },
         quantity: 1
     });
@@ -66,7 +73,7 @@ function createItems(localeObj, paymentObj) {
             name: localeObj.t('fees.excursion'),
             unit_amount: {
                 currency_code: paymentObj.currencyAbbrev,
-                value: paymentObj.fees.excursion
+                value: roundToPlaces(paymentObj.fees.excursion, 2)
             },
             quantity: 1
         });
@@ -88,7 +95,7 @@ function createItems(localeObj, paymentObj) {
             name: localeObj.t('fees.congressFund'),
             unit_amount: {
                 currency_code: paymentObj.currencyAbbrev,
-                value: paymentObj.fees.congressFund
+                value: roundToPlaces(paymentObj.fees.congressFund, 2)
             },
             quantity: 1
         });
@@ -99,7 +106,7 @@ function createItems(localeObj, paymentObj) {
             name: localeObj.t('fees.participantFund'),
             unit_amount: {
                 currency_code: paymentObj.currencyAbbrev,
-                value: paymentObj.fees.participantFund
+                value: roundToPlaces(paymentObj.fees.participantFund, 2)
             },
             quantity: 1
         });
@@ -110,7 +117,7 @@ function createItems(localeObj, paymentObj) {
             name: localeObj.t('fees.fejFund'),
             unit_amount: {
                 currency_code: paymentObj.currencyAbbrev,
-                value: paymentObj.fees.fejFund
+                value: roundToPlaces(paymentObj.fees.fejFund, 2)
             },
             quantity: 1
         });
