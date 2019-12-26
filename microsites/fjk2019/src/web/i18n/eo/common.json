@@ -17,6 +17,7 @@
         "viewDates": "Vidi Datojn"
     },
     "locality": {
+        "ph": "Filipinoj",
         "currencyWordsPh": "Filipinaj Pesoj",
         "currencyWordsEu": "Eŭroj",
         "localPlural": "Lokaj",

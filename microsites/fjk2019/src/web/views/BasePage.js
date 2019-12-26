@@ -80,6 +80,7 @@ export class BasePage {
         const localePath = `../i18n/${locale}/${this.data.locale.filename}.json`;
 
         console.log(`Found locale ${locale}`);
+        this.data.locale.lang = locale;
         this.localeObj.locale(locale);
 
         m.request({

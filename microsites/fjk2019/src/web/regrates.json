@@ -18,9 +18,9 @@
         "local": 300,
         "foreign": 7
     },
-    "invitletter": {
-        "local": [50.00, 0.89],
-        "foreign": [180.00, 3.00]
+    "invitletterRegular": {
+        "local": 50.00,
+        "foreign": 3.00
     },
     "latePayment": {
         "local": 100,

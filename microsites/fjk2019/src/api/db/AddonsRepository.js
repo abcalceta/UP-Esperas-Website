@@ -8,10 +8,12 @@ export class AddonsRepository extends BaseRepository {
             registrantId TEXT NOT NULL,
             isCongressPhoto INTEGER,
             isInvitLetter INTEGER,
+            invitLetterShipVia TEXT,
             isNameInList INTEGER,
             isInDonorList INTEGER,
             isCongressProgram INTEGER,
             isVolCorp INTEGER,
+            isJoinFej INTEGER,
             isCertAttend INTEGER,
             isBooklet INTEGER,
             suggest TEXT
@@ -26,17 +28,20 @@ export class AddonsRepository extends BaseRepository {
             registrantId,
             isCongressPhoto,
             isInvitLetter,
+            invitLetterShipVia,
             isNameInList,
             isInDonorList,
             isCongressProgram,
             isVolCorp,
+            isJoinFej,
             isCertAttend,
             isBooklet,
             suggest
         )
         VALUES
         (?, ?, ?, ?, ?,
-        ?, ?, ?, ?, ?)
+        ?, ?, ?, ?, ?,
+        ?, ?)
         `;
 
         return this.dao.run(
@@ -44,10 +49,12 @@ export class AddonsRepository extends BaseRepository {
             registrantId,
             params.isCongressPhoto,
             params.isInvitLetter,
+            params.invitLetterShipVia,
             params.isNameInList,
             params.isInDonorList,
             params.isCongressProgram,
             params.isVolCorp,
+            params.isJoinFej,
             params.isCertAttend,
             params.isBooklet,
             params.suggest,

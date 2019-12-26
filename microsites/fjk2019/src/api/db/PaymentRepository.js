@@ -26,8 +26,8 @@ export class PaymentRepository extends BaseRepository {
             paymentType,
             currency,
             paypalOrderId,
-            invitLetter,
             regFee,
+            invitLetter,
             congressFund,
             participantFund,
             fejFund

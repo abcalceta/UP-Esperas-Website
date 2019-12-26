@@ -25,7 +25,8 @@ export class RegisterPage extends BasePage {
             heroPath
         );
 
-        this.Pa
+        //this.apiDomain = 'https://fjk.up-esperas.org/api';
+        this.apiDomain = '//localhost:6002/api';
 
         this.countryList = [];
         this.currentPageState = 0;
@@ -38,7 +39,6 @@ export class RegisterPage extends BasePage {
             ['Others', 'star', 'section-others'],
             ['Payment', 'payment', 'section-payment'],
         ];
-        this.regIdxToName = ['early', 'regular', 'late'];
 
         this.monthsWords = {
             full: [],
@@ -50,22 +50,27 @@ export class RegisterPage extends BasePage {
         };
     }
 
-    oninit(vnode) {
+    onLocaleChanged() {
+        super.onLocaleChanged();
+
         // Load country list
         m.request({
             method: 'GET',
-            url: 'https://restcountries.eu/rest/v2/all?fields=name;alpha3Code',
+            url: `../i18n/${this.data.locale.lang}/countryList.json`,
             background: true,
         })
         .then((t) => {
             this.countryList = t.map((eachCountry) => {
                 return [eachCountry.name, eachCountry.alpha3Code];
+            }).sort((a, b) => {
+                const nameA = a[0].toLowerCase();
+                const nameB = b[0].toLowerCase();
+
+                return nameA.localeCompare(nameB, this.data.locale.lang);
             });
 
             this.isCountryListUpdated = true;
         });
-
-        super.oninit(vnode);
     }
 
     onupdate(vnode) {
@@ -87,7 +92,7 @@ export class RegisterPage extends BasePage {
             m.render(countrySelectElm, [
                 m('option', {selected: true, disabled: true}, this.localeObj.t('register.forms.basic.fields.countryOfOrigin')),
                 m('optgroup', {label: this.localeObj.t('locality.localPlural')}, [
-                    m('option', {value: 'PHL'}, 'Philippines')
+                    m('option', {value: 'PHL'}, this.localeObj.t('locality.ph'))
                 ]),
                 m('optgroup', {label: this.localeObj.t('locality.foreignPlural')}, countryElmList),
             ]);
@@ -178,14 +183,14 @@ export class RegisterPage extends BasePage {
                         break;
                     case 'PMTCXD':
                         Materialize.toast({
-                            html: 'Payment succesfully cancelled!',
+                            html: this.localeObj.t('register.generalErrors.paymentCancelled'),
                             classes: 'white-text theme-yellow',
                         });
 
                         break;
                     default:
                         Materialize.toast({
-                            html: `Failed to process payment: ${e.data.detail}`,
+                            html: this.localeObj.t('register.generalErrors.genericPayment', {errorMsg: e.data.detail}),
                             classes: 'white-text theme-red',
                         });
                 }
@@ -210,6 +215,11 @@ export class RegisterPage extends BasePage {
         // Update step progress
         let stepContainerElm = document.querySelector('#div-steps');
         m.render(stepContainerElm, this.getStepsDom(this.currentPageState));
+
+        if(pageIdxFromHistory == this.currentPageState && pageIdxFromHistory == 0) {
+            console.log('Clicked from overview page.');
+            return;
+        }
 
         if(typeof pageIdxFromHistory == 'number' || pageIdxFromHistory instanceof Number) {
             console.info(`Moving to page from history: ${this.pageStatesList[pageIdxFromHistory][0]}`);
@@ -248,6 +258,7 @@ export class RegisterPage extends BasePage {
 
             DomScripts.animateOnce('#section-guidelines', ['fadeOutLeft', 'faster'], () => {
                 guidelinesSubPage.classList.add('hide');
+
                 basicInfoSubPage.classList.remove('hide');
                 stepsElm.classList.remove('hide');
                 navElm.classList.remove('hide');
@@ -257,11 +268,13 @@ export class RegisterPage extends BasePage {
                 DomScripts.animateOnce('#section-nav-buttons', 'fadeInUp');
 
                 m.route.set(
-                    `/register/${this.pageStatesList[this.currentPageState][2]}`,
+                    `/register/${this.pageStatesList[0][2]}`,
                     null,
                     {
                         replace: false,
-                        state: {lastPageIdx: 0}
+                        state: {
+                            lastPageIdx: 0
+                        }
                     }
                 );
             });
@@ -275,13 +288,22 @@ export class RegisterPage extends BasePage {
         const workInfoDiv = document.querySelector('#div-reg-work-info');
         const occupationList = document.querySelector('#select-reg-occupation');
 
-        occupationList.addEventListener('change', function(e) {
-            switch(this.value) {
+        occupationList.addEventListener('change', (e) => {
+            // Show or hide discount notice
+            if(occupationList.value == 'shs' || occupationList.value == 'undergrad') {
+                document.getElementById('div-card-reg-discount').classList.remove('hide');
+            }
+            else {
+                document.getElementById('div-card-reg-discount').classList.add('hide');
+            }
+
+            // Show or hide divs
+            switch(occupationList.value) {
                 case 'shs': {
                     const degreeTxt = educInfoDiv.querySelector('#txt-reg-degree');
 
-                    degreeTxt.parentElement.querySelector('label[for=txt-reg-degree]').innerHTML = 'Strand/Vocation/Grade*';
-                    degreeTxt.parentElement.querySelector('span').dataset.error = 'Please enter your strand/vocation/grade';
+                    degreeTxt.parentElement.querySelector('label[for=txt-reg-degree]').innerHTML = this.localeObj.t('register.forms.register.fields.strand');
+                    degreeTxt.parentElement.querySelector('span').dataset.error = this.localeObj.t('register.forms.register.errors.strand');
 
                     Materialize.updateTextFields();
 
@@ -305,8 +327,8 @@ export class RegisterPage extends BasePage {
                 case 'grad': {
                     let degreeTxt = educInfoDiv.querySelector('#txt-reg-degree');
 
-                    degreeTxt.parentElement.querySelector('label').innerHTML = 'Degree*';
-                    degreeTxt.parentElement.querySelector('span').dataset.error = 'Please enter your degree';
+                    degreeTxt.parentElement.querySelector('label').innerHTML = this.localeObj.t('register.forms.register.fields.degree');
+                    degreeTxt.parentElement.querySelector('span').dataset.error = this.localeObj.t('register.forms.register.errors.degree');
 
                     Materialize.updateTextFields();
 
@@ -423,7 +445,6 @@ export class RegisterPage extends BasePage {
         const excursionCbx = document.querySelector('input[type=checkbox][name=cbx-excursion-interest]');
 
         excursionCbx.addEventListener('change', (e) => {
-            console.log('here!');
             if(!excursionCbx.checked) {
                 DomScripts.animateOnce(fareNoticeCard, ['fadeOut', 'fast'], () => {
                     fareNoticeCard.classList.add('hide');
@@ -444,7 +465,7 @@ export class RegisterPage extends BasePage {
     attachOthersEvent() {
         const invitLetterCbx = document.querySelector('input[name=cbx-others-invitletter][type=checkbox]');
         const invitLetterShipDiv = document.getElementById('div-others-invitletter-shipinfo');
-        const shipToRbx = document.querySelectorAll('input[type=radio][name=rbx-others-invitletter-shipto]');
+        const shipViaRbx = document.querySelectorAll('input[type=radio][name=rbx-others-invitletter-shipvia]');
         const shipToCard = document.getElementById('div-card-invitletter-price');
 
         invitLetterCbx.addEventListener('change', (e) => {
@@ -459,13 +480,20 @@ export class RegisterPage extends BasePage {
             });
         });
 
-        shipToRbx.forEach((v) => {
+        shipViaRbx.forEach((v) => {
             v.addEventListener('change', (e) => {
-                const shippingLocality = v.value;
-                const {currency, value} = this.computeInvitationLetterFee(shippingLocality, this.isLocalRates());
+                let cardCostNotice = '';
+
+                if(v.value == 'express') {
+                    cardCostNotice = this.localeObj.t('register.forms.others.invitLetter.expressMailCostNotice');
+                }
+                else {
+                    const {currency, value} = this.computeInvitationLetterFee(this.isLocalRates());
+                    cardCostNotice = this.localeObj.t('register.forms.others.invitLetter.regularMailCostNotice', {currencySymbol: currency, price: value});
+                }
 
                 m.render(shipToCard, [
-                    m('p', m.trust(this.localeObj.t('register.forms.others.invitLetterCost', {currencySymbol: currency, price: value})))
+                    m('p', m.trust(cardCostNotice))
                 ]);
             });
         });
@@ -524,6 +552,7 @@ export class RegisterPage extends BasePage {
                 document.getElementById('form-register').reset();
                 document.querySelector('#div-reg-category').classList.remove('hide');
                 document.querySelector('#select-reg-occupation').required = true;
+                document.getElementById('div-others-invitletter-shipinfo').classList.add('hide');
                 Cookies.remove('cookie_consent');
 
                 DomScripts.animateOnce('#section-guidelines', ['fadeInRight', 'fast']);
@@ -595,26 +624,56 @@ export class RegisterPage extends BasePage {
 
                 break;
             case 'section-others': {
-                // Invitation letter card
-                const rbxInvitLetterShipTo = document.querySelector('input[type=radio][name=rbx-others-invitletter-shipto]:checked');
+                // Set-up invitation letter card
+                const rbxInvitLetterShipVia = document.querySelector('input[type=radio][name=rbx-others-invitletter-shipvia]:checked');
                 const shipToCard = document.getElementById('div-card-invitletter-price');
-                const shippingLocality = rbxInvitLetterShipTo.value;
-                const {currency, value} = this.computeInvitationLetterFee(shippingLocality, this.isLocalRates());
+                const shipVia = rbxInvitLetterShipVia.value;
+                let cardCostNotice = '';
+
+                if(shipVia == 'express') {
+                    cardCostNotice = this.localeObj.t('register.forms.others.invitLetter.expressMailCostNotice');
+                }
+                else {
+                    const {currency, value} = this.computeInvitationLetterFee(this.isLocalRates());
+                    cardCostNotice = this.localeObj.t('register.forms.others.invitLetter.regularMailCostNotice', {currencySymbol: currency, price: value});
+                }
 
                 m.render(shipToCard, [
-                    m('p', m.trust(this.localeObj.t('register.forms.others.invitLetterCost', {currencySymbol: currency, price: value})))
+                    m('p', m.trust(cardCostNotice))
                 ]);
 
                 // Donation card
                 const donateCurrencyCard = document.getElementById('div-donate-currency');
                 const currencyKey = this.localeObj.t(`locality.${isLocalRates ? 'currencyWordsPh' : 'currencyWordsEu'}`);
 
-                m.render(donateCurrencyCard, m.trust(this.localeObj.t('register.forms.others.donateNotice', {currencyWord: currencyKey})));
+                m.render(donateCurrencyCard, m.trust(this.localeObj.t('register.forms.others.donate.currencyNotice', {currencyWord: currencyKey})));
+
+                // FEJ membership
+                const cbxFej = document.querySelector('input[type=checkbox][name=cbx-others-fej]').parentElement.parentElement;
+
+                if(this.isLocalRates()) {
+                    cbxFej.classList.remove('hide');
+                }
+                else {
+                    cbxFej.classList.add('hide');
+                }
+
+                break;
             }
             case 'section-payment': {
                 // Set late payment notice
                 const lateFee = this.computeLatePenaltyFee(isLocalRates);
                 document.getElementById('div-payment-downpay-notice').innerHTML = this.localeObj.t('register.forms.payment.downpayNotice', {currencySymbol: lateFee.currency, value: lateFee.value});
+
+                // Toggle online bank transfer
+                const rbxOnlineBank = document.querySelectorAll('#div-card-payment-details + div p')[1];
+
+                if(this.isLocalRates()) {
+                    rbxOnlineBank.classList.remove('hide');
+                }
+                else {
+                    rbxOnlineBank.classList.add('hide');
+                }
 
                 // Compute total fees
                 const cardPaymentDetails = document.querySelector('#div-card-payment-details');
@@ -625,7 +684,7 @@ export class RegisterPage extends BasePage {
                     m('span', {class: 'card-title'}, `${this.localeObj.t('register.forms.payment.details')} (${feesObj.currency})`),
                     m('div', {class: 'row'}, [
                         m('div', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.registration')),
-                        m('div', {class: 'col s4 right-align'}, feesObj.fees.reg)
+                        m('div', {class: 'col s4 right-align'}, feesObj.fees.reg.toFixed(2))
                     ]),
                 ];
 
@@ -633,7 +692,7 @@ export class RegisterPage extends BasePage {
                     receiptRows.push(
                         m('div', {class: 'row'}, [
                             m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.excursion')),
-                            m('span', {class: 'col s4 right-align'}, feesObj.fees.excursion)
+                            m('span', {class: 'col s4 right-align'}, feesObj.fees.excursion.toFixed(2))
                         ])
                     );
                 }
@@ -642,7 +701,7 @@ export class RegisterPage extends BasePage {
                     receiptRows.push(
                         m('div', {class: 'row'}, [
                             m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.invitLetter')),
-                            m('span', {class: 'col s4 right-align'}, feesObj.fees.invitLetter)
+                            m('span', {class: 'col s4 right-align'}, feesObj.fees.invitLetter.toFixed(2))
                         ])
                     );
                 }
@@ -651,7 +710,7 @@ export class RegisterPage extends BasePage {
                     receiptRows.push(
                         m('div', {class: 'row'}, [
                             m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.congressFund')),
-                            m('span', {class: 'col s4 right-align'}, feesObj.fees.congressFund)
+                            m('span', {class: 'col s4 right-align'}, feesObj.fees.congressFund.toFixed(2))
                         ])
                     );
                 }
@@ -660,7 +719,7 @@ export class RegisterPage extends BasePage {
                     receiptRows.push(
                         m('div', {class: 'row'}, [
                             m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.participantFund')),
-                            m('span', {class: 'col s4 right-align'}, feesObj.fees.participantFund)
+                            m('span', {class: 'col s4 right-align'}, feesObj.fees.participantFund.toFixed(2))
                         ])
                     );
                 }
@@ -669,7 +728,7 @@ export class RegisterPage extends BasePage {
                     receiptRows.push(
                         m('div', {class: 'row'}, [
                             m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.associationFund')),
-                            m('span', {class: 'col s4 right-align'}, feesObj.fees.fejFund)
+                            m('span', {class: 'col s4 right-align'}, feesObj.fees.fejFund.toFixed(2))
                         ])
                     );
                 }
@@ -681,7 +740,7 @@ export class RegisterPage extends BasePage {
                             m('b', this.localeObj.t('register.forms.payment.grandTotal'))
                         ]),
                         m('span', {class: 'col s4 right-align'}, [
-                            m('b', `${feesObj.currency}${feesObj.fees.total}`)
+                            m('b', `${feesObj.currency}${feesObj.fees.total.toFixed(2)}`)
                         ])
                     ])
                 ]);
@@ -723,12 +782,14 @@ export class RegisterPage extends BasePage {
 
     updateRegDatesUi() {
         // Check registration date
+        const regIdxToName = ['earlyBird', 'regular', 'lateBird'];
+
         const regDateIdx = RegFormUtils.checkRegistrationPeriod();
         const cardPanelElm = document.getElementById('div-panel-reg-date-notice');
-        const regPeriodName = this.regIdxToName[regDateIdx];
+        const regPeriodName = this.localeObj.t(`register.generalText.${regIdxToName[regDateIdx]}`);
 
         document.querySelector('input[name=hdn-reg-period]').value = regDateIdx;
-        cardPanelElm.querySelector('.card-title').innerHTML = `${regPeriodName[0].toUpperCase()}${regPeriodName.substr(1)} Registration`;
+        cardPanelElm.querySelector('.card-title').innerHTML = this.localeObj.t('register.generalText.regPeriodText', {regPeriod: `${regPeriodName[0].toUpperCase()}${regPeriodName.substr(1)}`});
         cardPanelElm.querySelector('div.card-content p').innerHTML = this.localeObj.t('register.forms.payment.registerNotice', {registerType: regPeriodName});
     }
 
@@ -740,6 +801,11 @@ export class RegisterPage extends BasePage {
                 const bankModal = Materialize.Modal.getInstance(document.getElementById('div-modal-payment-bank'));
                 bankModal.open();
 
+                break;
+            }
+            case 'online-bank': {
+                const onlineBankModal = Materialize.Modal.getInstance(document.getElementById('div-modal-payment-online-bank'));
+                onlineBankModal.open();
                 break;
             }
             case 'remittance': {
@@ -776,7 +842,7 @@ export class RegisterPage extends BasePage {
                 }
 
                 try {
-                    const paymentPageRes = await fetch('//localhost:6002/api/payment', {
+                    const paymentPageRes = await fetch(`${this.apiDomain}/payment`, {
                         method: 'POST',
                         mode: 'cors',
                         headers: {
@@ -798,7 +864,7 @@ export class RegisterPage extends BasePage {
                 }
                 catch(err) {
                     Materialize.toast({
-                        html: `Cannot set-up PayPal payment: ${err}`,
+                        html: this.localeObj.t('register.generalErrors.paypalError', {errorMsg: err}),
                         classes: 'white-text theme-red'
                     });
 
@@ -817,7 +883,7 @@ export class RegisterPage extends BasePage {
         const submitBtn = document.getElementById('btn-next');
 
         const inProgressToast = Materialize.toast({
-            html: 'Registering. Please wait&#8230;',
+            html: this.localeObj.t('register.generalText.registerInProgress'),
             classes: 'theme-green white-text'
         });
 
@@ -826,7 +892,7 @@ export class RegisterPage extends BasePage {
             prevBtn.disabled = true;
             submitBtn.disabled = true;
 
-            const res = await fetch('//localhost:6002/api/register', {
+            const res = await fetch(`${this.apiDomain}/register`, {
                 method: 'POST',
                 body: new URLSearchParams(new FormData(document.forms[0])),
             });
@@ -878,7 +944,7 @@ export class RegisterPage extends BasePage {
             submitBtn.disabled = false;
 
             Materialize.toast({
-                html: 'Form cannot be submitted. Please contact the organizers.',
+                html: this.localeObj.t('register.generalErrors.genericSubmit'),
                 classes: 'theme-red white-text'
             });
         }
@@ -895,7 +961,7 @@ export class RegisterPage extends BasePage {
             }
 
             if(!eachInputElm.checkValidity()) {
-                let toastMsg = `This section (${this.pageStatesList[this.currentPageState][0]}) has invalid fields!`;
+                let toastMsg = this.localeObj.t('register.generalErrors.invalidField', {sectionTitle: this.pageStatesList[this.currentPageState][0]});
 
                 if(eachInputElm.tagName == 'SELECT' && eachInputElm.parentElement.parentElement.querySelector('.helper-text')) {
                     toastMsg = eachInputElm.parentElement.parentElement.querySelector('.helper-text').dataset.error;
@@ -1006,10 +1072,10 @@ export class RegisterPage extends BasePage {
         }
     }
 
-    computeInvitationLetterFee(shipToLocality, isLocalRates) {
+    computeInvitationLetterFee(isLocalRates, isExpress = false) {
         return {
             currency: isLocalRates ? '₱' : '€',
-            value: regFeesJson['invitletter'][shipToLocality][isLocalRates ? 0 : 1]
+            value: isExpress ? 0 : regFeesJson['invitletterRegular'][isLocalRates ? 'local' : 'foreign']
         };
     }
 
@@ -1026,7 +1092,7 @@ export class RegisterPage extends BasePage {
         const rbxCategory = document.querySelector('input[type=radio][name=rbx-reg-broad]:checked');
         const cbxInvitLetter = document.querySelector('input[type=checkbox][name=cbx-others-invitletter]');
         const cbxExcursion = document.querySelector('input[type=checkbox][name=cbx-excursion-interest]');
-        const rbxInvitLetterShipTo = document.querySelector('input[type=radio][name=rbx-others-invitletter-shipto]:checked');
+        const rbxInvitLetterShipVia = document.querySelector('input[type=radio][name=rbx-others-invitletter-shipvia]:checked');
         const selectList = document.querySelector('#select-reg-occupation');
         const regPeriodField = document.querySelector('input[name=hdn-reg-period]');
 
@@ -1040,7 +1106,7 @@ export class RegisterPage extends BasePage {
         const excursionCost = (cbxExcursion.checked) ? regFeesJson['excursion'][locKey] : 0;
 
         // Get inivitation letter cost
-        const invitLetterCost = (cbxInvitLetter.checked) ? this.computeInvitationLetterFee(rbxInvitLetterShipTo.value, isLocalRates).value : 0;
+        const invitLetterCost = (cbxInvitLetter.checked) ? this.computeInvitationLetterFee(isLocalRates, rbxInvitLetterShipVia.value == 'express').value : 0;
 
         // Get donations cost
         const congressFundCost = Number(document.getElementById('txt-congress-fund').value);
@@ -1049,7 +1115,6 @@ export class RegisterPage extends BasePage {
 
         // Get total payable cost
         const totalPayableCost = regFeeCost + excursionCost + invitLetterCost + congressFundCost + participantFundCost + fejFundCost;
-        let paypalItems = []
 
         return {
             fees: {

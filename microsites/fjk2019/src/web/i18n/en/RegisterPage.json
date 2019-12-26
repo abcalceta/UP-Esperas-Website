@@ -15,7 +15,15 @@
             "lateBird": "Late",
             "onSite": "On-Site",
             "timeNotice": "All dates are in Philippine Standard Time (GMT+8). Time of end dates are at 11:59 PM.",
-            "regPeriodText": "%{regPeriod} Registration"
+            "regPeriodText": "%{regPeriod} Registration",
+            "registerInProgress": "Registering. Please wait&#8230;"
+        },
+        "generalErrors": {
+            "invalidField": "This section (%{sectionTitle}) has invalid fields!",
+            "genericSubmit": "Form cannot be submitted. Please contact the organizers.",
+            "paymentCancelled": "Payment succesfully cancelled!",
+            "genericPayment": "Failed to process payment: %{errorMsg}",
+            "paypalError": "Cannot set-up PayPal payment: %{errorMsg}"
         },
         "regTypes": {
             "A1": "Senior high school students and younger",
@@ -106,6 +114,7 @@
                     "unemployed": "Unemployed",
                     "educInsti": "Educational Institution*",
                     "degree": "Degree/Course*",
+                    "strand": "Strand/Vocation/Grade*",
                     "company": "Company/Office*",
                     "position": "Position/Designation*"
                 },
@@ -113,6 +122,7 @@
                     "occupation": "Please select your occupation",
                     "educInsti": "Please enter your educational institution",
                     "degree": "Please enter your degree/course/study",
+                    "strand": "Please enter your strand/vocation/grade",
                     "company": "Please enter your company name",
                     "position": "Please enter your position"
                 }
@@ -120,6 +130,7 @@
             "lodging": {
                 "header": "Lodging",
                 "guidelines": "<p>For easier access to the Congress' proceedings and services and closer interaction with other participants, the Organizing Committee recommends that participants from other regions or countries reserve their lodging with partner hotels.</p>\n\n",
+                "datesDesc": "I will arrive and leave between the following dates",
                 "fields": {
                     "interested": "I am interested in reserving a room from partner hotels of the congress",
                     "beyondDates": "I need to reserve a lodging beyond the congress dates",
@@ -129,6 +140,7 @@
             },
             "excursion": {
                 "header": "Excursion",
+                "desc": "<p>\nAn excursion to the City of Manila, is scheduled to be held on <b>Sunday, 26 April, 2020</b>, <b>9:00-18:30</b>. While availing of this activity is not required, the Organizing Committee invites all participants to join.\n</p>\n<p>\nThe whole-day excursion to Manila offers a visit to the following places:\n</p>\n<ul class=\"browser-default\">\n<li>The National Museum of Anthropology</li>\n<li>National Museum of Fine Arts</li>\n<li>Intramuros & Fort Santiago</li>\n<li>Rizal Park</li>\n</ul>\n<p>\nMore information about the excursion can be accessed <a target=\"_blank\" href=\"#!/congress/excursion\">here</a>.\n</p>",
                 "fareNotice": "The excursion will cost <b>%{currencySymbol}%{price}</b>, which includes transportation, entrance tickets, and snacks throughout the whole trip.",
                 "fields": {
                     "interested": "I am interested in participating in the excursion"
@@ -155,7 +167,6 @@
             },
             "others": {
                 "header": "Others",
-                "shipTo": "Ship to&#8230;",
                 "misc": "Miscellaneous",
                 "congressPhoto": {
                     "header": "Congress Group Photo",
@@ -163,10 +174,13 @@
                 },
                 "invitLetter": {
                     "header": "Invitation Letter",
-                    "guidelines": "<p>All participants will receive a digital copy of their invitation letters in their respective emails. However, in the case that you need documentation for various purposes, you may request a printed invitation letter from us to be sent by mail.</p>\n\n<p>Invitation letters will be sent as regular mail through PhilPost. On the other hand, you want it sent using Express Mail Service (EMS) or through a private courier service, please select the corresponding option to inform the Organizing Committee. Note that you will have to shoulder any additional shipping fees (if applicable).</p>\n\n"
+                    "guidelines": "<p>All participants will receive a digital copy of their invitation letters in English and Esperanto in their respective emails. However, in the case that you need documentation for various purposes, you may request a printed invitation letter from us to be sent by mail.</p>\n\n<p>\nInvitation letters will be sent as regular mail through PhilPost. On the other hand, if you want it sent using Express Mail Service (EMS) or through a private courier service, please select the corresponding option to inform the Organizing Committee. Note that you will have to shoulder any additional shipping fees (if applicable).\n</p>\n<p>\nFor security reasons, the Organizing Committee will <em>not issue</em> any invitation letter to any individual who has not registered and paid their fees or has not been invited by the Organizing Committee as lecturer, performer, or other guest or personnel. Furthermore, only the official congress dates (April 23-26, 2020) will be indicated as inclusive dates in the invitation letters.\n</p>\n",
+                    "sendVia": "Send via&#8230;",
+                    "regularShip": "Regular Mail (PhilPost)",
+                    "expressShip": "Express Mail (EMS)/Other",
+                    "regularMailCostNotice": "Please note that it will cost around <b>%{currencySymbol}%{price}</b> to deliver the letter via <b>regular mail</b>.",
+                    "expressMailCostNotice": "Please note that you will have to shoulder additional fees to deliver the letter via <b>express/private mail</b>."
                 },
-                "invitLetterCost": "Please note that it will cost around <b>%{currencySymbol}%{price}</b> to deliver the letter to your chosen location.",
-                "donateNotice": "Please note that you will donate in <b>%{currencyWord}</b>",
                 "donate": {
                     "header": "Donate",
                     "guidelines00": "<p>You may also choose to support the preparation of the congress even further by making monetary donations for specific purposes. Donors will be mentioned on the Congress Booklet and other related materials. Thank you very much for your donation.</p>\n\n<p>Here are some items where your donations can be placed:</p>",
@@ -177,7 +191,8 @@
                     "associationFund": "Association Fund",
                     "congressFundDesc": "to augment financial resources of the congress and further cover its costs, and eventually to make the entire program richer and more substantial for all participants.",
                     "participantFundDesc": "to finance the participation of young Filipinos who live in areas far from the Congress venue or those who undergo financial struggles that hinder them from attending the event.",
-                    "associationFundDesc": "to finance other ongoing and future activities and initiatives of the Philippine Esperanto Youth."
+                    "associationFundDesc": "to finance other ongoing and future activities and initiatives of the Philippine Esperanto Youth.",
+                    "currencyNotice": "Please note that you will donate in <b>%{currencyWord}</b>"
                 },
                 "suggest": {
                     "header": "Remarks",
@@ -189,7 +204,7 @@
                     "invitLetter": "I want to receive a printed invitation letter sent by mail",
                     "webList": "I do not want my name written on the list of participants shown on this website",
                     "program": "I want to lead a program or a lecture during the congress",
-                    "volCorp": "I want to be a part of the Congress Volunteer Corps. <a target=\"_blank\" href=\"#!/volunteer\">[more info]</a>",
+                    "volCorp": "I want to be a part of the <a target=\"_blank\" href=\"#!/volunteer\">Congress Volunteer Corps</a>.",
                     "fej": "I would like to join Philippine Esperanto Youth for the year 2020 (free of charge)",
                     "cert": "I need a certificate of attendance of the congress",
                     "bookletExclude": "I do not wish to receive a printed copy of the congress booklet"
@@ -208,7 +223,11 @@
                 "modals": {
                     "bankAccount": {
                         "header": "Payment via Bank Deposit",
-                        "details": "<p>\nPlease pay to the bank account below through international money deposit. Fill in the relevant forms with the information below:\n</p>\n<p>\n<b>Bank Name:</b> Landbank of the Philippines<br>\n<b>Account Name:</b> Albert Stalin T. Garrido<br>\n<b>Account Number:</b> 3077106196<br>\n<b>SWIFT Code:</b> TLBPPHMM<br>\n<b>Bank Address:</b> Head Office, Landbank Plaza, M.H. Del Pilar cor. D. J. Quintos Sts., Malate, Manila, Philippines<br>\n<b>Bank Tel. No.</b> +63 2 405 7000<br>\n</p>\n<p>\nAfter the transaction, please send a copy of the processed deposit form to peyc2020@gmail.com so that we can confirm your payment.\n</p>\n<p>\nIf using this method, please add EUR 3.00 to the total amount to be sent. Also, take note of the additional service fees that your bank may charge, and be sure to add that as well.\n</p>\n"
+                        "details": "<p>\nPlease pay to the bank account below through international money deposit. Fill in the relevant forms with the information below:\n</p>\n<p>\n<b>Bank Name:</b> Landbank of the Philippines<br>\n<b>Account Name:</b> Albert Stalin T. Garrido<br>\n<b>Account Number:</b> 3077106196<br>\n<b>SWIFT Code:</b> TLBPPHMM<br>\n<b>Bank Address:</b> Head Office, Landbank Plaza, M.H. Del Pilar cor. D. J. Quintos Sts., Malate, Manila, Philippines<br>\n<b>Bank Tel. No.</b> +63 2 405 7000<br>\n</p>\n<p>\nAfter the transaction, please send a copy of the processed deposit form to peyc2020@gmail.com so that we can confirm your payment.\n</p>\n<p>\n<b>NOTE:</b> Please add EUR 3.00 to the total amount to be sent. Also, take note of the additional service fees that your bank may charge, and be sure to add that as well.\n</p>\n"
+                    },
+                    "onlineBank": {
+                        "header": "Payment via Online Bank Transfer",
+                        "details": "<p>\nPlease pay through online bank transfer via <b>BDO</b> to the following account:\n</p>\n<p>\n<b>Bank:</b> BDO<br>\n<b>Account Name:</b> Albert Stalin T. Garrido<br>\n<b>Account Number:</b> 005350261895<br>\n<b>Account Type:</b> Savings<br>\n</p>\n<p>\nPlease send a screenshot of the successful transaction to peyc2020@gmail.com so that we can confirm your payment. Make sure to check if there are service fees charged by your bank and add the amount of any possible additional costs to cover them.</p>\n"
                     },
                     "paypal": {
                         "header": "Payment via PayPal",
@@ -216,7 +235,7 @@
                     },
                     "remittance": {
                         "header": "Payment via Remittance",
-                        "details": "<p>\nWe accept payment via remittance through <b>Western Union</b>. Fill in the relevant forms with the following information:\n</p>\n<p>\n<b>Name of Recipient:</b> Albert Stalin Tancinco Garrido<br>\n<b>City and Country:</b> Quezon City, Metro Manila, Philippines<br>\n<b>Contact Number:</b> +63 998 249 1891<br>\n<b>E-mail Address:</b> albertstgarrido@gmail.com<br>\n</p>\n<p>\nTo cover the Documentary Stamp Tax mandated by Philippine law on international remittances, please add <b>0.3%</b> of the total amount to be paid.\n</p>\n"
+                        "details": "<p>\nWe accept payment via remittance through <b>Western Union</b>. Please fill in the relevant forms with the following information:\n</p>\n<p>\n<b>Name of Recipient:</b> Albert Stalin Tancinco Garrido<br>\n<b>City and Country:</b> Quezon City, Metro Manila, Philippines<br>\n<b>Contact Number:</b> +63 998 249 1891<br>\n<b>E-mail Address:</b> albertstgarrido@gmail.com<br>\n</p>\n<p>\nFor bookkeeping purposes, send a photo or scanned copy of the processed transaction form to peyc2020@gmail.com showing the following information: <b>MTCN/Reference Number</b>, <b>exact amount sent</b>, and <b>name of the sender</b>.\n</p>\n<p>\n<b>NOTE:</b> To cover the Documentary Stamp Tax mandated by Philippine law on international remittances, please add <b>0.3%</b> of the total amount to be paid. For example, if the total fees to pay is <em>100</em>, then please pay a total of 100 * 1.003 = <em>100.30</em> instead.\n</p>\n"
                     }
                 },
                 "fields": {
@@ -236,9 +255,16 @@
             },
             "certification": {
                 "header": "Certification",
-                "accuracy": "I certify that all the information provided in this form is true and correct, and can be verified using physical documents",
-                "privacy": "I agree with the <a target=\"_blank\" href=\"#!/about/privacy\">Privacy Policy</a> of the 1st Philippine Esperanto Youth Congress",
-                "publicity": "I consent to have my identity exhibited in the social media channels of the congress for publicity and informational purposes"
+                "fields": {
+                    "accuracy": "I certify that all the information provided in this form is true and correct, and can be verified using physical documents",
+                    "privacy": "I agree with the <a target=\"_blank\" href=\"#!/about/privacy\">Privacy Policy</a> of the 1st Philippine Esperanto Youth Congress",
+                    "publicity": "I consent to have my identity exhibited in the social media channels of the congress for publicity and informational purposes"
+                },
+                "errors": {
+                    "accuracy": "Please attest the veracity of your input",
+                    "privacy": "Please consent to our privacy policy",
+                    "publicity": "Please consent to publicity rights"
+                }
             }
         },
         "thanks": {
