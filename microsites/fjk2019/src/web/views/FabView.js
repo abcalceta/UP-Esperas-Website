@@ -31,28 +31,30 @@ export class FabView {
             }
         });
 
-        const currentLocale = Cookies.get('locale');
+        let currentLocale = Cookies.get('locale');
 
         if(currentLocale === undefined) {
             document.getElementById('div-i18n-hint').classList.remove('hide');
             tapTarget.open();
+
+            currentLocale = 'en';
         }
         else {
-            // Disabled current locale button
-            const langList = document.querySelectorAll('#btn-i18n ul li a');
-
-            langList.forEach((eachItem) => {
-                if(RegExp(`^btn-floating-select-${currentLocale}$`).test(eachItem.id)) {
-                    eachItem.classList.add('disabled');
-                }
-                else {
-                    eachItem.classList.remove('disabled');
-                }
-            });
-
             // Hide discovery
             document.getElementById('div-i18n-hint').classList.add('hide');
         }
+
+        // Disabled current locale button
+        const langList = document.querySelectorAll('#btn-i18n ul li a');
+
+        langList.forEach((eachItem) => {
+            if(RegExp(`^btn-floating-select-${currentLocale}$`).test(eachItem.id)) {
+                eachItem.classList.add('disabled');
+            }
+            else {
+                eachItem.classList.remove('disabled');
+            }
+        });
 
         M.FloatingActionButton.init(document.getElementById('btn-i18n'), {
             direction: 'top',

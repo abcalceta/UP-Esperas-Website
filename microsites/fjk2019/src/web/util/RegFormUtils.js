@@ -1,26 +1,34 @@
-function initDatePicker(element, localeObj) {
-    let dateToday = new Date(Date.now());
+import flatpickr from 'flatpickr';
+import {Esperanto as flatpickrEo} from 'flatpickr/dist/l10n/eo';
+
+import 'flatpickr/dist/themes/material_green.css';
+import '../styles/datepicker.css';
+
+function initDatePicker(element, locale) {
     let elm = element;
 
     if(typeof element == 'string' || element instanceof String) {
         elm = document.querySelector(element);
     }
 
-    M.Datepicker.init(elm, {
-        yearRange: [1940, dateToday.getFullYear()],
-        maxDate: dateToday,
-        format: "yyyy-mm-dd",
-        autoClose: true,
-        i18n: {
-            cancel: localeObj.cancel,
-            clear: localeObj.clear,
-            done: localeObj.done,
-            months: localeObj.months.full,
-            monthsShort: localeObj.months.short,
-            weekdaysShort: localeObj.days.short,
-            weekdaysAbbrev: localeObj.days.abbrev,
-        }
+    const datePicker = flatpickr(elm, {
+        allowInput: true,
+        dateFormat: 'Y-m-d',
+        minDate: '1940-01-01',
+        maxDate: 'today',
+        locale: flatpickrEo,
     });
+
+    // Override Materialize css
+    document.querySelector('.flatpickr-monthDropdown-months').classList.add('inline-block');
+
+    const textLabel = elm.parentElement.querySelector('label');
+
+    if(textLabel) {
+        textLabel.addEventListener('click', () => {
+            datePicker.open();
+        });
+    }
 }
 
 function loadFormElements(rootElmId) {

@@ -1,6 +1,7 @@
 import m from 'mithril';
 import Materialize from 'materialize-css';
 import Cookies from 'js-cookie';
+import { iframeResizer } from 'iframe-resizer';
 
 import {DomScripts} from '../util/dom';
 import {RegFormUtils} from '../util/RegFormUtils';
@@ -9,7 +10,6 @@ import {BasePage} from './BasePage';
 import htmlMain from '../templates/register.html';
 import heroPath from '../img/hero/ks_cards.jpg';
 
-import '../styles/datepicker.css';
 import '../styles/steps.css';
 import '../styles/regform.css';
 
@@ -37,6 +37,7 @@ export class RegisterPage extends BasePage {
             ['Excursion', 'emoji_nature', 'section-excursion'],
             ['Food', 'restaurant', 'section-food'],
             ['Others', 'star', 'section-others'],
+            ['Summary', 'how_to_reg', 'section-summary'],
             ['Payment', 'payment', 'section-payment'],
         ];
 
@@ -56,7 +57,7 @@ export class RegisterPage extends BasePage {
         // Load country list
         m.request({
             method: 'GET',
-            url: `../i18n/${this.data.locale.lang}/countryList.json`,
+            url: `/i18n/${this.data.locale.lang}/countryList.json`,
             background: true,
         })
         .then((t) => {
@@ -70,6 +71,12 @@ export class RegisterPage extends BasePage {
             });
 
             this.isCountryListUpdated = true;
+        })
+        .catch((err) => {
+            Materialize.toast({
+                html: `Failed to load translation: ${err}`,
+                classes: 'theme-red white-text',
+            });
         });
     }
 
@@ -110,7 +117,6 @@ export class RegisterPage extends BasePage {
             this.attachRegisterEvent();
             this.attachExcursionEvent();
             this.attachOthersEvent();
-            this.attachPaymentEvent();
             this.attachThanksEvent();
             this.attachNavBtnEvent();
 
@@ -124,29 +130,11 @@ export class RegisterPage extends BasePage {
             this.pageStatesList[3][0] = this.localeObj.t('register.steps.excursion');
             this.pageStatesList[4][0] = this.localeObj.t('register.steps.food');
             this.pageStatesList[5][0] = this.localeObj.t('register.steps.others');
-            this.pageStatesList[6][0] = this.localeObj.t('register.steps.payment');
+            this.pageStatesList[6][0] = this.localeObj.t('register.steps.summary');
+            this.pageStatesList[7][0] = this.localeObj.t('register.steps.payment');
 
-            this.monthsWords.length = 12;
-            this.daysWords.length = 7;
-
-            // Translate calendar months, days
-            for(let i = 0; i < 12; ++i) {
-                this.monthsWords.full[i] = this.localeObj.t(`calendar.months.${i}`);
-                this.monthsWords.short[i] = this.localeObj.t(`calendar.monthsShort.${i}`);
-            }
-
-            for(let i = 0; i < 7; ++i) {
-                this.daysWords.short[i] = this.localeObj.t(`calendar.weekdaysShort.${i}`);
-                this.daysWords.abbrev[i] = this.localeObj.t(`calendar.weekdaysAbbrev.${i}`);
-            }
-
-            RegFormUtils.initDatePicker('#txt-bday', {
-                cancel: this.localeObj.t('buttons.cancel'),
-                clear: this.localeObj.t('buttons.clear'),
-                done: this.localeObj.t('buttons.done'),
-                months: this.monthsWords,
-                days: this.daysWords,
-            });
+            // Init date widget
+            RegFormUtils.initDatePicker('#txt-bday');
 
             // Set messaging event (for PayPal iframe)
             window.addEventListener('message', (e) => {
@@ -159,22 +147,11 @@ export class RegisterPage extends BasePage {
                     return;
                 }
 
-                if(e.data.type == 'height_update') {
-                    // Update iframe height
-                    console.log(e.data);
-                    const paypalFrame = document.getElementById('div-payment-iframe-wrapper').querySelector('iframe');
-                    paypalFrame.height = paypalFrame.contentWindow.document.body.scrollHeight;
-
-                    return;
-                }
-
                 if(e.data.type != 'payment') {
                     return;
                 }
 
                 console.info(`Received payent message from ${e.origin}!`);
-                const paypalModal = Materialize.Modal.getInstance(document.getElementById('div-modal-payment-paypal'));
-                paypalModal.close();
 
                 switch(e.data.error_code) {
                     case 'PMT200':
@@ -500,26 +477,6 @@ export class RegisterPage extends BasePage {
         });
     }
 
-    attachPaymentEvent() {
-        document.querySelector('#div-modal-payment-remittance .payment-submit').addEventListener('click', (e) => {
-            e.preventDefault();
-            Materialize.Modal
-                .getInstance(document.getElementById('div-modal-payment-remittance'))
-                .close();
-
-            this.submitForm();
-        });
-
-        document.querySelector('#div-modal-payment-bank .payment-submit').addEventListener('click', (e) => {
-            e.preventDefault();
-            Materialize.Modal
-                .getInstance(document.getElementById('div-modal-payment-bank'))
-                .close();
-
-            this.submitForm();
-        });
-    }
-
     attachThanksEvent() {
         const registerAgainBtn = document.getElementById('btn-register-again');
         let prevBtn = document.getElementById('btn-prev');
@@ -584,7 +541,7 @@ export class RegisterPage extends BasePage {
 
             // Submit form if on last page
             if(this.currentPageState >= this.pageStatesList.length - 1) {
-                this.showPaymentMethod(document.querySelector('input[type=radio][name=rbx-payment-method]:checked').value);
+                this.submitForm();
                 return;
             }
 
@@ -661,13 +618,16 @@ export class RegisterPage extends BasePage {
 
                 break;
             }
-            case 'section-payment': {
+            case 'section-summary': {
                 // Set late payment notice
                 const lateFee = this.computeLatePenaltyFee(isLocalRates);
-                document.getElementById('div-payment-downpay-notice').innerHTML = this.localeObj.t('register.forms.payment.downpayNotice', {currencySymbol: lateFee.currency, value: lateFee.value});
+                document.getElementById('div-payment-downpay-notice').innerHTML = this.localeObj.t('register.forms.summary.downpayNotice', {currencySymbol: lateFee.currency, value: lateFee.value});
 
                 // Toggle online bank transfer
                 const rbxOnlineBank = document.querySelectorAll('#div-card-payment-details + div p')[1];
+
+                // Reset disabled next button from PayPal
+                document.getElementById('btn-next').disabled = false;
 
                 if(this.isLocalRates()) {
                     rbxOnlineBank.classList.remove('hide');
@@ -682,9 +642,9 @@ export class RegisterPage extends BasePage {
 
                 // Build receipt rows
                 let receiptRows = [
-                    m('span', {class: 'card-title'}, `${this.localeObj.t('register.forms.payment.details')} (${feesObj.currency})`),
+                    m('span', {class: 'card-title'}, `${this.localeObj.t('register.forms.summary.details')} (${feesObj.currency})`),
                     m('div', {class: 'row'}, [
-                        m('div', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.registration')),
+                        m('div', {class: 'col s8'}, this.localeObj.t('register.forms.summary.fees.registration')),
                         m('div', {class: 'col s4 right-align'}, feesObj.fees.reg.toFixed(2))
                     ]),
                 ];
@@ -692,7 +652,7 @@ export class RegisterPage extends BasePage {
                 if(feesObj.fees.excursion > 0) {
                     receiptRows.push(
                         m('div', {class: 'row'}, [
-                            m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.excursion')),
+                            m('span', {class: 'col s8'}, this.localeObj.t('register.forms.summary.fees.excursion')),
                             m('span', {class: 'col s4 right-align'}, feesObj.fees.excursion.toFixed(2))
                         ])
                     );
@@ -701,7 +661,7 @@ export class RegisterPage extends BasePage {
                 if(feesObj.fees.invitLetter > 0) {
                     receiptRows.push(
                         m('div', {class: 'row'}, [
-                            m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.invitLetter')),
+                            m('span', {class: 'col s8'}, this.localeObj.t('register.forms.summary.fees.invitLetter')),
                             m('span', {class: 'col s4 right-align'}, feesObj.fees.invitLetter.toFixed(2))
                         ])
                     );
@@ -710,7 +670,7 @@ export class RegisterPage extends BasePage {
                 if(feesObj.fees.congressFund > 0) {
                     receiptRows.push(
                         m('div', {class: 'row'}, [
-                            m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.congressFund')),
+                            m('span', {class: 'col s8'}, this.localeObj.t('register.forms.summary.fees.congressFund')),
                             m('span', {class: 'col s4 right-align'}, feesObj.fees.congressFund.toFixed(2))
                         ])
                     );
@@ -719,7 +679,7 @@ export class RegisterPage extends BasePage {
                 if(feesObj.fees.participantFund > 0) {
                     receiptRows.push(
                         m('div', {class: 'row'}, [
-                            m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.participantFund')),
+                            m('span', {class: 'col s8'}, this.localeObj.t('register.forms.summary.fees.participantFund')),
                             m('span', {class: 'col s4 right-align'}, feesObj.fees.participantFund.toFixed(2))
                         ])
                     );
@@ -728,7 +688,7 @@ export class RegisterPage extends BasePage {
                 if(feesObj.fees.fejFund > 0) {
                     receiptRows.push(
                         m('div', {class: 'row'}, [
-                            m('span', {class: 'col s8'}, this.localeObj.t('register.forms.payment.fees.associationFund')),
+                            m('span', {class: 'col s8'}, this.localeObj.t('register.forms.summary.fees.associationFund')),
                             m('span', {class: 'col s4 right-align'}, feesObj.fees.fejFund.toFixed(2))
                         ])
                     );
@@ -738,7 +698,7 @@ export class RegisterPage extends BasePage {
                     m('hr'),
                     m('div', {class: 'row'}, [
                         m('span', {class: 'col s8'}, [
-                            m('b', this.localeObj.t('register.forms.payment.grandTotal'))
+                            m('b', this.localeObj.t('register.forms.summary.grandTotal'))
                         ]),
                         m('span', {class: 'col s4 right-align'}, [
                             m('b', `${feesObj.currency}${feesObj.fees.total.toFixed(2)}`)
@@ -755,6 +715,13 @@ export class RegisterPage extends BasePage {
                 document.querySelector('input[name=hdn-invitletter-fee]').value = feesObj.fees.invitLetter;
                 document.querySelector('input[name=hdn-reg-category]').value = feesObj.regCategory;
                 document.querySelector('input[name=hdn-reg-currency]').value = feesObj.currency;
+
+                break;
+            }
+            case 'section-payment': {
+                const paymentRbx = document.querySelector('input[type=radio][name=rbx-payment-method]:checked');
+
+                this.showPaymentMethod(paymentRbx.value);
 
                 break;
             }
@@ -791,92 +758,96 @@ export class RegisterPage extends BasePage {
 
         document.querySelector('input[name=hdn-reg-period]').value = regDateIdx;
         cardPanelElm.querySelector('.card-title').innerHTML = this.localeObj.t('register.generalText.regPeriodText', {regPeriod: `${regPeriodName[0].toUpperCase()}${regPeriodName.substr(1)}`});
-        cardPanelElm.querySelector('div.card-content p').innerHTML = this.localeObj.t('register.forms.payment.registerNotice', {registerType: regPeriodName});
+        cardPanelElm.querySelector('div.card-content p').innerHTML = this.localeObj.t('register.forms.summary.registerNotice', {registerType: regPeriodName});
     }
 
     showPaymentMethod(method) {
         console.log(`Showing payment method ${method}`);
 
+        // Hide all methods
+        const paymentSection = document.getElementById('section-payment');
+        for(let i = 0; i < paymentSection.children.length; ++i) {
+            if(paymentSection.children[i].tagName !== 'DIV') {
+                continue;
+            }
+
+            paymentSection.children[i].classList.add('hide');
+        }
+
+        document.getElementById('btn-next').disabled = false;
+
         switch(method) {
             case 'bank': {
-                const bankModal = Materialize.Modal.getInstance(document.getElementById('div-modal-payment-bank'));
-                bankModal.open();
+                document.getElementById('div-payment-details-bank').classList.remove('hide');
 
                 break;
             }
             case 'online-bank': {
-                const onlineBankModal = Materialize.Modal.getInstance(document.getElementById('div-modal-payment-online-bank'));
-                onlineBankModal.open();
+                document.getElementById('div-payment-details-online-bank').classList.remove('hide');
+
                 break;
             }
             case 'remittance': {
-                const remitModal = Materialize.Modal.getInstance(document.getElementById('div-modal-payment-remittance'));
-                remitModal.open();
+                document.getElementById('div-payment-details-remittance').classList.remove('hide');
 
                 break;
             }
             case 'paypal': {
-                const feesObj = this.computeTotalRegFees(this.isLocalRates());
+                document.getElementById('div-payment-details-paypal').classList.remove('hide');
+                document.getElementById('btn-next').disabled = true;
 
-                const paypalModal = this.initPaypalModal(feesObj);
-                paypalModal.open();
+                const feesObj = this.computeTotalRegFees(this.isLocalRates());
+                this.initPaypalDiv(feesObj);
 
                 break;
             }
         }
     }
 
-    initPaypalModal(paymentObj) {
-        const paypalDiv = document.getElementById('div-modal-payment-paypal');
-        let paypalModal = Materialize.Modal.getInstance(paypalDiv);
+    async initPaypalDiv(paymentObj) {
+        // Initialize PayPal div
+        // Attach PayPal iframe
+        const iframeDiv = document.getElementById('div-payment-iframe-wrapper');
 
-        // Initialize PayPal modal
-        paypalModal = Materialize.Modal.init(paypalDiv, {
-            dismissible: false,
-            onOpenStart: async () => {
-                // Attach PayPal iframe
-                const iframeDiv = document.getElementById('div-payment-iframe-wrapper');
+        // Remove existing PayPal iframe
+        while (iframeDiv.firstChild) {
+            iframeDiv.removeChild(iframeDiv.firstChild);
+        }
 
-                // Remove existing PayPal iframe
-                while (iframeDiv.firstChild) {
-                    iframeDiv.removeChild(iframeDiv.firstChild);
-                }
+        try {
+            const paymentPageRes = await fetch(`${this.apiDomain}/payment?lang=${this.data.locale.lang}`, {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(paymentObj),
+            });
 
-                try {
-                    const paymentPageRes = await fetch(`${this.apiDomain}/payment?lang=${this.data.locale.lang}`, {
-                        method: 'POST',
-                        mode: 'cors',
-                        headers: {
-                            'Accept': 'application/json, text/plain, */*',
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(paymentObj),
-                    });
+            const htmlRes = await paymentPageRes.text();
 
-                    const htmlRes = await paymentPageRes.text();
+            const iframeObj = document.createElement('iframe');
+            //iframeObj.setAttribute('scrolling', 'no');
+            iframeDiv.append(iframeObj);
 
-                    const iframeObj = document.createElement('iframe');
-                    //iframeObj.setAttribute('scrolling', 'no');
-                    iframeDiv.append(iframeObj);
+            iframeObj.contentWindow.document.open();
+            iframeObj.contentWindow.document.write(htmlRes);
+            iframeObj.contentWindow.document.close();
 
-                    iframeObj.contentWindow.document.open();
-                    iframeObj.contentWindow.document.write(htmlRes);
-                    iframeObj.contentWindow.document.close();
-                }
-                catch(err) {
-                    Materialize.toast({
-                        html: this.localeObj.t('register.generalErrors.paypalError', {errorMsg: err}),
-                        classes: 'white-text theme-red'
-                    });
+            iframeResizer({
+                log: false,
+                checkOrigin: false,
+            }, iframeObj);
+        }
+        catch(err) {
+            Materialize.toast({
+                html: this.localeObj.t('register.generalErrors.paypalError', {errorMsg: err}),
+                classes: 'white-text theme-red'
+            });
 
-                    paypalModal.close();
-
-                    console.error(`Cannot open PayPal modal: ${err}`);
-                }
-            },
-        });
-
-        return paypalModal;
+            console.error(`Cannot open PayPal modal: ${err}`);
+        }
     }
 
     async submitForm() {
@@ -1043,7 +1014,7 @@ export class RegisterPage extends BasePage {
         let currentStepElm = document.querySelector(`#div-steps li:nth-child(${idx + 1})`);
 
         stepsElm.scrollTo({
-            left: currentStepElm.offsetLeft - currentStepElm.offsetWidth - (currentStepElm.querySelector('.steps-icon').offsetWidth / 2),
+            left: currentStepElm.offsetLeft - (stepsElm.offsetWidth / 2) + (currentStepElm.offsetWidth / 2) - (currentStepElm.querySelector('.steps-icon').offsetWidth / 2),
             behavior: 'smooth'
         });
     }

@@ -40,6 +40,7 @@
             "excursion": "Excursion",
             "food": "Food",
             "others": "Others",
+            "summary": "Summary",
             "payment": "Payment"
         },
         "overview": {
@@ -210,8 +211,8 @@
                     "bookletExclude": "I do not wish to receive a printed copy of the congress booklet"
                 }
             },
-            "payment": {
-                "header": "Payment",
+            "summary": {
+                "header": "Summary",
                 "registerDates": "Registration Dates",
                 "registerNotice": "Today is within the time for <b>%{registerType}</b> registration!",
                 "details": "Payment Details",
@@ -220,24 +221,6 @@
                 "startDate": "Start Date",
                 "endDate": "End Date",
                 "downpayNotice": "Note that the Organizing Committee has to receive at least <b>50%</b> of your total registration fee as initial downpayment in order to consider your registration valid. Furthermore, all downpayments must be settled on or before <b>09 April, 2020</b> or there will be a late payment fee of <b>%{currencySymbol}%{value}</b>.",
-                "modals": {
-                    "bankAccount": {
-                        "header": "Payment via Bank Deposit",
-                        "details": "<p>\nPlease pay to the bank account below through international money deposit. Fill in the relevant forms with the information below:\n</p>\n<p>\n<b>Bank Name:</b> Landbank of the Philippines<br>\n<b>Account Name:</b> Albert Stalin T. Garrido<br>\n<b>Account Number:</b> 3077106196<br>\n<b>SWIFT Code:</b> TLBPPHMM<br>\n<b>Bank Address:</b> Head Office, Landbank Plaza, M.H. Del Pilar cor. D. J. Quintos Sts., Malate, Manila, Philippines<br>\n<b>Bank Tel. No.</b> +63 2 405 7000<br>\n</p>\n<p>\nAfter the transaction, please send a copy of the processed deposit form to peyc2020@gmail.com so that we can confirm your payment.\n</p>\n<p>\n<b>NOTE:</b> Please add EUR 3.00 to the total amount to be sent. Also, take note of the additional service fees that your bank may charge, and be sure to add that as well.\n</p>\n"
-                    },
-                    "onlineBank": {
-                        "header": "Payment via Online Bank Transfer",
-                        "details": "<p>\nPlease pay through online bank transfer via <b>BDO</b> to the following account:\n</p>\n<p>\n<b>Bank:</b> BDO<br>\n<b>Account Name:</b> Albert Stalin T. Garrido<br>\n<b>Account Number:</b> 005350261895<br>\n<b>Account Type:</b> Savings<br>\n</p>\n<p>\nPlease send a screenshot of the successful transaction to peyc2020@gmail.com so that we can confirm your payment. Make sure to check if there are service fees charged by your bank and add the amount of any possible additional costs to cover them.</p>\n"
-                    },
-                    "paypal": {
-                        "header": "Payment via PayPal",
-                        "details": "<p>\nIf you are ready to pay via PayPal, please click on your preferred mode of payment below.\n</p>"
-                    },
-                    "remittance": {
-                        "header": "Payment via Remittance",
-                        "details": "<p>\nWe accept payment via remittance through <b>Western Union</b>. Please fill in the relevant forms with the following information:\n</p>\n<p>\n<b>Name of Recipient:</b> Albert Stalin Tancinco Garrido<br>\n<b>City and Country:</b> Quezon City, Metro Manila, Philippines<br>\n<b>Contact Number:</b> +63 998 249 1891<br>\n<b>E-mail Address:</b> albertstgarrido@gmail.com<br>\n</p>\n<p>\nFor bookkeeping purposes, send a photo or scanned copy of the processed transaction form to peyc2020@gmail.com showing the following information: <b>MTCN/Reference Number</b>, <b>exact amount sent</b>, and <b>name of the sender</b>.\n</p>\n<p>\n<b>NOTE:</b> To cover the Documentary Stamp Tax mandated by Philippine law on international remittances, please add <b>0.3%</b> of the total amount to be paid. For example, if the total fees to pay is <em>100</em>, then please pay a total of 100 * 1.003 = <em>100.30</em> instead.\n</p>\n"
-                    }
-                },
                 "fields": {
                     "bankAccount": "Bank Account",
                     "onlineBank": "Online Bank Transfer",
@@ -251,6 +234,25 @@
                     "congressFund": "Congress Fund",
                     "participantFund": "Participant Support",
                     "associationFund": "Association Fund"
+                }
+            },
+            "payment": {
+                "header": "Payment",
+                "bankAccount": {
+                    "header": "Payment via Bank Deposit",
+                    "details": "<p>\nPlease pay to the bank account below through international money deposit. Fill in the relevant forms with the information below:\n</p>\n<p>\n<b>Bank Name:</b> Landbank of the Philippines<br>\n<b>Account Name:</b> Albert Stalin T. Garrido<br>\n<b>Account Number:</b> 3077106196<br>\n<b>SWIFT Code:</b> TLBPPHMM<br>\n<b>Bank Address:</b> Head Office, Landbank Plaza, M.H. Del Pilar cor. D. J. Quintos Sts., Malate, Manila, Philippines<br>\n<b>Bank Tel. No.</b> +63 2 405 7000<br>\n</p>\n<p>\nAfter the transaction, please send a copy of the processed deposit form to peyc2020@gmail.com so that we can confirm your payment.\n</p>\n<p>\n<b>NOTE:</b> Please add EUR 3.00 to the total amount to be sent. Also, take note of the additional service fees that your bank may charge, and be sure to add that as well.\n</p>\n"
+                },
+                "onlineBank": {
+                    "header": "Payment via Online Bank Transfer",
+                    "details": "<p>\nPlease pay through online bank transfer via <b>BDO</b> to the following account:\n</p>\n<p>\n<b>Bank:</b> BDO<br>\n<b>Account Name:</b> Albert Stalin T. Garrido<br>\n<b>Account Number:</b> 005350261895<br>\n<b>Account Type:</b> Savings<br>\n</p>\n<p>\nPlease send a screenshot of the successful transaction to peyc2020@gmail.com so that we can confirm your payment. Make sure to check if there are service fees charged by your bank and add the amount of any possible additional costs to cover them.</p>\n"
+                },
+                "paypal": {
+                    "header": "Payment via PayPal",
+                    "details": "<p>\nIf you are ready to pay via PayPal, please click on your preferred mode of payment below.\n</p>"
+                },
+                "remittance": {
+                    "header": "Payment via Remittance",
+                    "details": "<p>\nWe accept payment via remittance through <b>Western Union</b>. Please fill in the relevant forms with the following information:\n</p>\n<p>\n<b>Name of Recipient:</b> Albert Stalin Tancinco Garrido<br>\n<b>City and Country:</b> Quezon City, Metro Manila, Philippines<br>\n<b>Contact Number:</b> +63 998 249 1891<br>\n<b>E-mail Address:</b> albertstgarrido@gmail.com<br>\n</p>\n<p>\nFor bookkeeping purposes, send a photo or scanned copy of the processed transaction form to peyc2020@gmail.com showing the following information: <b>MTCN/Reference Number</b>, <b>exact amount sent</b>, and <b>name of the sender</b>.\n</p>\n<p>\n<b>NOTE:</b> To cover the Documentary Stamp Tax mandated by Philippine law on international remittances, please add <b>0.3%</b> of the total amount to be paid. For example, if the total fees to pay is <em>100</em>, then please pay a total of 100 * 1.003 = <em>100.30</em> instead.\n</p>\n"
                 }
             },
             "certification": {

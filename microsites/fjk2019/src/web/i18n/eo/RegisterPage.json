@@ -40,6 +40,7 @@
             "excursion": "Ekskurso",
             "food": "Manĝaĵo",
             "others": "Aliaj",
+            "summary": "Resumo",
             "payment": "Pago"
         },
         "overview": {
@@ -211,8 +212,8 @@
                     "bookletExclude": "Mi ne volas ricevi elpresitan kongresan libron"
                 }
             },
-            "payment": {
-                "header": "Pago",
+            "summary": {
+                "header": "Resumo",
                 "registerDates": "Aliĝdatoj",
                 "registerNotice": "Nun estas inter la tempo por <b>%{registerType}</b> aliĝo!",
                 "details": "Detaloj pri Pago",
@@ -221,24 +222,6 @@
                 "startDate": "Komenca Dato",
                 "endDate": "Limdato",
                 "downpayNotice": "Bv. atenti ke la Komitato devas ricevi almenaŭ <b>50%</b> el la tuta aliĝkotizo por ke la aliĝo validas. Krome, ĉiuj antaŭpagoj devas esti plenumitaj je aŭ antaŭ la <b>09a de Aprilo, 2020</b>. Post tiam, estos malfrua krompago, kiu kostas <b>%{currencySymbol}%{value}</b>.",
-                "modals": {
-                    "bankAccount": {
-                        "header": "Pago pere de Bankkonto",
-                        "details": "<p>\nBv. pagi la plenan sumon pere de internacia depono. Bv. plenumi la rilatajn formularojn per la jenaj informoj:\n</p>\n<p>\n<b>Nomo de Banko:</b> Landbank of the Philippines<br>\n<b>Nomo de Konto:</b> Albert Stalin T. Garrido<br>\n<b>Numero de Konto:</b> 3077106196<br>\n<b>SWIFT-Kodo:</b> TLBPPHMM<br>\n<b>Adreso de Banko:</b> Head Office, Landbank Plaza, M.H. Del Pilar cor. D. J. Quintos Sts., Malate, Manila, Philippines<br>\n<b>Telefonnumero de Banko</b> +63 2 405 7000<br>\n</p>\n<p>\nPost la transakcio, bv. sendi kopion de la pagateston al peyc2020@gmail.com por ke ni povu konfirmi vian pagon.\n</p>\n<p>\n<b>NB:</b> Bv. aldoni EUR 3.00 al la sumo pagita. Bv. ankaŭ atenti la aliajn pagojn via banko povas pagigi al vi, kaj aldoni la tutan koston kontraŭ la sumo pagita.\n</p>\n"
-                    },
-                    "onlineBank": {
-                        "header": "Pago pere de Reta Transpago",
-                        "details": "<p>\nBv. pagi pere de reta transpago per <b>BDO</b> al la jena konto:\n</p>\n<p>\n<b>Banko:</b> BDO<br>\n<b>Nomo de Konto:</b> Albert Stalin T. Garrido<br>\n<b>Numero de Konto:</b> 005350261895<br>\n<b>Tipo de Konto:</b> Savings<br>\n</p>\n<p>\nBv. sendi foton de la pagatesto al peyc2020@gmail.com por ke ni povu konfirmi vian pagon. Bv. atenti la aliajn pagojn via banko povas pagigi al vi, kaj aldoni la tutan koston kontraŭ la sumo pagita.</p>"
-                    },
-                    "paypal": {
-                        "header": "Pago pere de PayPal",
-                        "details": "<p>\nSe vi pretas pagi pere de PayPal, bv. klaki al via preferita maniero suben.\n</p>"
-                    },
-                    "remittance": {
-                        "header": "Pago pere de Ĝiro",
-                        "details": "<p>\nNi akceptas pagon pere de ĝiro per <b>Western Union</b>. Bv. plenumi la rilatajn formularojn per la jenaj informoj:\n</p>\n<p>\n<b>Nomo de Ricevanto:</b> Albert Stalin Tancinco Garrido<br>\n<b>Urbo kaj Lando:</b> Quezon City, Metro Manila, Philippines<br>\n<b>Kontaktnumero:</b> +63 998 249 1891<br>\n<b>Retpoŝtadreso:</b> albertstgarrido@gmail.com<br>\n</p>\n<p>\nPor ke ni povu konfirmi vian pagon, bv. sendi foton aŭ kopion de la pagatesto al peyc2020@gmail.com kun la jenaj informoj: <b>MTCN/Referenca Numero</b>, <b>ĝusta sumo sendita</b>, kaj <b>nomo de sendanto</b>\n</p>\n<p>\n<b>NB:</b> Por ŝuldi la imposton aldonita de la Filipina registaro kontraŭ internaciaj ĝiroj, bv. aldoni <b>0.3%</b> el la sumo pagita. Ekz., se la sumon pagita estas <em>100</em>, bv. anstataŭe pagi la tutan sumon kiel 100 * 1.003 = <em>100.30</em>.\n</p>\n"
-                    }
-                },
                 "fields": {
                     "bankAccount": "Bankkonto",
                     "onlineBank": "Reta Transpago per Banko",
@@ -252,6 +235,25 @@
                     "congressFund": "Kongresa Fonduso",
                     "participantFund": "Fonduso por Partoprenontoj",
                     "associationFund": "Junulara Fonduso"
+                }
+            },
+            "payment": {
+                "header": "Pago",
+                "bankAccount": {
+                    "header": "Pago pere de Bankkonto",
+                    "details": "<p>\nBv. pagi la plenan sumon pere de internacia depono. Bv. plenumi la rilatajn formularojn per la jenaj informoj:\n</p>\n<p>\n<b>Nomo de Banko:</b> Landbank of the Philippines<br>\n<b>Nomo de Konto:</b> Albert Stalin T. Garrido<br>\n<b>Numero de Konto:</b> 3077106196<br>\n<b>SWIFT-Kodo:</b> TLBPPHMM<br>\n<b>Adreso de Banko:</b> Head Office, Landbank Plaza, M.H. Del Pilar cor. D. J. Quintos Sts., Malate, Manila, Philippines<br>\n<b>Telefonnumero de Banko</b> +63 2 405 7000<br>\n</p>\n<p>\nPost la transakcio, bv. sendi kopion de la pagateston al peyc2020@gmail.com por ke ni povu konfirmi vian pagon.\n</p>\n<p>\n<b>NB:</b> Bv. aldoni EUR 3.00 al la sumo pagita. Bv. ankaŭ atenti la aliajn pagojn via banko povas pagigi al vi, kaj aldoni la tutan koston kontraŭ la sumo pagita.\n</p>\n"
+                },
+                "onlineBank": {
+                    "header": "Pago pere de Reta Transpago",
+                    "details": "<p>\nBv. pagi pere de reta transpago per <b>BDO</b> al la jena konto:\n</p>\n<p>\n<b>Banko:</b> BDO<br>\n<b>Nomo de Konto:</b> Albert Stalin T. Garrido<br>\n<b>Numero de Konto:</b> 005350261895<br>\n<b>Tipo de Konto:</b> Savings<br>\n</p>\n<p>\nBv. sendi foton de la pagatesto al peyc2020@gmail.com por ke ni povu konfirmi vian pagon. Bv. atenti la aliajn pagojn via banko povas pagigi al vi, kaj aldoni la tutan koston kontraŭ la sumo pagita.</p>"
+                },
+                "paypal": {
+                    "header": "Pago pere de PayPal",
+                    "details": "<p>\nSe vi pretas pagi pere de PayPal, bv. klaki al via preferita maniero suben.\n</p>"
+                },
+                "remittance": {
+                    "header": "Pago pere de Ĝiro",
+                    "details": "<p>\nNi akceptas pagon pere de ĝiro per <b>Western Union</b>. Bv. plenumi la rilatajn formularojn per la jenaj informoj:\n</p>\n<p>\n<b>Nomo de Ricevanto:</b> Albert Stalin Tancinco Garrido<br>\n<b>Urbo kaj Lando:</b> Quezon City, Metro Manila, Philippines<br>\n<b>Kontaktnumero:</b> +63 998 249 1891<br>\n<b>Retpoŝtadreso:</b> albertstgarrido@gmail.com<br>\n</p>\n<p>\nPor ke ni povu konfirmi vian pagon, bv. sendi foton aŭ kopion de la pagatesto al peyc2020@gmail.com kun la jenaj informoj: <b>MTCN/Referenca Numero</b>, <b>ĝusta sumo sendita</b>, kaj <b>nomo de sendanto</b>\n</p>\n<p>\n<b>NB:</b> Por ŝuldi la imposton aldonita de la Filipina registaro kontraŭ internaciaj ĝiroj, bv. aldoni <b>0.3%</b> el la sumo pagita. Ekz., se la sumon pagita estas <em>100</em>, bv. anstataŭe pagi la tutan sumon kiel 100 * 1.003 = <em>100.30</em>.\n</p>\n"
                 }
             },
             "certification": {

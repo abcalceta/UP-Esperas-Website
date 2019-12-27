@@ -5,8 +5,10 @@ dependencies:
   dotenv: 8.2.0
   express: 4.17.1
   express-validator: 6.3.0
+  flatpickr: 4.6.3
   googleapis: 39.2.0
   helmet: 3.21.2
+  iframe-resizer: 4.2.8
   jquery: 3.4.1
   js-cookie: 2.2.1
   materialize-css: 1.0.0
@@ -2894,6 +2896,10 @@ packages:
       node: '>= 0.10'
     resolution:
       integrity: sha512-YbffarhcicEhOrm4CtrwdKBdCuz576RLdhJDsIfvNtxUuhdRet1qZcsMjqbePtAseKdAnDyM/IyXbu7PRPRLYg==
+  /flatpickr/4.6.3:
+    dev: false
+    resolution:
+      integrity: sha512-007VucCkqNOMMb9ggRLNuJowwaJcyOh4sKAFcdGfahfGc7JQbf94zSzjdBq/wVyHWUEs5o3+idhFZ0wbZMRmVQ==
   /flush-write-stream/1.1.1:
     dependencies:
       inherits: 2.0.4
@@ -3616,6 +3622,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-xg7taebY/bazEEofy8ocGS3FtQE=
+  /iframe-resizer/4.2.8:
+    dev: false
+    engines:
+      node: '>=0.8.0'
+    resolution:
+      integrity: sha512-7xL06ARLTqaFJcK7fZmHFgPpV6dapFoV6UgZsvSA4QNpD5yu3Dd+YkOKF4wcor1qA7p2AqDfNZqL8HWgGKGGDg==
   /ignore-by-default/1.0.1:
     dev: true
     resolution:
@@ -7089,10 +7101,12 @@ specifiers:
   express: ^4.17.1
   express-validator: ^6.3.0
   file-loader: ^4.2.0
+  flatpickr: ^4.6.3
   googleapis: '39'
   helmet: ^3.21.2
   html-loader: ^0.5.5
   html-webpack-plugin: ^3.2.0
+  iframe-resizer: ^4.2.8
   jquery: ^3.4.1
   js-cookie: ^2.2.1
   materialize-css: ^1.0.0-rc.2

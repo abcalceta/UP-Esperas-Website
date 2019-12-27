@@ -111,6 +111,12 @@
                     transform: scale3D(0, 0, 1);
                 }
             }
+
+            /* PayPal div style */
+            #div-payment-paypal {
+                margin: 0 auto;
+                text-align: center;
+            }
         </style>
     </head>
     <body>
@@ -141,12 +147,6 @@
                 });
             }
 
-            window.addEventListener('DOMContentLoaded', (e) => {
-                window.parent.postMessage({
-                    type: 'height_update'
-                }, originUrl);
-            });
-
             awaitPaypalJs().then(() => {
                 return paypal.Buttons({
                     style: {
@@ -171,6 +171,12 @@
                         }, originUrl);
                     },
                     onApprove: (data, actions) => {
+                        const loader = document.getElementById('div-loader');
+                        const paypalDiv = document.getElementById('div-payment-paypal');
+
+                        loader.classList.remove('hide');
+                        paypalDiv.classList.add('hide');
+
                         return actions.order.capture()
                                 .then((details) => {
                                     window.parent.postMessage({
@@ -199,19 +205,6 @@
                 paypalDiv.classList.remove('hide');
 
                 loader.querySelector('p').innerHTML = 'Paypal buttons loaded!';
-
-                // Set timer to wait for paypal div to show
-                return new Promise((resolve, reject) => {
-                    let waitTimeout = setTimeout(() => {
-                        clearTimeout(waitTimeout);
-                        resolve();
-                    }, 750);
-                });
-            })
-            .then(() => {
-                window.parent.postMessage({
-                    type: 'height_update'
-                }, originUrl);
             });
         </script>
     </body>

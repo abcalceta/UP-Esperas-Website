@@ -3,6 +3,7 @@
     "titleSpecific": "%{pageName} | Filipina Junulara Kongreso de Esperanto 2020",
     "yes": "Jes",
     "no": "Ne",
+    "loading": "Ŝarĝante...",
     "buttons": {
         "home": "Ĉefpaĝo",
         "close": "Fermi",

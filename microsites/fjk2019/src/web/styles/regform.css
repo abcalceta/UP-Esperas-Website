@@ -51,4 +51,5 @@ input[type=radio].with-gap:checked + span::after {
     border: 0;
     overflow: hidden;
     width: 100%;
+    min-width: 100%;
 }

@@ -23,11 +23,16 @@ async function createPaymentPage(originUrl, clientId, paymentObj, lang = 'en') {
     const order = createOrder(localeObj, paymentObj);
 
     $('#div-payment-paypal').after(`
-        <script id="script-paypal-sdk" src="https://www.paypal.com/sdk/js?client-id=${clientId}&currency=${paymentObj.currencyAbbrev}&debug=false" defer async></script>
         <script>
+            window.iFrameResizer = {
+                targetOrigin: '${!originUrl ? '*' : originUrl}',
+            };
+
             const order = ${JSON.stringify(order)};
             const originUrl = '${!originUrl ? '*' : originUrl}';
         </script>
+        <script id="script-paypal-sdk" src="https://www.paypal.com/sdk/js?client-id=${clientId}&currency=${paymentObj.currencyAbbrev}&debug=false" defer async></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.8/iframeResizer.contentWindow.min.js"></script>
     `);
 
     return $.html();

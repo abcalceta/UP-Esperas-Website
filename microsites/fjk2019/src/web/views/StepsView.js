@@ -18,7 +18,7 @@ export class StepsView {
         let currentStepElm = document.querySelector(`#div-steps li:nth-child(${idx + 1})`);
 
         stepsElm.scrollTo({
-            left: currentStepElm.offsetLeft - currentStepElm.offsetWidth - (currentStepElm.querySelector('.steps-icon').offsetWidth / 2),
+            left: currentStepElm.offsetLeft + currentStepElm.offsetWidth / 2,
             behavior: 'smooth'
         });
     }

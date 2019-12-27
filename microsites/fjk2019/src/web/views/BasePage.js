@@ -45,7 +45,7 @@ export class BasePage {
         this.componentHolder.hero = HeroView;
         this.componentHolder.footer = htmlFooter;
         this.componentHolder.fab = FabView;
-        this.componentHolder.loadingOverlay = new LoadingOverlay();
+        this.componentHolder.loadingOverlay = LoadingOverlay;
     }
 
     onupdate() {
@@ -71,13 +71,13 @@ export class BasePage {
                 m.trust(this.componentHolder.footer)
             ),
             m(this.componentHolder.fab, {onLocaleSelect: this.onLocaleChanged.bind(this)}),
-            m(this.componentHolder.loadingOverlay)
+            m(this.componentHolder.loadingOverlay, {loadingText: this.localeObj.t('loading')})
         ];
     }
 
     onLocaleChanged() {
         const locale = Cookies.get('locale') || 'en';
-        const localePath = `../i18n/${locale}/${this.data.locale.filename}.json`;
+        const localePath = `/i18n/${locale}/${this.data.locale.filename}.json`;
 
         console.log(`Found locale ${locale}`);
         this.data.locale.lang = locale;
@@ -85,7 +85,7 @@ export class BasePage {
 
         m.request({
             method: 'GET',
-            url: `../i18n/${locale}/common.json`,
+            url: `/i18n/${locale}/common.json`,
             background: true,
         })
         .then((jsonObj) => {

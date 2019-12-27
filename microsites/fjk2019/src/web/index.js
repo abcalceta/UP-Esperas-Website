@@ -46,6 +46,7 @@ m.route(root, '/', {
     '/register/section-excursion': RegisterPage,
     '/register/section-food': RegisterPage,
     '/register/section-others': RegisterPage,
+    '/register/section-summary': RegisterPage,
     '/register/section-payment': RegisterPage,
     '/register/section-thanks': RegisterPage,
 

@@ -3,6 +3,7 @@
     "titleSpecific": "%{pageName} | Philippine Esperanto Youth Congress 2020",
     "yes": "Yes",
     "no": "No",
+    "loading": "Loading...",
     "buttons": {
         "home": "Home",
         "close": "Close",

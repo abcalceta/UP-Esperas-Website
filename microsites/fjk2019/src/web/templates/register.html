@@ -49,7 +49,7 @@
                 <span class="helper-text" data-error="${this.localeObj.t('register.forms.basic.errors.nickName')}"></span>
             </div>
             <div class="input-field col s6 l2">
-                <input id="txt-bday" name="txt-bday" class="datepicker validate" type="text" required>
+                <input id="txt-bday" name="txt-bday" class="validate" type="text" required>
                 <label for="txt-bday">${this.localeObj.t('register.forms.basic.fields.birthday')}</label>
                 <span class="helper-text" data-error="${this.localeObj.t('register.forms.basic.errors.birthday')}"></span>
             </div>
@@ -588,16 +588,16 @@
         </div>
     </section>
 
-    <section id="section-payment" class="section hide">
-        <h3>${this.localeObj.t('register.forms.payment.header')}</h3>
+    <section id="section-summary" class="section hide">
+        <h3>${this.localeObj.t('register.forms.summary.header')}</h3>
         <p id="div-payment-downpay-notice" class="card-panel theme-red white-text">
-            ${this.localeObj.t('register.forms.payment.downpayNotice')}
+            ${this.localeObj.t('register.forms.summary.downpayNotice')}
         </p>
         <div id="div-panel-reg-date-notice" class="card">
             <div class="card-content theme-green white-text">
                 <span class="card-title">${this.localeObj.t('register.generalText.regular')}</span>
                 <p>
-                    ${this.localeObj.t('register.forms.payment.registerNotice')}
+                    ${this.localeObj.t('register.forms.summary.registerNotice')}
                 </p>
             </div>
             <div class="card-action">
@@ -608,35 +608,35 @@
         <div class="row">
             <div id="div-card-payment-details" class="col s12 m5 card">
                 <div class="card-content">
-                    <span class="card-title">${this.localeObj.t('register.forms.payment.details')}</span>
+                    <span class="card-title">${this.localeObj.t('register.forms.summary.details')}</span>
                     <div class="row">
                     </div>
                 </div>
             </div>
             <div class="col s12 offset-m1 m6">
-                <h5>${this.localeObj.t('register.forms.payment.payVia')}</h5>
+                <h5>${this.localeObj.t('register.forms.summary.payVia')}</h5>
                 <p>
                     <label>
                         <input class="with-gap" name="rbx-payment-method" type="radio" value="bank" checked>
-                        <span>${this.localeObj.t('register.forms.payment.fields.bankAccount')}</span>
+                        <span>${this.localeObj.t('register.forms.summary.fields.bankAccount')}</span>
                     </label>
                 </p>
                 <p>
                     <label>
                         <input class="with-gap" name="rbx-payment-method" type="radio" value="online-bank">
-                        <span>${this.localeObj.t('register.forms.payment.fields.onlineBank')}</span>
+                        <span>${this.localeObj.t('register.forms.summary.fields.onlineBank')}</span>
                     </label>
                 </p>
                 <p>
                     <label>
                         <input class="with-gap" name="rbx-payment-method" type="radio" value="paypal">
-                        <span>${this.localeObj.t('register.forms.payment.fields.paypal')}</span>
+                        <span>${this.localeObj.t('register.forms.summary.fields.paypal')}</span>
                     </label>
                 </p>
                 <p>
                     <label>
                         <input class="with-gap" name="rbx-payment-method" type="radio" value="remittance">
-                        <span>${this.localeObj.t('register.forms.payment.fields.remittance')}</span>
+                        <span>${this.localeObj.t('register.forms.summary.fields.remittance')}</span>
                     </label>
                 </p>
             </div>
@@ -668,35 +668,35 @@
         <!-- Modal for registration dates -->
         <div id="div-modal-reg-dates" class="modal modal-fixed-footer">
             <div class="modal-content">
-                <h4>${this.localeObj.t('register.forms.payment.registerDates')}</h4>
+                <h4>${this.localeObj.t('register.forms.summary.registerDates')}</h4>
                 <p class="card-panel theme-red white-text">
                     ${this.localeObj.t('register.generalText.timeNotice')}
                 </p>
                 <table>
                     <tr>
                         <th></th>
-                        <th>${this.localeObj.t('register.forms.payment.startDate')}</th>
-                        <th>${this.localeObj.t('register.forms.payment.endDate')}</th>
+                        <th>${this.localeObj.t('register.forms.summary.startDate')}</th>
+                        <th>${this.localeObj.t('register.forms.summary.endDate')}</th>
                     </tr>
                     <tr>
                         <td>${this.localeObj.t('register.generalText.earlyBird')}</td>
-                        <td>25 November, 2020</td>
-                        <td>31 December, 2019</td>
+                        <td>25 Nov, 2020</td>
+                        <td>31 Dec, 2019</td>
                     </tr>
                     <tr>
                         <td>${this.localeObj.t('register.generalText.regular')}</td>
                         <td>01 Jan, 2020</td>
-                        <td>23 March, 2020</td>
+                        <td>23 Mar, 2020</td>
                     </tr>
                     <tr>
                         <td>${this.localeObj.t('register.generalText.lateBird')}</td>
-                        <td>24 March, 2020</td>
-                        <td>22 April, 2020</td>
+                        <td>24 Mar, 2020</td>
+                        <td>22 Apr, 2020</td>
                     </tr>
                     <tr>
                         <td>${this.localeObj.t('register.generalText.onSite')}</td>
-                        <td>23 April, 2020</td>
-                        <td>25 April, 2020</td>
+                        <td>23 Apr, 2020</td>
+                        <td>25 Apr, 2020</td>
                     </tr>
                 </table>
             </div>
@@ -704,61 +704,38 @@
                 <a class="modal-close waves-effect btn-flat">${this.localeObj.t('buttons.close')}</a>
             </div>
         </div>
+    </section>
 
+    <section id="section-payment" class="section hide">
+        <h3>${this.localeObj.t('register.forms.payment.header')}</h3>
         <!-- Modal for bank deposit -->
-        <div id="div-modal-payment-bank" class="modal">
-            <div class="modal-content">
-                <h4>${this.localeObj.t('register.forms.payment.modals.bankAccount.header')}</h4>
+        <div id="div-payment-details-bank" class="hide">
+            <h4>${this.localeObj.t('register.forms.payment.bankAccount.header')}</h4>
 
-                ${this.localeObj.t('register.forms.payment.modals.bankAccount.details')}
-
-                <p class="center-align">
-                    <a class="modal-close btn-large waves-effect waves-light theme-red"><i class="material-icons right">cancel</i>${this.localeObj.t('buttons.cancel')}</a>
-                    <a class="btn-large waves-effect waves-light theme-green payment-submit">${this.localeObj.t('buttons.submit')}<i class="material-icons right">send</i></a>
-                </p>
-            </div>
+            ${this.localeObj.t('register.forms.payment.bankAccount.details')}
         </div>
 
         <!-- Modal for online bank transfer -->
-        <div id="div-modal-payment-online-bank" class="modal">
-            <div class="modal-content">
-                <h4>${this.localeObj.t('register.forms.payment.modals.onlineBank.header')}</h4>
+        <div id="div-payment-details-online-bank" class="hide">
+            <h4>${this.localeObj.t('register.forms.payment.onlineBank.header')}</h4>
 
-                ${this.localeObj.t('register.forms.payment.modals.onlineBank.details')}
-
-                <p class="center-align">
-                    <a class="modal-close btn-large waves-effect waves-light theme-red"><i class="material-icons right">cancel</i>${this.localeObj.t('buttons.cancel')}</a>
-                    <a class="btn-large waves-effect waves-light theme-green payment-submit">${this.localeObj.t('buttons.submit')}<i class="material-icons right">send</i></a>
-                </p>
-            </div>
+            ${this.localeObj.t('register.forms.payment.onlineBank.details')}
         </div>
 
         <!-- Modal for remittance payment -->
-        <div id="div-modal-payment-remittance" class="modal">
-            <div class="modal-content">
-                <h4>${this.localeObj.t('register.forms.payment.modals.remittance.header')}</h4>
+        <div id="div-payment-details-remittance" class="hide">
+            <h4>${this.localeObj.t('register.forms.payment.remittance.header')}</h4>
 
-                ${this.localeObj.t('register.forms.payment.modals.remittance.details')}
-
-                <p class="center-align">
-                    <a class="modal-close btn-large waves-effect waves-light theme-red"><i class="material-icons right">cancel</i>${this.localeObj.t('buttons.cancel')}</a>
-                    <a class="btn-large waves-effect waves-light theme-green payment-submit">${this.localeObj.t('buttons.submit')}<i class="material-icons right">send</i></a>
-                </p>
-            </div>
+            ${this.localeObj.t('register.forms.payment.remittance.details')}
         </div>
 
         <!-- Modal for PayPal payment -->
-        <div id="div-modal-payment-paypal" class="modal modal-fixed-footer">
-            <div class="modal-content">
-                <h4>${this.localeObj.t('register.forms.payment.modals.paypal.header')}</h4>
+        <div id="div-payment-details-paypal" class="hide">
+            <h4>${this.localeObj.t('register.forms.payment.paypal.header')}</h4>
 
-                ${this.localeObj.t('register.forms.payment.modals.paypal.details')}
+            ${this.localeObj.t('register.forms.payment.paypal.details')}
 
-                <div id="div-payment-iframe-wrapper"></div>
-            </div>
-            <div class="modal-footer">
-                <a class="modal-close waves-effect btn-flat">${this.localeObj.t('buttons.cancel')}</a>
-            </div>
+            <div id="div-payment-iframe-wrapper"></div>
         </div>
     </section>
 
