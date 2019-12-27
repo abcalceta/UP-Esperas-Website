@@ -62,10 +62,6 @@ footer .footer-main a:hover {
     color: whitesmoke;
 }
 
-.inline-block {
-    display: inline-block;
-}
-
 /* Theme colors */
 .theme-green {
     background-color: #418B45 !important;

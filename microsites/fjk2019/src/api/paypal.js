@@ -12,16 +12,20 @@ function roundToPlaces(value, precision) {
 }
 
 async function createPaymentPage(originUrl, clientId, paymentObj, lang = 'en') {
-    const paymentPage = await fs.promises.readFile(path.join(__dirname, './paypal-payment.html'), 'utf-8');
+    const paymentPage = await fs.promises.readFile(path.join(__dirname, '/templates/paypal-payment.html'), 'utf-8');
     const $ = cheerio.load(paymentPage);
 
     const localeObj = new Polyglot();
     const newLocale = ['en', 'eo'].includes(lang) ? lang : 'en';
-    const localeFile = await fs.promises.readFile(path.join(__dirname, `./i18n/${newLocale}/common.json`), 'utf-8');
+    const localeFile = await fs.promises.readFile(path.join(__dirname, `/i18n/${newLocale}/common.json`), 'utf-8');
     localeObj.extend(JSON.parse(localeFile));
 
     const order = createOrder(localeObj, paymentObj);
 
+    // Append loading text
+    $('#div-loader').append(`<p>${localeObj.t('loading')}</p>`);
+
+    // Append iframe, order info, and origin url
     $('#div-payment-paypal').after(`
         <script>
             window.iFrameResizer = {

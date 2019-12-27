@@ -6,6 +6,8 @@ const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 // https://jlongster.com/Backend-Apps-with-Webpack--Part-I
 let nodeModules = {};
@@ -42,31 +44,62 @@ const common = {
 const web = {
     target: 'web',
     devtool: 'source-map',
-    entry: './src/web/index.js',
+    entry: {
+        main: './src/web/index.js',
+    },
     output: {
-        filename: '[name].[contenthash:8].bundle.js',
+        filename: '[name]_[contenthash:8].js',
         path: path.resolve(__dirname, 'dist/web'),
         //publicPath: './'
     },
     optimization: {
+        minimizer: [
+            new TerserPlugin({
+                sourceMap: true,
+                extractComments: false,
+                terserOptions: {
+                    output: {
+                        comments: false,
+                    },
+                },
+            }),
+            new OptimizeCSSAssetsPlugin({
+                cssProcessorPluginOptions: {
+                    preset: [
+                        'default',
+                        {
+                            discardComments: {
+                                removeAll: true,
+                            },
+                        },
+                    ],
+                },
+            }),
+        ],
         minimize: true,
         mergeDuplicateChunks: true,
-        runtimeChunk: 'single',
+        //runtimeChunk: 'single',
         splitChunks: {
             chunks: 'all',
             maxInitialRequests: Infinity,
             minSize: 0,
             cacheGroups: {
+                vendors: false,
                 vendor: {
                     test: /[\\/]node_modules[\\/]/,
-                    name(module) {
-                        const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
-
-                        return `npm.${packageName.replace('@', '')}`;
-                    }
-                }
-            }
-        }
+                    name: 'vendor',
+                    priority: 20,
+                },
+                common: {
+                    name: 'common',
+                    minChunks: 2,
+                    chunks: 'async',
+                    reuseExistingChunk: true,
+                    enforce: true,
+                    priority: 10,
+                },
+            },
+        },
     },
     plugins: [
         new CopyPlugin([
@@ -77,10 +110,20 @@ const web = {
         }),
         new MiniCssExtractPlugin({
             filename: '[name].css',
-            chunkFilename: '[id].css'
+            chunkFilename: '[name]_[contenthash:8].css'
         }),
         new CompressionPlugin({
-            filename: '[path].[contenthash:8].br[query]',
+            filename: '[path].gz[query]',
+            algorithm: 'gzip',
+            test: /\.(js|css|htm(l?)|svg|ttf|eot)$/,
+            threshold: 10240,
+            minRatio: 0.8,
+            deleteOriginalAssets: false,
+            compressionOptions: { level: 6 }
+        }),
+        /*
+        new CompressionPlugin({
+            filename: '[path].br[query]',
             algorithm: 'brotliCompress',
             test: /\.(js|css|htm(l?))$/,
             threshold: 10240,
@@ -88,7 +131,8 @@ const web = {
             deleteOriginalAssets: false,
             compressionOptions: { level: 11 }
         }),
-        new webpack.HashedModuleIdsPlugin()
+        */
+        new webpack.HashedModuleIdsPlugin(),
     ],
     module: {
         rules: [
@@ -96,7 +140,7 @@ const web = {
                 test: /\.css$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    'css-loader'
+                    'css-loader',
                 ]
             },
             {
@@ -104,8 +148,8 @@ const web = {
                 use: {
                     loader: 'file-loader',
                     options: {
-                        name: '[name]_[contenthash].[ext]',
-                        outputPath: 'img'
+                        name: '[name]_[contenthash:8].[ext]',
+                        outputPath: 'img',
                     }
                 }
             },
@@ -113,11 +157,11 @@ const web = {
                 test: /\.html$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: 'html-loader?interpolate=require'
-                }
-            }
-        ]
-    }
+                    loader: 'html-loader?interpolate=require',
+                },
+            },
+        ],
+    },
 };
 
 const api = {
@@ -131,13 +175,34 @@ const api = {
     plugins: [
         new CopyPlugin([
             { from: './src/api/i18n', to: 'i18n' },
+            { from: './src/api/templates', to: 'templates' },
         ]),
-        new webpack.IgnorePlugin(/\.(css|less)$/)
+        new webpack.IgnorePlugin(/\.(css|less)$/),
+        new CompressionPlugin({
+            filename: '[path].gz[query]',
+            algorithm: 'gzip',
+            test: /\.(js|css|htm(l?))$/,
+            threshold: 10240,
+            minRatio: 0.8,
+            deleteOriginalAssets: false,
+            compressionOptions: { level: 6 }
+        }),
+        /*
+        new CompressionPlugin({
+            filename: '[path].br[query]',
+            algorithm: 'brotliCompress',
+            test: /\.(js|css|htm(l?))$/,
+            threshold: 10240,
+            minRatio: 0.8,
+            deleteOriginalAssets: false,
+            compressionOptions: { level: 11 }
+        }),
+        */
     ],
-    externals: nodeModules
+    externals: nodeModules,
 };
 
 module.exports = [
     Object.assign({}, common, web),
-    Object.assign({}, common, api)
+    Object.assign({}, common, api),
 ];

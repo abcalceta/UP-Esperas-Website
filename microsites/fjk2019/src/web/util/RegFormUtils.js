@@ -19,9 +19,6 @@ function initDatePicker(element, locale) {
         locale: flatpickrEo,
     });
 
-    // Override Materialize css
-    document.querySelector('.flatpickr-monthDropdown-months').classList.add('inline-block');
-
     const textLabel = elm.parentElement.querySelector('label');
 
     if(textLabel) {

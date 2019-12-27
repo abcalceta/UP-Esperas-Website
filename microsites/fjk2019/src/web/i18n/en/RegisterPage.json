@@ -16,7 +16,10 @@
             "onSite": "On-Site",
             "timeNotice": "All dates are in Philippine Standard Time (GMT+8). Time of end dates are at 11:59 PM.",
             "regPeriodText": "%{regPeriod} Registration",
-            "registerInProgress": "Registering. Please wait&#8230;"
+            "paypalProcessing": "Processing PayPal payment&#8230;",
+            "paypalSuccess": "Successfully paid through PayPal!",
+            "registerInProgress": "Registering. Please wait&#8230;",
+            "registerSuccess": "Successfully registered!"
         },
         "generalErrors": {
             "invalidField": "This section (%{sectionTitle}) has invalid fields!",
@@ -97,6 +100,7 @@
                 "currentWorkText": "&#8230; and working now at&#8230;",
                 "discountNotice": "To qualify with this discount, please send a photo/scanned copy of your school ID or certificate of registration to peyc2020@gmail.com",
                 "guidelines": {
+                    "intro": "There are different categories for participants",
                     "A": "<b>Undergraduate Students and Below</b> are individuals in undergraduate (college) level, high school (junior and senior), vocational schools, and below at the time of registration. It is subdivided into two subcategories, A1 (for senior high school students or equivalent (such as those in vocational schools below the college level and out-of-school youth), and below) and A2 (for undergraduate (college) students and equivalent). Registrants in this category are required to send a photo/scanned copy of their school ID and latest certificate of registration (if applicable) to avail of the discount.",
                     "B": "<b>Workers, Graduate Students, or Equivalent</b> are individuals who have completed their undergraduate studies or its equivalent at the time of registration. It includes those who work or practice a profession, graduate-level students (master’s degree/Ph.D./Medicine/Law), and self-employed and unemployed individuals. It is further subdivided into B1 (for individuals aged 35 and below at the time of registration, i.e. within age prescribed as “youth” by World Esperanto Youth Organization (TEJO) and eligible for full membership in Philippine Esperanto Youth (FEJ)), and B2 (for individuals aged 36 and above at the time of registration).",
                     "C": "<b>Moral Participants</b> are individuals who will not participate in the congress itself, but want to support the congress financially. The fee is half (50%) of the regular period registration fee of category B.1 (for both Filipino and foreign participants). They shall be given due acknowledgment in the congress booklet.",
@@ -136,7 +140,8 @@
                     "interested": "I am interested in reserving a room from partner hotels of the congress",
                     "beyondDates": "I need to reserve a lodging beyond the congress dates",
                     "arrival": "Arrival",
-                    "departure": "Departure"
+                    "departure": "Departure",
+                    "unknownDate": "I do not know"
                 }
             },
             "excursion": {
@@ -240,19 +245,31 @@
                 "header": "Payment",
                 "bankAccount": {
                     "header": "Payment via Bank Deposit",
-                    "details": "<p>\nPlease pay to the bank account below through international money deposit. Fill in the relevant forms with the information below:\n</p>\n<p>\n<b>Bank Name:</b> Landbank of the Philippines<br>\n<b>Account Name:</b> Albert Stalin T. Garrido<br>\n<b>Account Number:</b> 3077106196<br>\n<b>SWIFT Code:</b> TLBPPHMM<br>\n<b>Bank Address:</b> Head Office, Landbank Plaza, M.H. Del Pilar cor. D. J. Quintos Sts., Malate, Manila, Philippines<br>\n<b>Bank Tel. No.</b> +63 2 405 7000<br>\n</p>\n<p>\nAfter the transaction, please send a copy of the processed deposit form to peyc2020@gmail.com so that we can confirm your payment.\n</p>\n<p>\n<b>NOTE:</b> Please add EUR 3.00 to the total amount to be sent. Also, take note of the additional service fees that your bank may charge, and be sure to add that as well.\n</p>\n"
+                    "details": {
+                        "local": "<p>\nPlease deposit your payment at the nearest <b>Land Bank of the Philippines</b> or <b>Banco de Oro</b> branch. Fill in the relevant forms with the information below:\n</p>\n<p>\n<b>Landbank of the Philippines</b><br>\n<b>Account Name:</b> Albert Stalin T. Garrido<br>\n<b>Account Number:</b> 3077 1061 96<br>\n<b>Account Type:</b> Savings<br>\n<b>Account Branch:</b> UP Diliman<br>\n</p>\n<p>\n<b>Banco de Oro</b><br>\n<b>Account Name:</b> Albert Stalin T. Garrido<br>\n<b>Account Number:</b> 005350261895<br>\n<b>Account Type:</b> Savings<br>\n<b>Account Branch:</b> A. Arnaiz - San Lorenzo Village<br>\n</p>\n<p>\nThere is no additional fee if the deposit is made within the National Capital Region. For deposits made outside the NCR, there is a <b>PHP 50.00</b> inter-region deposit.\n</p>\n<p>\n<b>NOTE:</b> For bookkeeping purposes, please send a photo or scanned copy of the processed Cash Deposit/Transaction Slip to peyc2020@gmail.com so that we can confirm your payment.\n</p>\n",
+                        "foreign": "<p>\nPlease pay to the bank account below through international money deposit. Fill in the relevant forms with the information below:\n</p>\n<p>\n<b>Bank Name:</b> Landbank of the Philippines<br>\n<b>Account Name:</b> Albert Stalin T. Garrido<br>\n<b>Account Number:</b> 3077 1061 96<br>\n<b>Postal Code:</b> 1004<br>\n<b>SWIFT Code:</b> TLBPPHMM<br>\n<b>Bank Address:</b> Head Office, Landbank Plaza, M.H. Del Pilar cor. D. J. Quintos Sts., Malate, Manila, Philippines<br>\n<b>Bank Tel. No.</b> +63 2 405 7000<br>\n</p>\n<p>\n<b>NOTE:</b> After the transaction, please send a copy of the processed deposit form to peyc2020@gmail.com so that we can confirm your payment.\n</p>\n<p>\n<b>NOTE:</b> Please add EUR 3.00 to the total amount to be sent (usually via SWIFT). Also, take note of the additional service fees that your bank may charge, and be sure to add that as well.\n</p>\n"
+                    }
                 },
                 "onlineBank": {
                     "header": "Payment via Online Bank Transfer",
-                    "details": "<p>\nPlease pay through online bank transfer via <b>BDO</b> to the following account:\n</p>\n<p>\n<b>Bank:</b> BDO<br>\n<b>Account Name:</b> Albert Stalin T. Garrido<br>\n<b>Account Number:</b> 005350261895<br>\n<b>Account Type:</b> Savings<br>\n</p>\n<p>\nPlease send a screenshot of the successful transaction to peyc2020@gmail.com so that we can confirm your payment. Make sure to check if there are service fees charged by your bank and add the amount of any possible additional costs to cover them.</p>\n"
+                    "details": {
+                        "local": "<p>\nPlease pay through online bank transfer via <b>BDO</b> to the following account:\n</p>\n<p>\n<b>Bank:</b> BDO<br>\n<b>Account Name:</b> Albert Stalin T. Garrido<br>\n<b>Account Number:</b> 005350261895<br>\n<b>Account Type:</b> Savings<br>\n</p>\n<p>\n<b>NOTE:</b> Please send a screenshot of the successful transaction to peyc2020@gmail.com so that we can confirm your payment. Make sure to check if there are service fees charged by your bank and add the amount of any possible additional costs to cover them.</p>\n",
+                        "foreign": ""
+                    }
                 },
                 "paypal": {
                     "header": "Payment via PayPal",
-                    "details": "<p>\nIf you are ready to pay via PayPal, please click on your preferred mode of payment below.\n</p>"
+                    "details": {
+                        "local": "<p>\nIf you are ready to pay via PayPal, please click on your preferred mode of payment below.\n</p>",
+                        "foreign": "<p>\nIf you are ready to pay via PayPal, please click on your preferred mode of payment below.\n</p>"
+                    }
                 },
                 "remittance": {
                     "header": "Payment via Remittance",
-                    "details": "<p>\nWe accept payment via remittance through <b>Western Union</b>. Please fill in the relevant forms with the following information:\n</p>\n<p>\n<b>Name of Recipient:</b> Albert Stalin Tancinco Garrido<br>\n<b>City and Country:</b> Quezon City, Metro Manila, Philippines<br>\n<b>Contact Number:</b> +63 998 249 1891<br>\n<b>E-mail Address:</b> albertstgarrido@gmail.com<br>\n</p>\n<p>\nFor bookkeeping purposes, send a photo or scanned copy of the processed transaction form to peyc2020@gmail.com showing the following information: <b>MTCN/Reference Number</b>, <b>exact amount sent</b>, and <b>name of the sender</b>.\n</p>\n<p>\n<b>NOTE:</b> To cover the Documentary Stamp Tax mandated by Philippine law on international remittances, please add <b>0.3%</b> of the total amount to be paid. For example, if the total fees to pay is <em>100</em>, then please pay a total of 100 * 1.003 = <em>100.30</em> instead.\n</p>\n"
+                    "details": {
+                        "local": "<p>\nWe accept payment via remittance through <b>Western Union, Palawan Pawnshop, Cebuana Lhuillier,</b> and others. Please fill in the relevant forms with the following information:\n</p>\n<p>\n<b>Name of Recipient:</b> Albert Stalin Tancinco Garrido<br>\n<b>City:</b> Quezon City, Metro Manila<br>\n<b>Contact Number:</b> +63 998 249 1891<br>\n<b>E-mail Address:</b> albertstgarrido@gmail.com<br>\n</p>\n<p>\n<b>NOTE:</b> For bookkeeping purposes, send a photo or scanned copy of the processed transaction form to peyc2020@gmail.com showing the following information: <b>MTCN/Reference Number</b>, <b>exact amount sent</b>, and <b>name of the sender</b>.\n</p>\n<p>\n<b>NOTE:</b> Ask the remittance provider first if they charge deductions due to the Documentary Stamp Tax mandated by Philippine law. If so, please add <b>0.3%</b> of the total amount to be paid. For example, if the total fees to pay is <em>100</em>, then please pay a total of 100 * 1.003 = <em>100.30</em> instead.\n</p>\n",
+                        "foreign": "<p>\nWe accept payment via remittance through <b>Western Union</b>. Please fill in the relevant forms with the following information:\n</p>\n<p>\n<b>Name of Recipient:</b> Albert Stalin Tancinco Garrido<br>\n<b>City and Country:</b> Quezon City, Metro Manila, Philippines<br>\n<b>Contact Number:</b> +63 998 249 1891<br>\n<b>E-mail Address:</b> albertstgarrido@gmail.com<br>\n</p>\n<p>\n<b>NOTE:</b> For bookkeeping purposes, send a photo or scanned copy of the processed transaction form to peyc2020@gmail.com showing the following information: <b>MTCN/Reference Number</b>, <b>exact amount sent</b>, and <b>name of the sender</b>.\n</p>\n<p>\n<b>NOTE:</b> To cover the Documentary Stamp Tax mandated by Philippine law on international remittances, please add <b>0.3%</b> of the total amount to be paid. For example, if the total fees to pay is <em>100</em>, then please pay a total of 100 * 1.003 = <em>100.30</em> instead.\n</p>\n"
+                    }
                 }
             },
             "certification": {

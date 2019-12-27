@@ -8,6 +8,7 @@
 
 .flatpickr-current-month .flatpickr-monthDropdown-months {
     background: #418B45;
+    display: inline; /* Override Materialize css */
 }
 
 .flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month {

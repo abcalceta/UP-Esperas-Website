@@ -4,6 +4,7 @@
     "yes": "Jes",
     "no": "Ne",
     "loading": "Ŝarĝante...",
+    "date": "%{weekdayWord}, la %{day}a de %{month} %{year}",
     "buttons": {
         "home": "Ĉefpaĝo",
         "close": "Fermi",
@@ -31,13 +32,17 @@
     },
     "calendar": {
         "months": [
-            "Januaro", "Februaro", "Marto", "Aprilo",
-            "Majo", "Junio",  "Julio", "Aŭgusto",
-            "Septembro", "Oktobro", "Novembro", "Decembro"
+            "januaro", "februaro", "marto", "aprilo",
+            "majo", "junio",  "julio", "aŭgusto",
+            "septembro", "oktobro", "novembro", "decembro"
         ],
         "monthsShort": [
-            "Jan", "Feb", "Mar", "Apr", "Maj", "Jun",
-            "Jul", "Aŭg", "Sep", "Okt", "Nov", "Dec"
+            "jan", "feb", "mar", "apr", "maj", "jun",
+            "jul", "aŭg", "sep", "okt", "nov", "dec"
+        ],
+        "weekdays": [
+            "dimanĉo", "lundo", "mardo", "merkredo",
+            "ĵaŭdo", "vendredo", "sabato"
         ],
         "weekdaysShort": [
             "dim", "lun", "mar", "mer",

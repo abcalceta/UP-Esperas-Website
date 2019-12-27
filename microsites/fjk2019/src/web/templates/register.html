@@ -101,7 +101,7 @@
     <section id="section-reg" class="section hide">
         <h3>${this.localeObj.t('register.forms.register.header')}</h3>
         <p>
-            There are different categories for participants
+            ${this.localeObj.t('register.forms.register.guidelines.intro')}
         </p>
         <p>
             ${this.localeObj.t('register.forms.register.guidelines.A')}
@@ -708,35 +708,13 @@
 
     <section id="section-payment" class="section hide">
         <h3>${this.localeObj.t('register.forms.payment.header')}</h3>
-        <!-- Modal for bank deposit -->
-        <div id="div-payment-details-bank" class="hide">
-            <h4>${this.localeObj.t('register.forms.payment.bankAccount.header')}</h4>
 
-            ${this.localeObj.t('register.forms.payment.bankAccount.details')}
-        </div>
+        <!-- Article for payment details -->
+        <article id="article-payment-details">
+        </article>
 
-        <!-- Modal for online bank transfer -->
-        <div id="div-payment-details-online-bank" class="hide">
-            <h4>${this.localeObj.t('register.forms.payment.onlineBank.header')}</h4>
-
-            ${this.localeObj.t('register.forms.payment.onlineBank.details')}
-        </div>
-
-        <!-- Modal for remittance payment -->
-        <div id="div-payment-details-remittance" class="hide">
-            <h4>${this.localeObj.t('register.forms.payment.remittance.header')}</h4>
-
-            ${this.localeObj.t('register.forms.payment.remittance.details')}
-        </div>
-
-        <!-- Modal for PayPal payment -->
-        <div id="div-payment-details-paypal" class="hide">
-            <h4>${this.localeObj.t('register.forms.payment.paypal.header')}</h4>
-
-            ${this.localeObj.t('register.forms.payment.paypal.details')}
-
-            <div id="div-payment-iframe-wrapper"></div>
-        </div>
+        <!-- iframe container for paypal -->
+        <div id="div-payment-iframe-wrapper" class="hide"></div>
     </section>
 
     <section id="section-thanks" class="section hide">

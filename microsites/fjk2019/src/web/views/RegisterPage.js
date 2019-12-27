@@ -154,18 +154,33 @@ export class RegisterPage extends BasePage {
                 console.info(`Received payent message from ${e.origin}!`);
 
                 switch(e.data.error_code) {
-                    case 'PMT200':
+                    case 'PMT201': {
+                        Materialize.toast({
+                            html: this.localeObj.t('register.generalText.paypalProcessing'),
+                            classes: 'theme-green white-text',
+                        });
+
+                        break;
+                    }
+                    case 'PMT200': {
+                        Materialize.toast({
+                            html: this.localeObj.t('register.generalText.paypalSuccess'),
+                            classes: 'theme-green white-text',
+                        });
+
                         document.querySelector('input[type=hidden][name=hdn-paypal-order-id]').value = e.data.order_id;
                         this.submitForm();
 
                         break;
-                    case 'PMTCXD':
+                    }
+                    case 'PMTCXD': {
                         Materialize.toast({
                             html: this.localeObj.t('register.generalErrors.paymentCancelled'),
                             classes: 'white-text theme-yellow',
                         });
 
                         break;
+                    }
                     default:
                         Materialize.toast({
                             html: this.localeObj.t('register.generalErrors.genericPayment', {errorMsg: e.data.detail}),
@@ -180,9 +195,14 @@ export class RegisterPage extends BasePage {
         const pageIdxFromHistory = vnode.attrs.lastPageIdx;
         console.log(`this: ${this.currentPageState}, new: ${pageIdxFromHistory}`);
 
-        if(typeof pageIdxFromHistory !== 'number' && !(pageIdxFromHistory instanceof Number)) {
+        if(this.currentPageState == 0 && (typeof pageIdxFromHistory !== 'number' && !(pageIdxFromHistory instanceof Number))) {
             // Overview screen
             console.log('In overview screen');
+            return;
+        }
+        else if(this.currentPageState == this.pageStatesList.length - 1 && (typeof pageIdxFromHistory !== 'number' && !(pageIdxFromHistory instanceof Number))) {
+            // Overview screen
+            console.log('In thanks screen');
             return;
         }
         else if(pageIdxFromHistory - this.currentPageState > 1) {
@@ -191,11 +211,12 @@ export class RegisterPage extends BasePage {
         }
 
         // Update step progress
-        let stepContainerElm = document.querySelector('#div-steps');
-        m.render(stepContainerElm, this.getStepsDom(this.currentPageState));
+        const stepContainerElm = document.querySelector('#div-steps');
 
         if(pageIdxFromHistory == this.currentPageState && pageIdxFromHistory == 0) {
             console.log('Clicked from overview page.');
+
+            m.render(stepContainerElm, this.getStepsDom(0));
             return;
         }
 
@@ -206,10 +227,11 @@ export class RegisterPage extends BasePage {
                 behavior: 'smooth',
             });
 
+
             this.swapFormSections(this.currentPageState, pageIdxFromHistory);
             this.scrollStepTimeline(pageIdxFromHistory);
             this.triggerSectionChanges(pageIdxFromHistory);
-            m.render(document.querySelector('#div-steps'), this.getStepsDom(pageIdxFromHistory));
+            m.render(stepContainerElm, this.getStepsDom(pageIdxFromHistory));
 
             this.currentPageState = pageIdxFromHistory;
         }
@@ -251,7 +273,7 @@ export class RegisterPage extends BasePage {
                     {
                         replace: false,
                         state: {
-                            lastPageIdx: 0
+                            lastPageIdx: 0,
                         }
                     }
                 );
@@ -485,14 +507,6 @@ export class RegisterPage extends BasePage {
         registerAgainBtn.addEventListener('click', (e) => {
             e.preventDefault();
 
-            m.route.set(
-                '/register/section-overview',
-                null,
-                {
-                    replace: false
-                }
-            );
-
             DomScripts.animateOnce('#section-thanks', ['fadeOutLeft', 'fast'], () => {
                 document.getElementById('section-thanks').classList.add('hide');
                 document.getElementById('section-guidelines').classList.remove('hide');
@@ -511,9 +525,19 @@ export class RegisterPage extends BasePage {
                 document.querySelector('#div-reg-category').classList.remove('hide');
                 document.querySelector('#select-reg-occupation').required = true;
                 document.getElementById('div-others-invitletter-shipinfo').classList.add('hide');
-                Cookies.remove('cookie_consent');
 
                 DomScripts.animateOnce('#section-guidelines', ['fadeInRight', 'fast']);
+
+                m.route.set(
+                    '/register',
+                    null,
+                    {
+                        replace: false,
+                        state: {
+                            lastPageIdx: 0,
+                        },
+                    }
+                );
             });
         });
     }
@@ -734,11 +758,27 @@ export class RegisterPage extends BasePage {
         let arriveSelectElm = document.getElementById('select-lodging-arrive');
         let departSelectElm = document.getElementById('select-lodging-depart');
 
+        // Add idk option
+        let idkOptElm = document.createElement('option');
+        idkOptElm.setAttribute('value', 0);
+        idkOptElm.innerHTML = this.localeObj.t('register.forms.lodging.fields.unknownDate');
+
+        arriveSelectElm.appendChild(idkOptElm.cloneNode(true));
+        departSelectElm.appendChild(idkOptElm.cloneNode(true));
+
         for(let i = 20200420; i <= 20200430; ++i) {
             let idxToDate = new Date(i / 10000, ((i / 100) % 100) - 1, i % 100);
-            let optElm = document.createElement("option");
-            optElm.setAttribute("value", i);
-            optElm.innerHTML = idxToDate.toLocaleDateString('en-PH', {year: 'numeric', month: 'short', day: '2-digit', weekday: 'short'});
+            let optElm = document.createElement('option');
+            optElm.setAttribute('value', i);
+
+            const dateStr = this.localeObj.t('date', {
+                weekdayWord: this.localeObj.t(`calendar.weekdays.${idxToDate.getDay()}`),
+                day: idxToDate.getDate(),
+                month: this.localeObj.t(`calendar.months.${idxToDate.getMonth()}`),
+                year: idxToDate.getFullYear(),
+            });
+
+            optElm.innerHTML = dateStr;
 
             arriveSelectElm.appendChild(optElm.cloneNode(true));
             departSelectElm.appendChild(optElm.cloneNode(true));
@@ -764,36 +804,34 @@ export class RegisterPage extends BasePage {
     showPaymentMethod(method) {
         console.log(`Showing payment method ${method}`);
 
-        // Hide all methods
-        const paymentSection = document.getElementById('section-payment');
-        for(let i = 0; i < paymentSection.children.length; ++i) {
-            if(paymentSection.children[i].tagName !== 'DIV') {
-                continue;
-            }
-
-            paymentSection.children[i].classList.add('hide');
-        }
+        const localKeyword = this.isLocalRates() ? 'local' : 'foreign';
+        let paymentHeader = '';
+        let paymentDetails = '';
 
         document.getElementById('btn-next').disabled = false;
+        document.getElementById('div-payment-iframe-wrapper').classList.add('hide');
 
         switch(method) {
             case 'bank': {
-                document.getElementById('div-payment-details-bank').classList.remove('hide');
-
+                paymentHeader = this.localeObj.t('register.forms.payment.bankAccount.header');
+                paymentDetails = this.localeObj.t(`register.forms.payment.bankAccount.details.${localKeyword}`);
                 break;
             }
             case 'online-bank': {
-                document.getElementById('div-payment-details-online-bank').classList.remove('hide');
-
+                paymentHeader = this.localeObj.t('register.forms.payment.onlineBank.header');
+                paymentDetails = this.localeObj.t(`register.forms.payment.onlineBank.details.${localKeyword}`);
                 break;
             }
             case 'remittance': {
-                document.getElementById('div-payment-details-remittance').classList.remove('hide');
-
+                paymentHeader = this.localeObj.t('register.forms.payment.remittance.header');
+                paymentDetails = this.localeObj.t(`register.forms.payment.remittance.details.${localKeyword}`);
                 break;
             }
             case 'paypal': {
-                document.getElementById('div-payment-details-paypal').classList.remove('hide');
+                paymentHeader = this.localeObj.t('register.forms.payment.paypal.header');
+                paymentDetails = this.localeObj.t(`register.forms.payment.paypal.details.${localKeyword}`);
+
+                // Additional processing for PayPal method
                 document.getElementById('btn-next').disabled = true;
 
                 const feesObj = this.computeTotalRegFees(this.isLocalRates());
@@ -802,17 +840,23 @@ export class RegisterPage extends BasePage {
                 break;
             }
         }
+
+        const paymentArticle = document.getElementById('article-payment-details');
+
+        m.render(paymentArticle, [
+            m('h4', paymentHeader),
+            m.trust(paymentDetails),
+        ]);
     }
 
     async initPaypalDiv(paymentObj) {
         // Initialize PayPal div
         // Attach PayPal iframe
         const iframeDiv = document.getElementById('div-payment-iframe-wrapper');
+        iframeDiv.classList.remove('hide');
 
         // Remove existing PayPal iframe
-        while (iframeDiv.firstChild) {
-            iframeDiv.removeChild(iframeDiv.firstChild);
-        }
+        DomScripts.removeAllChildren(iframeDiv);
 
         try {
             const paymentPageRes = await fetch(`${this.apiDomain}/payment?lang=${this.data.locale.lang}`, {
@@ -856,7 +900,7 @@ export class RegisterPage extends BasePage {
 
         const inProgressToast = Materialize.toast({
             html: this.localeObj.t('register.generalText.registerInProgress'),
-            classes: 'theme-green white-text'
+            classes: 'theme-green white-text',
         });
 
         try {
@@ -869,8 +913,6 @@ export class RegisterPage extends BasePage {
                 body: new URLSearchParams(new FormData(document.forms[0])),
             });
 
-            inProgressToast.dismiss();
-
             if(!res.ok) {
                 console.error(`Not OK HTTP status on form submit: ${res.json()}`);
                 throw err;
@@ -878,6 +920,17 @@ export class RegisterPage extends BasePage {
 
             const jsonRes = await res.json();
             console.info('Form received by server!');
+
+            inProgressToast.dismiss();
+
+            Materialize.toast({
+                html: this.localeObj.t('register.generalText.registerSuccess'),
+                classes: 'theme-green white-text',
+            })
+
+            // Clear stored form details
+            Cookies.remove('cookie_consent');
+            RegFormUtils.clearStoredFormElements();
 
             DomScripts.animateOnce('#div-steps', ['fadeOutUp', 'fast'], () => {
                 document.getElementById('div-steps').classList.add('hide');
@@ -897,18 +950,17 @@ export class RegisterPage extends BasePage {
 
                 document.getElementById('span-register-id').innerHTML = jsonRes.registerId;
                 document.getElementById('span-payment-id').innerHTML = jsonRes.paymentId;
+
+                console.log(`RegId: ${jsonRes.registerId}; PaymentId: ${jsonRes.paymentId}`);
+
+                m.route.set(
+                    '/register/section-thanks',
+                    null,
+                    {
+                        replace: false
+                    }
+                );
             });
-
-            // Clear stored form details
-            RegFormUtils.clearStoredFormElements();
-
-            m.route.set(
-                '/register/section-thanks',
-                null,
-                {
-                    replace: false
-                }
-            );
         }
         catch(err) {
             console.error(`Error on form submit: ${err}`);
@@ -1000,6 +1052,8 @@ export class RegisterPage extends BasePage {
 
         DomScripts.animateOnce(fromSectionId, [transitionClass[0], 'faster'], () => {
             const toSection = document.querySelector(toSectionId);
+
+            console.log(`animate ${fromSectionId} to ${toSectionId}`);
 
             document.querySelector(fromSectionId).classList.add('hide');
             toSection.classList.remove('hide');

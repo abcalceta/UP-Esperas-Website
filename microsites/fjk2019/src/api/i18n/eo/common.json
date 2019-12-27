@@ -1,11 +1,12 @@
 {
-    "total": "Total",
+    "loading": "Ŝarĝante...",
+    "total": "Plena Sumo",
     "fees": {
-        "registration": "Registration Fee",
-        "excursion": "Excursion Fee",
-        "invitLetter": "Invitation Letter",
-        "congressFund": "Congress Fund",
-        "participantFund": "Participant Support",
-        "fejFund": "Association Fund"
+        "registration": "Aliĝkotizo",
+        "excursion": "Ekskurso",
+        "invitLetter": "Invitletero",
+        "congressFund": "Kongresa Fonduso",
+        "participantFund": "Fonduso por Partoprenontoj",
+        "fejFund": "Junulara Fonduso"
     }
 }

@@ -130,7 +130,6 @@
             <div class="sk-cube sk-cube7"></div>
             <div class="sk-cube sk-cube8"></div>
             <div class="sk-cube sk-cube9"></div>
-            <p>Loading &#8230;</p>
         </div>
 
         <div id="div-payment-paypal" class="hide"></div>
@@ -173,6 +172,13 @@
                     onApprove: (data, actions) => {
                         const loader = document.getElementById('div-loader');
                         const paypalDiv = document.getElementById('div-payment-paypal');
+
+                        window.parent.postMessage({
+                            type: 'payment',
+                            error_code: 'PMT201',
+                            title: 'Payment processing...',
+                            order_id: data.orderID,
+                        }, originUrl);
 
                         loader.classList.remove('hide');
                         paypalDiv.classList.add('hide');

@@ -75,6 +75,12 @@ function animateOnce(element, animationClasses, callback) {
     node.addEventListener('animationend', handleAnimationEnd);
 }
 
+function removeAllChildren(parentElm) {
+    while (parentElm.firstChild) {
+        parentElm.removeChild(parentElm.firstChild);
+    }
+}
+
 function initDomScripts() {
     Materialize.Modal.init(document.querySelectorAll('.modal'));
     Materialize.Parallax.init(document.querySelectorAll('.parallax'));
@@ -95,4 +101,5 @@ export let DomScripts = {
     animateOnce: animateOnce,
     animate: animate,
     evalTemplate: evalTemplate,
+    removeAllChildren: removeAllChildren,
 };
