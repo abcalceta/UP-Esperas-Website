@@ -65,8 +65,8 @@
             "basic": {
                 "header": "Baza Informo",
                 "fields": {
-                    "lastName": "Lasta Nomo*",
-                    "firstName": "Familia Nomo*",
+                    "lastName": "Familia Nomo*",
+                    "firstName": "Persona Nomo*",
                     "middleName": "Meza nomo",
                     "nickName": "Kromnomo*",
                     "birthday": "Naskiĝdato*",
@@ -79,10 +79,10 @@
                     "sns": "Socia Retejo"
                 },
                 "errors": {
-                    "lastName": "Bv. enigi vian lastan nomon",
+                    "lastName": "Bv. enigi vian familian nomon",
                     "firstName": "Bv. enigi vian personan nomon",
-                    "nickName": "Bv. enigi vian alnomon",
-                    "birthday": "Bv. enigi vian naskiĝtagon",
+                    "nickName": "Bv. enigi vian kromnomon",
+                    "birthday": "Bv. enigi vian naskiĝdaton",
                     "sex": "Bv. elekti vian sekson",
                     "countryOfOrigin": "Bv. elekti vian devenan landon",
                     "emailAddress": "Bv. enigi vian retpoŝtadreson"
@@ -124,12 +124,12 @@
                     "position": "Okupo*"
                 },
                 "errors": {
-                    "occupation": "Bv. elekti vian okupiĝon",
+                    "occupation": "Bv. elekti vian okupon",
                     "educInsti": "Bv. enigi vian edukan institucio",
-                    "degree": "Bv. enigi vian kurson",
-                    "strand": "Bv. enigi vian jaron",
+                    "degree": "Bv. enigi vian fakon",
+                    "strand": "Bv. enigi vian jaron/fakon",
                     "company": "Bv. enigi vian oficejon",
-                    "position": "Bv. enigi vian postenon"
+                    "position": "Bv. enigi vian okupon"
                 }
             },
             "lodging": {
@@ -281,8 +281,8 @@
                     "publicity": "Mi konsentas rajtigi la Lokan Kongresan Komitaton foti aŭ filmi dum la kongreso kaj uzi tiujn por informi pri la Kongreso kaj aliaj similaj celoj"
                 },
                 "errors": {
-                    "accuracy": "Bv. atesti la vero de via enigo",
-                    "privacy": "Bv. konsenti al nia privateca avizo",
+                    "accuracy": "Bv. atesti la verecon kaj ĝustecon de viaj informoj",
+                    "privacy": "Bv. certigi ke vi legis nian privatecan avizon",
                     "publicity": "Bv. konsenti al publikigitaj rajtoj"
                 }
             }

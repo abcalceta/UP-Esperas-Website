@@ -45,14 +45,15 @@ export class DbInterface{
         };
     }
 
-    async addNewRegistrant(nickname) {
+    async addNewRegistrant(nickname, locale='en') {
         const registrantId = uuidv4();
         const paymentId = uuidv4();
 
         await this.repos.register.create(
             registrantId,
             paymentId,
-            nickname
+            nickname,
+            locale,
         );
 
         return {

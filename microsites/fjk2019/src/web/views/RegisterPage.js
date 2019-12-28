@@ -51,35 +51,6 @@ export class RegisterPage extends BasePage {
         };
     }
 
-    onLocaleChanged() {
-        super.onLocaleChanged();
-
-        // Load country list
-        m.request({
-            method: 'GET',
-            url: `/i18n/${this.data.locale.lang}/countryList.json`,
-            background: true,
-        })
-        .then((t) => {
-            this.countryList = t.map((eachCountry) => {
-                return [eachCountry.name, eachCountry.alpha3Code];
-            }).sort((a, b) => {
-                const nameA = a[0].toLowerCase();
-                const nameB = b[0].toLowerCase();
-
-                return nameA.localeCompare(nameB, this.data.locale.lang);
-            });
-
-            this.isCountryListUpdated = true;
-        })
-        .catch((err) => {
-            Materialize.toast({
-                html: `Failed to load translation: ${err}`,
-                classes: 'theme-red white-text',
-            });
-        });
-    }
-
     onupdate(vnode) {
         super.onupdate();
 
@@ -189,6 +160,8 @@ export class RegisterPage extends BasePage {
                 }
             });
 
+            document.querySelector('input[type=hidden][name=hdn-locale]').value = this.data.locale.lang;
+
             this.isTranslated = false;
         }
 
@@ -205,18 +178,46 @@ export class RegisterPage extends BasePage {
             console.log('In thanks screen');
             return;
         }
-        else if(pageIdxFromHistory - this.currentPageState > 1) {
-            console.log('Screen skipped!');
-            return;
-        }
 
         // Update step progress
         const stepContainerElm = document.querySelector('#div-steps');
+        m.render(stepContainerElm, this.getStepsDom(pageIdxFromHistory));
 
-        if(pageIdxFromHistory == this.currentPageState && pageIdxFromHistory == 0) {
-            console.log('Clicked from overview page.');
+        if(pageIdxFromHistory == this.currentPageState) {
+            if(pageIdxFromHistory == 0) {
+                console.log('Clicked from overview page.');
+            }
+            else {
+                console.log('Clicked translation fab.');
 
-            m.render(stepContainerElm, this.getStepsDom(0));
+                this.hideOverviewSection(this.pageStatesList[pageIdxFromHistory][2]);
+
+                // Hacks to recreate current state
+                this.swapFormSections(pageIdxFromHistory, pageIdxFromHistory);
+
+                for(let i = 0; i <= pageIdxFromHistory; ++i) {
+                    RegFormUtils.loadFormElements(`#${this.pageStatesList[i][2]}`);
+                    this.triggerSectionChanges(i);
+                }
+
+                Materialize.updateTextFields();
+
+                Materialize.FormSelect.init(
+                    document.querySelectorAll(
+                        `#select-countries-list,
+                         #select-sex-list,
+                         #select-reg-occupation,
+                         #select-lodging-arrive,
+                         #select-lodging-depart`
+                    )
+                );
+            }
+
+            return;
+        }
+        else if(pageIdxFromHistory - this.currentPageState > 1) {
+            console.log('Screen skipped!');
+
             return;
         }
 
@@ -231,10 +232,38 @@ export class RegisterPage extends BasePage {
             this.swapFormSections(this.currentPageState, pageIdxFromHistory);
             this.scrollStepTimeline(pageIdxFromHistory);
             this.triggerSectionChanges(pageIdxFromHistory);
-            m.render(stepContainerElm, this.getStepsDom(pageIdxFromHistory));
 
             this.currentPageState = pageIdxFromHistory;
         }
+    }
+
+    onLocaleChanged() {
+        super.onLocaleChanged();
+
+        // Load country list
+        m.request({
+            method: 'GET',
+            url: `/i18n/${this.data.locale.lang}/countryList.json`,
+            background: true,
+        })
+        .then((t) => {
+            this.countryList = t.map((eachCountry) => {
+                return [eachCountry.name, eachCountry.alpha3Code];
+            }).sort((a, b) => {
+                const nameA = a[0].toLowerCase();
+                const nameB = b[0].toLowerCase();
+
+                return nameA.localeCompare(nameB, this.data.locale.lang);
+            });
+
+            this.isCountryListUpdated = true;
+        })
+        .catch((err) => {
+            Materialize.toast({
+                html: `Failed to load translation: ${err}`,
+                classes: 'theme-red white-text',
+            });
+        });
     }
 
     attachRegOverview() {
@@ -251,22 +280,8 @@ export class RegisterPage extends BasePage {
 
             // Reveal basic info form
             this.pageIdxFromHistory = 0;
-            const guidelinesSubPage = document.querySelector('#section-guidelines');
-            const basicInfoSubPage = document.querySelector('#section-basic');
-            const stepsElm = document.querySelector('#div-steps');
-            const navElm = document.querySelector('#section-nav-buttons')
 
-            DomScripts.animateOnce('#section-guidelines', ['fadeOutLeft', 'faster'], () => {
-                guidelinesSubPage.classList.add('hide');
-
-                basicInfoSubPage.classList.remove('hide');
-                stepsElm.classList.remove('hide');
-                navElm.classList.remove('hide');
-
-                DomScripts.animateOnce('#section-basic', ['fadeInRight', 'faster']);
-                DomScripts.animateOnce('#div-steps', 'fadeInDown');
-                DomScripts.animateOnce('#section-nav-buttons', 'fadeInUp');
-
+            this.hideOverviewSection('section-basic', () => {
                 m.route.set(
                     `/register/${this.pageStatesList[0][2]}`,
                     null,
@@ -524,6 +539,7 @@ export class RegisterPage extends BasePage {
                 document.getElementById('form-register').reset();
                 document.querySelector('#div-reg-category').classList.remove('hide');
                 document.querySelector('#select-reg-occupation').required = true;
+                document.getElementById('div-excursion-fare-notice').classList.add('hide');
                 document.getElementById('div-others-invitletter-shipinfo').classList.add('hide');
 
                 DomScripts.animateOnce('#section-guidelines', ['fadeInRight', 'fast']);
@@ -735,8 +751,9 @@ export class RegisterPage extends BasePage {
 
                 // Set hidden fields
                 document.querySelector('input[name=hdn-excursion-fee]').value = feesObj.fees.excursion;
-                document.querySelector('input[name=hdn-reg-fee]').value = feesObj.fees.reg;
                 document.querySelector('input[name=hdn-invitletter-fee]').value = feesObj.fees.invitLetter;
+
+                document.querySelector('input[name=hdn-reg-fee]').value = feesObj.fees.reg;
                 document.querySelector('input[name=hdn-reg-category]').value = feesObj.regCategory;
                 document.querySelector('input[name=hdn-reg-currency]').value = feesObj.currency;
 
@@ -1015,6 +1032,30 @@ export class RegisterPage extends BasePage {
         }
 
         return true;
+    }
+
+    hideOverviewSection(toSectionId, callback) {
+        const guidelinesSubPage = document.querySelector('#section-guidelines');
+
+        DomScripts.animateOnce('#section-guidelines', ['fadeOutLeft', 'faster'], () => {
+            const basicInfoSubPage = document.getElementById(toSectionId);
+            const stepsElm = document.querySelector('#div-steps');
+            const navElm = document.querySelector('#section-nav-buttons');
+
+            guidelinesSubPage.classList.add('hide');
+
+            basicInfoSubPage.classList.remove('hide');
+            stepsElm.classList.remove('hide');
+            navElm.classList.remove('hide');
+
+            DomScripts.animateOnce(basicInfoSubPage, ['fadeInRight', 'faster']);
+            DomScripts.animateOnce('#div-steps', 'fadeInDown');
+            DomScripts.animateOnce('#section-nav-buttons', 'fadeInUp');
+
+            if(typeof callback === 'function') {
+                callback();
+            }
+        });
     }
 
     swapFormSections(idxFrom, idxTo) {

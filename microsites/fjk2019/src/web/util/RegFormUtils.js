@@ -42,7 +42,22 @@ function loadFormElements(rootElmId) {
             continue;
         }
 
-        eachInputElm.value = savedValue;
+        if(eachInputElm.type == 'checkbox' || eachInputElm.type == 'radio') {
+            const validValsList = savedValue.split(',');
+
+            if(validValsList.length == 1 && validValsList[0] == 'on') {
+                eachInputElm.checked = true;
+            }
+            else if(validValsList.includes(eachInputElm.value)) {
+                eachInputElm.checked = true;
+            }
+        }
+        else if(eachInputElm.type == 'radio' && eachInputElm.value == savedValue) {
+            eachInputElm.checked = true;
+        }
+        else {
+            eachInputElm.value = savedValue;
+        }
     }
 }
 
@@ -56,17 +71,37 @@ function clearStoredFormElements() {
 
 function saveFormElements(rootElmId) {
     const inputList = document.querySelector(rootElmId).querySelectorAll('input, select');
+    let optList = {};
 
     for(let eachInputElm of inputList) {
         if(!eachInputElm.name) {
             continue;
         }
 
-        if((eachInputElm.type === 'radio' || eachInputElm.type === 'checkbox') && !eachInputElm.checked) {
+        if(eachInputElm.type === 'radio' || eachInputElm.type === 'checkbox') {
+            if(optList[eachInputElm.name] == undefined) {
+                optList[eachInputElm.name] = [];
+            }
+
+            if(eachInputElm.checked) {
+                optList[eachInputElm.name].push(eachInputElm.value);
+            }
+
             continue;
         }
 
         sessionStorage.setItem(eachInputElm.name, eachInputElm.value);
+    }
+
+    // Save contents of each radio and check box
+    for(let eachOptKey of Object.keys(optList)) {
+        if(optList[eachOptKey].length < 1) {
+            sessionStorage.removeItem(eachOptKey);
+        }
+        else {
+            const valueStr = optList[eachOptKey].join(',');
+            sessionStorage.setItem(eachOptKey, valueStr);
+        }
     }
 }
 

@@ -7,17 +7,29 @@ export class RegisterRepository extends BaseRepository {
             entryId INTEGER PRIMARY KEY AUTOINCREMENT,
             registrantId TEXT NOT NULL,
             paymentId TEXT NOT NULL,
-            nickname TEXT NOT NULL
+            nickname TEXT NOT NULL,
+            locale TEXT
         )
         `;
 
         return this.dao.run(sqlQuery);
     }
 
-    create(registrantId, paymentId = '', nickname = '') {
+    create(registrantId, paymentId = '', nickname = '', locale='en') {
         return this.dao.run(
-            'INSERT INTO registrants (registrantId, paymentId, nickname) VALUES (?, ?, ?)',
-            registrantId, paymentId, nickname
+            `INSERT INTO registrants (
+                registrantId,
+                paymentId,
+                nickname,
+                locale
+            )
+            VALUES (
+                ?, ?, ?, ?
+            )`,
+            registrantId,
+            paymentId,
+            nickname,
+            locale
         );
     }
 }

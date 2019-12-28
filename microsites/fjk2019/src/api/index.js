@@ -148,7 +148,7 @@ function main() {
             }
 
             try {
-                entryIds = await dbInterface.addNewRegistrant(req.body['txt-nickname']);
+                entryIds = await dbInterface.addNewRegistrant(req.body['txt-nickname'], req.body['hdn-locale']);
             }
             catch(err) {
                 logger.error('Failed to add new registrant');
