@@ -1,49 +1,129 @@
 <section id="section-intro" class="section">
     <h3>${this.localeObj.t('infoExcursion.intro.title')}</h3>
     <p>
-        ${this.localeObj.t('infoExcursion.intro.pars00')}
+        ${this.localeObj.t('infoExcursion.intro.pars')}
     </p>
 </section>
+
 <section id="section-itinerary" class="section">
     <h3>${this.localeObj.t('infoExcursion.itinerary.title')}</h3>
+    <p>
+        ${this.localeObj.t('infoExcursion.itinerary.pars')}
+    </p>
+
+    <div class="slider">
+        <ul class="slides">
+            <li>
+                <img alt="${this.localeObj.t('infoExcursion.itinerary.manila')}" src="${require('../../img/excursion/manila_bay_lowres.jpg')}">
+                <div class="caption left-align">
+                    <h3>${this.localeObj.t('infoExcursion.itinerary.tourAt')}</h3>
+                    <h5 class="light grey-text text-lighten-3">${this.localeObj.t('infoExcursion.itinerary.manila')}</h5>
+                </div>
+            </li>
+            <li>
+                <img alt="${this.localeObj.t('infoExcursion.itinerary.natFa')}" src="${require('../../img/excursion/museum_fa_lowres.jpg')}">
+                <div class="caption right-align">
+                    <h3>${this.localeObj.t('infoExcursion.itinerary.tourAt')}</h3>
+                    <h5 class="light grey-text text-lighten-3">${this.localeObj.t('infoExcursion.itinerary.natFa')}</h5>
+                </div>
+            </li>
+            <li>
+                <img alt="${this.localeObj.t('infoExcursion.itinerary.natAnthro')}" src="${require('../../img/excursion/museum_anthro_lowres.jpg')}">
+                <div class="caption left-align">
+                    <h3>${this.localeObj.t('infoExcursion.itinerary.tourAt')}</h3>
+                    <h5 class="light grey-text text-lighten-3">${this.localeObj.t('infoExcursion.itinerary.natAnthro')}</h5>
+                </div>
+            </li>
+            <li>
+                <img alt="${this.localeObj.t('infoExcursion.itinerary.intramuros')}" src="${require('../../img/excursion/intramuros_lowres.jpg')}">
+                <div class="caption right-align">
+                    <h3>${this.localeObj.t('infoExcursion.itinerary.tourAt')}</h3>
+                    <h5 class="light grey-text text-lighten-3">${this.localeObj.t('infoExcursion.itinerary.intramuros')}</h5>
+                </div>
+            </li>
+            <li>
+                <img alt="${this.localeObj.t('infoExcursion.itinerary.luneta')}" src="${require('../../img/excursion/rizal_park_lowres.jpg')}">
+                <div class="caption right-align">
+                    <h3>${this.localeObj.t('infoExcursion.itinerary.tourAt')}</h3>
+                    <h5 class="light grey-text text-lighten-3">${this.localeObj.t('infoExcursion.itinerary.luneta')}</h5>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!--
+    <div class="carousel center grey darken-2">
+        <div class="carousel-item">
+            <img alt="${this.localeObj.t('infoExcursion.itinerary.manila')}" src="${require('../../img/excursion/manila_bay_lowres.jpg')}">
+            <p class="white-text">${this.localeObj.t('infoExcursion.itinerary.manila')}</p>
+        </div>
+        <div class="carousel-item">
+            <img alt="${this.localeObj.t('infoExcursion.itinerary.natFa')}" src="${require('../../img/excursion/museum_fa_lowres.jpg')}">
+            <p class="white-text">${this.localeObj.t('infoExcursion.itinerary.natFa')}</p>
+        </div>
+        <div class="carousel-item">
+            <img alt="${this.localeObj.t('infoExcursion.itinerary.natAnthro')}" src="${require('../../img/excursion/museum_anthro_lowres.jpg')}">
+            <p class="white-text">${this.localeObj.t('infoExcursion.itinerary.natAnthro')}</p>
+        </div>
+        <div class="carousel-item">
+            <img alt="${this.localeObj.t('infoExcursion.itinerary.intramuros')}" src="${require('../../img/excursion/intramuros_lowres.jpg')}">
+            <p class="white-text">${this.localeObj.t('infoExcursion.itinerary.intramuros')}</p>
+        </div>
+        <div class="carousel-item">
+            <img alt="${this.localeObj.t('infoExcursion.itinerary.luneta')}" src="${require('../../img/excursion/rizal_park_lowres.jpg')}">
+            <p class="white-text">${this.localeObj.t('infoExcursion.itinerary.luneta')}</p>
+        </div>
+    </div>
+    -->
+</section>
+
+<section id="section-timetable" class="section">
+    <h3>${this.localeObj.t('infoExcursion.timetable.title')}</h3>
     <div class="row">
-        <table class="col s12 l4 offset-l4">
+        <table class="col s12 l6 offset-l3">
             <thead>
                 <tr>
-                    <th>${this.localeObj.t('infoExcursion.itinerary.time')}</th>
-                    <th>${this.localeObj.t('infoExcursion.itinerary.event')}</th>
+                    <th>${this.localeObj.t('infoExcursion.timetable.time')}</th>
+                    <th>${this.localeObj.t('infoExcursion.timetable.event')}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>09:00</td>
-                    <td>${this.localeObj.t('infoExcursion.itinerary.timetable.00')}</td>
+                    <td>08:30</td>
+                    <td>${this.localeObj.t('infoExcursion.timetable.timetable.00')}</td>
                 </tr>
                 <tr>
                     <td>10:00</td>
-                    <td>${this.localeObj.t('infoExcursion.itinerary.timetable.01')}</td>
+                    <td>${this.localeObj.t('infoExcursion.timetable.timetable.01')}</td>
                 </tr>
                 <tr>
-                    <td>12:00</td>
-                    <td>${this.localeObj.t('infoExcursion.itinerary.timetable.02')}</td>
+                    <td>12:30</td>
+                    <td>${this.localeObj.t('infoExcursion.timetable.timetable.02')}</td>
                 </tr>
                 <tr>
-                    <td>13:00</td>
-                    <td>${this.localeObj.t('infoExcursion.itinerary.timetable.03')}</td>
+                    <td>14:00</td>
+                    <td>${this.localeObj.t('infoExcursion.timetable.timetable.03')}</td>
                 </tr>
                 <tr>
-                    <td>15:00</td>
-                    <td>${this.localeObj.t('infoExcursion.itinerary.timetable.04')}</td>
+                    <td>15:30</td>
+                    <td>${this.localeObj.t('infoExcursion.timetable.timetable.04')}</td>
                 </tr>
                 <tr>
-                    <td>17:00</td>
-                    <td>${this.localeObj.t('infoExcursion.itinerary.timetable.05')}</td>
+                    <td>17:30</td>
+                    <td>${this.localeObj.t('infoExcursion.timetable.timetable.05')}</td>
                 </tr>
                 <tr>
                     <td>18:30</td>
-                    <td>${this.localeObj.t('infoExcursion.itinerary.timetable.06')}</td>
+                    <td>${this.localeObj.t('infoExcursion.timetable.timetable.06')}</td>
                 </tr>
             </tbody>
         </table>
     </div>
+</section>
+
+<section id="section-howtoavail" class="section">
+    <h3>${this.localeObj.t('infoExcursion.availInstructions.title')}</h3>
+    <p>
+        ${this.localeObj.t('infoExcursion.availInstructions.pars')}
+    </p>
 </section>

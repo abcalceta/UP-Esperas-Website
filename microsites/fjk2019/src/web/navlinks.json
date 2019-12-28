@@ -29,6 +29,10 @@
             {
                 "title": "${this.localeObj.t('navbar.about.privacy')}",
                 "link": "#!/about/privacy"
+            },
+            {
+                "title": "${this.localeObj.t('navbar.about.copyright')}",
+                "link": "#!/about/copyright"
             }
         ]
     },
@@ -50,6 +54,10 @@
             {
                 "title": "${this.localeObj.t('navbar.congressInfo.regGuidelines')}",
                 "link": "#!/congress/register-guidelines"
+            },
+            {
+                "title": "${this.localeObj.t('navbar.congressInfo.paymentGuidelines')}",
+                "link": "#!/congress/payment-guidelines"
             }
         ]
     },

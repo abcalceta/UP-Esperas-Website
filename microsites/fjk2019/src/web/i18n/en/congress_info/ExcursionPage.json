@@ -1,0 +1,39 @@
+{
+    "infoExcursion": {
+        "topSubTitle": "Excursion",
+        "title": "Excursion",
+        "subTitle": "First Philippine Esperanto Youth Congress",
+        "intro": {
+            "title": "The Congress Excursion",
+            "pars": "<p>Immerse yourself in the wonders of the historical and cultural heritage of the Philippines with a trip to the most famous sites in the heart of the capital city, <b>Manila</b>.</p>\n\n<p>Manila was officially founded in 1571 by Spanish conquistadors and soon became the seat of power of their jurisdiction in  the archipelago. However, even before that, the area had long been popular among the inhabitants of areas in Asia-Pacific, etc. as a trading destination, and quickly became a melting pot of different ethnicities, beliefs, and products.</p>\n\n<p>Manila was occupied by the Spanish for more than 300 years, and unbeknownst to many, was even occupied by the British for almost two years. In those years, Manila continued to be the center of the Roman Catholic faith in Asia, as well as political and military power of the Spaniards in the region, and saw a development in architecture, the arts, and literature, especially within the walled city called <em>Intramuros</em> and in the surrounding settlements.</p>\n\n<p>Manila continued to be the capital when the United States took over at the end of the 19th century. It rapidly modernized and played a more strategic role as a gateway to Asia and the Pacific. For this reason, it was one of the cities which Japan aimed to gain during World War II, which they did so from 1943 until 1945. At the end of the War, it was the most heavily-damaged city in Asia and second worldwide (after Warsaw). Nevertheless, the city saw rapid reconstruction after the war and is one of the most bustling cities today.</p>\n"
+        },
+        "itinerary": {
+            "title": "Itinerary",
+            "pars": "<p>\n<b>The National Museum of Anthropology</b> offers a deeper insight into the anthropological and historical heritage of the different regions of the country. It portrays various specimens of the ancient and modern literature, attire, beliefs, trade, and customs of the ethnicities found all over the archipelago. Meanwhile, the <b>National Museum of Fine Arts</b> showcases fine examples of visual art from esteemed Filipino artists, such as paintings and sculptures from the Spanish period up to modern times.</p>\n\n<p>\n<b>Intramuros</b>, from its name \"within the walls\", is the historic walled city situated within the modern City of Manila. It was the seat of government of the Spanish occupation. A lot of houses, buildings, churches, and museums, can be found here. It is also home to some of the most popular universities in the region. Within Intramuros, the Fort Santiago can be found. Fort Santiago consists of the ruins of what was once the citadel of the Spanish military power, and where dissidents, the most famous of which was Jose Rizal, the Philippines’ national hero, were imprisoned. It will provide an insight to the realities in the country during historical times.</p>\n<p>\nThe <b>Rizal Park</b>, located at the heart of the city, is the place where the Spanish colonial government executed Dr. Jose Rizal in 1896, and where his tomb can be found. Located near Intramuros and the National Museum, it is a large open park where locals often go for a stroll and relax with their families and friends. Also known as Luneta, it is undoubtedly one of the most famous tourist spots in the country and a significant part of the identity of the City of Manila.\n</p>\n",
+            "tourAt": "Take a tour at &#8230;",
+            "natAnthro": "National Museum of Anthropology",
+            "natFa": "National Museum of Fine Arts",
+            "luneta": "Rizal Park",
+            "intramuros": "Intramuros",
+            "manila": "City of Manila"
+        },
+        "timetable": {
+            "title": "Timetable",
+            "time": "Time",
+            "event": "Event",
+            "timetable": {
+                "00": "Departure from the University of the Philippines",
+                "01": "Arrival at The National Museum of Anthropology",
+                "02": "Lunch",
+                "03": "Arrival at The National Museum of Fine Arts",
+                "04": "Arrival at Intramuros and Fort Santiago",
+                "05": "Arrival at Rizal Park",
+                "06": "Departure back to University of the Philippines"
+            }
+        },
+        "availInstructions": {
+            "title": "How to Join",
+            "pars": "Joining the excursion costs <b>PHP 300.00</b> for Filipinos, and <b>EUR 7.00</b> for foreigners, which includes transportation, entrance tickets, and snacks. Note that the cost does not include lunch.\n</p>\n<p>\nOn the <a target=\"_blank\" href=\"/#!/register\">online registration form</a>, indicate your intention to join by ticking the relevant checkbox. To reserve a slot, please pay at least fifty percent (50%) downpayment using the available payment methods. If you earlier declined to join the excursion but have changed your mind, please use <a>this form</a> instead to amend your registration details.\n</p>\n<p>\n<p>\nOnce paid, the excursion fee is non-refundable but transferable.\n</p>\n"
+        }
+    }
+}

@@ -16,7 +16,8 @@ import {AboutFejPage} from './views/about/AboutFej';
 import {PrivacyPage} from './views/about/PrivacyPage';
 
 // Congress info subpage
-import {ExcursionPage} from './views/congress_info/Excursion';
+import {ExcursionPage} from './views/congress_info/ExcursionPage';
+import { RegisterGuidelinesPage } from './views/congress_info/RegisterGuidelinesPage';
 
 let root = document.body;
 
@@ -36,6 +37,7 @@ m.route(root, '/', {
 
     // Congress info subpage
     '/congress/excursion': ExcursionPage,
+    '/congress/register-guidelines': RegisterGuidelinesPage,
 
     // Register page
     '/register': RegisterPage,

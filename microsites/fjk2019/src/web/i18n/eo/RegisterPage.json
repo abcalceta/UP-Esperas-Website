@@ -49,15 +49,15 @@
         "overview": {
             "intro": {
                 "header": "Aliĝilo",
-                "desc": "Bonvenon al la 1a Filipina Junulara Kongreso de Esperanto! Ni dankas vin pro via intereso pri ĉi tiu evento. Antaŭ ol daŭrigi la aliĝado, bv. legi la jenajn gvidliniojn <a target=\"_blank\" href=\"#!/congress/register-guidelines\">ĉi tie</a>."
+                "desc": "Bonvenon al la 1a Filipina Junulara Kongreso de Esperanto! Ni dankas vin pro via intereso pri ĉi tiu evento. Antaŭ ol daŭrigi la aliĝado, bonvolu legi la jenajn gvidliniojn <a target=\"_blank\" href=\"#!/congress/register-guidelines\">ĉi tie</a>."
             },
             "cookieNotice": {
                 "header": "Informo pri Kuketoj",
-                "desc": "Klakante sur \"Komenci Aliĝon\", vi konsentas ke kuketoj estas konservitaj en via aparato por konservi vian netan aliĝilon. Tiaj kuketoj estas uzita nur tiucele, kaj datumoj enhavitaj ne estas senditaj al niaj serviloj krom se vi submetas la aliĝilon."
+                "desc": "Klakante sur \"Komenci Aliĝon\", vi konsentas ke kuketoj estas konservitaj en via aparato por konservi vian malnetan aliĝilon. Tiaj kuketoj estas uzita nur tiucele, kaj datumoj enhavitaj ne estas senditaj al niaj serviloj ĝis kiam vi submetas la aliĝilon."
             },
             "start": {
                 "header": "Ĉu vi pretas?",
-                "desc": "Se vi pretas aliĝi al la kongreso, bv. klaki sur \"Komenci Aliĝon\"."
+                "desc": "Se vi pretas aliĝi al la kongreso, bonvolu klaki sur \"Komenci Aliĝon\"."
             }
         },
         "forms": {

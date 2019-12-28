@@ -14,6 +14,7 @@ export class BasePage {
     constructor(locale, localeNamespace, htmlTemplateFile, localeFilename, heroImg) {
         this.componentHolder = {
             mainTpl: htmlTemplateFile,
+            footerTpl: htmlFooter,
             main: '',
         };
 
@@ -43,7 +44,6 @@ export class BasePage {
 
         this.componentHolder.nav = NavBarView;
         this.componentHolder.hero = HeroView;
-        this.componentHolder.footer = htmlFooter;
         this.componentHolder.fab = FabView;
         this.componentHolder.loadingOverlay = LoadingOverlay;
     }
@@ -108,6 +108,7 @@ export class BasePage {
 
             this.data.title = this.localeObj.t(`${this.data.locale.namespace}.topSubTitle`)
             this.componentHolder.main = DomScripts.evalTemplate(this.componentHolder.mainTpl, this.localeObj);
+            this.componentHolder.footer = DomScripts.evalTemplate(this.componentHolder.footerTpl, this.localeObj);
 
             this.isTranslated = true;
         })

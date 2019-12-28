@@ -62,6 +62,11 @@ footer .footer-main a:hover {
     color: whitesmoke;
 }
 
+/* Slider */
+.slider .indicators .indicator-item.active {
+    color: #418B45;
+}
+
 /* Theme colors */
 .theme-green {
     background-color: #418B45 !important;

@@ -5,28 +5,28 @@
         "subTitle": "Unua Filipina Junulara Kongreso de Esperanto",
         "mainHeader": {
             "title": "Privateca Avizo",
-            "par00": "Konforme al la ekzistantaj privatecaj leĝoj, kiel la Ĝenerala Regulo pri Datumprotekto (GDPR) en la Eŭropa Unio kaj la Akto pri Privateco de Datumo de 2012 (RA 10173) en Filipinoj, la Kongresa Komitato de la 1a FJK (de nun nomita kiel \"ni\") estas devigita peti vian rajtigon ricevi kaj prilabori kelkajn personajn kaj aliajn rilatajn informojn kadre de ia ajn interkonsentoj vi komencos kun ni, inkluzive, sed ne limigite, de 1) aliĝo al la kongreso, 2) kandidatiĝo al la Volontula Servo, kaj 3) kandidatiĝo kiel parto de la Loka Kongresa Komitato (LKK)."
+            "par00": "Konforme al la ekzistantaj privatecaj leĝoj, kiel la Ĝenerala Regulo pri Datumprotekto (GDPR) en la Eŭropa Unio kaj la Akto pri Privateco de Datumo de 2012 (RA 10173) en Filipinoj, la Kongresa Komitato de la 1a FJK (de nun nomita kiel \"ni\") estas devigita peti vian rajtigon ricevi kaj prilabori kelkajn personajn kaj aliajn rilatajn informojn kadre de ia ajn interkonsentoj kiujn vi komencos kun ni, inkluzive, sed ne limigite, de 1) aliĝo al la kongreso, 2) kandidatiĝo al la Volontula Servo, kaj 3) kandidatiĝo kiel parto de la Loka Kongresa Komitato (LKK)."
         },
         "collection": {
             "title": "Kiujn datumojn ni koletos?",
             "par00": "Ni specife kolektos la jenajn informojn:",
-            "list00": "Plena nomo kaj alnomo",
-            "list01": "Naskiĝtago",
+            "list00": "Plena nomo kaj kromnomo",
+            "list01": "Naskiĝdato",
             "list02": "Regiono kaj lando kie vi loĝas",
             "list03": "Nuna eduka sperto aŭ profesio",
             "list04": "Kontaktinformoj, t.e. via retpoŝtadreso, kaj nedevige iun ajn aŭ ĉiuj el la jenaj: socia retejo, telefonnumero, kaj babilejo",
-            "par01": "Ni ankaŭ kolektos kelkajn informojn pri via Esperanto-lingvokono, spertoj pri Esperanto, via libera tempo, kaj spertoj vi eble spertis kiu taŭgas la plej ĝuste kun la komitato al kiu vi volas aliĝi."
+            "par01": "Ni ankaŭ kolektos kelkajn informojn pri via Esperanto-lingvokono, spertoj pri Esperanto, viaj liberaj tempoj, kaj spertojn vi eble spertis kiu taŭgas la plej ĝuste kun la komitato al kiu vi volas aliĝi."
         },
         "usage": {
             "title": "Kiel ni uzos vian datumon?",
-            "par00": "La datumoj estos uzita por la jenaj kialoj kaj celoj:",
+            "par00": "La datumoj estos uzitaj por la jenaj kialoj kaj celoj:",
             "list00": "Kontakti vin pri stato de via kandidatiĝo, pri detaloj de estontaj orientiĝoj kaj kunsidoj, kaj pri la kongreso mem",
-            "list01": "Kontroli la kandidatojn kaj  the applications and sort memberships accordingly",
-            "list02": "Kolekti statistikaĵojn pri la nombro de kandidatoj kiu konas Esperanton, ofteco kaj nivelo de partopreno al Esperanto-eventoj, kaj fervoreco de la homoj lerni la lingvon"
+            "list01": "Kontroli la kandidatojn kaj aliĝantojn",
+            "list02": "Kolekti statistikaĵojn pri la nombro de kandidatoj kiuj konas Esperanton, ofteco kaj nivelo de partopreno al Esperanto-eventoj, kaj fervoreco de la homoj lerni la lingvon"
         },
         "location": {
             "title": "Kie ni prilaboros vian datumon?",
-            "par00": "Ĉi tiu retejo estas gastigita de Hetzner, kiu estas provizanto de gastigo bazita en germanio. Iliaj serviloj troviĝas en germanio kaj finlando, kaj sia privateca avizo estas trovita <a target=\"_blank\" href=\"https://www.hetzner.com/rechtliches/datenschutz\">tie</a>."
+            "par00": "Ĉi tiu retejo estas gastigita de Hetzner, kiu estas provizanto de gastigo bazita en germanio. Iliaj serviloj troviĝas en germanio kaj finlando, kaj sia privateca avizo estas trovita <a target=\"_blank\" href=\"https://www.hetzner.com/rechtliches/datenschutz\">tie ĉi</a>."
         },
         "thirdParty": {
             "title": "Al kiuj ni plusendos vian datumon?",
@@ -37,9 +37,9 @@
             "par00": "Ni konservos vian datumon ĝis kiam la Komitato finos sian raporton pri la kongreso, kiu komencos nur post kiam la kongreso mem finiĝos. Se vi volas nuligi vian rajtigon pli frue ol tiu dato, bv. sendi mesaĝon al ni kaj ni tuje prilaboros ĝin."
         },
         "dpo": {
-            "title": "Kiu ni kontaktos pri privatecaj demandoj?",
-            "par00": "Por viaj demandoj, vi povas kontakti la jenan oficisto pri datuma privateco:",
-            "dpoDetails": "<b>Carl C. Dizon</b><br>\nRetejestro<br>\npeyc2020+privacy@gmail.com<br>\n+63 908 215 4940<br>\n"
+            "title": "Kiun ni kontaktos pri privatecaj demandoj?",
+            "par00": "Por viaj demandoj, vi povas kontakti la jenan oficiston pri datuma privateco:",
+            "dpoDetails": "<b>Carl C. Dizon</b><br>\nRetejestro<br>\npeyc2020+privacy@gmail.com<br>\n"
         }
     }
 }

@@ -1,0 +1,39 @@
+{
+    "infoExcursion": {
+        "topSubTitle": "Ekskurso",
+        "title": "Ekskurso",
+        "subTitle": "Unua Filipina Junulara Kongreso de Esperanto",
+        "intro": {
+            "title": "La Kongresa Ekskurso",
+            "pars": "<p>Enprofundiĝu en la unikajn kaj mirindajn historiajn kaj kulturajn heredaĵojn de Filipinoj per tuttaga vojaĝo al la plej famaj lokoj en la koro de la <b>ĉefurbo Manilo</b>.</p>\n\n<p>Manilo estis oficiale fondita en 1571 de koloniistoj de la Hispana Imperio kaj fariĝis la sidejo de ilia potenco en la insularo. Tamen, eĉ jam delonge antaŭe, la areo jam estis konata inter la praaj loĝantoj de Azio kaj Pacifiko kiel grava loko por komerca interŝanĝo, kaj poste fariĝis lulilo de multaj etnoj, kredoj, kaj produktoj, kiuj kolektive difinis la filipinan identecon eĉ ĝis la nuntempo.</p>\n\n<p>Manilo estis okupita de Hispanio pli ol 300 jarojn, kaj nesciate de aliaj, ankaŭ de Brita Imperio preskaŭ du jarojn. En tiuj jaroj, la urbo daŭre estis la centro de komerco kaj la katolika fido en Azio, kaj ankaŭ de la politika kaj milita potenco de Hispanio en la regiono. La urbo vidis disvolviĝojn en arkitekturo, artoj, kaj literaturo, specife ene de la enmura urbo <em>Intramuros</em> kaj la ĉirkaŭaj areoj. La domoj kaj aliaj konstruaĵoj en koloniisma arkitekturo daŭre staras ĝis hodiaŭ.</p>\n\n<p>Manila daŭre staris kiel la ĉefurbo kiam Usono alprenis la insularon de hispanoj je la fino de la 19a jarcento. Tiam, ĝi rapide komencis moderniĝi kaj ludi pli strategian rolon kiel la \"pordejo\" al Azio kaj la Pacifiko, ĝuste pro kio ĝi estis unu el la urboj, kiuj estis trenitaj en la Duan Mondmiliton (1941-1945). Multaj historiistoj kredas, ke ĝi estis la plej multe damaĝita urbo en Azio-Pacifiko kaj la dua tutmonde (post Varsovio) je la fino de la milito. Ĉiukaze, la urbo estis rapide rekonstruita poste kaj nun estas unu el la plej dense loĝataj urboj en la mondo.</p>\n"
+        },
+        "itinerary": {
+            "title": "Itinero",
+            "pars": "<p>\nLa <b>Nacia Muzeo pri Antropologio</b> provizas vizitantojn per pli profunda kompreno kaj aprezo pri la antropologiaj kaj historiaj heredaĵoj el la regionoj de la lando. Ĝi eksponas diversspecajn specimenojn de la antikva kaj moderna literaturo, vestaĵoj, kredoj, komerco, kaj tradicioj de diversaj etnoj kiuj troviĝas tra la insularo. Aliflanke, la <b>Nacia Muzeo pri Belartoj</b> elmontras bonkvalitajn ekzemplojn de artaĵoj, kiel pentraĵoj kaj skulptaĵoj, kiuj naskiĝis el la manoj kaj mensoj de estimataj filipinaj artistoj ekde la hispana periodo ĝis la moderna epoko.\n</p>\n\n<p>\n<b>Intramuros</b>, kiu signifas <em>en la muroj</em> en la hispana, estas la antikva enmura urbo kiu situas en la moderna urba areo de Manilo. Kiel la “malnova Manilo”, ĝi estis la centro de la hispana potenco en la insularo. Multaj domoj, konstruaĵoj, preĝejoj, kaj muzeoj, multaj el kiuj estis konstruitaj laŭ la kolonia arkitekturo, troviĝas ĉi tie. Iuj prestiĝaj universitatoj ankaŭ situas tie ĉi. Unu el la vizitindaĵoj estas Fort Santiago, kiu konsistas el la ruinoj de la fortikaĵo, per kiu soldatoj defendis la urbon kontraŭ atakantoj kaj kie kontraŭuloj de la tiama registaro, inkluzive de Jose Rizal, la nacia heroo de Filipinoj, estis malliberigitaj. Vizito al tiuj ĉi lokoj donos al turistoj imagon pri tio, kia estis la realo dum tiuj historiaj epokoj.\n</p>\n<p>\n<b>Rizal-Parko</b>, kiu lokiĝas ĉe la koro de la ĉefurbo, estas la loko kie la kolonia registaro en 1896 ekzekutis d-ron Jose Rizal kaj kie lia tombo nun troviĝas. Situata apud Intramuros kaj la Nacia Muzeo, ĝi estas vasta malfermita parko kien ofte iras lokanoj por promeni kaj malstreĉiĝi kun siaj familioj kaj amikoj. Konata alinome kiel Luneta, ĝi estas sendube unu el la plej famaj turismaj lokoj en la lando kaj granda parto de la identeco de la ĉefurbo Manilo.\n</p>\n",
+            "tourAt": "Ekskursu al&#8230;",
+            "natAnthro": "Nacia Muzeo pri Antropologio",
+            "natFa": "Nacia Muzeo pri Belartoj",
+            "luneta": "Rizal-Parko",
+            "intramuros": "Intramuros",
+            "manila": "Ĉefurbo Manilo"
+        },
+        "timetable": {
+            "title": "Horaro",
+            "time": "Tempo",
+            "event": "Evento",
+            "timetable": {
+                "00": "Ekiro de Universitato de Filipinoj",
+                "01": "Alveno al Nacia Muzeo pri Antropologio",
+                "02": "Tagmanĝo",
+                "03": "Alveno al Nacia Muzeo pri Belartoj",
+                "04": "Alveno al Intramuros kaj Fort Santiago",
+                "05": "Alveno al Rizal-Parko",
+                "06": "Reiro al Universitato de Filipinoj"
+            }
+        },
+        "availInstructions": {
+            "title": "Kiel oni aliĝas al la ekskurso?",
+            "pars": "Aliĝo al la ekskurso kostas <b>PHP 300.00</b> por filipinanoj, kaj <b>EUR 7.00</b> por eksterlandanoj, kiu inkluzivas transporton, enirbiletojn, kaj manĝetojn. Bonvolu atenti ke la kosto ne inkuzivas tagmanĝon.\n</p>\n<p>\nEn la <a target=\"_blank\" href=\"/#!/register\">reta aliĝilo</a>, la ekskurso havas apartan sekcio, en kiu vi povas elekti, ke vi volas mendi ekskurson. Por rezervi lokon, bonvolu pagi almenaŭ 50% antaŭpagon per la disponeblaj pagmanieroj. Se vi antaŭe indikis ke vi ne volis aliĝi al la ekskurso sed poste ŝanĝis vian decidon, bonvolu uzi <a>tiun ĉi formularon</a> por modifi viajn detalojn.\n</p>\n<p>\n<p>\nLa ekskursa kotizo ne estas repagebla sed transdonebla.\n</p>\n"
+        }
+    }
+}

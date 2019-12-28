@@ -1,6 +1,6 @@
 {
-    "defaultTitle": "Philippine Esperanto Youth Congress 2020",
-    "titleSpecific": "%{pageName} | Philippine Esperanto Youth Congress 2020",
+    "defaultTitle": "First Philippine Esperanto Youth Congress",
+    "titleSpecific": "%{pageName} | First Philippine Esperanto Youth Congress",
     "yes": "Yes",
     "no": "No",
     "loading": "Loading...",
@@ -59,14 +59,16 @@
             "congress": "The Congress",
             "logo": "Logo",
             "lkk": "Organizing Committee",
-            "privacy": "Privacy"
+            "privacy": "Privacy",
+            "copyright": "Copyright Notice"
         },
         "congressInfo": {
             "congressInfo": "Congress Information",
             "venue": "Venue",
             "lodging": "Lodging",
             "excursion": "Excursion",
-            "regGuidelines": "Registration Guidelines"
+            "regGuidelines": "Registration Guidelines",
+            "paymentGuidelines": "Payment Guidelines"
         },
         "participate": {
             "participate": "Participate",

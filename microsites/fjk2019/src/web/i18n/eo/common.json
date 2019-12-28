@@ -1,6 +1,6 @@
 {
-    "defaultTitle": "Filipina Junulara Kongreso de Esperanto 2020",
-    "titleSpecific": "%{pageName} | Filipina Junulara Kongreso de Esperanto 2020",
+    "defaultTitle": "Unua Filipina Junulara Kongreso de Esperanto",
+    "titleSpecific": "%{pageName} | Unua Filipina Junulara Kongreso de Esperanto",
     "yes": "Jes",
     "no": "Ne",
     "loading": "Ŝarĝante...",
@@ -59,19 +59,21 @@
             "congress": "La Kongreso",
             "logo": "Emblemo",
             "lkk": "Kongresa Komitato",
-            "privacy": "Privateco"
+            "privacy": "Privateco",
+            "copyright": "Kopirajta Avizo"
         },
         "congressInfo": {
             "congressInfo": "Kongresa Informo",
             "venue": "Loko",
             "lodging": "Loĝejo",
             "excursion": "Ekskurso",
-            "regGuidelines": "Gvidilo pri Aliĝo"
+            "regGuidelines": "Regularo pri Aliĝo",
+            "paymentGuidelines": "Regularo pri Pago"
         },
         "participate": {
-            "participate": "Partopreni",
-            "register": "Aliĝi",
-            "volunteer": "Voluntuli",
+            "participate": "Partopreno",
+            "register": "Aliĝu",
+            "volunteer": "Voluntulu",
             "callLkk": "Alvoko por Organizontoj"
         },
         "donate": "Donaci"
