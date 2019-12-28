@@ -337,10 +337,6 @@
         <h3>${this.localeObj.t('register.forms.lodging.header')}</h3>
         ${this.localeObj.t('register.forms.lodging.guidelines')}
 
-        <p class="card-panel theme-yellow white-text">
-            More information on lodging options will be released very soon.
-        </p>
-
         <div class="row">
             <label class="input-field col s12 m6">
                 <input class="filled-in" name="cbx-lodging-interest" type="checkbox">
@@ -464,9 +460,6 @@
         <h4>${this.localeObj.t('register.forms.others.congressPhoto.header')}</h4>
         <p>
             ${this.localeObj.t('register.forms.others.congressPhoto.guidelines')}
-        </p>
-        <p class="card-panel theme-yellow white-text">
-            More information about this will be out soon!
         </p>
         <p>
             <label class="input-field">
@@ -681,23 +674,23 @@
                     </tr>
                     <tr>
                         <td>${this.localeObj.t('register.generalText.earlyBird')}</td>
-                        <td>25 Nov, 2020</td>
-                        <td>31 Dec, 2019</td>
+                        <td>${this.localeObj.t('date', {weekdayWord: this.localeObj.t('calendar.weekdays.6'), day: '28', month: this.localeObj.t('calendar.months.11'), year: '2019'})}</td>
+                        <td>${this.localeObj.t('date', {weekdayWord: this.localeObj.t('calendar.weekdays.1'), day: '27', month: this.localeObj.t('calendar.months.0'), year: '2020'})}</td>
                     </tr>
                     <tr>
                         <td>${this.localeObj.t('register.generalText.regular')}</td>
-                        <td>01 Jan, 2020</td>
-                        <td>23 Mar, 2020</td>
+                        <td>${this.localeObj.t('date', {weekdayWord: this.localeObj.t('calendar.weekdays.2'), day: '28', month: this.localeObj.t('calendar.months.0'), year: '2020'})}</td>
+                        <td>${this.localeObj.t('date', {weekdayWord: this.localeObj.t('calendar.weekdays.1'), day: '23', month: this.localeObj.t('calendar.months.2'), year: '2020'})}</td>
                     </tr>
                     <tr>
                         <td>${this.localeObj.t('register.generalText.lateBird')}</td>
-                        <td>24 Mar, 2020</td>
-                        <td>22 Apr, 2020</td>
+                        <td>${this.localeObj.t('date', {weekdayWord: this.localeObj.t('calendar.weekdays.2'), day: '24', month: this.localeObj.t('calendar.months.2'), year: '2020'})}</td>
+                        <td>${this.localeObj.t('date', {weekdayWord: this.localeObj.t('calendar.weekdays.3'), day: '22', month: this.localeObj.t('calendar.months.3'), year: '2020'})}</td>
                     </tr>
                     <tr>
                         <td>${this.localeObj.t('register.generalText.onSite')}</td>
-                        <td>23 Apr, 2020</td>
-                        <td>25 Apr, 2020</td>
+                        <td>${this.localeObj.t('date', {weekdayWord: this.localeObj.t('calendar.weekdays.4'), day: '23', month: this.localeObj.t('calendar.months.3'), year: '2020'})}</td>
+                        <td>${this.localeObj.t('date', {weekdayWord: this.localeObj.t('calendar.weekdays.6'), day: '25', month: this.localeObj.t('calendar.months.3'), year: '2020'})}</td>
                     </tr>
                 </table>
             </div>

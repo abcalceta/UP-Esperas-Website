@@ -4,7 +4,7 @@
     "yes": "Yes",
     "no": "No",
     "loading": "Loading...",
-    "date": "%{weekdayWord} %{day} %{month}, %{year}",
+    "date": "%{weekdayWord}, %{day} %{month}, %{year}",
     "buttons": {
         "home": "Home",
         "close": "Close",

@@ -106,8 +106,8 @@ function saveFormElements(rootElmId) {
 }
 
 function checkRegistrationPeriod() {
-    let earlyBirdDate = new Date('2019-12-31T11:59:59+08:00');
-    let regDate = new Date('2020-03-23T11:59:59+08:00');
+    let earlyBirdDate = new Date('2020-01-27T23:59:59+08:00');
+    let regDate = new Date('2020-03-23T23:59:59+08:00');
     let dateToday = new Date();
 
     if(dateToday <= earlyBirdDate) {

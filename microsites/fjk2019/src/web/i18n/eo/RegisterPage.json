@@ -134,7 +134,7 @@
             },
             "lodging": {
                 "header": "Loĝejo",
-                "guidelines": "<p>Por pli facile sekvi la Kongreso mem kaj intime interagi kun la aliaj partoprenantoj, la Komitato konsilas ke partoprenantoj el aliaj regionoj aŭ landoj antaŭmendu siajn loĝejojn ĉe la partneraj loĝejoj.</p>\n\n",
+                "guidelines": "<p>Por pli facile sekvi la Kongreso mem kaj intime interagi kun la aliaj partoprenantoj, la Komitato konsilas ke partoprenantoj el aliaj regionoj aŭ landoj antaŭmendu siajn loĝejojn ĉe la partneraj loĝejoj. <b>Pli da informo pri ĉi tiu aperos baldaŭ.</b></p>\n\n",
                 "datesDesc": "Mi alvenos kaj deiros inter la jenaj datoj",
                 "fields": {
                     "interested": "Mi interesiĝas pri antaŭmendi ĉambron provizitan de la organizantoj",
@@ -174,7 +174,7 @@
             "others": {
                 "header": "Aliaj",
                 "shipTo": "Liveri al&#8230;",
-                "misc": "K.T.P.",
+                "misc": "Aldonaĵoj",
                 "congressPhoto": {
                     "header": "Kongresa Foto",
                     "guidelines": "Pere de komisiita fotisto, la LKK eldonos ekzemplerojn de la oficiala foto de la partoprenantoj de la kongreso. La LKK disponigos tiun ĉi servon nur se estos sufiĉa nombro de aliĝintoj kiuj petos ĝin."
