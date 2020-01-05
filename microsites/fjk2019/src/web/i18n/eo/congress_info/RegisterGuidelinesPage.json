@@ -2,6 +2,58 @@
     "infoRegistration": {
         "topSubTitle": "Regularo pri Aliĝo",
         "title": "Regularo pri Aliĝo",
-        "subTitle": "Unua Filipina Junulara Kongreso de Esperanto"
+        "subTitle": "Unua Filipina Junulara Kongreso de Esperanto",
+        "generalText": {
+            "category": "Kategorio",
+            "regFees": "Aliĝkotizoj",
+            "earlyReg": "Unua",
+            "regularReg": "Dua",
+            "lateReg": "Tria",
+            "regPeriod": "Periodo",
+            "onsiteReg": "Surloka",
+            "startDate": "Komenco",
+            "endDate": "Fino",
+            "localPart": "Lokaj Aliĝintoj (Filipinanoj kaj fremduloj loĝantaj en Filipinoj)",
+            "foreignPart": "Eksterlandaj Aliĝintoj (Filipinanoj kaj fremduloj loĝantaj eksterlande)",
+            "regTypes": {
+                "A1": "Gimnazianoj kaj pli junaj",
+                "A2": "Bakalaŭraj studentoj kaj similaj",
+                "A": "Bakalaŭraj studentoj kaj pli junaj",
+                "B1": "Laboristoj, postdiplomaj studentoj, kaj similaj &leq; 35 jarojn aĝaj",
+                "B2": "Laboristoj, postdiplomaj studentoj, kaj similaj &gt; 35 jarojn aĝaj",
+                "C": "Morala Partoprenanto",
+                "D": "Kongresa Patrono"
+            }
+        },
+        "intro": {
+            "header": "Enkonduko",
+            "desc": "<p>\n\nLa aliĝkotizo estas grava por elspezi la kostojn necesajn por realigi la erojn de la kongreso, inkluzive de la lukosto, materialoj, aparatoj, ktp.</p>\n<p>\nLa aplikebla aliĝkotizo dependas de tri ĉefaj faktoroj: la aĝo/okupo de la aliĝanto, ĉu ili estas civitano de Filipinoj aŭ ne, kaj la periodo, en kiu oni faras la aliĝon kaj pagon (vidu la tabelon sube). Estas ankaŭ aparta kategorio por tiuj, kiuj krome volas finance subteni la Kongreson (vidu: <a>Kategorioj de Partoprenantoj</a>) kaj aparta tabelo por civitanoj de aliaj landoj.\n</p>\n<p>\nLa kosto inkluzivas de la kongresaj materialoj kaj eniro al ĉiuj programeroj (escepte tiuj menciitaj sur la kongresa libro). Notu, ke la aliĝkotizo ne inkluzivas aliajn servojn, ekzemple loĝadon, ekskurson, kaj asekuron. Por informoj pri loĝado kaj ekskurso, direktiĝu al ties respektivaj sekcioj.\n</p>\n<p class=\"card-panel white-text theme-red\">\nLa aliĝkotizo estas strikte <b>neredonebla</b> kaj <b>netransdonebla</b>, sendepende de tio, ĉu la aliĝinto ne fizike ĉeestas en la Kongreso propravole aŭ pro alia kaŭzo, aŭ se la Kongreso estas nuligita aŭ prokrastita pro iu ajn kialo, pri kiu la LKK ne kulpas.\n</p>\n<p class=\"card-panel white-text theme-red\">\n<b>GRAVA</b>: Aliĝo oni traktus kiel validan nur tiam, kiam la LKK ricevas <b>almenaŭ 50% antaŭpagon (aŭ pli)</b> de la tuta aliĝkotizo. La ceteron oni devas pagi plej malfrue ĝis <b>la 9a de aprilo 2020</b>. Post tiu dato, krompagoj aplikiĝas. Por pliaj informoj, vidu la <a class=\"theme-yellow-text\" href=\"/#!/congress/payment-guidelines\">\"Malfruaj kaj Surlokaj Pagoj\" sekcion</a> de la Regularo pri Pagoj.\n</p>\n"
+        },
+        "joinReq": {
+            "header": "Kiuj rajtas aliĝi?",
+            "desc": "<p>\nAliĝo estas malfermita al ĉiu persono de ajna aĝo, civitano de Filipinoj aŭ de alia lando, kiu havas almenaŭ bazan lingvokonon de Esperanto kaj interesiĝas lerni pli la lingvon kaj pri ĝiaj komunumo kaj kulturo, partopreni en la aktivaĵoj dum la Kongreso, kaj aktive interagi kun aliaj partoprenantoj.\n</p>\n<p>\nLa Loka Kongresa Komitato (LKK) rajtas rifuzi aŭ nuligi la aliĝon de iu ajn persono, kiun ili trovus, kun sufiĉa pruvo, havi tendencon kaŭzi riskon al sekureco dum la Kongreso.\n</p>\n"
+        },
+        "regPeriod": {
+            "header": "Aliĝperiodoj",
+            "desc": "<p>\nEstas tri aliĝperiodoj, laŭ kiuj oni aplikos taŭgajn aliĝkotizojn, mendojn, ktp.:\n</p>\n",
+            "notice": "Nun estas la <b>%{registerType}</b> aliĝperiodo!"
+        },
+        "regCategories": {
+            "header": "Kategorioj de Partoprenantoj",
+            "desc": "<p>Laŭ la aĝo kaj okupo de unuopa aliĝanto oni dividas en la jenajn kategoriojn:</p>",
+            "A": "<p>\n<b>A: Bakalaŭraj studentoj kaj pli junaj</b> - Junuloj kiuj estas en bakalaŭraj studoj, gimnazioj, kaj similaj institucioj je la tempo de aliĝo. Inkluzivas ankaŭ junulojn, kiuj pro ekonomiaj kialoj aŭ alie ne estas registrita kiel studento. Por filipinanoj tiu ĉi kategorio estas dividita en du subkategoriojn (aplikeblas nur por filipinanoj):\n</p>\n\n<ul class=\"browser-default\">\n<li><b>A1</b> - por gimnazianoj kaj pli junaj aliĝantoj (almenaŭ 12-jaraĝaj)</li>\n<li><b>A2</b> - por junuloj universitatanoj (bakalaŭraj) aŭ egalaj, similaj niveloj</li>\n</ul>\n",
+            "B": "<p>\n<b>B: Laboristoj, postdiplomaj studentoj, kaj similaj</b> - Tiuj, kiuj laboras aŭ praktikas ian ajn profesion je la tempo de aliĝo. Inkluzivas ankaŭ studentojn de postdiplomaj programoj (magistriĝo, doktoriĝo), kaj senlaboruloj. La kategorio estas plu dividita en du subkategoriojn:\n</p>\n\n<ul class=\"browser-default\">\n<li><b>B1</b> - por tiuj, kiuj aĝas 35 jarojn kaj malpli je la momento de aliĝo, nome, tiuj kiiujn oficiale konsideras Tutmonda Esperantista Junulara Organizo (TEJO) kiel \"junulo\" kaj rajtas membriĝi en Filipina Esperanto-Junularo (FEJ)</li>\n<li><b>B2</b> - por tiuj, kiuj aĝas pli ol 35 jarojn je la momento de aliĝo</li>\n</ul>\n",
+            "C": "<p>\n<b>C: Morala Partoprenanto</b> - Tiu, kiu mem ne partoprenos en la Kongreso, sed volas parte finance apogi ĝian organizadon. La kotizo estas duono (50%) de la indikita aliĝkotizo de la kategorio B1 en la dua aliĝperiodo. Moralajn partoprenantojn oni aparte mencios en la Kongresa Libro kaj dum la inaŭguro kaj la ferma ceremonio.\n</p>\n",
+            "D": "<p>\n<b>D: Congress Patrons</b> - Tiu, kiu ŝatus krome finance subteni la Kongreson krom aliĝi kiel partoprenanto, pagante kotizon pli altan ol la normalajn kotizojn. La kotizo estas 2.5-oble (250%) de la aliĝkotizo de la kategorio B1 en la dua aliĝperiodo. Kongresaj patronoj povas elekti, ĉu partopreni en la Kongreso aŭ ne, kaj ricevos apartan mencion en la Kongresa Libro kaj dum la inaŭguro kaj la ferma ceremonio. Ili ankaŭ ricevos specialan donacon de la LKK.\n</p>\n",
+            "childClause": "<p>\nAliĝantoj malpli ol 12-jaraĝaj kaj akompanotaj de siaj gepatroj aŭ kuratoroj povas aliĝi al la Kongreso <em>senpage</em>, kvankam ili ne ricevos propran kongresan sakon (krom nomŝildon) kaj devos pagi eventualajn aldonajn kostojn por loĝado, la ekskurso, kaj manĝoj. <b>Ĉiu infano devas esti aparte registrita per la <a href=\"/#!/participate/register\">Aliĝilo</a>.</b>\n</p>\n"
+        },
+        "walkIn": {
+            "header": "Surlokaj Aliĝoj",
+            "desc": "<p>\nLa LKK kuraĝiĝas al ĉiuj frue aliĝi, por ke ili povu bone antaŭvidi la nombron de partoprenontoj kaj fari la necesajn preparojn. Eblos ankaŭ surloke aliĝi, sed tiukaze aliĝanto devos krompagi <b>PHP 200.00 (por filipinanoj)</b> aŭ <b>EUR 5.00 (por alilandanoj)</b> krom la kotizoj efektivaj en la Tria Aliĝperiodo.\n</p>\n"
+        },
+        "feeSchedule": {
+            "header": "Tabelo de Aliĝkotizoj",
+            "forexNote": "La kurzo inter EUR kaj PHP estas EUR 1.00 = PHP 56.00"
+        }
     }
 }

@@ -33,7 +33,7 @@
         },
         "availInstructions": {
             "title": "Kiel oni aliĝas al la ekskurso?",
-            "pars": "Aliĝo al la ekskurso kostas <b>PHP 300.00</b> por filipinanoj, kaj <b>EUR 7.00</b> por eksterlandanoj, kiu inkluzivas transporton, enirbiletojn, kaj manĝetojn. Bonvolu atenti ke la kosto ne inkuzivas tagmanĝon.\n</p>\n<p>\nEn la <a target=\"_blank\" href=\"/#!/register\">reta aliĝilo</a>, la ekskurso havas apartan sekcio, en kiu vi povas elekti, ke vi volas mendi ekskurson. Por rezervi lokon, bonvolu pagi almenaŭ 50% antaŭpagon per la disponeblaj pagmanieroj. Se vi antaŭe indikis ke vi ne volis aliĝi al la ekskurso sed poste ŝanĝis vian decidon, bonvolu uzi <a>tiun ĉi formularon</a> por modifi viajn detalojn.\n</p>\n<p>\n<p>\nLa ekskursa kotizo ne estas repagebla sed transdonebla.\n</p>\n"
+            "pars": "Aliĝo al la ekskurso kostas <b>PHP 300.00</b> por filipinanoj, kaj <b>EUR 7.00</b> por eksterlandanoj, kiu inkluzivas transporton, enirbiletojn, kaj manĝetojn. Bonvolu atenti ke la kosto ne inkuzivas tagmanĝon.\n</p>\n<p>\nEn la <a target=\"_blank\" href=\"/#!/participate/register\">reta aliĝilo</a>, la ekskurso havas apartan sekcio, en kiu vi povas elekti, ke vi volas mendi ekskurson. Por rezervi lokon, bonvolu pagi almenaŭ 50% antaŭpagon per la disponeblaj pagmanieroj. Se vi antaŭe indikis ke vi ne volis aliĝi al la ekskurso sed poste ŝanĝis vian decidon, bonvolu uzi <a>tiun ĉi formularon</a> por modifi viajn detalojn.\n</p>\n<p>\n<p>\nLa ekskursa kotizo ne estas repagebla sed transdonebla.\n</p>\n"
         }
     }
 }

@@ -33,7 +33,7 @@
         },
         "availInstructions": {
             "title": "How to Join",
-            "pars": "Joining the excursion costs <b>PHP 300.00</b> for Filipinos, and <b>EUR 7.00</b> for foreigners, which includes transportation, entrance tickets, and snacks. Note that the cost does not include lunch.\n</p>\n<p>\nOn the <a target=\"_blank\" href=\"/#!/register\">online registration form</a>, indicate your intention to join by ticking the relevant checkbox. To reserve a slot, please pay at least fifty percent (50%) downpayment using the available payment methods. If you earlier declined to join the excursion but have changed your mind, please use <a>this form</a> instead to amend your registration details.\n</p>\n<p>\n<p>\nOnce paid, the excursion fee is non-refundable but transferable.\n</p>\n"
+            "pars": "Joining the excursion costs <b>PHP 300.00</b> for Filipinos, and <b>EUR 7.00</b> for foreigners, which includes transportation, entrance tickets, and snacks. Note that the cost does not include lunch.\n</p>\n<p>\nOn the <a target=\"_blank\" href=\"/#!/participate/register\">online registration form</a>, indicate your intention to join by ticking the relevant checkbox. To reserve a slot, please pay at least fifty percent (50%) downpayment using the available payment methods. If you earlier declined to join the excursion but have changed your mind, please use <a>this form</a> instead to amend your registration details.\n</p>\n<p>\n<p>\nOnce paid, the excursion fee is non-refundable but transferable.\n</p>\n"
         }
     }
 }

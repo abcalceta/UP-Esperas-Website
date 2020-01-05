@@ -44,6 +44,7 @@ async function createPaymentPage(originUrl, clientId, paymentObj, lang = 'en') {
 
 function createOrder(localeObj, paymentObj) {
     const items = createItems(localeObj, paymentObj);
+    const totalFees = roundToPlaces(paymentObj.fees.total + (paymentObj.fees.total * 0.05), 2);
 
     return {
         intent: 'CAPTURE',
@@ -51,11 +52,11 @@ function createOrder(localeObj, paymentObj) {
             soft_descriptor: 'FJK 2020',
             amount: {
                 currency_code: paymentObj.currencyAbbrev,
-                value: roundToPlaces(paymentObj.fees.total, 2),
+                value: totalFees,
                 breakdown: {
                     item_total: {
                         currency_code: paymentObj.currencyAbbrev,
-                        value: roundToPlaces(paymentObj.fees.total, 2)
+                        value: totalFees
                     }
                 }
             },
@@ -70,6 +71,7 @@ function createItems(localeObj, paymentObj) {
     // Set PayPal Items
     paypalItems.push({
         name: localeObj.t('fees.registration'),
+        category: 'DIGITAL_GOODS',
         unit_amount: {
             currency_code: paymentObj.currencyAbbrev,
             value: roundToPlaces(paymentObj.fees.reg, 2)
@@ -80,6 +82,7 @@ function createItems(localeObj, paymentObj) {
     if(paymentObj.fees.excursion > 0) {
         paypalItems.push({
             name: localeObj.t('fees.excursion'),
+            category: 'DIGITAL_GOODS',
             unit_amount: {
                 currency_code: paymentObj.currencyAbbrev,
                 value: roundToPlaces(paymentObj.fees.excursion, 2)
@@ -91,6 +94,7 @@ function createItems(localeObj, paymentObj) {
     if(paymentObj.fees.invitLetter > 0) {
         paypalItems.push({
             name: localeObj.t('fees.invitLetter'),
+            category: 'DIGITAL_GOODS',
             unit_amount: {
                 currency_code: paymentObj.currencyAbbrev,
                 value: paymentObj.fees.invitLetter
@@ -102,6 +106,7 @@ function createItems(localeObj, paymentObj) {
     if(paymentObj.fees.congressFund > 0) {
         paypalItems.push({
             name: localeObj.t('fees.congressFund'),
+            category: 'DIGITAL_GOODS',
             unit_amount: {
                 currency_code: paymentObj.currencyAbbrev,
                 value: roundToPlaces(paymentObj.fees.congressFund, 2)
@@ -113,6 +118,7 @@ function createItems(localeObj, paymentObj) {
     if(paymentObj.fees.participantFund > 0) {
         paypalItems.push({
             name: localeObj.t('fees.participantFund'),
+            category: 'DIGITAL_GOODS',
             unit_amount: {
                 currency_code: paymentObj.currencyAbbrev,
                 value: roundToPlaces(paymentObj.fees.participantFund, 2)
@@ -124,6 +130,7 @@ function createItems(localeObj, paymentObj) {
     if(paymentObj.fees.fejFund > 0) {
         paypalItems.push({
             name: localeObj.t('fees.fejFund'),
+            category: 'DIGITAL_GOODS',
             unit_amount: {
                 currency_code: paymentObj.currencyAbbrev,
                 value: roundToPlaces(paymentObj.fees.fejFund, 2)
@@ -131,6 +138,17 @@ function createItems(localeObj, paymentObj) {
             quantity: 1
         });
     }
+
+    // Add PayPal fee
+    paypalItems.push({
+        name: localeObj.t('fees.adminFee'),
+        category: 'DIGITAL_GOODS',
+        unit_amount: {
+            currency_code: paymentObj.currencyAbbrev,
+            value: roundToPlaces(paymentObj.fees.total * 0.05, 2)
+        },
+        quantity: 1
+    })
 
     return paypalItems;
 }

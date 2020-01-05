@@ -3,17 +3,17 @@ import Materialize from 'materialize-css';
 import Cookies from 'js-cookie';
 import { iframeResizer } from 'iframe-resizer';
 
-import {DomScripts} from '../util/dom';
-import {RegFormUtils} from '../util/RegFormUtils';
+import {DomScripts} from '../../util/dom';
+import {RegFormUtils} from '../../util/RegFormUtils';
 
-import {BasePage} from './BasePage';
-import htmlMain from '../templates/register.html';
-import heroPath from '../img/hero/ks_cards.jpg';
+import {BasePage} from '../BasePage';
+import htmlMain from '../../templates/participate/register.html';
+import heroPath from '../../img/hero/ks_cards.jpg';
 
-import '../styles/steps.css';
-import '../styles/regform.css';
+import '../../styles/steps.css';
+import '../../styles/regform.css';
 
-import regFeesJson from '../regrates.json';
+import regFeesJson from '../../regrates.json';
 
 export class RegisterPage extends BasePage {
     constructor() {
@@ -21,7 +21,7 @@ export class RegisterPage extends BasePage {
             'eo',
             'register',
             htmlMain,
-            'RegisterPage',
+            'participate/RegisterPage',
             heroPath
         );
 
@@ -283,7 +283,7 @@ export class RegisterPage extends BasePage {
 
             this.hideOverviewSection('section-basic', () => {
                 m.route.set(
-                    `/register/${this.pageStatesList[0][2]}`,
+                    `/participate/register/${this.pageStatesList[0][2]}`,
                     null,
                     {
                         replace: false,
@@ -545,7 +545,7 @@ export class RegisterPage extends BasePage {
                 DomScripts.animateOnce('#section-guidelines', ['fadeInRight', 'fast']);
 
                 m.route.set(
-                    '/register',
+                    '/participate/register',
                     null,
                     {
                         replace: false,
@@ -590,7 +590,7 @@ export class RegisterPage extends BasePage {
 
             // Add new history route
             m.route.set(
-                `/register/${this.pageStatesList[this.currentPageState + 1][2]}`,
+                `/participate/register/${this.pageStatesList[this.currentPageState + 1][2]}`,
                 null,
                 {
                     replace: false,
@@ -661,10 +661,10 @@ export class RegisterPage extends BasePage {
             case 'section-summary': {
                 // Set late payment notice
                 const lateFee = this.computeLatePenaltyFee(isLocalRates);
-                document.getElementById('div-payment-downpay-notice').innerHTML = this.localeObj.t('register.forms.summary.downpayNotice', {currencySymbol: lateFee.currency, value: lateFee.value});
+                document.getElementById('div-overview-downpay-notice').innerHTML = this.localeObj.t('register.forms.summary.downpayNotice', {currencySymbol: lateFee.currency, value: lateFee.value});
 
                 // Toggle online bank transfer
-                const rbxOnlineBank = document.querySelectorAll('#div-card-payment-details + div p')[1];
+                const rbxOnlineBank = document.querySelectorAll('#div-overview-payment-details + div p')[1];
 
                 // Reset disabled next button from PayPal
                 document.getElementById('btn-next').disabled = false;
@@ -677,7 +677,7 @@ export class RegisterPage extends BasePage {
                 }
 
                 // Compute total fees
-                const cardPaymentDetails = document.querySelector('#div-card-payment-details');
+                const cardPaymentDetails = document.getElementById('div-overview-payment-details');
                 const feesObj = this.computeTotalRegFees(isLocalRates);
 
                 // Build receipt rows
@@ -810,7 +810,7 @@ export class RegisterPage extends BasePage {
         const regIdxToName = ['earlyBird', 'regular', 'lateBird'];
 
         const regDateIdx = RegFormUtils.checkRegistrationPeriod();
-        const cardPanelElm = document.getElementById('div-panel-reg-date-notice');
+        const cardPanelElm = document.getElementById('div-overview-reg-date-notice');
         const regPeriodName = this.localeObj.t(`register.generalText.${regIdxToName[regDateIdx]}`);
 
         document.querySelector('input[name=hdn-reg-period]').value = regDateIdx;
@@ -971,7 +971,7 @@ export class RegisterPage extends BasePage {
                 console.log(`RegId: ${jsonRes.registerId}; PaymentId: ${jsonRes.paymentId}`);
 
                 m.route.set(
-                    '/register/section-thanks',
+                    '/participate/register/section-thanks',
                     null,
                     {
                         replace: false

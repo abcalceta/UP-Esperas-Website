@@ -1,10 +1,10 @@
 import m from 'mithril';
-import {DomScripts} from '../util/dom';
+import {DomScripts} from '../../util/dom';
 
-import {BasePage} from './BasePage';
-import htmlMain from '../templates/lkk-join.html';
-import heroPath from '../img/hero/flag_in_backpack.jpg';
-import '../styles/default.css';
+import {BasePage} from '../BasePage';
+import htmlMain from '../../templates/participate/lkk-join.html';
+import heroPath from '../../img/hero/flag_in_backpack.jpg';
+import '../../styles/default.css';
 
 export class LkkJoinPage extends BasePage {
     constructor() {
@@ -12,7 +12,7 @@ export class LkkJoinPage extends BasePage {
             'en',
             'lkkJoin',
             htmlMain,
-            'LkkJoinPage',
+            'participate/LkkJoinPage',
             heroPath
         );
     }

@@ -1,10 +1,10 @@
 import m from 'mithril';
-import {DomScripts} from '../util/dom';
+import {DomScripts} from '../../util/dom';
 
-import {BasePage} from './BasePage';
-import htmlMain from '../templates/volunteer.html';
-import heroPath from '../img/hero/banderitas_volcorp_banner.jpg';
-import '../styles/default.css';
+import {BasePage} from '../BasePage';
+import htmlMain from '../../templates/participate/volunteer.html';
+import heroPath from '../../img/hero/banderitas_volcorp_banner.jpg';
+import '../../styles/default.css';
 
 export class VolunteerPage extends BasePage {
     constructor() {
@@ -12,7 +12,7 @@ export class VolunteerPage extends BasePage {
             'en',
             'volunteer',
             htmlMain,
-            'VolunteerPage',
+            'participate/VolunteerPage',
             heroPath
         );
     }

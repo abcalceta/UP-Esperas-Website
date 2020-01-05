@@ -261,8 +261,8 @@
                 "paypal": {
                     "header": "Pago pere de PayPal",
                     "details": {
-                        "local": "<p>\nSe vi pretas pagi pere de PayPal, bv. klaki al via preferita maniero suben.\n</p>",
-                        "foreign": "<p>\nSe vi pretas pagi pere de PayPal, bv. klaki al via preferita maniero suben.\n</p>"
+                        "local": "<p class=\"card-panel theme-red white-text\">\n<b>GRAVA</b>: En ĉiu transakcio PayPal deprenas 5% administrajn kostojn de la sumo sendita, tial al la kosto kiun vi pagos, la 5% administraj kostoj jam estas aldonita. Vi ne bezonas fari ion ajn.\n</p>\n<p>\nSe vi pretas pagi pere de PayPal, bv. klaki al via preferita maniero suben.\n</p>",
+                        "foreign": "<p class=\"card-panel theme-red white-text\">\n<b>GRAVA</b>: En ĉiu transakcio PayPal deprenas 5% administrajn kostojn de la sumo sendita, tial al la kosto kiun vi pagos, la 5% administraj kostoj jam estas aldonita. Vi ne bezonas fari ion ajn.\n</p>\n<p>\nSe vi pretas pagi pere de PayPal, bv. klaki al via preferita maniero suben.\n</p>"
                     }
                 },
                 "remittance": {

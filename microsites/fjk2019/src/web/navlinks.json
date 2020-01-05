@@ -66,15 +66,11 @@
         "sublinks": [
             {
                 "title": "${this.localeObj.t('navbar.participate.register')}",
-                "link": "#!/register"
-            },
-            {
-                "title": "${this.localeObj.t('navbar.participate.callLkk')}",
-                "link": "#!/lkk-join"
+                "link": "#!/participate/register"
             },
             {
                 "title": "${this.localeObj.t('navbar.participate.volunteer')}",
-                "link": "#!/volunteer"
+                "link": "#!/participate/volunteer"
             }
         ]
     },

@@ -9,8 +9,19 @@
         },
         "mainHeader": {
             "title": "We need your help!",
-            "par00": "The Philippine Esperanto Youth (FEJ) is pleased to announce, that for the first time in the history of the movement of speakers, learners, and advocates of the international language Esperanto in the country, the 1st Philippine Esperanto Youth Congress will be held in Manila on April 23-26, 2020.",
-            "par01": "To guarantee the success of this congress, the Congress Organizing Committee are requesting everyone to support this initiative financially or through material support. Through your donation, you will help give Filipino Esperanto speakers and learners the opportunity to experience a truly multicultural atmosphere, consolidate the Esperanto movement in the Philippines, and ensure the continuous growth of the local community."
+            "desc": "<p>\nTo guarantee the success of this congress, the Congress Organizing Committee are requesting everyone to support this initiative financially or through material support. Through your donation, you will help give Filipino Esperanto speakers and learners the opportunity to experience a truly multicultural atmosphere, consolidate the Esperanto movement in the Philippines, and ensure the continuous growth of the local community.\n</p>"
+        },
+        "congressFund": {
+            "title": "The Congress Fund",
+            "desc": "<p>\nThis fund will be used to finance the organization of the congress, including costs, materials, payments for artists, and others. For your reference, the Organizing Committee has a budget proposal document that you can request by contacting us.\n</p>\n<p>\nFinally, your contributions will:\n</p><ul class=\"browser-default\">\n<li>promote and realize a high quality congress</li>\n<li>keep the registration fee low enough for local participants</li>\n</ul>\n"
+        },
+        "participantFund": {
+            "title": "Participant Support",
+            "desc": "<p>\nThe Philippines is a developing nation, which means that not everyone is economically well-off to participate in conferences, among others. Because of its archipelagic nature, the usual way to travel around the country is via airplane or ship, which the youth usually cannot afford. Students usually do not have income and cannot shell out a lot from their funds to finance their daily events. Because of these, there is always a risk of losing potential participants, which we would like to prevent. \n</p>\n<p>\nTo make the FJK truly inclusive, we would like to successfully invite Esperantists from other regions. Therefore, we are introducing this fund to partly help the youth who would like to participate in the FJK.\n</p>\n"
+        },
+        "fejFund": {
+            "title": "Organization Fund",
+            "desc": "<p>\nAside from organizing the FJK, The Philippine Esperanto Youth (FEJ) also intiates activities that will promote and strengthen the Esperanto movement in the country. It organizes monthly meetings and free language lessons, publishes brochures and other printed materials, etc. Being a non-profit youth organization, it does not have a lot of funds aside from deriving it from the membership fee and other contributions and donations internally and externally.\n</p>\n<p>\nThrough this fund, you will help continue its existence and its goals that it has before, during, and after the FJK.\n</p>\n"
         },
         "donationOptions": {
             "title": "Donation Options",

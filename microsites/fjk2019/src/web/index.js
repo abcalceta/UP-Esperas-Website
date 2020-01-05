@@ -1,10 +1,7 @@
 import m from 'mithril';
 
 import {IndexPage} from './views/IndexPage';
-import {LkkJoinPage} from './views/LkkJoinPage';
-import {VolunteerPage} from './views/VolunteerPage';
 import {DonatePage} from './views/DonatePage';
-import {RegisterPage} from './views/RegisterPage';
 import {NotFoundPage} from './views/NotFoundPage';
 
 // About subpage
@@ -17,15 +14,18 @@ import {PrivacyPage} from './views/about/PrivacyPage';
 
 // Congress info subpage
 import {ExcursionPage} from './views/congress_info/ExcursionPage';
-import { RegisterGuidelinesPage } from './views/congress_info/RegisterGuidelinesPage';
+import {RegisterGuidelinesPage} from './views/congress_info/RegisterGuidelinesPage';
+import {PaymentGuidelinesPage} from './views/congress_info/PaymentGuidelinesPage';
+
+// Participate subpage
+import {RegisterPage} from './views/participate/RegisterPage';
+import {LkkJoinPage} from './views/participate/LkkJoinPage';
+import {VolunteerPage} from './views/participate/VolunteerPage';
 
 let root = document.body;
 
 m.route(root, '/', {
     '/': IndexPage,
-    '/lkk-join': LkkJoinPage,
-    '/donate': DonatePage,
-    '/volunteer': VolunteerPage,
 
     // About subpage
     '/about/esperanto': AboutEsperantoPage,
@@ -38,19 +38,24 @@ m.route(root, '/', {
     // Congress info subpage
     '/congress/excursion': ExcursionPage,
     '/congress/register-guidelines': RegisterGuidelinesPage,
+    '/congress/payment-guidelines': PaymentGuidelinesPage,
+
+    // Participate subpage
+    '/donate': DonatePage,
+    '/participate/volunteer': VolunteerPage,
 
     // Register page
-    '/register': RegisterPage,
-    '/register/section-overview': RegisterPage,
-    '/register/section-basic': RegisterPage,
-    '/register/section-reg': RegisterPage,
-    '/register/section-lodging': RegisterPage,
-    '/register/section-excursion': RegisterPage,
-    '/register/section-food': RegisterPage,
-    '/register/section-others': RegisterPage,
-    '/register/section-summary': RegisterPage,
-    '/register/section-payment': RegisterPage,
-    '/register/section-thanks': RegisterPage,
+    '/participate/register': RegisterPage,
+    '/participate/register/section-overview': RegisterPage,
+    '/participate/register/section-basic': RegisterPage,
+    '/participate/register/section-reg': RegisterPage,
+    '/participate/register/section-lodging': RegisterPage,
+    '/participate/register/section-excursion': RegisterPage,
+    '/participate/register/section-food': RegisterPage,
+    '/participate/register/section-others': RegisterPage,
+    '/participate/register/section-summary': RegisterPage,
+    '/participate/register/section-payment': RegisterPage,
+    '/participate/register/section-thanks': RegisterPage,
 
     // Catch-all
     '/:404...': NotFoundPage

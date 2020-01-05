@@ -260,8 +260,8 @@
                 "paypal": {
                     "header": "Payment via PayPal",
                     "details": {
-                        "local": "<p>\nIf you are ready to pay via PayPal, please click on your preferred mode of payment below.\n</p>",
-                        "foreign": "<p>\nIf you are ready to pay via PayPal, please click on your preferred mode of payment below.\n</p>"
+                        "local": "<p class=\"card-panel theme-red white-text\">\n<b>GRAVA</b>: PayPal charges a 5% service fee for every transaction, and has already been added to the total that you will be paying. You do not need to do anything.\n</p>\n<p>\nIf you are ready to pay via PayPal, please click on your preferred mode of payment below.\n</p>",
+                        "foreign": "<p class=\"card-panel theme-red white-text\">\n<b>IMPORTANT</b>: PayPal charges a 5% service fee for every transaction, and has already been added to the total that you will be paying. You do not need to do anything.\n</p>\n<p>\nIf you are ready to pay via PayPal, please click on your preferred mode of payment below.\n</p>"
                     }
                 },
                 "remittance": {

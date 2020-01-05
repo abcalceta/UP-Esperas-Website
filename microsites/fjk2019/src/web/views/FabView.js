@@ -25,6 +25,11 @@ export class FabView {
     }
 
     onupdate() {
+        M.FloatingActionButton.init(document.getElementById('btn-i18n'), {
+            direction: 'top',
+            hoverEnabled: false,
+        });
+
         const tapTarget = M.TapTarget.init(document.getElementById('div-i18n-hint'), {
             onClose: () => {
                 Cookies.set('locale', 'en');
@@ -34,14 +39,15 @@ export class FabView {
         let currentLocale = Cookies.get('locale');
 
         if(currentLocale === undefined) {
-            document.getElementById('div-i18n-hint').classList.remove('hide');
+            //document.getElementById('div-i18n-hint').classList.remove('hide');
             tapTarget.open();
 
             currentLocale = 'en';
         }
         else {
             // Hide discovery
-            document.getElementById('div-i18n-hint').classList.add('hide');
+            tapTarget.close();
+            //document.getElementById('div-i18n-hint').classList.add('hide');
         }
 
         // Disabled current locale button
@@ -55,20 +61,16 @@ export class FabView {
                 eachItem.classList.remove('disabled');
             }
         });
-
-        M.FloatingActionButton.init(document.getElementById('btn-i18n'), {
-            direction: 'top',
-            hoverEnabled: false,
-        });
     }
 
     view() {
         return [
-            m('div', {id: 'btn-i18n', class: 'fixed-action-btn'}, [
+            m('div', {id: 'btn-i18n', class: 'fixed-action-btn', style: 'bottom: 45px; right: 45px;'}, [
                 m('a', {
-                    class: 'btn-floating btn-large theme-green tooltipped',
+                    id: 'btn-i18n-main',
+                    class: 'btn-floating btn-large pulse theme-green tooltipped',
                     'data-position': 'left',
-                    'data-tooltip': 'Choose a language'
+                    'data-tooltip': 'Choose a language<br>Elektu lingvon'
                 }, [
                     m('i', {class: 'material-icons'}, 'translate')
                 ]),
@@ -77,13 +79,13 @@ export class FabView {
                     m('li', m('a', {id: 'btn-floating-select-en', class: 'btn-floating theme-yellow', 'data-locale': 'en'}, 'EN'))
                 ])
             ]),
-            m('div', {id: 'div-i18n-hint', class: 'tap-target theme-green', 'data-target': 'btn-i18n'}, [
+            m('div', {id: 'div-i18n-hint', class: 'tap-target theme-green', 'data-target': 'btn-i18n-main'}, [
                 m('div', {class: 'tap-target-content'}, [
                     m('h5', {class: 'white-text'}, 'Traduku/Translate!'),
                     m('p', {class: 'grey-text text-lighten-3'}, [
-                        'Choose a language by hovering here.',
+                        'Choose a language by clicking here.',
                         m('br'),
-                        'Elektu lingvon per musumi tien ĉi.'
+                        'Elektu lingvon per klaki tien ĉi.'
                     ]),
                     m('p', {class: 'grey-text text-lighten-3', style: 'font-size: 0.5em'}, [
                         'Cookie Notice: A cookie will be used to save your selected language',

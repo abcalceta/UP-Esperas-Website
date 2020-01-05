@@ -1,6 +1,5 @@
 import m from 'mithril';
-import Materialize from 'materialize-css';
-import {DomScripts} from '../../util/dom';
+import {RegFormUtils} from '../../util/RegFormUtils';
 
 import {BasePage} from '../BasePage';
 import htmlMain from '../../templates/congress_info/register-guidelines.html';
@@ -20,6 +19,13 @@ export class RegisterGuidelinesPage extends BasePage {
 
     onupdate() {
         super.onupdate();
-        console.log(this.localeObj)
+
+        const regPeriods = ['early', 'regular', 'late'];
+        const regPeriodCard = document.getElementById('div-regperiod-notice');
+        const regPeriodIdx = RegFormUtils.checkRegistrationPeriod();
+
+        const regPeriodName = this.localeObj.t(`infoRegistration.generalText.${regPeriods[regPeriodIdx]}Reg`).toLowerCase();
+
+        regPeriodCard.innerHTML = this.localeObj.t('infoRegistration.regPeriod.notice', {registerType: regPeriodName});
     }
 }

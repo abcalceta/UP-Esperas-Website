@@ -11,6 +11,7 @@ export class LoadingOverlay {
         const fadeEffect = setInterval(() => {
             if(!preloader.style.opacity) {
                 preloader.style.opacity = 1;
+                preloader.classList.remove('hide');
             }
 
             if(preloader.style.opacity > 0) {

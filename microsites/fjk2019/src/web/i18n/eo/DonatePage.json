@@ -9,8 +9,19 @@
         },
         "mainHeader": {
             "title": "Ni bezonas vian helpon!",
-            "par00": "The Philippine Esperanto Youth (FEJ) is pleased to announce, that for the first time in the history of the movement of speakers, learners, and advocates of the international language Esperanto in the country, the 1st Philippine Esperanto Youth Congress will be held in Manila on April 23-26, 2020.",
-            "par01": "Por garantii la sukceson de la Kongreso, la Loka Kongresa Komitato petas al ĉiuj esperantistoj apogi tiun ĉi iniciaton finance aŭ materiale. Per via donaco, vi helpos al multaj filipinaj esperantistoj havi la oportunon reale sperti multkulturan etoson, solidigi la esperantistan komunumon en la lando kaj certigi ĝian daŭran kreskon."
+            "desc": "<p>\nPor garantii la sukceson de la Kongreso, la Loka Kongresa Komitato petas al ĉiuj esperantistoj apogi tiun ĉi iniciaton finance aŭ materiale. Per via donaco, vi helpos al multaj filipinaj esperantistoj havi la oportunon reale sperti multkulturan etoson, solidigi la esperantistan komunumon en la lando kaj certigi ĝian daŭran kreskon.\n</p>"
+        },
+        "congressFund": {
+            "title": "La Kongresa Kaso",
+            "desc": "<p>\nĈi tiu kaso estos uzata por financi la organizadon de la Kongreso, inkluzive de kongresejaj kostoj, materialoj, pagoj por artistoj, ktp. Se vi bezonas, la LKK havas pretan buĝeton kiun vi rajtas peti pere de peyc2020@gmail.com.\n</p>\n<p>\nFine, viaj kontribuoj:\n</p><ul class=\"browser-default\">\n<li>realigos en bona kvalito esencajn erojn de la Kongreso</li>\n<li>teni aliĝkotizojn sufiĉe malaltaj por lokaj partoprenontoj</li>\n</ul>\n"
+        },
+        "participantFund": {
+            "title": "Subvencio por Partoprenantoj",
+            "desc": "<p>\nFilipinoj estas disvolviĝanta lando, kio signifas, ke interalie ne ĉiuj havas la ekonomiajn rimedojn por vojaĝi kaj partopreni en konferencoj, ktp. Ĉar la lando estas insularo, ofte la sola maniero vojaĝi estas per aviadilo, kaj flugojn junuloj ofte ne povas mendi. Studentoj ofte ne enspezas monon kaj ne ŝparas multe da mono por financi sian kelktagan aventuron.\n</p>\n<p>\nPro tiuj kialoj, ni ĉiam havas la riskon perdi potencialajn partoprenantojn. Do, ni ŝatus eviti tiun riskon. Por fari FJK vere inkluzivema kaj landskala, ni devus sukcese venigi ankaŭ esperantistojn de aliaj regionoj. Tial, ni starigas tiun ĉi fonduson por parte helpi junulojn, kiuj ŝatus partopreni en FJK.\n</p>\n"
+        },
+        "fejFund": {
+            "title": "Junulara Fonduso",
+            "desc": "<p>\nKrom organizi FJK, Filipina Esperanto-Junularo (FEJ) iniciatas ankaŭ aliajn agadojn, kiuj kreskigas kaj fortigas la esperantistan movadon en la lando. Ĝi organizas monatajn kunsidojn, senpagajn lingvajn kursojn, eldonas broŝurojn kaj aliajn printmaterialojn, ktp. Estante neprofitcela junulara organizo, ĝi ne enspezas multe da mono krom membrokotizoj kaj hazardaj kontribuoj kaj donacoj internaj kaj eksteraj.\n</p>\n<p>\nPer tiu ĉi fonduso vi helpos fari la organizon daŭripova, eĉ por daŭrigi la atingojn, kiuj ĝi havos antaŭ, dum, kaj post FJK.\n</p>\n"
         },
         "donationOptions": {
             "title": "Kiel donaci?",

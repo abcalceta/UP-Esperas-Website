@@ -33,7 +33,7 @@
     "calendar": {
         "months": [
             "januaro", "februaro", "marto", "aprilo",
-            "majo", "junio",  "julio", "aŭgusto",
+            "majo", "junio", "julio", "aŭgusto",
             "septembro", "oktobro", "novembro", "decembro"
         ],
         "monthsShort": [
@@ -55,26 +55,25 @@
         "about": {
             "about": "Pri",
             "whatIsEsperanto": "Kio estas Esperanto?",
-            "fej": "La Filipina Esperanto Junularo",
+            "fej": "Filipina Esperanto-Junularo",
             "congress": "La Kongreso",
-            "logo": "Emblemo",
-            "lkk": "Kongresa Komitato",
-            "privacy": "Privateco",
+            "logo": "La Kongresa Emblemo",
+            "lkk": "Loka Kongresa Komitato",
+            "privacy": "Privateca Politiko",
             "copyright": "Kopirajta Avizo"
         },
         "congressInfo": {
-            "congressInfo": "Kongresa Informo",
-            "venue": "Loko",
-            "lodging": "Loĝejo",
+            "congressInfo": "Kongresaj Informoj",
+            "venue": "Kongresejo",
+            "lodging": "Loĝado",
             "excursion": "Ekskurso",
-            "regGuidelines": "Regularo pri Aliĝo",
-            "paymentGuidelines": "Regularo pri Pago"
+            "regGuidelines": "Regularo pri Aliĝoj",
+            "paymentGuidelines": "Pagmanieroj"
         },
         "participate": {
-            "participate": "Partopreno",
+            "participate": "Partopreni",
             "register": "Aliĝu",
-            "volunteer": "Voluntulu",
-            "callLkk": "Alvoko por Organizontoj"
+            "volunteer": "Voluntulu"
         },
         "donate": "Donaci"
     },

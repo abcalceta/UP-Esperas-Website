@@ -1,0 +1,90 @@
+{
+    "infoPayment": {
+        "topSubTitle": "Pagmanieroj",
+        "title": "Pagmanieroj",
+        "subTitle": "Unua Filipina Junulara Kongreso de Esperanto",
+        "generalText": {
+            "accountName": "Kontnomo",
+            "accountType": "Kontotipo",
+            "accountNum": "Kontnumero",
+            "accountBranch": "Filio",
+            "recipientName": "Nomo de Ricevonto",
+            "contactNum": "Kontaktonumero",
+            "email": "Retadreso",
+            "city": "Urbo",
+            "cityCountry": "Urbo, Subŝtato, kaj Lando",
+            "bankAddress": "Bankadreso",
+            "swift": "SWIFT-Kodo",
+            "postal": "Poŝtkodo",
+            "bankTel": "Banka Telefona Numero",
+            "bank": "Banko"
+        },
+        "intro": {
+            "title": "Pagado de la Aliĝkotizo",
+            "docuNotice": "<b>GRAVA</b>: Ĝenerale, la organizantoj havas nenian alian manieron scii (krom se vi pagis pere de PayPal), ĉu oni jam pagis aŭ ne, krom se la aliĝinto mem eksplice informas ilin pri la pago, kun pruvo de sukcesa transpago. Tial, nepre informu ilin tuj post via pago por ke ili povu konfirmi kaj registri vian pagon.",
+            "desc": "Por faciligi vian transpagon, en la retejo troviĝas sistemo por rekte pagi per via kreditkarto aŭ debetkarto al nia PayPal-konto. Oni povas aliri ĝin tuj post plenigi la <a target=\"_blank\" href=\"/#!/participate/register\">Retan Aliĝilon</a>. Alikaze, bonvolu pagi viajn aliĝkotizojn kaj aliajn menditajn servojn per la jenaj pagmanieroj:"
+        },
+        "localGuidelines": {
+            "header": "Lokaj Aliĝintoj",
+            "remittance": {
+                "title": "Western Union/Palawan Pawnshop/Cebuana Lhuillier/Aliaj",
+                "desc": "Aliĝintoj povas sendi siajn pagojn per lokaj montransdonaj agentejoj. Plenigu la necesajn kampojn per la jenaj detaloj:",
+                "surchargeNotice": "<b>GRAVA</b>: Demandu unue ĉe la agentejo, ĉu ili postulas imposton (t.n. \"Documentary Stamp Tax\") kiun postulas la filipina registaro. Se jes, bonvole aldonu 0.3% al la tuta kosto, kiun vi sendos. Do, ekz. se oni pagos PHP 1500 kiel aliĝkotizon, sendu entute 1500 + 1500 * 0.003 = PHP 1504.50.",
+                "docuNotice": "Poste, sciigu al ni pri la pago sendante foton aŭ skanitan kopion de la plenigita formularo al peyc2020@gmail.com, klare montrantan la jenajn detalojn: 1) la referenca numero/MTCN, 2) la preciza sumo sendita, kaj 3) nomo de la sendinto."
+            },
+            "bankDeposit": {
+                "title": "Banko",
+                "desc": "Oni povas ankaŭ deponi sian pagon en nian konton en la proksimaj filioj de Landbank of the Philippines aŭ BDO. Plenigu la necesajn kampojn per la jenaj detaloj:",
+                "surchargeNotice": "Ne estas krompago, se oni deponas en banko en Metro Manila. Aliflanke, oni eble devas pagi interregionan krompagon se oni deponas de alia regiono.",
+                "docuNotice": "Poste, bonvolu sendi foton aŭ skanitan kopion de la plenigita formularo al peyc2020@gmail.com por ke ni povu konfirmi vian pagon."
+            },
+            "paypal": {
+                "title": "PayPal",
+                "desc": "Alternative, oni ankaŭ povas sendi pagojn rete per <a target=\"_blank\" href=\"//paypal.me/fjk2020\">ĉi tie</a>. Se la ĉi-antaŭa ligilo ne funkcias, nur ensalutu en vian PayPal-konton kaj sendu la pagon al la retadreso peyc2020@gmail.com. Nepre indiku la celon de via pago kaj vian nomon, se via uzantnomo en PayPal estas malsama de via nomo.",
+                "surchargeNotice": "En ĉiu transakcio PayPal deprenas 5% administrajn kostojn de la sumo sendita, tial bonvolu nepre aldoni 5% de la originala sumo al la tuta sumo, kiun vi sendos."
+            },
+            "onlineBank": {
+                "title": "Reta Banka Transdono",
+                "desc": "Oni povas sendi pere de lokaj bankoj per sia poŝtelefono sen devi iri al banko. Plenigu la necesajn kampojn per la jenaj detaloj:",
+                "docuNotice": "Nepre esploru unue, kiom kostas la sendokostoj de via banko, kaj aldonu tiun koston al la tuta sumo kiun vi sendos. Poste, bonvolu sciigi al ni vian pagon sendante ekranbildon de la sukcesa transpago al peyc2020@gmail.com."
+            }
+        },
+        "foreignGuidelines": {
+            "header": "Alilandaj Aliĝintoj",
+            "remittance": {
+                "title": "Western Union/Aliaj",
+                "desc": "Alilandaj aliĝintoj povas elekti sendi monon pere de Western Union (aŭ aliaj similaj servoj), se ties filio ekzistas en ilia lando. Plenigu la necesajn kampojn per la jenaj detaloj:",
+                "surchargeNotice": "<b>GRAVA</b>: Por kovri la imposton (t.n. “Documentary Stamp Tax”) kiun postulas la filipina registaro por internaciaj ĝiroj, bonvolu aldoni <b>EUR 1</b> al la tuta kosto sendota.",
+                "docuNotice": "Poste, bonvolu sciigi nin pri la sukcesa transakcio sendante foton aŭ skanitan kopion de la plenigita formularo al peyc2020@gmail.com, klare montrantan la jenajn detalojn: 1) la referenca numero/MTCN, 2) la preciza sumo sendita, kaj 3) nomo de la sendinto. "
+            },
+            "paypal": {
+                "title": "PayPal",
+                "desc": "Oni ankaŭ povas sendi pagojn rete per <a target=\"_blank\" href=\"//paypal.me/fjk2020\">ĉi tie</a>. Se la ligilo ne funkcias, nur ensalutu en vian PayPal-konton kaj sendu la pagon al la retadreso peyc2020@gmail.com. Nepre indiku la celon de via pago kaj vian nomon, se via uzantnomo en PayPal estas malsama de via nomo.",
+                "surchargeNotice": "En ĉiu transakcio PayPal deprenas 5% administrajn kostojn de la sumo sendita, tial bonvolu nepre aldoni 5% de la originala sumo al la tuta sumo, kiun vi sendos."
+            },
+            "bankDeposit": {
+                "title": "Banko",
+                "desc": "Oni povas ankaŭ deponi sian pagon en nian konton de alilandaj bankoj per internacia monsendo. Plenigu la necesajn kampojn per la jenaj detaloj:",
+                "surchargeNotice": "Aldone, nepre informiĝu unue ĉe via banko pri la aktuala kurzo inter la valuto de via lando kaj filipinaj pesoj (PHP) kaj pri aldonaj administraj kostoj. Ĝenerale, por kovri la diferencojn, bonvolu aldoni <b>EUR 3</b> al la tuta sumo, se vi pagos per tiu ĉi maniero.",
+                "docuNotice": "Por kontado, bonvole sendu foton aŭ skanitan kopion de la plenigita deponformularo al peyc2020@gmail.com por ke ni povu konfirmi vian pagon."
+            }
+        },
+        "lateGuidelines": {
+            "header": "Malfruaj kaj Surlokaj Pagoj",
+            "desc00": "Aliĝintoj rajtas pagi malfrue aŭ surloke, je alveno al la kongresejo, sed notu la jenajn limigojn:",
+            "desc01": "Kvankam oni rajtas pagi surloke, ĝi estas evitinda opcio ĉar ĝi malebligas al la organizantoj ricevi financajn rimedojn frue por kovri la kostojn de gravaj eroj de la Kongreso.",
+            "regFee": {
+                "title": "Aliĝkotizo",
+                "desc": "<p>\nAliĝintoj devas pagi la tuton de siaj aliĝkotizoj plej malfrue <b>la 9-an de aprilo 2020</b> per la aprobitaj pagmanieroj.\n</p>\n<p>\nDe post tiu dato, oni devos aldone pagi <b>PHP 100.00 (por filipinanoj)</b> aŭ <b>EUR 2.00 (por eksterlandanoj)</b>, aldone al la ŝuldata sumo. Tiu ĉi regulo validas sendepende de tio, ĉu la koncerna aliĝinto jam pagis la minimuman antaŭpagon ĝis la menciita dato aŭ ne.\n</p>\n<p>\nĈi tiu regulo koncernas nur tiujn, kiuj antaŭe aliĝis per la Reta Aliĝilo kaj nur malfrue pagas siajn aliĝkotizojn. Pri surlokaj aliĝoj, vidu la <a href=\"/#!/congress/register-guidelines\">\"Surlokaj Aliĝoj\" sekcion</a> de la Regularo pri Aliĝoj.\n</p>\n"
+            },
+            "lodging": {
+                "title": "Loĝado",
+                "desc": "<p>\nAliĝintoj kiuj antaŭmendis ĉambrojn nepre devas pagi la tuton de la kostoj plej malfrue la <b>23-an de marto 2020</b>, precize unu monaton antaŭ la Kongreso. La LKK akceptos kazojn de malfruaj pagoj nur en specialaj cirkonstancoj, kaj depende de la daŭra havebleco de la ĉambro antaŭmendita (t.e., tiam, kiam aliaj atendas, ĉu estos libera spaco). Alie, oni povas nuligi la rezervon sen repago.\n</p>"
+            },
+            "others": {
+                "title": "Aliaj pagitaj servoj",
+                "desc": "<p>\nAliĝintoj pagas neniun punpagon se ili ŝuldas kotizojn nur por la ekskurso, kongresa foto, aŭ aliaj pagendaj servoj de la Kongreso, kondiĉe ke ili pagos siajn ŝuldojn plej malfrue je la unua tago de la Kongreso aŭ je ilia alveno al la kongresejo.\n</p>"
+            }
+        }
+    }
+}

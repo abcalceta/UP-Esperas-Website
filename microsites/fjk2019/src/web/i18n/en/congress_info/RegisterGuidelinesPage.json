@@ -2,6 +2,58 @@
     "infoRegistration": {
         "topSubTitle": "Registration Guidelines",
         "title": "Registration Guidelines",
-        "subTitle": "First Philippine Esperanto Youth Congress"
+        "subTitle": "First Philippine Esperanto Youth Congress",
+        "generalText": {
+            "category": "Category",
+            "regFees": "Registration Fees",
+            "earlyReg": "Early",
+            "regularReg": "Regular",
+            "lateReg": "Late",
+            "regPeriod": "Period",
+            "onsiteReg": "On-site",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "localPart": "Local Participants (Filipinos and foreigners living in the Philippines)",
+            "foreignPart": "Participants from Overseas (Filipinos and foreigners living in other countries)",
+            "regTypes": {
+                "A1": "Senior high school students and younger",
+                "A2": "Undergraduate students",
+                "A": "Undergraduate students",
+                "B1": "Workers, graduate students, etc. &leq; 35 years old",
+                "B2": "Workers, graduate students, etc. &gt; 35 years old",
+                "C": "Moral Participants",
+                "D": "Congress Patrons"
+            }
+        },
+        "intro": {
+            "header": "Introduction",
+            "desc": "<p>\n\nThe registration fee is important to defray the expenses necessary to implement essential elements of the Congress, including but not limited to the venue, materials, equipment, processing fees, etc.</p>\n<p>\nThe applicable registration fee depends on three main factors: the individual’s age at the time of registration, the individual’s country of origin, and the period in which registration and payment are made (see table below). Individuals who register early can avail of discounted fees. There is also a separate category for individuals who wish to financially support the Congress, and separate fees for foreign participants.\n</p>\n<p>\nThe fee includes the participant’s kit and access to all programs (unless otherwise indicated in the congress booklet). It does not include lodging, other meals, the excursion, and insurances. Refer to separate sections for lodging and the excursion.\n</p>\n<p class=\"card-panel white-text theme-red\">\nThe registration fee is strictly <b>non-transferable</b> and <b>non-refundable</b>, regardless of whether the participant fails to attend the Congress through their own volition or due to any other cause, or if the Congress is cancelled or postponed for any reason.\n</p>\n<p class=\"card-panel white-text theme-red\">\n<b>IMPORTANT</b>: Registration is only valid and the individual is registered into the official list of participants once <b>at least fifty percent (50%) partial payment or more</b> is received by the Organizing Committee, and the rest of the unpaid balance must be settled on or before <b>April 9, 2020</b>. After that date, late payment charges apply. For more information, see the <a class=\"theme-yellow-text\" href=\"/#!/congress/payment-guidelines\">\"Late and On-Site Payments\" section</a> of the Payment Guidelines.\n</p>\n"
+        },
+        "joinReq": {
+            "header": "Who can join?",
+            "desc": "<p>\nParticipation is open to any person of any age, Philippine or foreign national, who has at least a basic command of Esperanto and is interested to learn more of the language and its community and culture, participate in the activities of the congress, and actively interact with other participants.\n</p>\n<p>\nThe Organizing Committee reserves the right to deny or cancel the registration of any individual whom they find, with sufficient proof, inclined to cause any substantial risk to safety and security during the congress.\n</p>\n"
+        },
+        "regPeriod": {
+            "header": "Registration Periods",
+            "desc": "<p>\nRegistration for the congress is divided into three (3) periods, which will affect the rates of registration fees, availability of services, etc. Please refer to the table below:\n</p>\n",
+            "notice": "Today is within the time for <b>%{registerType}</b> registration!"
+        },
+        "regCategories": {
+            "header": "Participant Categories",
+            "desc": "<p>There are different categories for participants:</p>",
+            "A": "<p>\n<b>A: Undergraduate Students and Below</b> - Individuals in undergraduate (college) level, high school (junior and senior), vocational schools, and below at the time of registration. It is subdivided into two subcategories (applicable only for Filipino participants):\n</p>\n\n<ul class=\"browser-default\">\n<li><b>A1</b> - for senior high school students or equivalent (such as those in vocational schools below the college level and out-of-school youth), and below</li>\n<li><b>A2</b> - for undergraduate (college) students or equivalent</li>\n</ul>\n",
+            "B": "<p>\n<b>B: Workers, Graduate Students, or Equivalent</b> - Individuals who have completed their undergraduate studies or its equivalent at the time of registration. It includes those who work or practice a profession, graduate-level students (master’s degree/Ph.D./Medicine/Law), and self-employed and unemployed individuals. It is further subdivided into two subcategories:\n</p>\n\n<ul class=\"browser-default\">\n<li><b>B1</b> - for individuals aged 35 and below at the time of registration, i.e. within age prescribed as \"youth\" by World Esperanto Youth Organization (TEJO) and eligible for full membership in Philippine Esperanto Youth (FEJ)</li>\n<li><b>B2</b> - for individuals aged 36 and above at the time of registration</li>\n</ul>\n",
+            "C": "<p>\n<b>C: Moral Participants</b> - Individuals who will not participate in the congress itself, but want to support the congress financially. The fee is half (50%) of the regular period registration fee of category B.1 (for both Filipino and foreign participants). They shall be given due acknowledgment in the congress booklet.\n</p>\n",
+            "D": "<p>\n<b>D: Congress Patrons</b> - Individuals who want to additionally support the congress financially, besides joining the congress, by paying larger than the normal rates. The fee is fixed as 250% of the Regular Period registration fee of Category B1. Congress Patrons may choose to participate physically or not, and will receive separate acknowledgment in the Congress Booklet and other related materials, as well as a special gift from the Organizing Committee.\n</p>\n",
+            "childClause": "<p>\nChildren aged below 12 years old and accompanied by their parents/guardians can join the congress <em>free of charge</em>, however they will not be provided their own Congress Kit (except for name tags) and must pay additional fees if they avail of lodging, the excursion, and meals. <b>Children must be registered on the <a href=\"/#!/participate/register\">registration form</a> separately.</b>\n</p>\n"
+        },
+        "walkIn": {
+            "header": "Walk-in Registration",
+            "desc": "<p>\nThe Organizing Committee encourages everyone to register online so that it can properly anticipate the number of participants. There will also be a walk-in registration during the congress, but there will be a penalty fee of <b>PHP 200.00 (for Filipinos)</b> or <b>EUR 5.00 (for foreign participants)</b> on the top of the corresponding fees in effect under the Late Registration Period. \n</p>\n"
+        },
+        "feeSchedule": {
+            "header": "Schedule of Fees",
+            "forexNote": "For reference, EUR 1.00 = PHP 56.00"
+        }
     }
 }
