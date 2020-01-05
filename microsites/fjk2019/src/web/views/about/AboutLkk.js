@@ -11,7 +11,7 @@ export class AboutLkkPage extends BasePage {
             'en',
             'aboutLkk',
             htmlMain,
-            'about/aboutLkk',
+            'about/AboutLkk',
             heroPath
         );
     }
