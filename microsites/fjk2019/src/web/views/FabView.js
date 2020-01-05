@@ -65,7 +65,7 @@ export class FabView {
 
     view() {
         return [
-            m('div', {id: 'btn-i18n', class: 'fixed-action-btn', style: 'bottom: 45px; right: 45px;'}, [
+            m('div', {id: 'btn-i18n', class: 'fixed-action-btn'}, [
                 m('a', {
                     id: 'btn-i18n-main',
                     class: 'btn-floating btn-large pulse theme-green tooltipped',

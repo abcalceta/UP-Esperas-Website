@@ -19,7 +19,6 @@ import {PaymentGuidelinesPage} from './views/congress_info/PaymentGuidelinesPage
 
 // Participate subpage
 import {RegisterPage} from './views/participate/RegisterPage';
-import {LkkJoinPage} from './views/participate/LkkJoinPage';
 import {VolunteerPage} from './views/participate/VolunteerPage';
 
 let root = document.body;
@@ -57,6 +56,15 @@ m.route(root, '/', {
     '/participate/register/section-payment': RegisterPage,
     '/participate/register/section-thanks': RegisterPage,
 
+    // Redirects
+    '/register': {
+        view: () => {
+            m.route.set('/participate/register', {}, {
+                replace: true
+            });
+        }
+    },
+
     // Catch-all
-    '/:404...': NotFoundPage
+    '/:404...': NotFoundPage,
 });
