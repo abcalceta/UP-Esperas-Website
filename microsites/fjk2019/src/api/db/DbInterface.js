@@ -137,10 +137,11 @@ export class DbInterface{
                 currency: formObj['hdn-reg-currency'],
                 paypalOrderId: formObj['hdn-paypal-order-id'],
                 regFee: Number(formObj['hdn-reg-fee']),
+                excursion: Number(formObj['hdn-excursion-fee']),
                 invitLetter: Number(formObj['hdn-invitletter-fee']),
                 congressFund: Number(formObj['txt-congress-fund']),
                 participantFund: Number(formObj['txt-participant-fund']),
-                fejFund: Number(formObj['txt-fej-fund'])
+                fejFund: Number(formObj['txt-fej-fund']),
             }
         );
 

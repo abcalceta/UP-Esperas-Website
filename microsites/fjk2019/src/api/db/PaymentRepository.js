@@ -9,6 +9,7 @@ export class PaymentRepository extends BaseRepository {
             currency TEXT NOT NULL,
             paypalOrderId TEXT,
             regFee REAL NOT NULL,
+            excursion REAL,
             invitLetter REAL,
             congressFund REAL,
             participantFund REAL,
@@ -27,6 +28,7 @@ export class PaymentRepository extends BaseRepository {
             currency,
             paypalOrderId,
             regFee,
+            excursion,
             invitLetter,
             congressFund,
             participantFund,
@@ -34,7 +36,7 @@ export class PaymentRepository extends BaseRepository {
         )
         VALUES (
             ?, ?, ?, ?, ?,
-            ?, ?, ?, ?
+            ?, ?, ?, ?, ?
         )
         `;
 
@@ -45,6 +47,7 @@ export class PaymentRepository extends BaseRepository {
             params.currency,
             params.paypalOrderId,
             params.regFee,
+            params.excursion,
             params.invitLetter,
             params.congressFund,
             params.participantFund,
