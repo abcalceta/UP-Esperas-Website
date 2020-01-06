@@ -1,0 +1,126 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+nav.hero {
+    position: absolute;
+    background-color: transparent;
+    box-shadow: 0 0;
+    padding: 2em 0;
+}
+
+nav.hero .brand {
+    color: white;
+}
+
+@media all and (max-width: 60em) {
+    nav.hero .menu {
+        background-color: #146E05;
+    }
+}
+
+header.hero {
+    background: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.7)), url('../images/main_cover_02.jpg') no-repeat center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header.hero .hero-title {
+    padding: 0;
+    color: white;
+    text-align: center;
+    font-size: 15vh;
+    line-height: 15vh;
+}
+
+header.hero .hero-subtitle {
+    margin: 2vh 0;
+    color: white;
+    text-align: center;
+    font-size: 5vh;
+    line-height: 6vh;
+}
+
+header.hero .hero-down-marker {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    text-align: center;
+    font-size: 15vh;
+}
+
+header.hero .hero-down-marker:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+main {
+    margin: 0 15%;
+}
+
+main p {
+    font-size: 0.9em;
+}
+
+main h2 {
+    font-size: 2em;
+    color: #00612c;
+}
+
+footer.main-footer .content {
+    background-color: #146E05;
+    color: white;
+    padding: 1em 15%;
+}
+
+footer.main-footer a:link {
+    color: #00ED6C;
+}
+
+footer.main-footer .copy {
+    background-color: #00612c;
+    color: white;
+    padding: 0.5em 15%;
+}
+
+.material-icons-large {
+    font-size: 5em;
+    color: whitesmoke;
+    background: #00612c;
+    border-radius: 50%;
+    padding: 0.25em;
+}
+
+ul.no-bullets {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+ul.no-bullets li {
+    margin: 0;
+}
+
+img.responsive {
+    width: 100%;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.right-text {
+    text-align: right;
+}
+
+.button.pseudo-nav {
+    background: none;
+}
+
+.hide {
+    display: none;
+}
