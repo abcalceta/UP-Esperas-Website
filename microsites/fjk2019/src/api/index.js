@@ -6,6 +6,7 @@ import { body, validationResult, oneOf } from 'express-validator';
 
 import {DbInterface} from './db/DbInterface';
 import {PaypalPage} from './paypal';
+import {Mailer} from './mailer';
 import gsheets from './gsheets';
 import gauth from './gauth';
 import {Logger} from './logger';
@@ -18,13 +19,9 @@ function main() {
 
     const expressApp = express();
     const dbInterface = new DbInterface();
-    const logger = Logger.createNewLogger();
-
-    if (process.env.NODE_ENV !== 'production') {
-        logger.add(Logger.consoleTransport);
-    }
-
-    process.env.SHARED_LOGGER = logger;
+    const loggerObj = Logger.createNewLogger();
+    const logger = loggerObj.loggerObj;
+    process.env.SHARED_LOGGER_ID = logger.id;
 
     // Middlewares
     expressApp.use(express.json());
@@ -221,6 +218,27 @@ function main() {
                 title: 'Failed to fetch payment page',
                 error: err,
             });
+        }
+    });
+
+    expressApp.get('/api/mail_test', async function(req, res) {
+        try {
+            const messageId = await Mailer.sendMail();
+
+            res.status(200).send({
+                status: 200,
+                title: 'Message sent successfully',
+                messageId: messageId,
+            });
+        }
+        catch(err) {
+            logger.error(`Failed to send email: ${err.message}`);
+
+            res.status(400).send({
+                status: 400,
+                title: 'Failed to send message',
+                error: err.message,
+            })
         }
     });
 

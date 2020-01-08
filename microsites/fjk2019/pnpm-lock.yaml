@@ -14,6 +14,7 @@ dependencies:
   materialize-css: 1.0.0
   mithril: 2.0.4
   node-polyglot: 2.4.0
+  nodemailer: 6.4.2
   sqlite3: 4.1.1
   uuid: 3.3.3
   winston: 3.2.1
@@ -5099,6 +5100,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-Rmfnj52WNhvr83MvuAWHEqXVoZXCcDQssSOffU4n4XOL9sPrP61mSZ88g25NqmABDvH7PiAlFCzoSCSdzA293w==
+  /nodemailer/6.4.2:
+    dev: false
+    engines:
+      node: '>=6.0.0'
+    resolution:
+      integrity: sha512-g0n4nH1ONGvqYo1v72uSWvF/MRNnnq1LzmSzXb/6EPF3LFb51akOhgG3K2+aETAsJx90/Q5eFNTntu4vBCwyQQ==
   /nodemon/2.0.2:
     dependencies:
       chokidar: 3.3.1
@@ -7897,6 +7904,7 @@ specifiers:
   mini-css-extract-plugin: ^0.8.0
   mithril: ^2.0.4
   node-polyglot: ^2.4.0
+  nodemailer: ^6.4.2
   nodemon: ^2.0.1
   optimize-css-assets-webpack-plugin: ^5.0.3
   sqlite3: ^4.1.0
