@@ -11,10 +11,13 @@
         <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
         <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE;" />
 
+        <link rel="stylesheet" href="font/clarika_geometric/style.css" />
+
         <style type="text/css">
             @import url('http://fonts.googleapis.com/css?family=Roboto:300');
 
             /* Resets */
+            /*
             body {
                 padding: 0;
                 margin: 0;
@@ -67,11 +70,9 @@
                 display: inline-block;
             }
 
-            /* Body and container */
             .container {
                 display: block;
                 margin: 0 auto !important;
-                /* makes it centered */
                 max-width: 580px;
                 padding: 10px;
                 width: 580px;
@@ -88,7 +89,6 @@
                 }
             }
 
-            /** Generic styles **/
             .preheader {
                 color: transparent;
                 display: none;
@@ -101,108 +101,924 @@
                 visibility: hidden;
                 width: 0;
             }
+            */
         </style>
     </head>
     <body class="">
-        <span class="preheader">We are writing to confirm our receipt of your registration details</span>
+        <span class="preheader" style="display: none; visibility: hidden; width: 0; opacity: 0;">We are writing to confirm our receipt of your registration details</span>
 
-        <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
             <tr>
-                <td class="container">
-                    <div class="content">
-                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                            <tr>
-                                <td class="wrapper">
-                                    <table row="presentation" border="0" cellpadding="0" cellspacing="0">
-                                        <tr>
-                                            <td>
-                                                <p>
-                                                    Dear Carl,
-                                                </p>
-                                                <p>
-                                                    We are contacting you to inform you that you have registered to the First Philippine Esperanto Youth Congress. Here are some details that we have received from you.
-                                                </p>
-                                                <p>
-                                                    <b>Nickname:</b> ${nickname}<br>
-                                                    <b>Registration Category:</b> ${regCat}<br>
-                                                    <b>Payment Method:</b> ${paymentMethod}<br>
-                                                </p>
-                                                <p>
-                                                    We were also informed of the following:
-                                                </p>
-                                                <ul>
-                                                    <li>
-                                                        <b>Food Restrictions</b> - You have stated that you have <em>other</em> food restrictions aside from the common choices shown on the form. Please send a message so that we can help you arrange a food plan tailored to your needs during the congress.
-                                                    </li>
-                                                    <li>
-                                                        <b>Food Allergies</b> - You have stated that you have <em>other</em> food allergies aside from the common ones shown on the form. Please send a message so that we can note your other allergies.
-                                                    </li>
-                                                    <li>
-                                                        <b>Lodging</b> - You have stated your interest in getting a lodging from one of our partner hotels. We will contact you again when new information has come up regarding this.
-                                                    </li>
-                                                    <li>
-                                                        <b>Congress Photo</b> - You have stated your interest in getting a physical copy of the congress photo. We will inform you again whether we reached the minimum number of interested participants.
-                                                    </li>
-                                                    <li>
-                                                        <b>Invitation Letter</b> - You have requested a printed invitation letter from us and requested to have it sent via <em>regular mail</em>. Please send a message to us with the name of the specific courier and shipping address for us to start processing your request.
-                                                    </li>
-                                                    <li>
-                                                        <b>Comments</b> - We noticed that you left a comment on the form. Please wait as we will reply to it by sending a separate message.
-                                                    </li>
-                                                </ul>
-                                                <p>
-                                                    If you have any other registration concerns, please send an email to <a target="_blank" href="mailto:peyc2020@up-esperas.org">peyc2020@up-esperas.org</a>. Also, please keep these numbers for reference when you have any inquiries or problems regarding registration or payment.
-                                                </p>
-                                                <p>
-                                                    <b>Registration ID:</b> ${registrationId}<br>
-                                                    <b>Payment ID:</b> ${paymentId}<br>
-                                                </p>
-                                                <p>
-                                                    Thank you very much for your interest to the First Philippine Esperanto Youth Congress and we hope to see you soon!
-                                                </p>
-                                                <p>
-                                                    Sincerely Yours,<br>
-                                                    <br>
-                                                    <br>
-                                                    <b>The Local Organizing Committee</b><br>
-                                                    <b>First Philippine Esperanto Youth Congress</b>
-                                                </p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <hr>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <b>NOTE.</b> This is an automated message. However, you can reply to this email. If you think that you have received this message in error, please inform us so we can remove your registration details from our system. Thank you!
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+                <td style="padding: 20px 0 30px 0;">
+                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse;">
+                        <tr>
+                            <td align="center" bgcolor="#FFFFFF" width="600" style="padding: 40px 0 20px 0; border: 2px solid #418B45;">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+                                    <tr>
+                                        <td width="25%" style="padding: 10px 20px 0 20px;">
+                                            <img alt="FJK Icon" src="img/logo.png" width="128" height="128" style="display: block;" />
+                                        </td>
+                                        <td width="75%">
+                                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;">
+                                                <tr>
+                                                    <td style="color: #418B45; font-family: 'Clarika Geometric Regular', Helvetica, Arial, sans-serif; font-size: 24px; line-height: 24px;">
+                                                        1-A FILIPINA JUNULARA KONGRESO DE ESPERANTO
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="color: #CC9D37; font-family: 'Clarika Geometric Regular', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;">
+                                                        1st PHILIPPINE ESPERANTO YOUTH CONGRESS
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="color: #992226; font-family: 'Clarika Geometric Regular', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;">
+                                                        2020-04-23 - 2020-04-26<br />
+                                                        QUEZON-URBO
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+                                    <tr>
+                                        <td>
+                                            <img alt="V" src="img/pattern/yellow_bar.png" width="32" height="44" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="V" src="img/pattern/yellow_bar.png" width="32" height="44" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="V" src="img/pattern/yellow_bar.png" width="32" height="44" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="V" src="img/pattern/yellow_bar.png" width="32" height="44" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="V" src="img/pattern/yellow_bar.png" width="32" height="44" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="V" src="img/pattern/yellow_bar.png" width="32" height="44" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="V" src="img/pattern/yellow_bar.png" width="32" height="44" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="V" src="img/pattern/yellow_bar.png" width="32" height="44" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="V" src="img/pattern/yellow_bar.png" width="32" height="44" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="V" src="img/pattern/yellow_bar.png" width="32" height="44" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="V" src="img/pattern/yellow_bar.png" width="32" height="44" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="V" src="img/pattern/yellow_bar.png" width="32" height="44" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="V" src="img/pattern/yellow_bar.png" width="32" height="44" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="V" src="img/pattern/yellow_bar.png" width="32" height="44" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="V" src="img/pattern/yellow_bar.png" width="32" height="44" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="V" src="img/pattern/yellow_bar.png" width="32" height="44" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="V" src="img/pattern/yellow_bar.png" width="32" height="44" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="V" src="img/pattern/yellow_bar.png" width="32" height="44" style="display: block;" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+                                    <tr>
+                                        <td width="35">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="30" src="img/pattern/green_bar_pattern.png" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td width="530" bgcolor="#FCFCFC" style="padding: 40px 30px 20px 30px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+                                                <tr>
+                                                    <td style="font-family: Helvetica, Arial, sans-serif; font-size: 20px; line-height: 20px;">
+                                                        <b>Dear ${firstName},</b>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; padding: 20px 0 20px 0;">
+                                                        We are contacting you to inform you that you have registered to the First Philippine Esperanto Youth Congress. Here are some details that we have received from you.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; padding: 20px 0 20px 0;">
+                                                        <b>Nickname:</b> ${nickname}<br />
+                                                        <b>Registration Category:</b> ${regCat}<br />
+                                                        <b>Payment Method:</b> ${paymentMethod}<br />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; padding: 20px 0 20px 0;">
+                                                        Also, please keep these numbers for reference when you have any inquiries or problems regarding registration or payment.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; padding: 20px 0 20px 0;">
+                                                        <b>Registration ID:</b> ${registrationId}<br />
+                                                        <b>Payment ID:</b> ${paymentId}<br />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; padding: 20px 0 20px 0;">
+                                                        We were also informed of the following:
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 20px 0 0 0;">
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+                                                            <tr>
+                                                                <td bgcolor="#992226" style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; padding: 20px 20px 20px 20px;">
+                                                                    <img alt="Food Restrictions" src="img/fastfood_icon.png" width="48" height="48" style="display: block;" />
+                                                                </td>
+                                                                <td style="font-size: 0; line-height: 0; width: 20px;">&nbsp;</td>
+                                                                <td style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;">
+                                                                    <b>Food Restrictions</b> - You have stated that you have <em>other</em> food restrictions aside from the common choices shown on the form. Please send a message so that we can help you arrange a food plan tailored to your needs during the congress.
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 20px 0 0 0;">
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+                                                            <tr>
+                                                                <td bgcolor="#992226" style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; padding: 20px 20px 20px 20px;">
+                                                                    <img alt="Food Allergies" src="img/healing_icon.png" width="48" height="48" style="display: block;" />
+                                                                </td>
+                                                                <td style="font-size: 0; line-height: 0; width: 20px;">&nbsp;</td>
+                                                                <td style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;">
+                                                                    <b>Food Allergies</b> - You have stated that you have <em>other</em> food allergies aside from the common ones shown on the form. Please send a message so that we can note your other allergies.
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 20px 0 0 0;">
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+                                                            <tr>
+                                                                <td bgcolor="#992226" style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; padding: 20px 20px 20px 20px;">
+                                                                    <img alt="Lodging" src="img/hotel_icon.png" width="48" height="48" style="display: block;" />
+                                                                </td>
+                                                                <td style="font-size: 0; line-height: 0; width: 20px;">&nbsp;</td>
+                                                                <td style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;">
+                                                                    <b>Lodging</b> - You have stated your interest in getting a lodging from one of our partner hotels. We will contact you again when new information has come up regarding this.
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 20px 0 0 0;">
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+                                                            <tr>
+                                                                <td bgcolor="#992226" style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; padding: 20px 20px 20px 20px;">
+                                                                    <img alt="Congress Photo" src="img/photo_icon.png" width="48" height="48" style="display: block;" />
+                                                                </td>
+                                                                <td style="font-size: 0; line-height: 0; width: 20px;">&nbsp;</td>
+                                                                <td style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;">
+                                                                    <b>Congress Photo</b> - You have stated your interest in getting a physical copy of the congress photo. We will inform you again whether we reached the minimum number of interested participants.
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 20px 0 0 0;">
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+                                                            <tr>
+                                                                <td bgcolor="#992226" style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; padding: 20px 20px 20px 20px;">
+                                                                    <img alt="Invitation Letter" src="img/mail_icon.png" width="48" height="48" style="display: block;" />
+                                                                </td>
+                                                                <td style="font-size: 0; line-height: 0; width: 20px;">&nbsp;</td>
+                                                                <td style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;">
+                                                                    <b>Invitation Letter</b> - You have requested a printed invitation letter from us and requested to have it sent via <em>regular mail</em>. Please send a message to us with the name of the specific courier and shipping address for us to start processing your request.
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 20px 0 20px 0;">
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+                                                            <tr>
+                                                                <td bgcolor="#992226" style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; padding: 20px 20px 20px 20px;">
+                                                                    <img alt="Comments" src="img/comment_icon.png" width="48" height="48" style="display: block;" />
+                                                                </td>
+                                                                <td style="font-size: 0; line-height: 0; width: 20px;">&nbsp;</td>
+                                                                <td style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;">
+                                                                    <b>Comments</b> - We noticed that you left a comment on the form. Please wait as we will reply to it by sending a separate message.
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; padding: 20px 0 20px 0;">
+                                                        If you have any other registration concerns, please send an email to <a target="_blank" href="mailto:peyc2020@up-esperas.org" style="color:#418B45;"><font color="#418B45">peyc2020@up-esperas.org</font></a>. 
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; padding: 20px 0 20px 0;">
+                                                        Thank you very much for your interest to the First Philippine Esperanto Youth Congress and we hope to see you soon!
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; padding: 20px 0 20px 0;">
+                                                        Sincerely Yours,<br />
+                                                        <br />
+                                                        <br />
+                                                        <b>The Local Organizing Committee</b><br />
+                                                        <b>First Philippine Esperanto Youth Congress</b>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 12px; padding: 20px 0 20px 0;">
+                                                        <b>NOTE.</b> This is an automated message. Please do not reply to this e-mail. If you think that you have received this message in error, <a href="mailto:peyc2020@up-esperas.org" style="color: #418B45;"><font color="#418B45">please inform us</font></a> so we can remove your registration details from our system. Thank you!
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td width="35">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="|" width="35" height="25" src="img/pattern/green_bar_squares.png" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+                                    <tr>
+                                        <td>
+                                            <img alt="W" src="img/pattern/red_bar.png" width="64" height="32" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="W" src="img/pattern/red_bar.png" width="64" height="32" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="W" src="img/pattern/red_bar.png" width="64" height="32" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="W" src="img/pattern/red_bar.png" width="64" height="32" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="W" src="img/pattern/red_bar.png" width="64" height="32" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="W" src="img/pattern/red_bar.png" width="64" height="32" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="W" src="img/pattern/red_bar.png" width="64" height="32" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="W" src="img/pattern/red_bar.png" width="64" height="32" style="display: block;" />
+                                        </td>
+                                        <td>
+                                            <img alt="W" src="img/pattern/red_bar.png" width="64" height="32" style="display: block;" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#418B45" style="padding: 30px 30px 30px 30px;">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+                                    <tr>
+                                        <td width="75%" style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;">
+                                            <a href="https://fjk.up-esperas.org/#!/about/fjk" style="color: #CC9D37;"><font color="#CC9D37">About PEYC</font></a>&nbsp;<font color="#FFFFFF">|</font>&nbsp;<a href="https://fjk.up-esperas.org/#!/privacy" style="color: #CC9D37;"><font color="#CC9D37">Privacy Policy</font></a><br />
+                                            <font color="#FFFFFF">&copy; Philippine Esperanto Youth Congress</font><br />
+                                        </td>
+                                        <td width="25%">
+                                            <table align="right" border="0" cellpadding="0" cellspacing="0" width="116" style="border-collapse: collapse;">
+                                                <tr>
+                                                    <td width="32">
+                                                        <a href="https://fjk.up-esperas.org">
+                                                            <img alt="Website" src="img/www_icon_round.png" width="32" height="32" style="display: block;" />
+                                                        </a>
+                                                    </td>
+                                                    <td style="font-size: 0; line-height: 0; width: 10px;">&nbsp;</td>
+                                                    <td width="32">
+                                                        <a href="https://facebook.com/fjkesperanto">
+                                                            <img alt="Facebook" src="img/fb_icon_round.png" width="32" height="32" style="display: block;" />
+                                                        </a>
+                                                    </td>
+                                                    <td style="font-size: 0; line-height: 0; width: 10px;">&nbsp;</td>
+                                                    <td width="32">
+                                                        <a href="https://twitter.com/fjkesperanto">
+                                                            <img alt="Twitter" src="img/tw_icon_round.png" width="32" height="32" style="display: block;" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <div class="footer">
-                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                            <tr>
-                                <td>
-                                    M: <a target="_blank" href="sms://+639271821825">(+63) 908 249 1891</a>
-                                    <br />
-                                    E: <a target="_blank" href="mailto:peyc2020@up-esperas.org">peyc2020@up-esperas.org</a>
-                                    <br />
-                                    W: <a href="https://fjk.up-esperas.org" target="_blank">fjk.up-esperas.org</a>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </td>
-            </tr>
-        </table>
+        </table>        
     </body>
 </html>
