@@ -11,11 +11,11 @@ Also, please keep these numbers for reference when you have any inquiries or pro
 Registration ID: ${registrationId}
 Payment ID: ${paymentId}
 
-We were also informed of the following: 
+We were also informed of the following:
 
 Food Restrictions - You have stated that you have other food restrictions aside from the common choices shown on the form. Please send a message so that we can help you arrange a food plan tailored to your needs during the congress.
 
-Food Allergies - You have stated that you have other food allergies aside from the common ones shown on the form. Please send a message so that we can note your other allergies. 
+Food Allergies - You have stated that you have other food allergies aside from the common ones shown on the form. Please send a message so that we can note your other allergies.
 
 Lodging - You have stated your interest in getting a lodging from one of our partner hotels. We will contact you again when new information has come up regarding this.
 
