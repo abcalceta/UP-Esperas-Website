@@ -176,6 +176,7 @@ const api = {
         new CopyPlugin([
             { from: './src/api/i18n', to: 'i18n' },
             { from: './src/api/templates', to: 'templates' },
+            { from: './src/api/mail', to: 'mail' },
         ]),
         new webpack.IgnorePlugin(/\.(css|less)$/),
         new CompressionPlugin({

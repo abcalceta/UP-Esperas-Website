@@ -1,0 +1,65 @@
+{
+    "generalText": {
+        "title": "Filipina Junulara Kongreso de Esperanto",
+        "autoDisclaimer": "<b>NB.</b> Ĉi tiu mesaĝo estas sendita aŭtomate, al kiu vi povas respondi. Se vi pensas ke vi ricevis ĉi tiun erare, bonvolu <a href=\"mailto:peyc2020@up-esperas.org\" style=\"color: #418B45;\"><font color=\"#418B45\">kontakti nin</font></a> por ke ni forigu viajn informojn en nia sistemo. Elkoran dankon!",
+        "fromName": "<b>La Loka Kongresa Komitato</b><br>\n<b>Unua Filipina Junuara Kongreso de Esperanto</b>\n",
+        "contact": "Kontaktinformoj",
+        "about": "Pri",
+        "privacy": "Privateca Politiko",
+        "copyright": "&copy; Filipina Junulara Kongreso de Esperanto"
+    },
+    "confirm": {
+        "title": "Konfirmo - Filipina Junulara Kongreso de Esperanto",
+        "salut": "Kara %{name},",
+        "par00": "Ni kontaktas vin por informi vin ke vi aliĝis al la Unua Filipina Junulara Kongreso de Esperanto. Jen kelkaj informoj, kiujn ni ricevis de vi.",
+        "par01": "Ankaŭ, bonvolu konservi la jenajn numerojn por ke vi uzu ĝin en kazo de problemoj aŭ demandoj pri aliĝo aŭ pago.",
+        "par02": "Se vi havas ian ajn demandojn pri la aliĝo, bonvolu sendi retpoŝtmesaĝon ĉe <a target=\"_blank\" href=\"mailto:peyc2020@up-esperas.org\" style=\"color:#418B45;\"><font color=\"#418B45\">peyc2020@up-esperas.org</font></a>.",
+        "par03": "Koran dankon pro via intereso al la Unua Filipina Junulara Kongreso de Esperanto kaj ni esperas ke vi renkontu vin baldaŭ!",
+        "closing": "Sincere Via,",
+        "otherInfoPar": "Ni ankaŭ informiĝis pri la jenaj:",
+        "formInfo": {
+            "nickname": "Kromnomo",
+            "regCat": "Kategorio",
+            "payment": "Pagmaniero",
+            "regId": "Aliĝnumero",
+            "paymentId": "Pagnumero"
+        },
+        "otherInfo": {
+            "foodRestrictions": {
+                "header": "Speciala Dieto",
+                "icon": "img/fastfood_icon.png",
+                "desc": "Vi diris ke vi havas alian specialan dieton krom la montritaj sur la aliĝilo. Bonvolu sendi mesaĝon al ni por ke ni povu helpi vin aranĝi manĝplanon."
+            },
+            "foodAllergies": {
+                "header": "Manĝaĵaj Alergioj",
+                "icon": "img/healing_icon.png",
+                "desc": "Vi diris ke vi havas alian manĝaĵajn alergiojn krom la montritaj sur la aliĝilo. Bonvolu sendi mesaĝon al ni por ke ni notu vian kazon."
+            },
+            "lodging": {
+                "header": "Loĝado",
+                "icon": "img/hotel_icon.png",
+                "desc": "Vi interesiĝis antaŭmendi loĝejon per niaj partneraj hoteloj. Ni kontaktos vin denove, se novaj informoj pri ĝi aperos."
+            },
+            "congressPhoto": {
+                "header": "Kongresa Foto",
+                "icon": "img/photo_icon.png",
+                "desc": "Vi interesiĝis mendi ekzempleron de la kongresa foto. Ni informos vin denove, ĉu ni atingos la minimuman nombron de aliĝintoj, kiuj petis ĝin."
+            },
+            "invitLetter": {
+                "header": "Invitilo",
+                "icon": "img/mail_icon.png",
+                "desc": "Vi petis invitilon de ni. Bonvolu sendi mesaĝon al ni montrante vian adreson kaj aliajn rilatajn informojn por ke ni komencu prilabori ĝin."
+            },
+            "program": {
+                "header": "Kongresa Programo",
+                "icon": "img/mic_icon.png",
+                "desc": "Ni interesiĝis kontribui al la kongresa programo. Bonvolu atendi apartan mesaĝon de ni pri ĝi."
+            },
+            "comments": {
+                "header": "Komentoj",
+                "icon": "img/comment_icon.png",
+                "desc": "Ni rimarkis ke vi lasis komenton sur la aliĝilo. Bonvolu atendi ĉar ni respondos al ĝi per aparta mesaĝo."
+            }
+        }
+    }
+}

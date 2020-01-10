@@ -1,0 +1,42 @@
+1-A Filipina Junulara Kongreso de Esperanto
+1st Philippine Esperanto Youth Congress
+2020-04-23 - 2020-04-26
+Quezon-Urbo
+
+
+${this.localeObj.t('confirm.salut', {name: this.regInfo.nickname})}
+
+${this.localeObj.t('confirm.par00')}
+
+
+${this.localeObj.t('confirm.formInfo.nickname')}: ${this.regInfo.nickname}
+${this.localeObj.t('confirm.formInfo.regCat')}: ${this.regInfo.regCat}
+${this.localeObj.t('confirm.formInfo.payment')}: ${this.regInfo.paymentMethod}
+
+
+${this.localeObj.t('confirm.par01')}
+
+
+${this.localeObj.t('confirm.formInfo.regId')}: ${this.regInfo.registrationId}
+${this.localeObj.t('confirm.formInfo.paymentId')}: ${this.regInfo.paymentId}
+
+${this.otherInfoText}
+${this.localeObj.t('confirm.par02')}
+
+${this.localeObj.t('confirm.par03')}
+
+
+${this.localeObj.t('confirm.closing')}
+
+
+${this.localeObj.t('generalText.fromName')}
+
+
+${this.localeObj.t('generalText.autoDisclaimer')}
+
+${this.localeObj.t('generalText.contact')}:
+M: (+63) 908 249 1891
+E: peyc2020@up-esperas.org
+W: fjk.up-esperas.org
+FB: www.twitter.com/fjkesperanto
+TW: www.facebook.com/fjkesperanto

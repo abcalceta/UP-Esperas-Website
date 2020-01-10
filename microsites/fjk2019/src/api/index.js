@@ -223,7 +223,21 @@ function main() {
 
     expressApp.get('/api/mail_test', async function(req, res) {
         try {
-            const messageId = await Mailer.sendMail();
+            const messageId = await Mailer.sendConfirmationMail({
+                to: 'ABC <abc@def.ghz>',
+                nickname: 'Carl',
+                regCat: 'B1',
+                paymentMethod: 'paypal',
+                regId: uuidv4(),
+                paymentId: uuidv4(),
+                foodRestrictions: false,
+                foodAllergies: true,
+                lodging: false,
+                congressPhoto: true,
+                invitLetter: true,
+                program: true,
+                comments: true,
+            });
 
             res.status(200).send({
                 status: 200,
@@ -232,6 +246,7 @@ function main() {
             });
         }
         catch(err) {
+            console.error(err);
             logger.error(`Failed to send email: ${err.message}`);
 
             res.status(400).send({

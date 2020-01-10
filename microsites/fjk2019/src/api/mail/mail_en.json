@@ -1,0 +1,65 @@
+{
+    "generalText": {
+        "title": "Philippine Esperanto Youth Congress",
+        "autoDisclaimer": "<b>NOTE.</b> This is an automated message that you can reply to. If you think that you have received this message in error, <a href=\"mailto:peyc2020@up-esperas.org\" style=\"color: #418B45;\"><font color=\"#418B45\">please inform us</font></a> so we can remove your details from our system. Thank you!",
+        "fromName": "<b>The Local Organizing Committee</b><br>\n<b>First Philippine Esperanto Youth Congress</b>\n",
+        "contact": "Contact Details",
+        "about": "About",
+        "privacy": "Privacy Policy",
+        "copyright": "&copy; Philippine Esperanto Youth Congress"
+    },
+    "confirm": {
+        "title": "Confirmation - First Philippine Esperanto Youth Congress",
+        "salut": "Dear %{name},",
+        "par00": "We are contacting you to inform you that you have registered to the First Philippine Esperanto Youth Congress. Here are some details that we have received from you.",
+        "par01": "Also, please keep these numbers for reference when you have any inquiries or problems regarding registration or payment.",
+        "par02": "If you have any other registration concerns, please send an email to <a target=\"_blank\" href=\"mailto:peyc2020@up-esperas.org\" style=\"color:#418B45;\"><font color=\"#418B45\">peyc2020@up-esperas.org</font></a>.",
+        "par03": "Thank you very much for your interest to the First Philippine Esperanto Youth Congress and we hope to see you soon!",
+        "closing": "Sincerely Yours,",
+        "otherInfoPar": "We were also informed of the following:",
+        "formInfo": {
+            "nickname": "Nickname",
+            "regCat": "Registration Category",
+            "payment": "Payment Method",
+            "regId": "Registration ID",
+            "paymentId": "Payment ID"
+        },
+        "otherInfo": {
+            "foodRestrictions": {
+                "header": "Food Restrictions",
+                "icon": "img/fastfood_icon.png",
+                "desc": "You have stated that you have other food restrictions aside from the common choices shown on the form. Please send a message so that we can help you arrange a food plan."
+            },
+            "foodAllergies": {
+                "header": "Food Allergies",
+                "icon": "img/healing_icon.png",
+                "desc": "You have stated that you have other food allergies aside from the common ones shown on the form. Please send a message so that we can note your other allergies."
+            },
+            "lodging": {
+                "header": "Lodging",
+                "icon": "img/hotel_icon.png",
+                "desc": "You have stated your interest in getting a lodging from one of our partner hotels. We will contact you again when new information has come up regarding this."
+            },
+            "congressPhoto": {
+                "header": "Congress Photo",
+                "icon": "img/photo_icon.png",
+                "desc": "You have stated your interest in getting a physical copy of the congress photo. We will inform you again whether we reached the minimum number of interested participants."
+            },
+            "invitLetter": {
+                "header": "Invitation Letter",
+                "icon": "img/mail_icon.png",
+                "desc": "You have requested a printed invitation letter from us and requested to have it sent via regular mail. Please send a message to us with the name of the specific courier and shipping address for us to start processing your request."
+            },
+            "program": {
+                "header": "Congress Program",
+                "icon": "img/mic_icon.png",
+                "desc": "You have stated your interest in contributing to the congress program. Please wait for a separate message from us regarding this."
+            },
+            "comments": {
+                "header": "Comments",
+                "icon": "img/comment_icon.png",
+                "desc": "We noticed that you left a comment on the form. Please wait as we will reply to it by sending a separate message."
+            }
+        }
+    }
+}
