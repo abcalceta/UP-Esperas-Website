@@ -66,7 +66,7 @@ function main() {
                 });
             })
             .catch((errObj) => {
-                console.error(`Error in ${req.path}: ${errObj}`);
+                logger.error(`Error in ${req.path}: ${errObj}`);
 
                 if(typeof errObj.oAuthUrl === 'string') {
                     res.status(401).send({
@@ -211,11 +211,31 @@ function main() {
             res.status(200).type('html').send(paymentPage);
         }
         catch(err) {
-            console.error(`Failed to fetch payment page: ${err}`);
+            logger.error(`Failed to fetch payment page: ${err}`);
 
             res.status(400).send({
                 status: 400,
                 title: 'Failed to fetch payment page',
+                error: err,
+            });
+        }
+    });
+
+    expressApp.get('/api/name_list', async function(req, res) {
+        try {
+            const participantList = await dbInterface.getParticipantList();
+
+            // Remove first two entries
+            res.status(200).send({
+                names: participantList.slice(2)
+            });
+        }
+        catch(err) {
+            logger.error(`Failed to fetch list of participants: ${err}`);
+
+            res.status(400).send({
+                status: 400,
+                title: 'Failed to fetch list of participants',
                 error: err,
             });
         }
@@ -246,7 +266,7 @@ function main() {
             });
         }
         catch(err) {
-            console.error(err);
+            logger.error(err);
             logger.error(`Failed to send email: ${err.message}`);
 
             res.status(400).send({
@@ -266,10 +286,10 @@ function main() {
 
     expressApp.listen(process.env.API_PORT, (error) => {
         if(error) {
-            console.error(`Failed to run API server on port ${process.env.API_PORT}: ${error}`);
+            logger.error(`Failed to run API server on port ${process.env.API_PORT}: ${error}`);
         }
         else {
-            console.info(`API server is running on port ${process.env.API_PORT}`);
+            logger.info(`API server is running on port ${process.env.API_PORT}`);
         }
     });
 }

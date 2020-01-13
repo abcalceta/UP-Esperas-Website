@@ -147,4 +147,28 @@ export class DbInterface{
 
         return paymentId;
     }
+
+    async getParticipantList() {
+        const nameList = await this.repos.basic.getNamesCountries();
+        const isNameInList = await this.repos.addons.getIsNamesInList();
+
+        const nameListHidden = nameList.map((v, i) => {
+            let newNameEntry = {
+                country: v.originCountry,
+            };
+
+            if(isNameInList[v['registrantId']]['isNameInList'] === 1) {
+                newNameEntry.lastName = v.lastName;
+                newNameEntry.firstName = v.firstName;
+            }
+            else {
+                newNameEntry.lastName = '';
+                newNameEntry.firstName = '<hidden>';
+            }
+
+            return newNameEntry;
+        });
+
+        return nameListHidden;
+    }
 }

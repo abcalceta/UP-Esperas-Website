@@ -1,0 +1,14 @@
+{
+    "infoParticipants": {
+        "topSubTitle": "Participants",
+        "title": "Participants",
+        "subTitle": "First Philippine Esperanto Youth Congress",
+        "hiddenName": "hidden",
+        "nameEntry": "%{firstName} %{lastName} from %{country}",
+        "listError": "Cannot fetch list at this time.",
+        "intro": {
+            "title": "List of Participants",
+            "desc": "Here are the list of participants for the First Philippine Esperanto Youth Congress."
+        }
+    }
+}

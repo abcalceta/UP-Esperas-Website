@@ -1,0 +1,14 @@
+{
+    "infoParticipants": {
+        "topSubTitle": "Aliĝantoj",
+        "title": "Aliĝantoj",
+        "subTitle": "Unua Filipina Junulara Kongreso de Esperanto",
+        "hiddenName": "kaŝita",
+        "nameEntry": "%{firstName} %{lastName} el %{country}",
+        "listError": "Ne povas akiri liston nun.",
+        "intro": {
+            "title": "Listo de Aliĝantoj",
+            "desc": "Jen la listo de aliĝntoj por la Unua Filipina Junulara Kongreso de Esperanto."
+        }
+    }
+}

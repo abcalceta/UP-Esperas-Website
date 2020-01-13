@@ -40,6 +40,10 @@
         "title": "${this.localeObj.t('navbar.congressInfo.congressInfo')}",
         "sublinks": [
             {
+                "title": "${this.localeObj.t('navbar.congressInfo.countryCity')}",
+                "link": "#!/congress/country-city"
+            },
+            {
                 "title": "${this.localeObj.t('navbar.congressInfo.venue')}",
                 "link": "#!/congress/venue"
             },
@@ -58,6 +62,10 @@
             {
                 "title": "${this.localeObj.t('navbar.congressInfo.paymentGuidelines')}",
                 "link": "#!/congress/payment-guidelines"
+            },
+            {
+                "title": "${this.localeObj.t('navbar.congressInfo.participantsList')}",
+                "link": "#!/congress/participants"
             }
         ]
     },

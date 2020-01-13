@@ -93,6 +93,12 @@ export class BasicInfoRepository extends BaseRepository {
         );
     }
 
+    getNamesCountries() {
+        return this.dao.all(
+            'SELECT registrantId, lastName, firstName, originCountry FROM basicInfo'
+        );
+    }
+
     getById(registrantId) {
         return this.dao.get(
             'SELECT * FROM basicInfo WHERE registrantId=?',

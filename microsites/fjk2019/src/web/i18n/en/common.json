@@ -64,11 +64,13 @@
         },
         "congressInfo": {
             "congressInfo": "Congress Information",
+            "countryCity": "Country and City",
             "venue": "Venue",
             "lodging": "Lodging",
             "excursion": "Excursion",
             "regGuidelines": "Registration Guidelines",
-            "paymentGuidelines": "Payment Guidelines"
+            "paymentGuidelines": "Payment Guidelines",
+            "participantsList": "List of Participants"
         },
         "participate": {
             "participate": "Participate",

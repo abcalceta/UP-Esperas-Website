@@ -61,6 +61,21 @@ export class AddonsRepository extends BaseRepository {
         );
     }
 
+    async getIsNamesInList() {
+        let resultsObj = {};
+        let resultsList = await this.dao.all(
+            'SELECT registrantId, isNameInList FROM addons'
+        );
+
+        resultsList.forEach((v, i) => {
+            resultsObj[v['registrantId']] = {
+                isNameInList: v['isNameInList'],
+            };
+        });
+
+        return resultsObj;
+    }
+
     getById(registrantId) {
         return this.dao.get(
             'SELECT * FROM addons WHERE registrantId=?',

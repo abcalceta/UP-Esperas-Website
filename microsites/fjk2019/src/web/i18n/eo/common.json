@@ -64,11 +64,13 @@
         },
         "congressInfo": {
             "congressInfo": "Kongresaj Informoj",
+            "countryCity": "Lando kaj Urbo",
             "venue": "Kongresejo",
             "lodging": "Loĝado",
             "excursion": "Ekskurso",
             "regGuidelines": "Regularo pri Aliĝoj",
-            "paymentGuidelines": "Pagmanieroj"
+            "paymentGuidelines": "Pagmanieroj",
+            "participantsList": "Listo de Aliĝantoj"
         },
         "participate": {
             "participate": "Partopreni",

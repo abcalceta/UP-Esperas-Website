@@ -11,11 +11,14 @@ import {AboutLkkPage} from './views/about/AboutLkk';
 import {AboutLogoPage} from './views/about/AboutLogo';
 import {AboutFejPage} from './views/about/AboutFej';
 import {PrivacyPage} from './views/about/PrivacyPage';
+import {CopyrightPage} from './views/about/CopyrightPage';
 
 // Congress info subpage
+import {CountryCityPage} from './views/congress_info/CountryCityPage';
 import {ExcursionPage} from './views/congress_info/ExcursionPage';
 import {RegisterGuidelinesPage} from './views/congress_info/RegisterGuidelinesPage';
 import {PaymentGuidelinesPage} from './views/congress_info/PaymentGuidelinesPage';
+import {ParticipantsPage} from './views/congress_info/ParticipantsPage';
 
 // Participate subpage
 import {RegisterPage} from './views/participate/RegisterPage';
@@ -33,11 +36,14 @@ m.route(root, '/', {
     '/about/logo': AboutLogoPage,
     '/about/fej': AboutFejPage,
     '/about/privacy': PrivacyPage,
+    '/about/copyright': CopyrightPage,
 
     // Congress info subpage
+    '/congress/country-city': CountryCityPage,
     '/congress/excursion': ExcursionPage,
     '/congress/register-guidelines': RegisterGuidelinesPage,
     '/congress/payment-guidelines': PaymentGuidelinesPage,
+    '/congress/participants': ParticipantsPage,
 
     // Participate subpage
     '/donate': DonatePage,

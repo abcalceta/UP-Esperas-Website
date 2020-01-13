@@ -1,0 +1,51 @@
+{
+    "infoCountryCity": {
+        "topSubTitle": "Congress Country and City",
+        "title": "Congress Country and City",
+        "subTitle": "First Philippine Esperanto Youth Congress",
+        "basic": {
+            "title": "Location and Composition",
+            "pars": "<p>\nThe country is located in Southeast Asia, at the western end of the Pacific Ocean. The country has 7,641 islands, divided among 81 provinces. The capital is Manila.\n</p>\n<p>\nQuezon City is a city located in the Manila metropolitan area, which is divided into 17 cities. It is the largest city in the region with an area of 166.20 km<sup>2</sup> and the most populous in the country with 2,936,000 residents (2015). A former capital (1948-1976), it is a highly urbanized city which is home to many government offices, business districts, universities, and residential and commercial areas. It is located immediately to the east of the capital Manila.\n</p>\n<p>\nDo not confuse Quezon City with Quezon Province, which is a province situated southeast of Metro Manila. That’s why it is important to affix the term \"City\" to clear any confusion. It is also called \"QC\" /kjusi/, which locals understand.\n</p>\n"
+        },
+        "travel": {
+            "title": "Getting There",
+            "pars": "<p>\nFlights to Manila land at Ninoy Aquino International Airport (MNL). Many airline companies fly to Manila. Alternatively, one can also fly to Clark (CRK), which is 81 kilometers to the north. While Clark is far from Metro Manila, an express bus which goes directly to the congress city is available. However, there are fewer flights from overseas which fly to Clark.\n</p>\n<p>\nParticipants from countries in Southeast and East Asia, as well as from the USA and Australia, can avail of flights from low-cost carriers such as Cebu Pacific, JetStar, AirAsia, FlyScoot, etc.) and buy tickets for a relatively lower price. Check if these companies offer flights between your city and Manila, and save money which you can use for other purposes during the trip.\n</p>\n"
+        },
+        "climate": {
+            "title": "Climate",
+            "pars": "<p>\nThe climate is tropical and insular, mostly divided into two major seasons: the dry season (December-May) and wet season (June-November). The “summer season” is from March to May, with dry and humid weather. Monsoon and typhoons start to come from June, which gives the country a rainy weather, while winter monsoon, which brings cooler weather, begins in November and ends in February. The outside temperature in April is between 30°C kaj 36°C. Bring an umbrella to protect yourself from the sun especially at noontime.\n</p>\n"
+        },
+        "time": {
+            "title": "Time",
+            "pars": "<p>\nThe Philippine Standard Time is UTC+8:00. Usually, government offices and private firms are open from 8:00AM to 5:00PM from Mondays to Fridays and closed on Saturdays and Sundays.\n</p>\n"
+        },
+        "lang": {
+            "title": "Languages",
+            "pars": "<p>\nFilipino and English are the two official languages of the country, with 183 other regional and ethnic languages. Most citizens are capable of speaking in everyday English, so it is very opportune for foreigners to communicate in English when needed. Almost all store signs, official documents, and menus are in English. Foreigners could also try learning even basic expressions in Filipino, which locals would appreciate.\n</p>\n"
+        },
+        "electric": {
+            "title": "Electricity",
+            "pars": "<p>\nThe voltage is 220 Volts. The sockets are mostly Type A (two parallel flat pins) and occasionally, Type B (two parallel flat pins with round grounding pin). If your device does not have this kind of plug, please buy an adapter in your country or at local shops around the Congress City.\n</p>\n"
+        },
+        "phone": {
+            "title": "Telephone",
+            "pars": "<p>\nThe country code of the Philippines is <code>+63</code>, and the area code of the congress region (Metro Manila) is <code>2</code>. Landline phones have 8 digits (as of October 2019), and mobile phones have 11 digits. Mobile phones are far more used than landline phones. To call another landline phone within the country, dial <code>63-2-(telephone number)</code>. To call another mobile phone number within the country, just dial their number starting with zero (0), e.g. <code>0936-275-2034</code>. For emergencies, call <code>911</code> (for free).\n</p>\n<p>\nPrepaid SIM cards for non-Filipino tourists are available for free in their respective kiosks at the Ninoy Aquino International Airport (NAIA). It is also possible to buy mobile data packets and credits for unlimited SMS messages and calls for a cheap price.\n</p>\n"
+        },
+        "internet": {
+            "title": "Internet",
+            "pars": "<p>\nFree wireless internet connection (Wi-Fi) is usually available in many hotels, coffee shops, hotels, and other public infrastructures. In the congress venue and the university, there is also a free public Wi-Fi connection. However, a strong and fast connection cannot always be guaranteed. Using Philippine SIM-cards, one could also avail of LTE or 4G connections that can be used anywhere.\n</p>\n"
+        },
+        "money": {
+            "title": "Money",
+            "pars": "<p>\nThe currency is Philippine Peso (PHP). Banknotes with the following values are in circulation: 20, 50, 100, 200, 500, and 1000. Coins with values of 0.25, 1, 5, and 10 are also used. While money-changing shops are available at the airport, there are also money-changing shops and banks in the congress city which offer better foreign exchange rates. Major credit cards and debit cards are also accepted at most hotels, shops, and restaurants.\n</p>\n"
+        },
+        "water": {
+            "title": "Drinking Water",
+            "pars": "<p>\nWhile safe and clean water is generally accessible, the organizers advise against drinking tap water. Ask the hotel staff first if their tap water is potable. Cafeterias and restaurants usually have free drinking water, which can be availed of on request or through self-service. In any case, bottled water can also be bought anywhere.\n</p>\n"
+        },
+        "health": {
+            "title": "Health Service and Medicine",
+            "pars": "<p>\nUniversity of the Philippines Diliman has its own health service, which is found near the congress venue. There are also many pharmacies around the city. Bring along a prescription written in the Latin alphabet, and preferably know the English translation of your medicine. If you have any health conditions that could affect the congress preparations (allergies, etc.), do not hesitate to inform the organizers.\n</p>\n"
+        }
+    }
+}
