@@ -92,6 +92,12 @@ function initDomScripts() {
     Materialize.Tooltip.init(document.querySelectorAll('.tooltipped'));
 }
 
+function htmlEntities(rawStr) {
+    return rawStr.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
+        return '&#'+i.charCodeAt(0)+';';
+    });
+}
+
 function evalTemplate(tpl, localeObj) {
     return new Function(`return \`${tpl}\`;`).call({localeObj: localeObj});
 }
@@ -100,6 +106,7 @@ export let DomScripts = {
     initDomScripts: initDomScripts,
     animateOnce: animateOnce,
     animate: animate,
+    htmlEntities: htmlEntities,
     evalTemplate: evalTemplate,
     removeAllChildren: removeAllChildren,
 };
