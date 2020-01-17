@@ -192,6 +192,38 @@ function main() {
                 return;
             }
 
+            try {
+                const messageId = await Mailer.sendConfirmationMail({
+                    to: req.body['txt-email'],
+                    nickname: req.body['txt-first-name'],
+                    regCat: req.body['hdn-reg-category'],
+                    paymentMethod: req.body['rbx-payment-method'],
+                    regId: entryIds.registrantId,
+                    paymentId: entryIds.paymentId,
+                    foodRestrictions: (req.body['rbx-food-pref'] == 'other'),
+                    foodAllergies: req.body['cbx-food-allerg'].indexOf('other') != -1,
+                    lodging: (req.body['cbx-lodging-interest'] == 'on'),
+                    congressPhoto: (req.body['cbx-others-photo'] == 'on'),
+                    invitLetter: (req.body['cbx-others-invitletter'] == 'on'),
+                    program: (req.body['cbx-others-contrib'] == 'on'),
+                    comments: req.body['txt-others-suggest'].trim().length > 0,
+                }, req.body['hdn-locale']);
+
+                logger.info(`Confirmation message successfully sent with ID ${messageId}`);
+            }
+            catch(err) {
+                logger.error(err);
+                logger.error(`Failed to send email: ${err.message}`);
+    
+                res.status(500).send({
+                    status: 500,
+                    title: 'Failed to send message',
+                    error: err.message,
+                });
+
+                return;
+            }
+
             logger.info('Registration successfully recorded!');
             logger.info(`registrantId ${entryIds.registrantId}`);
             logger.info(`paymentId ${entryIds.paymentId}`);
@@ -244,20 +276,20 @@ function main() {
     expressApp.get('/api/mail_test', async function(req, res) {
         try {
             const messageId = await Mailer.sendConfirmationMail({
-                to: 'ABC <abc@def.ghz>',
+                to: 'ccdizon3@up.edu.ph',
                 nickname: 'Carl',
                 regCat: 'B1',
                 paymentMethod: 'paypal',
                 regId: uuidv4(),
                 paymentId: uuidv4(),
-                foodRestrictions: false,
+                foodRestrictions: true,
                 foodAllergies: true,
-                lodging: false,
+                lodging: true,
                 congressPhoto: true,
                 invitLetter: true,
                 program: true,
                 comments: true,
-            });
+            }, 'eo');
 
             res.status(200).send({
                 status: 200,

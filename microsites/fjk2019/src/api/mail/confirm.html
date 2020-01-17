@@ -4,7 +4,7 @@
     xmlns:v="urn:schemas-microsoft-com:vml"
     xmlns:o="urn:schemas-microsoft-com:office:office">
     <head>
-        <title>${this.localeObj.t('confirm.title')}</title>
+        <title>${this.localeObj.t('confirm.subject')}</title>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="format-detection" content="telephone=no" />
@@ -12,27 +12,44 @@
         <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE;" />
 
         <link rel="stylesheet" href="font/clarika_geometric/style.css" />
+        <style type="text/css">
+            /*
+            @media only screen and (min-device-width: 601px) {
+                .content {width: 600px !important;}
+            }
+            */
+        </style>
     </head>
-    <body class="">
-        <span class="preheader" style="display: none; visibility: hidden; width: 0; opacity: 0; mso-hide: all;">We are writing to confirm our receipt of your registration details</span>
+    <body class="" style="margin: 0; padding: 0; min-width: 100% !important;">
+        <span class="preheader" style="display: none; visibility: hidden; width: 0; opacity: 0; mso-hide: all;">${this.localeObj.t('confirm.preheader')}</span>
 
         <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
             <tr>
                 <td style="padding: 20px 0 30px 0;">
-                    <table align="center" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+                    <!--[if (gte mso 9)|(IE)]>
+                    <table width="600" align="center" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                    <td>
+                    <![endif]-->
+                    <table class="content" align="center" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 600px;">
                         <tr>
                             <td align="center" bgcolor="#FFFFFF" style="padding: 40px 0 20px 0; border-width: 2px 0; border-style: solid none; border-color:#418B45;">
                                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
                                     <tr>
                                         <td style="padding: 10px 20px 0 20px;">
-                                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="128" style="width: 100%; max-width: 128px; border-collapse: collapse;">
+                                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="128" style="width: 100%; max-width: 128px; display: inline-block; vertical-align: top; border-collapse: collapse;">
                                                 <tr>
                                                     <td height="128" style="padding: 0 20px 20px 0;">
-                                                        <img alt="Official logo of the Philippine Esperanto Youth Congress" src="img/logo.png" width="128" height="128" style="display: block;" />
+                                                        <img border="0" alt="Official logo of the Philippine Esperanto Youth Congress" src="https://fjk.up-esperas.org/mail/img/logo.png" width="128" height="128" style="display: block;" />
                                                     </td>
                                                 </tr>
                                             </table>
-                                            <table align="left" border="0" cellpadding="0" cellspacing="0" style="width: 100%; max-width: 300px; border-collapse: collapse;">
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            <table width="400" align="left" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                            <td>
+                                            <![endif]-->
+                                            <table align="left" border="0" cellpadding="0" cellspacing="0" style="width: 100%; max-width: 400px; display: inline-block; vertical-align: top; border-collapse: collapse;">
                                                 <tr>
                                                     <td height="128">
                                                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -61,6 +78,11 @@
                                                     </td>
                                                 </tr>
                                             </table>
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            </td>
+                                            </tr>
+                                            </table>
+                                            <![endif]-->
                                         </td>
                                     </tr>
                                 </table>
@@ -70,10 +92,10 @@
                             <td>
                                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
                                     <tr>
-                                        <td bgcolor="#FCFCFC" background="img/pattern/green_bar_pattern.png" width="32" height="100%" valign="top" style="background-image: url('img/pattern/green_bar_pattern.png'); background-repeat: repeat-y; background-position: top left;">
+                                        <td bgcolor="#FCFCFC" background="https://fjk.up-esperas.org/mail/img/pattern/green_bar_pattern.png" width="32" height="100%" valign="top" style="background-image: url('https://fjk.up-esperas.org/mail/img/pattern/green_bar_pattern.png'); background-repeat: repeat-y; background-position: top left;">
                                             <!--if[gte mso 9]>
                                             <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width: 32px; mso-height-percent:1000;">
-                                            <v:fill type="tile" src="img/pattern/green_bar_pattern.png" color="#FCFCFC" />
+                                            <v:fill type="tile" src="https://fjk.up-esperas.org/mail/img/pattern/green_bar_pattern.png" color="#FCFCFC" />
                                             <v:textbox style="mso-fit-shape-to-text: true" inset="0,0,0,0">
                                             <![endif]-->
                                             <table border="0" cellpadding="0" cellspacing="0" width="32" style="border-collapse: collapse;">
@@ -91,10 +113,10 @@
                                         <td bgcolor="#FCFCFC" style="width: 100%; max-width: 530px; padding: 0 0 0 0;">
                                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
                                                 <tr>
-                                                    <td bgcolor="#FCFCFC" valign="top" background="img/pattern/yellow_bar.png" width="100%" height="32" style="background-image: url('img/pattern/yellow_bar.png'); background-repeat: repeat-x; background-position: left top;">
+                                                    <td bgcolor="#FCFCFC" valign="top" background="https://fjk.up-esperas.org/mail/img/pattern/yellow_bar.png" width="100%" height="32" style="background-image: url('https://fjk.up-esperas.org/mail/img/pattern/yellow_bar.png'); background-repeat: repeat-x; background-position: left top;">
                                                         <!--if[gte mso 9]>
                                                         <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;height:32px;">
-                                                        <v:fill type="tile" src="img/pattern/yellow_bar.png" color="#FCFCFC" />
+                                                        <v:fill type="tile" src="https://fjk.up-esperas.org/mail/img/pattern/yellow_bar.png" color="#FCFCFC" />
                                                         <v:textbox style="mso-fit-shape-to-text: true" inset="0,0,0,0">
                                                         <![endif]-->
                                                         &nbsp;
@@ -164,10 +186,10 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td bgcolor="#FFFFFF" background="img/pattern/red_bar.png" width="100%" height="32" style="background-image: url('img/pattern/red_bar.png'); background-repeat: repeat-x; background-position: top left;">
+                                                    <td bgcolor="#FFFFFF" background="https://fjk.up-esperas.org/mail/img/pattern/red_bar.png" width="100%" height="32" style="background-image: url('https://fjk.up-esperas.org/mail/img/pattern/red_bar.png'); background-repeat: repeat-x; background-position: top left;">
                                                         <!--if[gte mso 9]>
                                                         <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;height:32px;">
-                                                        <v:fill type="tile" src="img/pattern/red_bar.png" color="#FFFFFF" />
+                                                        <v:fill type="tile" src="https://fjk.up-esperas.org/mail/img/pattern/red_bar.png" color="#FFFFFF" />
                                                         <v:textbox style="mso-fit-shape-to-text: true" inset="0,0,0,0">
                                                         <![endif]-->
                                                         &nbsp;
@@ -179,10 +201,10 @@
                                                 </tr>
                                             </table>
                                         </td>
-                                        <td background="img/pattern/green_bar_squares.png" bgcolor="#FCFCFC" width="32" height="100%" valign="top" style="background-image: url('img/pattern/green_bar_squares.png'); background-repeat: repeat-y; background-position: top left;">
+                                        <td background="https://fjk.up-esperas.org/mail/img/pattern/green_bar_squares.png" bgcolor="#FCFCFC" width="32" height="100%" valign="top" style="background-image: url('https://fjk.up-esperas.org/mail/img/pattern/green_bar_squares.png'); background-repeat: repeat-y; background-position: top left;">
                                             <!--if[gte mso 9]>
                                             <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width: 32px; mso-height-percent:1000;">
-                                            <v:fill type="tile" src="img/pattern/green_bar_squares.png" color="#FCFCFC" />
+                                            <v:fill type="tile" src="https://fjk.up-esperas.org/mail/img/pattern/green_bar_squares.png" color="#FCFCFC" />
                                             <v:textbox style="mso-fit-shape-to-text: true" inset="0,0,0,0">
                                             <![endif]-->
                                             <table border="0" cellpadding="0" cellspacing="0" width="32" style="border-collapse: collapse;">
@@ -206,6 +228,11 @@
                                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
                                     <tr>
                                         <td style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;">
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            <table width="415" align="left" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                            <td>
+                                            <![endif]-->
                                             <table align="left" border="0" cellpadding="0" cellspacing="0" style="width: 100%; max-width: 415px; border-collapse: collapse;">
                                                 <tr>
                                                     <td height="40" style="padding: 0 0 10px 0;">
@@ -214,6 +241,17 @@
                                                     </td>
                                                 </tr>
                                             </table>
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            </td>
+                                            </tr>
+                                            </table>
+                                            <![endif]-->
+
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            <table width="120" align="left" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                            <td>
+                                            <![endif]-->
                                             <table align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; max-width: 120px; border-collapse: collapse;">
                                                 <tr>
                                                     <td height="40" style="padding: 0 0 10px 0;">
@@ -221,19 +259,19 @@
                                                             <tr>
                                                                 <td width="32">
                                                                     <a href="https://fjk.up-esperas.org">
-                                                                        <img alt="Website" src="img/www_icon_round.png" width="32" height="32" style="display: block;" />
+                                                                        <img border="0" alt="Website" src="https://fjk.up-esperas.org/mail/img/contact_icons/www_icon_round.png" width="32" height="32" style="display: block;" />
                                                                     </a>
                                                                 </td>
                                                                 <td style="font-size: 0; line-height: 0; width: 10px;">  </td>
                                                                 <td width="32">
                                                                     <a href="https://facebook.com/fjkesperanto">
-                                                                        <img alt="Facebook" src="img/fb_icon_round.png" width="32" height="32" style="display: block;" />
+                                                                        <img border="0" alt="Facebook" src="https://fjk.up-esperas.org/mail/img/contact_icons/fb_icon_round.png" width="32" height="32" style="display: block;" />
                                                                     </a>
                                                                 </td>
                                                                 <td style="font-size: 0; line-height: 0; width: 10px;">  </td>
                                                                 <td width="32">
                                                                     <a href="https://twitter.com/fjkesperanto">
-                                                                        <img alt="Twitter" src="img/tw_icon_round.png" width="32" height="32" style="display: block;" />
+                                                                        <img border="0" alt="Twitter" src="https://fjk.up-esperas.org/mail/img/contact_icons/tw_icon_round.png" width="32" height="32" style="display: block;" />
                                                                     </a>
                                                                 </td>
                                                             </tr>
@@ -241,12 +279,22 @@
                                                     </td>
                                                 </tr>
                                             </table>
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            </td>
+                                            </tr>
+                                            </table>
+                                            <![endif]-->
                                         </td>
                                     </tr>
                                 </table>
                             </td>
                         </tr>
                     </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    </tr>
+                    </table>
+                    <![endif]-->
                 </td>
             </tr>
         </table>        

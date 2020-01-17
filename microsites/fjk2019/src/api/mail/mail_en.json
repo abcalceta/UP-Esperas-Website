@@ -9,7 +9,8 @@
         "copyright": "&copy; Philippine Esperanto Youth Congress"
     },
     "confirm": {
-        "title": "Confirmation - First Philippine Esperanto Youth Congress",
+        "subject": "Your registration at the First Philippine Esperanto Youth Congress",
+        "preheader": "We are writing to confirm our receipt of your registration details",
         "salut": "Dear %{name},",
         "par00": "We are contacting you to inform you that you have registered to the First Philippine Esperanto Youth Congress. Here are some details that we have received from you.",
         "par01": "Also, please keep these numbers for reference when you have any inquiries or problems regarding registration or payment.",
@@ -27,37 +28,37 @@
         "otherInfo": {
             "foodRestrictions": {
                 "header": "Food Restrictions",
-                "icon": "img/fastfood_icon.png",
+                "icon": "https://fjk.up-esperas.org/mail/img/confirm_icons/fastfood_icon.png",
                 "desc": "You have stated that you have other food restrictions aside from the common choices shown on the form. Please send a message so that we can help you arrange a food plan."
             },
             "foodAllergies": {
                 "header": "Food Allergies",
-                "icon": "img/healing_icon.png",
+                "icon": "https://fjk.up-esperas.org/mail/img/confirm_icons/healing_icon.png",
                 "desc": "You have stated that you have other food allergies aside from the common ones shown on the form. Please send a message so that we can note your other allergies."
             },
             "lodging": {
                 "header": "Lodging",
-                "icon": "img/hotel_icon.png",
+                "icon": "https://fjk.up-esperas.org/mail/img/confirm_icons/hotel_icon.png",
                 "desc": "You have stated your interest in getting a lodging from one of our partner hotels. We will contact you again when new information has come up regarding this."
             },
             "congressPhoto": {
                 "header": "Congress Photo",
-                "icon": "img/photo_icon.png",
+                "icon": "https://fjk.up-esperas.org/mail/img/confirm_icons/photo_icon.png",
                 "desc": "You have stated your interest in getting a physical copy of the congress photo. We will inform you again whether we reached the minimum number of interested participants."
             },
             "invitLetter": {
                 "header": "Invitation Letter",
-                "icon": "img/mail_icon.png",
+                "icon": "https://fjk.up-esperas.org/mail/img/confirm_icons/mail_icon.png",
                 "desc": "You have requested a printed invitation letter from us and requested to have it sent via regular mail. Please send a message to us with the name of the specific courier and shipping address for us to start processing your request."
             },
             "program": {
                 "header": "Congress Program",
-                "icon": "img/mic_icon.png",
+                "icon": "https://fjk.up-esperas.org/mail/img/confirm_icons/mic_icon.png",
                 "desc": "You have stated your interest in contributing to the congress program. Please wait for a separate message from us regarding this."
             },
             "comments": {
                 "header": "Comments",
-                "icon": "img/comment_icon.png",
+                "icon": "https://fjk.up-esperas.org/mail/img/confirm_icons/comment_icon.png",
                 "desc": "We noticed that you left a comment on the form. Please wait as we will reply to it by sending a separate message."
             }
         }

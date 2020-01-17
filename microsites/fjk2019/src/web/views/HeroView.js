@@ -1,7 +1,10 @@
 import m from 'mithril';
+import smoothscroll from 'smoothscroll-polyfill';
 
 export class HeroView {
     onupdate() {
+        smoothscroll.polyfill();
+
         const scrollClick = document.getElementById('a-main-content');
         if(scrollClick && !scrollClick.dataset.hasClick) {
             scrollClick.addEventListener('click', (e) => {
