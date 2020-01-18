@@ -9,7 +9,8 @@ export class RegisterRepository extends BaseRepository {
             registrantId TEXT NOT NULL,
             paymentId TEXT NOT NULL,
             nickname TEXT NOT NULL,
-            locale TEXT
+            locale TEXT,
+            isConfirmSent INTEGER DEFAULT 0
         )
         `;
 
@@ -36,6 +37,17 @@ export class RegisterRepository extends BaseRepository {
             paymentId,
             nickname,
             locale
+        );
+    }
+
+    writeConfirmedMail(registrantId, isConfirmed = false) {
+        return this.dao.run(
+            `UPDATE registrants
+            SET isConfirmSent = ?
+            WHERE registrantId = ?
+            `,
+            isConfirmed ? 1 : 0,
+            registrantId,
         );
     }
 }

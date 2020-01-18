@@ -6,12 +6,31 @@ import nodemailer from 'nodemailer';
 import Polyglot from 'node-polyglot';
 import {loggers} from 'winston';
 
-async function sendConfirmationMail(mailAttrs, locale='en') {
+async function sendConfirmationMail(formObj, registrantId, paymentId, locale='en') {
     const logger = loggers.get(process.env.SHARED_LOGGER_ID);
+    const toMail = formObj['txt-email'];
+    const foodAllergiesList = (formObj['cbx-food-allerg'] === undefined) ? [] : formObj['cbx-food-allerg'];
 
-    //logger.info(`Sending mail ${process.env.MAILER_USER} -> ${toEmail}`);
+    logger.info(`Sending mail ${process.env.MAILER_USER} -> ${toMail}`);
 
-    const mailObj = await buildConfirmationMail(mailAttrs, locale);
+    const mailObj = await buildConfirmationMail({
+        to: toMail,
+        firstName: formObj['txt-first-name'],
+        lastName: formObj['txt-last-name'],
+        countryCode: formObj['select-countries-list'],
+        nickname: formObj['txt-nickname'],
+        regCat: formObj['hdn-reg-category'],
+        paymentMethod: formObj['rbx-payment-method'],
+        regId: registrantId,
+        paymentId: paymentId,
+        foodRestrictions: (formObj['rbx-food-pref'] == 'other'),
+        foodAllergies: foodAllergiesList.indexOf('other') != -1,
+        lodging: (formObj['cbx-lodging-interest'] == 'on'),
+        congressPhoto: (formObj['cbx-others-photo'] == 'on'),
+        invitLetter: (formObj['cbx-others-invitletter'] == 'on'),
+        program: (formObj['cbx-others-contrib'] == 'on'),
+        comments: formObj['txt-others-suggest'].trim().length > 0,
+    }, locale);
 
     /*
     const dummyAccount = await nodemailer.createTestAccount();
@@ -39,17 +58,34 @@ async function sendConfirmationMail(mailAttrs, locale='en') {
 
     const message = {
         from: `${mailObj.fromName} <${process.env.MAILER_USER}>`,
-        to: mailAttrs.to,
+        to: `${formObj['txt-first-name']} ${formObj['txt-last-name']} <${toMail}>`,
         subject: mailObj.subject,
         text: mailObj.txt,
         html: mailObj.html,
     };
 
-    await transporter.verify();
-    const messageInfo = await transporter.sendMail(message);
+    const receiptMessage = {
+        from: process.env.MAILER_USER,
+        to: 'peyc2020@gmail.com',
+        subject: 'Receipt of new registration from server',
+        text: mailObj.receiptTxt,
+    };
 
-    logger.info(`Email successfully sent to ${mailAttrs.to} with ID: ${messageInfo.messageId}`);
-    //logger.info(`Test email successfully sent: ${nodemailer.getTestMessageUrl(messageInfo)}`);
+    await transporter.verify();
+
+    const messageInfo = await transporter.sendMail(message);
+    const receiptMessageInfo = await transporter.sendMail(receiptMessage);
+
+    logger.info(`Email successfully sent with ID: ${messageInfo.messageId}`);
+    logger.info(`Receipt mail successfully sent with ID: ${messageInfo.messageId}`);
+
+    if(nodemailer.getTestMessageUrl(messageInfo)) {
+        logger.info(`Test email successfully sent: ${nodemailer.getTestMessageUrl(messageInfo)}`);
+    }
+
+    if(nodemailer.getTestMessageUrl(receiptMessageInfo)) {
+        logger.info(`Test receipt email successfully sent: ${nodemailer.getTestMessageUrl(receiptMessageInfo)}`);
+    }
 
     return messageInfo.messageId;
 }
@@ -59,6 +95,7 @@ async function buildConfirmationMail(formInfo, lang='en') {
 
     const mailHtmlTpl = await fs.promises.readFile(path.join(__dirname, '/mail/confirm.html'), 'utf-8');
     const mainTxtTpl = await fs.promises.readFile(path.join(__dirname, '/mail/confirm.txt'), 'utf-8');
+    const receiptTxtTpl = await fs.promises.readFile(path.join(__dirname, '/mail/confirm_receipt.txt'), 'utf-8')
 
     const newLocale = ['en', 'eo'].includes(lang) ? lang : 'en';
     const localeFile = await fs.promises.readFile(path.join(__dirname, `/mail/mail_${newLocale}.json`), 'utf-8');
@@ -73,7 +110,11 @@ async function buildConfirmationMail(formInfo, lang='en') {
         paymentId: formInfo.paymentId,
     }
 
-    const $ = cheerio.load(evalTemplate(mailHtmlTpl, localeObj, regInfo));
+    const $ = cheerio.load(evalTemplate(mailHtmlTpl, {
+        localeObj: localeObj,
+        regInfo: regInfo,
+    }));
+
     let otherInfoText = '';
     let firstKeyAdd = true;
 
@@ -149,22 +190,36 @@ async function buildConfirmationMail(formInfo, lang='en') {
         otherInfoText += `${localeObj.t(`${localeKeyPrefix}.header`)}</b> - ${localeObj.t(`${localeKeyPrefix}.desc`)}\n\n`;
     }
 
-    const transTxtTpl = cheerio.load(evalTemplate(mainTxtTpl, localeObj, regInfo, otherInfoText)).root().text();
+    const transTxtTpl = cheerio.load(
+        evalTemplate(mainTxtTpl, {
+            localeObj: localeObj,
+            regInfo: regInfo,
+            otherInfoText: otherInfoText,
+        })
+    ).root().text();
+
+    const transReceiptTxtTpl = evalTemplate(receiptTxtTpl, {
+        regData: {
+            firstName: formInfo.firstName,
+            lastName: formInfo.lastName.toUpperCase(),
+            countryCode: formInfo.countryCode,
+            timestamp: new Date(Date.now()).toISOString(),
+            registrationId: formInfo.regId,
+            paymentId: formInfo.paymentId,
+        },
+    });
 
     return {
         fromName: localeObj.t('generalText.title'),
         subject: localeObj.t('confirm.subject'),
         html: $.html(),
         txt: transTxtTpl,
-    }
+        receiptTxt: transReceiptTxtTpl,
+    };
 }
 
-function evalTemplate(tpl, localeObj, regInfo, otherInfoText='') {
-    return new Function(`return \`${tpl}\`;`).call({
-        localeObj: localeObj,
-        regInfo: regInfo,
-        otherInfoText: otherInfoText,
-    });
+function evalTemplate(tpl, namespaces = {}) {
+    return new Function(`return \`${tpl}\`;`).call(namespaces);
 }
 
 export const Mailer = {

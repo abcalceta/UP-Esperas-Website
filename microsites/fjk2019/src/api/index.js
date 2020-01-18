@@ -57,6 +57,7 @@ function main() {
 
     // Routes
     // Auth
+    /*
     expressApp.get('/api/auth/get', function(req, res) {
         gauth.authorize()
             .then(() => {
@@ -105,14 +106,15 @@ function main() {
 
         res.status(result.status).send(result);
     });
+    */
 
     // Register
     expressApp.post('/api/register', [
-            body('txt-last-name').not().isEmpty(),
-            body('txt-first-name').not().isEmpty(),
-            body('txt-nickname').not().isEmpty(),
-            body('txt-email').not().isEmpty().isEmail(),
-            body('hdn-reg-fee').isNumeric(),
+            body('txt-last-name').not().isEmpty().trim(),
+            body('txt-first-name').not().isEmpty().trim(),
+            body('txt-nickname').not().isEmpty().trim(),
+            body('txt-email').not().isEmpty().isEmail().trim(),
+            body('hdn-reg-fee').isNumeric().trim(),
             body('hdn-reg-currency').isLength({max: 1}),
             oneOf([
                 body('txt-congress-fund').isEmpty(),
@@ -192,38 +194,6 @@ function main() {
                 return;
             }
 
-            try {
-                const messageId = await Mailer.sendConfirmationMail({
-                    to: req.body['txt-email'],
-                    nickname: req.body['txt-first-name'],
-                    regCat: req.body['hdn-reg-category'],
-                    paymentMethod: req.body['rbx-payment-method'],
-                    regId: entryIds.registrantId,
-                    paymentId: entryIds.paymentId,
-                    foodRestrictions: (req.body['rbx-food-pref'] == 'other'),
-                    foodAllergies: req.body['cbx-food-allerg'].indexOf('other') != -1,
-                    lodging: (req.body['cbx-lodging-interest'] == 'on'),
-                    congressPhoto: (req.body['cbx-others-photo'] == 'on'),
-                    invitLetter: (req.body['cbx-others-invitletter'] == 'on'),
-                    program: (req.body['cbx-others-contrib'] == 'on'),
-                    comments: req.body['txt-others-suggest'].trim().length > 0,
-                }, req.body['hdn-locale']);
-
-                logger.info(`Confirmation message successfully sent with ID ${messageId}`);
-            }
-            catch(err) {
-                logger.error(err);
-                logger.error(`Failed to send email: ${err.message}`);
-    
-                res.status(500).send({
-                    status: 500,
-                    title: 'Failed to send message',
-                    error: err.message,
-                });
-
-                return;
-            }
-
             logger.info('Registration successfully recorded!');
             logger.info(`registrantId ${entryIds.registrantId}`);
             logger.info(`paymentId ${entryIds.paymentId}`);
@@ -233,6 +203,25 @@ function main() {
                 registerId: entryIds.registrantId,
                 paymentId: entryIds.paymentId,
             });
+
+            // Send message after headers
+            // This part is slow
+            try {
+                const messageId = await Mailer.sendConfirmationMail(
+                    req.body,
+                    entryIds.registrantId,
+                    entryIds.paymentId,
+                    req.body['hdn-locale'],
+                );
+
+                logger.info(`Confirmation message successfully sent with ID ${messageId}`);
+
+                await dbInterface.writeEmailSent(entryIds.registrantId);
+            }
+            catch(err) {
+                logger.error(err);
+                logger.error(`Failed to send email: ${err.message}`);
+            }
         }
     );
 
@@ -270,42 +259,6 @@ function main() {
                 title: 'Failed to fetch list of participants',
                 error: err,
             });
-        }
-    });
-
-    expressApp.get('/api/mail_test', async function(req, res) {
-        try {
-            const messageId = await Mailer.sendConfirmationMail({
-                to: 'ccdizon3@up.edu.ph',
-                nickname: 'Carl',
-                regCat: 'B1',
-                paymentMethod: 'paypal',
-                regId: uuidv4(),
-                paymentId: uuidv4(),
-                foodRestrictions: true,
-                foodAllergies: true,
-                lodging: true,
-                congressPhoto: true,
-                invitLetter: true,
-                program: true,
-                comments: true,
-            }, 'eo');
-
-            res.status(200).send({
-                status: 200,
-                title: 'Message sent successfully',
-                messageId: messageId,
-            });
-        }
-        catch(err) {
-            logger.error(err);
-            logger.error(`Failed to send email: ${err.message}`);
-
-            res.status(400).send({
-                status: 400,
-                title: 'Failed to send message',
-                error: err.message,
-            })
         }
     });
 

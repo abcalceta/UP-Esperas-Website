@@ -104,7 +104,7 @@ export class DbInterface{
             registrantId,
             {
                 foodRestrictions: formObj['rbx-food-pref'],
-                foodAllergies: (formObj['cbx-food-allerg']) ? formObj['cbx-food-allerg'].join(','): '',
+                foodAllergies: (formObj['cbx-food-allerg'] === undefined) ? '' : formObj['cbx-food-allerg'].join(','),
                 isAlcohol: (formObj['rbx-food-alcohol-pref'] == 'yes') ? 1 : 0,
             }
         );
@@ -170,5 +170,9 @@ export class DbInterface{
         });
 
         return nameListHidden;
+    }
+
+    async writeEmailSent(registrationId) {
+        await this.repos.register.writeConfirmedMail(registrationId, true);
     }
 }

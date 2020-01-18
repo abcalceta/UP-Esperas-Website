@@ -1,0 +1,17 @@
+1-A Filipina Junulara Kongreso de Esperanto
+1st Philippine Esperanto Youth Congress
+2020-04-23 - 2020-04-26
+Quezon-Urbo
+
+Estimata LKK,
+
+La aliĝilo ĉe https://fjk.up-esperas.org ĵus ricevis novan aliĝon de ${this.regData.firstName} ${this.regData.lastName} el ${this.regData.countryCode} en ${this.regData.timestamp}. Jen ĝiaj referencaj numeroj:
+
+Aliĝnumero: ${this.regData.registrationId}
+Pagnumero: ${this.regData.paymentId}
+
+La datumo estas konservita en la servilo, kiun vi povas kontroli.
+
+Koran dankon!
+
+NB. Ĉi tiu mesaĝo estas sendita aŭtomate, kaj vi neniam devas respondi.
