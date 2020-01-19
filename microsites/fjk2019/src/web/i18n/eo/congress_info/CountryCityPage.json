@@ -9,7 +9,11 @@
         },
         "travel": {
             "title": "Vojaĝi Tien",
-            "pars": "<p>\nOni ĉefe flugas al Manila, fine alvenante al la internacia flughaveno \"Ninoy Aquino\" (Ninoy Aquino International Airport, kodo MNL). Multaj flugkompanioj flugas de aliaj urboj al Manila. Alternative, se eble, oni ankaŭ povas elekti flugi al Clark (Clark International Airport, kodo CRK), kiu situas 81 km norde. Kvankam Clark estas pli malproksima, troviĝas ekspresa buso kiu iras rekte al la kongresurbo. Tamen, ekzistas malpli da flugoj al Clark.\n</p>\n<p>\nDe landoj en sudorienta kaj orienta Azio, Usono, Oceanio, ktp., kongresanoj povas elekti flugi per malmultekostaj flugkompanioj (interalie Cebu Pacific, JetStar, AirAsia, aŭ FlyScoot) kaj mendi biletojn kontraŭ favoraj prezoj. Kontrolu, se estas flugoj oftertataj de tiuj kompanioj inter via urbo kaj Manila kaj tiel ŝparu monon kiun vi povus uzi anstataŭe por alia celo dum la vojaĝo.\n</p>\n"
+            "pars": "<p>\nOni ĉefe flugas al Manila, fine alvenante al la internacia flughaveno \"Ninoy Aquino\" (Ninoy Aquino International Airport, kodo MNL). Multaj flugkompanioj flugas de aliaj urboj al Manila. Alternative, se eble, oni ankaŭ povas elekti flugi al Clark (Clark International Airport, kodo CRK), kiu situas 81 km norde. Kvankam Clark estas pli malproksima, troviĝas ekspresa buso kiu iras rekte al la kongresurbo. Tamen, ekzistas malpli da flugoj al Clark.\n</p>\n<p>\nDe landoj en sudorienta kaj orienta Azio, Usono, Oceanio, ktp., kongresanoj povas elekti flugi per malmultekostaj flugkompanioj (interalie Cebu Pacific, JetStar, AirAsia, aŭ FlyScoot) kaj mendi biletojn kontraŭ favoraj prezoj. Kontrolu, se estas flugoj oftertataj de tiuj kompanioj inter via urbo kaj Manila kaj tiel ŝparu monon kiun vi povus uzi anstataŭe por alia celo dum la vojaĝo.\n</p>\n",
+            "images": {
+                "0": "La Internacia Flughaveno de Ninoy Aquino (NAIA) (ICAO: MNL) havas kvar (4) stacidomojn. La 3-a stacidomo estas montrita tie ĉi.",
+                "1": "La Internacia Flughaveno de Clark (ICAO: CRK)"
+            }
         },
         "climate": {
             "title": "Klimato",
@@ -17,7 +21,13 @@
         },
         "time": {
             "title": "Tempo",
-            "pars": "<p>\nLa horzono estas UTC+8:00. Kutime, registaraj oficejoj kaj privataj firmaoj estas malfermitaj de 8:00 ĝis 17:00 de lundo ĝis vendredo.\n</p>\n"
+            "pars": "<p>\nLa horzono estas UTC+8:00. Kutime, registaraj oficejoj kaj privataj firmaoj estas malfermitaj de 8:00 ĝis 17:00 de lundo ĝis vendredo.\n</p>\n",
+            "timeCard": "La tempo nun en Manila estas <b>%{isoTime}</b>. %{tzOffsetDesc}",
+            "tzOffset": {
+                "early": "Via loka tempo estas <b>%{smart_count} horo pli frue</b> ol Manila |||| Via loka tempo estas <b>%{smart_count} horoj pli frue</b> ol Manila",
+                "exact": "Vi aŭ estas en Manilo, aŭ Sudorienta Azio, aŭ Ĉinio, ktp.",
+                "late": "Via loka tempo estas <b>%{smart_count} horo pli malfrue</b> ol Manila |||| Via loka tempo estas <b>%{smart_count} horoj pli malfrue</b> ol Manila"
+            }
         },
         "lang": {
             "title": "Lingvoj",
@@ -25,11 +35,20 @@
         },
         "electric": {
             "title": "Elektro",
-            "pars": "<p>\nLa elektra tensio estas 220-volta. La konektilingoj estas precipe du paralelaj plataj polusoj (tipo A) kaj foje du paralelaj plataj polusoj kun tria, ronda grunda konektilo (tipo B). Prefere mendu antaŭe taŭgan adaptilon se necese. Aĉeteblas adaptiloj kontraŭ malmultekosta prezo en hejmrimedaj vendejoj en la kongresurbo.\n</p>\n"
+            "pars": "<p>\nLa elektra tensio estas 220-volta. La konektilingoj estas precipe du paralelaj plataj polusoj (tipo A) kaj foje du paralelaj plataj polusoj kun tria, ronda grunda konektilo (tipo B). Prefere mendu antaŭe taŭgan adaptilon se necese. Aĉeteblas adaptiloj kontraŭ malmultekosta prezo en hejmrimedaj vendejoj en la kongresurbo.\n</p>\n",
+            "images": {
+                "0": "Tipo A kontaktingo, kiu estas nur du paralelaj plataj polusoj",
+                "1": "Tipo B kontaktingo, kiu estas du paralelaj plataj polusoj kun tria, ronda grunda konektilo"
+            }
         },
         "phone": {
             "title": "Telefono",
-            "pars": "<p>\nLa landokodo de Filipinoj estas <code>+63</code>, kaj la area kodo de la ĉefurba regiono estas <code>2</code>. Ekde oktobro 2019, telefonnumeroj havas 8 ciferojn, dum poŝtelefonaj numeroj havas 11. Poŝtelefonoj estas pli vaste uzataj ol tradiciaj telefonoj, sed hoteloj kaj registaraj oficejoj kutime ankoraŭ ĝin havas. Por voki al alia telefono enlande: <code>02 + 8-cifera numero</code>, kaj al alia poŝtelefono enlande: <code>0 + 10-cifera numero (komenciĝas per 9)</code>. Por voki eksterlanden de Filipinoj: <code>00 + landa kodo + area kodo + telefona numero</code>. Kaze de krizo, eblas telefoni al <code>911</code> senpage.\n</p>\n<p>\nSIM-kartoj por alilandanoj estas haveblaj senpage ĉe standoj en la flughaveno \"Ninoy Aquino\" en Manila. Kontraŭ malaltaj prezoj eblas aĉeti kreditojn, kiujn oni povas uzi por sendi mesaĝojn, voki, aŭ uzi la interreton. Por efike disponi tiun servon, prefere konsiliĝu ĉe la LKK.\n</p>\n"
+            "pars": "<p>\nLa landokodo de Filipinoj estas <code>+63</code>, kaj la area kodo de la ĉefurba regiono estas <code>2</code>. Ekde oktobro 2019, telefonnumeroj havas 8 ciferojn, dum poŝtelefonaj numeroj havas 11. Poŝtelefonoj estas pli vaste uzataj ol tradiciaj telefonoj, sed hoteloj kaj registaraj oficejoj kutime ankoraŭ ĝin havas. Por voki al alia telefono enlande: <code>02 + 8-cifera numero</code>, kaj al alia poŝtelefono enlande: <code>0 + 10-cifera numero (komenciĝas per 9)</code>. Por voki eksterlanden de Filipinoj: <code>00 + landa kodo + area kodo + telefona numero</code>. Kaze de krizo, eblas telefoni al <code>911</code> senpage.\n</p>\n<p>\nSIM-kartoj por alilandanoj estas haveblaj senpage ĉe standoj en la flughaveno \"Ninoy Aquino\" en Manila. Kontraŭ malaltaj prezoj eblas aĉeti kreditojn, kiujn oni povas uzi por sendi mesaĝojn, voki, aŭ uzi la interreton. Por efike disponi tiun servon, prefere konsiliĝu ĉe la LKK.\n</p>\n",
+            "images": {
+                "0": "Antaŭpagitaj SIM-kartoj estas la normaj SIM-kartoj en la lando. Nur estas du (2) provizantoj de komunikado en la lando.",
+                "1": "Flughavenoj havas budojn, kie vi povas preni senpagan SIM-karton.",
+                "2": "Alternative, butikoj vendintaj ĉefe pri poŝtelefonoj troviĝas ĉie sur la lando. Vi povas aĉeti malmultekostan SIM-karton pere de tiuj."
+            }
         },
         "internet": {
             "title": "Interreto",

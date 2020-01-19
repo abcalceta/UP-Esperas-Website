@@ -25,9 +25,6 @@ export class RegisterPage extends BasePage {
             heroPath
         );
 
-        //this.apiDomain = 'https://fjk.up-esperas.org/api';
-        this.apiDomain = '//localhost:6002/api';
-
         this.countryList = [];
         this.currentPageState = 0;
         this.pageStatesList = [
@@ -241,6 +238,7 @@ export class RegisterPage extends BasePage {
         super.onLocaleChanged();
 
         // Load country list
+        // https://restcountries.eu/rest/v2/all?fields=name;alpha2Code;alpha3Code
         m.request({
             method: 'GET',
             url: `/i18n/${this.data.locale.lang}/countryList.json`,

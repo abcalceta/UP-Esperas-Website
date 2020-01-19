@@ -6,6 +6,7 @@
         "hiddenName": "hidden",
         "nameEntry": "%{firstName} %{lastName} from %{country}",
         "listError": "Cannot fetch list at this time.",
+        "disclaimer": "This list shows participants that have expressed their interest by filling-up the registration form. The following is not the final and official list.",
         "intro": {
             "title": "List of Participants",
             "desc": "Here are the list of participants for the First Philippine Esperanto Youth Congress."

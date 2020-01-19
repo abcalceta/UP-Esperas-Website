@@ -37,6 +37,10 @@ export class BasePage {
         this.localeObj = new Polyglot({
             allowMissing: true
         });
+
+        this.apiDomain = process.env.API_DOMAIN;
+        //this.apiDomain = 'https://fjk.up-esperas.org/api';
+        //this.apiDomain = '//localhost:6002/api';
     }
 
     oninit() {

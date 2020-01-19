@@ -102,6 +102,9 @@ const web = {
         },
     },
     plugins: [
+        new webpack.DefinePlugin({
+            'process.env.API_DOMAIN': JSON.stringify('https://fjk.up-esperas.org/api'),
+        }),
         new CopyPlugin([
             { from: './src/web/i18n', to: 'i18n' },
         ]),

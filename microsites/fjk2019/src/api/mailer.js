@@ -67,7 +67,7 @@ async function sendConfirmationMail(formObj, registrantId, paymentId, locale='en
     const receiptMessage = {
         from: process.env.MAILER_USER,
         to: 'peyc2020@gmail.com',
-        subject: 'Receipt of new registration from server',
+        subject: 'Informo pri nova aliĝo de servilo',
         text: mailObj.receiptTxt,
     };
 

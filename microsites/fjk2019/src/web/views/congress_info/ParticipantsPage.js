@@ -3,7 +3,9 @@ import {DomScripts} from '../../util/dom';
 
 import {BasePage} from '../BasePage';
 import htmlMain from '../../templates/congress_info/participants.html';
-import heroPath from '../../img/hero/eo_flags_banner.jpg';
+import heroPath from '../../img/hero/uk_100a.jpg';
+
+import '../../styles/flag_font.css';
 import '../../styles/default.css';
 
 export class ParticipantsPage extends BasePage {
@@ -15,9 +17,6 @@ export class ParticipantsPage extends BasePage {
             'congress_info/ParticipantsPage',
             heroPath
         );
-
-        //this.apiDomain = 'https://fjk.up-esperas.org/api';
-        this.apiDomain = '//localhost:6002/api';
     }
 
     async onupdate() {
@@ -38,12 +37,26 @@ export class ParticipantsPage extends BasePage {
             const jsonRes = await res.json();
 
             for(let eachName of jsonRes.names) {
+                const alpha3Code = DomScripts.htmlEntities(eachName.country);
+
+                // https://github.com/SlavkoPekaric/Country-Flags-Responsive-CSS-Sprite
                 const nameItem = document.createElement('li');
-                nameItem.innerHTML = this.localeObj.t('infoParticipants.nameEntry', {
+
+                const participantName = document.createElement('span');
+                participantName.innerHTML = this.localeObj.t('infoParticipants.nameEntry', {
                     firstName: eachName.firstName === '<hidden>' ? `[${this.localeObj.t('infoParticipants.hiddenName')}]` : DomScripts.htmlEntities(eachName.firstName),
-                    lastName: eachName.firstName === '<hidden>' ? '' : DomScripts.htmlEntities(eachName.lastName),
-                    country: DomScripts.htmlEntities(eachName.country),
+                    lastName: eachName.firstName === '<hidden>' ? '' : DomScripts.htmlEntities(eachName.lastName).toUpperCase(),
+                    country: this.countryList[alpha3Code][0],
                 });
+
+                const flagIcon = document.createElement('img');
+                flagIcon.src = require('../../img/flag_font/flag_placeholder.png');
+                flagIcon.alt = alpha3Code;
+                flagIcon.title = this.countryList[alpha3Code][0];
+                flagIcon.classList.add('flag', `flag-${this.countryList[alpha3Code][1].toLowerCase()}`);
+
+                nameItem.appendChild(flagIcon);
+                nameItem.appendChild(participantName);
 
                 participantsList.appendChild(nameItem);
             }
@@ -56,5 +69,27 @@ export class ParticipantsPage extends BasePage {
 
             participantsList.appendChild(errorItem);
         }
+    }
+
+    onLocaleChanged() {
+        super.onLocaleChanged();
+
+        m.request({
+            method: 'GET',
+            url: `/i18n/${this.data.locale.lang}/countryList.json`,
+            background: true,
+        })
+        .then((t) => {
+            this.countryList = t.map((eachCountry) => {
+                return [eachCountry.alpha3Code, eachCountry.name, eachCountry.alpha2Code];
+            }).reduce((a, b) => (
+                a[b[0]] = [b[1], b[2]], a
+            ), {});
+
+            this.isCountryListUpdated = true;
+        })
+        .catch((err) => {
+            console.log(`Failed to load country info: ${err}`);
+        });
     }
 }

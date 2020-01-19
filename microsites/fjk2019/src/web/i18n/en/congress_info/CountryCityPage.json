@@ -9,7 +9,11 @@
         },
         "travel": {
             "title": "Getting There",
-            "pars": "<p>\nFlights to Manila land at Ninoy Aquino International Airport (MNL). Many airline companies fly to Manila. Alternatively, one can also fly to Clark (CRK), which is 81 kilometers to the north. While Clark is far from Metro Manila, an express bus which goes directly to the congress city is available. However, there are fewer flights from overseas which fly to Clark.\n</p>\n<p>\nParticipants from countries in Southeast and East Asia, as well as from the USA and Australia, can avail of flights from low-cost carriers such as Cebu Pacific, JetStar, AirAsia, FlyScoot, etc.) and buy tickets for a relatively lower price. Check if these companies offer flights between your city and Manila, and save money which you can use for other purposes during the trip.\n</p>\n"
+            "pars": "<p>\nFlights to Manila land at Ninoy Aquino International Airport (MNL). Many airline companies fly to Manila. Alternatively, one can also fly to Clark (CRK), which is 81 kilometers to the north. While Clark is far from Metro Manila, an express bus which goes directly to the congress city is available. However, there are fewer flights from overseas which fly to Clark.\n</p>\n<p>\nParticipants from countries in Southeast and East Asia, as well as from the USA and Australia, can avail of flights from low-cost carriers such as Cebu Pacific, JetStar, AirAsia, FlyScoot, etc.) and buy tickets for a relatively lower price. Check if these companies offer flights between your city and Manila, and save money which you can use for other purposes during the trip.\n</p>\n",
+            "images": {
+                "0": "The Ninoy Aquino International Airport (ICAO: MNL) has four terminals, with terminal 3 pictured here.",
+                "1": "The Clark International Airport (ICAO: CRK)"
+            }
         },
         "climate": {
             "title": "Climate",
@@ -17,7 +21,13 @@
         },
         "time": {
             "title": "Time",
-            "pars": "<p>\nThe Philippine Standard Time is UTC+8:00. Usually, government offices and private firms are open from 8:00AM to 5:00PM from Mondays to Fridays and closed on Saturdays and Sundays.\n</p>\n"
+            "pars": "<p>\nThe Philippine Standard Time is UTC+8:00. Usually, government offices and private firms are open from 8:00AM to 5:00PM from Mondays to Fridays and closed on Saturdays and Sundays.\n</p>\n",
+            "timeCard": "The time in Manila is <b>%{isoTime}</b>. <b>%{tzOffsetDesc}</b>",
+            "tzOffset": {
+                "early": "Local time is <b>an hour ahead</b> of Manila |||| Local time is <b>%{smart_count} hours ahead</b> of Manila.",
+                "exact": "You are either in Manila, or within Southeast Asia, China, etc.",
+                "late": "Local time is <b>an hour late</b> from Manila. |||| Local time is <b>%{smart_count} hours late</b> from Manila."
+            }
         },
         "lang": {
             "title": "Languages",
@@ -25,11 +35,20 @@
         },
         "electric": {
             "title": "Electricity",
-            "pars": "<p>\nThe voltage is 220 Volts. The sockets are mostly Type A (two parallel flat pins) and occasionally, Type B (two parallel flat pins with round grounding pin). If your device does not have this kind of plug, please buy an adapter in your country or at local shops around the Congress City.\n</p>\n"
+            "pars": "<p>\nThe voltage is 220 Volts. The sockets are mostly Type A (two parallel flat pins) and occasionally, Type B (two parallel flat pins with round grounding pin). If your device does not have this kind of plug, please buy an adapter in your country or at local shops around the Congress City.\n</p>\n",
+            "images": {
+                "0": "Type A socket, which has two parallel flat pins only",
+                "1": "Type B socket, which has two parallel flat pins and a round ground pin at the bottom"
+            }
         },
         "phone": {
             "title": "Telephone",
-            "pars": "<p>\nThe country code of the Philippines is <code>+63</code>, and the area code of the congress region (Metro Manila) is <code>2</code>. Landline phones have 8 digits (as of October 2019), and mobile phones have 11 digits. Mobile phones are far more used than landline phones. To call another landline phone within the country, dial <code>63-2-(telephone number)</code>. To call another mobile phone number within the country, just dial their number starting with zero (0), e.g. <code>0936-275-2034</code>. For emergencies, call <code>911</code> (for free).\n</p>\n<p>\nPrepaid SIM cards for non-Filipino tourists are available for free in their respective kiosks at the Ninoy Aquino International Airport (NAIA). It is also possible to buy mobile data packets and credits for unlimited SMS messages and calls for a cheap price.\n</p>\n"
+            "pars": "<p>\nThe country code of the Philippines is <code>+63</code>, and the area code of the congress region (Metro Manila) is <code>2</code>. Landline phones have 8 digits (as of October 2019), and mobile phones have 11 digits. Mobile phones are far more used than landline phones. To call another landline phone within the country, dial <code>63-2-(telephone number)</code>. To call another mobile phone number within the country, just dial their number starting with zero (0), e.g. <code>0936-275-2034</code>. For emergencies, call <code>911</code> (for free).\n</p>\n<p>\nPrepaid SIM cards for non-Filipino tourists are available for free in their respective kiosks at the Ninoy Aquino International Airport (NAIA). It is also possible to buy mobile data packets and credits for unlimited SMS messages and calls for a cheap price.\n</p>\n",
+            "images": {
+                "0": "Prepaid SIM cards are the norm in the country. Communications is managed by only two service providers.",
+                "1": "Airports have kiosks where you can get a SIM card for free.",
+                "2": "Alternatively, cellphone shops are ubiquitous in the country. You can acquire a SIM card at these shops cheaply."
+            }
         },
         "internet": {
             "title": "Internet",

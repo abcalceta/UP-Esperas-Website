@@ -6,9 +6,10 @@
         "hiddenName": "kaŝita",
         "nameEntry": "%{firstName} %{lastName} el %{country}",
         "listError": "Ne povas akiri liston nun.",
+        "disclaimer": "La listo montras aliĝantojn, kiuj interesiĝis pri la kongreso per siaj plenigadoj de la aliĝilo. La jena ne estas la fina kaj oficiala listo.",
         "intro": {
             "title": "Listo de Aliĝantoj",
-            "desc": "Jen la listo de aliĝntoj por la Unua Filipina Junulara Kongreso de Esperanto."
+            "desc": "Jen la listo de aliĝantoj por la Unua Filipina Junulara Kongreso de Esperanto."
         }
     }
 }

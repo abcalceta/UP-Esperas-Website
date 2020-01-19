@@ -60,6 +60,9 @@ const web = {
         ]
     },
     plugins: [
+        new webpack.DefinePlugin({
+            'process.env.API_DOMAIN': JSON.stringify('//localhost:6002/api'),
+        }),
         new HtmlWebpackPlugin({
             template: './src/web/templates/index.html'
         }),

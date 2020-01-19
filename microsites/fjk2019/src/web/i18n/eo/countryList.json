@@ -1,1002 +1,1252 @@
 [
     {
         "name": "Afganio",
-        "alpha3Code": "AFG"
+        "alpha3Code": "AFG",
+        "alpha2Code": "AF"
     },
     {
         "name": "Åland Insularo",
-        "alpha3Code": "ALA"
+        "alpha3Code": "ALA",
+        "alpha2Code": "AX"
     },
     {
         "name": "Albanio",
-        "alpha3Code": "ALB"
+        "alpha3Code": "ALB",
+        "alpha2Code": "AL"
     },
     {
         "name": "Alĝerio",
-        "alpha3Code": "DZA"
+        "alpha3Code": "DZA",
+        "alpha2Code": "DZ"
     },
     {
         "name": "American Samoa",
-        "alpha3Code": "ASM"
+        "alpha3Code": "ASM",
+        "alpha2Code": "AS"
     },
     {
         "name": "Andoro",
-        "alpha3Code": "AND"
+        "alpha3Code": "AND",
+        "alpha2Code": "AD"
     },
     {
         "name": "Angolo",
-        "alpha3Code": "AGO"
+        "alpha3Code": "AGO",
+        "alpha2Code": "AO"
     },
     {
         "name": "Angvilo",
-        "alpha3Code": "AIA"
+        "alpha3Code": "AIA",
+        "alpha2Code": "AI"
     },
     {
         "name": "Antarktio",
-        "alpha3Code": "ATA"
+        "alpha3Code": "ATA",
+        "alpha2Code": "AQ"
     },
     {
         "name": "Antigvo kaj Barbudo",
-        "alpha3Code": "ATG"
+        "alpha3Code": "ATG",
+        "alpha2Code": "AG"
     },
     {
         "name": "Argentino",
-        "alpha3Code": "ARG"
+        "alpha3Code": "ARG",
+        "alpha2Code": "AR"
     },
     {
         "name": "Armenio",
-        "alpha3Code": "ARM"
+        "alpha3Code": "ARM",
+        "alpha2Code": "AM"
     },
     {
         "name": "Arubo",
-        "alpha3Code": "ABW"
+        "alpha3Code": "ABW",
+        "alpha2Code": "AW"
     },
     {
         "name": "Aŭstralio",
-        "alpha3Code": "AUS"
+        "alpha3Code": "AUS",
+        "alpha2Code": "AU"
     },
     {
         "name": "Aŭstrio",
-        "alpha3Code": "AUT"
+        "alpha3Code": "AUT",
+        "alpha2Code": "AT"
     },
     {
         "name": "Azerbajĝano",
-        "alpha3Code": "AZE"
+        "alpha3Code": "AZE",
+        "alpha2Code": "AZ"
     },
     {
         "name": "Bahamoj",
-        "alpha3Code": "BHS"
+        "alpha3Code": "BHS",
+        "alpha2Code": "BS"
     },
     {
         "name": "Barejno",
-        "alpha3Code": "BHR"
+        "alpha3Code": "BHR",
+        "alpha2Code": "BH"
     },
     {
         "name": "Bangladeŝo",
-        "alpha3Code": "BGD"
+        "alpha3Code": "BGD",
+        "alpha2Code": "BD"
     },
     {
         "name": "Barbado",
-        "alpha3Code": "BRB"
+        "alpha3Code": "BRB",
+        "alpha2Code": "BB"
     },
     {
         "name": "Belorusio",
-        "alpha3Code": "BLR"
+        "alpha3Code": "BLR",
+        "alpha2Code": "BY"
     },
     {
         "name": "Belgio",
-        "alpha3Code": "BEL"
+        "alpha3Code": "BEL",
+        "alpha2Code": "BE"
     },
     {
         "name": "Belizo",
-        "alpha3Code": "BLZ"
+        "alpha3Code": "BLZ",
+        "alpha2Code": "BZ"
     },
     {
         "name": "Benino",
-        "alpha3Code": "BEN"
+        "alpha3Code": "BEN",
+        "alpha2Code": "BJ"
     },
     {
         "name": "Bermudo",
-        "alpha3Code": "BMU"
+        "alpha3Code": "BMU",
+        "alpha2Code": "BM"
     },
     {
         "name": "Butano",
-        "alpha3Code": "BTN"
+        "alpha3Code": "BTN",
+        "alpha2Code": "BT"
     },
     {
         "name": "Bolivio",
-        "alpha3Code": "BOL"
+        "alpha3Code": "BOL",
+        "alpha2Code": "BO"
     },
     {
         "name": "Bonaire, Sint Eustatius kaj Saba",
-        "alpha3Code": "BES"
+        "alpha3Code": "BES",
+        "alpha2Code": "BQ"
     },
     {
         "name": "Bosnio kaj Hercegovino",
-        "alpha3Code": "BIH"
+        "alpha3Code": "BIH",
+        "alpha2Code": "BA"
     },
     {
         "name": "Bocvano",
-        "alpha3Code": "BWA"
+        "alpha3Code": "BWA",
+        "alpha2Code": "BW"
     },
     {
         "name": "Bouvet Insulo",
-        "alpha3Code": "BVT"
+        "alpha3Code": "BVT",
+        "alpha2Code": "BV"
     },
     {
         "name": "Brazilo",
-        "alpha3Code": "BRA"
+        "alpha3Code": "BRA",
+        "alpha2Code": "BR"
     },
     {
         "name": "British Indian Ocean Territory",
-        "alpha3Code": "IOT"
+        "alpha3Code": "IOT",
+        "alpha2Code": "IO"
     },
     {
         "name": "United States Minor Outlying Islands",
-        "alpha3Code": "UMI"
+        "alpha3Code": "UMI",
+        "alpha2Code": "UM"
     },
     {
         "name": "Virga Insularo (Britio)",
-        "alpha3Code": "VGB"
+        "alpha3Code": "VGB",
+        "alpha2Code": "VG"
     },
     {
         "name": "Virga Insularo (Usono)",
-        "alpha3Code": "VIR"
+        "alpha3Code": "VIR",
+        "alpha2Code": "VI"
     },
     {
         "name": "Brunejo",
-        "alpha3Code": "BRN"
+        "alpha3Code": "BRN",
+        "alpha2Code": "BN"
     },
     {
         "name": "Bulgario",
-        "alpha3Code": "BGR"
+        "alpha3Code": "BGR",
+        "alpha2Code": "BG"
     },
     {
         "name": "Burkino",
-        "alpha3Code": "BFA"
+        "alpha3Code": "BFA",
+        "alpha2Code": "BF"
     },
     {
         "name": "Burundo",
-        "alpha3Code": "BDI"
+        "alpha3Code": "BDI",
+        "alpha2Code": "BI"
     },
     {
         "name": "Kamboĝo",
-        "alpha3Code": "KHM"
+        "alpha3Code": "KHM",
+        "alpha2Code": "KH"
     },
     {
         "name": "Kameruno",
-        "alpha3Code": "CMR"
+        "alpha3Code": "CMR",
+        "alpha2Code": "CM"
     },
     {
         "name": "Kanado",
-        "alpha3Code": "CAN"
+        "alpha3Code": "CAN",
+        "alpha2Code": "CA"
     },
     {
         "name": "Kaboverdo",
-        "alpha3Code": "CPV"
+        "alpha3Code": "CPV",
+        "alpha2Code": "CV"
     },
     {
         "name": "Kajmana Insularo",
-        "alpha3Code": "CYM"
+        "alpha3Code": "CYM",
+        "alpha2Code": "KY"
     },
     {
         "name": "Centr-Afriko",
-        "alpha3Code": "CAF"
+        "alpha3Code": "CAF",
+        "alpha2Code": "CF"
     },
     {
         "name": "Ĉado",
-        "alpha3Code": "TCD"
+        "alpha3Code": "TCD",
+        "alpha2Code": "TD"
     },
     {
         "name": "Ĉilio",
-        "alpha3Code": "CHL"
+        "alpha3Code": "CHL",
+        "alpha2Code": "CL"
     },
     {
         "name": "Ĉinio",
-        "alpha3Code": "CHN"
+        "alpha3Code": "CHN",
+        "alpha2Code": "CN"
     },
     {
         "name": "Christmas Insulo",
-        "alpha3Code": "CXR"
+        "alpha3Code": "CXR",
+        "alpha2Code": "CX"
     },
     {
         "name": "Cocos (Keeling) Insuloj",
-        "alpha3Code": "CCK"
+        "alpha3Code": "CCK",
+        "alpha2Code": "CC"
     },
     {
         "name": "Kolombio",
-        "alpha3Code": "COL"
+        "alpha3Code": "COL",
+        "alpha2Code": "CO"
     },
     {
         "name": "Komoroj",
-        "alpha3Code": "COM"
+        "alpha3Code": "COM",
+        "alpha2Code": "KM"
     },
     {
         "name": "Kongo Brazavila",
-        "alpha3Code": "COG"
+        "alpha3Code": "COG",
+        "alpha2Code": "CG"
     },
     {
         "name": "Kongo Kinŝasa",
-        "alpha3Code": "COD"
+        "alpha3Code": "COD",
+        "alpha2Code": "CD"
     },
     {
         "name": "Kukinsuloj",
-        "alpha3Code": "COK"
+        "alpha3Code": "COK",
+        "alpha2Code": "CK"
     },
     {
         "name": "Kostariko",
-        "alpha3Code": "CRI"
+        "alpha3Code": "CRI",
+        "alpha2Code": "CR"
     },
     {
         "name": "Kroatio",
-        "alpha3Code": "HRV"
+        "alpha3Code": "HRV",
+        "alpha2Code": "HR"
     },
     {
         "name": "Kubo",
-        "alpha3Code": "CUB"
+        "alpha3Code": "CUB",
+        "alpha2Code": "CU"
     },
     {
         "name": "Kuracao",
-        "alpha3Code": "CUW"
+        "alpha3Code": "CUW",
+        "alpha2Code": "CW"
     },
     {
         "name": "Kipro",
-        "alpha3Code": "CYP"
+        "alpha3Code": "CYP",
+        "alpha2Code": "CY"
     },
     {
         "name": "Ĉeĥio",
-        "alpha3Code": "CZE"
+        "alpha3Code": "CZE",
+        "alpha2Code": "CZ"
     },
     {
         "name": "Danio",
-        "alpha3Code": "DNK"
+        "alpha3Code": "DNK",
+        "alpha2Code": "DK"
     },
     {
         "name": "Ĝibutio",
-        "alpha3Code": "DJI"
+        "alpha3Code": "DJI",
+        "alpha2Code": "DJ"
     },
     {
         "name": "Dominiko",
-        "alpha3Code": "DMA"
+        "alpha3Code": "DMA",
+        "alpha2Code": "DM"
     },
     {
         "name": "Dominika Respubliko",
-        "alpha3Code": "DOM"
+        "alpha3Code": "DOM",
+        "alpha2Code": "DO"
     },
     {
         "name": "Ekvadoro",
-        "alpha3Code": "ECU"
+        "alpha3Code": "ECU",
+        "alpha2Code": "EC"
     },
     {
         "name": "Egiptio",
-        "alpha3Code": "EGY"
+        "alpha3Code": "EGY",
+        "alpha2Code": "EG"
     },
     {
         "name": "Salvadoro",
-        "alpha3Code": "SLV"
+        "alpha3Code": "SLV",
+        "alpha2Code": "SV"
     },
     {
         "name": "Ekvatora Gvineo",
-        "alpha3Code": "GNQ"
+        "alpha3Code": "GNQ",
+        "alpha2Code": "GQ"
     },
     {
         "name": "Eritreo",
-        "alpha3Code": "ERI"
+        "alpha3Code": "ERI",
+        "alpha2Code": "ER"
     },
     {
         "name": "Estonio",
-        "alpha3Code": "EST"
+        "alpha3Code": "EST",
+        "alpha2Code": "EE"
     },
     {
         "name": "Etiopio",
-        "alpha3Code": "ETH"
+        "alpha3Code": "ETH",
+        "alpha2Code": "ET"
     },
     {
         "name": "Falkland Insularo (Malvinas)",
-        "alpha3Code": "FLK"
+        "alpha3Code": "FLK",
+        "alpha2Code": "FK"
     },
     {
         "name": "Faroe Insularo",
-        "alpha3Code": "FRO"
+        "alpha3Code": "FRO",
+        "alpha2Code": "FO"
     },
     {
         "name": "Fiĝio",
-        "alpha3Code": "FJI"
+        "alpha3Code": "FJI",
+        "alpha2Code": "FJ"
     },
     {
         "name": "Finnlando",
-        "alpha3Code": "FIN"
+        "alpha3Code": "FIN",
+        "alpha2Code": "FI"
     },
     {
         "name": "Francio",
-        "alpha3Code": "FRA"
+        "alpha3Code": "FRA",
+        "alpha2Code": "FR"
     },
     {
         "name": "French Guiana",
-        "alpha3Code": "GUF"
+        "alpha3Code": "GUF",
+        "alpha2Code": "GF"
     },
     {
         "name": "Franca Polinezio",
-        "alpha3Code": "PYF"
+        "alpha3Code": "PYF",
+        "alpha2Code": "PF"
     },
     {
         "name": "French Southern Territories",
-        "alpha3Code": "ATF"
+        "alpha3Code": "ATF",
+        "alpha2Code": "TF"
     },
     {
         "name": "Gabono",
-        "alpha3Code": "GAB"
+        "alpha3Code": "GAB",
+        "alpha2Code": "GA"
     },
     {
         "name": "Gambio",
-        "alpha3Code": "GMB"
+        "alpha3Code": "GMB",
+        "alpha2Code": "GM"
     },
     {
         "name": "Kartvelio",
-        "alpha3Code": "GEO"
+        "alpha3Code": "GEO",
+        "alpha2Code": "GE"
     },
     {
         "name": "Germanio",
-        "alpha3Code": "DEU"
+        "alpha3Code": "DEU",
+        "alpha2Code": "DE"
     },
     {
         "name": "Ganao",
-        "alpha3Code": "GHA"
+        "alpha3Code": "GHA",
+        "alpha2Code": "GH"
     },
     {
         "name": "Ĝibraltaro",
-        "alpha3Code": "GIB"
+        "alpha3Code": "GIB",
+        "alpha2Code": "GI"
     },
     {
         "name": "Grekio",
-        "alpha3Code": "GRC"
+        "alpha3Code": "GRC",
+        "alpha2Code": "GR"
     },
     {
         "name": "Gronlando",
-        "alpha3Code": "GRL"
+        "alpha3Code": "GRL",
+        "alpha2Code": "GL"
     },
     {
         "name": "Grenado",
-        "alpha3Code": "GRD"
+        "alpha3Code": "GRD",
+        "alpha2Code": "GD"
     },
     {
         "name": "Guadeloupe",
-        "alpha3Code": "GLP"
+        "alpha3Code": "GLP",
+        "alpha2Code": "GP"
     },
     {
         "name": "Guam",
-        "alpha3Code": "GUM"
+        "alpha3Code": "GUM",
+        "alpha2Code": "GU"
     },
     {
         "name": "Gvatemalo",
-        "alpha3Code": "GTM"
+        "alpha3Code": "GTM",
+        "alpha2Code": "GT"
     },
     {
         "name": "Guernsey",
-        "alpha3Code": "GGY"
+        "alpha3Code": "GGY",
+        "alpha2Code": "GG"
     },
     {
         "name": "Gvineo",
-        "alpha3Code": "GIN"
+        "alpha3Code": "GIN",
+        "alpha2Code": "GN"
     },
     {
         "name": "Gvineo-Bisaŭo",
-        "alpha3Code": "GNB"
+        "alpha3Code": "GNB",
+        "alpha2Code": "GW"
     },
     {
         "name": "Gujano",
-        "alpha3Code": "GUY"
+        "alpha3Code": "GUY",
+        "alpha2Code": "GY"
     },
     {
         "name": "Haitio",
-        "alpha3Code": "HTI"
+        "alpha3Code": "HTI",
+        "alpha2Code": "HT"
     },
     {
         "name": "Heard Insulo kaj McDonald Insularo",
-        "alpha3Code": "HMD"
+        "alpha3Code": "HMD",
+        "alpha2Code": "HM"
     },
     {
         "name": "Vatikano",
-        "alpha3Code": "VAT"
+        "alpha3Code": "VAT",
+        "alpha2Code": "VA"
     },
     {
         "name": "Honduro",
-        "alpha3Code": "HND"
+        "alpha3Code": "HND",
+        "alpha2Code": "HN"
     },
     {
         "name": "Honkongo",
-        "alpha3Code": "HKG"
+        "alpha3Code": "HKG",
+        "alpha2Code": "HK"
     },
     {
         "name": "Hungario",
-        "alpha3Code": "HUN"
+        "alpha3Code": "HUN",
+        "alpha2Code": "HU"
     },
     {
         "name": "Islando",
-        "alpha3Code": "ISL"
+        "alpha3Code": "ISL",
+        "alpha2Code": "IS"
     },
     {
         "name": "Barato",
-        "alpha3Code": "IND"
+        "alpha3Code": "IND",
+        "alpha2Code": "IN"
     },
     {
         "name": "Indonezio",
-        "alpha3Code": "IDN"
+        "alpha3Code": "IDN",
+        "alpha2Code": "ID"
     },
     {
         "name": "Ebur-Bordo",
-        "alpha3Code": "CIV"
+        "alpha3Code": "CIV",
+        "alpha2Code": "CI"
     },
     {
         "name": "Irano",
-        "alpha3Code": "IRN"
+        "alpha3Code": "IRN",
+        "alpha2Code": "IR"
     },
     {
         "name": "Irako",
-        "alpha3Code": "IRQ"
+        "alpha3Code": "IRQ",
+        "alpha2Code": "IQ"
     },
     {
         "name": "Irlando",
-        "alpha3Code": "IRL"
+        "alpha3Code": "IRL",
+        "alpha2Code": "IE"
     },
     {
         "name": "Isle of Man",
-        "alpha3Code": "IMN"
+        "alpha3Code": "IMN",
+        "alpha2Code": "IM"
     },
     {
         "name": "Israelo",
-        "alpha3Code": "ISR"
+        "alpha3Code": "ISR",
+        "alpha2Code": "IL"
     },
     {
         "name": "Italio",
-        "alpha3Code": "ITA"
+        "alpha3Code": "ITA",
+        "alpha2Code": "IT"
     },
     {
         "name": "Jamajko",
-        "alpha3Code": "JAM"
+        "alpha3Code": "JAM",
+        "alpha2Code": "JM"
     },
     {
         "name": "Japanio",
-        "alpha3Code": "JPN"
+        "alpha3Code": "JPN",
+        "alpha2Code": "JP"
     },
     {
         "name": "Jersey",
-        "alpha3Code": "JEY"
+        "alpha3Code": "JEY",
+        "alpha2Code": "JE"
     },
     {
         "name": "Jordanio",
-        "alpha3Code": "JOR"
+        "alpha3Code": "JOR",
+        "alpha2Code": "JO"
     },
     {
         "name": "Kazaĥio",
-        "alpha3Code": "KAZ"
+        "alpha3Code": "KAZ",
+        "alpha2Code": "KZ"
     },
     {
         "name": "Kenjo",
-        "alpha3Code": "KEN"
+        "alpha3Code": "KEN",
+        "alpha2Code": "KE"
     },
     {
         "name": "Kiribato",
-        "alpha3Code": "KIR"
+        "alpha3Code": "KIR",
+        "alpha2Code": "KI"
     },
     {
         "name": "Kuvajto",
-        "alpha3Code": "KWT"
+        "alpha3Code": "KWT",
+        "alpha2Code": "KW"
     },
     {
         "name": "Kirgizio",
-        "alpha3Code": "KGZ"
+        "alpha3Code": "KGZ",
+        "alpha2Code": "KG"
     },
     {
         "name": "Laoso",
-        "alpha3Code": "LAO"
+        "alpha3Code": "LAO",
+        "alpha2Code": "LA"
     },
     {
         "name": "Latvio",
-        "alpha3Code": "LVA"
+        "alpha3Code": "LVA",
+        "alpha2Code": "LV"
     },
     {
         "name": "Libano",
-        "alpha3Code": "LBN"
+        "alpha3Code": "LBN",
+        "alpha2Code": "LB"
     },
     {
         "name": "Lesoto",
-        "alpha3Code": "LSO"
+        "alpha3Code": "LSO",
+        "alpha2Code": "LS"
     },
     {
         "name": "Liberio",
-        "alpha3Code": "LBR"
+        "alpha3Code": "LBR",
+        "alpha2Code": "LR"
     },
     {
         "name": "Libio",
-        "alpha3Code": "LBY"
+        "alpha3Code": "LBY",
+        "alpha2Code": "LY"
     },
     {
         "name": "Liĥtenŝtejno",
-        "alpha3Code": "LIE"
+        "alpha3Code": "LIE",
+        "alpha2Code": "LI"
     },
     {
         "name": "Litovio",
-        "alpha3Code": "LTU"
+        "alpha3Code": "LTU",
+        "alpha2Code": "LT"
     },
     {
         "name": "Luksemburgo",
-        "alpha3Code": "LUX"
+        "alpha3Code": "LUX",
+        "alpha2Code": "LU"
     },
     {
         "name": "Makao",
-        "alpha3Code": "MAC"
+        "alpha3Code": "MAC",
+        "alpha2Code": "MO"
     },
     {
         "name": "Nord-Makedonio",
-        "alpha3Code": "MKD"
+        "alpha3Code": "MKD",
+        "alpha2Code": "MK"
     },
     {
         "name": "Madagaskaro",
-        "alpha3Code": "MDG"
+        "alpha3Code": "MDG",
+        "alpha2Code": "MG"
     },
     {
         "name": "Malavio",
-        "alpha3Code": "MWI"
+        "alpha3Code": "MWI",
+        "alpha2Code": "MW"
     },
     {
         "name": "Malajzio",
-        "alpha3Code": "MYS"
+        "alpha3Code": "MYS",
+        "alpha2Code": "MY"
     },
     {
         "name": "Maldivoj",
-        "alpha3Code": "MDV"
+        "alpha3Code": "MDV",
+        "alpha2Code": "MV"
     },
     {
         "name": "Malio",
-        "alpha3Code": "MLI"
+        "alpha3Code": "MLI",
+        "alpha2Code": "ML"
     },
     {
         "name": "Malto",
-        "alpha3Code": "MLT"
+        "alpha3Code": "MLT",
+        "alpha2Code": "MT"
     },
     {
         "name": "Marŝaloj",
-        "alpha3Code": "MHL"
+        "alpha3Code": "MHL",
+        "alpha2Code": "MH"
     },
     {
         "name": "Martiniko",
-        "alpha3Code": "MTQ"
+        "alpha3Code": "MTQ",
+        "alpha2Code": "MQ"
     },
     {
         "name": "Maŭritanio",
-        "alpha3Code": "MRT"
+        "alpha3Code": "MRT",
+        "alpha2Code": "MR"
     },
     {
         "name": "Maŭricio",
-        "alpha3Code": "MUS"
+        "alpha3Code": "MUS",
+        "alpha2Code": "MU"
     },
     {
         "name": "Mayotte",
-        "alpha3Code": "MYT"
+        "alpha3Code": "MYT",
+        "alpha2Code": "YT"
     },
     {
         "name": "Meksiko",
-        "alpha3Code": "MEX"
+        "alpha3Code": "MEX",
+        "alpha2Code": "MX"
     },
     {
         "name": "Mikronezio",
-        "alpha3Code": "FSM"
+        "alpha3Code": "FSM",
+        "alpha2Code": "FM"
     },
     {
         "name": "Moldavio",
-        "alpha3Code": "MDA"
+        "alpha3Code": "MDA",
+        "alpha2Code": "MD"
     },
     {
         "name": "Monako",
-        "alpha3Code": "MCO"
+        "alpha3Code": "MCO",
+        "alpha2Code": "MC"
     },
     {
         "name": "Mongolio",
-        "alpha3Code": "MNG"
+        "alpha3Code": "MNG",
+        "alpha2Code": "MN"
     },
     {
         "name": "Montenegro",
-        "alpha3Code": "MNE"
+        "alpha3Code": "MNE",
+        "alpha2Code": "ME"
     },
     {
         "name": "Moncerato",
-        "alpha3Code": "MSR"
+        "alpha3Code": "MSR",
+        "alpha2Code": "MS"
     },
     {
         "name": "Maroko",
-        "alpha3Code": "MAR"
+        "alpha3Code": "MAR",
+        "alpha2Code": "MA"
     },
     {
         "name": "Mozambiko",
-        "alpha3Code": "MOZ"
+        "alpha3Code": "MOZ",
+        "alpha2Code": "MZ"
     },
     {
         "name": "Birmo",
-        "alpha3Code": "MMR"
+        "alpha3Code": "MMR",
+        "alpha2Code": "MM"
     },
     {
         "name": "Namibio",
-        "alpha3Code": "NAM"
+        "alpha3Code": "NAM",
+        "alpha2Code": "NA"
     },
     {
         "name": "Nauro",
-        "alpha3Code": "NRU"
+        "alpha3Code": "NRU",
+        "alpha2Code": "NR"
     },
     {
         "name": "Nepalo",
-        "alpha3Code": "NPL"
+        "alpha3Code": "NPL",
+        "alpha2Code": "NP"
     },
     {
         "name": "Nederlando",
-        "alpha3Code": "NLD"
+        "alpha3Code": "NLD",
+        "alpha2Code": "NL"
     },
     {
         "name": "Nov-Kaledonio",
-        "alpha3Code": "NCL"
+        "alpha3Code": "NCL",
+        "alpha2Code": "NC"
     },
     {
         "name": "Nov-Zelando",
-        "alpha3Code": "NZL"
+        "alpha3Code": "NZL",
+        "alpha2Code": "NZ"
     },
     {
         "name": "Nikaragvo",
-        "alpha3Code": "NIC"
+        "alpha3Code": "NIC",
+        "alpha2Code": "NI"
     },
     {
         "name": "Niĝero",
-        "alpha3Code": "NER"
+        "alpha3Code": "NER",
+        "alpha2Code": "NE"
     },
     {
         "name": "Niĝerio",
-        "alpha3Code": "NGA"
+        "alpha3Code": "NGA",
+        "alpha2Code": "NG"
     },
     {
         "name": "Niue",
-        "alpha3Code": "NIU"
+        "alpha3Code": "NIU",
+        "alpha2Code": "NU"
     },
     {
         "name": "Norfolk Insulo",
-        "alpha3Code": "NFK"
+        "alpha3Code": "NFK",
+        "alpha2Code": "NF"
     },
     {
         "name": "Nord-Koreio",
-        "alpha3Code": "PRK"
+        "alpha3Code": "PRK",
+        "alpha2Code": "KP"
     },
     {
         "name": "Northern Mariana Insularo",
-        "alpha3Code": "MNP"
+        "alpha3Code": "MNP",
+        "alpha2Code": "MP"
     },
     {
         "name": "Norvegio",
-        "alpha3Code": "NOR"
+        "alpha3Code": "NOR",
+        "alpha2Code": "NO"
     },
     {
         "name": "Omano",
-        "alpha3Code": "OMN"
+        "alpha3Code": "OMN",
+        "alpha2Code": "OM"
     },
     {
         "name": "Pakistano",
-        "alpha3Code": "PAK"
+        "alpha3Code": "PAK",
+        "alpha2Code": "PK"
     },
     {
         "name": "Palaŭo",
-        "alpha3Code": "PLW"
+        "alpha3Code": "PLW",
+        "alpha2Code": "PW"
     },
     {
         "name": "Palestino",
-        "alpha3Code": "PSE"
+        "alpha3Code": "PSE",
+        "alpha2Code": "PS"
     },
     {
         "name": "Panamo",
-        "alpha3Code": "PAN"
+        "alpha3Code": "PAN",
+        "alpha2Code": "PA"
     },
     {
         "name": "Papuo-Nov-Gvineo",
-        "alpha3Code": "PNG"
+        "alpha3Code": "PNG",
+        "alpha2Code": "PG"
     },
     {
         "name": "Paragvajo",
-        "alpha3Code": "PRY"
+        "alpha3Code": "PRY",
+        "alpha2Code": "PY"
     },
     {
         "name": "Peruo",
-        "alpha3Code": "PER"
+        "alpha3Code": "PER",
+        "alpha2Code": "PE"
     },
     {
         "name": "Filipinoj",
-        "alpha3Code": "PHL"
+        "alpha3Code": "PHL",
+        "alpha2Code": "PH"
     },
     {
         "name": "Pitcairn",
-        "alpha3Code": "PCN"
+        "alpha3Code": "PCN",
+        "alpha2Code": "PN"
     },
     {
         "name": "Pollando",
-        "alpha3Code": "POL"
+        "alpha3Code": "POL",
+        "alpha2Code": "PL"
     },
     {
         "name": "Portugalio",
-        "alpha3Code": "PRT"
+        "alpha3Code": "PRT",
+        "alpha2Code": "PT"
     },
     {
         "name": "Portoriko",
-        "alpha3Code": "PRI"
+        "alpha3Code": "PRI",
+        "alpha2Code": "PR"
     },
     {
         "name": "Kataro",
-        "alpha3Code": "QAT"
+        "alpha3Code": "QAT",
+        "alpha2Code": "QA"
     },
     {
         "name": "Kosovo",
-        "alpha3Code": "KOS"
+        "alpha3Code": "KOS",
+        "alpha2Code": "XK"
     },
     {
         "name": "Reunio",
-        "alpha3Code": "REU"
+        "alpha3Code": "REU",
+        "alpha2Code": "RE"
     },
     {
         "name": "Rumanio",
-        "alpha3Code": "ROU"
+        "alpha3Code": "ROU",
+        "alpha2Code": "RO"
     },
     {
         "name": "Rusio",
-        "alpha3Code": "RUS"
+        "alpha3Code": "RUS",
+        "alpha2Code": "RU"
     },
     {
         "name": "Ruando",
-        "alpha3Code": "RWA"
+        "alpha3Code": "RWA",
+        "alpha2Code": "RW"
     },
     {
         "name": "Saint Barthélemy",
-        "alpha3Code": "BLM"
+        "alpha3Code": "BLM",
+        "alpha2Code": "BL"
     },
     {
         "name": "Sankta Heleno, Ascension kaj Tristan da Cunha",
-        "alpha3Code": "SHN"
+        "alpha3Code": "SHN",
+        "alpha2Code": "SH"
     },
     {
         "name": "Sankta Kristoforo kaj Neviso",
-        "alpha3Code": "KNA"
+        "alpha3Code": "KNA",
+        "alpha2Code": "KN"
     },
     {
         "name": "Sankta Lucio",
-        "alpha3Code": "LCA"
+        "alpha3Code": "LCA",
+        "alpha2Code": "LC"
     },
     {
         "name": "Saint Martin (Francio)",
-        "alpha3Code": "MAF"
+        "alpha3Code": "MAF",
+        "alpha2Code": "MF"
     },
     {
         "name": "Sankta Pierre kaj Miquelon",
-        "alpha3Code": "SPM"
+        "alpha3Code": "SPM",
+        "alpha2Code": "PM"
     },
     {
         "name": "Sankta Vincento kaj Grenadinoj",
-        "alpha3Code": "VCT"
+        "alpha3Code": "VCT",
+        "alpha2Code": "VC"
     },
     {
         "name": "Samoo",
-        "alpha3Code": "WSM"
+        "alpha3Code": "WSM",
+        "alpha2Code": "WS"
     },
     {
         "name": "Sanmarino",
-        "alpha3Code": "SMR"
+        "alpha3Code": "SMR",
+        "alpha2Code": "SM"
     },
     {
         "name": "Santomeo kaj Principeo",
-        "alpha3Code": "STP"
+        "alpha3Code": "STP",
+        "alpha2Code": "ST"
     },
     {
         "name": "Sauda Arabio",
-        "alpha3Code": "SAU"
+        "alpha3Code": "SAU",
+        "alpha2Code": "SA"
     },
     {
         "name": "Senegalo",
-        "alpha3Code": "SEN"
+        "alpha3Code": "SEN",
+        "alpha2Code": "SN"
     },
     {
         "name": "Serbio",
-        "alpha3Code": "SRB"
+        "alpha3Code": "SRB",
+        "alpha2Code": "RS"
     },
     {
         "name": "Sejŝeloj",
-        "alpha3Code": "SYC"
+        "alpha3Code": "SYC",
+        "alpha2Code": "SC"
     },
     {
         "name": "Sieraleono",
-        "alpha3Code": "SLE"
+        "alpha3Code": "SLE",
+        "alpha2Code": "SL"
     },
     {
         "name": "Singapuro",
-        "alpha3Code": "SGP"
+        "alpha3Code": "SGP",
+        "alpha2Code": "SG"
     },
     {
         "name": "Sint Maarten (Nederlando)",
-        "alpha3Code": "SXM"
+        "alpha3Code": "SXM",
+        "alpha2Code": "SX"
     },
     {
         "name": "Slovakio",
-        "alpha3Code": "SVK"
+        "alpha3Code": "SVK",
+        "alpha2Code": "SK"
     },
     {
         "name": "Slovenio",
-        "alpha3Code": "SVN"
+        "alpha3Code": "SVN",
+        "alpha2Code": "SI"
     },
     {
         "name": "Salomonoj",
-        "alpha3Code": "SLB"
+        "alpha3Code": "SLB",
+        "alpha2Code": "SB"
     },
     {
         "name": "Somalio",
-        "alpha3Code": "SOM"
+        "alpha3Code": "SOM",
+        "alpha2Code": "SO"
     },
     {
         "name": "Sud-Afriko",
-        "alpha3Code": "ZAF"
+        "alpha3Code": "ZAF",
+        "alpha2Code": "ZA"
     },
     {
         "name": "Sud-Georgio kaj la Sud-Sandviĉo Insularo",
-        "alpha3Code": "SGS"
+        "alpha3Code": "SGS",
+        "alpha2Code": "GS"
     },
     {
         "name": "Sud-Koreio",
-        "alpha3Code": "KOR"
+        "alpha3Code": "KOR",
+        "alpha2Code": "KR"
     },
     {
         "name": "Sud-Sudano",
-        "alpha3Code": "SSD"
+        "alpha3Code": "SSD",
+        "alpha2Code": "SS"
     },
     {
         "name": "Hispanio",
-        "alpha3Code": "ESP"
+        "alpha3Code": "ESP",
+        "alpha2Code": "ES"
     },
     {
         "name": "Srilanko",
-        "alpha3Code": "LKA"
+        "alpha3Code": "LKA",
+        "alpha2Code": "LK"
     },
     {
         "name": "Sudano",
-        "alpha3Code": "SDN"
+        "alpha3Code": "SDN",
+        "alpha2Code": "SD"
     },
     {
         "name": "Surinamo",
-        "alpha3Code": "SUR"
+        "alpha3Code": "SUR",
+        "alpha2Code": "SR"
     },
     {
         "name": "Svalbard kaj Jan Mayen",
-        "alpha3Code": "SJM"
+        "alpha3Code": "SJM",
+        "alpha2Code": "SJ"
     },
     {
         "name": "Svazilando",
-        "alpha3Code": "SWZ"
+        "alpha3Code": "SWZ",
+        "alpha2Code": "SZ"
     },
     {
         "name": "Svedio",
-        "alpha3Code": "SWE"
+        "alpha3Code": "SWE",
+        "alpha2Code": "SE"
     },
     {
         "name": "Svislando",
-        "alpha3Code": "CHE"
+        "alpha3Code": "CHE",
+        "alpha2Code": "CH"
     },
     {
         "name": "Sirio",
-        "alpha3Code": "SYR"
+        "alpha3Code": "SYR",
+        "alpha2Code": "SY"
     },
     {
         "name": "Tajvano",
-        "alpha3Code": "TWN"
+        "alpha3Code": "TWN",
+        "alpha2Code": "TW"
     },
     {
         "name": "Taĝikio",
-        "alpha3Code": "TJK"
+        "alpha3Code": "TJK",
+        "alpha2Code": "TJ"
     },
     {
         "name": "Tanzanio",
-        "alpha3Code": "TZA"
+        "alpha3Code": "TZA",
+        "alpha2Code": "TZ"
     },
     {
         "name": "Tajlando",
-        "alpha3Code": "THA"
+        "alpha3Code": "THA",
+        "alpha2Code": "TH"
     },
     {
         "name": "Orienta Timoro",
-        "alpha3Code": "TLS"
+        "alpha3Code": "TLS",
+        "alpha2Code": "TL"
     },
     {
         "name": "Togolando",
-        "alpha3Code": "TGO"
+        "alpha3Code": "TGO",
+        "alpha2Code": "TG"
     },
     {
         "name": "Tokelau",
-        "alpha3Code": "TKL"
+        "alpha3Code": "TKL",
+        "alpha2Code": "TK"
     },
     {
         "name": "Tongo",
-        "alpha3Code": "TON"
+        "alpha3Code": "TON",
+        "alpha2Code": "TO"
     },
     {
         "name": "Trinidado kaj Tobago",
-        "alpha3Code": "TTO"
+        "alpha3Code": "TTO",
+        "alpha2Code": "TT"
     },
     {
         "name": "Tunizio",
-        "alpha3Code": "TUN"
+        "alpha3Code": "TUN",
+        "alpha2Code": "TN"
     },
     {
         "name": "Turkio",
-        "alpha3Code": "TUR"
+        "alpha3Code": "TUR",
+        "alpha2Code": "TR"
     },
     {
         "name": "Turkmenio",
-        "alpha3Code": "TKM"
+        "alpha3Code": "TKM",
+        "alpha2Code": "TM"
     },
     {
         "name": "Turkoj kaj Kajkoj",
-        "alpha3Code": "TCA"
+        "alpha3Code": "TCA",
+        "alpha2Code": "TC"
     },
     {
         "name": "Tuvalo",
-        "alpha3Code": "TUV"
+        "alpha3Code": "TUV",
+        "alpha2Code": "TV"
     },
     {
         "name": "Ugando",
-        "alpha3Code": "UGA"
+        "alpha3Code": "UGA",
+        "alpha2Code": "UG"
     },
     {
         "name": "Ukrainio",
-        "alpha3Code": "UKR"
+        "alpha3Code": "UKR",
+        "alpha2Code": "UA"
     },
     {
         "name": "Unuiĝintaj Arabaj Emirlandoj",
-        "alpha3Code": "ARE"
+        "alpha3Code": "ARE",
+        "alpha2Code": "AE"
     },
     {
         "name": "Britio",
-        "alpha3Code": "GBR"
+        "alpha3Code": "GBR",
+        "alpha2Code": "GB"
     },
     {
         "name": "Usono",
-        "alpha3Code": "USA"
+        "alpha3Code": "USA",
+        "alpha2Code": "US"
     },
     {
         "name": "Urugvajo",
-        "alpha3Code": "URY"
+        "alpha3Code": "URY",
+        "alpha2Code": "UY"
     },
     {
         "name": "Uzbekio",
-        "alpha3Code": "UZB"
+        "alpha3Code": "UZB",
+        "alpha2Code": "UZ"
     },
     {
         "name": "Vanuatuo",
-        "alpha3Code": "VUT"
+        "alpha3Code": "VUT",
+        "alpha2Code": "VU"
     },
     {
         "name": "Venezuelo",
-        "alpha3Code": "VEN"
+        "alpha3Code": "VEN",
+        "alpha2Code": "VE"
     },
     {
         "name": "Vjetnamio",
-        "alpha3Code": "VNM"
+        "alpha3Code": "VNM",
+        "alpha2Code": "VN"
     },
     {
         "name": "Wallis kaj Futuna",
-        "alpha3Code": "WLF"
+        "alpha3Code": "WLF",
+        "alpha2Code": "WF"
     },
     {
         "name": "Western Sahara",
-        "alpha3Code": "ESH"
+        "alpha3Code": "ESH",
+        "alpha2Code": "EH"
     },
     {
         "name": "Jemeno",
-        "alpha3Code": "YEM"
+        "alpha3Code": "YEM",
+        "alpha2Code": "YE"
     },
     {
         "name": "Zambio",
-        "alpha3Code": "ZMB"
+        "alpha3Code": "ZMB",
+        "alpha2Code": "ZM"
     },
     {
         "name": "Zimbabvo",
-        "alpha3Code": "ZWE"
+        "alpha3Code": "ZWE",
+        "alpha2Code": "ZW"
     }
 ]
