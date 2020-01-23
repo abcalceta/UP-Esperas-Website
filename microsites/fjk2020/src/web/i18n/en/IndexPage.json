@@ -1,0 +1,34 @@
+{
+    "index": {
+        "topSubTitle": "Home",
+        "title": "First Philippine Esperanto Youth Congress",
+        "subTitle": "April 23-26, 2020; University of the Philippines; Diliman, Quezon City; Philippines",
+        "about": {
+            "title": "About",
+            "desc": "<p>\nPhilippine Esperanto Youth (FEJ), in cooperation with the Esperanto Society of the University of the Philippines (UP Esperanto-Societo), will hold the first-ever <em>Philippine Esperanto Youth Congress (PEYC)</em> in Quezon City, Metro Manila on April 23-26, 2020.\n</p>\n\n<p>This historic congress shall mark the culmination of six years of effort of Esperanto advocates in the country and the step towards further growth and integration of the national Esperanto community, and as such, it will serve a unique role of convening young speakers, learners, and advocates of the international language Esperanto across the country for the first time since the present-day Esperanto community was established in 2013.\n</p>\n\n<p>With the theme \"The Esperanto Movement: Fresh Beginnings in a Multicultural Philippines,\" the four-day Congress will provide young Filipinos coming from different parts of the country the opportunity to interact, learn, and work together in a series of social and educational activities. There will be sessions dedicated to strategic discussions on matters important to the Philippine Esperanto movement, as well as interactive activities such as workshops, including a crash course for beginners in Esperanto, fun social and outdoor activities, cultural exchange activities, and a tour to some historical or natural parts around the capital.\n</p>\n\n",
+            "imgPath": "require('../img/hero/fjk_tejo_en.jpg')"
+        },
+        "sponsors": {
+            "header": "Participating Organizations",
+            "organizers": "Organizers"
+        },
+        "help": {
+            "header": "How Can You Help?",
+            "desc": "As the first-ever large-scale Esperanto congress in the country, you can contribute to the realization of this event through different means.",
+            "howToApply": "How To Apply",
+            "helpUs": "Help Us",
+            "lkk": {
+                "title": "Join the LKK",
+                "desc": "You can still be part of the local organizing committee of PEYC 2020."
+            },
+            "volunteer": {
+                "title": "Volunteer",
+                "desc": "The current local organizing committee of PEYC 2020 is in need of people who want to be part of the Volunteer Staff!"
+            },
+            "donate": {
+                "title": "Donate",
+                "desc": "You can also opt to support this congress financially or logistically through different means."
+            }
+        }
+    }
+}

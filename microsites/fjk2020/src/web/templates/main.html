@@ -1,14 +1,10 @@
 <section id="section-about" class="section scrollspy">
-    <h3>About</h3>
+    <h3>${this.localeObj.t('index.about.title')}</h3>
     <p>
-        ${this.localeObj.t('index.about.par01')}
+        <img class="responsive-img" id="img-announce" alt="Announcement image">
     </p>
-    <p>
-        ${this.localeObj.t('index.about.par02')}
-    </p>
-    <p>
-        ${this.localeObj.t('index.about.par03')}
-    </p>
+
+    ${this.localeObj.t('index.about.desc')}
 </section>
 <section id="section-orgs" class="section scrollspy">
     <h3>${this.localeObj.t('index.sponsors.header')}</h3>
