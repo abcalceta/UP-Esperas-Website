@@ -32,6 +32,7 @@ export class IndexPage extends BasePage {
             announceImg.src = announceImgEn;
         }
 
+        DomScripts.animate('#img-announce', 'zoomIn');
         DomScripts.animate('#section-how-to-help .card', 'zoomIn', true);
     }
 }

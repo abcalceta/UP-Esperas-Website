@@ -26,7 +26,7 @@ export class LoadingOverlay {
 
     view(vnode) {
         return m('div', {class: 'preloader'}, [
-            m(LoaderView, {loadingText: vnode.attrs.loadingText})
+            m(LoaderView, {loadingText: vnode.attrs.loadingText}),
         ]);
     }
 }

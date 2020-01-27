@@ -10,6 +10,11 @@
         "intro": {
             "title": "List of Participants",
             "desc": "Here are the list of participants for the First Philippine Esperanto Youth Congress."
+        },
+        "summaryNumbers": {
+            "total": "Total Expected Participants",
+            "local": "Local Participant |||| Local Participants",
+            "foreign": "Foreign Participant |||| Foreign Participants"
         }
     }
 }

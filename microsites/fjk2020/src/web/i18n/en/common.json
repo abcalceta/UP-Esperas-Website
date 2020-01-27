@@ -50,6 +50,12 @@
         ],
         "weekdaysAbbrev": ["S", "M", "T", "W", "T", "F", "S"]
     },
+    "time": {
+        "day": "%{smart_count} day |||| %{smart_count} days",
+        "hour": "%{smart_count} hour |||| %{smart_count} hours",
+        "minute": "%{smart_count} minute |||| %{smart_count} minutes",
+        "second": "%{smart_count} second |||| %{smart_count} seconds"
+    },
     "navbar": {
         "home": "Home",
         "about": {

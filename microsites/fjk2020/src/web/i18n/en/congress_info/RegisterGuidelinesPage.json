@@ -36,7 +36,10 @@
         "regPeriod": {
             "header": "Registration Periods",
             "desc": "<p>\nRegistration for the congress is divided into three (3) periods, which will affect the rates of registration fees, availability of services, etc. Please refer to the table below:\n</p>\n",
-            "notice": "Today is within the time for <b>%{registerType}</b> registration!"
+            "notice": "Today is within the <b>%{registerType}</b> registration period!",
+            "congressDay": "Today is congress day!",
+            "congressEnded": "The congress has ended!",
+            "closeDeadline": "<b>%{time}</b> left before the current registration period ends."
         },
         "regCategories": {
             "header": "Participant Categories",

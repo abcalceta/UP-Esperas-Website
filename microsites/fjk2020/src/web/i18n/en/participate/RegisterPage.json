@@ -16,6 +16,7 @@
             "onSite": "On-Site",
             "timeNotice": "All dates are in Philippine Standard Time (GMT+8). Time of end dates are at 11:59 PM.",
             "regPeriodText": "%{regPeriod} Registration",
+            "regClosed": "The online registration form is already closed. Thank you for your participation.",
             "paypalProcessing": "Processing PayPal payment&#8230;",
             "paypalSuccess": "Successfully paid through PayPal!",
             "registerInProgress": "Registering. Please wait&#8230;",
@@ -219,7 +220,9 @@
             "summary": {
                 "header": "Summary",
                 "registerDates": "Registration Dates",
-                "registerNotice": "Today is within the time for <b>%{registerType}</b> registration!",
+                "registerNotice": "Today is within the <b>%{registerType}</b> registration period!",
+                "congressDay": "Today is congress day!",
+                "congressEnded": "The congress has ended!",
                 "details": "Payment Details",
                 "grandTotal": "Grand Total",
                 "payVia": "Pay with",

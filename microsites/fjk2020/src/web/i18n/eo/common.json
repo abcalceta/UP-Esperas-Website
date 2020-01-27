@@ -50,6 +50,12 @@
         ],
         "weekdaysAbbrev": ["di", "lu", "ma", "me", "ĵa", "ve", "sa"]
     },
+    "time": {
+        "day": "%{smart_count} tago |||| %{smart_count} tagoj",
+        "hour": "%{smart_count} horo |||| %{smart_count} horoj",
+        "minute": "%{smart_count} minuto |||| %{smart_count} minutoj",
+        "second": "%{smart_count} sekundo |||| %{smart_count} sekundoj"
+    },
     "navbar": {
         "home": "Hejmpaĝo",
         "about": {

@@ -105,19 +105,59 @@ function saveFormElements(rootElmId) {
     }
 }
 
-function checkRegistrationPeriod() {
-    let earlyBirdDate = new Date('2020-01-27T23:59:59+08:00');
-    let regDate = new Date('2020-03-23T23:59:59+08:00');
-    let dateToday = new Date();
+function treatAsUtc(date) {
+    let result = date == null ? new Date() : new Date(date);
 
-    if(dateToday <= earlyBirdDate) {
-        return 0;
+    result.setMinutes(result.getMinutes() - result.getTimezoneOffset());
+
+    return result;
+}
+
+function msToDms(millis) {
+    let secs = Math.floor(Math.abs(millis) * (1 / 1000));
+    let mins = Math.floor(secs * (1 / 60));
+    let hours = Math.floor(mins * (1 / 60));
+    let days = Math.floor(hours * (1 / 24));
+
+    return {
+        seconds: secs % 60,
+        minutes: mins % 60,
+        hours: hours % 24,
+        days: days,
+    };
+}
+
+function checkRegistrationPeriod() {
+    const earlyDate = treatAsUtc(new Date('2020-01-27T23:59:59+08:00'));
+    const regularDate = treatAsUtc(new Date('2020-03-23T23:59:59+08:00'));
+    const lateDate = treatAsUtc(new Date('2020-04-22T23:59:59+08:00'));
+    const congresEndDate = treatAsUtc(new Date('2020-04-25T23:59:59+08:00'));
+    const dateToday = treatAsUtc(null);
+
+    let regPeriod = 4;
+    let timeLeft = msToDms(0);
+
+    if(dateToday <= earlyDate) {
+        timeLeft = msToDms(earlyDate - dateToday);
+        regPeriod = 0;
     }
-    else if(dateToday <= regDate) {
-        return 1;
+    else if(dateToday <= regularDate) {
+        timeLeft = msToDms(regularDate - dateToday);
+        regPeriod = 1;
     }
-    else {
-        return 2;
+    else if(dateToday <= lateDate) {
+        timeLeft = msToDms(lateDate - dateToday);
+        regPeriod = 2;
+    }
+    else if(dateToday <= congresEndDate) {
+        timeLeft = msToDms(congresEndDate - dateToday);
+
+        regPeriod = 3;
+    }
+
+    return {
+        regPeriod: regPeriod,
+        timeLeft: timeLeft,
     }
 }
 

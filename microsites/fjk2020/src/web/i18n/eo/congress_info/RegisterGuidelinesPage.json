@@ -36,7 +36,10 @@
         "regPeriod": {
             "header": "Aliĝperiodoj",
             "desc": "<p>\nEstas tri aliĝperiodoj, laŭ kiuj oni aplikos taŭgajn aliĝkotizojn, mendojn, ktp.:\n</p>\n",
-            "notice": "Nun estas la <b>%{registerType}</b> aliĝperiodo!"
+            "notice": "Nun estas la <b>%{registerType}</b> aliĝperiodo!",
+            "congressDay": "Nun estas tago en la kongreso!",
+            "congressEnded": "La kongreso finiĝis!",
+            "closeDeadline": "<b>%{time}</b> restas antaŭ ol la nuna aliĝperiodo finiĝos."
         },
         "regCategories": {
             "header": "Kategorioj de Partoprenantoj",

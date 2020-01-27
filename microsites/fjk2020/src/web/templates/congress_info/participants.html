@@ -1,13 +1,29 @@
 <section class="section">
     <h3>${this.localeObj.t('infoParticipants.intro.title')}</h3>
 
-    <p>
-        ${this.localeObj.t('infoParticipants.intro.desc')}
-    </p>
-
     <p class="card-panel theme-red white-text">
         ${this.localeObj.t('infoParticipants.disclaimer')}
     </p>
+
+    <div class="row">
+        <div id="div-total-participants" class="col s12 m6 main-number">
+            <span>0</span>
+            <br>
+            <span>${this.localeObj.t('infoParticipants.summaryNumbers.total')}</span>
+        </div>
+        <div class="col s12 m5 offset-m1">
+            <div class="row">
+                <div id="div-local-participants" class="col s6 m12 sub-number">
+                    <span>0</span>
+                    <span>${this.localeObj.t('infoParticipants.summaryNumbers.local')}</span>
+                </div>
+                <div id="div-foreign-participants" class="col s6 m12 sub-number">
+                    <span>0</span>
+                    <span>${this.localeObj.t('infoParticipants.summaryNumbers.foreign')}</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <ul id="ul-participants">
     </ul>

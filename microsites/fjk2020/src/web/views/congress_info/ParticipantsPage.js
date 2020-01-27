@@ -6,6 +6,7 @@ import htmlMain from '../../templates/congress_info/participants.html';
 import heroPath from '../../img/hero/uk_100a.jpg';
 
 import '../../styles/flag_font.css';
+import '../../styles/bignumber.css';
 import '../../styles/default.css';
 
 export class ParticipantsPage extends BasePage {
@@ -35,6 +36,8 @@ export class ParticipantsPage extends BasePage {
             }
 
             const jsonRes = await res.json();
+            let nLocal = 0;
+            let nForeign = 0;
 
             for(let eachName of jsonRes.names) {
                 const alpha3Code = DomScripts.htmlEntities(eachName.country);
@@ -59,7 +62,32 @@ export class ParticipantsPage extends BasePage {
                 nameItem.appendChild(participantName);
 
                 participantsList.appendChild(nameItem);
+
+                // Count number of participants
+                if(alpha3Code == 'PHL') {
+                    nLocal += 1;
+                }
+                else {
+                    nForeign += 1;
+                }
             }
+
+            // Display number of participants
+            const totalPartSpans = document.getElementById('div-total-participants').getElementsByTagName('SPAN');
+            const localPartSpans = document.getElementById('div-local-participants').getElementsByTagName('SPAN');
+            const foreignPartSpans = document.getElementById('div-foreign-participants').getElementsByTagName('SPAN');
+
+            totalPartSpans[0].innerHTML = nLocal + nForeign;
+            localPartSpans[0].innerHTML = nLocal;
+            foreignPartSpans[0].innerHTML = nForeign;
+
+            localPartSpans[1].innerHTML = this.localeObj.t('infoParticipants.summaryNumbers.local', nLocal);
+            foreignPartSpans[1].innerHTML = this.localeObj.t('infoParticipants.summaryNumbers.foreign', nForeign);
+
+            DomScripts.animate('#div-total-participants', 'slideInLeft');
+            DomScripts.animate('#div-local-participants', 'slideInRight');
+            DomScripts.animate('#div-foreign-participants', 'slideInRight');
+            DomScripts.animate('#ul-participants li', 'flipInX slow');
         }
         catch(err) {
             console.error(err);

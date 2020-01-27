@@ -2,13 +2,22 @@ import m from 'mithril';
 import M from 'materialize-css';
 import Cookies from 'js-cookie';
 
+import {LoaderView} from './LoaderView';
+
 export class FabView {
     oncreate(vnode) {
         const langList = document.querySelectorAll('#btn-i18n ul li a');
+        this.translateModal = M.Modal.init(document.getElementById('modal-translate-loading'), {
+            dismissible: false,
+            startingTop: '15%',
+            endingTop: '35%',
+        });
 
         langList.forEach((eachItem) => {
             eachItem.addEventListener('click', (e) => {
                 e.preventDefault();
+
+                this.translateModal.open();
 
                 const newLocale = eachItem.dataset.locale;
                 Cookies.set('locale', newLocale);
@@ -25,6 +34,9 @@ export class FabView {
     }
 
     onupdate() {
+        // Close translate loader
+        this.translateModal.close();
+
         M.FloatingActionButton.init(document.getElementById('btn-i18n'), {
             direction: 'top',
             hoverEnabled: false,
@@ -93,7 +105,12 @@ export class FabView {
                         'Avizo pri Kuketo: Kuketo estos uzita por konservi vian elektitan lingvon'
                     ])
                 ])
-            ])
+            ]),
+            m('div', {id: 'modal-translate-loading', class: 'modal'}, [
+                m('div', {class: 'modal-content translate-loader'}, [
+                    m(LoaderView, {loadingText: 'Translating…\nTradukante…'}),
+                ]),
+            ]),
         ]
     }
 }

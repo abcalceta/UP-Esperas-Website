@@ -39,8 +39,6 @@ export class BasePage {
         });
 
         this.apiDomain = process.env.API_DOMAIN;
-        //this.apiDomain = 'https://fjk.up-esperas.org/api';
-        //this.apiDomain = '//localhost:6002/api';
     }
 
     oninit() {
@@ -75,7 +73,7 @@ export class BasePage {
                 m.trust(this.componentHolder.footer)
             ),
             m(this.componentHolder.fab, {onLocaleSelect: this.onLocaleChanged.bind(this)}),
-            m(this.componentHolder.loadingOverlay, {loadingText: this.localeObj.t('loading')})
+            m(this.componentHolder.loadingOverlay, {loadingText: this.localeObj.t('loading', {_: '...'})})
         ];
     }
 

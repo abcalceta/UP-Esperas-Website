@@ -805,15 +805,37 @@ export class RegisterPage extends BasePage {
 
     updateRegDatesUi() {
         // Check registration date
-        const regIdxToName = ['earlyBird', 'regular', 'lateBird'];
+        const regIdxToName = ['earlyBird', 'regular', 'lateBird', 'onSite', 'ended'];
 
-        const regDateIdx = RegFormUtils.checkRegistrationPeriod();
+        const regDateInfo = RegFormUtils.checkRegistrationPeriod();
+        const regDateIdx = regDateInfo.regPeriod;
         const cardPanelElm = document.getElementById('div-overview-reg-date-notice');
-        const regPeriodName = this.localeObj.t(`register.generalText.${regIdxToName[regDateIdx]}`);
 
         document.querySelector('input[name=hdn-reg-period]').value = regDateIdx;
+
+        if(regDateIdx >= 3) {
+            // Close form and hide start button
+            document.getElementById('card-form-closed').classList.remove('hide');
+            document.getElementById('a-start-reg').classList.add('hide');
+        }
+
+        if(regDateIdx >= 4) {
+            // Change card description when congress has ended
+            cardPanelElm.querySelector('div.card-content p').innerHTML = this.localeObj.t('register.forms.summary.congressEnded');
+
+            return;
+        }
+
+        const regPeriodName = this.localeObj.t(`register.generalText.${regIdxToName[regDateIdx]}`);
+
         cardPanelElm.querySelector('.card-title').innerHTML = this.localeObj.t('register.generalText.regPeriodText', {regPeriod: `${regPeriodName[0].toUpperCase()}${regPeriodName.substr(1)}`});
-        cardPanelElm.querySelector('div.card-content p').innerHTML = this.localeObj.t('register.forms.summary.registerNotice', {registerType: regPeriodName});
+
+        if(regDateIdx >= 3) {
+            cardPanelElm.querySelector('div.card-content p').innerHTML = this.localeObj.t('register.forms.summary.congressDay');
+        }
+        else {
+            cardPanelElm.querySelector('div.card-content p').innerHTML = this.localeObj.t('register.forms.summary.registerNotice', {registerType: regPeriodName});
+        }
     }
 
     showPaymentMethod(method) {

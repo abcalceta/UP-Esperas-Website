@@ -1,15 +1,20 @@
 {
     "infoParticipants": {
-        "topSubTitle": "Aliĝantoj",
-        "title": "Aliĝantoj",
+        "topSubTitle": "Aliĝintoj",
+        "title": "Aliĝintoj",
         "subTitle": "Unua Filipina Junulara Kongreso de Esperanto",
         "hiddenName": "kaŝita",
         "nameEntry": "%{firstName} %{lastName} el %{country}",
         "listError": "Ne povas akiri liston nun.",
-        "disclaimer": "La listo montras aliĝantojn, kiuj interesiĝis pri la kongreso per siaj plenigadoj de la aliĝilo. La jena ne estas la fina kaj oficiala listo.",
+        "disclaimer": "La listo montras aliĝintojn, kiuj interesiĝis pri la kongreso per siaj plenigadoj de la aliĝilo. La jena ne estas la fina kaj oficiala listo.",
         "intro": {
-            "title": "Listo de Aliĝantoj",
-            "desc": "Jen la listo de aliĝantoj por la Unua Filipina Junulara Kongreso de Esperanto."
+            "title": "Listo de Aliĝintoj",
+            "desc": "Jen la listo de aliĝintoj por la Unua Filipina Junulara Kongreso de Esperanto."
+        },
+        "summaryNumbers": {
+            "total": "Tuta Sumo de Atenditaj Aliĝintoj",
+            "local": "Loka Partoprenanto |||| Lokaj Partoprenantoj",
+            "foreign": "Eksterlanda Partoprenanto |||| Eksterlandaj Partoprenantoj"
         }
     }
 }
