@@ -72,7 +72,7 @@ export class BasePage {
             m('footer', {class: 'page-footer theme-yellow'},
                 m.trust(this.componentHolder.footer)
             ),
-            m(this.componentHolder.fab, {onLocaleSelect: this.onLocaleChanged.bind(this)}),
+            m(this.componentHolder.fab, {onLocaleSelect: this.onLocaleChanged.bind(this), isChangedTranslation: this.isTranslated}),
             m(this.componentHolder.loadingOverlay, {loadingText: this.localeObj.t('loading', {_: '...'})})
         ];
     }
@@ -84,6 +84,7 @@ export class BasePage {
         console.log(`Found locale ${locale}`);
         this.data.locale.lang = locale;
         this.localeObj.locale(locale);
+        this.isTranslated = false;
 
         m.request({
             method: 'GET',

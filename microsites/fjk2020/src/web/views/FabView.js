@@ -33,9 +33,10 @@ export class FabView {
         });
     }
 
-    onupdate() {
-        // Close translate loader
-        this.translateModal.close();
+    onupdate(vnode) {
+        if(vnode.attrs.isChangedTranslation) {
+            this.translateModal.close();
+        }
 
         M.FloatingActionButton.init(document.getElementById('btn-i18n'), {
             direction: 'top',
