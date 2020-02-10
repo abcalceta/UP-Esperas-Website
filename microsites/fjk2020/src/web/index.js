@@ -15,6 +15,7 @@ import {CopyrightPage} from './views/about/CopyrightPage';
 
 // Congress info subpage
 import {CountryCityPage} from './views/congress_info/CountryCityPage';
+import {LodgingPage} from './views/congress_info/LodgingPage';
 import {ExcursionPage} from './views/congress_info/ExcursionPage';
 import {RegisterGuidelinesPage} from './views/congress_info/RegisterGuidelinesPage';
 import {PaymentGuidelinesPage} from './views/congress_info/PaymentGuidelinesPage';
@@ -40,6 +41,7 @@ m.route(root, '/', {
 
     // Congress info subpage
     '/congress/country-city': CountryCityPage,
+    '/congress/lodging': LodgingPage,
     '/congress/excursion': ExcursionPage,
     '/congress/register-guidelines': RegisterGuidelinesPage,
     '/congress/payment-guidelines': PaymentGuidelinesPage,

@@ -3,36 +3,73 @@
         "topSubTitle": "Loĝado",
         "title": "Loĝado",
         "subTitle": "Unua Filipina Junulara Kongreso de Esperanto",
+        "general": {
+            "amenities": "Disponaĵoj",
+            "roomType": "Ĉambrotipo",
+            "occupancy": "Litoj",
+            "price": "Prezo (por gasto por nokto)",
+            "standardRoom": "Ordinara Ĉambro",
+            "airconRoom": "Kun Klimatizilo",
+            "nonAirconRoom": "Sen Klimatizilo",
+            "beds": "%{smart_count} gasto |||| %{smart_count} gastoj"
+        },
         "intro": {
             "title": "Loĝado",
-            "pars": ""
+            "pars": "<p>\nLa Universitato de Filipinoj en Diliman, kiel la ĉefa tereno de la ĉefa ŝtata universitato de la lando, estas hejmo al multaj konstruaĵoj, en kiuj troviĝas pluraj eminentaj institutoj kun la plej altnivelaj ekipaĵoj kaj fakuloj. Oni povas havi superrigardon de la hejmo de multaj intelektuloj kaj publikaj servantoj de la lando, kiuj tra la pasinta jarcento senlace penas antaŭenigi la filipinan socion per siaj kontribuoj. Malgraŭ tio, ke ĝi estas unu el la plej grandaj universitatoj en la lando, je 4.93 km2, multajn ĝiajn konstruaĵojn oni povas relative facile atingi piede aŭ uzante ĵipojn, la publika transporto kiu iras laŭ ĝiaj internaj vojoj.\n</p>\n\n<p>\nPro tio, ke la universitato troviĝas en la urbo Quezon, ĝuste ĉe la kerno de la metropolo de Manila, troviĝas multaj hoteloj kaj alispecaj loĝejoj ĉirkaŭ la urbo. Tamen, la universitato mem ofertas al siaj studentoj, laboristoj, kaj ankaŭ al gastoj kelkajn hostelojn, kiuj kostas malpli multe ol tiuj ekstere, krom la fakto ke kongresanoj ĝuos grandan kaj verdan terenon kun paca kaj sekura etoso ekster la urbocentro. Tie, eblos trankvile promeni, ekzerciĝi, bickli, eĉ sidiĝi kaj legi librojn sub grandaj arboj.. Estas oportune disponigi tiujn servojn, ĉar ĝi provizos kongresanojn per pli facila aliro al la programo kaj ŝparigos al ili tempon, ĉar ili ne plu bezonus veturi ĉirkaŭ la urbo, en kiu multaj vojoj kutime spertas pezan urbotrafikon dum matenaj kaj vesperaj pintohoroj.\n</p>\n"
+        },
+        "options": {
+            "title": "Loĝejoj",
+            "intro": "<p>\nLa Loka Kongresa Komitato de la 1-a Filipina Junulara Kongreso de Esperanto (FJK) ofertas kun plezuro al kongresanoj la eblecon mendi ĉambrojn en la jenaj partneraj loĝejoj:\n</p>\n",
+            "uhotel": {
+                "header": "University Hotel",
+                "desc": "<p>\nLa propra ĉefa hotelo de la Universitato de Filipinoj en Diliman por vizitantaj esploristoj, partoprenantoj en konferencoj, ktp. Ĝi ankaŭ servas kiel la kongresejo de la 1-a FJK, tial gastoj povus ĝui tujan aliron al la kongreso kaj certigos, ke ili ne maltrafos ĝian programon de la komenco ĝis la fino. Ĝi troviĝas en relative izolita parto de la universitato, tial ĝi facile plezurigas siajn gastojn per pli trankvila etoso for de bruoj de homoj kaj veturiloj pasantaj.\n</p>\n",
+                "amenities": "<ul class=\"browser-default\">\n<li>\nSenpaga parkejo\n</li>\n<li>\nManĝejo, malfermita 6:30-23:00 (lundo ĝis vendredo) kaj 6:30-21:00 (sabato & dimanĉo)\n</li>\n<li>\nAparta fumejo\n</li>\n</ul>\n",
+                "desc2": ""
+            },
+            "nismed": {
+                "header": "NISMED Hostel",
+                "desc": "<p>\nNISMED Hostel estas neluksa loĝeblo por partoprenantoj de kongresoj, akademiaj konferencoj, kaj aliaj aranĝoj okazantaj en la universitato. Ĝi ofertas konsiderinde malmultekostaj ĉambroj por tiuj, kiuj havas malpli grandan buĝeton. Ĝi troviĝas 1.15 km de la kongresejo kaj atingebla 15-20 minutojn piede aŭ 5-10 minutoj per ĵipo.\n</p>\n",
+                "curfewNotice": "La hostelo fermiĝas de la 23:00 ĝis 05:00 ĉiutage, kaj neniu rajtas eniri kaj eliri la hostelon inter tiuj horoj. Tiuj, kiuj emas resti ekstere malproksime je malfruaj horoj prefere ne mendu ĉambron en tiu ĉi hostelo.",
+                "amenities": "<ul class=\"browser-default\">\n<li>\nManĝejo, malfermita de 07:00 ĝis 16:00 (lundo ĝis vendredo)\n</li>\n<li>\nLegoĉambroj kaj studĉambroj\n</li>\n<li>\nLavservo\n</li>\n<li>\nFront Desk Wake-Up Calls\n</li>\n<li>\nFront Desk Safety Vault\n</li>\n</ul>\n"
+            }
         },
         "guidelines": {
+            "title": "Ĝeneralaj Kondiĉoj",
             "general": {
+                "header": "Ĝeneralaj Reguloj",
                 "pars": "<p>\nLoĝado estas aparta, nedeviga servo kiun pretas peri sen aldonaj kostoj la Loka Kongresa Komitato (LKK) de la 1-a Filipina Junulara Kongreso (FJK). La aliĝkotizo ne inkluzivas loĝadon. La LKK traktas mendojn nur de oficialaj aliĝintoj kaj invititaj gastoj. \n</p>\n\n<p>\nĈi tiuj kondiĉoj ne aplikeblas se vi mendas loĝadon de ekstera (nepartnera) loĝejo.\n</p>\n"
             },
             "assignment": {
+                "header": "Loĝigo",
                 "pars": "<p>\nLoĝigo estas surbaze ĉefe de sekso kaj aliaj reguloj. Notu, ke niaj partneraj loĝejoj ne permesas ke gastoj de malsamaj seksoj kunhavu ĉambron, krom se ili estas geedzoj aŭ samfamilianoj. Por pluraj mendoj por la sama ĉambro la LKK traktos unue tiujn, kies mendopeto kaj pago venas unue.\n</p>\n\n<p>\nKrome, gravas, ke ĉiuj litoj estu plenigitaj, tial sciu, ke vi eble povus kunhavi la saman ĉambron kun alia partoprenanto nekonata al vi. Vi povas ankaŭ elekti kunhavi ĝin kun alia partoprenanto kun kiu vi havis apartan interkonsenton, indikante ties nomon en la koncernan kampon sur la mendilo.\n</p>\n"
             },
             "avail": {
+                "header": "Havebleco de Ĉambroj",
                 "pars": "<p>\nLa LKK regule aktualigas informojn pri la havebleco de ĉambroj. Por povi libere elekti ĉambron, estas konsilinde aliĝi la la Kongreso kaj mendi ĉambron frue. La LKK ne garantios la haveblecon de viaj preferataj ĉambroj se vi mendos malfrue.\n</p>\n"
             },
             "effect": {
+                "header": "Valideco de Mendoj",
                 "pars": "<p>\nLa LKK traktas mendojn nur tiam, kiam ili ricevas minimume 50% de la tuta kosto. La LKK elsendas konfirmilon nur post kompleta pago. Alveninte al la akceptejo, nepre kunportu la konfirmilon kune kun unu valida identiga dokumento.\n</p>\n\n<p>\nLa tutan koston oni pagu ĝis la 2-a de aprilo 2020. La LKK akceptos malfruajn pagojn nur en esceptaj kazoj. Nepagitaj mendoj povus esti nuligitaj por doni lokojn al tiuj, kiuj bezonos la samajn ĉambrojn.\n</p>\n"
             },
             "fulfill": {
+                "header": "Plenumo de Mendoj",
                 "pars": "<p>\nSe mendinto ne venas por plenumi la mendon, ĉu propravole aŭ pro alia kaŭzo, aŭ se la Kongreso estas prokrastita aŭ nuligita pro kialoj pri kiuj la LKK ne kulpas, ĉambro ankoraŭ estas konsiderata kiel mendita kaj la mendinto ne ricevos repagon. Krome, se oni ne nuligis ĝis la preskribita limdato, tiu ankoraŭ devas pagi ĝin eĉ sen uzi la ĉambron. Se la mendinto ne okupas sian ĉambron dum la unua mendita tago, la mendo estos nuligita por la tuta restadperiodo!\n</p>\n"
             },
             "changes": {
+                "header": "Ŝanĝo de Mendoj",
+                "cancelTitle": "Nuligo de Mendoj",
+                "extendTitle": "Plilongigo de Restadperiodo",
                 "intro": "<p>\nPost fari vian mendon, vi rajtas ŝanĝi vian mendon senpage, se vi informos la LKK-n plej malfrue la 2-an de aprilo 2020. Estas kelkaj esceptoj:\n</p>\n",
                 "cancel": "<p>\nOni rajtas nuligi sian mendon, kun plena repago, kondiĉe ke tion oni faras ĝis la 23-a de marto. Post tiu limdato, por nuligitaj mendoj oni ne plu ricevos repagojn.\n</p>\n",
                 "extend": "<p>\nSe vi bezonas mendi ĉambrojn antaŭ la 23-a de aprilo kaj post la 26-a de aprilo, tion vi devas eksplicite indiki en la mendilo. Gravas, ke vi mendu la ĉambron por la aldonaj tagoj frue, ĉar eblas, ke ekster la kongresaj tagoj la ĉambroj estos okupataj de aliaj klientoj de la hotelo. Notu ankaŭ ke la kostoj povus varii depende de tio, kiom da homoj kundividos la ĉambron en la aldonaj tagoj.\n</p>\n",
-                "par02": "<p>\nLa LKK sin rajtigas depreni de repagoj administrajn kostojn, kiujn postulus loĝejoj por efektivigi la ŝanĝojn. La LKK forte malkonsilas al mendintoj fari subitajn aŭ lastminutajn ŝanĝojn.\n</p>\n"
+                "otherNotice": "<p>\nLa LKK sin rajtigas depreni de repagoj administrajn kostojn, kiujn postulus loĝejoj por efektivigi la ŝanĝojn. La LKK forte malkonsilas al mendintoj fari subitajn aŭ lastminutajn ŝanĝojn.\n</p>\n"
             },
             "alt": {
+                "header": "Alternativaj Servoj",
                 "pars": "<p>\nLa LKK devigas sin provizi kongresanojn per siaj bezonataj ĉambroj kaj aliaj rilataj servoj. Tamen, se la ĉambro, kiun vi antaŭe rezervis, subite fariĝas nehavebla pro iu ajn kialo pri kiu respondecas la loĝejo aŭ la LKK, la LKK laŭeble tuj informos vin skribe kaj rekomendos al vi alternativajn elektojn.\n</p>\n"
             },
             "observance": {
+                "header": "Reguloj kaj Leĝoj",
                 "pars": "<p>\nDum via restado, nepre komprenu kaj obeu la regulojn de via loĝejo. Fumi en ĉambroj estas strikte malpermesate. Oni traktos gastojn, kiuj ŝtelus aŭ damaĝus posedaĵojn de la loĝejo aŭ farus aliajn kontraŭleĝajn aktivaĵojn laŭ la reguloj de la loĝejo kaj leĝoj de Filipinio.\n</p>\n"
             }
         }

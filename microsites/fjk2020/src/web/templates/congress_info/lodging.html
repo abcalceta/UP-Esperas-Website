@@ -1,5 +1,223 @@
-<section class="section">
+<section id="section-intro" class="section">
     <h3>${this.localeObj.t('infoLodging.intro.title')}</h3>
-    ${this.localeObj.t('infoExcursion.intro.pars')}
+    ${this.localeObj.t('infoLodging.intro.pars')}
 </section>
 
+<section id="section-venue" class="section">
+    <h3>${this.localeObj.t('infoLodging.options.title')}</h3>
+    ${this.localeObj.t('infoLodging.options.intro')}
+
+    <div class="row">
+        <div class="col s12 m6">
+            <img class="responsive-img" alt="${this.localeObj.t('infoLodging.options.uhotel.header')}" src="${require('../../img/lodging/uhotel_front.jpg')}">
+
+            <h5>${this.localeObj.t('infoLodging.options.uhotel.header')}</h5>
+            ${this.localeObj.t('infoLodging.options.uhotel.desc')}
+
+            <h6>${this.localeObj.t('infoLodging.general.amenities')}</h6>
+            ${this.localeObj.t('infoLodging.options.uhotel.amenities')}
+
+            <table>
+                <thead>
+                    <tr>
+                        <th rowspan="2">${this.localeObj.t('infoLodging.general.roomType')}</th>
+                        <th rowspan="2">${this.localeObj.t('infoLodging.general.occupancy')}</th>
+                        <th colspan="2">${this.localeObj.t('infoLodging.general.price')}</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            ${this.localeObj.t('locality.currencyWordsPh')}
+                        </th>
+                        <th>
+                            ${this.localeObj.t('locality.currencyWordsEu')}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="4">
+                            ${this.localeObj.t('infoLodging.general.standardRoom')}
+                        </td>
+                        <td>
+                            ${this.localeObj.t('infoLodging.general.beds', 2)}
+                        </td>
+                        <td>
+                            1405
+                        </td>
+                        <td>
+                            26
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ${this.localeObj.t('infoLodging.general.beds', 3)}
+                        </td>
+                        <td>
+                            1167
+                        </td>
+                        <td>
+                            21
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ${this.localeObj.t('infoLodging.general.beds', 4)}
+                        </td>
+                        <td>
+                            1048
+                        </td>
+                        <td>
+                            19
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Extension per hour per room
+                        </td>
+                        <td>
+                            225
+                        </td>
+                        <td>
+                            4
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col s12 m6">
+            <img class="responsive-img" alt="${this.localeObj.t('infoLodging.options.nismed.header')}" src="${require('../../img/lodging/nismed_front.jpg')}">
+
+            <h5>${this.localeObj.t('infoLodging.options.nismed.header')}</h5>
+            ${this.localeObj.t('infoLodging.options.nismed.desc')}
+
+            <h6>${this.localeObj.t('infoLodging.general.amenities')}</h6>
+            ${this.localeObj.t('infoLodging.options.nismed.amenities')}
+
+            <p class="card-panel theme-yellow white-text">
+                ${this.localeObj.t('infoLodging.options.nismed.curfewNotice')}
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th rowspan="2">${this.localeObj.t('infoLodging.general.roomType')}</th>
+                        <th rowspan="2">${this.localeObj.t('infoLodging.general.occupancy')}</th>
+                        <th colspan="2">${this.localeObj.t('infoLodging.general.price')}</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            ${this.localeObj.t('locality.currencyWordsPh')}
+                        </th>
+                        <th>
+                            ${this.localeObj.t('locality.currencyWordsEu')}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!-- Airconditioned -->
+                        <td rowspan="2">
+                            ${this.localeObj.t('infoLodging.general.airconRoom')}
+                        </td>
+                        <td>
+                            ${this.localeObj.t('infoLodging.general.beds', 1)}
+                        </td>
+                        <td>
+                            1145
+                        </td>
+                        <td>
+                            22
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ${this.localeObj.t('infoLodging.general.beds', 2)}
+                        </td>
+                        <td>
+                            893
+                        </td>
+                        <td>
+                            16
+                        </td>
+                    </tr>
+
+                    <!-- Non-airconditioned-->
+                    <tr>
+                        <td rowspan="3">
+                            ${this.localeObj.t('infoLodging.general.nonAirconRoom')}
+                        </td>
+                        <td>
+                            ${this.localeObj.t('infoLodging.general.beds', 1)}
+                        </td>
+                        <td>
+                            440
+                        </td>
+                        <td>
+                            9
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ${this.localeObj.t('infoLodging.general.beds', 2)}
+                        </td>
+                        <td>
+                            370
+                        </td>
+                        <td>
+                            7
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ${this.localeObj.t('infoLodging.general.beds', 3)}
+                        </td>
+                        <td>
+                            309
+                        </td>
+                        <td>
+                            6
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section id="section-guidelines" class="section">
+    <h3>${this.localeObj.t('infoLodging.guidelines.title')}</h3>
+    ${this.localeObj.t('infoLodging.guidelines.general.pars')}
+
+    <h5>${this.localeObj.t('infoLodging.guidelines.assignment.header')}</h5>
+    ${this.localeObj.t('infoLodging.guidelines.assignment.pars')}
+
+    <h5>${this.localeObj.t('infoLodging.guidelines.avail.header')}</h5>
+    ${this.localeObj.t('infoLodging.guidelines.avail.pars')}
+
+    <h5>${this.localeObj.t('infoLodging.guidelines.effect.header')}</h5>
+    ${this.localeObj.t('infoLodging.guidelines.effect.pars')}
+
+    <h5>${this.localeObj.t('infoLodging.guidelines.fulfill.header')}</h5>
+    ${this.localeObj.t('infoLodging.guidelines.fulfill.pars')}
+
+    <h5>${this.localeObj.t('infoLodging.guidelines.changes.header')}</h5>
+    ${this.localeObj.t('infoLodging.guidelines.changes.intro')}
+    <div class="row">
+        <div class="col s12 m6">
+            <h6>${this.localeObj.t('infoLodging.guidelines.changes.cancelTitle')}</h6>
+            ${this.localeObj.t('infoLodging.guidelines.changes.cancel')}
+        </div>
+        <div class="col s12 m6">
+            <h6>${this.localeObj.t('infoLodging.guidelines.changes.extendTitle')}</h6>
+            ${this.localeObj.t('infoLodging.guidelines.changes.extend')}
+        </div>
+    </div>
+
+    ${this.localeObj.t('infoLodging.guidelines.changes.otherNotice')}
+
+    <h5>${this.localeObj.t('infoLodging.guidelines.alt.header')}</h5>
+    ${this.localeObj.t('infoLodging.guidelines.alt.pars')}
+
+    <h5>${this.localeObj.t('infoLodging.guidelines.observance.header')}</h5>
+    ${this.localeObj.t('infoLodging.guidelines.observance.pars')}
+</section>

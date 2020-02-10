@@ -3,36 +3,73 @@
         "topSubTitle": "Lodging",
         "title": "Lodging",
         "subTitle": "First Philippine Esperanto Youth Congress",
+        "general": {
+            "amenities": "Amenities",
+            "roomType": "Room Type",
+            "occupancy": "Occupancy",
+            "price": "Rates (per guest per night)",
+            "standardRoom": "Standard Room",
+            "airconRoom": "Air-conditioned",
+            "nonAirconRoom": "Non air-conditioned",
+            "beds": "%{smart_count} guest |||| %{smart_count} guests"
+        },
         "intro": {
-            "title": "Lodging and Acommondation",
-            "pars": ""
+            "title": "Lodging and Acommodation",
+            "pars": "<p>\nUniversity of the Philippines Diliman, as the main campus of the premier state university in the country, is home to numerous buildings, including various respectable colleges and institutes with among the best facilities and faculties. A walk through the university would give anyone an overview of the home of the country’s most eminent intellectuals and public figures, who have made significant contributions to the Philippine society with their knowledge and advocacies. Despite having a total size of 4.93 sq. km., making it one of the biggest campuses in the country, most of its facilties are easily accessible by foot or by taking jeepneys (local public transportation) which ply along its thoroughfares.\n</p>\n<p>\nAs the university is located in Quezon City, which is in the heart of Metropolitan Manila, there are numerous hotels and other accommodation that can be found within the city. However, the university offers hostels and dormitories whose prices are considerably lower than those outside the campus, besides being in a relatively peaceful and safe environment beyond the bustling city. It will also provide the participants easier access to the program and spare time from having to commute, especially because most major roads experience heavy traffic during the rush hour.\n</p>\n"
+        },
+        "options": {
+            "title": "Lodging Venues",
+            "intro": "<p>\nThe Organizing Committee of the 1st Philippine Esperanto Youth Congress offers the participants the option to reserve their accommodation in the following partner hotels:\n</p>\n",
+            "uhotel": {
+                "header": "University Hotel",
+                "desc": "<p>\nUP Diliman's very own hotel facility, often to cater to the needs of its visiting researchers, conference participants, and other guests. As the official venue of the congress, this will give participants instant access to the program and make sure they will never miss any bit of it. Located in a rather secluded portion of the campus, it offers guests a peaceful environment away from vehicles and people, while still making the rest of the campus accessible by foot.\n</p>\n",
+                "amenities": "<ul class=\"browser-default\">\n<li>\nFree parking space\n</li>\n<li>\nDining facility (\"The Patio\"), open 6:30AM-11PM (weekdays) and 6:30AM-9PM (Sat-Sun)\n</li>\n<li>\nDesignated smoking area\n</li>\n</ul>\n",
+                "desc2": ""
+            },
+            "nismed": {
+                "header": "NISMED Hostel",
+                "desc": "<p>\nNISMED Hostel is an affordable lodging offered to participants of seminars, conferences, and other functions in the university. It offers significantly cheap rates for those who would like to spend less for accommodation. It also has a quiet atmosphere with facilities catered to those who would like to spend their time studying or reading books. It is located within the campus, 1.15 km away from the congress venue and can be accessed by 15-20 minutes of walk or 5-10 minutes by jeepney, the only local public transportation inside the campus.\n</p>\n",
+                "curfewNotice": "NISMED Hostel imposes a curfew between 11:00PM and 5:00AM. The hostel is closed this time, and nobody can enter or exit the building. Therefore, we do not recommend this option for those who like to stay outside late at night, particularly to those who would like to attend the Socials and Open Mic Night on April 25, 2020.",
+                "amenities": "<ul class=\"browser-default\">\n<li>\nCafeteria, open 7:00AM to 4:00PM from Monday to Friday\n</li>\n<li>\nReading Area and Study Rooms\n</li>\n<li>\nLaundry\n</li>\n<li>\nFront Desk Wake-Up Calls\n</li>\n<li>\nFront Desk Safety Vault\n</li>\n</ul>\n"
+            }
         },
         "guidelines": {
+            "title": "General Guidelines",
             "general": {
+                "header": "General Guidelines",
                 "pars": "<p>\nLodging is a separate, optional paid service which the Organizing Committee of the 1st Philippine Esperanto Youth Congress is committed to arrange for its participants. It is not included in the registration fee for the congress. The Organizing Committee entertains reservations only from registered participants and invited guests.\n</p>\n\n<p>\nThese regulations do not apply to participants who are arranging lodging with non-partner providers.\n</p>\n"
             },
             "assignment": {
+                "header": "Assignment",
                 "pars": "<p>\nReservations are strictly on a first-come, first-served basis. Room assignments are mainly on the basis of sex and other restrictions. All partner lodging providers require that only members of the same sex can share rooms, except for family members.\n</p>\n\n<p>\nThe Organizing Committee puts primary consideration to filling up all available space. Therefore, it is possible that you might share a room with other participants whom you do not know. You may agree to share a room with particular participants with whom you had a prior agreement with, by indicating their names on the form or by informing the Organizing Committee.\n</p>\n"
             },
             "avail": {
+                "header": "Availability of Rooms",
                 "pars": "<p>\nInformation on the availability of rooms is regularly updated on the website. The Organizing Committee recommends that you reserve as early as possible, otherwise they cannot guarantee you your preferred room if you reserve late.\n</p>\n"
             },
             "effect": {
+                "header": "Effectivity of Reservation",
                 "pars": "<p>\nReservations are considered valid when at least fifty percent (50%) or more of the total price is received by the Organizing Committee. The Organizing Committee will issue an electronic confirmation letter only after full payment is made. Upon arrival, please bring the confirmation letter and a valid identification document.\n</p>"
             },
             "fulfill": {
+                "header": "Fulfilment of Reservation",
                 "pars": "<p>\nIf you fail to show up on the days of reservation due to your own will or any other reason, or if the Congress is postponed or cancelled due to unforeseen events or other reasons for which the Organizing Committee cannot be held liable, the reservation is still considered sold and will not be refundable. Furthermore, you are still responsible for paying its full cost even if you did not use the room partially or fully.\n</p>\n\n<p>\nIf you fail to show up on the first day of your period of stay, your reservation will be cancelled for the entire period of stay and no refund shall be given.\n</p>\n"
             },
             "changes": {
+                "header": "Changes in Reservation",
+                "cancelTitle": "Cancellation of reservation",
+                "extendTitle": "Extension of reservation",
                 "intro": "<p>\nAfter you finalize your reservation, you are allowed to make any change, without cost, by informing the Organizing Committee on or before April 2, 2020. There are some exceptions:\n</p>\n",
                 "cancel": "<p>\nAny cancellation of reservation is possible, with full refund, provided that it is made on or before March 23, 2020. Cancellations made afterwards will not be entitled to any refund.\n</p>\n",
                 "extend": "<p>\nIf you need to reserve a room beyond the congress days, you must inform the Organizing Committee. It is subject to the availability of the room on the additional days. Depending on the circumstances, you may have to pay a different price or be transferred to another room.\n</p>\n",
-                "par02": "<p>\nThe Organizing Committee will deduct processing fees required by lodging providers, if applicable, from refunds to be issued. Participants are strongly discouraged from making any abrupt or last-minute changes in their reservations.\n</p>\n"
+                "otherNotice": "<p>\nThe Organizing Committee will deduct processing fees required by lodging providers, if applicable, from refunds to be issued. Participants are strongly discouraged from making any abrupt or last-minute changes in their reservations.\n</p>\n"
             },
             "alt": {
+                "header": "Alternative Services",
                 "pars": "<p>\nThe Organizing Committee is committed to provide participants with the reservation and other related services that they arrange. However, if the room you had initially reserved suddenly becomes unavailable for any reason for which the lodging provider or the Organizing Committee is liable for, the Organizing Committee will communicate as soon as possible to you in writing, and will provide you alternative options.\n</p>\n"
             },
             "observance": {
+                "header": "Observance of Providers' Regulations",
                 "pars": "<p>\nOnce you are in your lodging provider, strictly comply with the rules and regulations being implemented. Smoking is not allowed in any of the rooms. Theft or damage to property and other prohibited activities shall be dealt with according to the providers’ regulations and Philippine laws.\n</p>\n"
             }
         }
