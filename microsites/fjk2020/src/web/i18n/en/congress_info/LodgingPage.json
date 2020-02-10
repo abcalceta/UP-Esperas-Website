@@ -1,0 +1,40 @@
+{
+    "infoLodging": {
+        "topSubTitle": "Lodging",
+        "title": "Lodging",
+        "subTitle": "First Philippine Esperanto Youth Congress",
+        "intro": {
+            "title": "Lodging and Acommondation",
+            "pars": ""
+        },
+        "guidelines": {
+            "general": {
+                "pars": "<p>\nLodging is a separate, optional paid service which the Organizing Committee of the 1st Philippine Esperanto Youth Congress is committed to arrange for its participants. It is not included in the registration fee for the congress. The Organizing Committee entertains reservations only from registered participants and invited guests.\n</p>\n\n<p>\nThese regulations do not apply to participants who are arranging lodging with non-partner providers.\n</p>\n"
+            },
+            "assignment": {
+                "pars": "<p>\nReservations are strictly on a first-come, first-served basis. Room assignments are mainly on the basis of sex and other restrictions. All partner lodging providers require that only members of the same sex can share rooms, except for family members.\n</p>\n\n<p>\nThe Organizing Committee puts primary consideration to filling up all available space. Therefore, it is possible that you might share a room with other participants whom you do not know. You may agree to share a room with particular participants with whom you had a prior agreement with, by indicating their names on the form or by informing the Organizing Committee.\n</p>\n"
+            },
+            "avail": {
+                "pars": "<p>\nInformation on the availability of rooms is regularly updated on the website. The Organizing Committee recommends that you reserve as early as possible, otherwise they cannot guarantee you your preferred room if you reserve late.\n</p>\n"
+            },
+            "effect": {
+                "pars": "<p>\nReservations are considered valid when at least fifty percent (50%) or more of the total price is received by the Organizing Committee. The Organizing Committee will issue an electronic confirmation letter only after full payment is made. Upon arrival, please bring the confirmation letter and a valid identification document.\n</p>"
+            },
+            "fulfill": {
+                "pars": "<p>\nIf you fail to show up on the days of reservation due to your own will or any other reason, or if the Congress is postponed or cancelled due to unforeseen events or other reasons for which the Organizing Committee cannot be held liable, the reservation is still considered sold and will not be refundable. Furthermore, you are still responsible for paying its full cost even if you did not use the room partially or fully.\n</p>\n\n<p>\nIf you fail to show up on the first day of your period of stay, your reservation will be cancelled for the entire period of stay and no refund shall be given.\n</p>\n"
+            },
+            "changes": {
+                "intro": "<p>\nAfter you finalize your reservation, you are allowed to make any change, without cost, by informing the Organizing Committee on or before April 2, 2020. There are some exceptions:\n</p>\n",
+                "cancel": "<p>\nAny cancellation of reservation is possible, with full refund, provided that it is made on or before March 23, 2020. Cancellations made afterwards will not be entitled to any refund.\n</p>\n",
+                "extend": "<p>\nIf you need to reserve a room beyond the congress days, you must inform the Organizing Committee. It is subject to the availability of the room on the additional days. Depending on the circumstances, you may have to pay a different price or be transferred to another room.\n</p>\n",
+                "par02": "<p>\nThe Organizing Committee will deduct processing fees required by lodging providers, if applicable, from refunds to be issued. Participants are strongly discouraged from making any abrupt or last-minute changes in their reservations.\n</p>\n"
+            },
+            "alt": {
+                "pars": "<p>\nThe Organizing Committee is committed to provide participants with the reservation and other related services that they arrange. However, if the room you had initially reserved suddenly becomes unavailable for any reason for which the lodging provider or the Organizing Committee is liable for, the Organizing Committee will communicate as soon as possible to you in writing, and will provide you alternative options.\n</p>\n"
+            },
+            "observance": {
+                "pars": "<p>\nOnce you are in your lodging provider, strictly comply with the rules and regulations being implemented. Smoking is not allowed in any of the rooms. Theft or damage to property and other prohibited activities shall be dealt with according to the providers’ regulations and Philippine laws.\n</p>\n"
+            }
+        }
+    }
+}
