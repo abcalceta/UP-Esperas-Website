@@ -5,10 +5,12 @@
         "subTitle": "Unua Filipina Junulara Kongreso de Esperanto",
         "directors": {
             "lkk": "Prezidanto de Loka Kongresa Komitato",
-            "volCorp": "Direktoro pri Volontula Servo",
-            "reg": "Direktoro pri Giĉeto",
-            "info": "Direktoro pri Informado kaj Kampanjo",
-            "externals": "Direktoro pri Eksterrilatoj",
+            "volCorp": "Volontula Servo",
+            "reg": "Giĉeto",
+            "info": "Informado kaj Kampanjo",
+            "externals": "Eksterrilatoj",
+            "venue": "Kongresejo",
+            "lodging": "Loĝado",
             "website": "Retejestro"
         },
         "lkk00": {
@@ -24,8 +26,8 @@
             "desc": "Jubert estas poeto, artisto, kaj Esperantisto el Medina, Misamis Oriental. Li akiris sian bakalaŭron pri komunikaj artoj en la Filipina Vira Universitato. Li laboris en la landa sekretario de la Kolegia Redaktoraro de Filipinoj pli ol 3 jarojn. Li nun loĝas en Norda Kalookan-o kun sia familio."
         },
         "lkk03": {
-            "name": "Elizabeth Lavadia",
-            "desc": "Elizabeth estas instruisto pri la itala en la Universitato de Filipinoj. Ŝi trapasis C2a-n kurseton pri la itala lingvo kaj kulturo en la Università per Stranieri di Siena (Universitato por Eksterlandanoj de Siena) de aprilo ĝis junio 2019. Ŝi diplomiĝis en 2018 kaj akiris sian bakalaŭron pri eŭropaj lingvoj kun alta  laŭdo en la Universitato de Filipinoj."
+            "name": "Jennilyn Galang",
+            "desc": "Jenny nun studas sociologion kiel bakalaŭron en la Universitato de Filipinoj. Ŝi ankaŭ estas la Vicprezidanto por Interna Rondo de UP Esperanto-Societo."
         }
     }
 }

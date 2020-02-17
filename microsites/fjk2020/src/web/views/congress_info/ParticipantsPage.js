@@ -92,10 +92,11 @@ export class ParticipantsPage extends BasePage {
         catch(err) {
             console.error(err);
 
-            const errorItem = document.createElement('li');
+            const errorItem = document.createElement('p');
+            errorItem.classList.add('card-panel', 'theme-red', 'white-text')
             errorItem.innerHTML = this.localeObj.t('infoParticipants.listError');
 
-            participantsList.appendChild(errorItem);
+            participantsList.parentElement.appendChild(errorItem);
         }
     }
 

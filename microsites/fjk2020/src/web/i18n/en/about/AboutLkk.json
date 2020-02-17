@@ -5,10 +5,12 @@
         "subTitle": "First Philippine Esperanto Youth Congress",
         "directors": {
             "lkk": "Organizing Committee President",
-            "volCorp": "Director for Volunteer Staff",
-            "reg": "Director for Registration",
-            "info": "Director for Information and Publicity",
-            "externals": "Director for External Relations",
+            "volCorp": "Volunteer Staff",
+            "reg": "Registration",
+            "info": "Information and Publicity",
+            "externals": "External Relations",
+            "venue": "Venue",
+            "lodging": "Lodging",
             "website": "Webmaster"
         },
         "lkk00": {
@@ -24,8 +26,8 @@
             "desc": "Jubert is a poet, artist, and Esperantist from Medina, Misamis Oriental. He earned his Bachelor of Arts degree in Communication Arts at the Philippine Women’s University. He worked in the National Secretariat of the College Editors Guild of the Philippines for over 3 years. He currently lives in North Caloocan with his family."
         },
         "lkk03": {
-            "name": "Elizabeth Lavadia",
-            "desc": "Elizabeth is an instructor for the Italian language at the University of the Philippines, Diliman. She took a C2 level short course on the Italian Language and Culture at Università per Stranieri di Siena from April to June 2019. She graduated Magna cum Laude in 2018 and has a Bachelor of Arts degree in European Languages from the University of the Philippines, Diliman."
+            "name": "Jennilyn Galang",
+            "desc": "Jenny is an undergraduate student of Sociology at the University of the Philippines. She is the current Vice President for Internals of UP Esperanto-Societo."
         }
     }
 }

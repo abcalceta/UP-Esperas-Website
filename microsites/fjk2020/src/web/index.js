@@ -23,6 +23,7 @@ import {ParticipantsPage} from './views/congress_info/ParticipantsPage';
 
 // Participate subpage
 import {RegisterPage} from './views/participate/RegisterPage';
+import {ProgramPage} from './views/participate/ProgramPage';
 import {VolunteerPage} from './views/participate/VolunteerPage';
 
 let root = document.body;
@@ -49,6 +50,7 @@ m.route(root, '/', {
 
     // Participate subpage
     '/donate': DonatePage,
+    '/participate/program': ProgramPage,
     '/participate/volunteer': VolunteerPage,
 
     // Register page

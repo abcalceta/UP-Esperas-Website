@@ -10,12 +10,12 @@ function animate(targetsQuery, animateClasses, getParents = false, threshold = 0
                 const nowTop = eachEntry.boundingClientRect.top;
                 const nowRatio = eachEntry.intersectionRatio;
 
-                if (eachEntry.isIntersecting && nowTop < prevTop && nowRatio > 0.5) {
+                if (eachEntry.isIntersecting && nowTop < prevTop && nowRatio > threshold) {
                     //console.log(`fadeIn: ${nowTop} ${prevTop} ${nowRatio}`)
                     eachEntry.target.classList.remove('fadeOut', 'faster');
                     eachEntry.target.classList.add(...classesList);
                 }
-                else if (!eachEntry.isIntersecting && nowTop > prevTop && nowRatio < 0.5) {
+                else if (!eachEntry.isIntersecting && nowTop > prevTop && nowRatio < threshold) {
                     //console.log(`fadeOut: ${nowTop} ${prevTop} ${nowRatio}`)
                     eachEntry.target.classList.remove(...classesList);
                     eachEntry.target.classList.add('animated', 'fadeOut', 'faster');

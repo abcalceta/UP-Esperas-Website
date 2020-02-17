@@ -1,14 +1,32 @@
 {
     "program": {
-        "topSubTitle": "Call for Organizers",
-        "title": "Call for Organizers",
+        "topSubTitle": "Program Proposals",
+        "title": "Program Proposals",
         "subTitle": "First Philippine Esperanto Youth Congress",
         "intro": {
+            "title": "Contribute an Activity for the 1st PEYC!",
             "pars": "<p>\nThe Organizing Committee of the 1st Philippine Esperanto Youth Congress would like to dedicate this event as a rare opportunity for local learners, speakers, and advocates of the language to practice their knowledge in a practical setting, immerse in the community, and familiarize themselves with the Esperanto movement, among others. Therefore, we aim to prioritize activities that directly provide these experiences.\n</p>\n\n<p>\nFurthermore, as the theme of the Congress is <em>The Esperanto Movement: Fresh Beginnings in a Multicultural Philippines</em>, we would like to present this event as an avenue for the participants, Filipinos and foreigners alike, to deepen their knowledge and appreciation of the cultural and linguistic diversity of the country, as we firmly believe that multiculturalism and the objectives of the Esperanto movement go hand in hand.\n</p>\n\n<p>\nIn order to make the Congress more interactive and value-adding, we are open to contributions from everyone who would like to share their knowledge, expertise, or experiences. An activity does not need to be directly related to the Congress Theme, as long as it contributes to the general objectives of the Congress and the principles of the Esperanto community and can capture the interest of the participants.\n</p>\n"
         },
         "guidelines": {
-            "pars": "<p>\nTo ensure that the Congress runs smoothly and provides the optimal experience for all participants, the following are the Program Guidelines:\n</p>\n\n",
+            "title": "Guidelines",
+            "par00": "<p>\nTo ensure that the Congress runs smoothly and provides the optimal experience for all participants, the following are the Program Guidelines:\n</p>\n\n",
+            "rules": {
+                "00": "<p>\n<b>By default, all activities will only be limited to a maximum of 1 hour (60 minutes) in length, including ingress.</b> However, the Organizing Committee reserves the right to grant any program a longer time if necessary. No extensions will be given after an activity's scheduled end time has lapsed, as doing so could affect succeeding activities.\n</p>",
+                "01": "<p>\n<b>All activities must be open-door and accessible to all participants.</b> Since we expect participants from other countries who cannot speak the local language, activities must be conducted primarily in Esperanto with translations in Filipino when necessary.\n</p>",
+                "02": "<p>\n<b>Activity must not contain discriminatory or defamatory content against people of any gender, ethnicity, nationality, religion, age, etc.</b> The Organizing Committee reserves the right to cut any activity short if its content is found to violate this rule.\n</p>",
+                "03": "<p>\n<b>Program proposals are subject to the availability of venues and equipment.</b> The Organizing Committee may reject a proposal if they deem that there is no suitable venue and/or equipment for it. During the Congress, activities must follow their venue assignments, unless the organizers inform them of any changes beforehand.\n</p>",
+                "04": "<p>\n<b>The Organizing Committee will not entertain any last-minute requests on changes in schedule or venue especially when the Program has been finalized.</b> This is unless there are any problems on the side of the Organizing Committee. Due to the tight schedule, activity guides who do not appear for their scheduled time shall not be given another slot to hold their activities.\n</p>",
+                "05": "<p>\n<b>Activity guides must inform the Congress Organizing Committee on new requests on equipment/materials no later than April 2, 2020.</b> Otherwise, they must arrange it themselves (except for extreme cases).\n</p>",
+                "06": "<p>\n<b>The following are the preferred types/themes for any program proposal:</b>\n</p>\n<ul class=\"browser-default\">\n<li>Esperanto-Related (Movement, Culture, Literature) Seminars</li>\n<li>Philippines-Related (Geography, History, Culture, Language, Politics) Seminars</li>\n<li>Practical/Capacity-Building Workshops</li>\n<li>Roundtable/Working Group Discussions</li>\n<li>Sports/Games/Outdoor Activities</li>\n<li>Contests</li>\n</ul>\n<p>Other themes/types are subject to review of the Congress Organizing Committee.</p>\n",
+                "07": "<p>\n<b>Activity guides will not be allowed to use any appliance (besides a laptop and LCD projector) without informing the Organizing Committee first.</b> This is because the Organizing Committee needs to declare to the venue administration the electrical apparatuses which will be used during the congress and pay the necessary fees.\n</p>",
+                "08": "<p>\n<b>Activity guides must avoid, at all costs, any last-minute cancellations of their activities.</b>\n</p>"
+            },
             "par01": "<p>\nHowever, since only two (2) days are allotted for the program proper, we will have very limited slots. Therefore, not all proposals may be accepted. Nevertheless, we hope that this will not encourage you from submitting a program proposal and eventually, help everyone have an interesting and amusing time while participating in the Congress.\n</p>\n"
+        },
+        "form": {
+            "title": "Contribute Now!",
+            "desc": "<p>\nIf you are interested in making the congress more interesting and richer through your contribution, by all means let us know about your ideas! This form can be filled up by anyone interested, Filipino or foreign, as long as they will physically participate in the congress. Thank you for your interest in making the 1st PEYC pleasant and interesting for all.\n</p>",
+            "otherLink": "If you have any problems filling-up the form below, please visit <a target=\"_blank\" href=\"//forms.gle/kGGtL1eiZbyCj6kt7\">this link</a> instead."
         }
     }
 }

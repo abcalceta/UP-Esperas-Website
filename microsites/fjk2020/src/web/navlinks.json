@@ -77,6 +77,10 @@
                 "link": "#!/participate/register"
             },
             {
+                "title": "${this.localeObj.t('navbar.participate.program')}",
+                "link": "#!/participate/program"
+            },
+            {
                 "title": "${this.localeObj.t('navbar.participate.volunteer')}",
                 "link": "#!/participate/volunteer"
             }

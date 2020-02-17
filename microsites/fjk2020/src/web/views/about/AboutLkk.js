@@ -19,7 +19,7 @@ export class AboutLkkPage extends BasePage {
     onupdate() {
         super.onupdate();
 
-        DomScripts.animate("#section-lkk .responsive-img", "fadeInLeft");
+        DomScripts.animate("#section-lkk .responsive-img", "zoomIn");
         DomScripts.animate("#section-lkk h5", "fadeInRight", true);
     }
 }

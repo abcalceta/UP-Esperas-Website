@@ -7,7 +7,7 @@
     <h3>${this.localeObj.t('infoLodging.options.title')}</h3>
     ${this.localeObj.t('infoLodging.options.intro')}
 
-    <div class="row">
+    <div id="div-hotel-info" class="row">
         <div class="col s12 m6">
             <img class="responsive-img" alt="${this.localeObj.t('infoLodging.options.uhotel.header')}" src="${require('../../img/lodging/uhotel_front.jpg')}">
 
@@ -72,7 +72,7 @@
                     </tr>
                     <tr>
                         <td>
-                            Extension per hour per room
+                            ${this.localeObj.t('infoLodging.general.extend')}
                         </td>
                         <td>
                             225
@@ -83,6 +83,21 @@
                     </tr>
                 </tbody>
             </table>
+
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" data-caption="${this.localeObj.t('infoLodging.general.standardRoom')}" alt="${this.localeObj.t('infoLodging.general.standardRoom')}" src="${require('../../img/lodging/uhotel_room.jpg')}">
+                        </div>
+                        <div class="card-content">
+                            <p>
+                                ${this.localeObj.t('infoLodging.general.standardRoom')}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col s12 m6">
             <img class="responsive-img" alt="${this.localeObj.t('infoLodging.options.nismed.header')}" src="${require('../../img/lodging/nismed_front.jpg')}">
@@ -180,6 +195,33 @@
                     </tr>
                 </tbody>
             </table>
+
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" data-caption="${this.localeObj.t('infoLodging.general.nonAirconRoom')}" alt="${this.localeObj.t('infoLodging.general.nonAirconRoom')}" src="${require('../../img/lodging/nismed_fan.jpg')}">
+                        </div>
+                        <div class="card-content">
+                            <p>
+                                ${this.localeObj.t('infoLodging.general.nonAirconRoom')}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" data-caption="${this.localeObj.t('infoLodging.general.airconRoom')}" alt="${this.localeObj.t('infoLodging.general.airconRoom')}" src="${require('../../img/lodging/nismed_aircon.jpg')}">
+                        </div>
+                        <div class="card-content">
+                            <p>
+                                ${this.localeObj.t('infoLodging.general.airconRoom')}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -202,12 +244,14 @@
 
     <h5>${this.localeObj.t('infoLodging.guidelines.changes.header')}</h5>
     ${this.localeObj.t('infoLodging.guidelines.changes.intro')}
-    <div class="row">
+    <div id="div-guidelines-changes" class="row">
         <div class="col s12 m6">
+            <i class="material-icons material-icons-large">cancel</i>
             <h6>${this.localeObj.t('infoLodging.guidelines.changes.cancelTitle')}</h6>
             ${this.localeObj.t('infoLodging.guidelines.changes.cancel')}
         </div>
         <div class="col s12 m6">
+            <i class="material-icons material-icons-large">timeline</i>
             <h6>${this.localeObj.t('infoLodging.guidelines.changes.extendTitle')}</h6>
             ${this.localeObj.t('infoLodging.guidelines.changes.extend')}
         </div>

@@ -8,6 +8,7 @@
             "roomType": "Room Type",
             "occupancy": "Occupancy",
             "price": "Rates (per guest per night)",
+            "extend": "Extension per hour per room",
             "standardRoom": "Standard Room",
             "airconRoom": "Air-conditioned",
             "nonAirconRoom": "Non air-conditioned",
@@ -29,7 +30,7 @@
             "nismed": {
                 "header": "NISMED Hostel",
                 "desc": "<p>\nNISMED Hostel is an affordable lodging offered to participants of seminars, conferences, and other functions in the university. It offers significantly cheap rates for those who would like to spend less for accommodation. It also has a quiet atmosphere with facilities catered to those who would like to spend their time studying or reading books. It is located within the campus, 1.15 km away from the congress venue and can be accessed by 15-20 minutes of walk or 5-10 minutes by jeepney, the only local public transportation inside the campus.\n</p>\n",
-                "curfewNotice": "NISMED Hostel imposes a curfew between 11:00PM and 5:00AM. The hostel is closed this time, and nobody can enter or exit the building. Therefore, we do not recommend this option for those who like to stay outside late at night, particularly to those who would like to attend the Socials and Open Mic Night on April 25, 2020.",
+                "curfewNotice": "NISMED Hostel imposes a <b>curfew between 11:00PM and 5:00AM</b>. The hostel is closed this time, and nobody can enter or exit the building. Therefore, we do not recommend this option for those who like to stay outside late at night, particularly to those who would like to attend the Socials and Open Mic Night on April 25, 2020.",
                 "amenities": "<ul class=\"browser-default\">\n<li>\nCafeteria, open 7:00AM to 4:00PM from Monday to Friday\n</li>\n<li>\nReading Area and Study Rooms\n</li>\n<li>\nLaundry\n</li>\n<li>\nFront Desk Wake-Up Calls\n</li>\n<li>\nFront Desk Safety Vault\n</li>\n</ul>\n"
             }
         },
@@ -59,8 +60,8 @@
                 "header": "Changes in Reservation",
                 "cancelTitle": "Cancellation of reservation",
                 "extendTitle": "Extension of reservation",
-                "intro": "<p>\nAfter you finalize your reservation, you are allowed to make any change, without cost, by informing the Organizing Committee on or before April 2, 2020. There are some exceptions:\n</p>\n",
-                "cancel": "<p>\nAny cancellation of reservation is possible, with full refund, provided that it is made on or before March 23, 2020. Cancellations made afterwards will not be entitled to any refund.\n</p>\n",
+                "intro": "<p>\nAfter you finalize your reservation, you are allowed to make any change, without cost, by informing the Organizing Committee on or before <b>April 2, 2020</b>. There are some exceptions:\n</p>\n",
+                "cancel": "<p>\nAny cancellation of reservation is possible, with full refund, provided that it is made on or before <b>March 23, 2020</b>. Cancellations made afterwards will not be entitled to any refund.\n</p>\n",
                 "extend": "<p>\nIf you need to reserve a room beyond the congress days, you must inform the Organizing Committee. It is subject to the availability of the room on the additional days. Depending on the circumstances, you may have to pay a different price or be transferred to another room.\n</p>\n",
                 "otherNotice": "<p>\nThe Organizing Committee will deduct processing fees required by lodging providers, if applicable, from refunds to be issued. Participants are strongly discouraged from making any abrupt or last-minute changes in their reservations.\n</p>\n"
             },
