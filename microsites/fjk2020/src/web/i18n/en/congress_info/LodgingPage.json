@@ -60,8 +60,8 @@
                 "header": "Changes in Reservation",
                 "cancelTitle": "Cancellation of reservation",
                 "extendTitle": "Extension of reservation",
-                "intro": "<p>\nAfter you finalize your reservation, you are allowed to make any change, without cost, by informing the Organizing Committee on or before <b>April 2, 2020</b>. There are some exceptions:\n</p>\n",
-                "cancel": "<p>\nAny cancellation of reservation is possible, with full refund, provided that it is made on or before <b>March 23, 2020</b>. Cancellations made afterwards will not be entitled to any refund.\n</p>\n",
+                "intro": "<p>\nAfter you finalize your reservation, you are allowed to make any change, without cost, by informing the Organizing Committee on or before <s><b>April 2, 2020</b></s>. There are some exceptions:\n</p>\n",
+                "cancel": "<p>\nAny cancellation of reservation is possible, with full refund, provided that it is made on or before <s><b>March 23, 2020</b></s>. Cancellations made afterwards will not be entitled to any refund.\n</p>\n",
                 "extend": "<p>\nIf you need to reserve a room beyond the congress days, you must inform the Organizing Committee. It is subject to the availability of the room on the additional days. Depending on the circumstances, you may have to pay a different price or be transferred to another room.\n</p>\n",
                 "otherNotice": "<p>\nThe Organizing Committee will deduct processing fees required by lodging providers, if applicable, from refunds to be issued. Participants are strongly discouraged from making any abrupt or last-minute changes in their reservations.\n</p>\n"
             },

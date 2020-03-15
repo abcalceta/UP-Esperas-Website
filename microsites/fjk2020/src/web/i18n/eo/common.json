@@ -69,6 +69,7 @@
             "copyright": "Kopirajta Avizo"
         },
         "congressInfo": {
+            "covid19Advisory": "Avizo pri COVID-19",
             "congressInfo": "Kongresaj Informoj",
             "countryCity": "Lando kaj Urbo",
             "venue": "Kongresejo",
@@ -88,5 +89,11 @@
     },
     "footer": {
         "contact": "Kontakti"
+    },
+    "urgentAdvisory": {
+        "covid19": {
+            "header": "Oficiala Avizo",
+            "desc": "Responde al la kreskanta minaco de COVID-19 en la lando, ni <b>oficiale prokrastos</b> la 1-an Filipinan Junularan Kongreson. La aliĝilo estos <b>fermita</b> ĝis kiam novaj datoj por la kongreso estos deciditaj. Legu la oficialan komunikon <a class=\"theme-yellow-text\" href=\"./#!/congress/covid19-advisory\">ĉi tie!</a>"
+        }
     }
 }

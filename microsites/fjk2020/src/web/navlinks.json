@@ -40,6 +40,10 @@
         "title": "${this.localeObj.t('navbar.congressInfo.congressInfo')}",
         "sublinks": [
             {
+                "title": "${this.localeObj.t('navbar.congressInfo.covid19Advisory')}",
+                "link": "#!/congress/covid19-advisory"
+            },
+            {
                 "title": "${this.localeObj.t('navbar.congressInfo.countryCity')}",
                 "link": "#!/congress/country-city"
             },

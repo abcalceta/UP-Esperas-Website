@@ -50,7 +50,7 @@
             },
             "effect": {
                 "header": "Valideco de Mendoj",
-                "pars": "<p>\nLa LKK traktas mendojn nur tiam, kiam ili ricevas minimume 50% de la tuta kosto. La LKK elsendas konfirmilon nur post kompleta pago. Alveninte al la akceptejo, nepre kunportu la konfirmilon kune kun unu valida identiga dokumento.\n</p>\n\n<p>\nLa tutan koston oni pagu ĝis <b>la 2-a de aprilo 2020</b>. La LKK akceptos malfruajn pagojn nur en esceptaj kazoj. Nepagitaj mendoj povus esti nuligitaj por doni lokojn al tiuj, kiuj bezonos la samajn ĉambrojn.\n</p>\n"
+                "pars": "<p>\nLa LKK traktas mendojn nur tiam, kiam ili ricevas minimume 50% de la tuta kosto. La LKK elsendas konfirmilon nur post kompleta pago. Alveninte al la akceptejo, nepre kunportu la konfirmilon kune kun unu valida identiga dokumento.\n</p>\n\n<p>\nLa tutan koston oni pagu ĝis <s><b>la 2-a de aprilo 2020</b></s>. La LKK akceptos malfruajn pagojn nur en esceptaj kazoj. Nepagitaj mendoj povus esti nuligitaj por doni lokojn al tiuj, kiuj bezonos la samajn ĉambrojn.\n</p>\n"
             },
             "fulfill": {
                 "header": "Plenumo de Mendoj",
@@ -60,9 +60,9 @@
                 "header": "Ŝanĝo de Mendoj",
                 "cancelTitle": "Nuligo de Mendoj",
                 "extendTitle": "Plilongigo de Restadperiodo",
-                "intro": "<p>\nPost fari vian mendon, vi rajtas ŝanĝi vian mendon senpage, se vi informos la LKK-n plej malfrue <b>la 2-an de aprilo 2020</b>. Estas kelkaj esceptoj:\n</p>\n",
-                "cancel": "<p>\nOni rajtas nuligi sian mendon, kun plena repago, kondiĉe ke tion oni faras ĝis <b>la 23-a de marto</b>. Post tiu limdato, por nuligitaj mendoj oni ne plu ricevos repagojn.\n</p>\n",
-                "extend": "<p>\nSe vi bezonas mendi ĉambrojn antaŭ la 23-a de aprilo kaj post la 26-a de aprilo, tion vi devas eksplicite indiki en la mendilo. Gravas, ke vi mendu la ĉambron por la aldonaj tagoj frue, ĉar eblas, ke ekster la kongresaj tagoj la ĉambroj estos okupataj de aliaj klientoj de la hotelo. Notu ankaŭ ke la kostoj povus varii depende de tio, kiom da homoj kundividos la ĉambron en la aldonaj tagoj.\n</p>\n",
+                "intro": "<p>\nPost fari vian mendon, vi rajtas ŝanĝi vian mendon senpage, se vi informos la LKK-n plej malfrue <s><b>la 2-an de aprilo 2020</b></s>. Estas kelkaj esceptoj:\n</p>\n",
+                "cancel": "<p>\nOni rajtas nuligi sian mendon, kun plena repago, kondiĉe ke tion oni faras ĝis <s><b>la 23-a de marto</b></s>. Post tiu limdato, por nuligitaj mendoj oni ne plu ricevos repagojn.\n</p>\n",
+                "extend": "<p>\nSe vi bezonas mendi ĉambrojn <s>antaŭ la 23-a de aprilo kaj post la 26-a de aprilo</s>, tion vi devas eksplicite indiki en la mendilo. Gravas, ke vi mendu la ĉambron por la aldonaj tagoj frue, ĉar eblas, ke ekster la kongresaj tagoj la ĉambroj estos okupataj de aliaj klientoj de la hotelo. Notu ankaŭ ke la kostoj povus varii depende de tio, kiom da homoj kundividos la ĉambron en la aldonaj tagoj.\n</p>\n",
                 "otherNotice": "<p>\nLa LKK sin rajtigas depreni de repagoj administrajn kostojn, kiujn postulus loĝejoj por efektivigi la ŝanĝojn. La LKK forte malkonsilas al mendintoj fari subitajn aŭ lastminutajn ŝanĝojn.\n</p>\n"
             },
             "alt": {

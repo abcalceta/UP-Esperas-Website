@@ -14,6 +14,7 @@ import {PrivacyPage} from './views/about/PrivacyPage';
 import {CopyrightPage} from './views/about/CopyrightPage';
 
 // Congress info subpage
+import {Covid19AdvisoryPage} from './views/congress_info/Covid19AdvisoryPage';
 import {CountryCityPage} from './views/congress_info/CountryCityPage';
 import {LodgingPage} from './views/congress_info/LodgingPage';
 import {ExcursionPage} from './views/congress_info/ExcursionPage';
@@ -41,6 +42,7 @@ m.route(root, '/', {
     '/about/copyright': CopyrightPage,
 
     // Congress info subpage
+    '/congress/covid19-advisory': Covid19AdvisoryPage,
     '/congress/country-city': CountryCityPage,
     '/congress/lodging': LodgingPage,
     '/congress/excursion': ExcursionPage,

@@ -75,11 +75,11 @@
             "desc01": "Kvankam oni rajtas pagi surloke, ĝi estas evitinda opcio ĉar ĝi malebligas al la organizantoj ricevi financajn rimedojn frue por kovri la kostojn de gravaj eroj de la Kongreso.",
             "regFee": {
                 "title": "Aliĝkotizo",
-                "desc": "<p>\nAliĝintoj devas pagi la tuton de siaj aliĝkotizoj plej malfrue <b>la 9-an de aprilo 2020</b> per la aprobitaj pagmanieroj.\n</p>\n<p>\nDe post tiu dato, oni devos aldone pagi <b>PHP 100.00 (por filipinanoj)</b> aŭ <b>EUR 2.00 (por eksterlandanoj)</b>, aldone al la ŝuldata sumo. Tiu ĉi regulo validas sendepende de tio, ĉu la koncerna aliĝinto jam pagis la minimuman antaŭpagon ĝis la menciita dato aŭ ne.\n</p>\n<p>\nĈi tiu regulo koncernas nur tiujn, kiuj antaŭe aliĝis per la Reta Aliĝilo kaj nur malfrue pagas siajn aliĝkotizojn. Pri surlokaj aliĝoj, vidu la <a href=\"/#!/congress/register-guidelines\">\"Surlokaj Aliĝoj\" sekcion</a> de la Regularo pri Aliĝoj.\n</p>\n"
+                "desc": "<p>\nAliĝintoj devas pagi la tuton de siaj aliĝkotizoj plej malfrue <s><b>la 9-an de aprilo 2020</b></s> per la aprobitaj pagmanieroj.\n</p>\n<p>\nDe post tiu dato, oni devos aldone pagi <b>PHP 100.00 (por filipinanoj)</b> aŭ <b>EUR 2.00 (por eksterlandanoj)</b>, aldone al la ŝuldata sumo. Tiu ĉi regulo validas sendepende de tio, ĉu la koncerna aliĝinto jam pagis la minimuman antaŭpagon ĝis la menciita dato aŭ ne.\n</p>\n<p>\nĈi tiu regulo koncernas nur tiujn, kiuj antaŭe aliĝis per la Reta Aliĝilo kaj nur malfrue pagas siajn aliĝkotizojn. Pri surlokaj aliĝoj, vidu la <a href=\"/#!/congress/register-guidelines\">\"Surlokaj Aliĝoj\" sekcion</a> de la Regularo pri Aliĝoj.\n</p>\n"
             },
             "lodging": {
                 "title": "Loĝado",
-                "desc": "<p>\nAliĝintoj kiuj antaŭmendis ĉambrojn nepre devas pagi la tuton de la kostoj plej malfrue la <b>23-an de marto 2020</b>, precize unu monaton antaŭ la Kongreso. La LKK akceptos kazojn de malfruaj pagoj nur en specialaj cirkonstancoj, kaj depende de la daŭra havebleco de la ĉambro antaŭmendita (t.e., tiam, kiam aliaj atendas, ĉu estos libera spaco). Alie, oni povas nuligi la rezervon sen repago.\n</p>"
+                "desc": "<p>\nAliĝintoj kiuj antaŭmendis ĉambrojn nepre devas pagi la tuton de la kostoj plej malfrue la <s><b>23-an de marto 2020</b></s>, precize unu monaton antaŭ la Kongreso. La LKK akceptos kazojn de malfruaj pagoj nur en specialaj cirkonstancoj, kaj depende de la daŭra havebleco de la ĉambro antaŭmendita (t.e., tiam, kiam aliaj atendas, ĉu estos libera spaco). Alie, oni povas nuligi la rezervon sen repago.\n</p>"
             },
             "others": {
                 "title": "Aliaj pagitaj servoj",

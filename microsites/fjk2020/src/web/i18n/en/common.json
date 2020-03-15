@@ -69,6 +69,7 @@
             "copyright": "Copyright Notice"
         },
         "congressInfo": {
+            "covid19Advisory": "COVID-19 Advisory",
             "congressInfo": "Congress Information",
             "countryCity": "Country and City",
             "venue": "Venue",
@@ -88,5 +89,11 @@
     },
     "footer": {
         "contact": "Contact"
+    },
+    "urgentAdvisory": {
+        "covid19": {
+            "header": "Official Advisory",
+            "desc": "In light of the growth threat of the COVID-19 in the country, the 1st Philippine Esperanto Youth Congress is <b>officially postponed</b> until further notice. Registration will be <b>closed</b> until a new date for the congress is decided. Read the official statement <a class=\"theme-yellow-text\" href=\"./#!/congress/covid19-advisory\">here!</a>"
+        }
     }
 }

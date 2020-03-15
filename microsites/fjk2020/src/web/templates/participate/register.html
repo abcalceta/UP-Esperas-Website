@@ -1,5 +1,12 @@
 <div id="div-steps" class="steps-container hide"></div>
 
+<section id="section-urgent-advisory" class="section">
+    <article class="card-panel theme-red white-text">
+        <h2>${this.localeObj.t('urgentAdvisory.covid19.header')}</h2>
+        <p>${this.localeObj.t('urgentAdvisory.covid19.desc')}</p>
+    </article>
+</section>
+
 <form id="form-register" method="post">
     <section id="section-guidelines" class="section">
         <h3>${this.localeObj.t('register.overview.intro.header')}</h3>
@@ -20,7 +27,7 @@
             ${this.localeObj.t('register.generalText.regClosed')}
         </p>
         <div class="center-align">
-            <a id="a-start-reg" class="btn-large theme-green waves-effect" href="">${this.localeObj.t('register.buttons.startRegistration')}</a>
+            <a id="a-start-reg" class="btn-large disabled theme-green waves-effect" href="">${this.localeObj.t('register.buttons.startRegistration')}</a>
         </div>
     </section>
 
