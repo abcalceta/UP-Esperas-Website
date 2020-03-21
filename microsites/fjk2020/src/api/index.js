@@ -21,7 +21,7 @@ function main() {
     const dbInterface = new DbInterface();
     const loggerObj = Logger.createNewLogger();
     const logger = loggerObj.loggerObj;
-    process.env.SHARED_LOGGER_ID = logger.id;
+    process.env.SHARED_LOGGER_ID = loggerObj.id;
 
     // Middlewares
     expressApp.use(express.json());

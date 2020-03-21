@@ -1,0 +1,43 @@
+{
+    "general": {
+        "botName": "VortaroPH",
+        "notRecognized": "Mi ne konas vian ordonon. Enigu `;;vortaro help` por vidi liston de instrukcioj.",
+        "noCommand": "Pardonon. Ĉi tiun tempon mi ne povis fari vian ordonon. :(",
+        "noSearch": "Pardonon. Ĉi tiun tempon mi ne povis serĉi.",
+        "searchError": "Mi trovis eraron dum mi serĉis por la serĉvorto %{searchTerm}: %{error}"
+    },
+    "about": {
+        "intro": {
+            "header": "Pri",
+            "desc": "Saluton! VortaroPH estas simpla vortara roboto, kiun vi povas uzi por serĉi vortojn anglajn kaj Esperantajn. La roboto uzis datumojn en la projekto ESPDIC trovita ĉe http://www.denisowski.org/Esperanto/ESPDIC/espdic_readme.html."
+        },
+        "help": {
+            "header": "Helpo",
+            "desc": "Enigate `;;vortaro help` igas roboton sendi mesaĝon, kiu enhavas liston de haveblaj instrukcioj."
+        },
+        "support": {
+            "header": "Subteno",
+            "desc": "Se vi trovis cimojn aŭ volas lasi rimarkojn aŭ sugestojn pri la roboto, ne hezitu sendi rektan mesaĝon (RM) al @squeekeek, aŭ raporti la rilatajn informojn ĉe https://github.com/abcalceta/UP-Esperas-Website."
+        }
+    },
+    "help": {
+        "title": "VortaroPH: Listo de Haveblaj Instrukcioj",
+        "replyMsg": "Al vi la roboto sendis la liston de haveblaj instrukctioj.",
+        "showHelp": "Montru ĉi tiun helpilon.",
+        "showAbout": "Montru informon pri ĉi tiu roboto.",
+        "showLang": "Montru en kiu lingvo la roboto parolas",
+        "switchLang": "Ŝanĝu la lingvon de la roboto. Nur ni subtenas `en` kaj `eo`.",
+        "enEo": "Traduku anglan serĉvorton al Esperanto.",
+        "eoEn": "Traduko Esperantan serĉvorton al la angla."
+    },
+    "switchLang": {
+        "nowLang": "Nun mi parolas Esperanton!",
+        "noLang": "Mi ne ankoraŭ komprenas ĉi tiun lingvon. :("
+    },
+    "search": {
+        "searchEn": "Serĉante por la angla serĉvorto *%{searchTerm}*...",
+        "searchEo": "Serĉante por Esperanta serĉvorto *%{searchTerm}*...",
+        "notFound": "**Neniun difinon** por la serĉvorto *%{searchTerm}* mi trovis!",
+        "found": "Trovis **%{smart_count}** difinon por la serĉvorto *%{searchTerm}*! |||| Trovis **%{smart_count}** difinojn por la serĉvorto *%{searchTerm}*!"
+    }
+}
