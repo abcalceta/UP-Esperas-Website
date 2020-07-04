@@ -15,9 +15,9 @@
             {% if n_pages_shown < 8 and page.meta.template == "blog-entry" and not page.hidden and page.id != current_page.id %}
                 <div>
                     <article class="card">
-                    {% if page.meta.thumburl %}
+                    {% if page.meta.ThumbUrl %}
                         <a href={{ page.url }}>
-                            <img alt="{{ page.title }}" src="{{ base_url }}/assets{{ page.meta.thumburl }}">
+                            <img alt="{{ page.title }}" src="{{ base_url }}/assets{{ page.meta.ThumbUrl }}">
                         </a>
                     {% endif %}
 

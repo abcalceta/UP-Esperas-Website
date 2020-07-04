@@ -1,0 +1,21 @@
+{% embed "index.twig" %}
+    {% block before_content %}
+        <h1>{{ current_page.meta.title }}</h1>
+
+        {% if current_page.date %}
+        <p>
+            Published on {{ current_page.date }}
+        </p>
+        {% endif %}
+
+
+        {{ current_page.meta.Tags }} <br>
+        {% if current_page.meta.Tags %}
+        <p>
+            {% for tag in current_page.meta.Tags %}
+                {{ tag }},
+            {% endfor %}
+        </p>
+        {% endif %}
+    {% endblock %}
+{% endembed %}

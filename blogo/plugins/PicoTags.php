@@ -60,6 +60,19 @@ class PicoTags extends AbstractPicoPlugin
      */
     public function onPagesLoaded(&$pages, &$currentPage, &$previousPage, &$nextPage)
     {
+        foreach ($pages as $page) {
+            $tags = PicoTags::parseTags($page['meta']['tags']);
+            if ($page && !empty($tags)) {
+                $this->allTags = array_merge($this->allTags, $tags);
+            }
+        }
+
+        $this->allTags = array_unique($this->allTags);
+    }
+
+    public function applyTagFilter($pages)
+    {
+        $currentPage = $this->getPico()->getCurrentPage();
         if ($currentPage && !empty($currentPage['meta']['filter'])) {
             $tagsToShow = $currentPage['meta']['filter'];
             $pages = array_filter($pages, function ($page) use ($tagsToShow) {
@@ -67,7 +80,22 @@ class PicoTags extends AbstractPicoPlugin
                 return count(array_intersect($tagsToShow, $tags)) > 0;
             });
         }
+
+        return $pages;
     }
+
+    public function onTwigRegistration()
+    {
+        $twig = $this->getPico()->getTwig();
+        $twig->addFunction(new Twig_SimpleFunction('get_all_tags', array($this, 'getAllTags')));
+        $twig->addFilter(new \Twig\TwigFilter('apply_tag_filter', array($this, 'applyTagFilter')));
+    }
+
+    public function getAllTags()
+    {
+        return $this->allTags;
+    }
+    
     /**
      * Get array of tags from metadata string.
      *
@@ -76,10 +104,16 @@ class PicoTags extends AbstractPicoPlugin
      */
     private static function parseTags($tags)
     {
+        if (is_array($tags)) {
+            return $tags;
+        }
+
         if (!is_string($tags) || mb_strlen($tags) <= 0) {
             return array();
         }
+
         $tags = explode(',', $tags);
+
         return is_array($tags) ? array_map('trim', $tags) : array();
     }
 
