@@ -1,7 +1,7 @@
 ---
 Title: 'Esperanto Day x UP Esperas 1st Anniversary Pre-registration'
 Template: blog-entry
-ThumbUrl: '/societaj-novajhoj/20190626-1st-anniv-prereg/thumb.jpg'
+ThumbUrl: '/eventoj/20190626-1st-anniv-prereg/thumb.jpg'
 ---
 
 Saluton!
@@ -14,4 +14,4 @@ We encourage everyone to preregister so that we may anticipate the number of att
 
 Dankon!
 
-https://docs.google.com/…/1FAIpQLSf7H93YL4JT7Gt4C4…/viewform
+http://bit.ly/EsperasAt1Reg

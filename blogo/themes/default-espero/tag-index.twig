@@ -1,13 +1,13 @@
 {% embed "index.twig" %}
     {% block before_content %}
-		<h1>Pages Tagged with "{{ meta.tags }}"</h1>
+		<h1>Entries Tagged with "{{ meta.tags }}"</h1>
 
 		<div class="flex one three-1000">
 		{% for tagged_page in meta.pages_with_tag %}
 			<div>
 				<article class="card">
 				{% if tagged_page.thumb_url %}
-					<a href={{ page.url }}>
+					<a href={{ tagged_page.url }}>
 						<img alt={{ tagged_page.title }} src='{{ base_url }}/assets{{ tagged_page.thumb_url }}'>
 					</a>
 				{% endif %}
@@ -15,8 +15,17 @@
 					<header>
 						<a href={{ tagged_page.url }}><h3>{{ tagged_page.title }}</h3></a>
 					</header>
+
+					{% if tagged_page.date %}
+                        <p>
+                            <i class="material-icons vertical-center">update</i>
+                            {{ tagged_page.date }}
+                        </p>
+                        <hr>
+					{% endif %}
+
 					<p>
-						{{ tagged_page.id | content | striptags | slice(0, 150) }}
+						{{ tagged_page.id | content | striptags | slice(0, 150) }}&#8230;
 						[<a href="{{ tagged_page.url }}">Read More</a>]
 					</p>
 				</article>

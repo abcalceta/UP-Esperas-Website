@@ -1,5 +1,7 @@
 /** Page-wide styles **/
 body {
+    width: 100%;
+    height: 100%;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -71,6 +73,10 @@ ul.pagination li.active a {
     color: white;
 }
 
+.material-icons.vertical-center {
+    vertical-align: bottom;
+}
+
 /** Main nav bar **/
 #main-nav {
     position: absolute;
@@ -103,6 +109,7 @@ ul.pagination li.active a {
 main {
     margin: 0 20%;
     margin-top: 5em;
+    flex-grow: 1;
 }
 
 main img {
@@ -136,6 +143,10 @@ main h2 {
 }
 
 /** Footer **/
+footer#main-footer {
+    flex-shrink: 0;
+}
+
 footer#main-footer .content {
     background-color: #146E05;
     color: white;

@@ -1,11 +1,14 @@
 ---
 Title: '[Speciala] Podkasto 001: Zamenhof-Tago 2018'
-Description: Jen aŭskultu la unuan elsendon de niaj podkastoj, speciale kreitaj por la lastatempe okazigita Zamenhof-Festo en la urbo Cainta.
+Description: Aŭskultu la unuan elsendon de niaj podkastoj, speciale kreitaj por la lastatempe okazigita Zamenhof-Festo en la urbo Cainta.
 Date: 25 Dec 2018 04:00 PM +0800
 
 Template: blog-entry
 ThumbUrl: /podkastoj/20181225-zamenhof-tago/thumb.png
 Tags: podkasto, zamenhof-tago, zamenhof day, podcast
+
+PodcastUrl: /podkastoj/20181225-zamenhof-tago/20181215_speciala_01.mp3
+PodcastDuration: 00:17:37
 ---
 
 ![Podkasto 001 Kovrilo](%base_url%/assets/podkastoj/20181225-zamenhof-tago/thumb.png)
@@ -21,7 +24,7 @@ Ni esperas ke tio interesos vin -- kaj se jes, bv. teni vin interesataj ankaŭ p
 ## Tuj Aŭskultu!
 
 <audio controls>
-    <!--<source src="//elsendoj/specialaj/001_zamenhof-tago-2018.mp3" type="audio/mpeg">-->
+    <source src="%base_url%/assets/podkastoj/20181225-zamenhof-tago/20181215_speciala_01.mp3">
 
     Your browser does not support the audio element.<br>
     Via retumilo ne povas ludi "audio".

@@ -2,13 +2,14 @@
     {% block before_content %}
         <h1>Mabuhay!</h1>
         <p>
-            Welcome to <i>La Filipina Espero</i>! The official blog
-            post of UP Esperanto-Societo.
+            Welcome to <i>La Filipina Espero</i>! The official web log
+            of UP Esperanto-Societo. You can read write-ups about the
+            org and of our members here.
         </p>
 
-        <h2>Recent News</h2>
+        <h2>Plej Freŝaj Novaĵoj</h2>
         <div class="flex one three-1000">
-        {% set preview_pages = pages | sort_by("time") | reverse %}
+        {% set preview_pages = pages | sort_by("id") | reverse %}
         {% set n_pages_shown = 0 %}
 
         {% for page in preview_pages %}
@@ -27,17 +28,17 @@
 
                         {% if page.date %}
                         <p>
-                            <i class="material-icons">update</i>
+                            <i class="material-icons vertical-center">update</i>
                             {{ page.date }}
                         </p>
                         <hr>
                         {% endif %}
                         <p>
-                            <a class="button tag-button">{{ page.id | split("/")[0] }}</a>
+                            <a class="button tag-button" href="{{ base_url }}/{{ page.id | split("/")[0] }}">{{ page.id | split("/")[0] | sistemo_to_hats }}</a>
                         </p>
 
                         <p>
-                            {{ page.id | content | striptags | slice(0, 120) }}
+                            {{ page.id | content | striptags | slice(0, 120) }}&#8230;
                             [<a href="{{ page.url }}">Read More</a>]
                         </p>
                     </article>

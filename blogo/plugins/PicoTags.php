@@ -21,6 +21,11 @@
 class PicoTags extends AbstractPicoPlugin
 {
     /**
+     * All tags used in all pages.
+     */
+    protected $allTags = [];
+    
+    /**
      * Register the "Tags" and "Filter" meta header fields.
      *
      * @see    Pico::getMetaHeaders()
@@ -117,11 +122,11 @@ class PicoTags extends AbstractPicoPlugin
         return is_array($tags) ? array_map('trim', $tags) : array();
     }
 
-    // Added specifically for this
+    // Parsing for tags page
     public function onRequestUrl(&$url) {
         if(preg_match("/^tag?\/(.*)/", $url, $m)) {
-            $this->tag = strtolower(urldecode($m[1]));
-            $this->tag = str_replace("_", " ", $this->tag);
+            $this->tagForTagsPage = strtolower(urldecode($m[1]));
+            $this->tagForTagsPage = str_replace("_", " ", $this->tagForTagsPage);
 
             $url = 'tag/';
         }
@@ -130,24 +135,31 @@ class PicoTags extends AbstractPicoPlugin
     public function onPageRendering(&$twigEnv, &$twigVars) {
         $pageWithTags = array();
 
-        if(isset($this->tag) && !empty($this->tag)) {
+        // Detect tag url
+        if($twigVars['current_page']['id'] == "tag/index") {
+            if(!isset($this->tagForTagsPage) || empty($this->tagForTagsPage)) {
+                // Set tag for tags page as blank
+                $this->tagForTagsPage = "";
+            }
+
             // Loop through tags on each page
             foreach($twigVars['pages'] as $page) {
                 $pageTags = PicoTags::parseTags($page['meta']['tags']);
 
-                if(in_array($this->tag, $pageTags)) {
+                if(in_array($this->tagForTagsPage, $pageTags)) {
                     $pageWithTags[] = array(
                         "id" => $page['id'],
                         "url" => $page['url'],
                         "title" => $page['title'],
+                        "date" => $page['date'],
                         "thumb_url" => $page['meta']['thumburl']
                     );
                 }
             }
 
             $twigVars['meta']['pages_with_tag'] = $pageWithTags;
-            $twigVars['meta']['title'] = $this->tag." tag";
-            $twigVars['meta']['tags'] = $this->tag;
+            $twigVars['meta']['title'] = $this->tagForTagsPage." tag";
+            $twigVars['meta']['tags'] = $this->tagForTagsPage;
         }
     }
 }

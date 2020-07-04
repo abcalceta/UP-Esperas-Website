@@ -8,12 +8,12 @@
         </p>
         {% endif %}
 
+        <hr>
 
-        {{ current_page.meta.Tags }} <br>
-        {% if current_page.meta.Tags %}
+        {% if current_page.meta.tags %}
         <p>
-            {% for tag in current_page.meta.Tags %}
-                {{ tag }},
+            {% for tag in current_page.meta.tags|apply_tag_filter %}
+                <a class="button tag-button" href="{{ base_url }}/tag/{{ tag }}">{{ tag }}</a>
             {% endfor %}
         </p>
         {% endif %}

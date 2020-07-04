@@ -6,6 +6,9 @@ Date: 01 Jan 2019, 04:00 PM +0800
 Template: blog-entry
 ThumbUrl: /podkastoj/20190101-kristnasko-novjaro/thumb.png
 Tags: podkasto, kristnasko, nova jaro, novjaro, rizal-tago, christmas, new year, rizal day, podcast
+
+PodcastUrl: /podkastoj/20190101-kristnasko-novjaro/20190101_speciala_02.mp3
+PodcastDuration: 00:24:23
 ---
 
 ![Podkasto 002 Kovrilo](%base_url%/assets/podkastoj/20190101-kristnasko-novjaro/thumb.png)
@@ -23,7 +26,7 @@ La sekva elsendo aperos en la venonta monato.
 ## Tuj Aŭskultu!
 
 <audio controls>
-    <!--<source src="/elsendoj/specialaj/002_kristnasko-novjaro-2018.mp3" type="audio/mpeg">-->
+    <source src="%base_url%/assets/podkastoj/20190101-kristnasko-novjaro/20190101_speciala_02.mp3" type="audio/mpeg">
     
     Your browser does not support the audio element.<br>
     Via retumilo ne povas ludi "audio".

@@ -1,7 +1,7 @@
 ---
 Title: 'Disvastigo: Basic Esperanto Language Course Pre-registration'
 Template: blog-entry
-ThumbUrl: '/societaj-novajhoj/20190330-disvastigo-prereg/thumb.jpg'
+ThumbUrl: '/eventoj/20190330-disvastigo-prereg/thumb.jpg'
 ---
 
 We are pleased to inform you that the pre-registration for Esperanto for Everyone: A Public Language Course is now open. Kindly pre-register through this link: http://bit.ly/EOcourseprereg.

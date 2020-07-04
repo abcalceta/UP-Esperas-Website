@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+	xmlns:itunesu="http://www.itunesu.com/feed"
+	version="2.0">
+	<channel>
+		<title>{{ site_title }}</title>
+		<link>{{ base_url }}</link>
+		<description>RSS feed for {{ site_title }}</description>
+		<atom:link href="{{ base_url }}/{{ current_page.id }}" rel="self" type="application/rss+xml" />
+
+		<itunes:subtitle>Via verda espero el filipinoj!</itunes:subtitle>
+		<itunes:author>UP Esperanto-Societo</itunes:author>
+		<itunes:summary>Jen oficiala podkasto de UP Esperanto-Societo, kreita tute de filipinaj studentoj por la tuta mondo.</itunes:summary>
+		<itunes:owner>
+			<itunes:name>UP Esperanto-Societo</itunes:name>
+			<itunes:email>saluton@up-esperas.org</itunes:email>
+		</itunes:owner>
+		<itunes:explicit>no</itunes:explicit>
+
+		<itunes:category text="Languages" />
+		<itunes:category text="Other Languages" />
+		{% for page in pages %}
+			{% if page.date %}
+
+		<item>
+			<title>{{ page.title }}</title>
+			<description>{{ page.description }}</description>
+			<link>{{ page.url }}</link>
+			<pubDate>{{ page.date|date("D, d M Y H:i:s O") }}</pubDate>
+			<guid>{{ page.url }}</guid>
+
+			<enclosure url="{{ base_url }}/assets{{ page.meta.podcasturl }}" type="audio/mpeg" length="1024" />
+
+			<itunes:summary>{{ page.description }}</itunes:summary>
+			<itunes:author>UP Esperanto-Societo</itunes:author>
+			<itunes:duration>{{  page.meta.podcastduration }}</itunes:duration>
+			<itunes:explicit>no</itunes:explicit>
+
+			<itunesu:category itunesu:code="106120" />
+		</item>
+			{% endif %}
+		{% endfor %}
+
+	</channel>
+</rss>

@@ -12,6 +12,8 @@
         <meta name="robots" content="{{ meta.robots }}" />
         {% endif %}
 
+        <link rel="shortcut icon" href="{{ theme_url }}/favicon.png">
+
         <link rel="stylesheet" href="https://unpkg.com/picnic">
         <link rel="stylesheet" href="{{ theme_url }}/css/style.css">
 
@@ -20,8 +22,8 @@
     </head>
     <body>
         <nav id="main-nav">
-            <a class="brand" href="/">
-                <img class="logo" alt="Logo" src="favicon.png">
+            <a class="brand" href="{{ base_url }}">
+                <img class="logo" alt="Logo" src="{{ theme_url }}/favicon.png">
                 La Filipina Espero
             </a>
 
@@ -78,7 +80,7 @@
                     <ul class="no-bullets">
                         <li><a href="https://www.facebook.com/UPEsperas/" target="_blank">Facebook</a></li>
                         <li><a href="https://twitter.com/UPEsperas/" target="_blank">Twitter</a></li>
-                        <li><a href="/elsendoj/rss.xml">Podcast Feed</a></li>
+                        <li><a href="{{ base_url }}/podkastoj/rss">Podcast Feed</a></li>
                     </ul>
                 </div>
             </div>
@@ -87,7 +89,7 @@
                     &copy; UP Esperas 2018
                 </span>
                 <span class="right-text">
-                    EN | EO | PH-TGL
+                    &nbsp;
                 </span>
             </div>
         </footer>
