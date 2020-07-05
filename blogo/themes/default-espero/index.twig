@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="https://unpkg.com/picnic">
         <link rel="stylesheet" href="{{ theme_url }}/css/style.css">
 
-        <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oxygen&family=Lora&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
@@ -28,26 +28,24 @@
             </a>
 
             <input id="bmenub" class="show" type="checkbox">
-            <label class="burger pseudo button" for="bmenub">&#8801;</label>
+            <label class="burger pseudo button" for="bmenub"><i class="material-icons">menu</i></label>
 
             <div class="menu">
                 {% for page in pages if page.title and not page.hidden %}
                     {% set pageDepth = page.id|split('/')|length %}
                     {% if (pageDepth == 2) and (page.id ends with "/index") or (pageDepth == 1) %}
-                        <a class="button {% if page.id == current_page.id %}selected-nav{% else %} pseudo-nav{% endif %}" href="{{ page.url }}">{{ page.title }}</a>
+
+                <a class="button {% if page.id == current_page.id %}selected-nav{% else %} pseudo-nav{% endif %}" href="{{ page.url }}">{{ page.title }}</a>
                     {% endif %}
                 {% endfor %}
+                
             </div>
         </nav>
 
         <main>
-            {% block before_content %}
+            {% block main_content %}
             {% endblock %}
 
-            {{ content }}
-
-            {% block after_content %}
-            {% endblock %}
         </main>
 
         <footer id="main-footer">
@@ -78,6 +76,7 @@
                 <div>
                     <h2>Links</h2>
                     <ul class="no-bullets">
+                        <li><a href="https://www.up-esperas.org/" target="_blank">Home</a></li>
                         <li><a href="https://www.facebook.com/UPEsperas/" target="_blank">Facebook</a></li>
                         <li><a href="https://twitter.com/UPEsperas/" target="_blank">Twitter</a></li>
                         <li><a href="{{ base_url }}/podkastoj/rss">Podcast Feed</a></li>

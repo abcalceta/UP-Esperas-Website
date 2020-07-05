@@ -9,11 +9,15 @@ body {
 }
 
 p {
-    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-family: 'Lora', Georgia, 'Times New Roman', Times, serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Lora', Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Oxygen', Arial, Helvetica, sans-serif;
+}
+
+blockquote {
+    box-shadow: inset 5px 0 #00612C;
 }
 
 .right-text {
@@ -27,14 +31,8 @@ audio {
 .tag-button {
     font-size: .75em;
     border-radius: 5em;
-    background-color: #00ED6C;
-}
-
-.thumb-card {
-    width: 15em;
-    float: left;
-    margin-right: 1em;
-    margin-bottom: 1em;
+    background-color: #50C5C7;
+    font-family: 'Oxygen', Arial, Helvetica, sans-serif;
 }
 
 ul.pagination {
@@ -66,7 +64,7 @@ ul.pagination li.active {
 }
 
 ul.pagination li.active:hover {
-    background-color: #00612C99;
+    background-color: #00612C;
 }
 
 ul.pagination li.active a {
@@ -75,6 +73,16 @@ ul.pagination li.active a {
 
 .material-icons.vertical-center {
     vertical-align: bottom;
+}
+
+span.publish-date {
+    font-family: 'Oxygen', Arial, Helvetica, sans-serif;
+    font-size: 0.85em;
+    margin: 16px;
+}
+
+.article-subinfo {
+    font-family: 'Oxygen', Arial, Helvetica, sans-serif;
 }
 
 /** Main nav bar **/
@@ -91,18 +99,12 @@ ul.pagination li.active a {
 
 #main-nav .button.pseudo-nav {
     background: none;
-    color: #00ED6C;
+    color: white;
 }
 
 #main-nav .button.selected-nav {
     background-color: white;
     color: black;
-}
-
-@media all and (max-width: 60em) {
-    #main-nav .menu {
-        background-color: #146E05;
-    }
 }
 
 /** Main content **/
@@ -120,9 +122,9 @@ main .text-content > :first-child {
     margin-top: 0;
 }
 
-main .text-content ul {
+main ul {
     list-style-type: circle;
-    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-family: 'Lora', Georgia, 'Times New Roman', Times, serif;
     font-size: 0.9em;
     list-style-position: inside;
 }
@@ -139,6 +141,11 @@ main h1 {
 
 main h2 {
     font-size: 2em;
+    color: #00612c;
+}
+
+main article.card header a,
+main article.card .content-preview a {
     color: #00612c;
 }
 
@@ -163,12 +170,16 @@ footer#main-footer .copy {
     padding: 0.5em 15%;
 }
 
-ul.no-bullets {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-}
+@media all and (max-width: 60em) {
+    main article h1 {
+        font-size: 2em;
+    }
 
-ul.no-bullets li {
-    margin: 0;
+    #main-nav .menu {
+        background-color: #00612C;
+    }
+
+    #main-nav .burger {
+        color: white;
+    }
 }

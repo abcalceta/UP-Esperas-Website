@@ -1,5 +1,5 @@
 {% embed "index.twig" %}
-    {% block before_content %}
+    {% block main_content %}
         <h1>{{ current_page.title }}</h1>
 
         <div class="flex one three-1000">
@@ -18,14 +18,14 @@
                         </header>
                         
                         {% if page.date %}
-                        <p>
+                        <span class="publish-date">
                             <i class="material-icons vertical-center">update</i>
                             {{ page.date }}
-                        </p>
+                        </span>
                         <hr>
                         {% endif %}
 
-                        <p>
+                        <p class="content-preview">
                             {{ page.id | content | striptags | slice(0, 150) }}&#8230;
                             [<a href="{{ page.url }}">Read More</a>]
                         </p>

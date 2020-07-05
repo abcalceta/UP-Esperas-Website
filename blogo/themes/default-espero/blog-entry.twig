@@ -1,21 +1,29 @@
 {% embed "index.twig" %}
-    {% block before_content %}
-        <h1>{{ current_page.meta.title }}</h1>
+    {% block main_content %}
 
-        {% if current_page.date %}
-        <p>
-            Published on {{ current_page.date }}
-        </p>
-        {% endif %}
+        <article>
+            <h1>{{ current_page.meta.title }}</h1>
 
-        <hr>
+            {% if current_page.date %}
 
-        {% if current_page.meta.tags %}
-        <p>
-            {% for tag in current_page.meta.tags|apply_tag_filter %}
-                <a class="button tag-button" href="{{ base_url }}/tag/{{ tag }}">{{ tag }}</a>
-            {% endfor %}
-        </p>
-        {% endif %}
+            <span class="article-subinfo">
+                Published on {{ current_page.date }}
+            </span>
+            {% endif %}
+
+            <p>
+                <a class="button tag-button" href="{{ base_url }}/{{ current_page.id | split("/")[0] }}">{{ current_page.id | split("/")[0] | sistemo_to_hats }}</a>
+
+            {% if current_page.meta.tags %}
+                {% for tag in current_page.meta.tags|apply_tag_filter %}
+                    <a class="button tag-button" href="{{ base_url }}/tag/{{ tag }}">{{ tag }}</a>
+                {% endfor %}
+            {% endif %}
+            </p>
+
+            <hr>
+
+            {{ content }}
+        </article>
     {% endblock %}
 {% endembed %}

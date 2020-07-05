@@ -13,3 +13,8 @@ desktop.ini
 # Composer
 /composer.phar
 /vendor
+
+# Blog content
+/content
+/assets
+/themes/default
