@@ -7,7 +7,7 @@
 
         <h2>Plej Freŝaj Novaĵoj</h2>
         <div class="flex one three-1000">
-        {% set preview_pages = pages | sort_by("id") | reverse %}
+        {% set preview_pages = pages | sort_by_last_id %}
         {% set n_pages_shown = 0 %}
 
         {% for page in preview_pages %}

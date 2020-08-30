@@ -13,6 +13,10 @@ nav.hero .brand {
     color: white;
 }
 
+nav.hero .burger {
+    color: white;
+}
+
 @media all and (max-width: 60em) {
     nav.hero .menu {
         background-color: #146E05;
@@ -20,7 +24,7 @@ nav.hero .brand {
 }
 
 header.hero {
-    background: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.7)), url('../images/main_cover_02.jpg') no-repeat center;
+    background: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.7)), url('../images/main_cover_03.jpg') no-repeat center;
     background-size: cover;
     height: 100vh;
     display: flex;
@@ -59,7 +63,7 @@ header.hero .hero-down-marker:hover {
 }
 
 main {
-    margin: 0 15%;
+    margin: 0 20%;
 }
 
 main p {

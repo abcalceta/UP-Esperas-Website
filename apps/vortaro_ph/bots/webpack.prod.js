@@ -18,7 +18,7 @@ fs.readdirSync('node_modules')
 const conf = {
     mode: 'production',
     target: 'node',
-    entry: ['babel-polyfill', './src/bot.js'],
+    entry: ['babel-polyfill', './src/discord/bot.js'],
     output: {
         filename: 'bot.bundle.js',
         path: path.resolve(__dirname, 'dist'),
@@ -28,6 +28,8 @@ const conf = {
         new CopyPlugin([
             { from: './.env', to: '.' },
             { from: './src/i18n', to: 'i18n' },
+            { from: './src/discord', to: 'discord' },
+            { from: './src/tg', to: 'tg' }
         ]),
         new CompressionPlugin({
             filename: '[path].gz[query]',

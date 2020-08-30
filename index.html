@@ -15,6 +15,21 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <link rel="stylesheet" href="css/default.css">
+        <link rel="stylesheet" href="css/socicon/style.css">
+
+        <script type="text/javascript">
+            var _paq = window._paq = window._paq || [];
+            /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+                var u="//analizilo.up-esperas.org/";
+                _paq.push(['setTrackerUrl', u+'mat'+'omo.php']);
+                _paq.push(['setSiteId', '1']);
+                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                g.type='text/javascript'; g.async=true; g.src=u+'mat'+'omo.js'; s.parentNode.insertBefore(g,s);
+            })();
+        </script>
     </head>
     <body>
         <nav class="hero">
@@ -24,7 +39,7 @@
             </a>
 
             <input id="bmenub" class="show" type="checkbox">
-            <label class="burger pseudo button" for="bmenub">&#8801;</label>
+            <label class="burger pseudo button" for="bmenub"><i class="material-icons">menu</i></label>
 
             <div class="menu">
                 <a class="pseudo-nav button" href="//fjk.up-esperas.org/">FJK 2020</a>
@@ -33,9 +48,9 @@
         </nav>
 
         <header class="hero">
-            <h1 class="hero-title">Soar with us!</h1>
+            <h1 class="hero-title">Migrate with us!</h1>
             <p class="hero-subtitle">
-                Reach new heights with us and learn Esperanto today!
+                Come out of the shell and learn Esperanto with us!
             </p>
             <a id="a-main-content" href="#main-content" class="material-icons hero-down-marker animated bounce infinite">expand_more</a>
         </header>
@@ -109,6 +124,13 @@
                         <h3 class="center-text stack">Library</h3>
                         <p class="stack">
                             We are probably the only organization in the university that keeps a wide range of literature and media about, and in Esperanto.
+                        </p>
+                    </div>
+                    <div>
+                        <img class="stack" alt="" src="images/gallery/projects_linkages.jpg">
+                        <h3 class="center-text stack">Member Meetups</h3>
+                        <p class="stack">
+                            Members befriend each other and do other hobbies when we do not work for the organization while little-by-little using the language in conversation.
                         </p>
                     </div>
                     <div>
@@ -257,6 +279,10 @@
 
             <section>
                 <h2>News</h2>
+                <p>
+                    Interested in more news about UP Esperas? Visit our <a href="//blogo.up-esperas.org">blog</a>!
+                </p>
+
                 <div class="flex one three-1000">
                     <div>
                         <article class="card">
@@ -299,8 +325,8 @@
             <div class="content flex one two-600">
                 <div>
                     <h2>Contact</h2>
-                    <div class="flex two">
-                        <div class="sixth">
+                    <div class="flex five">
+                        <div class="fifth">
                             <i class="material-icons">pin_drop</i>
                         </div>
                         <div class="four-fifth">
@@ -310,11 +336,11 @@
                             1101
                         </div>
                     </div>
-                    <div class="flex two">
-                        <div class="sixth">
+                    <div class="flex five">
+                        <div class="v">
                             <i class="material-icons">email</i>
                         </div>
-                        <div>
+                        <div class="four-fifth">
                             saluton<div class="hide">saluton!
                             </div>@<div class="hide">kiel
                             </div>up<div class="hide">vi
@@ -327,11 +353,30 @@
                 </div>
                 <div>
                     <h2>Links</h2>
-                    <ul class="no-bullets">
-                        <li><a href="https://www.facebook.com/UPEsperas/" target="_blank">Facebook</a></li>
-                        <li><a href="https://twitter.com/UPEsperas/" target="_blank">Twitter</a></li>
-                        <li><a href="/elsendoj/rss.xml">Podcast Feed</a></li>
-                    </ul>
+                    <div class="flex five">
+                        <div class="fifth">
+                            <i class="socicon socicon-facebook"></i>
+                        </div>
+                        <div class="four-fifth">
+                            <a href="https://www.facebook.com/UPEsperas/" target="_blank">Facebook</a>
+                        </div>
+                    </div>
+                    <div class="flex five">
+                        <div class="fifth">
+                            <i class="socicon socicon-twitter"></i>
+                        </div>
+                        <div class="four-fifth">
+                            <a href="https://twitter.com/UPEsperas/" target="_blank">Twitter</a>
+                        </div>
+                    </div>
+                    <div class="flex five">
+                        <div class="fifth">
+                            <i class="socicon socicon-rss"></i>
+                        </div>
+                        <div class="four-fifth">
+                            <a href="//blogo.up-esperas.org/podkastoj/rss">Podcast Feed</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="copy flex two">

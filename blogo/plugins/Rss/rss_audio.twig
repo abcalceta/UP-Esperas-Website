@@ -5,19 +5,28 @@
 	xmlns:itunesu="http://www.itunesu.com/feed"
 	version="2.0">
 	<channel>
-		<title>{{ site_title }}</title>
+		<title>{{ meta.rsstitle }}</title>
 		<link>{{ base_url }}</link>
-		<description>RSS feed for {{ site_title }}</description>
+		<description>{{ meta.rsssummary }}</description>
+		<language>eo</language>
+		<lastBuildDate>{{ "now"|date("D, d M Y H:i:s O") }}</lastBuildDate>
 		<atom:link href="{{ base_url }}/{{ current_page.id }}" rel="self" type="application/rss+xml" />
 
-		<itunes:subtitle>Via verda espero el filipinoj!</itunes:subtitle>
-		<itunes:author>UP Esperanto-Societo</itunes:author>
-		<itunes:summary>Jen oficiala podkasto de UP Esperanto-Societo, kreita tute de filipinaj studentoj por la tuta mondo.</itunes:summary>
+		<image>
+			<title>{{ site_title }}</title>
+			<url>{{ theme_url }}/favicon.png</url>
+			<link>{{ base_url }}</link>
+		</image>
+
+		<itunes:subtitle>{{ meta.rsssubtitle }}</itunes:subtitle>
+		<itunes:author>{{ meta.rssauthor }}</itunes:author>
+		<itunes:summary>{{ meta.rsssummary }}</itunes:summary>
 		<itunes:owner>
-			<itunes:name>UP Esperanto-Societo</itunes:name>
+			<itunes:name>{{ meta.rssauthor }}</itunes:name>
 			<itunes:email>saluton@up-esperas.org</itunes:email>
 		</itunes:owner>
 		<itunes:explicit>no</itunes:explicit>
+		<itunes:image href="{{ theme_url }}/favicon.png" />
 
 		<itunes:category text="Languages" />
 		<itunes:category text="Other Languages" />
@@ -26,7 +35,11 @@
 
 		<item>
 			<title>{{ page.title }}</title>
-			<description>{{ page.description }}</description>
+			<description>
+				<![CDATA[			
+					{{ page.description }}
+				]]>
+			</description>
 			<link>{{ page.url }}</link>
 			<pubDate>{{ page.date|date("D, d M Y H:i:s O") }}</pubDate>
 			<guid>{{ page.url }}</guid>
@@ -34,8 +47,9 @@
 			<enclosure url="{{ base_url }}/assets{{ page.meta.podcasturl }}" type="audio/mpeg" length="1024" />
 
 			<itunes:summary>{{ page.description }}</itunes:summary>
-			<itunes:author>UP Esperanto-Societo</itunes:author>
-			<itunes:duration>{{  page.meta.podcastduration }}</itunes:duration>
+			<itunes:author>{{ meta.rssauthor }}</itunes:author>
+			<itunes:image href="{{ base_url }}/assets{{ page.meta.thumburl }}" />
+			<itunes:duration>{{ page.meta.podcastduration }}</itunes:duration>
 			<itunes:explicit>no</itunes:explicit>
 
 			<itunesu:category itunesu:code="106120" />

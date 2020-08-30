@@ -13,7 +13,7 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Oxygen', Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
 
 blockquote {
@@ -32,7 +32,7 @@ audio {
     font-size: .75em;
     border-radius: 5em;
     background-color: #50C5C7;
-    font-family: 'Oxygen', Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
 
 ul.pagination {
@@ -71,18 +71,28 @@ ul.pagination li.active a {
     color: white;
 }
 
+ul.no-bullets {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+ul.no-bullets li {
+    margin: 0;
+}
+
 .material-icons.vertical-center {
     vertical-align: bottom;
 }
 
 span.publish-date {
-    font-family: 'Oxygen', Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 0.85em;
     margin: 16px;
 }
 
 .article-subinfo {
-    font-family: 'Oxygen', Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
 
 /** Main nav bar **/
@@ -95,6 +105,16 @@ span.publish-date {
 
 #main-nav .brand {
     color: white;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+}
+
+#main-nav .brand .logo {
+    border: 2px solid white;
+    border-radius: 24px;
+}
+
+#main-nav .button {    
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
 
 #main-nav .button.pseudo-nav {
@@ -155,6 +175,7 @@ footer#main-footer {
 }
 
 footer#main-footer .content {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     background-color: #146E05;
     color: white;
     padding: 1em 15%;
@@ -165,6 +186,7 @@ footer#main-footer a:link {
 }
 
 footer#main-footer .copy {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     background-color: #00612C;
     color: white;
     padding: 0.5em 15%;

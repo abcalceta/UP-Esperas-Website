@@ -7,30 +7,30 @@ const customFormat = format.printf(({
     return `[${level}] [${label}] ${timestamp}: ${message}`;
 });
 
-const consoleTransport = new transports.Console({
-    format: format.combine(
-        format.colorize(),
-        format.label({ label: 'VortaroPH' }),
-        format.timestamp(),
-        customFormat,
-    ),
-});
-
-function createNewLogger() {
+function createNewLogger(tag = 'common') {
     const loggerId = uuidv4();
 
     const loggerTransports = [
-        new transports.File({filename: 'logs/error.log', level: 'error'}),
-        new transports.File({filename: 'logs/all.log', level: 'info'}),
+        new transports.File({filename: `logs/${tag}_error.log`, level: 'error'}),
+        new transports.File({filename: `logs/${tag}_all.log`, level: 'info'}),
     ];
 
     if (process.env.NODE_ENV !== 'production') {
+        const consoleTransport = new transports.Console({
+            format: format.combine(
+                format.colorize(),
+                format.label({ label: `VortaroPH_${tag}` }),
+                format.timestamp(),
+                customFormat,
+            ),
+        });
+
         loggerTransports.push(consoleTransport);
     }
 
     const logger = loggers.add(loggerId, {
         format: format.combine(
-            format.label({ label: 'VortaroPH' }),
+            format.label({ label: `VortaroPH_${tag}` }),
             format.timestamp(),
             customFormat,
         ),
@@ -44,6 +44,5 @@ function createNewLogger() {
 }
 
 export const Logger = {
-    createNewLogger: createNewLogger,
-    consoleTransport: consoleTransport,
+    createNewLogger: createNewLogger
 };

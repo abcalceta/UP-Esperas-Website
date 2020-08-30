@@ -1,19 +1,23 @@
 {
-  "name": "VortaroPH",
+  "name": "vortaroph_bot",
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "start:bot": "nodemon --watch ./src/ --exec babel-node ./src/bot.js",
+    "start:bot:discord": "nodemon --watch ./src/ --exec babel-node ./src/discord/bot.js",
+    "start:bot:tg": "nodemon --watch ./src/ --exec babel-node ./src/tg/bot.js",
     "build": "webpack --config webpack.prod.js --env.NODE_ENV=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "discord.js": "^12.0.2",
     "dotenv": "^8.2.0",
     "node-polyglot": "^2.4.0",
+    "telegraf": "^3.38.0",
+    "telegraf-i18n": "^6.6.0",
+    "telegraf-session-local": "^2.0.0",
     "uuid": "^7.0.2",
     "winston": "^3.2.1"
   },

@@ -1,0 +1,68 @@
+{
+    "general": {
+        "botName": "VortaroPH",
+        "welcome": "Welcome to VortaroPH! Please select what you want to do today.",
+        "notRecognized": "Sorry. I do not know how to do that. Type `;;vortaro help` to see the list of commands.",
+        "noCommand": "Sorry, I cannot do your command at this time. :(",
+        "noSearch": "Sorry, I cannot search for definitions at this time.",
+        "searchError": "I encountered an error while searching for %{searchTerm}: %{error}",
+        "buttons": {
+            "home": "Home",
+            "back": "Back",
+            "cancel": "Cancel",
+            "search": "Search",
+            "searchAgain": "Search Again",
+            "settings": "Settings",
+            "help": "Help",
+            "about": "About",
+            "changeLang": "Change Language"
+        },
+        "lang": {
+            "en": "English",
+            "eo": "Esperanto"
+        }
+    },
+    "about": {
+        "intro": {
+            "header": "About",
+            "desc": "Hello! VortaroPH is a simple dictionary bot that can search both Esperanto and English words. The robot uses data from the ESPDIC project, which can be found at [http://www.denisowski.org/Esperanto/ESPDIC/espdic_readme.html]."
+        },
+        "help": {
+            "header": "Help",
+            "desc_tg": "Type `/start` to start the bot. Fiddle with the buttons and follow the instructions on the inline message.",
+            "desc_discord": "Type `;;vortaro help` to make the bot send you a message with the list of valid commands."
+        },
+        "support": {
+            "header": "Support",
+            "desc": "Any bugs, comments, or suggestions can be sent via DM to @squeekeek, or filed as an issue at [https://github.com/abcalceta/UP-Esperas-Website]."
+        }
+    },
+    "help": {
+        "title": "VortaroPH List of Commands",
+        "replyMsg": "I have sent the list of commands via DM to you.",
+        "startTg": "Start or restart the bot.",
+        "showHelp": "Show this help.",
+        "showAbout": "Show info about this robot.",
+        "showLang": "Show in which language the robot is talking.",
+        "switchLang": "Change the language of this robot. We only support `en` and `eo` for now.",
+        "enEo": "Translate English terms into Esperanto.",
+        "eoEn": "Translate Esperanto terms into English.",
+        "search": "Start a dictionary search"
+    },
+    "setting": {
+        "commandDesc": "Please choose a setting to change.",
+        "switchLang": {
+            "commandDesc": "Please select a language.",
+            "nowLang": "Now I speak English!",
+            "noLang": "I do not know this language yet. :("
+        }
+    },
+    "search": {
+        "searchEn": "Searching for the English term *%{searchTerm}*...",
+        "searchEo": "Searching for the Esperanto term *%{searchTerm}*...",
+        "searchLangReply": "In which language will your search term be?",
+        "searchSendReply": "Please send your search term to me (%{locale}).",
+        "notFound": "I found **No results** found for the term *%{searchTerm}*!",
+        "found": "I have found **%{smart_count}** result for the term *%{searchTerm}*! |||| I have found **%{smart_count}** results for the term *%{searchTerm}*!"
+    }
+}
